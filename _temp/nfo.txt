@@ -1,0 +1,5 @@
+[*] to avoid strange things happening in the menus please note:
+--- when more menu links point to the same page, the _lowest_ menu level and _greatest_ menu id from the _first_ menu group counts!
+
+[*] user pictures
+--- pictures ignore current language. the same picture will be displayed for any language

@@ -1,0 +1,209 @@
+/*
+style1.css
+15:43 24.10.2007
+*/
+/* ********** ********** ********** DEFAULT ********** ********** ********** */
+BODY {
+  background-color: <?php echo $ubws_theme_BgColor; ?>;
+  color: <?php echo $ubws_theme_FontColor; ?>;
+  margin-top: <?php echo $ubws_theme_MarginTop; ?><?php echo $ubws_theme_Measure; ?>;
+  margin-bottom: <?php echo $ubws_theme_MarginBottom; ?><?php echo $ubws_theme_Measure; ?>;
+  margin-left: <?php echo $ubws_theme_MarginLeft; ?><?php echo $ubws_theme_Measure; ?>;
+  margin-right: <?php echo $ubws_theme_MarginRight; ?><?php echo $ubws_theme_Measure; ?>;
+  text-align: <?php echo $ubws_theme_TextAlign; ?>;
+  text-decoration: <?php echo $ubws_theme_TextDecoration; ?>;
+  font-family: <?php echo $ubws_theme_FontFamily; ?>;
+  font-weight: <?php echo $ubws_theme_FontWeight; ?>;
+  font-size: <?php echo $ubws_theme_FontSize; ?><?php echo $ubws_theme_Measure; ?>;
+  border-color: <?php echo $ubws_theme_BorderColor; ?>;
+  border-style: <?php echo $ubws_theme_BorderStyle; ?>;
+  border-top-width: <?php echo $ubws_theme_BorderTop; ?><?php echo $ubws_theme_Measure; ?>;
+  border-bottom-width: <?php echo $ubws_theme_BorderBottom; ?><?php echo $ubws_theme_Measure; ?>;
+  border-left-width: <?php echo $ubws_theme_BorderLeft; ?><?php echo $ubws_theme_Measure; ?>;
+  border-right-width: <?php echo $ubws_theme_BorderRight; ?><?php echo $ubws_theme_Measure; ?>;
+  padding-top: <?php echo $ubws_theme_PaddingTop; ?><?php echo $ubws_theme_Measure; ?>;
+  padding-bottom: <?php echo $ubws_theme_PaddingBottom; ?><?php echo $ubws_theme_Measure; ?>;
+  padding-left: <?php echo $ubws_theme_PaddingLeft; ?><?php echo $ubws_theme_Measure; ?>;
+  padding-right: <?php echo $ubws_theme_PaddingRight; ?><?php echo $ubws_theme_Measure; ?>;
+}
+H1 {
+  color: <?php echo $ubws_theme_H1FontColor; ?>;
+  text-decoration: <?php echo $ubws_theme_H1TextDecoration; ?>;
+  font-family: <?php echo $ubws_theme_H1FontFamily; ?>;
+  font-weight: <?php echo $ubws_theme_H1FontWeight; ?>;
+  font-size: <?php echo $ubws_theme_H1FontSize; ?><?php echo $ubws_theme_Measure; ?>;
+}
+H2 {
+  color: <?php echo $ubws_theme_H2FontColor; ?>;
+  text-decoration: <?php echo $ubws_theme_H2TextDecoration; ?>;
+  font-family: <?php echo $ubws_theme_H2FontFamily; ?>;
+  font-weight: <?php echo $ubws_theme_H2FontWeight; ?>;
+  font-size: <?php echo $ubws_theme_H2FontSize; ?><?php echo $ubws_theme_Measure; ?>;
+}
+A.default:link {
+  background-color: <?php echo $ubws_theme_LnkLBgColor; ?>;
+  color: <?php echo $ubws_theme_LnkLFontColor; ?>;
+  text-decoration: <?php echo $ubws_theme_LnkLTextDecoration; ?>;
+  font-family: <?php echo $ubws_theme_LnkLFontFamily; ?>;
+  font-weight: <?php echo $ubws_theme_LnkLFontWeight; ?>;
+  font-size: <?php echo $ubws_theme_LnkLFontSize; ?><?php echo $ubws_theme_Measure; ?>;
+}
+A.default:visited {
+  background-color: <?php echo $ubws_theme_LnkVBgColor; ?>;
+  color: <?php echo $ubws_theme_LnkVFontColor; ?>;
+  text-decoration: <?php echo $ubws_theme_LnkVTextDecoration; ?>;
+  font-family: <?php echo $ubws_theme_LnkVFontFamily; ?>;
+  font-weight: <?php echo $ubws_theme_LnkVFontWeight; ?>;
+  font-size: <?php echo $ubws_theme_LnkVFontSize; ?><?php echo $ubws_theme_Measure; ?>;
+}
+A.default:hover {
+  background-color: <?php echo $ubws_theme_LnkHBgColor; ?>;
+  color: <?php echo $ubws_theme_LnkHFontColor; ?>;
+  text-decoration: <?php echo $ubws_theme_LnkHTextDecoration; ?>;
+  font-family: <?php echo $ubws_theme_LnkHFontFamily; ?>;
+  font-weight: <?php echo $ubws_theme_LnkHFontWeight; ?>;
+  font-size: <?php echo $ubws_theme_LnkHFontSize; ?><?php echo $ubws_theme_Measure; ?>;
+}
+SPAN.link_default {
+  background-color: <?php echo $ubws_theme_LnkLBgColor; ?>;
+  color: <?php echo $ubws_theme_LnkLFontColor; ?>;
+  text-decoration: <?php echo $ubws_theme_LnkLTextDecoration; ?>;
+  font-family: <?php echo $ubws_theme_LnkLFontFamily; ?>;
+  font-weight: <?php echo $ubws_theme_LnkLFontWeight; ?>;
+  font-size: <?php echo $ubws_theme_LnkLFontSize; ?><?php echo $ubws_theme_Measure; ?>;
+}
+<?php
+for ($cssi=0; $cssi<count($ubws_theme_mnuLnkLBgColor); $cssi++) {
+?>
+A.mnu_<?php echo $cssi; ?>:link {
+  background-color: <?php echo $ubws_theme_mnuLnkLBgColor[$cssi]; ?>;
+  color: <?php echo $ubws_theme_mnuLnkLFontColor[$cssi]; ?>;
+  text-decoration: <?php echo $ubws_theme_mnuLnkLTextDecoration[$cssi]; ?>;
+  font-family: <?php echo $ubws_theme_mnuLnkLFontFamily[$cssi]; ?>;
+  font-weight: <?php echo $ubws_theme_mnuLnkLFontWeight[$cssi]; ?>;
+  font-size: <?php echo $ubws_theme_mnuLnkLFontSize[$cssi]; ?><?php echo $ubws_theme_Measure; ?>;
+}
+A.mnu_<?php echo $cssi; ?>:visited {
+  background-color: <?php echo $ubws_theme_mnuLnkVBgColor[$cssi]; ?>;
+  color: <?php echo $ubws_theme_mnuLnkVFontColor[$cssi]; ?>;
+  text-decoration: <?php echo $ubws_theme_mnuLnkVTextDecoration[$cssi]; ?>;
+  font-family: <?php echo $ubws_theme_mnuLnkVFontFamily[$cssi]; ?>;
+  font-weight: <?php echo $ubws_theme_mnuLnkVFontWeight[$cssi]; ?>;
+  font-size: <?php echo $ubws_theme_mnuLnkVFontSize[$cssi]; ?><?php echo $ubws_theme_Measure; ?>;
+}
+A.mnu_<?php echo $cssi; ?>:hover {
+  background-color: <?php echo $ubws_theme_mnuLnkHBgColor[$cssi]; ?>;
+  color: <?php echo $ubws_theme_mnuLnkHFontColor[$cssi]; ?>;
+  text-decoration: <?php echo $ubws_theme_mnuLnkHTextDecoration[$cssi]; ?>;
+  font-family: <?php echo $ubws_theme_mnuLnkHFontFamily[$cssi]; ?>;
+  font-weight: <?php echo $ubws_theme_mnuLnkHFontWeight[$cssi]; ?>;
+  font-size: <?php echo $ubws_theme_mnuLnkHFontSize[$cssi]; ?><?php echo $ubws_theme_Measure; ?>;
+}
+SPAN.mnu_lnk_<?php echo $cssi; ?> {
+  background-color: <?php echo $ubws_theme_mnuLnkLBgColor[$cssi]; ?>;
+  color: <?php echo $ubws_theme_mnuLnkLFontColor[$cssi]; ?>;
+  text-decoration: <?php echo $ubws_theme_mnuLnkLTextDecoration[$cssi]; ?>;
+  font-family: <?php echo $ubws_theme_mnuLnkLFontFamily[$cssi]; ?>;
+  font-weight: <?php echo $ubws_theme_mnuLnkLFontWeight[$cssi]; ?>;
+  font-size: <?php echo $ubws_theme_mnuLnkLFontSize[$cssi]; ?><?php echo $ubws_theme_Measure; ?>;
+}
+<?php
+}
+?>
+<?php echo $ubws_theme_cntType;?>.main_content {
+  width: <?php echo $ubws_theme_cntWidth; ?><?php echo $ubws_theme_cntMeasure; ?>;
+  height: <?php echo $ubws_theme_cntHeight; ?><?php echo $ubws_theme_cntMeasure; ?>;
+  float: <?php echo $ubws_theme_cntFloat;?>; 
+  clear: <?php echo $ubws_theme_cntClear;?>;
+  background-color: <?php echo $ubws_theme_cntBgColor; ?>;
+  color: <?php echo $ubws_theme_cntFontColor; ?>;
+  margin-top: <?php echo $ubws_theme_cntMarginTop; ?><?php echo $ubws_theme_cntMeasure; ?>;
+  margin-bottom: <?php echo $ubws_theme_cntMarginBottom; ?><?php echo $ubws_theme_cntMeasure; ?>;
+  margin-left: <?php echo $ubws_theme_cntMarginLeft; ?><?php echo $ubws_theme_cntMeasure; ?>;
+  margin-right: <?php echo $ubws_theme_cntMarginRight; ?><?php echo $ubws_theme_cntMeasure; ?>;
+  text-align: <?php echo $ubws_theme_cntTextAlign; ?>;
+  text-decoration: <?php echo $ubws_theme_cntTextDecoration; ?>;
+  font-family: <?php echo $ubws_theme_cntFontFamily; ?>;
+  font-weight: <?php echo $ubws_theme_cntFontWeight; ?>;
+  font-size: <?php echo $ubws_theme_cntFontSize; ?><?php echo $ubws_theme_cntMeasure; ?>;
+  border-color: <?php echo $ubws_theme_cntBorderColor; ?>;
+  border-style: <?php echo $ubws_theme_cntBorderStyle; ?>;
+  border-top-width: <?php echo $ubws_theme_cntBorderTop; ?><?php echo $ubws_theme_cntMeasure; ?>;
+  border-bottom-width: <?php echo $ubws_theme_cntBorderBottom; ?><?php echo $ubws_theme_cntMeasure; ?>;
+  border-left-width: <?php echo $ubws_theme_cntBorderLeft; ?><?php echo $ubws_theme_cntMeasure; ?>;
+  border-right-width: <?php echo $ubws_theme_cntBorderRight; ?><?php echo $ubws_theme_cntMeasure; ?>;
+  padding-top: <?php echo $ubws_theme_cntPaddingTop; ?><?php echo $ubws_theme_cntMeasure; ?>;
+  padding-bottom: <?php echo $ubws_theme_cntPaddingBottom; ?><?php echo $ubws_theme_cntMeasure; ?>;
+  padding-left: <?php echo $ubws_theme_cntPaddingLeft; ?><?php echo $ubws_theme_cntMeasure; ?>;
+  padding-right: <?php echo $ubws_theme_cntPaddingRight; ?><?php echo $ubws_theme_cntMeasure; ?>;
+}
+<?php
+for ($cssj=0; $cssj<count($ubws_theme_cntPicType); $cssj++) {
+?>
+<?php echo $ubws_theme_cntPicType[$cssj];?>.pic<?php echo $cssj; ?> {
+  width: <?php echo $ubws_theme_cntPicWidth[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+  height: <?php echo $ubws_theme_cntPicHeight[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+  float: <?php echo $ubws_theme_cntPicFloat[$cssj];?>; 
+  clear: <?php echo $ubws_theme_cntPicClear[$cssj];?>;
+  background-color: <?php echo $ubws_theme_cntPicBgColor[$cssj]; ?>;
+  color: <?php echo $ubws_theme_cntPicFontColor[$cssj]; ?>;
+  margin-top: <?php echo $ubws_theme_cntPicMarginTop[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+  margin-bottom: <?php echo $ubws_theme_cntPicMarginBottom[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+  margin-left: <?php echo $ubws_theme_cntPicMarginLeft[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+  margin-right: <?php echo $ubws_theme_cntPicMarginRight[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+  text-align: <?php echo $ubws_theme_cntPicTextAlign[$cssj]; ?>;
+  text-decoration: <?php echo $ubws_theme_cntPicTextDecoration[$cssj]; ?>;
+  font-family: <?php echo $ubws_theme_cntPicFontFamily[$cssj]; ?>;
+  font-weight: <?php echo $ubws_theme_cntPicFontWeight[$cssj]; ?>;
+  font-size: <?php echo $ubws_theme_cntPicFontSize[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+  border-color: <?php echo $ubws_theme_cntPicBorderColor[$cssj]; ?>;
+  border-style: <?php echo $ubws_theme_cntPicBorderStyle[$cssj]; ?>;
+  border-top-width: <?php echo $ubws_theme_cntPicBorderTop[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+  border-bottom-width: <?php echo $ubws_theme_cntPicBorderBottom[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+  border-left-width: <?php echo $ubws_theme_cntPicBorderLeft[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+  border-right-width: <?php echo $ubws_theme_cntPicBorderRight[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+  padding-top: <?php echo $ubws_theme_cntPicPaddingTop[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+  padding-bottom: <?php echo $ubws_theme_cntPicPaddingBottom[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+  padding-left: <?php echo $ubws_theme_cntPicPaddingLeft[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+  padding-right: <?php echo $ubws_theme_cntPicPaddingRight[$cssj]; ?><?php echo $ubws_theme_cntPicMeasure[$cssj]; ?>;
+}
+<?php
+}
+?>
+IMG {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+	  border-style: solid;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+}
+IMG.temp {
+    width: 780px;
+    height: 538px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-weight: normal;
+    font-family: arial;
+    font-size: 10px;
+    border-color: #000000;
+	  border-style: solid;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+}
+/* ********** ********** ********** //DEFAULT ********** ********** ********** */

@@ -3,7 +3,6 @@
 lang.info.php
 19:08 29.09.2007
 */
-
 if(!defined('_UBWS_PUBFIL')) {require_once '../../lib/404.php';}
 
 $ubws_lang_index      = 'ro';

@@ -1,15 +1,20 @@
 <?php
 /*
 logout.php
-19:20 29.09.2007
+16:47 06.10.2007
 */
 error_reporting(E_ALL);
 
-define('_UBWS_PUBFIL', TRUE);
+define("_UBWS_PUBFIL", TRUE);
 
 require_once './inc/config.inc.php';
-require_once _UBWS_INC_DIR . 'functions.inc.php';
+require_once './inc/ubwsc.inc.php';
+require_once _UBWS_INC_DIR . 'ubwsf.inc.php';
 
+// START SESSION
+session_cache_limiter ('public, must-revalidate');
+session_cache_expire(600); //minutes
+ini_set("session.gc_maxlifetime","36000"); //seconds
 session_start();
 if (isset($_SESSION[_UBWS_PRE.'usr_logged_in'])) {
     $_SESSION = array();
@@ -30,14 +35,13 @@ if (isset($_SESSION[_UBWS_PRE.'usr_logged_in'])) {
     /* // cookie removal code by  powerlord at spamless dot vgmusic dot com */
 
     session_destroy();
-    //$site_root = _UBWS_SITE_URL . 'index.php?page=iesire';
     $site_root = _UBWS_SITE_URL . 'index.php';
     header("Location: $site_root");
     exit;
 }
 else {
     session_destroy();
-    $site_root = SITE_ROOT . 'index.php';
+    $site_root = _UBWS_SITE_URL . 'index.php';
     header("Location: $site_root");
     exit;
 }   

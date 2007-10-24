@@ -1,0 +1,61 @@
+/*
+style1.css
+11:19 06.10.2007
+*/
+/* ********** ********** ********** DEFAULT ********** ********** ********** */
+BODY {
+  background-color: <?php echo $ubws_theme_BgColor; ?>;
+  color: <?php echo $ubws_theme_FontColor; ?>;
+  margin-top: <?php echo $ubws_theme_MarginTop; ?><?php echo $ubws_theme_Measure; ?>;
+  margin-bottom: <?php echo $ubws_theme_MarginBottom; ?><?php echo $ubws_theme_Measure; ?>;
+  margin-left: <?php echo $ubws_theme_MarginLeft; ?><?php echo $ubws_theme_Measure; ?>;
+  margin-right: <?php echo $ubws_theme_MarginRight; ?><?php echo $ubws_theme_Measure; ?>;
+  text-align: <?php echo $ubws_theme_TextAlign; ?>;
+  text-decoration: <?php echo $ubws_theme_TextDecoration; ?>;
+  font-family: <?php echo $ubws_theme_FontFamily; ?>;
+  font-weight: <?php echo $ubws_theme_FontWeight; ?>;
+  font-size: <?php echo $ubws_theme_FontSize; ?><?php echo $ubws_theme_Measure; ?>;
+  border-color: <?php echo $ubws_theme_BorderColor; ?>;
+  border-style: <?php echo $ubws_theme_BorderStyle; ?>;
+  border-top-width: <?php echo $ubws_theme_BorderTop; ?><?php echo $ubws_theme_Measure; ?>;
+  border-bottom-width: <?php echo $ubws_theme_BorderBottom; ?><?php echo $ubws_theme_Measure; ?>;
+  border-left-width: <?php echo $ubws_theme_BorderLeft; ?><?php echo $ubws_theme_Measure; ?>;
+  border-right-width: <?php echo $ubws_theme_BorderRight; ?><?php echo $ubws_theme_Measure; ?>;
+  padding-top: <?php echo $ubws_theme_PaddingTop; ?><?php echo $ubws_theme_Measure; ?>;
+  padding-bottom: <?php echo $ubws_theme_PaddingBottom; ?><?php echo $ubws_theme_Measure; ?>;
+  padding-left: <?php echo $ubws_theme_PaddingLeft; ?><?php echo $ubws_theme_Measure; ?>;
+  padding-right: <?php echo $ubws_theme_PaddingRight; ?><?php echo $ubws_theme_Measure; ?>;
+}
+A.default:link {
+  background-color: <?php echo $ubws_theme_LnkLBgColor; ?>;
+  color: <?php echo $ubws_theme_LnkLFontColor; ?>;
+  text-decoration: <?php echo $ubws_theme_LnkLTextDecoration; ?>;
+  font-family: <?php echo $ubws_theme_LnkLFontFamily; ?>;
+  font-weight: <?php echo $ubws_theme_LnkLFontWeight; ?>;
+  font-size: <?php echo $ubws_theme_LnkLFontSize; ?><?php echo $ubws_theme_Measure; ?>;
+}
+A.default:visited {
+  background-color: <?php echo $ubws_theme_LnkVBgColor; ?>;
+  color: <?php echo $ubws_theme_LnkVFontColor; ?>;
+  text-decoration: <?php echo $ubws_theme_LnkVTextDecoration; ?>;
+  font-family: <?php echo $ubws_theme_LnkVFontFamily; ?>;
+  font-weight: <?php echo $ubws_theme_LnkVFontWeight; ?>;
+  font-size: <?php echo $ubws_theme_LnkVFontSize; ?><?php echo $ubws_theme_Measure; ?>;
+}
+A.default:hover {
+  background-color: <?php echo $ubws_theme_LnkHBgColor; ?>;
+  color: <?php echo $ubws_theme_LnkHFontColor; ?>;
+  text-decoration: <?php echo $ubws_theme_LnkHTextDecoration; ?>;
+  font-family: <?php echo $ubws_theme_LnkHFontFamily; ?>;
+  font-weight: <?php echo $ubws_theme_LnkHFontWeight; ?>;
+  font-size: <?php echo $ubws_theme_LnkHFontSize; ?><?php echo $ubws_theme_Measure; ?>;
+}
+SPAN.link_default {
+  background-color: <?php echo $ubws_theme_LnkLBgColor; ?>;
+  color: <?php echo $ubws_theme_LnkLFontColor; ?>;
+  text-decoration: <?php echo $ubws_theme_LnkLTextDecoration; ?>;
+  font-family: <?php echo $ubws_theme_LnkLFontFamily; ?>;
+  font-weight: <?php echo $ubws_theme_LnkLFontWeight; ?>;
+  font-size: <?php echo $ubws_theme_LnkLFontSize; ?><?php echo $ubws_theme_Measure; ?>;
+}
+/* ********** ********** ********** //DEFAULT ********** ********** ********** */

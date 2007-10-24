@@ -1,19 +1,14 @@
 <?php
 /*
 login.inc.php
-14:11 29.09.2007
+10:59 06.10.2007
 */
 if(!defined('_UBWS_PUBFIL')) {require_once './../lib/404.php';}
 
 //if (isset($_POST[_UBWS_PRE.'usr_login']) && isset($_POST[_UBWS_PRE.'usr_pass'])) {
 //if (isset($_SESSION[_UBWS_PRE.'token']) && (isset($_POST[_UBWS_PRE.'token']) && ($_POST[_UBWS_PRE.'token'] === $_SESSION[_UBWS_PRE.'token'] && (isset($_POST[_UBWS_PRE.'usr_login']) && (isset($_POST[_UBWS_PRE.'usr_pass'])))))) {
 if (isset($_POST[_UBWS_PRE.'usr_login']) && isset($_POST[_UBWS_PRE.'usr_pass'])) {
-  if (isset($_SESSION[_UBWS_PRE.'token']) && isset($_POST[_UBWS_PRE.'token'])) {
-    if ($_POST[_UBWS_PRE.'token'] != $_SESSION[_UBWS_PRE.'token']) {
-      $ubws_login_status = 'token_error';
-    }
-  } // no token match
-  else if (ubws_filter_input($_POST[_UBWS_PRE.'usr_login']) != '' && ubws_filter_input($_POST[_UBWS_PRE.'usr_pass']) != '') {
+  if (ubws_filter_input($_POST[_UBWS_PRE.'usr_login']) != '' && ubws_filter_input($_POST[_UBWS_PRE.'usr_pass']) != '') {
   $ubws_usr_login = ubws_filter_input($_POST[_UBWS_PRE.'usr_login']);
   $ubws_usr_pass  = ubws_filter_input($_POST[_UBWS_PRE.'usr_pass']);
   
@@ -24,7 +19,7 @@ if (isset($_POST[_UBWS_PRE.'usr_login']) && isset($_POST[_UBWS_PRE.'usr_pass']))
     $row_rst_verif = mysql_fetch_assoc($rst_verif);
     
     if ($row_rst_verif['usr_status'] == '0') {
-      $ubws_login_status = 'LOGIN_STATUS_4';
+      $ubws_login_status = 4;
     } // suspended account
     
     else {
@@ -42,19 +37,8 @@ if (isset($_POST[_UBWS_PRE.'usr_login']) && isset($_POST[_UBWS_PRE.'usr_pass']))
       $_SESSION[_UBWS_PRE.'usr_name']  = $row_rst_verif['usr_first_name'] . '&#160;' . $row_rst_verif['usr_last_name'];
       // language
       $_SESSION[_UBWS_PRE.'usr_lang_index'] = $row_rst_verif['usr_lang_index'];
-      require_once _UBWS_LANG_DIR . $_SESSION[_UBWS_PRE.'usr_lang_index'] . '/lang.info.php';
-      $_SESSION[_UBWS_PRE.'usr_lang_index']      = $ubws_lang_index;
-      $_SESSION[_UBWS_PRE.'usr_lang_name']       = $ubws_lang_name;
-      $_SESSION[_UBWS_PRE.'usr_lang_local_name'] = $ubws_lang_local_name;
-      $_SESSION[_UBWS_PRE.'usr_lang_translator'] = $ubws_lang_translator;
-      $_SESSION[_UBWS_PRE.'usr_lang_charset']    = $ubws_lang_charset;
       // theme
       $_SESSION[_UBWS_PRE.'usr_theme_dir'] = $row_rst_verif['usr_theme'];
-      require_once _UBWS_THEME_DIR . $_SESSION[_UBWS_PRE.'usr_theme_dir'] . '/theme.info.php';
-      $_SESSION[_UBWS_PRE.'usr_theme_name']    = $ubws_theme_name;
-      $_SESSION[_UBWS_PRE.'usr_theme_version'] = $ubws_theme_version;
-      $_SESSION[_UBWS_PRE.'usr_theme_author']  = $ubws_theme_author;
-      $_SESSION[_UBWS_PRE.'usr_theme_notes']   = $ubws_theme_notes;
       // get data about previous logins
       $query_last_login_id = "SELECT MAX(login_id) FROM `"._UBWS_PRE."var_logins` WHERE `usr_id` = '".$_SESSION[_UBWS_PRE.'usr_id']."' LIMIT 1";
       $rst_last_login_id   = mysql_query($query_last_login_id) or require _UBWS_LIB_DIR . 'myerr.php';
@@ -90,18 +74,18 @@ if (isset($_POST[_UBWS_PRE.'usr_login']) && isset($_POST[_UBWS_PRE.'usr_pass']))
       mysql_query($query_unlock) or require _UBWS_LIB_DIR . 'myerr.php';
       
       //set login status
-      $ubws_login_status = 'LOGIN_STATUS_5';
+      $ubws_login_status = 5;
     } // legitimate user
   } // if match
   else { 
-    $ubws_login_status = 'LOGIN_STATUS_3'; 
+    $ubws_login_status = 3; 
   } // if no match
   } // if usr & pass not empty
   else {
-    $ubws_login_status = 'LOGIN_STATUS_2';
+    $ubws_login_status = 2;
   } // usr & pass empty
 } // if post login
 else {
-  $ubws_login_status = 'LOGIN_STATUS_1';
+  $ubws_login_status = 1;
 } //if login NOT submitted
 ?>
