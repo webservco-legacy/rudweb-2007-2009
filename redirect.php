@@ -1,7 +1,7 @@
 <?php
 /*
 redirect.php
-16:07 21.10.2007
+10:31 28.10.2007
 */
 
 error_reporting(E_ALL);
@@ -25,9 +25,9 @@ if (isset($_GET['url']) && isset($_SERVER['HTTP_REFERER'])) {
   $ubws_stats_page = $parsed_url;
   $stats_redirect_referer = strpos($_SERVER['HTTP_REFERER'], _UBWS_SITE_URL);
   if ($stats_redirect_referer !== false) {
-    require_once _UBWS_INC_DIR . 'dbopen.inc.php';
-    require_once _UBWS_INC_DIR . 'stats.inc.php';
-    require_once _UBWS_INC_DIR . 'dbclose.inc.php';
+    dbopen();
+    webStats($ubws_cfg['site']['ignorip']);
+    dbclose(dbopen());
     header("Location: $parsed_url");
     exit;
   }

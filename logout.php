@@ -1,7 +1,7 @@
 <?php
 /*
 logout.php
-16:47 06.10.2007
+16:59 27.10.2007
 */
 error_reporting(E_ALL);
 
@@ -16,7 +16,7 @@ session_cache_limiter ('public, must-revalidate');
 session_cache_expire(600); //minutes
 ini_set("session.gc_maxlifetime","36000"); //seconds
 session_start();
-if (isset($_SESSION[_UBWS_PRE.'usr_logged_in'])) {
+//if (isset($_SESSION[_UBWS_PRE.'usr_logged_in'])) {
     $_SESSION = array();
     /* // cookie removal code by  powerlord at spamless dot vgmusic dot com */
     //powerlord at spamless dot vgmusic dot com (19-Nov-2002 07:41)
@@ -38,11 +38,11 @@ if (isset($_SESSION[_UBWS_PRE.'usr_logged_in'])) {
     $site_root = _UBWS_SITE_URL . 'index.php';
     header("Location: $site_root");
     exit;
-}
-else {
-    session_destroy();
-    $site_root = _UBWS_SITE_URL . 'index.php';
-    header("Location: $site_root");
-    exit;
-}   
+//}
+//else {
+    //session_destroy();
+    //$site_root = _UBWS_SITE_URL . 'index.php';
+    //header("Location: $site_root");
+    //exit;
+//}   
 ?>

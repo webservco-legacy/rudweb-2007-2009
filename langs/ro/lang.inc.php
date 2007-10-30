@@ -1,7 +1,7 @@
 <?php
 /*
 lang.inc.php
-14:38 29.09.2007
+13:04 28.10.2007
 */
 if(!defined('_UBWS_PUBFIL')) {require_once '../../lib/404.php';}
 
@@ -25,4 +25,12 @@ $ubws_lnLangMod = "limb&#259;";
 $ubws_lnUserMod = "utilizator";
 $ubws_lnDisMod1 = "Modulul de ";
 $ubws_lnDisMod2 = " este dezactivat!";
+
+// COPYRIGHT
+$ubws_lnCpy1 = "Copyright";
+$ubws_lnCpy2 = "Toate drepturile rezervate";
+$ubws_lnCpy3 = "Web presence by";
+
+// FEATURED CONTENT
+$ubws_lnFtDesc = "detalii ...";
 ?>

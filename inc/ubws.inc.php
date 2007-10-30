@@ -1,7 +1,7 @@
 <?php
 /*
 ubws.inc.php
-16:47 21.10.2007
+19:40 30.10.2007
 */
 if(!defined('_UBWS_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -21,14 +21,14 @@ if ($_SERVER['REQUEST_URI'][strlen($_SERVER['REQUEST_URI'])-1] === "/") {
 // INCLUDE RUNTIME REQUIRED PHP FUNCTIONS
 require_once _UBWS_INC_DIR . 'ubwsf.inc.php';
 
-// CALL NEEDED PHP FUNCTIONS
-seo_urls();
-
 // START PARSE TIME COUNT
 startTimer();
 
+// SEARCH ENGINE OPTIMIZATION FUNCTION
+seo_urls();
+
 // OPEN DATABASE CONNECTION
-require_once _UBWS_INC_DIR . 'dbopen.inc.php';
+dbopen();
 
 // START SESSION
 session_cache_limiter ('public, must-revalidate');
@@ -38,11 +38,11 @@ session_start();
 //setcookie("PHPSESSID",$_COOKIE['PHPSESSID'],time()+1800);
 
 //if no user is logged in
-if (!isset($_SESSION[_UBWS_PRE.'usr_logged_in'])) {
+//if (!isset($_SESSION[_UBWS_PRE.'usr_logged_in'])) {
+if (!isset($_SESSION[_UBWS_PRE.'token'])) {
   session_regenerate_id();
   
-  $ubws_token = md5(uniqid(rand(), TRUE));
-  $_SESSION[_UBWS_PRE.'token'] = $ubws_token;
+  $_SESSION[_UBWS_PRE.'token'] = md5(uniqid(rand(), TRUE));
   $_SESSION[_UBWS_PRE.'visit_date'] = date("Y-m-d");
   $_SESSION[_UBWS_PRE.'visit_time'] = date("H:i:s");
   //default user data
@@ -58,8 +58,10 @@ if (!isset($_SESSION[_UBWS_PRE.'usr_logged_in'])) {
   if (!isset($_SESSION[_UBWS_PRE.'usr_theme_dir'])) {
     $_SESSION[_UBWS_PRE.'usr_theme_dir'] = _UBWS_THEME_DEF;
   }
-  //load default language
-  
+  // load login module if user authentification is enabled
+  //if($ubws_cfg['site']['usermod'] === 1) {require_once _UBWS_INC_DIR . 'login.inc.php';}
+} // if first load of the page
+if (!isset($_SESSION[_UBWS_PRE.'usr_logged_in'])) {
   // load login module if user authentification is enabled
   if($ubws_cfg['site']['usermod'] === 1) {require_once _UBWS_INC_DIR . 'login.inc.php';}
 } // if not logged in
@@ -112,8 +114,8 @@ if (isset($_GET['content'])) {
     $ubws_req_page           = $ubws_this_content;
     $row_rst_cnt_cnt         = mysql_fetch_assoc($rst_cnt_cnt);
     $ubws_page_title         = _UBWS_WSTT . " - " . $row_rst_cnt_cnt['cnt_tt'];
-    $ubws_page_description   = $row_rst_cnt_cnt['cnt_dsc'];
-    $ubws_page_keywords      = $row_rst_cnt_cnt['cnt_kw'];
+    if (trim($row_rst_cnt_cnt['cnt_dsc']) === "") {$ubws_page_description   = _UBWS_WSDS;} else {$ubws_page_description   = $row_rst_cnt_cnt['cnt_dsc'];}
+    if (trim($row_rst_cnt_cnt['cnt_kw']) === "") {$ubws_page_keywords      = _UBWS_WSKW;} else {$ubws_page_keywords      = $row_rst_cnt_cnt['cnt_kw'];}
   }
 }
 else if (isset($_GET['page'])) {
@@ -134,5 +136,5 @@ else if (isset($_GET['page'])) {
 }
 
 // STATS
-require_once _UBWS_INC_DIR . 'stats.inc.php';
+webStats($ubws_cfg['site']['ignorip']);
 ?>

@@ -1,0 +1,5 @@
+[**] content pictures
+--- make language specific for when clicked display picture + title + description [ln]
+
+[**] theme.inc
+--- meniu - like content and pictures . notice the clear and float attributes!

@@ -1,15 +1,11 @@
 <?php
 /*
 ubwsc.inc.php
-18:52 2007-10-23
+11:35 25.10.2007
 */
 if(!defined('_UBWS_PUBFIL')) {require_once './../lib/404.php';}
 
-// HTML HEADER META
-define("_UBWS_SITE_COPY", "&#169; 2007 The Underground Beat");
-define("_UBWS_SITE_PUBL", "Radu Maier");
-define("_UBWS_SITE_AUTH", "Radu Maier");
-define("_UBWS_SITE_DESIG", "Radu Maier");
+define("_UBWS_SITE_AUTH", "Radu Maier"); // ub
 // INCLUDES
 define("_UBWS_INC_DIR",_UBWS_SITE_DIR ."inc/");
 // VAR

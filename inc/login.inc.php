@@ -1,13 +1,12 @@
 <?php
 /*
 login.inc.php
-10:59 06.10.2007
+19:36 30.10.2007
 */
 if(!defined('_UBWS_PUBFIL')) {require_once './../lib/404.php';}
 
+if (isset($_SESSION[_UBWS_PRE.'token']) && (isset($_POST[_UBWS_PRE.'token']) && ($_POST[_UBWS_PRE.'token'] === $_SESSION[_UBWS_PRE.'token'] && (isset($_POST[_UBWS_PRE.'usr_login']) && (isset($_POST[_UBWS_PRE.'usr_pass'])))))) {
 //if (isset($_POST[_UBWS_PRE.'usr_login']) && isset($_POST[_UBWS_PRE.'usr_pass'])) {
-//if (isset($_SESSION[_UBWS_PRE.'token']) && (isset($_POST[_UBWS_PRE.'token']) && ($_POST[_UBWS_PRE.'token'] === $_SESSION[_UBWS_PRE.'token'] && (isset($_POST[_UBWS_PRE.'usr_login']) && (isset($_POST[_UBWS_PRE.'usr_pass'])))))) {
-if (isset($_POST[_UBWS_PRE.'usr_login']) && isset($_POST[_UBWS_PRE.'usr_pass'])) {
   if (ubws_filter_input($_POST[_UBWS_PRE.'usr_login']) != '' && ubws_filter_input($_POST[_UBWS_PRE.'usr_pass']) != '') {
   $ubws_usr_login = ubws_filter_input($_POST[_UBWS_PRE.'usr_login']);
   $ubws_usr_pass  = ubws_filter_input($_POST[_UBWS_PRE.'usr_pass']);
@@ -24,10 +23,10 @@ if (isset($_POST[_UBWS_PRE.'usr_login']) && isset($_POST[_UBWS_PRE.'usr_pass']))
     
     else {
       // log in user
+      session_regenerate_id();
       $_SESSION[_UBWS_PRE.'usr_logged_in']  = true;
       // user data
-      $ubws_token = md5(uniqid(rand(), TRUE));
-      $_SESSION[_UBWS_PRE.'token'] = $ubws_token;
+      $_SESSION[_UBWS_PRE.'token'] = md5(uniqid(rand(), TRUE));
       $_SESSION[_UBWS_PRE.'visit_date'] = date("Y-m-d");
       $_SESSION[_UBWS_PRE.'visit_time'] = date("H:i:s");
       
