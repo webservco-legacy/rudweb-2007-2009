@@ -1,0 +1,25 @@
+<?php
+/*
+./setup/cfg/cfg_user.inc.php
+11:18 2008-02-18
+
+user configration
+modify only this file
+*/
+
+// source
+$source_url  = "http://dasoft.homelinux.net/ubws/";
+$source_root = "/var/www/web5/web/ubws/";
+// target
+//$target_url  = "http://dasoft.homelinux.net";
+$target_root = "";
+
+//your projects
+// put at least one here, starting from 1 not 0!
+$target_name[1] = "root";
+$target_url[1]  = "http://dasoft.homelinux.net";
+$target_vars[1] = "/var/www/web5/web/";
+$target_name[2] = "afm";
+$target_url[2]  = "http://afm.dasoft.homelinux.net";
+$target_vars[2] = "/var/www/web6/web/";
+?>

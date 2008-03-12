@@ -1,0 +1,21 @@
+<?php
+/*
+./setup/act/removed.inc.php
+14:38 2008-01-23
+*/
+echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
+echo "\n<TR><TD CLASS=\"total\" WIDTH=\"200\"><BR><B>Remove Data:</B><BR></TD>";
+echo "</TR></TABLE>";
+
+switch($step) {
+  case "1" : {
+    require './act/removed01.inc.php';
+    break;
+  }
+  case "2" : {
+    require './act/removed02.inc.php';
+    break;
+  }
+  default : {break;}
+}
+?>

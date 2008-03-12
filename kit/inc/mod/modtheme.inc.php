@@ -1,0 +1,68 @@
+<?php
+/*
+./inc/modtheme.inc.php
+13:24 2008-03-12
+*/
+if(!defined('_UBWS_PUBFIL')) {require_once './../lib/404.php';}
+
+if (isset($_GET['tm']) && (!isset($_POST[_UBWS_PRE.'usr_login']) && _UBWS_CFG_THEME_ON === "1")) {
+  $ubws_new_theme = $_SESSION[_UBWS_PRE.'usr_theme_dir'];
+  $raw_new_theme = ubws_filter_input($_GET['tm']);
+  if(is_file(_UBWS_THEME_DIR . $raw_new_theme . "/" . "theme.info.php")) {
+    $ubws_new_theme = ubws_filter_input($_GET['tm']);
+  }
+  //current session
+  unset($_SESSION[_UBWS_PRE.'usr_theme_dir']);
+  $_SESSION[_UBWS_PRE.'usr_theme_dir'] = $ubws_new_theme;
+  //update db
+  if(isset($_GET['settm'])) {
+    switch($_GET['settm']) {
+      case "1" : {
+        // current user
+        if(_UBWS_CFG_USR_ON === "1") {
+          if (isset($_SESSION[_UBWS_PRE.'usr_id']) && $_SESSION[_UBWS_PRE.'usr_id'] != "0") {
+            $query_tm = "UPDATE `"._UBWS_PRE."set_usr` SET `usr_theme` = '" . $ubws_new_theme . "' WHERE `usr_id` = '" . $_SESSION[_UBWS_PRE.'usr_id'] . "' LIMIT 1";
+            mysql_query($query_tm) or require _UBWS_LIB_DIR . 'myerr.php';
+          }
+        }
+        break;
+      }
+      case "2" : {
+        // all users
+        if (isset($_SESSION[_UBWS_PRE.'usr_level']) && $_SESSION[_UBWS_PRE.'usr_level'] >= "4") {
+          $query_tm = "UPDATE `"._UBWS_PRE."set_usr` SET `usr_theme` = '" . $ubws_new_theme . "'";
+          mysql_query($query_tm) or require _UBWS_LIB_DIR . 'myerr.php';
+        }
+        break;
+      }
+      case "3" : {
+        // default theme
+        if (isset($_SESSION[_UBWS_PRE.'usr_level']) && $_SESSION[_UBWS_PRE.'usr_level'] >= "4") {
+          $query_tm = "UPDATE `"._UBWS_PRE."set_cfg` SET `set_val` = '" . $ubws_new_theme . "' WHERE `set_set` = 'THEME'";
+          mysql_query($query_tm) or require _UBWS_LIB_DIR . 'myerr.php';
+        }
+        break;
+      }
+      case "4" : {
+        // default theme and all users
+        if (isset($_SESSION[_UBWS_PRE.'usr_level']) && $_SESSION[_UBWS_PRE.'usr_level'] >= "4") {
+          $query_tm = "UPDATE `"._UBWS_PRE."set_usr` SET `usr_theme` = '" . $ubws_new_theme . "'";
+          mysql_query($query_tm) or require _UBWS_LIB_DIR . 'myerr.php';
+          
+          $query_tm2 = "UPDATE `"._UBWS_PRE."set_cfg` SET `set_val` = '" . $ubws_new_theme . "' WHERE `set_set` = 'THEME'";
+          mysql_query($query_tm2) or require _UBWS_LIB_DIR . 'myerr.php';
+        }
+        break;
+      }
+      default  : {break;}
+    }
+  }
+  
+  $theme_request_uri = eregi_replace("/tm/".$_GET['tm'], "", $_SERVER['REQUEST_URI']);
+  if(isset($_GET['settm'])) {
+    $theme_request_uri = eregi_replace("/settm/".$_GET['settm'], "", $_SERVER['REQUEST_URI']);
+  }
+  $theme_redirect = "http://".$_SERVER['HTTP_HOST'] . $theme_request_uri;
+  header("Location: $theme_redirect");
+} //CHANGE THEME IS SET
+?>

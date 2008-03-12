@@ -1,0 +1,37 @@
+SITE MODULES
+--multiple languages
+--multiple users
+--multiple themes
+
+|-shopping cart [X]
+|-visitor statistics
+|-featured content
+|-page load timer
+|-debug module
+|-copyright
+|-sitemap [X]
+|-youarehere [X]
+|-news [X]
+|-search [X]
+
+PAGE MODULES
+-content pictures 0
+-content pictures 1
+-content pictures 2
+-content pictures 3
+-content pictures 4
+
+-content posted by [X]
+-content tags [X]
+-content comments [X]
+-content links [X]
+-content downloads [X]
+
+-blog posted by [X]
+-blog tags [X]
+-blog comments [X]
+-blog links [X][OBSOLETE]
+-blog downloads [X][OBSOLETE]
+
+
+
