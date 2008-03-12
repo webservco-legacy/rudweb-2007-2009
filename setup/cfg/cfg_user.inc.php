@@ -1,17 +1,16 @@
 <?php
 /*
 ./setup/cfg/cfg_user.inc.php
-07:23 2008-03-12
+17:18 2008-03-12
 
 user configration
 modify only this file
 */
 
 // source
-$source_url  = "http://dasoft.homelinux.net/work/ub/ubws/";
-$source_root = "d:/home/devel/server/htdocs/work/ub/ubws/";
+$source_url  = "http://dasoft.homelinux.net/work/rs/rsweb/";
+$source_root = "d:/home/devel/server/htdocs/work/rs/rsweb/";
 // target
-//$target_url  = "http://dasoft.homelinux.net";
 $target_root = "";
 
 //your projects
@@ -20,8 +19,8 @@ $target_name[1] = "root";
 $target_url[1]  = "http://localhost";
 $target_vars[1] = "d:/home/devel/server/htdocs/";
 $target_name[2] = "test";
-$target_url[2]  = "http://localhost/work/ub/test";
-$target_vars[2] = "d:/home/devel/server/htdocs/work/ub/test/";
+$target_url[2]  = "http://localhost/work/rs/test";
+$target_vars[2] = "d:/home/devel/server/htdocs/work/rs/test/";
 $target_name[3] = "Dezy Design";
 $target_url[3]  = "http://localhost/work/ds/dezy";
 $target_vars[3] = "d:/home/devel/server/htdocs/work/ds/dezy/";

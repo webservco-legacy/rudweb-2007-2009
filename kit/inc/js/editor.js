@@ -1,9 +1,9 @@
 /*
 ./inc/js/editor.js
-16:48 2008-03-11
+18:01 2008-03-12
 */
 
-FCKConfig.ToolbarSets["Default"] = [
+FCKConfig.ToolbarSets["rsweb"] = [
 	['Source','DocProps','-','Save','NewPage','Preview','-','Templates'],
 	['Cut','Copy','Paste','PasteText','PasteWord','-','Print','SpellCheck'],
 	['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
@@ -23,7 +23,7 @@ FCKConfig.ToolbarSets["Default"] = [
 FCKConfig.EnterMode = 'br' ;			// p | div | br
 FCKConfig.ShiftEnterMode = 'p' ;	// p | div | br
 
-FCKConfig.SkinPath = FCKConfig.BasePath + 'skins/ubws/' ;
+FCKConfig.SkinPath = FCKConfig.BasePath + 'skins/rsweb/' ;
 if (navigator.appVersion.indexOf("MSIE")!=-1) {
   FCKConfig.SkinEditorCSS = FCKConfig.SkinPath + 'fckeditorie.css' ;	// FCKConfig.SkinPath + "|<minified css>" ;
 }

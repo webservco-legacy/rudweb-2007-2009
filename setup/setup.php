@@ -1,15 +1,15 @@
 <?php
 /*
 ./setup/setup.php
-13:20 2008-02-26
+15:50 2008-03-12
 */
 error_reporting(E_ALL);
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-// load  ubws configuration
-if(is_file("./cfg/cfg_ubws.inc.php")) {require_once "./cfg/cfg_ubws.inc.php";}
-else {die("could not load ubws config!");}
+// load  rsweb configuration
+if(is_file("./cfg/cfg_rsweb.inc.php")) {require_once "./cfg/cfg_rsweb.inc.php";}
+else {die("could not load rsweb config!");}
 
 // load user configuration
 if(is_file("./cfg/cfg_user.inc.php")) {require_once "./cfg/cfg_user.inc.php";}
@@ -32,10 +32,10 @@ else {die("could not initialize session!");}
 // HEADER
 require_once './htm/hdr.inc.php';
 
-require_once './inc/ubws.inc.php';
+require_once './inc/rsweb.inc.php';
 require_once './inc/ds.inc.php';
 
-if(!isset($_SESSION['ubwset_pid']) && ($act == null && $set == null)) {
+if(!isset($_SESSION['rswebset_pid']) && ($act == null && $set == null)) {
   require_once './inc/projects.inc.php';
 }
 else {

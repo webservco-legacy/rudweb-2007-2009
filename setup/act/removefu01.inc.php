@@ -21,10 +21,10 @@ else {
   echo "<TD CLASS=\"rst_err\">error</TD></TR>";
 }
 
-echo "\n<TR CLASS=\"cnt\"><TD CLASS=\"act\">deleting ubwscfg</TD><TD CLASS=\"nam\">&#160;</TD>";
+echo "\n<TR CLASS=\"cnt\"><TD CLASS=\"act\">deleting rswebcfg</TD><TD CLASS=\"nam\">&#160;</TD>";
 echo "<TD CLASS=\"msg\">";
-$delete_ubwscfg = @unlink($target.'inc/ubwscfg.inc.php');
-if($delete_ubwscfg) {
+$delete_rswebcfg = @unlink($target.'inc/rswebcfg.inc.php');
+if($delete_rswebcfg) {
   echo "ok</TD>";
   echo "<TD CLASS=\"rst_ok\">done</TD></TR>";
 }

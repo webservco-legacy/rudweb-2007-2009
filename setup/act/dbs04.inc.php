@@ -10,7 +10,7 @@ echo "</TR></TABLE>";
 
 $dbs_err = '0';
 
-if($_SESSION['ubwset_cfg_dbs_02'] == 'off') {
+if($_SESSION['rswebset_cfg_dbs_02'] == 'off') {
   echo "\n\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
   echo "\n<TR><TD CLASS=\"hdr\" WIDTH=\"200\"><B>Option not selected</B></TD><TD CLASS=\"hdr\" COLSPAN=\"3\">&#160;</TD></TR>";
   echo "\n</TABLE>";

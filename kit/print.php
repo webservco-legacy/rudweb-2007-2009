@@ -1,15 +1,15 @@
 <?php
 /*
 print.php
-19:19 2007-11-18
+16:09 2008-03-12
 */
-define("_UBWS_PUBFIL", TRUE);
+define("_RSWEB_PUBFIL", TRUE);
 require_once './inc/config.inc.php';
-require_once './inc/ubwsc.inc.php';
-require_once _UBWS_INC_DIR . 'ubws.inc.php';
-require_once _UBWS_INC_DIR . 'phphdp.inc.php'; //
+require_once './inc/rswebc.inc.php';
+require_once _RSWEB_INC_DIR . 'rsweb.inc.php';
+require_once _RSWEB_INC_DIR . 'phphdp.inc.php'; //
 ?>
 <!--PRINT.PHP-->
 <?php
-require_once _UBWS_INC_DIR . 'phpftp.inc.php'; //
+require_once _RSWEB_INC_DIR . 'phpftp.inc.php'; //
 ?>

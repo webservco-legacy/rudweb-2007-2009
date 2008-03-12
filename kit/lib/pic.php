@@ -1,7 +1,7 @@
 <?php
 /*
-pic.php
-13:28 12.11.2007
+./lib/pic.php
+16:22 2008-03-12
 */
 /*
 WORK ON THIS + UBTHUMB
@@ -10,11 +10,11 @@ SECURITY + FUNCTIONALITY!
 */
 error_reporting(E_ALL);
 
-define("_UBWS_PUBFIL", TRUE);
-//if(!defined('_UBWS_PUBFIL')) {require_once './../lib/404.php';}
+define("_RSWEB_PUBFIL", TRUE);
+//if(!defined('_RSWEB_PUBFIL')) {require_once './../lib/404.php';}
 require_once '../inc/config.inc.php';
-require_once '../inc/ubwsc.inc.php';
-require_once _UBWS_INC_DIR . 'ubwsf.inc.php';
+require_once '../inc/rswebc.inc.php';
+require_once _RSWEB_INC_DIR . 'rswebf.inc.php';
 
 // START SESSION
 session_cache_limiter ('public, must-revalidate');
@@ -22,7 +22,7 @@ session_cache_expire(600); //minutes
 ini_set("session.gc_maxlifetime","36000"); //seconds
 session_start();
 
-if (isset($_GET['imgfile']) && isset($_SESSION[_UBWS_PRE.'usr_level'])) {
+if (isset($_GET['imgfile']) && isset($_SESSION[_RSWEB_PRE.'usr_level'])) {
   require_once './ubthumb.php';
 }
 else {

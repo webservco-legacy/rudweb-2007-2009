@@ -1,17 +1,17 @@
 <?php
 /*
 index.php
-11:32 29.11.2007
+16:09 2008-03-12
 */
-define("_UBWS_PUBFIL", TRUE);
+define("_RSWEB_PUBFIL", TRUE);
 require_once './inc/config.inc.php';
-require_once './inc/ubwsc.inc.php';
-require_once _UBWS_INC_DIR . 'ubws1.inc.php';
-require_once _UBWS_INC_DIR . 'ubws2.inc.php';
-require_once _UBWS_INC_DIR . 'ubws3.inc.php';
-require_once _UBWS_INC_DIR . 'phphd.inc.php';
+require_once './inc/rswebc.inc.php';
+require_once _RSWEB_INC_DIR . 'rsweb1.inc.php';
+require_once _RSWEB_INC_DIR . 'rsweb2.inc.php';
+require_once _RSWEB_INC_DIR . 'rsweb3.inc.php';
+require_once _RSWEB_INC_DIR . 'phphd.inc.php';
 ?>
 <!--INDEX.PHP-->
 <?php
-require_once _UBWS_INC_DIR . 'phpft.inc.php';
+require_once _RSWEB_INC_DIR . 'phpft.inc.php';
 ?>

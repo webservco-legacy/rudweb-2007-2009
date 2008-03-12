@@ -24,12 +24,12 @@ $files[$dirs[0]][1][] = "phpftp.inc.php";
 $files[$dirs[0]][1][] = "phphd.inc.php";
 $files[$dirs[0]][1][] = "phphdi.inc.php";
 $files[$dirs[0]][1][] = "phphdp.inc.php";
-$files[$dirs[0]][1][] = "ubws1.inc.php";
-$files[$dirs[0]][1][] = "ubws2.inc.php";
-$files[$dirs[0]][1][] = "ubws3.inc.php";
-$files[$dirs[0]][1][] = "ubwsc.inc.php";
-$files[$dirs[0]][1][] = "ubwsf.inc.php";
-$files[$dirs[0]][1][] = "ubwsm.inc.php";
+$files[$dirs[0]][1][] = "rsweb1.inc.php";
+$files[$dirs[0]][1][] = "rsweb2.inc.php";
+$files[$dirs[0]][1][] = "rsweb3.inc.php";
+$files[$dirs[0]][1][] = "rswebc.inc.php";
+$files[$dirs[0]][1][] = "rswebf.inc.php";
+$files[$dirs[0]][1][] = "rswebm.inc.php";
 
 $dirs[1] = "inc/js/";
 $files[$dirs[1]][0] = array();
@@ -66,7 +66,7 @@ $files[$dirs[2]][1][] = "modtimer.inc.php";
 $files[$dirs[2]][1][] = "moduser.inc.php";
 $files[$dirs[2]][1][] = "modyah.inc.php";
 
-$dirs[3] = "inc/ubws/";
+$dirs[3] = "inc/rsweb/";
 $files[$dirs[3]][0] = array();
 $files[$dirs[3]][1] = array();
 $files[$dirs[3]][1][] = "admin.inc.php";

@@ -9,7 +9,7 @@ echo "</TR></TABLE>";
 
 $dbs_err = '0';
 
-if($_SESSION['ubwset_cfg_dbs_01'] == 'off') {
+if($_SESSION['rswebset_cfg_dbs_01'] == 'off') {
   echo "\n\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
   echo "\n<TR><TD CLASS=\"hdr\" WIDTH=\"200\"><B>option not selected</B></TD><TD CLASS=\"hdr\" COLSPAN=\"3\">&#160;</TD></TR>";
   echo "\n</TABLE>";
@@ -18,8 +18,8 @@ else {
 $now_date_dbd = date("Y-m-d");
 $now_time_dbd = date("H:i:s");
 $sql_s = generate_dbd_str($eol);
-$sql_s = eregi_replace("ubws_", $_SESSION['ubwset_set_pre']."_", $sql_s);
-if($_SESSION['ubwset_set_dbmy'] <= '40') {$myisam_str = 'TYPE=MyISAM';}
+$sql_s = eregi_replace("rsweb_", $_SESSION['rswebset_set_pre']."_", $sql_s);
+if($_SESSION['rswebset_set_dbmy'] <= '40') {$myisam_str = 'TYPE=MyISAM';}
 else {$myisam_str = 'ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci';}
 $sql_s = eregi_replace('VAL_CRD', $now_date_dbd, $sql_s);
 $sql_s = eregi_replace('VAL_CRT', $now_time_dbd, $sql_s);
@@ -28,13 +28,13 @@ $sql_t = count($sql_s);
 
 echo "\n\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
 echo "\n<TR><TD CLASS=\"hdr\" WIDTH=\"200\"><B>$sql_t queries</B></TD><TD CLASS=\"hdr\" COLSPAN=\"3\">&#160;</TD></TR>";
-ubws_dbopen($_SESSION['ubwset_set_dbtype'], $_SESSION['ubwset_set_dbhost'], $_SESSION['ubwset_set_dbport'], $_SESSION['ubwset_set_dbuser'], $_SESSION['ubwset_set_dbpass'], $_SESSION['ubwset_set_dbname']);
+rsweb_dbopen($_SESSION['rswebset_set_dbtype'], $_SESSION['rswebset_set_dbhost'], $_SESSION['rswebset_set_dbport'], $_SESSION['rswebset_set_dbuser'], $_SESSION['rswebset_set_dbpass'], $_SESSION['rswebset_set_dbname']);
 for($di = 0; $di < $sql_t; $di++) {
   $dii = $di+1;
   echo "\n<TR CLASS=\"cnt\"><TD CLASS=\"act\">executing query</TD><TD CLASS=\"nam\">$dii</TD>";
   $query[$di]        = $sql_s[$di];
   echo "<TD CLASS=\"msg\">";
-  $result[$di]       = ubws_qres($_SESSION['ubwset_set_dbtype'], $query[$di]);
+  $result[$di]       = rsweb_qres($_SESSION['rswebset_set_dbtype'], $query[$di]);
   if($result[$di] === TRUE) {
     echo "ok</TD>";
     echo "<TD CLASS=\"rst_ok\">done</TD></TR>";
@@ -46,7 +46,7 @@ for($di = 0; $di < $sql_t; $di++) {
   }
   
 }
-ubws_dbclose($_SESSION['ubwset_set_dbtype'], ubws_dbopen($_SESSION['ubwset_set_dbtype'], $_SESSION['ubwset_set_dbhost'], $_SESSION['ubwset_set_dbport'], $_SESSION['ubwset_set_dbuser'], $_SESSION['ubwset_set_dbpass'], $_SESSION['ubwset_set_dbname']));
+rsweb_dbclose($_SESSION['rswebset_set_dbtype'], rsweb_dbopen($_SESSION['rswebset_set_dbtype'], $_SESSION['rswebset_set_dbhost'], $_SESSION['rswebset_set_dbport'], $_SESSION['rswebset_set_dbuser'], $_SESSION['rswebset_set_dbpass'], $_SESSION['rswebset_set_dbname']));
 echo "\n</TABLE>";
 ?>
 <?php

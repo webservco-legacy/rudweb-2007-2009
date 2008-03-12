@@ -1,10 +1,10 @@
 <?php
 /*
 ./setup/act/thms01.inc.php
-11:49 2008-01-17
+17:15 2008-03-12
 */
 ?>
-<FORM NAME="lngform" METHOD="POST" STYLE="display: inline; margin: 0px; padding: 0px;" ACTION="./setup.php?pid=<?php echo $pid;?>&amp;set=<?php echo $set;?>&amp;act=thms&amp;step=2">
+<FORM NAME="thmform" METHOD="POST" STYLE="display: inline; margin: 0px; padding: 0px;" ACTION="./setup.php?pid=<?php echo $pid;?>&amp;set=<?php echo $set;?>&amp;act=thms&amp;step=2">
 <?php
 $themes = lsdir($source.'themes/');
 $themest = count($themes);
@@ -27,16 +27,18 @@ else {
 <TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">install theme:</TD>
 <TD CLASS="cnt">
 <?php
-$ubwsthemechecked = '';
-if($themes[$tmi] == 'ubws' && ($set == 'install' && !isset($_POST['set_cfg_tm_inst']['ubws']))) {
-  $ubwsthemechecked = ' CHECKED';
+$rswebthemechecked = '';
+if($themes[$tmi] == 'rswebdef' && ($set == 'install' && !isset($_POST['set_cfg_tm_inst']['rswebdef']))) {
+  $rswebthemechecked = ' CHECKED';
 }
 ?>
-<INPUT TYPE="checkbox" CLASS="general" NAME="set_cfg_tm_inst[<?php echo $themes[$tmi];?>]"<?php echo $ubwsthemechecked;?>>
+<INPUT TYPE="checkbox" CLASS="general" NAME="set_cfg_tm_inst[<?php echo $themes[$tmi];?>]"<?php echo $rswebthemechecked;?>>
 </TD></TR></TABLE>
 <?php
   }
+}
 ?>
+
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
 <TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">&#160;</TD>
 <TD CLASS="cnt">
@@ -44,10 +46,9 @@ if($themes[$tmi] == 'ubws' && ($set == 'install' && !isset($_POST['set_cfg_tm_in
   <TD><INPUT TYPE="submit" CLASS="button" STYLE="background-color: #DDDDDD" NAME="next" VALUE="next"></TD>
   </TR></TABLE>
 </TD></TR></TABLE>
+
 </FORM>
-<?php
-}
-?>
+
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
 <TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">&#160;</TD>
 <TD CLASS="cnt">

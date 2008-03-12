@@ -4,6 +4,6 @@
 13:50 2007-12-14
 */
 
-if(!defined('_UBWS_PUBFIL')) {require_once './../../lib/404.php';}
+if(!defined('_RSWEB_PUBFIL')) {require_once './../../lib/404.php';}
 ?>
-<?php showBlogContent($ubws_mnu_id); ?>
+<?php showBlogContent($rsweb_mnu_id); ?>

@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/cfg/init.inc.php
-13:21 2008-02-26
+15:55 2008-03-12
 */
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -15,7 +15,7 @@ $set = null;
 if(isset($_GET['set']) && in_array($_GET['set'], $sets)) {$set = $_GET['set'];}
 
 $source = $source_root . 'kit/';
-if(isset($_SESSION['ubwset_pid'])) {$pid = $_SESSION['ubwset_pid']; $target = $target_root . $target_vars[$pid];}
+if(isset($_SESSION['rswebset_pid'])) {$pid = $_SESSION['rswebset_pid']; $target = $target_root . $target_vars[$pid];}
 else if (isset($_GET['pid'])) {$pid = $_GET['pid']; $target = $target_root . $target_vars[$pid];}
 else {$pid = '0'; $target = $target_root . $target_vars[1];}
 

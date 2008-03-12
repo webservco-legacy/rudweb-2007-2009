@@ -1,0 +1,154 @@
+/*
+./themes/rswebdef/styles/custom.css
+17:40 2008-03-12
+*/
+/* ********** ********** ********** CUSTOM ********** ********** ********** */
+#container {
+  width: 90%;
+  /*height: 100%;*/
+  margin: auto;
+  background-color: <?php echo $rsweb_theme['BgColor']; ?>;
+  color: <?php echo $rsweb_theme['FontColor']; ?>;
+  text-align: <?php echo $rsweb_theme['TextAlign']; ?>;
+  text-decoration: <?php echo $rsweb_theme['TextDecoration']; ?>;
+  font-family: <?php echo $rsweb_theme['FontFamily']; ?>;
+  font-weight: <?php echo $rsweb_theme['FontWeight']; ?>;
+  font-size: <?php echo $rsweb_theme['FontSize'].$rsweb_theme['Measure']; ?>;
+  line-height: 130%;
+  border-color: <?php echo $rsweb_theme['BorderColor']; ?>;
+  border-style: <?php echo $rsweb_theme['BorderStyle']; ?>;
+  border-top-width: <?php echo $rsweb_theme['BorderTop'].$rsweb_theme['Measure']; ?>;
+  border-bottom-width: <?php echo $rsweb_theme['BorderBottom'].$rsweb_theme['Measure']; ?>;
+  border-left-width: <?php echo $rsweb_theme['BorderLeft'].$rsweb_theme['Measure']; ?>;
+  border-right-width: <?php echo $rsweb_theme['BorderRight'].$rsweb_theme['Measure']; ?>;
+  padding-top: <?php echo $rsweb_theme['PaddingTop'].$rsweb_theme['Measure']; ?>;
+  padding-bottom: <?php echo $rsweb_theme['PaddingBottom'].$rsweb_theme['Measure']; ?>;
+  padding-left: <?php echo $rsweb_theme['PaddingLeft'].$rsweb_theme['Measure']; ?>;
+  padding-right: <?php echo $rsweb_theme['PaddingRight'].$rsweb_theme['Measure']; ?>;
+  cursor: default;
+  /*overflow:hidden;*/
+}
+.header {
+  margin: 2px auto;
+  background-color: <?php echo $rsweb_theme['BgColor']; ?>;
+  color: <?php echo $rsweb_theme['FontColor']; ?>;
+  text-align: <?php echo $rsweb_theme['TextAlign']; ?>;
+  text-decoration: <?php echo $rsweb_theme['TextDecoration']; ?>;
+  font-family: <?php echo $rsweb_theme['FontFamily']; ?>;
+  font-weight: <?php echo $rsweb_theme['FontWeight']; ?>;
+  font-size: 1em;
+  line-height: 130%;
+  border-color: <?php echo $rsweb_theme['BorderColor']; ?>;
+  border-style: <?php echo $rsweb_theme['BorderStyle']; ?>;
+  border-top-width: <?php echo $rsweb_theme['BorderTop'].$rsweb_theme['Measure']; ?>;
+  border-bottom-width: <?php echo $rsweb_theme['BorderBottom'].$rsweb_theme['Measure']; ?>;
+  border-left-width: <?php echo $rsweb_theme['BorderLeft'].$rsweb_theme['Measure']; ?>;
+  border-right-width: <?php echo $rsweb_theme['BorderRight'].$rsweb_theme['Measure']; ?>;
+  padding-top: <?php echo $rsweb_theme['PaddingTop'].$rsweb_theme['Measure']; ?>;
+  padding-bottom: <?php echo $rsweb_theme['PaddingBottom'].$rsweb_theme['Measure']; ?>;
+  padding-left: <?php echo $rsweb_theme['PaddingLeft'].$rsweb_theme['Measure']; ?>;
+  padding-right: <?php echo $rsweb_theme['PaddingRight'].$rsweb_theme['Measure']; ?>;
+  cursor: default;
+}
+
+#leftnav {
+  float: left;
+  width: 160px;
+  margin: 0px;
+  background-color: <?php echo $rsweb_theme['BgColor']; ?>;
+  color: <?php echo $rsweb_theme['FontColor']; ?>;
+  text-align: <?php echo $rsweb_theme['TextAlign']; ?>;
+  text-decoration: <?php echo $rsweb_theme['TextDecoration']; ?>;
+  font-family: <?php echo $rsweb_theme['FontFamily']; ?>;
+  font-weight: <?php echo $rsweb_theme['FontWeight']; ?>;
+  font-size: 1em;
+  line-height: 130%;
+  border-color: <?php echo $rsweb_theme['BorderColor']; ?>;
+  border-style: <?php echo $rsweb_theme['BorderStyle']; ?>;
+  border-top-width: <?php echo $rsweb_theme['BorderTop'].$rsweb_theme['Measure']; ?>;
+  border-bottom-width: <?php echo $rsweb_theme['BorderBottom'].$rsweb_theme['Measure']; ?>;
+  border-left-width: <?php echo $rsweb_theme['BorderLeft'].$rsweb_theme['Measure']; ?>;
+  border-right-width: <?php echo $rsweb_theme['BorderRight'].$rsweb_theme['Measure']; ?>;
+  padding-top: <?php echo $rsweb_theme['PaddingTop'].$rsweb_theme['Measure']; ?>;
+  padding-bottom: <?php echo $rsweb_theme['PaddingBottom'].$rsweb_theme['Measure']; ?>;
+  padding-left: <?php echo $rsweb_theme['PaddingLeft'].$rsweb_theme['Measure']; ?>;
+  padding-right: <?php echo $rsweb_theme['PaddingRight'].$rsweb_theme['Measure']; ?>;
+  cursor: default;
+  position:relative;
+}
+#rightnav {
+  float: right;
+  width: 160px;
+  margin: 0px;
+  background-color: <?php echo $rsweb_theme['BgColor']; ?>;
+  color: <?php echo $rsweb_theme['FontColor']; ?>;
+  text-align: <?php echo $rsweb_theme['TextAlign']; ?>;
+  text-decoration: <?php echo $rsweb_theme['TextDecoration']; ?>;
+  font-family: <?php echo $rsweb_theme['FontFamily']; ?>;
+  font-weight: <?php echo $rsweb_theme['FontWeight']; ?>;
+  font-size: 1em;
+  line-height: 130%;
+  border-color: <?php echo $rsweb_theme['BorderColor']; ?>;
+  border-style: <?php echo $rsweb_theme['BorderStyle']; ?>;
+  border-top-width: <?php echo $rsweb_theme['BorderTop'].$rsweb_theme['Measure']; ?>;
+  border-bottom-width: <?php echo $rsweb_theme['BorderBottom'].$rsweb_theme['Measure']; ?>;
+  border-left-width: <?php echo $rsweb_theme['BorderLeft'].$rsweb_theme['Measure']; ?>;
+  border-right-width: <?php echo $rsweb_theme['BorderRight'].$rsweb_theme['Measure']; ?>;
+  padding-top: <?php echo $rsweb_theme['PaddingTop'].$rsweb_theme['Measure']; ?>;
+  padding-bottom: <?php echo $rsweb_theme['PaddingBottom'].$rsweb_theme['Measure']; ?>;
+  padding-left: <?php echo $rsweb_theme['PaddingLeft'].$rsweb_theme['Measure']; ?>;
+  padding-right: <?php echo $rsweb_theme['PaddingRight'].$rsweb_theme['Measure']; ?>;
+  cursor: default;
+}
+#content {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-left: 164px;
+  margin-right: 164px;
+  background-color: <?php echo $rsweb_theme['BgColor']; ?>;
+  color: <?php echo $rsweb_theme['FontColor']; ?>;
+  text-align: <?php echo $rsweb_theme['TextAlign']; ?>;
+  text-decoration: <?php echo $rsweb_theme['TextDecoration']; ?>;
+  font-family: <?php echo $rsweb_theme['FontFamily']; ?>;
+  font-weight: <?php echo $rsweb_theme['FontWeight']; ?>;
+  font-size: 1em;
+  line-height: 130%;
+  border-color: <?php echo $rsweb_theme['BorderColor']; ?>;
+  border-style: <?php echo $rsweb_theme['BorderStyle']; ?>;
+  border-top-width: <?php echo $rsweb_theme['BorderTop'].$rsweb_theme['Measure']; ?>;
+  border-bottom-width: <?php echo $rsweb_theme['BorderBottom'].$rsweb_theme['Measure']; ?>;
+  border-left-width: <?php echo $rsweb_theme['BorderLeft'].$rsweb_theme['Measure']; ?>;
+  border-right-width: <?php echo $rsweb_theme['BorderRight'].$rsweb_theme['Measure']; ?>;
+  padding-top: <?php echo $rsweb_theme['PaddingTop'].$rsweb_theme['Measure']; ?>;
+  padding-bottom: <?php echo $rsweb_theme['PaddingBottom'].$rsweb_theme['Measure']; ?>;
+  padding-left: <?php echo $rsweb_theme['PaddingLeft'].$rsweb_theme['Measure']; ?>;
+  padding-right: <?php echo $rsweb_theme['PaddingRight'].$rsweb_theme['Measure']; ?>;
+  cursor: default;
+}
+#footer {
+  clear: both;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: <?php echo $rsweb_theme['BgColor']; ?>;
+  color: <?php echo $rsweb_theme['FontColor']; ?>;
+  text-align: <?php echo $rsweb_theme['TextAlign']; ?>;
+  text-decoration: <?php echo $rsweb_theme['TextDecoration']; ?>;
+  font-family: <?php echo $rsweb_theme['FontFamily']; ?>;
+  font-weight: <?php echo $rsweb_theme['FontWeight']; ?>;
+  font-size: 1em;
+  line-height: 130%;
+  border-color: <?php echo $rsweb_theme['BorderColor']; ?>;
+  border-style: <?php echo $rsweb_theme['BorderStyle']; ?>;
+  border-top-width: <?php echo $rsweb_theme['BorderTop'].$rsweb_theme['Measure']; ?>;
+  border-bottom-width: <?php echo $rsweb_theme['BorderBottom'].$rsweb_theme['Measure']; ?>;
+  border-left-width: <?php echo $rsweb_theme['BorderLeft'].$rsweb_theme['Measure']; ?>;
+  border-right-width: <?php echo $rsweb_theme['BorderRight'].$rsweb_theme['Measure']; ?>;
+  padding-top: <?php echo $rsweb_theme['PaddingTop'].$rsweb_theme['Measure']; ?>;
+  padding-bottom: <?php echo $rsweb_theme['PaddingBottom'].$rsweb_theme['Measure']; ?>;
+  padding-left: <?php echo $rsweb_theme['PaddingLeft'].$rsweb_theme['Measure']; ?>;
+  padding-right: <?php echo $rsweb_theme['PaddingRight'].$rsweb_theme['Measure']; ?>;
+  cursor: default;
+}
+/* ********** ********** ********** //CUSTOM ********** ********** ********** */

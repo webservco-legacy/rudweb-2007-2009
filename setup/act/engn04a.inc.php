@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/engn04a.inc.php
-23:43 2008-03-11
+17:11 2008-03-12
 */
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -851,15 +851,16 @@ $files[$dirs[74]][1][] = "toolbar.expand.gif";
 $files[$dirs[74]][1][] = "toolbar.separator.gif";
 $files[$dirs[74]][1][] = "toolbar.start.gif";
 
-$dirs[75] = "lib/editor/editor/skins/silver/";
+$dirs[75] = "lib/editor/editor/skins/rsweb/";
 $files[$dirs[75]][0] = array();
 $files[$dirs[75]][1] = array();
 $files[$dirs[75]][1][] = "fck_dialog.css";
 $files[$dirs[75]][1][] = "fck_dialog_ie6.js";
 $files[$dirs[75]][1][] = "fck_editor.css";
+$files[$dirs[75]][1][] = "fck_editorie.css";
 $files[$dirs[75]][1][] = "fck_strip.gif";
 
-$dirs[76] = "lib/editor/editor/skins/silver/images/";
+$dirs[76] = "lib/editor/editor/skins/rsweb/images/";
 $files[$dirs[76]][0] = array();
 $files[$dirs[76]][1] = array();
 $files[$dirs[76]][1][] = "dialog.sides.gif";
@@ -869,23 +870,21 @@ $files[$dirs[76]][1][] = "sprites.gif";
 $files[$dirs[76]][1][] = "sprites.png";
 $files[$dirs[76]][1][] = "toolbar.arrowright.gif";
 $files[$dirs[76]][1][] = "toolbar.buttonarrow.gif";
-$files[$dirs[76]][1][] = "toolbar.buttonbg.gif";
 $files[$dirs[76]][1][] = "toolbar.collapse.gif";
 $files[$dirs[76]][1][] = "toolbar.end.gif";
 $files[$dirs[76]][1][] = "toolbar.expand.gif";
 $files[$dirs[76]][1][] = "toolbar.separator.gif";
 $files[$dirs[76]][1][] = "toolbar.start.gif";
 
-$dirs[77] = "lib/editor/editor/skins/ubws/";
+$dirs[77] = "lib/editor/editor/skins/silver/";
 $files[$dirs[77]][0] = array();
 $files[$dirs[77]][1] = array();
 $files[$dirs[77]][1][] = "fck_dialog.css";
 $files[$dirs[77]][1][] = "fck_dialog_ie6.js";
 $files[$dirs[77]][1][] = "fck_editor.css";
-$files[$dirs[77]][1][] = "fck_editorie.css";
 $files[$dirs[77]][1][] = "fck_strip.gif";
 
-$dirs[78] = "lib/editor/editor/skins/ubws/images/";
+$dirs[78] = "lib/editor/editor/skins/silver/images/";
 $files[$dirs[78]][0] = array();
 $files[$dirs[78]][1] = array();
 $files[$dirs[78]][1][] = "dialog.sides.gif";
@@ -895,10 +894,10 @@ $files[$dirs[78]][1][] = "sprites.gif";
 $files[$dirs[78]][1][] = "sprites.png";
 $files[$dirs[78]][1][] = "toolbar.arrowright.gif";
 $files[$dirs[78]][1][] = "toolbar.buttonarrow.gif";
+$files[$dirs[78]][1][] = "toolbar.buttonbg.gif";
 $files[$dirs[78]][1][] = "toolbar.collapse.gif";
 $files[$dirs[78]][1][] = "toolbar.end.gif";
 $files[$dirs[78]][1][] = "toolbar.expand.gif";
 $files[$dirs[78]][1][] = "toolbar.separator.gif";
 $files[$dirs[78]][1][] = "toolbar.start.gif";
-
 ?>

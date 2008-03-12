@@ -1,7 +1,7 @@
-# ubws table structure
+# rsweb table structure
 -- 10:54 2008-01-21
-DROP TABLE IF EXISTS ubws_set_cfg;
-CREATE TABLE ubws_set_cfg (
+DROP TABLE IF EXISTS rsweb_set_cfg;
+CREATE TABLE rsweb_set_cfg (
   set_id int(5) unsigned NOT NULL default '0',
   set_set varchar(150) NOT NULL default '',
   set_val varchar(150) NOT NULL default '',
@@ -14,8 +14,8 @@ CREATE TABLE ubws_set_cfg (
   PRIMARY KEY  (set_id)
 ) myisam_str;
 
-DROP TABLE IF EXISTS ubws_set_thm;
-CREATE TABLE ubws_set_thm (
+DROP TABLE IF EXISTS rsweb_set_thm;
+CREATE TABLE rsweb_set_thm (
   thm_id int(5) unsigned NOT NULL default '0',
   thm_tt varchar(30) NOT NULL default '',
   thm_set varchar(150) NOT NULL default '',
@@ -29,8 +29,8 @@ CREATE TABLE ubws_set_thm (
   PRIMARY KEY  (thm_id)
 ) myisam_str;
 
-DROP TABLE IF EXISTS ubws_set_usr;
-CREATE TABLE ubws_set_usr (
+DROP TABLE IF EXISTS rsweb_set_usr;
+CREATE TABLE rsweb_set_usr (
   usr_id int(5) unsigned NOT NULL default '0',
   usr_first_name varchar(30) NOT NULL default '',
   usr_middle_name varchar(15) NOT NULL default '',
@@ -48,8 +48,8 @@ CREATE TABLE ubws_set_usr (
   PRIMARY KEY  (usr_id)
 ) myisam_str;
 
-DROP TABLE IF EXISTS ubws_var_logins;
-CREATE TABLE ubws_var_logins (
+DROP TABLE IF EXISTS rsweb_var_logins;
+CREATE TABLE rsweb_var_logins (
   login_id int(5) unsigned NOT NULL default '0',
   usr_id int(5) unsigned NOT NULL default '0',
   login_date date NOT NULL default '0000-00-00',
@@ -57,8 +57,8 @@ CREATE TABLE ubws_var_logins (
   PRIMARY KEY  (login_id)
 ) myisam_str;
 
-DROP TABLE IF EXISTS ubws_var_stats;
-CREATE TABLE ubws_var_stats (
+DROP TABLE IF EXISTS rsweb_var_stats;
+CREATE TABLE rsweb_var_stats (
   stats_id int(5) unsigned NOT NULL default '0',
   usr_id int(5) unsigned NOT NULL default '0',
   usr_lang_index char(2) NOT NULL default '',
@@ -73,8 +73,8 @@ CREATE TABLE ubws_var_stats (
   PRIMARY KEY  (stats_id)
 ) myisam_str;
 
-DROP TABLE IF EXISTS ubws_ws_cnt;
-CREATE TABLE ubws_ws_cnt (
+DROP TABLE IF EXISTS rsweb_ws_cnt;
+CREATE TABLE rsweb_ws_cnt (
   cnt_id int(5) unsigned NOT NULL default '0',
   cnt_ln char(2) NOT NULL default '',
   cnt_alias varchar(150) NOT NULL default '',
@@ -94,8 +94,8 @@ CREATE TABLE ubws_ws_cnt (
   PRIMARY KEY  (cnt_id)
 ) myisam_str;
 
-DROP TABLE IF EXISTS ubws_ws_ftr;
-CREATE TABLE ubws_ws_ftr (
+DROP TABLE IF EXISTS rsweb_ws_ftr;
+CREATE TABLE rsweb_ws_ftr (
   ftr_id int(5) unsigned NOT NULL default '0',
   ftr_ln char(2) NOT NULL default '',
   cnt_id int(5) unsigned NOT NULL default '0',
@@ -115,8 +115,8 @@ CREATE TABLE ubws_ws_ftr (
   PRIMARY KEY  (ftr_id)
 ) myisam_str;
 
-DROP TABLE IF EXISTS ubws_ws_lnk;
-CREATE TABLE ubws_ws_lnk (
+DROP TABLE IF EXISTS rsweb_ws_lnk;
+CREATE TABLE rsweb_ws_lnk (
   lnk_id int(5) unsigned NOT NULL default '0',
   lnk_ln char(2) NOT NULL default '',
   lnk_alias varchar(150) NOT NULL default '',
@@ -136,8 +136,8 @@ CREATE TABLE ubws_ws_lnk (
   PRIMARY KEY  (lnk_id)
 ) myisam_str;
 
-DROP TABLE IF EXISTS ubws_ws_mnu;
-CREATE TABLE ubws_ws_mnu (
+DROP TABLE IF EXISTS rsweb_ws_mnu;
+CREATE TABLE rsweb_ws_mnu (
   mnu_id int(5) unsigned NOT NULL default '0',
   mnu_ln char(2) NOT NULL default '',
   mnu_cat varchar(15) NOT NULL default '',
@@ -159,8 +159,8 @@ CREATE TABLE ubws_ws_mnu (
   PRIMARY KEY  (mnu_id)
 ) myisam_str;
 
-DROP TABLE IF EXISTS ubws_ws_pic;
-CREATE TABLE ubws_ws_pic (
+DROP TABLE IF EXISTS rsweb_ws_pic;
+CREATE TABLE rsweb_ws_pic (
   pic_id int(5) unsigned NOT NULL default '0',
   cnt_id int(5) unsigned NOT NULL default '0',
   pic_ln char(2) NOT NULL default '',

@@ -7,27 +7,27 @@ echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#00000
 echo "\n<TR><TD CLASS=\"ttt\" WIDTH=\"200\"><B>Remove Database Tables</B></TD>";
 echo "</TR></TABLE>";
 
-if ($_SESSION['ubwset_cfg_remove_db_tables'] == 'off') {
+if ($_SESSION['rswebset_cfg_remove_db_tables'] == 'off') {
   echo "\n\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
   echo "\n<TR><TD CLASS=\"hdr\" WIDTH=\"200\"><B>option not selected</B></TD><TD CLASS=\"hdr\" COLSPAN=\"3\">&#160;</TD></TR>";
   echo "\n</TABLE>";
 }
 else {
   $sql_s = generate_removed02($eol);
-  $sql_s = eregi_replace("ubws_", $_SESSION['ubwset_set_pre']."_", $sql_s);
+  $sql_s = eregi_replace("rsweb_", $_SESSION['rswebset_set_pre']."_", $sql_s);
   $sql_s = split_sql($sql_s, $sql_delimiter);
   $sql_t = count($sql_s);
   
   echo "\n\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
   echo "\n<TR><TD CLASS=\"hdr\" WIDTH=\"200\"><B>$sql_t queries</B></TD><TD CLASS=\"hdr\" COLSPAN=\"3\">&#160;</TD></TR>";
-  ubws_dbopen($_SESSION['ubwset_set_dbtype'], $_SESSION['ubwset_set_dbhost'], $_SESSION['ubwset_set_dbport'], $_SESSION['ubwset_set_dbuser'], $_SESSION['ubwset_set_dbpass'], $_SESSION['ubwset_set_dbname']);
+  rsweb_dbopen($_SESSION['rswebset_set_dbtype'], $_SESSION['rswebset_set_dbhost'], $_SESSION['rswebset_set_dbport'], $_SESSION['rswebset_set_dbuser'], $_SESSION['rswebset_set_dbpass'], $_SESSION['rswebset_set_dbname']);
   $dbs_err = '0';
   for($di = 0; $di < $sql_t; $di++) {
     $dii = $di+1;
     echo "\n<TR CLASS=\"cnt\"><TD CLASS=\"act\">executing query</TD><TD CLASS=\"nam\">$dii</TD>";
     $query[$di]        = $sql_s[$di];
     echo "<TD CLASS=\"msg\">";
-    $result[$di]       = ubws_qres($_SESSION['ubwset_set_dbtype'], $query[$di]);
+    $result[$di]       = rsweb_qres($_SESSION['rswebset_set_dbtype'], $query[$di]);
     if($result[$di] === TRUE) {
       echo "ok</TD>";
       echo "<TD CLASS=\"rst_ok\">done</TD></TR>";
@@ -39,7 +39,7 @@ else {
     }
   
   }
-  ubws_dbclose($_SESSION['ubwset_set_dbtype'], ubws_dbopen($_SESSION['ubwset_set_dbtype'], $_SESSION['ubwset_set_dbhost'], $_SESSION['ubwset_set_dbport'], $_SESSION['ubwset_set_dbuser'], $_SESSION['ubwset_set_dbpass'], $_SESSION['ubwset_set_dbname']));
+  rsweb_dbclose($_SESSION['rswebset_set_dbtype'], rsweb_dbopen($_SESSION['rswebset_set_dbtype'], $_SESSION['rswebset_set_dbhost'], $_SESSION['rswebset_set_dbport'], $_SESSION['rswebset_set_dbuser'], $_SESSION['rswebset_set_dbpass'], $_SESSION['rswebset_set_dbname']));
   echo "\n</TABLE>";
 }
 if ($dbs_err == '0') {

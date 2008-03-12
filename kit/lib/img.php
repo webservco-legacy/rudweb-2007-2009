@@ -1,13 +1,13 @@
 <?php
 /*
 ./lib/img.php
-10:47 2008-01-06
+16:22 2008-03-12
 */
 error_reporting(E_ALL);
-define("_UBWS_PUBFIL", TRUE);
+define("_RSWEB_PUBFIL", TRUE);
 require_once './../inc/config.inc.php';
-require_once './../inc/ubwsc.inc.php';
-require_once './../inc/ubwsf.inc.php';
+require_once './../inc/rswebc.inc.php';
+require_once './../inc/rswebf.inc.php';
 
 // START SESSION
 //session_cache_limiter ('public, must-revalidate');
@@ -31,14 +31,14 @@ if(isset($_GET['ty'])) {$ty = $_GET['ty'];}
 $txt= "NO PICTURE";
 if(isset($_GET['txt'])) {$txt = $_GET['txt'];}
 
-if(isset($_SESSION[_UBWS_PRE.'token'])) {
-  $br  = hexdec('0x' . substr($_SESSION[_UBWS_PRE.'usr_theme_bg'], 1, 2));
-  $bg  = hexdec('0x' . substr($_SESSION[_UBWS_PRE.'usr_theme_bg'], 3, 2));
-  $bb  = hexdec('0x' . substr($_SESSION[_UBWS_PRE.'usr_theme_bg'], 5, 2));
+if(isset($_SESSION[_RSWEB_PRE.'token'])) {
+  $br  = hexdec('0x' . substr($_SESSION[_RSWEB_PRE.'usr_theme_bg'], 1, 2));
+  $bg  = hexdec('0x' . substr($_SESSION[_RSWEB_PRE.'usr_theme_bg'], 3, 2));
+  $bb  = hexdec('0x' . substr($_SESSION[_RSWEB_PRE.'usr_theme_bg'], 5, 2));
 
-  $fr  = hexdec("0x" . substr($_SESSION[_UBWS_PRE.'usr_theme_fg'], 1, 2));
-  $fg  = hexdec("0x" . substr($_SESSION[_UBWS_PRE.'usr_theme_fg'], 3, 2));
-  $fb  = hexdec("0x" . substr($_SESSION[_UBWS_PRE.'usr_theme_fg'], 5, 2));
+  $fr  = hexdec("0x" . substr($_SESSION[_RSWEB_PRE.'usr_theme_fg'], 1, 2));
+  $fg  = hexdec("0x" . substr($_SESSION[_RSWEB_PRE.'usr_theme_fg'], 3, 2));
+  $fb  = hexdec("0x" . substr($_SESSION[_RSWEB_PRE.'usr_theme_fg'], 5, 2));
   
   header("Content-type: image/png");
   header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
@@ -48,7 +48,7 @@ if(isset($_SESSION[_UBWS_PRE.'token'])) {
   $bgc = imagecolorallocate($img, $br, $bg, $bb);
   $fgc = imagecolorallocate($img, $fr, $fg, $fb);
 
-  $font = _UBWS_TTF_DIR . "01_Digit.ttf";
+  $font = _RSWEB_TTF_DIR . "01_Digit.ttf";
 
   imagefill($img, 0, 0, $bgc);
   
@@ -59,6 +59,6 @@ if(isset($_SESSION[_UBWS_PRE.'token'])) {
   imagedestroy($img);
 }
 else {
-  require_once _UBWS_LIB_DIR . '404.php';
+  require_once _RSWEB_LIB_DIR . '404.php';
 }
 ?>
