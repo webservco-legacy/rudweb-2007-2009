@@ -3,10 +3,10 @@
 ./inc/moddebug.inc.php
 14:31 2008-03-12
 */
-if(!defined('_RSWEB_PUBFIL')) {require_once './../lib/404.php';}
+if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
 function debugOutput($what) {
-  if (_RSWEB_CFG_DEBUG === "1") {
+  if (_RUDWEB_CFG_DEBUG === "1") {
     echo "\n<HR WIDTH=\"50%\" ALIGN=\"left\">\n<PRE><B>";
     echo $what . "</B>:\n";
     switch($what) {

@@ -7,9 +7,9 @@ error_reporting(E_ALL);
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
-// load  rsweb configuration
-if(is_file("./cfg/cfg_rsweb.inc.php")) {require_once "./cfg/cfg_rsweb.inc.php";}
-else {die("could not load rsweb config!");}
+// load  rudweb configuration
+if(is_file("./cfg/cfg_rudweb.inc.php")) {require_once "./cfg/cfg_rudweb.inc.php";}
+else {die("could not load rudweb config!");}
 
 // load user configuration
 if(is_file("./cfg/cfg_user.inc.php")) {require_once "./cfg/cfg_user.inc.php";}
@@ -32,10 +32,10 @@ else {die("could not initialize session!");}
 // HEADER
 require_once './htm/hdr.inc.php';
 
-require_once './inc/rsweb.inc.php';
+require_once './inc/rudweb.inc.php';
 require_once './inc/ds.inc.php';
 
-if(!isset($_SESSION['rswebset_pid']) && ($act == null && $set == null)) {
+if(!isset($_SESSION['rudwebset_pid']) && ($act == null && $set == null)) {
   require_once './inc/projects.inc.php';
 }
 else {

@@ -10,8 +10,8 @@ echo "</TR></TABLE>";
 <?php
 $sql_s_file = $source_root . 'setup/cfg/' . $sql_file_name;
 $sql_s = file_get_contents($sql_s_file);
-$sql_s = eregi_replace("rsweb_", $_SESSION['rswebset_set_pre']."_", $sql_s);
-if($_SESSION['rswebset_set_dbmy'] <= '40') {$myisam_str = 'TYPE=MyISAM';}
+$sql_s = eregi_replace("rudweb_", $_SESSION['rudwebset_set_pre']."_", $sql_s);
+if($_SESSION['rudwebset_set_dbmy'] <= '40') {$myisam_str = 'TYPE=MyISAM';}
 else {$myisam_str = 'ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci';}
 $sql_s = eregi_replace("myisam_str", $myisam_str, $sql_s);
 $sql_s = split_sql($sql_s, $sql_delimiter);
@@ -22,13 +22,13 @@ $dbs_err = '0';
 
 echo "\n\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
 echo "\n<TR><TD CLASS=\"hdr\" WIDTH=\"200\"><B>$tables_t tables, $sql_t queries</B></TD><TD CLASS=\"hdr\" COLSPAN=\"3\">&#160;</TD></TR>";
-rsweb_dbopen($_SESSION['rswebset_set_dbtype'], $_SESSION['rswebset_set_dbhost'], $_SESSION['rswebset_set_dbport'], $_SESSION['rswebset_set_dbuser'], $_SESSION['rswebset_set_dbpass'], $_SESSION['rswebset_set_dbname']);
+rudweb_dbopen($_SESSION['rudwebset_set_dbtype'], $_SESSION['rudwebset_set_dbhost'], $_SESSION['rudwebset_set_dbport'], $_SESSION['rudwebset_set_dbuser'], $_SESSION['rudwebset_set_dbpass'], $_SESSION['rudwebset_set_dbname']);
 for($di = 0; $di < $sql_t; $di++) {
   $dii = $di+1;
   echo "\n<TR CLASS=\"cnt\"><TD CLASS=\"act\">executing query</TD><TD CLASS=\"nam\">$dii</TD>";
   $query[$di]        = $sql_s[$di];
   echo "<TD CLASS=\"msg\">";
-  $result[$di]       = rsweb_qres($_SESSION['rswebset_set_dbtype'], $query[$di]);
+  $result[$di]       = rudweb_qres($_SESSION['rudwebset_set_dbtype'], $query[$di]);
   if($result[$di] === TRUE) {
     echo "ok</TD>";
     echo "<TD CLASS=\"rst_ok\">done</TD></TR>";
@@ -40,7 +40,7 @@ for($di = 0; $di < $sql_t; $di++) {
   }
   
 }
-rsweb_dbclose($_SESSION['rswebset_set_dbtype'], rsweb_dbopen($_SESSION['rswebset_set_dbtype'], $_SESSION['rswebset_set_dbhost'], $_SESSION['rswebset_set_dbport'], $_SESSION['rswebset_set_dbuser'], $_SESSION['rswebset_set_dbpass'], $_SESSION['rswebset_set_dbname']));
+rudweb_dbclose($_SESSION['rudwebset_set_dbtype'], rudweb_dbopen($_SESSION['rudwebset_set_dbtype'], $_SESSION['rudwebset_set_dbhost'], $_SESSION['rudwebset_set_dbport'], $_SESSION['rudwebset_set_dbuser'], $_SESSION['rudwebset_set_dbpass'], $_SESSION['rudwebset_set_dbname']));
 echo "\n</TABLE>";
 ?>
 <?php

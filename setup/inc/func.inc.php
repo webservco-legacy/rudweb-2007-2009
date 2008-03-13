@@ -5,214 +5,214 @@
 */
 function generate_lncfg_str($eol, $now, $ln) {
   $c  = '<?php'.$eol.'/*'.$eol.'./inc/langs/'.$ln.'/langcfg.inc.php'.$eol.$now.$eol.'*/'.$eol;
-  $c .= $eol . 'if(!defined(\'_RSWEB_PUBFIL\')) {require_once \'./../lib/404.php\';}';
+  $c .= $eol . 'if(!defined(\'_RUDWEB_PUBFIL\')) {require_once \'./../lib/404.php\';}';
   $c .= $eol . '';
   $c .= $eol . '// WEBSITE TITLE, DESCRIPTION, KEYWORDS - GLOBAL - in the default language';
-  $c .= $eol . 'define(\'_RSWEB_WSTT\', \''.$_SESSION['rswebset_langs_wstt'][$ln].'\');';
-  $c .= $eol . 'define(\'_RSWEB_WSDS\', \''.$_SESSION['rswebset_langs_wsds'][$ln].'\');';
-  $c .= $eol . 'define(\'_RSWEB_WSKW\', \''.$_SESSION['rswebset_langs_wskw'][$ln].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_WSTT\', \''.$_SESSION['rudwebset_langs_wstt'][$ln].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_WSDS\', \''.$_SESSION['rudwebset_langs_wsds'][$ln].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_WSKW\', \''.$_SESSION['rudwebset_langs_wskw'][$ln].'\');';
   $c .= $eol . '// FEATURED CONTENT';
-  $c .= $eol . '$rsweb_ln[\'featured\'][\'tt\']   = \''.$_SESSION['rswebset_langs_ftt'][$ln].'\';';
-  $c .= $eol . '$rsweb_ln[\'featured\'][\'desc\'] = \''.$_SESSION['rswebset_langs_fds'][$ln].'\';';
+  $c .= $eol . '$rudweb_ln[\'featured\'][\'tt\']   = \''.$_SESSION['rudwebset_langs_ftt'][$ln].'\';';
+  $c .= $eol . '$rudweb_ln[\'featured\'][\'desc\'] = \''.$_SESSION['rudwebset_langs_fds'][$ln].'\';';
   $c .= $eol . '?>';
   return $c;
 }
 function generate_config_str($eol, $now) {
   $c  = '<?php'.$eol.'/*'.$eol.'./inc/config.inc.php'.$eol.$now.$eol.'*/'.$eol;
-  $c .= $eol . 'if(!defined(\'_RSWEB_PUBFIL\')) {require_once \'./../lib/404.php\';}';
+  $c .= $eol . 'if(!defined(\'_RUDWEB_PUBFIL\')) {require_once \'./../lib/404.php\';}';
   $c .= $eol . '';
   $c .= $eol . '// DATABASE CONNECTION SETTINGS';
-  $c .= $eol . '$rsweb_dbtype = \''.$_SESSION['rswebset_set_dbtype'].'\';';
-  $c .= $eol . '$rsweb_dbport = \''.$_SESSION['rswebset_set_dbport'].'\';';
-  $c .= $eol . '$rsweb_dbhost = \''.$_SESSION['rswebset_set_dbhost'].'\';';
-  $c .= $eol . '$rsweb_dbuser = \''.$_SESSION['rswebset_set_dbuser'].'\';';
-  $c .= $eol . '$rsweb_dbpass = \''.$_SESSION['rswebset_set_dbpass'].'\';';
-  $c .= $eol . '$rsweb_dbname = \''.$_SESSION['rswebset_set_dbname'].'\';';
+  $c .= $eol . '$rudweb_dbtype = \''.$_SESSION['rudwebset_set_dbtype'].'\';';
+  $c .= $eol . '$rudweb_dbport = \''.$_SESSION['rudwebset_set_dbport'].'\';';
+  $c .= $eol . '$rudweb_dbhost = \''.$_SESSION['rudwebset_set_dbhost'].'\';';
+  $c .= $eol . '$rudweb_dbuser = \''.$_SESSION['rudwebset_set_dbuser'].'\';';
+  $c .= $eol . '$rudweb_dbpass = \''.$_SESSION['rudwebset_set_dbpass'].'\';';
+  $c .= $eol . '$rudweb_dbname = \''.$_SESSION['rudwebset_set_dbname'].'\';';
   $c .= $eol . '// WEBSITE URL';
-  $c .= $eol . 'define(\'_RSWEB_SITE_URL\',\''.$_SESSION['rswebset_set_site_url1'].'/\');';
-  $c .= $eol . '//define(\'_RSWEB_SITE_URL\',\''.$_SESSION['rswebset_set_site_url2'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_SITE_URL\',\''.$_SESSION['rudwebset_set_site_url1'].'/\');';
+  $c .= $eol . '//define(\'_RUDWEB_SITE_URL\',\''.$_SESSION['rudwebset_set_site_url2'].'\');';
   $c .= $eol . '// WEBSITE DIRECTORY';
-  $c .= $eol . 'define(\'_RSWEB_SITE_DIR\',\''.$_SESSION['rswebset_set_site_root1'].'\');';
-  $c .= $eol . '//define(\'_RSWEB_SITE_DIR\',\''.$_SESSION['rswebset_set_site_root2'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_SITE_DIR\',\''.$_SESSION['rudwebset_set_site_root1'].'\');';
+  $c .= $eol . '//define(\'_RUDWEB_SITE_DIR\',\''.$_SESSION['rudwebset_set_site_root2'].'\');';
   $c .= $eol . '// TAKE SITE SETTINGS FROM DB (1) OR FROM FILE (0)';
-  $c .= $eol . 'define(\'_RSWEB_DBCFG\', \''.$_SESSION['rswebset_set_dbcfg'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_DBCFG\', \''.$_SESSION['rudwebset_set_dbcfg'].'\');';
   $c .= $eol . '// TAKE THEME SETTINGS FROM DB(1) OR FROM FILE (0)';
-  $c .= $eol . 'define(\'_RSWEB_DBTHM\', \''.$_SESSION['rswebset_set_dbthm'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_DBTHM\', \''.$_SESSION['rudwebset_set_dbthm'].'\');';
   $c .= $eol . '// GLOBAL PREFIX, INCLUDING DATABASE TABLES PREFIX';
-  $c .= $eol . 'define(\'_RSWEB_PRE\', \''.$_SESSION['rswebset_set_pre'].'_\');';
+  $c .= $eol . 'define(\'_RUDWEB_PRE\', \''.$_SESSION['rudwebset_set_pre'].'_\');';
   $c .= $eol . '?>';
   return $c;
 }
-function generate_rswebcfg_str($eol, $now) {
-  $c  = '<?php'.$eol.'/*'.$eol.'./inc/rswebcfg.inc.php'.$eol.$now.$eol.'*/'.$eol;
-  $c .= $eol . 'if(!defined(\'_RSWEB_PUBFIL\')) {require_once \'./../lib/404.php\';}';
+function generate_rudwebcfg_str($eol, $now) {
+  $c  = '<?php'.$eol.'/*'.$eol.'./inc/rudwebcfg.inc.php'.$eol.$now.$eol.'*/'.$eol;
+  $c .= $eol . 'if(!defined(\'_RUDWEB_PUBFIL\')) {require_once \'./../lib/404.php\';}';
   $c .= $eol . '';
   $c .= $eol . '// WEBSITE START DATE';
-  $c .= $eol . 'define(\'_RSWEB_CFG_START\', \''.$_SESSION['rswebset_cfg_start'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_START\', \''.$_SESSION['rudwebset_cfg_start'].'\');';
   $c .= $eol . '// WEBSITE OWNER/CLIENT DATA';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CLCOM\', \''.$_SESSION['rswebset_cfg_clcom'].'\'); // company name';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CLNAM\', \''.$_SESSION['rswebset_cfg_clnam'].'\'); // contact person';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CLCOM\', \''.$_SESSION['rudwebset_cfg_clcom'].'\'); // company name';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CLNAM\', \''.$_SESSION['rudwebset_cfg_clnam'].'\'); // contact person';
   $c .= $eol . '// WEBSITE DEVELOPER DATA';
-  $c .= $eol . 'define(\'_RSWEB_CFG_DVCOM\', \''.$_SESSION['rswebset_cfg_dvcom'].'\'); // company name';
-  $c .= $eol . 'define(\'_RSWEB_CFG_DVURL\', \''.$_SESSION['rswebset_cfg_dvurl'].'\'); // company url';
-  $c .= $eol . 'define(\'_RSWEB_CFG_DVNAM\', \''.$_SESSION['rswebset_cfg_dvnam'].'\'); // contact person';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_DVCOM\', \''.$_SESSION['rudwebset_cfg_dvcom'].'\'); // company name';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_DVURL\', \''.$_SESSION['rudwebset_cfg_dvurl'].'\'); // company url';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_DVNAM\', \''.$_SESSION['rudwebset_cfg_dvnam'].'\'); // contact person';
   $c .= $eol . '// HTML HEADER META';
-  $c .= $eol . 'define(\'_RSWEB_CFG_DESIG\', _RSWEB_CFG_DVNAM); // company';
-  $c .= $eol . 'define(\'_RSWEB_CFG_PUBL\', _RSWEB_CFG_DVCOM); // company';
-  $c .= $eol . 'define(\'_RSWEB_CFG_COPY\', \'&copy; \' . substr(_RSWEB_CFG_START, 0, 4) . \' \' . _RSWEB_CFG_CLCOM);';
-  $c .= $eol . 'define(\'_RSWEB_CFG_RATNG\', \''.$_SESSION['rswebset_cfg_ratng'].'\');';
-  $c .= $eol . 'define(\'_RSWEB_CFG_DISTR\', \''.$_SESSION['rswebset_cfg_distr'].'\'); /* Global / Local */';
-  $c .= $eol . 'define(\'_RSWEB_CFG_ROBOTS\', \''.$_SESSION['rswebset_cfg_robots'].'\'); /* INDEX, FOLLOW / NOINDEX, NOFOLLOW */';
-  $c .= $eol . 'define(\'_RSWEB_CFG_PRAG\', \''.$_SESSION['rswebset_cfg_prag'].'\');';
-  $c .= $eol . 'define(\'_RSWEB_CFG_EXP\', \''.$_SESSION['rswebset_cfg_exp'].'\');';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CACHE\', \''.$_SESSION['rswebset_cfg_cache'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_DESIG\', _RUDWEB_CFG_DVNAM); // company';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_PUBL\', _RUDWEB_CFG_DVCOM); // company';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_COPY\', \'&copy; \' . substr(_RUDWEB_CFG_START, 0, 4) . \' \' . _RUDWEB_CFG_CLCOM);';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_RATNG\', \''.$_SESSION['rudwebset_cfg_ratng'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_DISTR\', \''.$_SESSION['rudwebset_cfg_distr'].'\'); /* Global / Local */';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_ROBOTS\', \''.$_SESSION['rudwebset_cfg_robots'].'\'); /* INDEX, FOLLOW / NOINDEX, NOFOLLOW */';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_PRAG\', \''.$_SESSION['rudwebset_cfg_prag'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_EXP\', \''.$_SESSION['rudwebset_cfg_exp'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CACHE\', \''.$_SESSION['rudwebset_cfg_cache'].'\');';
   $c .= $eol . '// DEFAULT LANGUAGE';
-  $c .= $eol . 'define(\'_RSWEB_CFG_LANG\',\''.$_SESSION['rswebset_cfg_lang'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_LANG\',\''.$_SESSION['rudwebset_cfg_lang'].'\');';
   $c .= $eol . '// DEFAULT THEME';
-  $c .= $eol . 'define(\'_RSWEB_CFG_THEME\',\''.$_SESSION['rswebset_cfg_theme'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_THEME\',\''.$_SESSION['rudwebset_cfg_theme'].'\');';
   $c .= $eol . '// DEFAULT PAGE TO DISPLAY AT FIRST (IF ENABLED)';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CNT_EN\',\''.$_SESSION['rswebset_cfg_cnt_en'].'\');';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CNT_DE\',\''.$_SESSION['rswebset_cfg_cnt_de'].'\');';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CNT_ES\',\''.$_SESSION['rswebset_cfg_cnt_es'].'\');';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CNT_FR\',\''.$_SESSION['rswebset_cfg_cnt_fr'].'\');';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CNT_IT\',\''.$_SESSION['rswebset_cfg_cnt_it'].'\');';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CNT_RO\',\''.$_SESSION['rswebset_cfg_cnt_ro'].'\');';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CNT_SHW\', \''.$_SESSION['rswebset_cfg_cnt_shw'].'\'); // enable display of content at start';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_EN\',\''.$_SESSION['rudwebset_cfg_cnt_en'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_DE\',\''.$_SESSION['rudwebset_cfg_cnt_de'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_ES\',\''.$_SESSION['rudwebset_cfg_cnt_es'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_FR\',\''.$_SESSION['rudwebset_cfg_cnt_fr'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_IT\',\''.$_SESSION['rudwebset_cfg_cnt_it'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_RO\',\''.$_SESSION['rudwebset_cfg_cnt_ro'].'\');';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_SHW\', \''.$_SESSION['rudwebset_cfg_cnt_shw'].'\'); // enable display of content at start';
   $c .= $eol . '//OPTIONAL SITE MODULES';
-  $c .= $eol . 'define(\'_RSWEB_CFG_LANG_ON\', \''.$_SESSION['rswebset_cfg_lang_on'].'\'); // enable multiple languages';
-  $c .= $eol . 'define(\'_RSWEB_CFG_USR_ON\', \''.$_SESSION['rswebset_cfg_usr_on'].'\'); // enable user authentification';
-  $c .= $eol . 'define(\'_RSWEB_CFG_THEME_ON\', \''.$_SESSION['rswebset_cfg_theme_on'].'\'); // enable multiple themes';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CART_ON\', \''.$_SESSION['rswebset_cfg_cart_on'].'\'); // enable shopping cart';
-  $c .= $eol . 'define(\'_RSWEB_CFG_STATS_ON\', \''.$_SESSION['rswebset_cfg_stats_on'].'\'); // enable visitor statistics';
-  $c .= $eol . 'define(\'_RSWEB_CFG_STATS_IP\', \''.$_SESSION['rswebset_cfg_stats_ip'].'\'); // visitor ip to ignore in statistics';
-  $c .= $eol . 'define(\'_RSWEB_CFG_FTR_ON\', \''.$_SESSION['rswebset_cfg_ftr_on'].'\'); // enable featured content';
-  $c .= $eol . 'define(\'_RSWEB_CFG_FTR_LMT\', \''.$_SESSION['rswebset_cfg_ftr_lmt'].'\'); // number of featured items';
-  $c .= $eol . 'define(\'_RSWEB_CFG_TIMER\', \''.$_SESSION['rswebset_cfg_timer'].'\'); // enable page load time';
-  $c .= $eol . 'define(\'_RSWEB_CFG_DEBUG\', \''.$_SESSION['rswebset_cfg_debug'].'\'); // enable debug info';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CPY\', \''.$_SESSION['rswebset_cfg_cpy'].'\'); // enable copyright notice';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CPYDEV\', \''.$_SESSION['rswebset_cfg_cpydev'].'\'); // show developer info in copyright notice';
-  $c .= $eol . 'define(\'_RSWEB_CFG_SMAP\', \''.$_SESSION['rswebset_cfg_smap'].'\'); // enable sitemap';
-  $c .= $eol . 'define(\'_RSWEB_CFG_YAH\', \''.$_SESSION['rswebset_cfg_yah'].'\'); // enable youarehere';
-  $c .= $eol . 'define(\'_RSWEB_CFG_NWS\', \''.$_SESSION['rswebset_cfg_nws'].'\'); // enable news';
-  $c .= $eol . 'define(\'_RSWEB_CFG_SRC\', \''.$_SESSION['rswebset_cfg_src'].'\'); // enable search';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_LANG_ON\', \''.$_SESSION['rudwebset_cfg_lang_on'].'\'); // enable multiple languages';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_USR_ON\', \''.$_SESSION['rudwebset_cfg_usr_on'].'\'); // enable user authentification';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_THEME_ON\', \''.$_SESSION['rudwebset_cfg_theme_on'].'\'); // enable multiple themes';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CART_ON\', \''.$_SESSION['rudwebset_cfg_cart_on'].'\'); // enable shopping cart';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_STATS_ON\', \''.$_SESSION['rudwebset_cfg_stats_on'].'\'); // enable visitor statistics';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_STATS_IP\', \''.$_SESSION['rudwebset_cfg_stats_ip'].'\'); // visitor ip to ignore in statistics';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_FTR_ON\', \''.$_SESSION['rudwebset_cfg_ftr_on'].'\'); // enable featured content';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_FTR_LMT\', \''.$_SESSION['rudwebset_cfg_ftr_lmt'].'\'); // number of featured items';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_TIMER\', \''.$_SESSION['rudwebset_cfg_timer'].'\'); // enable page load time';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_DEBUG\', \''.$_SESSION['rudwebset_cfg_debug'].'\'); // enable debug info';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CPY\', \''.$_SESSION['rudwebset_cfg_cpy'].'\'); // enable copyright notice';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CPYDEV\', \''.$_SESSION['rudwebset_cfg_cpydev'].'\'); // show developer info in copyright notice';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_SMAP\', \''.$_SESSION['rudwebset_cfg_smap'].'\'); // enable sitemap';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_YAH\', \''.$_SESSION['rudwebset_cfg_yah'].'\'); // enable youarehere';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_NWS\', \''.$_SESSION['rudwebset_cfg_nws'].'\'); // enable news';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_SRC\', \''.$_SESSION['rudwebset_cfg_src'].'\'); // enable search';
   $c .= $eol . '// OPTIONAL CONTENT MODULES';
-  $c .= $eol . 'define(\'_RSWEB_CFG_PICS_0\', \''.$_SESSION['rswebset_cfg_pics_0'].'\'); // enable content pictures 0';
-  $c .= $eol . 'define(\'_RSWEB_CFG_PICS_1\', \''.$_SESSION['rswebset_cfg_pics_1'].'\'); // enable content pictures 1';
-  $c .= $eol . 'define(\'_RSWEB_CFG_PICS_2\', \''.$_SESSION['rswebset_cfg_pics_2'].'\'); // enable content pictures 2';
-  $c .= $eol . 'define(\'_RSWEB_CFG_PICS_3\', \''.$_SESSION['rswebset_cfg_pics_3'].'\'); // enable content pictures 3';
-  $c .= $eol . 'define(\'_RSWEB_CFG_PICS_4\', \''.$_SESSION['rswebset_cfg_pics_4'].'\'); // enable content pictures 4';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CNT_POSTED\', \''.$_SESSION['rswebset_cfg_cnt_posted'].'\'); // enable content posted by';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CNT_TAGS\', \''.$_SESSION['rswebset_cfg_cnt_tags'].'\'); // enable content tags';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CNT_CMNTS\', \''.$_SESSION['rswebset_cfg_cnt_cmnts'].'\'); // enable content comments';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CNT_LNKS\', \''.$_SESSION['rswebset_cfg_cnt_lnks'].'\'); // enable content links';
-  $c .= $eol . 'define(\'_RSWEB_CFG_CNT_DLDS\', \''.$_SESSION['rswebset_cfg_cnt_dlds'].'\'); // enable content downloads';
-  $c .= $eol . 'define(\'_RSWEB_CFG_BLG_POSTED\', \''.$_SESSION['rswebset_cfg_blg_posted'].'\'); // enable blog posted by';
-  $c .= $eol . 'define(\'_RSWEB_CFG_BLG_TAGS\', \''.$_SESSION['rswebset_cfg_blg_tags'].'\'); // enable blog tags';
-  $c .= $eol . 'define(\'_RSWEB_CFG_BLG_CMNTS\', \''.$_SESSION['rswebset_cfg_blg_cmnts'].'\'); // enable blog comments';
-  $c .= $eol . 'define(\'_RSWEB_CFG_BLG_LNKS\', \''.$_SESSION['rswebset_cfg_blg_lnks'].'\'); // enable blog links';
-  $c .= $eol . 'define(\'_RSWEB_CFG_BLG_DLDS\', \''.$_SESSION['rswebset_cfg_blg_dlds'].'\'); // enable blog downloads';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_PICS_0\', \''.$_SESSION['rudwebset_cfg_pics_0'].'\'); // enable content pictures 0';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_PICS_1\', \''.$_SESSION['rudwebset_cfg_pics_1'].'\'); // enable content pictures 1';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_PICS_2\', \''.$_SESSION['rudwebset_cfg_pics_2'].'\'); // enable content pictures 2';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_PICS_3\', \''.$_SESSION['rudwebset_cfg_pics_3'].'\'); // enable content pictures 3';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_PICS_4\', \''.$_SESSION['rudwebset_cfg_pics_4'].'\'); // enable content pictures 4';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_POSTED\', \''.$_SESSION['rudwebset_cfg_cnt_posted'].'\'); // enable content posted by';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_TAGS\', \''.$_SESSION['rudwebset_cfg_cnt_tags'].'\'); // enable content tags';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_CMNTS\', \''.$_SESSION['rudwebset_cfg_cnt_cmnts'].'\'); // enable content comments';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_LNKS\', \''.$_SESSION['rudwebset_cfg_cnt_lnks'].'\'); // enable content links';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_DLDS\', \''.$_SESSION['rudwebset_cfg_cnt_dlds'].'\'); // enable content downloads';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_BLG_POSTED\', \''.$_SESSION['rudwebset_cfg_blg_posted'].'\'); // enable blog posted by';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_BLG_TAGS\', \''.$_SESSION['rudwebset_cfg_blg_tags'].'\'); // enable blog tags';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_BLG_CMNTS\', \''.$_SESSION['rudwebset_cfg_blg_cmnts'].'\'); // enable blog comments';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_BLG_LNKS\', \''.$_SESSION['rudwebset_cfg_blg_lnks'].'\'); // enable blog links';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_BLG_DLDS\', \''.$_SESSION['rudwebset_cfg_blg_dlds'].'\'); // enable blog downloads';
   $c .= $eol . '?>';
   return $c;
 }
 function generate_dbd_str($eol) {
-  $c  = $eol . 'TRUNCATE TABLE rsweb_set_cfg;';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(1, \'START\', \''.$_SESSION['rswebset_cfg_start'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(2, \'CLCOM\', \''.$_SESSION['rswebset_cfg_clcom'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(3, \'CLNAM\', \''.$_SESSION['rswebset_cfg_clnam'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(4, \'DVCOM\', \''.$_SESSION['rswebset_cfg_dvcom'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(5, \'DVURL\', \''.$_SESSION['rswebset_cfg_dvurl'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(6, \'DVNAM\', \''.$_SESSION['rswebset_cfg_dvnam'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(7, \'DESIG\', \''.$_SESSION['rswebset_cfg_dvnam'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(8, \'PUBL\', \''.$_SESSION['rswebset_cfg_dvcom'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(9, \'RATNG\', \''.$_SESSION['rswebset_cfg_ratng'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(10, \'DISTR\', \''.$_SESSION['rswebset_cfg_distr'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(11, \'ROBOTS\', \''.$_SESSION['rswebset_cfg_robots'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(12, \'PRAG\', \''.$_SESSION['rswebset_cfg_prag'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(13, \'EXP\', \''.$_SESSION['rswebset_cfg_exp'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(14, \'CACHE\', \''.$_SESSION['rswebset_cfg_cache'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(15, \'LANG\', \''.$_SESSION['rswebset_cfg_lang'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(16, \'THEME\', \''.$_SESSION['rswebset_cfg_theme'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(17, \'CNT_EN\', \''.$_SESSION['rswebset_cfg_cnt_en'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(18, \'CNT_DE\', \''.$_SESSION['rswebset_cfg_cnt_de'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(19, \'CNT_ES\', \''.$_SESSION['rswebset_cfg_cnt_es'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(20, \'CNT_FR\', \''.$_SESSION['rswebset_cfg_cnt_fr'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(21, \'CNT_IT\', \''.$_SESSION['rswebset_cfg_cnt_it'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(22, \'CNT_RO\', \''.$_SESSION['rswebset_cfg_cnt_ro'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(23, \'CNT_SHW\', \''.$_SESSION['rswebset_cfg_cnt_shw'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c  = $eol . 'TRUNCATE TABLE rudweb_set_cfg;';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(1, \'START\', \''.$_SESSION['rudwebset_cfg_start'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(2, \'CLCOM\', \''.$_SESSION['rudwebset_cfg_clcom'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(3, \'CLNAM\', \''.$_SESSION['rudwebset_cfg_clnam'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(4, \'DVCOM\', \''.$_SESSION['rudwebset_cfg_dvcom'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(5, \'DVURL\', \''.$_SESSION['rudwebset_cfg_dvurl'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(6, \'DVNAM\', \''.$_SESSION['rudwebset_cfg_dvnam'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(7, \'DESIG\', \''.$_SESSION['rudwebset_cfg_dvnam'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(8, \'PUBL\', \''.$_SESSION['rudwebset_cfg_dvcom'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(9, \'RATNG\', \''.$_SESSION['rudwebset_cfg_ratng'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(10, \'DISTR\', \''.$_SESSION['rudwebset_cfg_distr'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(11, \'ROBOTS\', \''.$_SESSION['rudwebset_cfg_robots'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(12, \'PRAG\', \''.$_SESSION['rudwebset_cfg_prag'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(13, \'EXP\', \''.$_SESSION['rudwebset_cfg_exp'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(14, \'CACHE\', \''.$_SESSION['rudwebset_cfg_cache'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(15, \'LANG\', \''.$_SESSION['rudwebset_cfg_lang'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(16, \'THEME\', \''.$_SESSION['rudwebset_cfg_theme'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(17, \'CNT_EN\', \''.$_SESSION['rudwebset_cfg_cnt_en'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(18, \'CNT_DE\', \''.$_SESSION['rudwebset_cfg_cnt_de'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(19, \'CNT_ES\', \''.$_SESSION['rudwebset_cfg_cnt_es'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(20, \'CNT_FR\', \''.$_SESSION['rudwebset_cfg_cnt_fr'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(21, \'CNT_IT\', \''.$_SESSION['rudwebset_cfg_cnt_it'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(22, \'CNT_RO\', \''.$_SESSION['rudwebset_cfg_cnt_ro'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(23, \'CNT_SHW\', \''.$_SESSION['rudwebset_cfg_cnt_shw'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
 
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(24, \'LANG_ON\', \''.$_SESSION['rswebset_cfg_lang_on'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(25, \'USR_ON\', \''.$_SESSION['rswebset_cfg_usr_on'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(26, \'THEME_ON\', \''.$_SESSION['rswebset_cfg_theme_on'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(24, \'LANG_ON\', \''.$_SESSION['rudwebset_cfg_lang_on'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(25, \'USR_ON\', \''.$_SESSION['rudwebset_cfg_usr_on'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(26, \'THEME_ON\', \''.$_SESSION['rudwebset_cfg_theme_on'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
 
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(27, \'CART_ON\', \''.$_SESSION['rswebset_cfg_cart_on'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(28, \'STATS_ON\', \''.$_SESSION['rswebset_cfg_stats_on'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(29, \'STATS_IP\', \''.$_SESSION['rswebset_cfg_stats_ip'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(30, \'FTR_ON\', \''.$_SESSION['rswebset_cfg_ftr_on'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(31, \'FTR_LMT\', \''.$_SESSION['rswebset_cfg_ftr_lmt'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(32, \'TIMER\', \''.$_SESSION['rswebset_cfg_timer'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(27, \'CART_ON\', \''.$_SESSION['rudwebset_cfg_cart_on'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(28, \'STATS_ON\', \''.$_SESSION['rudwebset_cfg_stats_on'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(29, \'STATS_IP\', \''.$_SESSION['rudwebset_cfg_stats_ip'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(30, \'FTR_ON\', \''.$_SESSION['rudwebset_cfg_ftr_on'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(31, \'FTR_LMT\', \''.$_SESSION['rudwebset_cfg_ftr_lmt'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(32, \'TIMER\', \''.$_SESSION['rudwebset_cfg_timer'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
   
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(33, \'DEBUG\', \''.$_SESSION['rswebset_cfg_debug'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(34, \'CPY\', \''.$_SESSION['rswebset_cfg_cpy'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(35, \'CPYDEV\', \''.$_SESSION['rswebset_cfg_cpydev'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(33, \'DEBUG\', \''.$_SESSION['rudwebset_cfg_debug'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(34, \'CPY\', \''.$_SESSION['rudwebset_cfg_cpy'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(35, \'CPYDEV\', \''.$_SESSION['rudwebset_cfg_cpydev'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
   
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(36, \'SMAP\', \''.$_SESSION['rswebset_cfg_smap'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(37, \'YAH\', \''.$_SESSION['rswebset_cfg_yah'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(38, \'NWS\', \''.$_SESSION['rswebset_cfg_nws'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(39, \'SRC\', \''.$_SESSION['rswebset_cfg_src'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(36, \'SMAP\', \''.$_SESSION['rudwebset_cfg_smap'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(37, \'YAH\', \''.$_SESSION['rudwebset_cfg_yah'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(38, \'NWS\', \''.$_SESSION['rudwebset_cfg_nws'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(39, \'SRC\', \''.$_SESSION['rudwebset_cfg_src'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
   
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(40, \'PICS_0\', \''.$_SESSION['rswebset_cfg_pics_0'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(41, \'PICS_1\', \''.$_SESSION['rswebset_cfg_pics_1'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(42, \'PICS_2\', \''.$_SESSION['rswebset_cfg_pics_2'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(43, \'PICS_3\', \''.$_SESSION['rswebset_cfg_pics_3'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(44, \'PICS_4\', \''.$_SESSION['rswebset_cfg_pics_4'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(45, \'CNT_POSTED\', \''.$_SESSION['rswebset_cfg_cnt_posted'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(46, \'CNT_TAGS\', \''.$_SESSION['rswebset_cfg_cnt_tags'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(47, \'CNT_CMNTS\', \''.$_SESSION['rswebset_cfg_cnt_cmnts'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(48, \'CNT_LNKS\', \''.$_SESSION['rswebset_cfg_cnt_lnks'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(49, \'CNT_DLDS\', \''.$_SESSION['rswebset_cfg_cnt_dlds'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(50, \'BLG_POSTED\', \''.$_SESSION['rswebset_cfg_blg_posted'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(51, \'BLG_TAGS\', \''.$_SESSION['rswebset_cfg_blg_tags'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(52, \'BLG_CMNTS\', \''.$_SESSION['rswebset_cfg_blg_cmnts'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(53, \'BLG_LNKS\', \''.$_SESSION['rswebset_cfg_blg_lnks'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rsweb_set_cfg VALUES(54, \'BLG_DLDS\', \''.$_SESSION['rswebset_cfg_blg_dlds'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(40, \'PICS_0\', \''.$_SESSION['rudwebset_cfg_pics_0'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(41, \'PICS_1\', \''.$_SESSION['rudwebset_cfg_pics_1'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(42, \'PICS_2\', \''.$_SESSION['rudwebset_cfg_pics_2'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(43, \'PICS_3\', \''.$_SESSION['rudwebset_cfg_pics_3'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(44, \'PICS_4\', \''.$_SESSION['rudwebset_cfg_pics_4'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(45, \'CNT_POSTED\', \''.$_SESSION['rudwebset_cfg_cnt_posted'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(46, \'CNT_TAGS\', \''.$_SESSION['rudwebset_cfg_cnt_tags'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(47, \'CNT_CMNTS\', \''.$_SESSION['rudwebset_cfg_cnt_cmnts'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(48, \'CNT_LNKS\', \''.$_SESSION['rudwebset_cfg_cnt_lnks'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(49, \'CNT_DLDS\', \''.$_SESSION['rudwebset_cfg_cnt_dlds'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(50, \'BLG_POSTED\', \''.$_SESSION['rudwebset_cfg_blg_posted'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(51, \'BLG_TAGS\', \''.$_SESSION['rudwebset_cfg_blg_tags'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(52, \'BLG_CMNTS\', \''.$_SESSION['rudwebset_cfg_blg_cmnts'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(53, \'BLG_LNKS\', \''.$_SESSION['rudwebset_cfg_blg_lnks'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(54, \'BLG_DLDS\', \''.$_SESSION['rudwebset_cfg_blg_dlds'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
 
-  $c .= $eol . 'INSERT INTO rsweb_set_usr VALUES (1, \'The\', \'Website\', \'Admin\', \'\', \'Root\', \'admin\', \''.$_SESSION['rswebset_set_pre'].'admin00\', \''.$_SESSION['rswebset_cfg_theme'].'\', \''.$_SESSION['rswebset_cfg_lang'].'\', 5, 1, \'default admin\', \'VAL_CRD\');';
+  $c .= $eol . 'INSERT INTO rudweb_set_usr VALUES (1, \'The\', \'Website\', \'Admin\', \'\', \'Root\', \'admin\', \''.$_SESSION['rudwebset_set_pre'].'admin00\', \''.$_SESSION['rudwebset_cfg_theme'].'\', \''.$_SESSION['rudwebset_cfg_lang'].'\', 5, 1, \'default admin\', \'VAL_CRD\');';
   return $c;
 }
 function generate_removed01($eol) {
-  $c  = $eol . 'TRUNCATE TABLE rsweb_set_cfg;';
-  $c  .= $eol . 'TRUNCATE TABLE rsweb_set_thm;';
-  $c  .= $eol . 'TRUNCATE TABLE rsweb_set_usr;';
-  $c  .= $eol . 'TRUNCATE TABLE rsweb_var_logins;';
-  $c  .= $eol . 'TRUNCATE TABLE rsweb_var_stats;';
-  $c  .= $eol . 'TRUNCATE TABLE rsweb_ws_cnt;';
-  $c  .= $eol . 'TRUNCATE TABLE rsweb_ws_ftr;';
-  $c  .= $eol . 'TRUNCATE TABLE rsweb_ws_lnk;';
-  $c  .= $eol . 'TRUNCATE TABLE rsweb_ws_mnu;';
-  $c  .= $eol . 'TRUNCATE TABLE rsweb_ws_pic;';
-  $c  .= $eol . 'OPTIMIZE TABLE rsweb_set_cfg;';
-  $c  .= $eol . 'OPTIMIZE TABLE rsweb_set_thm;';
-  $c  .= $eol . 'OPTIMIZE TABLE rsweb_set_usr;';
-  $c  .= $eol . 'OPTIMIZE TABLE rsweb_var_logins;';
-  $c  .= $eol . 'OPTIMIZE TABLE rsweb_var_stats;';
-  $c  .= $eol . 'OPTIMIZE TABLE rsweb_ws_cnt;';
-  $c  .= $eol . 'OPTIMIZE TABLE rsweb_ws_ftr;';
-  $c  .= $eol . 'OPTIMIZE TABLE rsweb_ws_lnk;';
-  $c  .= $eol . 'OPTIMIZE TABLE rsweb_ws_mnu;';
-  $c  .= $eol . 'OPTIMIZE TABLE rsweb_ws_pic;';
+  $c  = $eol . 'TRUNCATE TABLE rudweb_set_cfg;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_set_thm;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_set_usr;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_var_logins;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_var_stats;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_ws_cnt;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_ws_ftr;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_ws_lnk;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_ws_mnu;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_ws_pic;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_set_cfg;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_set_thm;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_set_usr;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_var_logins;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_var_stats;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_ws_cnt;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_ws_ftr;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_ws_lnk;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_ws_mnu;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_ws_pic;';
   return $c;
 }
 function generate_removed02($eol) {
-  $c  = $eol . 'DROP TABLE IF EXISTS rsweb_set_cfg;';
-  $c  .= $eol . 'DROP TABLE IF EXISTS rsweb_set_thm;';
-  $c  .= $eol . 'DROP TABLE IF EXISTS rsweb_set_usr;';
-  $c  .= $eol . 'DROP TABLE IF EXISTS rsweb_var_logins;';
-  $c  .= $eol . 'DROP TABLE IF EXISTS rsweb_var_stats;';
-  $c  .= $eol . 'DROP TABLE IF EXISTS rsweb_ws_cnt;';
-  $c  .= $eol . 'DROP TABLE IF EXISTS rsweb_ws_ftr;';
-  $c  .= $eol . 'DROP TABLE IF EXISTS rsweb_ws_lnk;';
-  $c  .= $eol . 'DROP TABLE IF EXISTS rsweb_ws_mnu;';
-  $c  .= $eol . 'DROP TABLE IF EXISTS rsweb_ws_pic;';
+  $c  = $eol . 'DROP TABLE IF EXISTS rudweb_set_cfg;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_set_thm;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_set_usr;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_var_logins;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_var_stats;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_ws_cnt;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_ws_ftr;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_ws_lnk;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_ws_mnu;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_ws_pic;';
   return $c;
 }
 function check_cfg_file($path, $file) {
@@ -236,9 +236,9 @@ function write_config_str($str, $file) {
   return $err;
 }
 function get_version($location) {
-  if(is_readable($location.'inc/rswebc.inc.php')) {
-    $version_raw = file($location.'inc/rswebc.inc.php');
-    $version_full = eregi_replace('define\("_RSWEB_SITE_VERSION", "', '', $version_raw['8']);
+  if(is_readable($location.'inc/rudwebc.inc.php')) {
+    $version_raw = file($location.'inc/rudwebc.inc.php');
+    $version_full = eregi_replace('define\("_RUDWEB_SITE_VERSION", "', '', $version_raw['8']);
     $version['0']  = eregi_replace('"\);', '', $version_full);
   }
   else {
@@ -336,33 +336,33 @@ function check_gd() {
 function get_dbsettings($location) {
   if(is_readable($location.'inc/config.inc.php')) {
     $lines = file($location.'inc/config.inc.php');
-    $dbconfig['dbtype'] = eregi_replace('\$rsweb_dbtype = \'', '', $lines['9']);
+    $dbconfig['dbtype'] = eregi_replace('\$rudweb_dbtype = \'', '', $lines['9']);
     $dbconfig['dbtype'] = eregi_replace('\';', '', $dbconfig['dbtype']);
     $dbconfig['dbtype'] = trim($dbconfig['dbtype']);
     
-    $dbconfig['dbport'] = eregi_replace('\$rsweb_dbport = \'', '', $lines['10']);
+    $dbconfig['dbport'] = eregi_replace('\$rudweb_dbport = \'', '', $lines['10']);
     $dbconfig['dbport'] = eregi_replace('\';', '', $dbconfig['dbport']);
     $dbconfig['dbport'] = trim($dbconfig['dbport']);
     
-    $dbconfig['dbhost'] = eregi_replace('\$rsweb_dbhost = \'', '', $lines['11']);
+    $dbconfig['dbhost'] = eregi_replace('\$rudweb_dbhost = \'', '', $lines['11']);
     $dbconfig['dbhost'] = eregi_replace('\';', '', $dbconfig['dbhost']);
     $dbconfig['dbhost'] = trim($dbconfig['dbhost']);
     
-    $dbconfig['dbuser'] = eregi_replace('\$rsweb_dbuser = \'', '', $lines['12']);
+    $dbconfig['dbuser'] = eregi_replace('\$rudweb_dbuser = \'', '', $lines['12']);
     $dbconfig['dbuser'] = eregi_replace('\';', '', $dbconfig['dbuser']);
     $dbconfig['dbuser'] = trim($dbconfig['dbuser']);
     
-    $dbconfig['dbpass'] = eregi_replace('\$rsweb_dbpass = \'', '', $lines['13']);
+    $dbconfig['dbpass'] = eregi_replace('\$rudweb_dbpass = \'', '', $lines['13']);
     $dbconfig['dbpass'] = eregi_replace('\';', '', $dbconfig['dbpass']);
     $dbconfig['dbpass'] = trim($dbconfig['dbpass']);
     
-    $dbconfig['dbname'] = eregi_replace('\$rsweb_dbname = \'', '', $lines['14']);
+    $dbconfig['dbname'] = eregi_replace('\$rudweb_dbname = \'', '', $lines['14']);
     $dbconfig['dbname'] = eregi_replace('\';', '', $dbconfig['dbname']);
     $dbconfig['dbname'] = trim($dbconfig['dbname']);
     
-    $dbconfig['rswebpre'] = eregi_replace('define\(\'_RSWEB_PRE\', \'', '', $lines['26']);
-    $dbconfig['rswebpre'] = eregi_replace('_\'\);', '', $dbconfig['rswebpre']);
-    $dbconfig['rswebpre'] = trim($dbconfig['rswebpre']);
+    $dbconfig['rudwebpre'] = eregi_replace('define\(\'_RUDWEB_PRE\', \'', '', $lines['26']);
+    $dbconfig['rudwebpre'] = eregi_replace('_\'\);', '', $dbconfig['rudwebpre']);
+    $dbconfig['rudwebpre'] = trim($dbconfig['rudwebpre']);
   }
   else {
     $dbconfig = null;
@@ -371,29 +371,29 @@ function get_dbsettings($location) {
 }
 /* ********** ********** ********** ********** ********** ********** ********** ********** ********** ********** */
 // DATABASE FUNCTIONS
-function rsweb_dbopen($db_type, $rsweb_dbhost, $rsweb_dbport, $rsweb_dbuser, $rsweb_dbpass, $rsweb_dbname) {
+function rudweb_dbopen($db_type, $rudweb_dbhost, $rudweb_dbport, $rudweb_dbuser, $rudweb_dbpass, $rudweb_dbname) {
   switch($db_type) {
     case "my": {
-      $rsweb_dbconn = mysql_connect($rsweb_dbhost . ":" . $rsweb_dbport , $rsweb_dbuser, $rsweb_dbpass) or die ("<B>Oups! [" . mysql_errno() . "]: " .mysql_error() . "</B>");
-      mysql_select_db($rsweb_dbname) or die ("<B>Oups! [" . mysql_errno() . "]: " .mysql_error() . "</B>");
+      $rudweb_dbconn = mysql_connect($rudweb_dbhost . ":" . $rudweb_dbport , $rudweb_dbuser, $rudweb_dbpass) or die ("<B>Oups! [" . mysql_errno() . "]: " .mysql_error() . "</B>");
+      mysql_select_db($rudweb_dbname) or die ("<B>Oups! [" . mysql_errno() . "]: " .mysql_error() . "</B>");
       break;
     }
     case "pg": {
-      $rsweb_dbconn = pg_connect("host=" . $rsweb_dbhost . " port=".$rsweb_dbport." dbname=".$rsweb_dbname." user=".$rsweb_dbuser." password=".$rsweb_dbpass."") or die("Oops! Could not connect" . pg_connection_status($rsweb_dbconn));
+      $rudweb_dbconn = pg_connect("host=" . $rudweb_dbhost . " port=".$rudweb_dbport." dbname=".$rudweb_dbname." user=".$rudweb_dbuser." password=".$rudweb_dbpass."") or die("Oops! Could not connect" . pg_connection_status($rudweb_dbconn));
       break;
     }
-    default  : {$rsweb_conn = NULL; break;}
+    default  : {$rudweb_conn = NULL; break;}
   }
-  return $rsweb_dbconn;
+  return $rudweb_dbconn;
 }
-function rsweb_dbclose($db_type, $rsweb_dbconn) {
+function rudweb_dbclose($db_type, $rudweb_dbconn) {
   switch($db_type) {
-    case "my": {mysql_close($rsweb_dbconn); break;}
-    case "pg": {pg_close($rsweb_dbconn); break;}
+    case "my": {mysql_close($rudweb_dbconn); break;}
+    case "pg": {pg_close($rudweb_dbconn); break;}
     default  : {break;}
   }
 }
-function rsweb_qres($db_type, $query) {
+function rudweb_qres($db_type, $query) {
   switch($db_type) {
     //case "my": {$result = mysql_query($query) or die("Oops! Query Failed. " . mysql_errno() . " : " . mysql_error()); break;}
     case "my": {$result = mysql_query($query);
@@ -407,7 +407,7 @@ function rsweb_qres($db_type, $query) {
   }
   return $result;
 }
-function rsweb_qtotal($db_type, $result) {
+function rudweb_qtotal($db_type, $result) {
   switch($db_type) {
     case "my": {$total = mysql_num_rows($result); break;}
     case "pg": {$total = pg_num_rows($result); break;}
@@ -415,7 +415,7 @@ function rsweb_qtotal($db_type, $result) {
   }
   return $total;
 }
-function rsweb_fetch_assoc($db_type, $result) {
+function rudweb_fetch_assoc($db_type, $result) {
   switch($db_type) {
     case "my": {$row = mysql_fetch_assoc($result); break;}
     case "pg": {$row = pg_fetch_assoc($result); break;}
@@ -423,7 +423,7 @@ function rsweb_fetch_assoc($db_type, $result) {
   }
   return $row;
 }
-function rsweb_affected($db_type, $result) {
+function rudweb_affected($db_type, $result) {
   switch($db_type) {
     case "my": {$affected = mysql_affected_rows(); break;}
     case "pg": {$affected = pg_affected_rows($result); break;}

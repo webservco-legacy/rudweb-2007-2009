@@ -11,7 +11,7 @@ if(isset($_POST['set_cfg_tm_inst'])) {
     $cfg_thm_check_target = check_cfg_file($target.$thm_file_path, $thm_file_name);
     if($cfg_thm_check_target == '0') {
       switch($thm) {
-        case 'rswebdef' : {
+        case 'rudwebdef' : {
           $dirs[0] = 'themes/'.$thm.'/';
           $files[$dirs[0]][0] = array();
           $files[$dirs[0]][1] = array();

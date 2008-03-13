@@ -59,7 +59,7 @@ echo "\n</TABLE>";
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
 echo "\n<TR><TD CLASS=\"cnt\" WIDTH=\"110\" STYLE=\"text-align: right\">version:</TD>";
 echo "\n<TD CLASS=\"cnt\">";
-if(version_compare($php_version, _RSWEB_PHP_VER, '<')) {
+if(version_compare($php_version, _RUDWEB_PHP_VER, '<')) {
   echo "<SPAN CLASS=\"rst_err\" STYLE=\"border-bottom-width: 0px;\">".$php_version."</SPAN>";
   $php_err = '1';
 }
@@ -140,7 +140,7 @@ echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#00000
 echo "\n<TR><TD CLASS=\"hdr\"><B>Database</B></TD></TR>";
 echo "\n</TABLE>";
   
-  switch($_SESSION['rswebset_set_dbtype']) {
+  switch($_SESSION['rudwebset_set_dbtype']) {
     case "my" : {
       echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
       echo "\n<TR><TD CLASS=\"cnt\" WIDTH=\"110\" STYLE=\"text-align: right\">type:</TD>";
@@ -148,7 +148,7 @@ echo "\n</TABLE>";
       echo "\n</TABLE>";
   
       if(function_exists('mysql_connect')) {
-      $db_conn = @mysql_connect($_SESSION['rswebset_set_dbhost'] . ":" . $_SESSION['rswebset_set_dbport'] , $_SESSION['rswebset_set_dbuser'], $_SESSION['rswebset_set_dbpass']);
+      $db_conn = @mysql_connect($_SESSION['rudwebset_set_dbhost'] . ":" . $_SESSION['rudwebset_set_dbport'] , $_SESSION['rudwebset_set_dbuser'], $_SESSION['rudwebset_set_dbpass']);
       }
       else {$db_conn = false;}
       echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -156,13 +156,13 @@ echo "\n</TABLE>";
       echo "\n<TD CLASS=\"cnt\">";
       if(!$db_conn) {echo "<SPAN CLASS=\"rst_err\" STYLE=\"border-bottom-width: 0px;\">could not connect!</SPAN>";$db_err = '1';}
       else {
-        $db_ver = rsweb_qres("my", "SELECT VERSION()");
-        $row_v = rsweb_fetch_assoc("my", $db_ver);
+        $db_ver = rudweb_qres("my", "SELECT VERSION()");
+        $row_v = rudweb_fetch_assoc("my", $db_ver);
         $db_version = $row_v['VERSION()'];
         if(!$row_v) {echo "<SPAN CLASS=\"rst_err\" STYLE=\"border-bottom-width: 0px;\">n/a</SPAN>";$db_err = '1';};
         echo "<SPAN CLASS=\"rst_ok\" STYLE=\"border-bottom-width: 0px;\">".$db_version."</SPAN>";
         $dbv = substr($db_version, 0 , 3);
-        $_SESSION['rswebset_set_dbmy'] = eregi_replace('\.', '', $dbv);
+        $_SESSION['rudwebset_set_dbmy'] = eregi_replace('\.', '', $dbv);
       }
       echo "</TD></TR>";
       echo "\n</TABLE>";
@@ -180,8 +180,8 @@ echo "\n</TABLE>";
       echo "\n<TD CLASS=\"cnt\">";
       if(!$db_conn) {echo "<SPAN CLASS=\"rst_err\" STYLE=\"border-bottom-width: 0px;\">could not connect!</SPAN>";$db_err = '1';}
       else {
-        $db_select = @mysql_select_db($_SESSION['rswebset_set_dbname']);
-        if(!$db_select) {echo "<SPAN CLASS=\"rst_err\" STYLE=\"border-bottom-width: 0px;\">database <I>" . $_SESSION['rswebset_set_dbname'] . "</I> not found!</SPAN>";$db_err = '1';}
+        $db_select = @mysql_select_db($_SESSION['rudwebset_set_dbname']);
+        if(!$db_select) {echo "<SPAN CLASS=\"rst_err\" STYLE=\"border-bottom-width: 0px;\">database <I>" . $_SESSION['rudwebset_set_dbname'] . "</I> not found!</SPAN>";$db_err = '1';}
         else {echo "<SPAN CLASS=\"rst_ok\" STYLE=\"border-bottom-width: 0px;\">ok</SPAN>";}
       }
       echo "</TD></TR>";
@@ -189,14 +189,14 @@ echo "\n</TABLE>";
       break;
     }
     case "pg" : {
-      $_SESSION['rswebset_set_dbmy'] = '0';
+      $_SESSION['rudwebset_set_dbmy'] = '0';
       echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
       echo "\n<TR><TD CLASS=\"cnt\" WIDTH=\"110\" STYLE=\"text-align: right\">type:</TD>";
       echo "\n<TD CLASS=\"cnt\">PostgreSQL</TD></TR>";
       echo "\n</TABLE>";
   
       if(function_exists('pg_connect')) {
-        $db_conn = @pg_connect("host=" . $_SESSION['rswebset_set_dbhost'] . " port=".$_SESSION['rswebset_set_dbport']." dbname=".$_SESSION['rswebset_set_dbname']." user=".$_SESSION['rswebset_set_dbuser']." password=".$_SESSION['rswebset_set_dbpass']."");
+        $db_conn = @pg_connect("host=" . $_SESSION['rudwebset_set_dbhost'] . " port=".$_SESSION['rudwebset_set_dbport']." dbname=".$_SESSION['rudwebset_set_dbname']." user=".$_SESSION['rudwebset_set_dbuser']." password=".$_SESSION['rudwebset_set_dbpass']."");
       }
       else {$db_conn = false;}
       echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -204,8 +204,8 @@ echo "\n</TABLE>";
       echo "\n<TD CLASS=\"cnt\">";
       if(!$db_conn) {echo "<SPAN CLASS=\"rst_err\" STYLE=\"border-bottom-width: 0px;\">could not connect!</SPAN>";$db_err = '1';}
       else {
-        $db_ver = rsweb_qres("pg", "SELECT version()");
-        $row_v = rsweb_fetch_assoc("pg", $db_ver);
+        $db_ver = rudweb_qres("pg", "SELECT version()");
+        $row_v = rudweb_fetch_assoc("pg", $db_ver);
         if(!$row_v) {echo "<SPAN CLASS=\"rst_err\" STYLE=\"border-bottom-width: 0px;\">n/a</SPAN>";$db_err = '1';};
         echo "<SPAN CLASS=\"rst_ok\" STYLE=\"border-bottom-width: 0px;\">".$row_v['version']."</SPAN>";
       }

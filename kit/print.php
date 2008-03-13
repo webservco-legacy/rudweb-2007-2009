@@ -1,15 +1,15 @@
 <?php
 /*
-print.php
-16:09 2008-03-12
+./print.php
+09:45 2008-03-13
 */
-define("_RSWEB_PUBFIL", TRUE);
+define("_RUDWEB_PUBFIL", TRUE);
 require_once './inc/config.inc.php';
-require_once './inc/rswebc.inc.php';
-require_once _RSWEB_INC_DIR . 'rsweb.inc.php';
-require_once _RSWEB_INC_DIR . 'phphdp.inc.php'; //
+require_once './inc/rudwebc.inc.php';
+require_once _RUDWEB_INC_DIR . 'rudweb.inc.php';
+require_once _RUDWEB_INC_DIR . 'phphdp.inc.php'; //
 ?>
 <!--PRINT.PHP-->
 <?php
-require_once _RSWEB_INC_DIR . 'phpftp.inc.php'; //
+require_once _RUDWEB_INC_DIR . 'phpftp.inc.php'; //
 ?>

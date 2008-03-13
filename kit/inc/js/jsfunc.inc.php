@@ -3,12 +3,12 @@
 ./inc/js/jsfunc.inc.php
 16:28 2008-03-12
 */
-if(!defined('_RSWEB_PUBFIL')) {require_once './../../lib/404.php';}
+if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 ?>
 <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
-window.defaultStatus = "<?php echo $rsweb_ln['WinStatDef']; ?>";
-var fileLoadingImage = "<?php echo _RSWEB_THEME_URL . $_SESSION[_RSWEB_PRE.'usr_theme_dir']?>/graphics/loading.gif";		
-var fileBottomNavCloseImage = "<?php echo _RSWEB_THEME_URL . $_SESSION[_RSWEB_PRE.'usr_theme_dir']?>/graphics/close.gif";
+window.defaultStatus = "<?php echo $rudweb_ln['WinStatDef']; ?>";
+var fileLoadingImage = "<?php echo _RUDWEB_THEME_URL . $_SESSION[_RUDWEB_PRE.'usr_theme_dir']?>/graphics/loading.gif";		
+var fileBottomNavCloseImage = "<?php echo _RUDWEB_THEME_URL . $_SESSION[_RUDWEB_PRE.'usr_theme_dir']?>/graphics/close.gif";
 function toggleLayer( whichLayer ) {
   var elem, vis;
   if( document.getElementById ) // this is the way the standards work

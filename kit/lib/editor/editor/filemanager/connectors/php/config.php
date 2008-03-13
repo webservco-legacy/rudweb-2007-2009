@@ -21,23 +21,25 @@
  *
  * Configuration file for the File Manager Connector for PHP.
  */
-
+define("_RUDWEB_PUBFIL", TRUE);
+require '../../../../../../inc/config.inc.php';
+require '../../../../../../inc/rudwebc.inc.php';
 global $Config ;
 
 // SECURITY: You must explicitly enable this "connector". (Set it to "true").
 // WARNING: don't just set "$Config['Enabled'] = true ;", you must be sure that only
 //		authenticated users can access this file or use some kind of session checking.
-$Config['Enabled'] = false ;
+$Config['Enabled'] = true ;
 
 
 // Path to user files relative to the document root.
-$Config['UserFilesPath'] = '/userfiles/' ;
+$Config['UserFilesPath'] = _RUDWEB_VAR_URL ;
 
 // Fill the following value it you prefer to specify the absolute path for the
 // user files directory. Useful if you are using a virtual directory, symbolic
 // link or alias. Examples: 'C:\\MySite\\userfiles\\' or '/root/mysite/userfiles/'.
 // Attention: The above 'UserFilesPath' must point to the same directory.
-$Config['UserFilesAbsolutePath'] = '' ;
+$Config['UserFilesAbsolutePath'] = _RUDWEB_VAR_DIR ;
 
 // Due to security issues with Apache modules, it is recommended to leave the
 // following setting enabled.

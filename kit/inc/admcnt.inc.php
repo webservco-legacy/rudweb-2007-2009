@@ -5,68 +5,68 @@
 */
 if(isset($_POST['cntdelcnt'])) { // delete selected content
   // verify
-  $query = "SELECT `mnu_id` FROM `"._RSWEB_PRE."ws_mnu` WHERE `mnu_par` = '".$mnu_id."' LIMIT 1";
-  $rst_query = mysql_query($query) or require _RSWEB_LIB_DIR . 'myerr.php';
+  $query = "SELECT `mnu_id` FROM `"._RUDWEB_PRE."ws_mnu` WHERE `mnu_par` = '".$mnu_id."' LIMIT 1";
+  $rst_query = mysql_query($query) or require _RUDWEB_LIB_DIR . 'myerr.php';
   
   if (mysql_num_rows($rst_query) == '0') { // do the delete
     // lock
-    $query_lock = "LOCK TABLES `"._RSWEB_PRE."ws_mnu` WRITE, `"._RSWEB_PRE."ws_cnt` WRITE, `"._RSWEB_PRE."ws_pic` WRITE";
-    mysql_query($query_lock) or require _RSWEB_LIB_DIR . 'myerr.php';
+    $query_lock = "LOCK TABLES `"._RUDWEB_PRE."ws_mnu` WRITE, `"._RUDWEB_PRE."ws_cnt` WRITE, `"._RUDWEB_PRE."ws_pic` WRITE";
+    mysql_query($query_lock) or require _RUDWEB_LIB_DIR . 'myerr.php';
     // pictures
-    $query_pic = "SELECT * FROM `"._RSWEB_PRE."ws_pic` WHERE `cnt_id` = '".$cnt_id."' AND `pic_loc` != '0'";
-    $rst_query_pic = mysql_query($query_pic) or require _RSWEB_LIB_DIR . 'myerr.php';
+    $query_pic = "SELECT * FROM `"._RUDWEB_PRE."ws_pic` WHERE `cnt_id` = '".$cnt_id."' AND `pic_loc` != '0'";
+    $rst_query_pic = mysql_query($query_pic) or require _RUDWEB_LIB_DIR . 'myerr.php';
     $total_pic = mysql_num_rows($rst_query_pic);
     if ($total_pic != '0') {
       for ($pici=1; $pici<=$total_pic; $pici++) {
         $row_rst_pic = mysql_fetch_assoc($rst_query_pic);
-        $filepath = _RSWEB_PIC_DIR . $row_rst_pic['pic_fn'];
+        $filepath = _RUDWEB_PIC_DIR . $row_rst_pic['pic_fn'];
         if (is_file($filepath)) {unlink($filepath);}
-        $picquery = "DELETE FROM `"._RSWEB_PRE."ws_pic` WHERE `pic_id` = '".$row_rst_pic['pic_id']."' LIMIT 1";
-        mysql_query($picquery) or require _RSWEB_LIB_DIR . 'myerr.php';
+        $picquery = "DELETE FROM `"._RUDWEB_PRE."ws_pic` WHERE `pic_id` = '".$row_rst_pic['pic_id']."' LIMIT 1";
+        mysql_query($picquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
       }
     }
     // menu
-    $menuquery = "DELETE FROM `"._RSWEB_PRE."ws_mnu` WHERE `mnu_id` = '".$mnu_id."' LIMIT 1";
-    mysql_query($menuquery) or require _RSWEB_LIB_DIR . 'myerr.php';
+    $menuquery = "DELETE FROM `"._RUDWEB_PRE."ws_mnu` WHERE `mnu_id` = '".$mnu_id."' LIMIT 1";
+    mysql_query($menuquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
     // content
-    $cntquery = "DELETE FROM `"._RSWEB_PRE."ws_cnt` WHERE `cnt_id` = '".$cnt_id."' LIMIT 1";
-    mysql_query($cntquery) or require _RSWEB_LIB_DIR . 'myerr.php';
+    $cntquery = "DELETE FROM `"._RUDWEB_PRE."ws_cnt` WHERE `cnt_id` = '".$cnt_id."' LIMIT 1";
+    mysql_query($cntquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
     // unlock
     $query_unlock = "UNLOCK TABLES";
-    mysql_query($query_unlock) or require _RSWEB_LIB_DIR . 'myerr.php';
+    mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
     // redirect
-    $redirect = _RSWEB_SITE_URL;
+    $redirect = _RUDWEB_SITE_URL;
   }
   else { // don't delete
     // redirect
-    $redirect = _RSWEB_SITE_URL . 'index.php/content/' . rsweb_filter_input($_POST['cnt_alias']);
+    $redirect = _RUDWEB_SITE_URL . 'index.php/content/' . rudweb_filter_input($_POST['cnt_alias']);
   }
 }
 else if(isset($_POST['cntmodcnt'])) { // modify selected content
   // verify
-  $query = "SELECT `cnt_id` FROM `"._RSWEB_PRE."ws_cnt` WHERE `cnt_alias` = '".$cnt_alias."' AND (`cnt_id` != '".$cnt_id."' AND `cnt_ln` = '".$_SESSION[_RSWEB_PRE.'usr_lang_index']."') LIMIT 1";
-  $rst_query = mysql_query($query) or require _RSWEB_LIB_DIR . 'myerr.php';
+  $query = "SELECT `cnt_id` FROM `"._RUDWEB_PRE."ws_cnt` WHERE `cnt_alias` = '".$cnt_alias."' AND (`cnt_id` != '".$cnt_id."' AND `cnt_ln` = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."') LIMIT 1";
+  $rst_query = mysql_query($query) or require _RUDWEB_LIB_DIR . 'myerr.php';
   
   if (mysql_num_rows($rst_query) == '0') { // do the mods
     // lock
-    $query_lock = "LOCK TABLES `"._RSWEB_PRE."ws_mnu` WRITE, `"._RSWEB_PRE."ws_cnt` WRITE, `"._RSWEB_PRE."ws_pic` WRITE";
-    mysql_query($query_lock) or require _RSWEB_LIB_DIR . 'myerr.php';
+    $query_lock = "LOCK TABLES `"._RUDWEB_PRE."ws_mnu` WRITE, `"._RUDWEB_PRE."ws_cnt` WRITE, `"._RUDWEB_PRE."ws_pic` WRITE";
+    mysql_query($query_lock) or require _RUDWEB_LIB_DIR . 'myerr.php';
     // menu
-    $modquery = "UPDATE `"._RSWEB_PRE."ws_mnu` SET `mnu_tt` = '".$mnu_tt."', `mnu_cnt_alias` = '".$cnt_id . "_" .$cnt_alias."', `mnu_trg` = '".$mnu_trg."', `mnu_mdd` = '".$action_date."', `mnu_mdt` = '".$action_time."', `mnu_mdu` = '".$_SESSION[_RSWEB_PRE.'usr_id']."' WHERE `mnu_id` = '".$mnu_id."' LIMIT 1";
-    mysql_query($modquery) or require _RSWEB_LIB_DIR . 'myerr.php';
+    $modquery = "UPDATE `"._RUDWEB_PRE."ws_mnu` SET `mnu_tt` = '".$mnu_tt."', `mnu_cnt_alias` = '".$cnt_id . "_" .$cnt_alias."', `mnu_trg` = '".$mnu_trg."', `mnu_mdd` = '".$action_date."', `mnu_mdt` = '".$action_time."', `mnu_mdu` = '".$_SESSION[_RUDWEB_PRE.'usr_id']."' WHERE `mnu_id` = '".$mnu_id."' LIMIT 1";
+    mysql_query($modquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
     // content
-    $modquery2 = "UPDATE `"._RSWEB_PRE."ws_cnt` SET `cnt_alias` = '".$cnt_id . "_" . $cnt_alias."', `cnt_tt` = '".$cnt_tt."', `cnt_stt` = '".$cnt_stt."', `cnt_txt` = '".$cnt_txt."', `cnt_mdd` = '".$action_date."', `cnt_mdt` = '".$action_time."', `cnt_mdu` = '".$_SESSION[_RSWEB_PRE.'usr_id']."' WHERE `cnt_id` = '".$cnt_id."' LIMIT 1";
-    mysql_query($modquery2) or require _RSWEB_LIB_DIR . 'myerr.php';
+    $modquery2 = "UPDATE `"._RUDWEB_PRE."ws_cnt` SET `cnt_alias` = '".$cnt_id . "_" . $cnt_alias."', `cnt_tt` = '".$cnt_tt."', `cnt_stt` = '".$cnt_stt."', `cnt_txt` = '".$cnt_txt."', `cnt_mdd` = '".$action_date."', `cnt_mdt` = '".$action_time."', `cnt_mdu` = '".$_SESSION[_RUDWEB_PRE.'usr_id']."' WHERE `cnt_id` = '".$cnt_id."' LIMIT 1";
+    mysql_query($modquery2) or require _RUDWEB_LIB_DIR . 'myerr.php';
     // delete pictures
     if (isset($_POST['delpic'])) { // delete pics
       foreach ($_POST['delpic'] as $pic_id => $dump) {
-        $query_fn = "SELECT pic_fn FROM `"._RSWEB_PRE."ws_pic` WHERE pic_id = '".$pic_id."'";
+        $query_fn = "SELECT pic_fn FROM `"._RUDWEB_PRE."ws_pic` WHERE pic_id = '".$pic_id."'";
         $rst_fn=mysql_query($query_fn) or die('Oups!<br>' . mysql_error());
         $del_pic_fn = (mysql_result($rst_fn, 0));
-        $filepath = _RSWEB_PIC_DIR . $del_pic_fn;
+        $filepath = _RUDWEB_PIC_DIR . $del_pic_fn;
         if (is_file($filepath)) {unlink($filepath);}
-        $picquery = "DELETE FROM `"._RSWEB_PRE."ws_pic` WHERE `pic_id` = '".$pic_id."' LIMIT 1";
-        mysql_query($picquery) or require _RSWEB_LIB_DIR . 'myerr.php';
+        $picquery = "DELETE FROM `"._RUDWEB_PRE."ws_pic` WHERE `pic_id` = '".$pic_id."' LIMIT 1";
+        mysql_query($picquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
       }
     }
     // modify pictures
@@ -84,18 +84,18 @@ else if(isset($_POST['cntmodcnt'])) { // modify selected content
           else if ($file_error[$pic_id] == '0' && !is_uploaded_file($file_temp[$pic_id])) {/*NOT SENT BY FORM*/ $err = '1';}
           else if ($file_error[$pic_id] == '0') {/* OK */ $err = '0';}
           if ($err == '0') {
-            $upload_dir[$pic_id] = _RSWEB_PIC_DIR;
-            $new_file_name[$pic_id] = "cnt_" . $_SESSION[_RSWEB_PRE.'usr_id'] . "_" . $_SESSION[_RSWEB_PRE.'usr_lang_index'] . "_" . time() . "_" . basename($file_name[$pic_id]);
+            $upload_dir[$pic_id] = _RUDWEB_PIC_DIR;
+            $new_file_name[$pic_id] = "cnt_" . $_SESSION[_RUDWEB_PRE.'usr_id'] . "_" . $_SESSION[_RUDWEB_PRE.'usr_lang_index'] . "_" . time() . "_" . basename($file_name[$pic_id]);
             $upload_path[$pic_id] = $upload_dir[$pic_id] . $new_file_name[$pic_id];
             if($file_error[$pic_id] == '0') {
               if (move_uploaded_file($file_temp[$pic_id], $upload_path[$pic_id])) {
-                $query_fn = "SELECT pic_fn FROM `"._RSWEB_PRE."ws_pic` WHERE pic_id = '".$pic_id."'";
+                $query_fn = "SELECT pic_fn FROM `"._RUDWEB_PRE."ws_pic` WHERE pic_id = '".$pic_id."'";
                 $rst_fn=mysql_query($query_fn) or die('Oups!<br>' . mysql_error());
                 $del_pic_fn = (mysql_result($rst_fn, 0));
-                $filepath = _RSWEB_PIC_DIR . $del_pic_fn;
+                $filepath = _RUDWEB_PIC_DIR . $del_pic_fn;
                 if (is_file($filepath)) {unlink($filepath);}
-                $picquery = "UPDATE `"._RSWEB_PRE."ws_pic` SET `pic_tt` = '".basename($file_name[$pic_id])."', `pic_fn` = '".$new_file_name[$pic_id]."', `pic_mdd` = '".$action_date."', `pic_mdt` = '".$action_time."', `pic_mdu` = '".$_SESSION[_RSWEB_PRE.'usr_id']."' WHERE `pic_id` = '".$pic_id."' LIMIT 1";
-                mysql_query($picquery) or require _RSWEB_LIB_DIR . 'myerr.php';
+                $picquery = "UPDATE `"._RUDWEB_PRE."ws_pic` SET `pic_tt` = '".basename($file_name[$pic_id])."', `pic_fn` = '".$new_file_name[$pic_id]."', `pic_mdd` = '".$action_date."', `pic_mdt` = '".$action_time."', `pic_mdu` = '".$_SESSION[_RUDWEB_PRE.'usr_id']."' WHERE `pic_id` = '".$pic_id."' LIMIT 1";
+                mysql_query($picquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
               }
             }
           }
@@ -116,19 +116,19 @@ else if(isset($_POST['cntmodcnt'])) { // modify selected content
         else if ($file_error[$pic_loc] == '0' && !is_uploaded_file($file_temp[$pic_loc])) {/*NOT SENT BY FORM*/ $err = '1';}
         else if ($file_error[$pic_loc] == '0') {/* OK */ $err = '0';}
         if ($err == '0') {
-          $upload_dir[$pic_loc] = _RSWEB_PIC_DIR;
-          $new_file_name[$pic_loc] = "cnt_" . $_SESSION[_RSWEB_PRE.'usr_id'] . "_" . $_SESSION[_RSWEB_PRE.'usr_lang_index'] . "_" . time() . "_" . basename($file_name[$pic_loc]);
+          $upload_dir[$pic_loc] = _RUDWEB_PIC_DIR;
+          $new_file_name[$pic_loc] = "cnt_" . $_SESSION[_RUDWEB_PRE.'usr_id'] . "_" . $_SESSION[_RUDWEB_PRE.'usr_lang_index'] . "_" . time() . "_" . basename($file_name[$pic_loc]);
           $upload_path[$pic_loc] = $upload_dir[$pic_loc] . $new_file_name[$pic_loc];
           if($file_error[$pic_loc] == '0') {
             if (move_uploaded_file($file_temp[$pic_loc], $upload_path[$pic_loc])) {
-              $query_NextId = "SELECT MAX(`pic_id`) FROM `"._RSWEB_PRE."ws_pic`";
+              $query_NextId = "SELECT MAX(`pic_id`) FROM `"._RUDWEB_PRE."ws_pic`";
               $rstNextId=mysql_query($query_NextId) or die('Oups!<br>' . mysql_error());
               $new_pic_id = (mysql_result($rstNextId, 0)) + 1;
-              $query_NextOrd = "SELECT MAX(`pic_ord`) FROM `"._RSWEB_PRE."ws_pic` WHERE `cnt_id` = '".$cnt_id."' AND `pic_loc` = '".$pic_loc."'";
+              $query_NextOrd = "SELECT MAX(`pic_ord`) FROM `"._RUDWEB_PRE."ws_pic` WHERE `cnt_id` = '".$cnt_id."' AND `pic_loc` = '".$pic_loc."'";
               $rstNextOrd=mysql_query($query_NextOrd) or die('Oups!<br>' . mysql_error());
               $new_pic_ord = (mysql_result($rstNextOrd, 0)) + 1;
-              $picquery = "INSERT INTO `"._RSWEB_PRE."ws_pic` (pic_id, cnt_id, pic_ln, pic_tt, pic_fn, pic_loc, pic_ord, pic_tmb, pic_crd, pic_crt, pic_cru) VALUES ('".$new_pic_id."', '".$cnt_id."', '".$_SESSION[_RSWEB_PRE.'usr_lang_index']."', '".basename($file_name[$pic_loc])."', '".$new_file_name[$pic_loc]."', '".$pic_loc."', '".$new_pic_ord."', 1, '".$action_date."', '".$action_time."', '".$_SESSION[_RSWEB_PRE.'usr_id']."');";
-              mysql_query($picquery) or require _RSWEB_LIB_DIR . 'myerr.php';
+              $picquery = "INSERT INTO `"._RUDWEB_PRE."ws_pic` (pic_id, cnt_id, pic_ln, pic_tt, pic_fn, pic_loc, pic_ord, pic_tmb, pic_crd, pic_crt, pic_cru) VALUES ('".$new_pic_id."', '".$cnt_id."', '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."', '".basename($file_name[$pic_loc])."', '".$new_file_name[$pic_loc]."', '".$pic_loc."', '".$new_pic_ord."', 1, '".$action_date."', '".$action_time."', '".$_SESSION[_RUDWEB_PRE.'usr_id']."');";
+              mysql_query($picquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
             }
           }
         }
@@ -136,13 +136,13 @@ else if(isset($_POST['cntmodcnt'])) { // modify selected content
     }
     // unlock
     $query_unlock = "UNLOCK TABLES";
-    mysql_query($query_unlock) or require _RSWEB_LIB_DIR . 'myerr.php';
+    mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
     // redirect
-    $redirect = _RSWEB_SITE_URL . 'index.php/content/' . $cnt_id  . "_" . $cnt_alias;
+    $redirect = _RUDWEB_SITE_URL . 'index.php/content/' . $cnt_id  . "_" . $cnt_alias;
   }
   else { // don't do the mod
     // redirect
-    $redirect = _RSWEB_SITE_URL . 'index.php/content/' . rsweb_filter_input($_POST['cnt_alias']);
+    $redirect = _RUDWEB_SITE_URL . 'index.php/content/' . rudweb_filter_input($_POST['cnt_alias']);
   }
 }
 else if(isset($_POST['cntaddcnt']) || (isset($_POST['cntaddlnk']) || isset($_POST['cntaddpg']))) { // add new content
@@ -150,15 +150,15 @@ else if(isset($_POST['cntaddcnt']) || (isset($_POST['cntaddlnk']) || isset($_POS
   if(isset($_POST['cntaddcnt']))      {
     $mnu_typ = "1";
     // sa nu existe deja un continut cu acelasi alias
-    $query = "SELECT `cnt_id` FROM `"._RSWEB_PRE."ws_cnt` WHERE `cnt_alias` = '".$cnt_alias."' AND `cnt_ln` = '".$_SESSION[_RSWEB_PRE.'usr_lang_index']."' LIMIT 1";
-    $rst_query = mysql_query($query) or require _RSWEB_LIB_DIR . 'myerr.php';
+    $query = "SELECT `cnt_id` FROM `"._RUDWEB_PRE."ws_cnt` WHERE `cnt_alias` = '".$cnt_alias."' AND `cnt_ln` = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."' LIMIT 1";
+    $rst_query = mysql_query($query) or require _RUDWEB_LIB_DIR . 'myerr.php';
     $total_results = mysql_num_rows($rst_query);
   }
   else if(isset($_POST['cntaddlnk'])) {
     $mnu_typ = "2";
     // sa  nu existe deja un link cu acelasi alias
-    $query = "SELECT `lnk_id` FROM `"._RSWEB_PRE."ws_lnk` WHERE `lnk_alias` = '".$lnk_alias."' AND `lnk_ln` = '".$_SESSION[_RSWEB_PRE.'usr_lang_index']."' LIMIT 1";
-    $rst_query = mysql_query($query) or require _RSWEB_LIB_DIR . 'myerr.php';
+    $query = "SELECT `lnk_id` FROM `"._RUDWEB_PRE."ws_lnk` WHERE `lnk_alias` = '".$lnk_alias."' AND `lnk_ln` = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."' LIMIT 1";
+    $rst_query = mysql_query($query) or require _RUDWEB_LIB_DIR . 'myerr.php';
     $total_results = mysql_num_rows($rst_query);
   }
   else if(isset($_POST['cntaddpg']))  {
@@ -167,35 +167,35 @@ else if(isset($_POST['cntaddcnt']) || (isset($_POST['cntaddlnk']) || isset($_POS
   }
   if ($total_results == '0') { // do the add
     // lock
-    $query_lock = "LOCK TABLES `"._RSWEB_PRE."ws_mnu` WRITE, `"._RSWEB_PRE."ws_cnt` WRITE, `"._RSWEB_PRE."ws_pic` WRITE, `"._RSWEB_PRE."ws_lnk` WRITE";
-    mysql_query($query_lock) or require _RSWEB_LIB_DIR . 'myerr.php';
+    $query_lock = "LOCK TABLES `"._RUDWEB_PRE."ws_mnu` WRITE, `"._RUDWEB_PRE."ws_cnt` WRITE, `"._RUDWEB_PRE."ws_pic` WRITE, `"._RUDWEB_PRE."ws_lnk` WRITE";
+    mysql_query($query_lock) or require _RUDWEB_LIB_DIR . 'myerr.php';
     // mnu_id query
-    $query_NextId = "SELECT MAX(`mnu_id`) FROM "._RSWEB_PRE."ws_mnu";
+    $query_NextId = "SELECT MAX(`mnu_id`) FROM "._RUDWEB_PRE."ws_mnu";
     $rstNextId=mysql_query($query_NextId) or die('Oups!<br>' . mysql_error());
     $new_mnu_id = (mysql_result($rstNextId, 0)) + 1;
     // mnu_ord query
-    $query_NextId = "SELECT MAX(`mnu_ord`) FROM "._RSWEB_PRE."ws_mnu WHERE mnu_lev = '".$mnu_lev."' AND mnu_cat = '".$mnu_cat."'";
+    $query_NextId = "SELECT MAX(`mnu_ord`) FROM "._RUDWEB_PRE."ws_mnu WHERE mnu_lev = '".$mnu_lev."' AND mnu_cat = '".$mnu_cat."'";
     $rstNextId=mysql_query($query_NextId) or die('Oups!<br>' . mysql_error());
     $new_mnu_ord = (mysql_result($rstNextId, 0)) + 1;
     
     // cnt_id query
-    $query_NextcntId = "SELECT MAX(`cnt_id`) FROM "._RSWEB_PRE."ws_cnt";
+    $query_NextcntId = "SELECT MAX(`cnt_id`) FROM "._RUDWEB_PRE."ws_cnt";
     $rstNextcntId=mysql_query($query_NextcntId) or die('Oups!<br>' . mysql_error());
     $new_cnt_id = (mysql_result($rstNextcntId, 0)) + 1;
     
     // lnk_id query
-    $query_NextlnkId = "SELECT MAX(`lnk_id`) FROM "._RSWEB_PRE."ws_lnk";
+    $query_NextlnkId = "SELECT MAX(`lnk_id`) FROM "._RUDWEB_PRE."ws_lnk";
     $rstNextlnkId=mysql_query($query_NextlnkId) or die('Oups!<br>' . mysql_error());
     $new_lnk_id = (mysql_result($rstNextlnkId, 0)) + 1;
 
     switch($mnu_typ) {
       case "1": {
         // new menu
-        $addquery = "INSERT INTO "._RSWEB_PRE."ws_mnu (mnu_id, mnu_ln, mnu_cat, mnu_lev, mnu_par, mnu_ord, mnu_tt, mnu_typ, mnu_cnt_alias, mnu_trg, mnu_crd, mnu_crt, mnu_cru, mnu_mdd, mnu_mdt, mnu_mdu, mnu_dis, mnu_lvl) VALUES ('".$new_mnu_id."', '".$_SESSION[_RSWEB_PRE.'usr_lang_index']."', '".$mnu_cat."', '".$mnu_lev."', '".$mnu_par."', '".$new_mnu_ord."', '".$mnu_tt."', '".$mnu_typ."', '".$new_cnt_id . "_" . $mnu_cnt_alias."', '".$mnu_trg."', '".$action_date."', '".$action_time."', '".$_SESSION[_RSWEB_PRE.'usr_id']."', '0000-00-00', '00:00:00', '0', '0', '0')";
-        mysql_query($addquery) or require _RSWEB_LIB_DIR . 'myerr.php';
+        $addquery = "INSERT INTO "._RUDWEB_PRE."ws_mnu (mnu_id, mnu_ln, mnu_cat, mnu_lev, mnu_par, mnu_ord, mnu_tt, mnu_typ, mnu_cnt_alias, mnu_trg, mnu_crd, mnu_crt, mnu_cru, mnu_mdd, mnu_mdt, mnu_mdu, mnu_dis, mnu_lvl) VALUES ('".$new_mnu_id."', '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."', '".$mnu_cat."', '".$mnu_lev."', '".$mnu_par."', '".$new_mnu_ord."', '".$mnu_tt."', '".$mnu_typ."', '".$new_cnt_id . "_" . $mnu_cnt_alias."', '".$mnu_trg."', '".$action_date."', '".$action_time."', '".$_SESSION[_RUDWEB_PRE.'usr_id']."', '0000-00-00', '00:00:00', '0', '0', '0')";
+        mysql_query($addquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
         // content
-        $addquery2 = "INSERT INTO `"._RSWEB_PRE."ws_cnt` (cnt_id, cnt_ln, cnt_alias, cnt_tt, cnt_kw, cnt_dsc, cnt_stt, cnt_txt, cnt_crd, cnt_crt, cnt_cru, cnt_mdd, cnt_mdt, cnt_mdu, cnt_dis, cnt_lvl) VALUES ('".$new_cnt_id."', '".$_SESSION[_RSWEB_PRE.'usr_lang_index']."', '".$new_cnt_id . "_" . $cnt_alias."', '".$cnt_tt."', '".$cnt_kw."', '".$cnt_dsc."', '".$cnt_stt."', '".$cnt_txt."', '".$action_date."', '".$action_time."', '".$_SESSION[_RSWEB_PRE.'usr_id']."', '0000-00-00', '00:00:00', '0', '0', '0')";
-        mysql_query($addquery2) or require _RSWEB_LIB_DIR . 'myerr.php';
+        $addquery2 = "INSERT INTO `"._RUDWEB_PRE."ws_cnt` (cnt_id, cnt_ln, cnt_alias, cnt_tt, cnt_kw, cnt_dsc, cnt_stt, cnt_txt, cnt_crd, cnt_crt, cnt_cru, cnt_mdd, cnt_mdt, cnt_mdu, cnt_dis, cnt_lvl) VALUES ('".$new_cnt_id."', '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."', '".$new_cnt_id . "_" . $cnt_alias."', '".$cnt_tt."', '".$cnt_kw."', '".$cnt_dsc."', '".$cnt_stt."', '".$cnt_txt."', '".$action_date."', '".$action_time."', '".$_SESSION[_RUDWEB_PRE.'usr_id']."', '0000-00-00', '00:00:00', '0', '0', '0')";
+        mysql_query($addquery2) or require _RUDWEB_LIB_DIR . 'myerr.php';
         // add pictures
         if(isset($_FILES['pcscntnew'])) {
           foreach ($_FILES['pcscntnew']['error'] as $pic_loc => $error) {
@@ -210,19 +210,19 @@ else if(isset($_POST['cntaddcnt']) || (isset($_POST['cntaddlnk']) || isset($_POS
             else if ($file_error[$pic_loc] == '0' && !is_uploaded_file($file_temp[$pic_loc])) {/*NOT SENT BY FORM*/ $err = '1';}
             else if ($file_error[$pic_loc] == '0') {/* OK */ $err = '0';}
             if ($err == '0') {
-              $upload_dir[$pic_loc] = _RSWEB_PIC_DIR;
-              $new_file_name[$pic_loc] = "cnt_" . $_SESSION[_RSWEB_PRE.'usr_id'] . "_" . $_SESSION[_RSWEB_PRE.'usr_lang_index'] . "_" . time() . "_" . basename($file_name[$pic_loc]);
+              $upload_dir[$pic_loc] = _RUDWEB_PIC_DIR;
+              $new_file_name[$pic_loc] = "cnt_" . $_SESSION[_RUDWEB_PRE.'usr_id'] . "_" . $_SESSION[_RUDWEB_PRE.'usr_lang_index'] . "_" . time() . "_" . basename($file_name[$pic_loc]);
               $upload_path[$pic_loc] = $upload_dir[$pic_loc] . $new_file_name[$pic_loc];
               if($file_error[$pic_loc] == '0') {
                 if (move_uploaded_file($file_temp[$pic_loc], $upload_path[$pic_loc])) {
-                  $query_NextId = "SELECT MAX(`pic_id`) FROM `"._RSWEB_PRE."ws_pic`";
+                  $query_NextId = "SELECT MAX(`pic_id`) FROM `"._RUDWEB_PRE."ws_pic`";
                   $rstNextId=mysql_query($query_NextId) or die('Oups!<br>' . mysql_error());
                   $new_pic_id = (mysql_result($rstNextId, 0)) + 1;
-                  $query_NextOrd = "SELECT MAX(`pic_ord`) FROM `"._RSWEB_PRE."ws_pic` WHERE `cnt_id` = '".$cnt_id."' AND `pic_loc` = '".$pic_loc."'";
+                  $query_NextOrd = "SELECT MAX(`pic_ord`) FROM `"._RUDWEB_PRE."ws_pic` WHERE `cnt_id` = '".$cnt_id."' AND `pic_loc` = '".$pic_loc."'";
                   $rstNextOrd=mysql_query($query_NextOrd) or die('Oups!<br>' . mysql_error());
                   $new_pic_ord = (mysql_result($rstNextOrd, 0)) + 1;
-                  $picquery = "INSERT INTO `"._RSWEB_PRE."ws_pic` (pic_id, cnt_id, pic_ln, pic_tt, pic_fn, pic_loc, pic_ord, pic_tmb, pic_crd, pic_crt, pic_cru) VALUES ('".$new_pic_id."', '".$new_cnt_id."', '".$_SESSION[_RSWEB_PRE.'usr_lang_index']."', '".basename($file_name[$pic_loc])."', '".$new_file_name[$pic_loc]."', '".$pic_loc."', '".$new_pic_ord."', 1, '".$action_date."', '".$action_time."', '".$_SESSION[_RSWEB_PRE.'usr_id']."');";
-                  mysql_query($picquery) or require _RSWEB_LIB_DIR . 'myerr.php';
+                  $picquery = "INSERT INTO `"._RUDWEB_PRE."ws_pic` (pic_id, cnt_id, pic_ln, pic_tt, pic_fn, pic_loc, pic_ord, pic_tmb, pic_crd, pic_crt, pic_cru) VALUES ('".$new_pic_id."', '".$new_cnt_id."', '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."', '".basename($file_name[$pic_loc])."', '".$new_file_name[$pic_loc]."', '".$pic_loc."', '".$new_pic_ord."', 1, '".$action_date."', '".$action_time."', '".$_SESSION[_RUDWEB_PRE.'usr_id']."');";
+                  mysql_query($picquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
                 }
               }
             }
@@ -232,17 +232,17 @@ else if(isset($_POST['cntaddcnt']) || (isset($_POST['cntaddlnk']) || isset($_POS
       }
       case "2": {
         // new menu
-        $addquery = "INSERT INTO "._RSWEB_PRE."ws_mnu (mnu_id, mnu_ln, mnu_cat, mnu_lev, mnu_par, mnu_ord, mnu_tt, mnu_typ, mnu_cnt_alias, mnu_trg, mnu_crd, mnu_crt, mnu_cru, mnu_mdd, mnu_mdt, mnu_mdu, mnu_dis, mnu_lvl) VALUES ('".$new_mnu_id."', '".$_SESSION[_RSWEB_PRE.'usr_lang_index']."', '".$mnu_cat."', '".$mnu_lev."', '".$mnu_par."', '".$new_mnu_ord."', '".$mnu_tt."', '".$mnu_typ."', '".$new_cnt_id . "_" . $mnu_cnt_alias."', '".$mnu_trg."', '".$action_date."', '".$action_time."', '".$_SESSION[_RSWEB_PRE.'usr_id']."', '0000-00-00', '00:00:00', '0', '0', '0')";
-        mysql_query($addquery) or require _RSWEB_LIB_DIR . 'myerr.php';
+        $addquery = "INSERT INTO "._RUDWEB_PRE."ws_mnu (mnu_id, mnu_ln, mnu_cat, mnu_lev, mnu_par, mnu_ord, mnu_tt, mnu_typ, mnu_cnt_alias, mnu_trg, mnu_crd, mnu_crt, mnu_cru, mnu_mdd, mnu_mdt, mnu_mdu, mnu_dis, mnu_lvl) VALUES ('".$new_mnu_id."', '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."', '".$mnu_cat."', '".$mnu_lev."', '".$mnu_par."', '".$new_mnu_ord."', '".$mnu_tt."', '".$mnu_typ."', '".$new_cnt_id . "_" . $mnu_cnt_alias."', '".$mnu_trg."', '".$action_date."', '".$action_time."', '".$_SESSION[_RUDWEB_PRE.'usr_id']."', '0000-00-00', '00:00:00', '0', '0', '0')";
+        mysql_query($addquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
         // link
-        $addquery = "INSERT INTO `"._RSWEB_PRE."ws_lnk` (lnk_id, lnk_ln, lnk_alias, lnk_cat, lnk_tt, lnk_url, lnk_trg, lnk_dsc, lnk_crd, lnk_crt, lnk_cru, lnk_mdd, lnk_mdt, lnk_mdu, lnk_dis, lnk_lvl) VALUES ('".$new_lnk_id."', '".$_SESSION[_RSWEB_PRE.'usr_lang_index']."', '".$new_lnk_id . "_" . $lnk_alias."', '".$lnk_cat."', '".$lnk_tt."', '".$lnk_url."', '".$lnk_trg."', '".$lnk_dsc."', '".$action_date."', '".$action_time."', '".$_SESSION[_RSWEB_PRE.'usr_id']."', '0000-00-00', '00:00:00', '0', '0', '0')";
-        mysql_query($addquery) or require _RSWEB_LIB_DIR . 'myerr.php';
+        $addquery = "INSERT INTO `"._RUDWEB_PRE."ws_lnk` (lnk_id, lnk_ln, lnk_alias, lnk_cat, lnk_tt, lnk_url, lnk_trg, lnk_dsc, lnk_crd, lnk_crt, lnk_cru, lnk_mdd, lnk_mdt, lnk_mdu, lnk_dis, lnk_lvl) VALUES ('".$new_lnk_id."', '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."', '".$new_lnk_id . "_" . $lnk_alias."', '".$lnk_cat."', '".$lnk_tt."', '".$lnk_url."', '".$lnk_trg."', '".$lnk_dsc."', '".$action_date."', '".$action_time."', '".$_SESSION[_RUDWEB_PRE.'usr_id']."', '0000-00-00', '00:00:00', '0', '0', '0')";
+        mysql_query($addquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
         break;
       }
       case "3": {
         // new menu
-        $addquery = "INSERT INTO "._RSWEB_PRE."ws_mnu (mnu_id, mnu_ln, mnu_cat, mnu_lev, mnu_par, mnu_ord, mnu_tt, mnu_typ, mnu_cnt_alias, mnu_trg, mnu_crd, mnu_crt, mnu_cru, mnu_mdd, mnu_mdt, mnu_mdu, mnu_dis, mnu_lvl) VALUES ('".$new_mnu_id."', '".$_SESSION[_RSWEB_PRE.'usr_lang_index']."', '".$mnu_cat."', '".$mnu_lev."', '".$mnu_par."', '".$new_mnu_ord."', '".$mnu_tt."', '".$mnu_typ."', '".$page_tt."', '".$mnu_trg."', '".$action_date."', '".$action_time."', '".$_SESSION[_RSWEB_PRE.'usr_id']."', '0000-00-00', '00:00:00', '0', '0', '0')";
-        mysql_query($addquery) or require _RSWEB_LIB_DIR . 'myerr.php';
+        $addquery = "INSERT INTO "._RUDWEB_PRE."ws_mnu (mnu_id, mnu_ln, mnu_cat, mnu_lev, mnu_par, mnu_ord, mnu_tt, mnu_typ, mnu_cnt_alias, mnu_trg, mnu_crd, mnu_crt, mnu_cru, mnu_mdd, mnu_mdt, mnu_mdu, mnu_dis, mnu_lvl) VALUES ('".$new_mnu_id."', '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."', '".$mnu_cat."', '".$mnu_lev."', '".$mnu_par."', '".$new_mnu_ord."', '".$mnu_tt."', '".$mnu_typ."', '".$page_tt."', '".$mnu_trg."', '".$action_date."', '".$action_time."', '".$_SESSION[_RUDWEB_PRE.'usr_id']."', '0000-00-00', '00:00:00', '0', '0', '0')";
+        mysql_query($addquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
         //page
         break;
       }
@@ -250,16 +250,16 @@ else if(isset($_POST['cntaddcnt']) || (isset($_POST['cntaddlnk']) || isset($_POS
     }
     // unlock
     $query_unlock = "UNLOCK TABLES";
-    mysql_query($query_unlock) or require _RSWEB_LIB_DIR . 'myerr.php';
+    mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
     // redirect
-    if(isset($_POST['cntaddcnt']))      {$redirect = _RSWEB_SITE_URL . 'index.php/content/' . $new_cnt_id . "_" . $cnt_alias;}
-    else if(isset($_POST['cntaddpg']))  {$redirect = _RSWEB_SITE_URL . 'index.php/page/' . $cnt_alias;}
-    else if(isset($_POST['cntaddlnk'])) {$redirect = _RSWEB_SITE_URL;}
+    if(isset($_POST['cntaddcnt']))      {$redirect = _RUDWEB_SITE_URL . 'index.php/content/' . $new_cnt_id . "_" . $cnt_alias;}
+    else if(isset($_POST['cntaddpg']))  {$redirect = _RUDWEB_SITE_URL . 'index.php/page/' . $cnt_alias;}
+    else if(isset($_POST['cntaddlnk'])) {$redirect = _RUDWEB_SITE_URL;}
     
   }
   else { // don't do the mod
     // redirect
-    $redirect = _RSWEB_SITE_URL . 'index.php/rsweb/cntadd/mc/' . $mnu_cat . '/ml/' . $mnu_lev . '/mp/' . $mnu_par;
+    $redirect = _RUDWEB_SITE_URL . 'index.php/rudweb/cntadd/mc/' . $mnu_cat . '/ml/' . $mnu_lev . '/mp/' . $mnu_par;
   }
   // abc
 }

@@ -61,7 +61,7 @@ $db_settings = get_dbsettings($target_root . $target_vars[$pid]);
 <INPUT TYPE="hidden" NAME="set_dbuser" VALUE="<?php echo $db_settings['dbuser'];?>">
 <INPUT TYPE="hidden" NAME="set_dbpass" VALUE="<?php echo $db_settings['dbpass'];?>">
 <INPUT TYPE="hidden" NAME="set_dbname" VALUE="<?php echo $db_settings['dbname'];?>">
-<INPUT TYPE="hidden" NAME="set_pre" VALUE="<?php echo $db_settings['rswebpre'];?>">
+<INPUT TYPE="hidden" NAME="set_pre" VALUE="<?php echo $db_settings['rudwebpre'];?>">
 </TD></TR>
 
 <TR><TD CLASS="cnt" WIDTH="110" STYLE="text-align: right;"><B>&#160;</B></TD>

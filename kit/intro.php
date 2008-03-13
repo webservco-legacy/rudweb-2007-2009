@@ -1,29 +1,29 @@
 <?php
 /*
-intro.php
-16:09 2008-03-12
+./intro.php
+09:44 2008-03-13
 */
-define("_RSWEB_PUBFIL", TRUE);
+define("_RUDWEB_PUBFIL", TRUE);
 require_once './inc/config.inc.php';
-require_once './inc/rswebc.inc.php';
-require_once _RSWEB_INC_DIR . 'rsweb1.inc.php';
-//require_once _RSWEB_INC_DIR . 'rsweb2.inc.php';
+require_once './inc/rudwebc.inc.php';
+require_once _RUDWEB_INC_DIR . 'rudweb1.inc.php';
+//require_once _RUDWEB_INC_DIR . 'rudweb2.inc.php';
 
-//$rsweb_cnt_type           = "0";  // NOT REALLY NEEDED
-//$rsweb_this_content       = 'intro';  // NOT REALLY NEEDED
-//$rsweb_this_content_level = getCntLev($rsweb_this_content);  // NOT REALLY NEEDED
-//$rsweb_mnu_id             = getCntMnuId('index');  // NOT REALLY NEEDED
-$rsweb_mnu_id             = "0";  // only for travel-agency
-$rsweb_stats_page         = 'intro';
-//$rsweb_req_page           = 'intro'; // NOT REALLY NEEDED
-$rsweb_page_title         = _RSWEB_WSTT . " - " . "Index";
-$rsweb_page_description   = _RSWEB_WSDS;
-$rsweb_page_keywords      = _RSWEB_WSKW;
+//$rudweb_cnt_type           = "0";  // NOT REALLY NEEDED
+//$rudweb_this_content       = 'intro';  // NOT REALLY NEEDED
+//$rudweb_this_content_level = getCntLev($rudweb_this_content);  // NOT REALLY NEEDED
+//$rudweb_mnu_id             = getCntMnuId('index');  // NOT REALLY NEEDED
+$rudweb_mnu_id             = "0";  // only for travel-agency
+$rudweb_stats_page         = 'intro';
+//$rudweb_req_page           = 'intro'; // NOT REALLY NEEDED
+$rudweb_page_title         = _RUDWEB_WSTT . " - " . "Index";
+$rudweb_page_description   = _RUDWEB_WSDS;
+$rudweb_page_keywords      = _RUDWEB_WSKW;
 
-require_once _RSWEB_INC_DIR . 'rsweb3.inc.php';
-require_once _RSWEB_INC_DIR . 'phphdi.inc.php';
+require_once _RUDWEB_INC_DIR . 'rudweb3.inc.php';
+require_once _RUDWEB_INC_DIR . 'phphdi.inc.php';
 ?>
 <!--INDEX.PHP-->
 <?php
-require_once _RSWEB_INC_DIR . 'phpfti.inc.php';
+require_once _RUDWEB_INC_DIR . 'phpfti.inc.php';
 ?>

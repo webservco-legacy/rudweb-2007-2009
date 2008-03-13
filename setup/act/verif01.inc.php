@@ -10,13 +10,13 @@ function dbPort() {
   var element_to = document.forms['dbform'].set_dbport;
   var new_value;
   if (element_from.value == 'my') {
-    new_value = '<?php echo $_SESSION['rswebset_set_dbport_my'];?>';
+    new_value = '<?php echo $_SESSION['rudwebset_set_dbport_my'];?>';
   }
   else if (element_from.value == 'pg') {
-    new_value = '<?php echo $_SESSION['rswebset_set_dbport_pg'];?>';
+    new_value = '<?php echo $_SESSION['rudwebset_set_dbport_pg'];?>';
   }
   else {
-    new_value = <?php echo $_SESSION['rswebset_set_dbport'];?>;
+    new_value = <?php echo $_SESSION['rudwebset_set_dbport'];?>;
   }
   element_to.value = new_value;
 }
@@ -25,10 +25,10 @@ function dbPortDef(dbtype) {
   var element_to = document.forms['dbform'].set_dbport;
   var new_value;
   if (dbtype == 'my') {
-    new_value = '<?php echo $_SESSION['rswebset_set_dbport_my'];?>';
+    new_value = '<?php echo $_SESSION['rudwebset_set_dbport_my'];?>';
   }
   else if (dbtype == 'pg') {
-    new_value = '<?php echo $_SESSION['rswebset_set_dbport_pg'];?>';
+    new_value = '<?php echo $_SESSION['rudwebset_set_dbport_pg'];?>';
   }
   element_to.value = new_value;
 }
@@ -46,34 +46,34 @@ echo "</TR></TABLE>";
 <TR><TD CLASS="cnt" WIDTH="100" STYLE="text-align: right">database type:</TD>
 <TD CLASS="cnt">
 <SELECT CLASS="general" NAME="set_dbtype" onChange="dbPort();">
-  <OPTION VALUE="my" <?php // firefox only -> ?>onMouseOver="dbPortDef('my');"<?php if ($_SESSION['rswebset_set_dbtype'] == "my") {echo " SELECTED";}?>>MySQL</OPTION>
-  <OPTION VALUE="pg" <?php // firefox only -> ?>onMouseOver="dbPortDef('pg');"<?php if ($_SESSION['rswebset_set_dbtype'] == "pg") {echo " SELECTED";}?>>PostgreSQL</OPTION>
+  <OPTION VALUE="my" <?php // firefox only -> ?>onMouseOver="dbPortDef('my');"<?php if ($_SESSION['rudwebset_set_dbtype'] == "my") {echo " SELECTED";}?>>MySQL</OPTION>
+  <OPTION VALUE="pg" <?php // firefox only -> ?>onMouseOver="dbPortDef('pg');"<?php if ($_SESSION['rudwebset_set_dbtype'] == "pg") {echo " SELECTED";}?>>PostgreSQL</OPTION>
 </SELECT>
 </TD></TR>
 
 <TR><TD CLASS="cnt" WIDTH="100" STYLE="text-align: right">host:</TD>
 <TD CLASS="cnt">
-<INPUT TYPE="text" CLASS="general" NAME="set_dbhost" SIZE="10" MAXLENGTH="20" VALUE="<?php echo $_SESSION['rswebset_set_dbhost'];?>">
+<INPUT TYPE="text" CLASS="general" NAME="set_dbhost" SIZE="10" MAXLENGTH="20" VALUE="<?php echo $_SESSION['rudwebset_set_dbhost'];?>">
 </TD></TR>
 
 <TR><TD CLASS="cnt" WIDTH="100" STYLE="text-align: right">port:</TD>
 <TD CLASS="cnt">
-<INPUT TYPE="text" CLASS="general" NAME="set_dbport" SIZE="10" MAXLENGTH="20" VALUE="<?php echo $_SESSION['rswebset_set_dbport'];?>">
+<INPUT TYPE="text" CLASS="general" NAME="set_dbport" SIZE="10" MAXLENGTH="20" VALUE="<?php echo $_SESSION['rudwebset_set_dbport'];?>">
 </TD></TR>
 
 <TR><TD CLASS="cnt" WIDTH="100" STYLE="text-align: right">user:</TD>
 <TD CLASS="cnt">
-<INPUT TYPE="text" CLASS="general" NAME="set_dbuser" SIZE="10" MAXLENGTH="20" VALUE="<?php echo $_SESSION['rswebset_set_dbuser'];?>">
+<INPUT TYPE="text" CLASS="general" NAME="set_dbuser" SIZE="10" MAXLENGTH="20" VALUE="<?php echo $_SESSION['rudwebset_set_dbuser'];?>">
 </TD></TR>
 
 <TR><TD CLASS="cnt" WIDTH="100" STYLE="text-align: right">pasword:</TD>
 <TD CLASS="cnt">
-<INPUT TYPE="text" CLASS="general" NAME="set_dbpass" SIZE="10" MAXLENGTH="20" VALUE="<?php echo $_SESSION['rswebset_set_dbpass'];?>">
+<INPUT TYPE="text" CLASS="general" NAME="set_dbpass" SIZE="10" MAXLENGTH="20" VALUE="<?php echo $_SESSION['rudwebset_set_dbpass'];?>">
 </TD></TR>
 
 <TR><TD CLASS="cnt" WIDTH="100" STYLE="text-align: right">database name:</TD>
 <TD CLASS="cnt">
-<INPUT TYPE="text" CLASS="general" NAME="set_dbname" SIZE="10" MAXLENGTH="20" VALUE="<?php echo $_SESSION['rswebset_set_dbname'];?>">
+<INPUT TYPE="text" CLASS="general" NAME="set_dbname" SIZE="10" MAXLENGTH="20" VALUE="<?php echo $_SESSION['rudwebset_set_dbname'];?>">
 </TD></TR>
 
 <TR><TD CLASS="cnt" WIDTH="100" STYLE="text-align: right">&#160;</TD>

@@ -25,11 +25,11 @@ $files[$dirs[2]][1][] = "phphd.inc.php";
 $files[$dirs[2]][1][] = "phphdi.inc.php";
 $files[$dirs[2]][1][] = "phphdp.inc.php";
 $files[$dirs[2]][1][] = "setlntm.inc.php";
-$files[$dirs[2]][1][] = "rsweb1.inc.php";
-$files[$dirs[2]][1][] = "rsweb2.inc.php";
-$files[$dirs[2]][1][] = "rsweb3.inc.php";
-$files[$dirs[2]][1][] = "rswebc.inc.php";
-$files[$dirs[2]][1][] = "rswebf.inc.php";
+$files[$dirs[2]][1][] = "rudweb1.inc.php";
+$files[$dirs[2]][1][] = "rudweb2.inc.php";
+$files[$dirs[2]][1][] = "rudweb3.inc.php";
+$files[$dirs[2]][1][] = "rudwebc.inc.php";
+$files[$dirs[2]][1][] = "rudwebf.inc.php";
 
 $dirs[1] = "inc/js/";
 $files[$dirs[1]][1] = array();
@@ -46,7 +46,7 @@ $files[$dirs[1]][1][] = "scriptaculous.js";
 $files[$dirs[1]][1][] = "index.php";
 $files[$dirs[1]][1][] = "jsfunc.inc.php";
 
-$dirs[0] = "inc/rsweb/";
+$dirs[0] = "inc/rudweb/";
 $files[$dirs[0]][1] = array();
 $files[$dirs[0]][1][] = "admin.inc.php";
 $files[$dirs[0]][1][] = "cntadd.inc.php";

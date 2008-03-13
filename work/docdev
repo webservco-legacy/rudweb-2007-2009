@@ -1,0 +1,9 @@
+DEVELOPER DOCUMENTATION
+
+FckEditor
+editor/editor/filemanager/connectors/php/config.php (settings)
+editor/editor/dialog/common/fck_dialog_common.css (css cursor)
+editor/editor/dialog/common/fck_dialog_common.js (css cursor)
+editor/editor/dialog/fck_smiley.html (css cursor)
+editor/editor/dialog/fck_colorselector.html (css cursor)
+editor/editor/dialog/fck_specialchar.html (css cursor)

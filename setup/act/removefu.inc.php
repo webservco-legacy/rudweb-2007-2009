@@ -7,7 +7,7 @@ echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#00000
 echo "\n<TR><TD CLASS=\"total\" WIDTH=\"200\"><BR><B>Remove User Files:</B><BR></TD>";
 echo "</TR></TABLE>";
 
-if ($_SESSION['rswebset_cfg_remove_user_files'] == 'off') {
+if ($_SESSION['rudwebset_cfg_remove_user_files'] == 'off') {
   echo "\n\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
   echo "\n<TR><TD CLASS=\"hdr\" WIDTH=\"200\"><B>option not selected</B></TD><TD CLASS=\"hdr\" COLSPAN=\"3\">&#160;</TD></TR>";
   echo "\n</TABLE>";

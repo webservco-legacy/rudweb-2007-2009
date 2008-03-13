@@ -27,12 +27,12 @@ else {
 <TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">install theme:</TD>
 <TD CLASS="cnt">
 <?php
-$rswebthemechecked = '';
-if($themes[$tmi] == 'rswebdef' && ($set == 'install' && !isset($_POST['set_cfg_tm_inst']['rswebdef']))) {
-  $rswebthemechecked = ' CHECKED';
+$rudwebthemechecked = '';
+if($themes[$tmi] == 'rudwebdef' && ($set == 'install' && !isset($_POST['set_cfg_tm_inst']['rudwebdef']))) {
+  $rudwebthemechecked = ' CHECKED';
 }
 ?>
-<INPUT TYPE="checkbox" CLASS="general" NAME="set_cfg_tm_inst[<?php echo $themes[$tmi];?>]"<?php echo $rswebthemechecked;?>>
+<INPUT TYPE="checkbox" CLASS="general" NAME="set_cfg_tm_inst[<?php echo $themes[$tmi];?>]"<?php echo $rudwebthemechecked;?>>
 </TD></TR></TABLE>
 <?php
   }

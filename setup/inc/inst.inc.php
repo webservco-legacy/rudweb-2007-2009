@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/cfg/inst.inc.php
-11:33 2008-02-18
+09:37 2008-03-13
 */
 echo "<DIV CLASS=\"hdr\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 3px;\"><B>";
 echo "<A HREF=\"./setup.php?pid=".$pid."&amp;set=".$set."&amp;act=index&amp;step=1\" TARGET=\"_self\">Start</A>";
@@ -29,39 +29,52 @@ if($set == 'install' || $set == 'upgrade') {
   echo "<DIV CLASS=\"hdr\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 3px;\"><B>";
   echo "<A HREF=\"./setup.php?pid=".$pid."&amp;set=".$set."&amp;act=engn&amp;step=1\" TARGET=\"_self\">Install Engine</A>";
   echo "</B></DIV>";
+  
   echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
   echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";
   if($act == 'engn' && $step == '1') {echo "#aaaaaa";} else {echo "#333333";}
   echo "\">Root</SPAN>";
   echo "</B></DIV>";
+  
   echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
   echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";
   if($act == 'engn' && $step == '2') {echo "#aaaaaa";} else {echo "#333333";}
   echo "\">Admin</SPAN>";
   echo "</B></DIV>";
+  
   echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
   echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";
   if($act == 'engn' && $step == '3') {echo "#aaaaaa";} else {echo "#333333";}
-  echo "\">Includes</SPAN>";
+  echo "\">Documentation</SPAN>";
   echo "</B></DIV>";
+  
   echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
   echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";
   if($act == 'engn' && $step == '4') {echo "#aaaaaa";} else {echo "#333333";}
-  echo "\">Libraries</SPAN>";
+  echo "\">Includes</SPAN>";
   echo "</B></DIV>";
+  
   echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
   echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";
   if($act == 'engn' && $step == '5') {echo "#aaaaaa";} else {echo "#333333";}
-  echo "\">Languages</SPAN>";
+  echo "\">Libraries</SPAN>";
   echo "</B></DIV>";
+  
   echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
   echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";
   if($act == 'engn' && $step == '6') {echo "#aaaaaa";} else {echo "#333333";}
-  echo "\">Themes</SPAN>";
+  echo "\">Languages</SPAN>";
   echo "</B></DIV>";
+  
   echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
   echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";
   if($act == 'engn' && $step == '7') {echo "#aaaaaa";} else {echo "#333333";}
+  echo "\">Themes</SPAN>";
+  echo "</B></DIV>";
+  
+  echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
+  echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";
+  if($act == 'engn' && $step == '8') {echo "#aaaaaa";} else {echo "#333333";}
   echo "\">Vars</SPAN>";
   echo "</B></DIV>";
 

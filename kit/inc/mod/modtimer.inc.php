@@ -3,7 +3,7 @@
 ./inc/modtimer.inc.php
 12:03 2008-03-12
 */
-if(!defined('_RSWEB_PUBFIL')) {require_once './../lib/404.php';}
+if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
 /*
 originally by ReDuX (http://www.daniweb.com/code/snippet70.html)
@@ -27,7 +27,7 @@ function endTimer() {
   return $totaltime;
 }
 function pageLoadTime() {
-  if (_RSWEB_CFG_TIMER === "1") {
+  if (_RUDWEB_CFG_TIMER === "1") {
     echo "<HR><DIV ALIGN=\"center\">Parse time: " . endTimer() . "</DIV>";
   }
 }

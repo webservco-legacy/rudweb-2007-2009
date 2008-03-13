@@ -12,12 +12,12 @@ echo "</TR></TABLE>";
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
 <TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">Insert Default Data</TD>
 <TD CLASS="cnt">
-<INPUT TYPE="checkbox" CLASS="general" NAME="set_cfg_dbs_01"<?php if($_SESSION['rswebset_cfg_dbs_01'] == 'on') {echo ' CHECKED';}?>>
+<INPUT TYPE="checkbox" CLASS="general" NAME="set_cfg_dbs_01"<?php if($_SESSION['rudwebset_cfg_dbs_01'] == 'on') {echo ' CHECKED';}?>>
 </TD></TR></TABLE>
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
 <TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">Insert Example Data</TD>
 <TD CLASS="cnt">
-<INPUT TYPE="checkbox" CLASS="general" NAME="set_cfg_dbs_02"<?php if($_SESSION['rswebset_cfg_dbs_02'] == 'on') {echo ' CHECKED';}?>>
+<INPUT TYPE="checkbox" CLASS="general" NAME="set_cfg_dbs_02"<?php if($_SESSION['rudwebset_cfg_dbs_02'] == 'on') {echo ' CHECKED';}?>>
 </TD></TR></TABLE>
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
 <TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">&#160;</TD>

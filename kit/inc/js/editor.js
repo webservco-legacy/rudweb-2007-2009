@@ -1,9 +1,9 @@
 /*
 ./inc/js/editor.js
-18:01 2008-03-12
+20:50 2008-03-12
 */
 
-FCKConfig.ToolbarSets["rsweb"] = [
+FCKConfig.ToolbarSets["rudweb"] = [
 	['Source','DocProps','-','Save','NewPage','Preview','-','Templates'],
 	['Cut','Copy','Paste','PasteText','PasteWord','-','Print','SpellCheck'],
 	['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
@@ -23,12 +23,19 @@ FCKConfig.ToolbarSets["rsweb"] = [
 FCKConfig.EnterMode = 'br' ;			// p | div | br
 FCKConfig.ShiftEnterMode = 'p' ;	// p | div | br
 
-FCKConfig.SkinPath = FCKConfig.BasePath + 'skins/rsweb/' ;
+FCKConfig.SkinPath = FCKConfig.BasePath + 'skins/rudweb/' ;
+
 if (navigator.appVersion.indexOf("MSIE")!=-1) {
-  FCKConfig.SkinEditorCSS = FCKConfig.SkinPath + 'fckeditorie.css' ;	// FCKConfig.SkinPath + "|<minified css>" ;
+  FCKConfig.SkinEditorCSS = FCKConfig.SkinPath + 'fck_editorie.css' ;	// FCKConfig.SkinPath + "|<minified css>" ;
 }
 else {
-  FCKConfig.SkinEditorCSS = FCKConfig.SkinPath + 'fckeditor.css' ;	// FCKConfig.SkinPath + "|<minified css>" ;
+  FCKConfig.SkinEditorCSS = FCKConfig.SkinPath + 'fck_editor.css' ;	// FCKConfig.SkinPath + "|<minified css>" ;
 }
-FCKConfig.SkinDialogCSS = '' ;	// FCKConfig.SkinPath + "|<minified css>" ;
+
+if (navigator.appVersion.indexOf("MSIE")!=-1) {
+  FCKConfig.SkinDialogCSS = FCKConfig.SkinPath + 'fck_dialogie.css' ;	// FCKConfig.SkinPath + "|<minified css>" ;
+}
+else {
+  FCKConfig.SkinDialogCSS = FCKConfig.SkinPath + 'fck_dialog.css' ;	// FCKConfig.SkinPath + "|<minified css>" ;
+}
 

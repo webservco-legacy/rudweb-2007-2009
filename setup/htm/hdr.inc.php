@@ -9,7 +9,7 @@
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 <META HTTP-EQUIV="content-language" CONTENT="en">
-<TITLE><?php echo _RSWEB_NAME;?></TITLE>
+<TITLE><?php echo _RUDWEB_NAME;?></TITLE>
 <META NAME="distribution" CONTENT="Local">
 <META NAME="robots" CONTENT="NOINDEX, NOFOLLOW">
 <META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
@@ -25,7 +25,7 @@ A:hover       {text-decoration: none;color: #333333;}
 .projht       {background-color: #DDDDDD; border-style: dotted; border-color: #000000; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px;}
 .projhb       {background-color: #DDDDDD; border-style: dotted; border-color: #000000; border-top-width: 1px; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px;}
 .general      {background-color: #EEEEEE; color: #333333; text-align: left; text-decoration: none; font-family: verdana, arial, helvetica, sans-serif; font-weight: normal; font-size: 10px; border-style: dotted; border-color: #000000; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px;}
-.rsweb         {color: #333333; text-align: left; text-decoration: none; font-family: verdana, arial, helvetica, sans-serif; font-weight: bold; font-size: 11px;}
+.rudweb         {color: #333333; text-align: left; text-decoration: none; font-family: verdana, arial, helvetica, sans-serif; font-weight: bold; font-size: 11px;}
 .link:link    {color: #777777; text-align: left; text-decoration: none; font-family: verdana, arial, helvetica, sans-serif; font-weight: bold; font-size: 10px;}
 .link:visited {color: #777777; text-align: left; text-decoration: none; font-family: verdana, arial, helvetica, sans-serif; font-weight: bold; font-size: 10px;}
 .link:hover   {color: #BBBBBB; text-align: left; text-decoration: none; font-family: verdana, arial, helvetica, sans-serif; font-weight: bold; font-size: 10px;}

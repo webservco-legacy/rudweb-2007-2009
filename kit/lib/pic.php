@@ -10,11 +10,11 @@ SECURITY + FUNCTIONALITY!
 */
 error_reporting(E_ALL);
 
-define("_RSWEB_PUBFIL", TRUE);
-//if(!defined('_RSWEB_PUBFIL')) {require_once './../lib/404.php';}
+define("_RUDWEB_PUBFIL", TRUE);
+//if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 require_once '../inc/config.inc.php';
-require_once '../inc/rswebc.inc.php';
-require_once _RSWEB_INC_DIR . 'rswebf.inc.php';
+require_once '../inc/rudwebc.inc.php';
+require_once _RUDWEB_INC_DIR . 'rudwebf.inc.php';
 
 // START SESSION
 session_cache_limiter ('public, must-revalidate');
@@ -22,7 +22,7 @@ session_cache_expire(600); //minutes
 ini_set("session.gc_maxlifetime","36000"); //seconds
 session_start();
 
-if (isset($_GET['imgfile']) && isset($_SESSION[_RSWEB_PRE.'usr_level'])) {
+if (isset($_GET['imgfile']) && isset($_SESSION[_RUDWEB_PRE.'usr_level'])) {
   require_once './ubthumb.php';
 }
 else {

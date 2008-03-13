@@ -1,7 +1,7 @@
 <?php
 /*
-./setup/act/engn07b.inc.php
-15:38 2008-01-14
+./setup/act/engn06b.inc.php
+09:40 2008-03-13
 */
 ?>
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
@@ -9,7 +9,7 @@
 <TD CLASS="cnt">
   <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0"><TR>
   <TD>
-  <FORM NAME="formnext" METHOD="POST" STYLE="display: inline; margin: 0px; padding: 0px;" ACTION="./setup.php?pid=<?php echo $pid;?>&amp;set=<?php echo $set;?>&amp;act=lngs&amp;step=1">
+  <FORM NAME="formnext" METHOD="POST" STYLE="display: inline; margin: 0px; padding: 0px;" ACTION="./setup.php?pid=<?php echo $pid;?>&amp;set=<?php echo $set;?>&amp;act=engn&amp;step=8">
   <INPUT TYPE="submit" CLASS="button" STYLE="background-color: #DDDDDD" NAME="next" VALUE="next">
   </FORM>
   </TD>

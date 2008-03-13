@@ -60,32 +60,32 @@ $db_settings = get_dbsettings($target_root . $target_vars[$pid]);
 <INPUT TYPE="hidden" NAME="set_dbuser" VALUE="<?php echo $db_settings['dbuser'];?>">
 <INPUT TYPE="hidden" NAME="set_dbpass" VALUE="<?php echo $db_settings['dbpass'];?>">
 <INPUT TYPE="hidden" NAME="set_dbname" VALUE="<?php echo $db_settings['dbname'];?>">
-<INPUT TYPE="hidden" NAME="set_pre" VALUE="<?php echo $db_settings['rswebpre'];?>">
+<INPUT TYPE="hidden" NAME="set_pre" VALUE="<?php echo $db_settings['rudwebpre'];?>">
 </TD></TR>
 
 <TR><TD CLASS="cnt" WIDTH="110" STYLE="text-align: right;">
-<INPUT CLASS="general" TYPE="checkbox" NAME="remove_db_data"<?php if(isset($_SESSION['rswebset_cfg_remove_db_data']) && $_SESSION['rswebset_cfg_remove_db_data'] == 'on') {echo ' CHECKED';}?>>
+<INPUT CLASS="general" TYPE="checkbox" NAME="remove_db_data"<?php if(isset($_SESSION['rudwebset_cfg_remove_db_data']) && $_SESSION['rudwebset_cfg_remove_db_data'] == 'on') {echo ' CHECKED';}?>>
 </TD>
 <TD CLASS="cnt">
 Remove Database Data
 </TD></TR>
 
 <TR><TD CLASS="cnt" WIDTH="110" STYLE="text-align: right;">
-<INPUT CLASS="general" TYPE="checkbox" NAME="remove_db_tables"<?php if(isset($_SESSION['rswebset_cfg_remove_db_tables']) && $_SESSION['rswebset_cfg_remove_db_tables'] == 'on') {echo ' CHECKED';}?>>
+<INPUT CLASS="general" TYPE="checkbox" NAME="remove_db_tables"<?php if(isset($_SESSION['rudwebset_cfg_remove_db_tables']) && $_SESSION['rudwebset_cfg_remove_db_tables'] == 'on') {echo ' CHECKED';}?>>
 </TD>
 <TD CLASS="cnt">
 Remove Database Tables
 </TD></TR>
 
 <TR><TD CLASS="cnt" WIDTH="110" STYLE="text-align: right;">
-<INPUT CLASS="general" TYPE="checkbox" NAME="remove_user_files"<?php if(isset($_SESSION['rswebset_cfg_remove_user_files']) && $_SESSION['rswebset_cfg_remove_user_files'] == 'on') {echo ' CHECKED';}?>>
+<INPUT CLASS="general" TYPE="checkbox" NAME="remove_user_files"<?php if(isset($_SESSION['rudwebset_cfg_remove_user_files']) && $_SESSION['rudwebset_cfg_remove_user_files'] == 'on') {echo ' CHECKED';}?>>
 </TD>
 <TD CLASS="cnt">
 Remove User Files
 </TD></TR>
 
 <TR><TD CLASS="cnt" WIDTH="110" STYLE="text-align: right;">
-<INPUT CLASS="general" TYPE="checkbox" NAME="remove_engine_files"<?php if(isset($_SESSION['rswebset_cfg_remove_engine_files']) && $_SESSION['rswebset_cfg_remove_engine_files'] == 'on') {echo ' CHECKED';}?>>
+<INPUT CLASS="general" TYPE="checkbox" NAME="remove_engine_files"<?php if(isset($_SESSION['rudwebset_cfg_remove_engine_files']) && $_SESSION['rudwebset_cfg_remove_engine_files'] == 'on') {echo ' CHECKED';}?>>
 </TD>
 <TD CLASS="cnt">
 Remove Engine Files

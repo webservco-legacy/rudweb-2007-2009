@@ -8,8 +8,8 @@ modify only this file
 */
 
 // source
-$source_url  = "http://dasoft.homelinux.net/work/rs/rsweb/";
-$source_root = "d:/home/devel/server/htdocs/work/rs/rsweb/";
+$source_url  = "http://dasoft.homelinux.net/work/rs/rudweb/";
+$source_root = "d:/home/devel/server/htdocs/work/rs/rudweb/";
 // target
 $target_root = "";
 

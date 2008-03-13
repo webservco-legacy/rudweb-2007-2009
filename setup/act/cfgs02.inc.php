@@ -7,18 +7,18 @@ echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#00000
 echo "\n<TR><TD CLASS=\"total\" WIDTH=\"200\"><BR><B>Install Engine Configuration File:</B><BR></TD>";
 echo "</TR></TABLE>";
 
-$rswebcfg_str = generate_rswebcfg_str($eol, $file_time_stamp);
-$rswebcfg_file_check = check_cfg_file($target.$rswebcfg_file_path, $rswebcfg_file_name);
+$rudwebcfg_str = generate_rudwebcfg_str($eol, $file_time_stamp);
+$rudwebcfg_file_check = check_cfg_file($target.$rudwebcfg_file_path, $rudwebcfg_file_name);
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
-echo "\n<TR><TD CLASS=\"hdr\">".$target.$rswebcfg_file_path."<B>".$rswebcfg_file_name."</B></TD></TR>";
+echo "\n<TR><TD CLASS=\"hdr\">".$target.$rudwebcfg_file_path."<B>".$rudwebcfg_file_name."</B></TD></TR>";
 echo "\n</TABLE>";
 
 echo "<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
 echo "<TR><TD CLASS=\"cnt\" WIDTH=\"100\" STYLE=\"text-align: right;\">status:</TD>";
 echo "<TD CLASS=\"cnt\">";
 
-switch($rswebcfg_file_check) {
+switch($rudwebcfg_file_check) {
   case "0" : {
     echo "<SPAN CLASS=\"rst_ok\" STYLE=\"border-bottom-width: 0px;\">ok</SPAN>";
     echo "</TD></TR></TABLE>";
@@ -27,7 +27,7 @@ switch($rswebcfg_file_check) {
     echo "<TR><TD CLASS=\"cnt\" WIDTH=\"100\" STYLE=\"text-align: right;\">writing file:</TD>";
     echo "<TD CLASS=\"cnt\">";
     echo "<SPAN CLASS=\"";
-    $write_config_file = write_config_str($rswebcfg_str, $target.$rswebcfg_file_path.$rswebcfg_file_name);
+    $write_config_file = write_config_str($rudwebcfg_str, $target.$rudwebcfg_file_path.$rudwebcfg_file_name);
     if($write_config_file == '0') {
       echo "rst_ok\" STYLE=\"border-bottom-width: 0px;\">done";
     }
@@ -42,10 +42,10 @@ switch($rswebcfg_file_check) {
     echo "</TD></TR></TABLE>";
     
     echo "<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
-    echo "<TR><TD CLASS=\"cnt\" WIDTH=\"100\" STYLE=\"text-align: right;\">creating dir <B>".$rswebcfg_file_path."</B></TD>";
+    echo "<TR><TD CLASS=\"cnt\" WIDTH=\"100\" STYLE=\"text-align: right;\">creating dir <B>".$rudwebcfg_file_path."</B></TD>";
     echo "<TD CLASS=\"cnt\">";
-    if (!is_dir($target.$rswebcfg_file_path)) {
-      if(mkdir($target.$rswebcfg_file_path)) {echo "<SPAN CLASS=\"rst_ok\" STYLE=\"border-bottom-width: 0px;\">done</SPAN>";}
+    if (!is_dir($target.$rudwebcfg_file_path)) {
+      if(mkdir($target.$rudwebcfg_file_path)) {echo "<SPAN CLASS=\"rst_ok\" STYLE=\"border-bottom-width: 0px;\">done</SPAN>";}
       else {echo "<SPAN CLASS=\"rst_err\" STYLE=\"border-bottom-width: 0px;\">error creating dir!</SPAN>";}
     } 
     else {echo "<SPAN CLASS=\"rst_err\" STYLE=\"border-bottom-width: 0px;\">directory already exists!</SPAN>";}
@@ -55,7 +55,7 @@ switch($rswebcfg_file_check) {
     echo "<TR><TD CLASS=\"cnt\" WIDTH=\"100\" STYLE=\"text-align: right;\">writing file:</TD>";
     echo "<TD CLASS=\"cnt\">";
     echo "<SPAN CLASS=\"";
-    $write_config_file = write_config_str($rswebcfg_str, $target.$rswebcfg_file_path.$rswebcfg_file_name);
+    $write_config_file = write_config_str($rudwebcfg_str, $target.$rudwebcfg_file_path.$rudwebcfg_file_name);
     if($write_config_file == '0') {
       echo "rst_ok\" STYLE=\"border-bottom-width: 0px;\">done";
     }
@@ -73,7 +73,7 @@ switch($rswebcfg_file_check) {
     echo "<TR><TD CLASS=\"cnt\" WIDTH=\"100\" STYLE=\"text-align: right;\">writing file:</TD>";
     echo "<TD CLASS=\"cnt\">";
     echo "<SPAN CLASS=\"";
-    $write_config_file = write_config_str($rswebcfg_str, $target.$rswebcfg_file_path.$rswebcfg_file_name);
+    $write_config_file = write_config_str($rudwebcfg_str, $target.$rudwebcfg_file_path.$rudwebcfg_file_name);
     if($write_config_file == '0') {
       echo "rst_ok\" STYLE=\"border-bottom-width: 0px;\">done";
     }
@@ -91,7 +91,7 @@ switch($rswebcfg_file_check) {
     echo "<TR><TD CLASS=\"cnt\" WIDTH=\"100\" STYLE=\"text-align: right;\">over-writing file:</TD>";
     echo "<TD CLASS=\"cnt\">";
     echo "<SPAN CLASS=\"";
-    $write_config_file = write_config_str($rswebcfg_str, $target.$rswebcfg_file_path.$rswebcfg_file_name);
+    $write_config_file = write_config_str($rudwebcfg_str, $target.$rudwebcfg_file_path.$rudwebcfg_file_name);
     if($write_config_file == '0') {
       echo "rst_ok\" STYLE=\"border-bottom-width: 0px;\">ok";
     }
@@ -109,7 +109,7 @@ switch($rswebcfg_file_check) {
     echo "<TR><TD CLASS=\"cnt\" WIDTH=\"100\" STYLE=\"text-align: right;\">over-writing file:</TD>";
     echo "<TD CLASS=\"cnt\">";
     echo "<SPAN CLASS=\"";
-    $write_config_file = write_config_str($rswebcfg_str, $target.$rswebcfg_file_path.$rswebcfg_file_name);
+    $write_config_file = write_config_str($rudwebcfg_str, $target.$rudwebcfg_file_path.$rudwebcfg_file_name);
     if($write_config_file == '0') {
       echo "rst_ok\" STYLE=\"border-bottom-width: 0px;\">ok";
     }

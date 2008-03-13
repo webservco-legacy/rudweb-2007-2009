@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/engn01b.inc.php
-12:42 2008-01-14
+09:41 2008-03-13
 */
 ?>
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
@@ -22,7 +22,7 @@
 <TD CLASS="cnt">
   <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0"><TR>
   <TD>
-  <FORM NAME="formback" METHOD="POST" STYLE="display: inline; margin: 0px; padding: 0px;" ACTION="./setup.php?pid=<?php echo $pid;?>&amp;set=<?php echo $set;?>&amp;act=verif&amp;step=2">
+  <FORM NAME="formback" METHOD="POST" STYLE="display: inline; margin: 0px; padding: 0px;" ACTION="./setup.php?pid=<?php //echo $pid;?>&amp;set=<?php //echo $set;?>&amp;act=verif&amp;step=2">
   <INPUT TYPE="submit" CLASS="button" STYLE="background-color: #CCCCCC" NAME="back" VALUE="back">
   </FORM>
   </TD>

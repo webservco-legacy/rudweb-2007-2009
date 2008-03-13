@@ -1,33 +1,35 @@
 <?php
 /*
-redirect.php
-16:09 2008-03-12
+./redirect.php
+10:47 2008-03-13
 */
 
 error_reporting(E_ALL);
 
-define("_RSWEB_PUBFIL", TRUE);
+define("_RUDWEB_PUBFIL", TRUE);
 
 require_once './inc/config.inc.php';
-require_once './inc/rswebc.inc.php';
-require_once _RSWEB_INC_DIR . 'rswebf.inc.php';
+require_once './inc/rudwebc.inc.php';
+require_once _RUDWEB_INC_DIR . 'rudwebf.inc.php';
 
 dbopen();
 
 // GET SITE SETTINGS
-if(_RSWEB_DBCFG === "1") {
+if(_RUDWEB_DBCFG === "1") {
   // query
-  $query_cfg = "SELECT * FROM "._RSWEB_PRE."set_cfg";
-  $rst_query_cfg = mysql_query($query_cfg) or require _RSWEB_SITE_DIR . 'lib/myerr.php';
+  $query_cfg = "SELECT * FROM "._RUDWEB_PRE."set_cfg";
+  $rst_query_cfg = mysql_query($query_cfg) or require _RUDWEB_SITE_DIR . 'lib/myerr.php';
   $total_cfg = mysql_num_rows($rst_query_cfg);
   for ($cfg=1; $cfg<=$total_cfg; $cfg++) {
     $row_rst_cfg = mysql_fetch_assoc($rst_query_cfg);
     $row_rst_cfg['set_val'] = strval($row_rst_cfg['set_val']);
-    define("_RSWEB_CFG_".$row_rst_cfg['set_set'], $row_rst_cfg['set_val']);
+    define("_RUDWEB_CFG_".$row_rst_cfg['set_set'], $row_rst_cfg['set_val']);
   }
-  define("_RSWEB_CFG_COPY", "&copy; " . substr(_RSWEB_CFG_START, 0, 4) . " " . _RSWEB_CFG_CLCOM);
+  define("_RUDWEB_CFG_COPY", "&copy; " . substr(_RUDWEB_CFG_START, 0, 4) . " " . _RUDWEB_CFG_CLCOM);
 }
-else {require_once _RSWEB_INC_DIR . 'rswebcfg.inc.php';}
+else {require_once _RUDWEB_INC_DIR . 'rudwebcfg.inc.php';}
+
+require_once _RUDWEB_INC_DIR . 'rudwebm.inc.php';
 
 // START SESSION
 //session_cache_limiter ('public, must-revalidate');
@@ -40,8 +42,8 @@ if (isset($_GET['url']) && isset($_SERVER['HTTP_REFERER'])) {
   $parsed_url = $_GET['url'];
   $parsed_url = urldecode($parsed_url);
   $parsed_url = eregi_replace('&','&amp;',$parsed_url);
-  $rsweb_stats_page = $parsed_url;
-  $stats_redirect_referer = strpos($_SERVER['HTTP_REFERER'], _RSWEB_SITE_URL);
+  $rudweb_stats_page = $parsed_url;
+  $stats_redirect_referer = strpos($_SERVER['HTTP_REFERER'], _RUDWEB_SITE_URL);
   if ($stats_redirect_referer !== false) {
     doStats();
     dbclose(dbopen());

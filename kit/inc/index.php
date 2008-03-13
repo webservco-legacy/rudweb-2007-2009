@@ -1,7 +1,7 @@
 <?php
 /*
-index.php
-15:21 29.09.2007
+./inc/index.php
+10:11 2008-03-13
 */
 
 require_once './../lib/404.php';
