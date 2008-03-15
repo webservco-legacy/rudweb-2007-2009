@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/cfg/ses.inc.php
-10:15 2008-03-13
+16:07 2008-03-15
 */
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -63,8 +63,6 @@ if (isset($_POST['proceed']) && !isset($_SESSION['rudwebset_start'])) {
   $_SESSION['rudwebset_set_site_root1']    = null;
   $_SESSION['rudwebset_set_site_root2']    = '/var/www/public_html';
 
-  $_SESSION['rudwebset_set_pre']           = $target_name[$_SESSION['rudwebset_pid']];
-  
   $_SESSION['rudwebset_set_dbmy']          = null;
   $_SESSION['rudwebset_set_dbtype']        = 'na';
   $_SESSION['rudwebset_set_dbhost']        = 'localhost';
@@ -74,6 +72,8 @@ if (isset($_POST['proceed']) && !isset($_SESSION['rudwebset_start'])) {
   $_SESSION['rudwebset_set_dbuser']        = 'user';
   $_SESSION['rudwebset_set_dbpass']        = 'password';
   $_SESSION['rudwebset_set_dbname']        = 'database';
+  
+  $_SESSION['rudwebset_set_pre']           = '';
 
   $_SESSION['rudwebset_set_dbcfg']         = '1';
   $_SESSION['rudwebset_set_dbthm']         = '0';
@@ -200,7 +200,10 @@ if(isset($_POST['set_dbport_my']))      {$_SESSION['rudwebset_set_dbport_my']   
 if(isset($_POST['set_dbport_pg']))      {$_SESSION['rudwebset_set_dbport_pg']              = $_POST['set_dbport_pg'];}
 if(isset($_POST['set_dbuser']))         {$_SESSION['rudwebset_set_dbuser']                 = $_POST['set_dbuser'];}
 if(isset($_POST['set_dbpass']))         {$_SESSION['rudwebset_set_dbpass']                 = $_POST['set_dbpass'];}
-if(isset($_POST['set_dbname']))         {$_SESSION['rudwebset_set_dbname']                 = $_POST['set_dbname'];}
+if(isset($_POST['set_dbname']))         {
+  $_SESSION['rudwebset_set_dbname']                 = $_POST['set_dbname'];
+  $_SESSION['rudwebset_set_pre']                    = $_POST['set_dbname'];
+}
 
 if(isset($_POST['set_site_url1']))      {$_SESSION['rudwebset_set_site_url1']              = $_POST['set_site_url1'];}
 if(isset($_POST['set_site_url2']))      {$_SESSION['rudwebset_set_site_url2']              = $_POST['set_site_url2'];}

@@ -1,8 +1,9 @@
 <?php
 /*
 ./setup/htm/ftr.inc.php
-15:53 2008-02-26
+16:04 2008-03-15
 */
+
 /*
 echo "<PRE>GET:";
 print_r($_GET);

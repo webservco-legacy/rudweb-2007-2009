@@ -1,11 +1,12 @@
 <?php
 /*
 ./inc/act/usett01.inc.php
-13:20 2008-02-26
+16:04 2008-03-15
 */
 if($_SESSION['rudwebset_set_site_url1'] == '') {$_SESSION['rudwebset_set_site_url1'] = $target_url[$_SESSION['rudwebset_pid']];}
 if($_SESSION['rudwebset_set_site_root1'] == '') {$_SESSION['rudwebset_set_site_root1'] = $target_root.$target_vars[$_SESSION['rudwebset_pid']];}
-if($_SESSION['rudwebset_set_pre'] == '') {$_SESSION['rudwebset_set_pre'] = $target_name[$_SESSION['rudwebset_pid']];}
+//if($_SESSION['rudwebset_set_pre'] == '') {$_SESSION['rudwebset_set_pre'] = $target_name[$_SESSION['rudwebset_pid']];}
+if($_SESSION['rudwebset_set_pre'] == '') {$_SESSION['rudwebset_set_pre'] = $_SESSION['rudwebset_set_dbname'];}
 ?>
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
 <TR><TD CLASS="total" WIDTH="200"><BR><B>Engine Configuration:</B><BR></TD>
