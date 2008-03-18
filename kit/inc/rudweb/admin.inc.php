@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudweb/admin.inc.php
-19:38 2007-12-14
+11:22 2008-03-18
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -10,7 +10,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" ALIGN="center">
 <TR>
   <TD STYLE="background-color: <?php echo $rudweb_theme['BgColor']; ?>; text-align: center; margin: 20px; padding: 20px;">
-    <?php genUserMod();?>
+    <?php genAdminMod();?>
   </TD>
 </TR>
 </TABLE>

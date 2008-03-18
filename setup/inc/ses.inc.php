@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/cfg/ses.inc.php
-16:07 2008-03-15
+11:10 2008-03-18
 */
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -140,6 +140,8 @@ if (isset($_POST['proceed']) && !isset($_SESSION['rudwebset_start'])) {
   $_SESSION['rudwebset_cfg_blg_lnks']      = '0';
   $_SESSION['rudwebset_cfg_blg_dlds']      = '0';
   
+  $_SESSION['rudwebset_cfg_adm']           = '1';
+  
   $_SESSION['rudwebset_cfg_ln_inst']['en'] = 'on';
   $_SESSION['rudwebset_cfg_ln_inst']['de'] = 'off';
   $_SESSION['rudwebset_cfg_ln_inst']['es'] = 'off';
@@ -273,10 +275,7 @@ if(isset($_POST['cfg_blg_tags']))       {$_SESSION['rudwebset_cfg_blg_tags']    
 if(isset($_POST['cfg_blg_cmnts']))      {$_SESSION['rudwebset_cfg_blg_cmnts']              = $_POST['cfg_blg_cmnts'];}
 if(isset($_POST['cfg_blg_lnks']))       {$_SESSION['rudwebset_cfg_blg_lnks']               = $_POST['cfg_blg_lnks'];}
 if(isset($_POST['cfg_blg_dlds']))       {$_SESSION['rudwebset_cfg_blg_dlds']               = $_POST['cfg_blg_dlds'];}
-
-
-
-
+if(isset($_POST['cfg_adm']))            {$_SESSION['rudwebset_cfg_adm']                    = $_POST['cfg_adm'];}
 
 if(isset($_POST['set_cfg_ln_inst']['en']))                                              {$_SESSION['rudwebset_cfg_ln_inst']['en'] = $_POST['set_cfg_ln_inst']['en'];}
 else if(!isset($_POST['set_cfg_ln_inst']['en']) && isset($_POST['langs_wstt']['en']))   {$_SESSION['rudwebset_cfg_ln_inst']['en'] = 'off';}

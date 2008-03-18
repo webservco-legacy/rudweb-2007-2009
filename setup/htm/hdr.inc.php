@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/htm/hdr.inc.php
-15:54 2008-03-12
+10:31 2008-03-18
 */
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -9,6 +9,8 @@
 <HEAD>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
 <META HTTP-EQUIV="content-language" CONTENT="en">
+<LINK REL="icon" TYPE="image/ico" HREF="./favicon.ico">
+<LINK REL="shortcut icon" TYPE="image/ico" HREF="./favicon.ico">
 <TITLE><?php echo _RUDWEB_NAME;?></TITLE>
 <META NAME="distribution" CONTENT="Local">
 <META NAME="robots" CONTENT="NOINDEX, NOFOLLOW">

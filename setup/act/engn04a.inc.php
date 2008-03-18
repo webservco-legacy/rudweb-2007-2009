@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/engn03a.inc.php
-15:14 2008-03-12
+12:29 2008-03-18
 */
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -52,6 +52,7 @@ $dirs[2] = "inc/mod/";
 $files[$dirs[2]][0] = array();
 $files[$dirs[2]][1] = array();
 $files[$dirs[2]][1][] = "index.php";
+$files[$dirs[2]][1][] = "modadm.inc.php";
 $files[$dirs[2]][1][] = "modcart.inc.php";
 $files[$dirs[2]][1][] = "modcpy.inc.php";
 $files[$dirs[2]][1][] = "moddebug.inc.php";
@@ -74,5 +75,7 @@ $files[$dirs[3]][1][] = "cntadd.inc.php";
 $files[$dirs[3]][1][] = "default.inc.php";
 $files[$dirs[3]][1][] = "ftrmod.inc.php";
 $files[$dirs[3]][1][] = "ftrmodforms.inc.php";
+$files[$dirs[3]][1][] = "newuser.inc.php";
+$files[$dirs[3]][1][] = "newuserform.inc.php";
 $files[$dirs[3]][1][] = "index.php";
 ?>

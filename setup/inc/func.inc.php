@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/cfg/func.inc.php
-16:00 2008-03-12
+12:17 2008-03-18
 */
 function generate_lncfg_str($eol, $now, $ln) {
   $c  = '<?php'.$eol.'/*'.$eol.'./inc/langs/'.$ln.'/langcfg.inc.php'.$eol.$now.$eol.'*/'.$eol;
@@ -111,6 +111,8 @@ function generate_rudwebcfg_str($eol, $now) {
   $c .= $eol . 'define(\'_RUDWEB_CFG_BLG_CMNTS\', \''.$_SESSION['rudwebset_cfg_blg_cmnts'].'\'); // enable blog comments';
   $c .= $eol . 'define(\'_RUDWEB_CFG_BLG_LNKS\', \''.$_SESSION['rudwebset_cfg_blg_lnks'].'\'); // enable blog links';
   $c .= $eol . 'define(\'_RUDWEB_CFG_BLG_DLDS\', \''.$_SESSION['rudwebset_cfg_blg_dlds'].'\'); // enable blog downloads';
+  $c .= $eol . '// OPTIONAL CONTENT MODULES';
+  $c .= $eol . 'define(\'_RUDWEB_CFG_ADM\', \''.$_SESSION['rudwebset_cfg_adm'].'\'); // 1 = enable admin module';
   $c .= $eol . '?>';
   return $c;
 }
@@ -175,8 +177,10 @@ function generate_dbd_str($eol) {
   $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(52, \'BLG_CMNTS\', \''.$_SESSION['rudwebset_cfg_blg_cmnts'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
   $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(53, \'BLG_LNKS\', \''.$_SESSION['rudwebset_cfg_blg_lnks'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
   $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(54, \'BLG_DLDS\', \''.$_SESSION['rudwebset_cfg_blg_dlds'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-
-  $c .= $eol . 'INSERT INTO rudweb_set_usr VALUES (1, \'The\', \'Website\', \'Admin\', \'\', \'Root\', \'admin\', \''.$_SESSION['rudwebset_set_pre'].'admin00\', \''.$_SESSION['rudwebset_cfg_theme'].'\', \''.$_SESSION['rudwebset_cfg_lang'].'\', 5, 1, \'default admin\', \'VAL_CRD\');';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(55, \'ADM\', \''.$_SESSION['rudwebset_cfg_adm'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $newuserpass = md5($_SESSION['rudwebset_set_pre'] . 'admin00');
+  $c .= $eol . 'TRUNCATE TABLE rudweb_set_usr;';
+  $c .= $eol . 'INSERT INTO rudweb_set_usr VALUES (1, \'The\', \'Website\', \'Admin\', \'\', \'\', \'\', \'\', \'Root\', \'root@'.$_SESSION['rudwebset_set_pre'].'\', \''.$newuserpass.'\', \''.$_SESSION['rudwebset_cfg_theme'].'\', \''.$_SESSION['rudwebset_cfg_lang'].'\', 5, 1, \'\', 1, 0, \'default admin\', \'VAL_CRD\');';
   return $c;
 }
 function generate_removed01($eol) {

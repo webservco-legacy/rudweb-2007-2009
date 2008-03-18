@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudweb1.inc.php
-12:23 2008-03-12
+11:28 2008-03-18
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -26,7 +26,8 @@ require_once _RUDWEB_INC_DIR . 'rudwebf.inc.php';
 seo_urls();
 
 // OPEN DATABASE CONNECTION
-dbopen();
+//dbopen();
+rudweb_dbopen($rudweb_dbtype, $rudweb_dbhost, $rudweb_dbport, $rudweb_dbuser, $rudweb_dbpass, $rudweb_dbname);
 
 // GET SITE SETTINGS
 if(_RUDWEB_DBCFG === "1") {
@@ -82,14 +83,13 @@ if (!isset($_SESSION[_RUDWEB_PRE.'token'])) { // if first load of the page
   if (!isset($_SESSION[_RUDWEB_PRE.'usr_theme_dir'])) {$_SESSION[_RUDWEB_PRE.'usr_theme_dir'] = _RUDWEB_CFG_THEME;}
   //reset shopping cart
   if(_RUDWEB_CFG_CART_ON === "1") {$_SESSION[_RUDWEB_PRE.'cart'] = NULL;}
-  // load login module if user authentification is enabled
-  //if(_RUDWEB_CFG_USR_ON === 1) {require_once _RUDWEB_INC_DIR . 'login.inc.php';}
-  if(_RUDWEB_CFG_USR_ON === "1") {require_once _RUDWEB_INC_DIR . 'login.inc.php';}
+  // user login functonality
+  require_once _RUDWEB_INC_DIR . 'login.inc.php';
 } // if first load of the page
 else {
   if (!isset($_SESSION[_RUDWEB_PRE.'usr_logged_in'])) {
-    // load login module if user authentification is enabled
-    if(_RUDWEB_CFG_USR_ON === "1") {require_once _RUDWEB_INC_DIR . 'login.inc.php';}
+    // user login functonality
+    require_once _RUDWEB_INC_DIR . 'login.inc.php';
   } // if not logged in
   else if (isset($_SESSION[_RUDWEB_PRE.'usr_logged_in'])) {
     if(_RUDWEB_CFG_USR_ON === "1") {$rudweb_login_status = 6;}

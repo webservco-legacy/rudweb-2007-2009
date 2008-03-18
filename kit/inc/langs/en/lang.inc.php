@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/en/lang.inc.php
-09:26 2007-12-18
+11:34 2008-03-18
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -88,4 +88,41 @@ $rudweb_ln['adm']['ftrdel']       = "Delete this one: ";
 $rudweb_ln['adm']['ftrlmt']       = "Save";
 $rudweb_ln['adm']['ftrmod']       = "Save Changes";
 $rudweb_ln['adm']['ftrnew']       = "Add new";
+
+//USER MODULE
+$rudweb_ln['usr']['retuser']       = "Returning User";
+$rudweb_ln['usr']['newuser']       = "New User";
+$rudweb_ln['usr']['signup']        = "Sign Up";
+$rudweb_ln['usr']['newuserreg']    = "New User Registration";
+$rudweb_ln['usr']['usrfirstname']  = "First Name";
+$rudweb_ln['usr']['usrmiddlename'] = "Middle Name";
+$rudweb_ln['usr']['usrlastname']   = "Last Name";
+$rudweb_ln['usr']['usrphone']      = "Phone Number";
+$rudweb_ln['usr']['usraddress']    = "Postal Address";
+$rudweb_ln['usr']['usrcountry']    = "Country";
+$rudweb_ln['usr']['usremail1']     = "E-Mail Address";
+$rudweb_ln['usr']['usremail2']     = "E-Mail Address again";
+$rudweb_ln['usr']['usrpass1']      = "Desired Password";
+$rudweb_ln['usr']['usrpass2']      = "Desired Password again";
+$rudweb_ln['usr']['usrprefln']     = "Preffered Website Language";
+$rudweb_ln['usr']['usrsubscribe1'] = "Subscribe";
+$rudweb_ln['usr']['usrsubscribe2'] = "I would like to subscribe";
+$rudweb_ln['usr']['usragree1']     = "Agree";
+$rudweb_ln['usr']['usragree2']     = "I agree to the";
+$rudweb_ln['usr']['usragree3']     = "terms and conditions";
+$rudweb_ln['usr']['usragree4']     = "of the website";
+$rudweb_ln['usr']['usrverif']      = "Verification";
+$rudweb_ln['usr']['regerr1']       = "First Name field is blank!";
+$rudweb_ln['usr']['regerr2']       = "Last Name field is blank!";
+$rudweb_ln['usr']['regerr3']       = "Country field is blank!";
+$rudweb_ln['usr']['regerr4']       = "Email field is blank!";
+$rudweb_ln['usr']['regerr5']       = "Email address is not valid!";
+$rudweb_ln['usr']['regerr6']       = "Email addresses do not match!";
+$rudweb_ln['usr']['regerr7']       = "Password field is empty!";
+$rudweb_ln['usr']['regerr8']       = "Password is to short!";
+$rudweb_ln['usr']['regerr9']       = "Passwords do not match!";
+$rudweb_ln['usr']['regerr10']      = "You have to agree!";
+$rudweb_ln['usr']['regerr11']      = "Image verification failed!";
+$rudweb_ln['usr']['regerr12']      = "Email address is already in our database!";
+
 ?>

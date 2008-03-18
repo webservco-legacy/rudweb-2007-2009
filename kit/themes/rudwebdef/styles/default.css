@@ -64,7 +64,7 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
 }
 .title {
   /*width: 100%;*/
-  height: 20px;
+  /*height: 20px;*/
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -84,10 +84,10 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   border-bottom-width: <?php echo $rudweb_theme['BorderBottom']; ?><?php echo $rudweb_theme['Measure']; ?>;
   border-left-width: <?php echo $rudweb_theme['BorderLeft']; ?><?php echo $rudweb_theme['Measure']; ?>;
   border-right-width: <?php echo $rudweb_theme['BorderRight']; ?><?php echo $rudweb_theme['Measure']; ?>;
-  padding-top: <?php echo $rudweb_theme['PaddingTop']; ?><?php echo $rudweb_theme['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_theme['PaddingBottom']; ?><?php echo $rudweb_theme['Measure']; ?>;
-  padding-left: <?php echo $rudweb_theme['PaddingLeft']; ?><?php echo $rudweb_theme['Measure']; ?>;
-  padding-right: <?php echo $rudweb_theme['PaddingRight']; ?><?php echo $rudweb_theme['Measure']; ?>;
+  padding-top: 5<?php echo $rudweb_theme['Measure']; ?>;
+  padding-bottom: 5<?php echo $rudweb_theme['Measure']; ?>;
+  padding-left: 5<?php echo $rudweb_theme['Measure']; ?>;
+  padding-right: 5<?php echo $rudweb_theme['Measure']; ?>;
   cursor: text;
 }
 .titleadm {

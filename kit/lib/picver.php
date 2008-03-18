@@ -1,7 +1,7 @@
 <?php
 /*
 ./lib/picver.php
-16:22 2008-03-12
+14:28 2008-03-18
 */
 error_reporting(E_ALL);
 define("_RUDWEB_PUBFIL", TRUE);

@@ -74,7 +74,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
       // TITLE
 ?>      
       <?php echo $rudweb_theme['cnt']['tt1']['pre'];?>
-      <INPUT CLASS="titleadm" TYPE="text" NAME="cnt_tt" SIZE="" MAXLENGTH="150" VALUE="<?php echo $cnt_tt;?>">
+      <INPUT CLASS="titleadm" TYPE="text" NAME="cnt_tt" SIZE="50" MAXLENGTH="150" VALUE="<?php echo $cnt_tt;?>">
       <?php echo $rudweb_theme['cnt']['tt1']['suf'];?>
 <?php
       // PICTURES 2

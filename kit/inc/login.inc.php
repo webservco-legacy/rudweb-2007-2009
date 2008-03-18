@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/login.inc.php
-13:16 2008-03-11
+10:34 2008-03-18
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -14,7 +14,7 @@ if (isset($_SESSION[_RUDWEB_PRE.'token']) && (isset($_POST[_RUDWEB_PRE.'token'])
   $verif2 = str_split($_SESSION[_RUDWEB_PRE.'token'], 5);
   $verif2 = strtoupper(strrev($verif2['0']));
   if($rudweb_usr_verif == $verif2) {
-    $rudweb_query_verif = "SELECT * FROM `"._RUDWEB_PRE."set_usr` WHERE `usr_login` = '".$rudweb_usr_login."' AND `usr_pass` = '".$rudweb_usr_pass."' LIMIT 1";
+    $rudweb_query_verif = "SELECT * FROM `"._RUDWEB_PRE."set_usr` WHERE `usr_login` = '".$rudweb_usr_login."' AND `usr_pass` = '".md5($rudweb_usr_pass)."' LIMIT 1";
     $rst_verif   = mysql_query($rudweb_query_verif) or require _RUDWEB_LIB_DIR . 'myerr.php';
   
     if (mysql_num_rows($rst_verif) == "1") {

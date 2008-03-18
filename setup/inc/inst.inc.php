@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/cfg/inst.inc.php
-09:37 2008-03-13
+11:10 2008-03-18
 */
 echo "<DIV CLASS=\"hdr\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 3px;\"><B>";
 echo "<A HREF=\"./setup.php?pid=".$pid."&amp;set=".$set."&amp;act=index&amp;step=1\" TARGET=\"_self\">Start</A>";
@@ -216,9 +216,16 @@ else if ($set == 'remove') {
   if($act == 'removef' && $step == '3') {echo "#aaaaaa";} else {echo "#333333";}
   echo "\">Admin</SPAN>";
   echo "</B></DIV>";
+  
   echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
   echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";
   if($act == 'removef' && $step == '4') {echo "#aaaaaa";} else {echo "#333333";}
+  echo "\">Documentation</SPAN>";
+  echo "</B></DIV>";
+  
+  echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
+  echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";
+  if($act == 'removef' && $step == '5') {echo "#aaaaaa";} else {echo "#333333";}
   echo "\">Root</SPAN>";
   echo "</B></DIV>";
 }

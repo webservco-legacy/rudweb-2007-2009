@@ -1,9 +1,17 @@
 <?php
 /*
 ./inc/mod/moduser.inc.php
-13:30 2008-03-12
+15:25 2008-03-18
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
+
+if(isset($_POST['newuser'])) {
+  $usr_img_verif = str_split($_SESSION[_RUDWEB_PRE.'token'], 5);
+  $usr_img_verif = strtoupper(strrev($usr_img_verif['0']));
+  $_SESSION[_RUDWEB_PRE.'tmpvi'] = $usr_img_verif;
+  session_regenerate_id(TRUE);
+  $_SESSION[_RUDWEB_PRE.'token'] = md5(uniqid(rand(), TRUE));
+}
 
 function genUserMod() {
   global $rudweb_theme;
@@ -34,6 +42,7 @@ function genUserMod() {
     }
     else {
       echo $rudweb_theme['usr']['pre'];
+      echo '<B>' . $rudweb_ln['usr']['retuser']. ':</B> ';
       echo $rudweb_ln['lgnst'][$rudweb_login_status];
       echo $rudweb_theme['usr']['suf'];
       
@@ -71,15 +80,22 @@ function genUserMod() {
       echo "\n<INPUT TYPE=\"submit\" CLASS=\"loginsubmit\" NAME=\"" . _RUDWEB_PRE . "login\" VALUE=\"login\">";
       echo $rudweb_theme['usr']['login']['suf'];
       
-      echo $rudweb_theme['usr']['login']['ftr'];
+      
       echo "\n</FORM>";
+      
+      echo $rudweb_theme['usr']['pre'];
+      echo '<B>' . $rudweb_ln['usr']['newuser']. ':</B> ';
+      restrictedLocalLink('default', $rudweb_ln['usr']['signup'] . '!', 'index.php/rudweb/newuser', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      echo $rudweb_theme['usr']['suf'];
+      
+      echo $rudweb_theme['usr']['login']['ftr'];
     }
     else {
       // logout link
       echo $rudweb_theme['usr']['login']['hdr'];
 
       echo $rudweb_theme['usr']['login']['pre'];
-      echo "<A CLASS=\"default\" HREF=\"" . _RUDWEB_SITE_URL . "logout.php\">" . $rudweb_ln['logout'] . "</A>";
+      restrictedLocalLink('default', $rudweb_ln['logout'], 'logout.php', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_theme['usr']['login']['suf'];
       
       echo $rudweb_theme['usr']['login']['ftr'];
@@ -89,4 +105,7 @@ function genUserMod() {
     echo $rudweb_theme['usr']['ftr'];
   }
 }
+
+
+
 ?>

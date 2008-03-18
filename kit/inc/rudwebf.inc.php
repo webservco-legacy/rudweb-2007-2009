@@ -662,6 +662,7 @@ function showContentPics() {
 function showContent($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $blog_content = "0") {
   global $rudweb_ln;
   global $rudweb_theme;
+  global $rudweb_dbtype;
   switch($rudweb_cnt_type) {
       case "1": {
         $query_content = "SELECT * FROM `"._RUDWEB_PRE."ws_cnt` WHERE `cnt_alias` = '".$rudweb_req_page."' AND (`cnt_dis` = '0' AND `cnt_ln` = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."') LIMIT 1";
