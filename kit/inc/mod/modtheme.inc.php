@@ -1,6 +1,6 @@
 <?php
 /*
-./inc/modtheme.inc.php
+./inc/mod/modtheme.inc.php
 13:24 2008-03-12
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}

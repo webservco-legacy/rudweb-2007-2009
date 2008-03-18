@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudwebm.inc.php
-22:06 2008-03-13
+20:47 2008-03-17
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -59,4 +59,8 @@ if (_RUDWEB_CFG_NWS === "1") {require _RUDWEB_MOD_DIR . 'modnws.inc.php';}
 /* ********** ********** ********** SEARCH ********** ********** ********** */
 if (_RUDWEB_CFG_SRC === "1") {require _RUDWEB_MOD_DIR . 'modsrc.inc.php';}
 /* ********** ********** ********** //SEARCH ********** ********** ********** */
+/* ********** ********** ********** CONTENT TAGS ********** ********** ********** */
+if (_RUDWEB_CFG_CNT_TAGS === "1") {require _RUDWEB_MOD_DIR . 'modtagsc.inc.php';}
+else {function showCntTags() {}}
+/* ********** ********** ********** //CONTENT TAGS ********** ********** ********** */
 ?>

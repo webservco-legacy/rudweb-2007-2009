@@ -1,6 +1,6 @@
 <?php
 /*
-./inc/modcart.inc.php
+./inc/mod/modcart.inc.php
 13:20 2008-03-12
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}

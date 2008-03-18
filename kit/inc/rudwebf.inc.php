@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudwebf.inc.php
-15:15 2008-03-12
+20:47 2008-03-17
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -675,6 +675,14 @@ function showContent($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $blog_c
           else {
             require _RUDWEB_INC_DIR . 'content.inc.php';
           }
+
+          // TAGS
+          // xyz
+          showCntTags($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, 0);
+      
+          // COMMENTS
+      
+          // LINKS
         }
         else {
           echo $rudweb_theme['cnt']['hdr'];

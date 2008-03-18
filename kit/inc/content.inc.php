@@ -160,15 +160,4 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
       echo $rudweb_theme['cnt']['suf'];
       echo $rudweb_theme['cnt']['ftr'];
-      
-      // TAGS
-      // XXX
-      
-      // COMMENTS
-      // XXX
-      
-      // LINKS
-      // XXX
-      
-      // XXX
 ?>

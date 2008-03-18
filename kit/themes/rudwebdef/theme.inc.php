@@ -1,7 +1,7 @@
 <?php
 /*
 ./themes/rudwebdef/theme.inc.php
-17:56 2008-03-12
+20:17 2008-03-17
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once '../../lib/404.php';}
 
@@ -671,5 +671,17 @@ else {
   $rudweb_theme['crt']['suf'] = "\n</TD>";
   $rudweb_theme['crt']['sep'] = "";
   $rudweb_theme['crt']['ftr'] = "\n</TR>\n</TABLE>";
+  /* ********** ********** ********** YAH MODULE ********** ********** ********** */
+  $rudweb_theme['yah']['hdr'] = "";
+  $rudweb_theme['yah']['pre'] = "";
+  $rudweb_theme['yah']['suf'] = "";
+  $rudweb_theme['yah']['sep'] = "&#160;/&#160;";
+  $rudweb_theme['yah']['ftr'] = "";
+  /* ********** ********** ********** CONTENT TAGS ********** ********** ********** */
+  $rudweb_theme['tagsc']['hdr'] = "<BR>";
+  $rudweb_theme['tagsc']['pre'] = "";
+  $rudweb_theme['tagsc']['suf'] = "";
+  $rudweb_theme['tagsc']['sep'] = "&#160;/&#160;";
+  $rudweb_theme['tagsc']['ftr'] = "";
 }
 ?>
