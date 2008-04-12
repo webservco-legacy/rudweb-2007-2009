@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/lngs02.inc.php
-09:58 2008-01-17
+12:50 2008-04-05
 */
 if(isset($_POST['set_cfg_ln_inst'])) {
   echo "\n\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -16,6 +16,7 @@ if(isset($_POST['set_cfg_ln_inst'])) {
       $files[$dirs[0]][1][] = 'index.php';
       $files[$dirs[0]][1][] = 'lang.inc.php';
       $files[$dirs[0]][1][] = 'lang.info.php';
+      $files[$dirs[0]][1][] = 'usrmail.inc.php';
       require "./act/engnact.inc.php";
       unset($dirs);
       unset($files);
@@ -83,7 +84,7 @@ else {
 <TD CLASS="cnt">
   <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0"><TR>
   <TD>
-  <FORM NAME="formnext" METHOD="POST" STYLE="display: inline; margin: 0px; padding: 0px;" ACTION="./setup.php?pid=<?php echo $pid;?>&amp;set=<?php echo $set;?>&amp;act=thms&amp;step=1">
+  <FORM NAME="formnext" METHOD="POST" STYLE="display: inline; margin: 0px; padding: 0px;" ACTION="./setup.php?pid=<?php echo $pid;?>&amp;set=<?php echo $set;?>&amp;act=skins&amp;step=1">
   <INPUT TYPE="submit" CLASS="button" STYLE="background-color: #DDDDDD" NAME="next" VALUE="next">
   </FORM>
   </TD>

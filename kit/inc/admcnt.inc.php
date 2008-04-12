@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/admcnt.inc.php
-14:51 2007-12-14
+13:15 2008-04-11
 */
 if(isset($_POST['cntdelcnt'])) { // delete selected content
   // verify
@@ -127,7 +127,9 @@ else if(isset($_POST['cntmodcnt'])) { // modify selected content
               $query_NextOrd = "SELECT MAX(`pic_ord`) FROM `"._RUDWEB_PRE."ws_pic` WHERE `cnt_id` = '".$cnt_id."' AND `pic_loc` = '".$pic_loc."'";
               $rstNextOrd=mysql_query($query_NextOrd) or die('Oups!<br>' . mysql_error());
               $new_pic_ord = (mysql_result($rstNextOrd, 0)) + 1;
-              $picquery = "INSERT INTO `"._RUDWEB_PRE."ws_pic` (pic_id, cnt_id, pic_ln, pic_tt, pic_fn, pic_loc, pic_ord, pic_tmb, pic_crd, pic_crt, pic_cru) VALUES ('".$new_pic_id."', '".$cnt_id."', '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."', '".basename($file_name[$pic_loc])."', '".$new_file_name[$pic_loc]."', '".$pic_loc."', '".$new_pic_ord."', 1, '".$action_date."', '".$action_time."', '".$_SESSION[_RUDWEB_PRE.'usr_id']."');";
+              $pic_tmb = '0';
+              if (isset($_POST['pcscnttmb'][$pic_loc])) {$pic_tmb = '1';}
+              $picquery = "INSERT INTO `"._RUDWEB_PRE."ws_pic` (pic_id, cnt_id, pic_ln, pic_tt, pic_fn, pic_loc, pic_ord, pic_tmb, pic_crd, pic_crt, pic_cru) VALUES ('".$new_pic_id."', '".$cnt_id."', '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."', '".basename($file_name[$pic_loc])."', '".$new_file_name[$pic_loc]."', '".$pic_loc."', '".$new_pic_ord."', '".$pic_tmb."', '".$action_date."', '".$action_time."', '".$_SESSION[_RUDWEB_PRE.'usr_id']."');";
               mysql_query($picquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
             }
           }
@@ -259,7 +261,7 @@ else if(isset($_POST['cntaddcnt']) || (isset($_POST['cntaddlnk']) || isset($_POS
   }
   else { // don't do the mod
     // redirect
-    $redirect = _RUDWEB_SITE_URL . 'index.php/rudweb/cntadd/mc/' . $mnu_cat . '/ml/' . $mnu_lev . '/mp/' . $mnu_par;
+    $redirect = _RUDWEB_SITE_URL . 'index.php/admin/cntadd/mc/' . $mnu_cat . '/ml/' . $mnu_lev . '/mp/' . $mnu_par;
   }
   // abc
 }

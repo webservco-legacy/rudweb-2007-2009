@@ -1,11 +1,11 @@
 <?php
 /*
 phpft.inc.php
-16:42 2008-03-18
+12:50 2008-04-05
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
-require_once _RUDWEB_THEME_DIR . $_SESSION[_RUDWEB_PRE.'usr_theme_dir'] . '/footer.inc.php';
+require_once _RUDWEB_SKIN_DIR . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'] . '/footer.inc.php';
 
 // CLOSE DATABASE CONNECTION
 //dbclose(dbopen());

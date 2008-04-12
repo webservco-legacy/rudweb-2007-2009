@@ -1,7 +1,7 @@
 <?php
 /*
 ./lib/picver.php
-14:28 2008-03-18
+12:50 2008-04-05
 */
 error_reporting(E_ALL);
 define("_RUDWEB_PUBFIL", TRUE);
@@ -17,13 +17,13 @@ ini_set("session.gc_maxlifetime","36000"); //seconds
 session_start();
 
 if(isset($_SESSION[_RUDWEB_PRE.'token'])) {
-  $br  = hexdec('0x' . substr($_SESSION[_RUDWEB_PRE.'usr_theme_bg'], 1, 2));
-  $bg  = hexdec('0x' . substr($_SESSION[_RUDWEB_PRE.'usr_theme_bg'], 3, 2));
-  $bb  = hexdec('0x' . substr($_SESSION[_RUDWEB_PRE.'usr_theme_bg'], 5, 2));
+  $br  = hexdec('0x' . substr($_SESSION[_RUDWEB_PRE.'usr_skin_bg'], 1, 2));
+  $bg  = hexdec('0x' . substr($_SESSION[_RUDWEB_PRE.'usr_skin_bg'], 3, 2));
+  $bb  = hexdec('0x' . substr($_SESSION[_RUDWEB_PRE.'usr_skin_bg'], 5, 2));
 
-  $fr  = hexdec("0x" . substr($_SESSION[_RUDWEB_PRE.'usr_theme_fg'], 1, 2));
-  $fg  = hexdec("0x" . substr($_SESSION[_RUDWEB_PRE.'usr_theme_fg'], 3, 2));
-  $fb  = hexdec("0x" . substr($_SESSION[_RUDWEB_PRE.'usr_theme_fg'], 5, 2));
+  $fr  = hexdec("0x" . substr($_SESSION[_RUDWEB_PRE.'usr_skin_fg'], 1, 2));
+  $fg  = hexdec("0x" . substr($_SESSION[_RUDWEB_PRE.'usr_skin_fg'], 3, 2));
+  $fb  = hexdec("0x" . substr($_SESSION[_RUDWEB_PRE.'usr_skin_fg'], 5, 2));
 
   $verif = str_split(strtoupper($_SESSION[_RUDWEB_PRE.'token']), 1);
 

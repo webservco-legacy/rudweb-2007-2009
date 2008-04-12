@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modlang.inc.php
-13:29 2008-03-12
+12:50 2008-04-05
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -22,15 +22,15 @@ if (isset($_GET['ln']) && (!isset($_POST[_RUDWEB_PRE.'usr_login']) && _RUDWEB_CF
 } //CHANGE LANGUAGE IS SET
 
 function genLangMod() {
-  global $rudweb_theme;
+  global $rudweb_skin;
   if(_RUDWEB_CFG_LANG_ON === "1") {
     $all_langs = lsdir(_RUDWEB_LANG_DIR);
-    echo $rudweb_theme['lng']['hdr'];
+    echo $rudweb_skin['lng']['hdr'];
     for ($i=1; $i <= count($all_langs); $i++) {
       if (isset($_GET['ln'])) {$this_request_uri = eregi_replace("/ln/".$_GET['ln'], "", $_SERVER['REQUEST_URI']);}
       else {$this_request_uri = $_SERVER['REQUEST_URI'];}
-      if (is_file(_RUDWEB_THEME_DIR . $_SESSION[_RUDWEB_PRE.'usr_theme_dir'] . "/graphics/lang/" . $all_langs[$i] . ".png")) {
-        echo $rudweb_theme['lng']['pre'];
+      if (is_file(_RUDWEB_SKIN_DIR . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'] . "/graphics/lang/" . $all_langs[$i] . ".png")) {
+        echo $rudweb_skin['lng']['pre'];
         
         if($all_langs[$i] == "ro") {$lng_default_content = _RUDWEB_CFG_CNT_RO;}
         else if($all_langs[$i] == "en") {$lng_default_content = _RUDWEB_CFG_CNT_EN;}
@@ -38,15 +38,15 @@ function genLangMod() {
         
         //echo "<A HREF=\"http://".$_SERVER['HTTP_HOST'] . $this_request_uri . "/ln/" . $all_langs[$i]."\">";
         echo "<A HREF=\"". _RUDWEB_SITE_URL . "index.php/content/" . $lng_default_content . "/ln/" . $all_langs[$i]."\">";
-        echo "<IMG SRC=\""._RUDWEB_THEME_URL . $_SESSION[_RUDWEB_PRE.'usr_theme_dir'] . "/graphics/lang/" . $all_langs[$i] . ".png" ."\" ALT=\"" . $all_langs[$i] . "\" BORDER=\"0\">";
+        echo "<IMG SRC=\""._RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'] . "/graphics/lang/" . $all_langs[$i] . ".png" ."\" ALT=\"" . $all_langs[$i] . "\" BORDER=\"0\">";
         echo "</A>";
 
-        echo $rudweb_theme['lng']['suf'];
+        echo $rudweb_skin['lng']['suf'];
 
-        if ($i < count($all_langs)) {echo $rudweb_theme['lng']['sep'];}
+        if ($i < count($all_langs)) {echo $rudweb_skin['lng']['sep'];}
       } 
     }
-    echo $rudweb_theme['lng']['ftr'];
+    echo $rudweb_skin['lng']['ftr'];
   }
 }
 ?>

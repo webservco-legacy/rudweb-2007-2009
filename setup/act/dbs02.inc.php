@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/dbs02.inc.php
-10:32 2008-01-21
+12:50 2008-04-05
 */
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
 echo "\n<TR><TD CLASS=\"ttt\" WIDTH=\"200\"><B>Create Tables</B></TD>";

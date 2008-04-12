@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/admin.inc.php
-15:53 2007-12-12
+15:17 2008-04-09
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -124,5 +124,9 @@ if (isset($_POST['ftrmod'])) { // enable, disable featured module
   if(isset($_POST['ftr_lmt']))  {$ftr_lmt = rudweb_filter_input($_POST['ftr_lmt']);}
   require_once _RUDWEB_INC_DIR . 'admftr.inc.php';
   header("Location: $redirect");
+}
+if (isset($_POST['itemadd'])) {
+  $action_date  = date("Y-m-d");
+  $action_time  = date("H:i:s");
 }
 ?>

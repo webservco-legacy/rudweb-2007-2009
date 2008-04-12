@@ -1,14 +1,14 @@
 <?php
 /*
 ./inc/js/jsfunc.inc.php
-16:28 2008-03-12
+14:16 2008-04-09
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 ?>
 <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
 window.defaultStatus = "<?php echo $rudweb_ln['WinStatDef']; ?>";
-var fileLoadingImage = "<?php echo _RUDWEB_THEME_URL . $_SESSION[_RUDWEB_PRE.'usr_theme_dir']?>/graphics/loading.gif";		
-var fileBottomNavCloseImage = "<?php echo _RUDWEB_THEME_URL . $_SESSION[_RUDWEB_PRE.'usr_theme_dir']?>/graphics/close.gif";
+var fileLoadingImage = "<?php echo _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir']?>/graphics/loading.gif";		
+var fileBottomNavCloseImage = "<?php echo _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir']?>/graphics/close.gif";
 function toggleLayer( whichLayer ) {
   var elem, vis;
   if( document.getElementById ) // this is the way the standards work
@@ -42,12 +42,19 @@ function bevisible(cur,which)	{
 		}
 		else {
 			if(document.all) {
-				cur.filters.alpha.opacity=50
+				cur.filters.alpha.opacity=80
       }  
 			else {
-				cur.style.setProperty("-moz-opacity", .5, "");
+				cur.style.setProperty("-moz-opacity", .8, "");
       }
 		}
+	}
+}
+function limitText(limitField, limitCount, limitNum) {
+	if (limitField.value.length > limitNum) {
+		limitField.value = limitField.value.substring(0, limitNum);
+	} else {
+		limitCount.value = limitNum - limitField.value.length;
 	}
 }
 </SCRIPT>

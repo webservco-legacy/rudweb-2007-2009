@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/act/usett01.inc.php
-16:04 2008-03-15
+12:50 2008-04-05
 */
 if($_SESSION['rudwebset_set_site_url1'] == '') {$_SESSION['rudwebset_set_site_url1'] = $target_url[$_SESSION['rudwebset_pid']];}
 if($_SESSION['rudwebset_set_site_root1'] == '') {$_SESSION['rudwebset_set_site_root1'] = $target_root.$target_vars[$_SESSION['rudwebset_pid']];}
@@ -91,11 +91,11 @@ if($_SESSION['rudwebset_set_pre'] == '') {$_SESSION['rudwebset_set_pre'] = $_SES
   <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_set_dbcfg'] == "1") {echo " SELECTED";}?>>database</OPTION>
 </SELECT>
 </TD></TR>
-<TR><TD CLASS="cnt" WIDTH="200" STYLE="text-align: right">theme settings:</TD>
+<TR><TD CLASS="cnt" WIDTH="200" STYLE="text-align: right">skin settings:</TD>
 <TD CLASS="cnt">
-<SELECT CLASS="general" NAME="set_dbthm">
-  <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_set_dbthm'] == "0") {echo " SELECTED";}?>>file</OPTION>
-  <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_set_dbthm'] == "1") {echo " SELECTED";}?>>database</OPTION>
+<SELECT CLASS="general" NAME="set_dbskin">
+  <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_set_dbskin'] == "0") {echo " SELECTED";}?>>file</OPTION>
+  <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_set_dbskin'] == "1") {echo " SELECTED";}?>>database</OPTION>
 </SELECT>
 </TD></TR>
 <TR><TD CLASS="cnt" WIDTH="200" STYLE="text-align: right">global prefix:</TD>
@@ -123,7 +123,7 @@ if($_SESSION['rudwebset_set_pre'] == '') {$_SESSION['rudwebset_set_pre'] = $_SES
 <TD CLASS="cnt">
   <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0"><TR>
   <TD>
-  <FORM NAME="verifformback" METHOD="POST" STYLE="display: inline; margin: 0px; padding: 0px;" ACTION="./setup.php?pid=<?php echo $pid;?>&amp;set=<?php echo $set;?>&amp;act=thms&amp;step=2">
+  <FORM NAME="verifformback" METHOD="POST" STYLE="display: inline; margin: 0px; padding: 0px;" ACTION="./setup.php?pid=<?php echo $pid;?>&amp;set=<?php echo $set;?>&amp;act=skins&amp;step=2">
   <INPUT TYPE="submit" CLASS="button" STYLE="background-color: #CCCCCC" NAME="back" VALUE="back">
   </FORM>
   </TD>

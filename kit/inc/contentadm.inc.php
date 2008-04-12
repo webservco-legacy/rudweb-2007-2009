@@ -1,13 +1,13 @@
 <?php
 /*
 ./inc/contentadm.inc.php
-14:09 2008-03-11
+20:36 2008-04-06
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
       // CONTENT
-      echo $rudweb_theme['cnt']['hdr'];
-      echo $rudweb_theme['cnt']['pre'];
+      echo $rudweb_skin['cnt']['hdr'];
+      echo $rudweb_skin['cnt']['pre'];
       
       $query_menu = "SELECT * FROM `"._RUDWEB_PRE."ws_mnu` WHERE `mnu_id` = '".$rudweb_mnu_id."' AND (`mnu_dis` = '0' AND `mnu_ln` = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."') LIMIT 1";
       $rst_query_menu = mysql_query($query_menu) or require _RUDWEB_LIB_DIR . 'myerr.php';
@@ -34,7 +34,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 <?php      
       // PICTURES 1
       if (_RUDWEB_CFG_PICS_1 === "1") {
-        echo $rudweb_theme['cnt']['pic']['hdr']['1'];
+        echo $rudweb_skin['cnt']['pic']['hdr']['1'];
         $query_pic1 = "SELECT * FROM `"._RUDWEB_PRE."ws_pic` WHERE `cnt_id` = '".$this_content_id."' AND (`pic_loc` = '1' AND `pic_dis` = '0') ORDER BY `pic_ord` ASC";
         $rst_query_pic1 = mysql_query($query_pic1) or require _RUDWEB_LIB_DIR . 'myerr.php';
         $total_pic1 = mysql_num_rows($rst_query_pic1);
@@ -44,11 +44,12 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
             $pictureFile1[$pic1i]    = _RUDWEB_PIC_DIR . $row_rst_pic1['pic_fn'];
             $pictureFile1url[$pic1i] = _RUDWEB_PIC_URL . $row_rst_pic1['pic_fn'];
             $pictureFile1TT[$pic1i] = $row_rst_pic1['pic_tt'];
-            $pic1_imgsrc[$pic1i] = "<IMG SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $pictureFile1[$pic1i] . "&amp;max_size=".$rudweb_theme['cnt']['pic']['max']['1']."\" ALT=\"".$pictureFile1TT[$pic1i]."\">";
-            echo $rudweb_theme['cnt']['pic']['pre']['1'];
+            $pic1_imgsrcT[$pic1i] = "<IMG CLASS=\"op\" SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $pictureFile1[$pic1i] . "&amp;max_size=".$rudweb_skin['cnt']['pic']['max']['1']."\" TITLE=\"".$pictureFile1TT[$pic1i]."\" ALT=\"".$pictureFile1TT[$pic1i]."\" onMouseOver=\"bevisible(this,0)\" onMouseOut=\"bevisible(this,1)\">";
+            $pic1_imgsrc[$pic1i] = "<IMG SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $pictureFile1[$pic1i] . "&amp;max_size=".$rudweb_skin['cnt']['pic']['max']['1']."\" TITLE=\"".$pictureFile1TT[$pic1i]."\" ALT=\"".$pictureFile1TT[$pic1i]."\">";
+            echo $rudweb_skin['cnt']['pic']['pre']['1'];
             if ($row_rst_pic1['pic_tmb'] === '1') {
               echo "<A CLASS=\"default\" rel=\"lightbox[".$row_rst_pic1['pic_loc']."]\" HREF=\"" . $pictureFile1url[$pic1i] . "\" TITLE=\"".$pictureFile1TT[$pic1i]."\">";
-              echo $pic1_imgsrc[$pic1i];
+              echo $pic1_imgsrcT[$pic1i];
               echo "</A>";
             }
             else {
@@ -58,28 +59,32 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
             echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"delpic[".$row_rst_pic1['pic_id']."]\">";
             echo "<BR>" . $rudweb_ln['adm']['pic_repl'];
             echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscnt[".$row_rst_pic1['pic_id']."]\" SIZE=\"1\">";
-            echo $rudweb_theme['cnt']['pic']['suf']['1'];
-            echo $rudweb_theme['cnt']['pic']['sep']['1'];
+            echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"pcscnttmb[1]\" SIZE=\"1\">";
+            echo '&#160;' . $rudweb_ln['adm']['pic_tmb'];
+            echo $rudweb_skin['cnt']['pic']['suf']['1'];
+            echo $rudweb_skin['cnt']['pic']['sep']['1'];
           }
         }
         // NEW PIC
-        echo $rudweb_theme['cnt']['pic']['pre']['1'];
+        echo $rudweb_skin['cnt']['pic']['pre']['1'];
         echo "<BR><BR>";
         echo $rudweb_ln['adm']['new_pic'];
         echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscntnew[1]\" SIZE=\"1\">";
-        echo $rudweb_theme['cnt']['pic']['suf']['1'];
-        echo $rudweb_theme['cnt']['pic']['ftr']['1'];
+        echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"pcscnttmb[1]\" SIZE=\"1\">";
+        echo '&#160;' . $rudweb_ln['adm']['pic_tmb'];
+        echo $rudweb_skin['cnt']['pic']['suf']['1'];
+        echo $rudweb_skin['cnt']['pic']['ftr']['1'];
       }
 
       // TITLE
 ?>      
-      <?php echo $rudweb_theme['cnt']['tt1']['pre'];?>
+      <?php echo $rudweb_skin['cnt']['tt1']['pre'];?>
       <INPUT CLASS="titleadm" TYPE="text" NAME="cnt_tt" SIZE="50" MAXLENGTH="150" VALUE="<?php echo $cnt_tt;?>">
-      <?php echo $rudweb_theme['cnt']['tt1']['suf'];?>
+      <?php echo $rudweb_skin['cnt']['tt1']['suf'];?>
 <?php
       // PICTURES 2
       if (_RUDWEB_CFG_PICS_2 === "1") {
-        echo $rudweb_theme['cnt']['pic']['hdr']['2'];
+        echo $rudweb_skin['cnt']['pic']['hdr']['2'];
         $query_pic2 = "SELECT * FROM `"._RUDWEB_PRE."ws_pic` WHERE `cnt_id` = '".$this_content_id."' AND (`pic_loc` = '2' AND `pic_dis` = '0') ORDER BY `pic_ord` ASC";
         $rst_query_pic2 = mysql_query($query_pic2) or require _RUDWEB_LIB_DIR . 'myerr.php';
         $total_pic2 = mysql_num_rows($rst_query_pic2);
@@ -89,11 +94,12 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
             $pictureFile2[$pic2i]    = _RUDWEB_PIC_DIR . $row_rst_pic2['pic_fn'];
             $pictureFile2url[$pic2i] = _RUDWEB_PIC_URL . $row_rst_pic2['pic_fn'];
             $pictureFile2TT[$pic2i] = $row_rst_pic2['pic_tt'];
-            $pic2_imgsrc[$pic2i] = "<IMG SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $pictureFile2[$pic2i] . "&amp;max_size=".$rudweb_theme['cnt']['pic']['max']['2']."\" ALT=\"".$pictureFile2TT[$pic2i]."\">";
-            echo $rudweb_theme['cnt']['pic']['pre']['2'];
+            $pic2_imgsrcT[$pic2i] = "<IMG CLASS=\"op\" SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $pictureFile2[$pic2i] . "&amp;max_size=".$rudweb_skin['cnt']['pic']['max']['2']."\" TITLE=\"".$pictureFile2TT[$pic2i]."\" ALT=\"".$pictureFile2TT[$pic2i]."\" onMouseOver=\"bevisible(this,0)\" onMouseOut=\"bevisible(this,1)\">";
+            $pic2_imgsrc[$pic2i] = "<IMG SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $pictureFile2[$pic2i] . "&amp;max_size=".$rudweb_skin['cnt']['pic']['max']['2']."\" TITLE=\"".$pictureFile2TT[$pic2i]."\" ALT=\"".$pictureFile2TT[$pic2i]."\">";
+            echo $rudweb_skin['cnt']['pic']['pre']['2'];
             if ($row_rst_pic2['pic_tmb'] === '1') {
               echo "<A CLASS=\"default\" rel=\"lightbox[".$row_rst_pic2['pic_loc']."]\" HREF=\"" . $pictureFile2url[$pic2i] . "\" TITLE=\"".$pictureFile2TT[$pic2i]."\">";
-              echo $pic2_imgsrc[$pic2i];
+              echo $pic2_imgsrcT[$pic2i];
               echo "</A>";
             }
             else {
@@ -103,28 +109,28 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
             echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"delpic[".$row_rst_pic2['pic_id']."]\">";
             echo "<BR>" . $rudweb_ln['adm']['pic_repl'];
             echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscnt[".$row_rst_pic2['pic_id']."]\" SIZE=\"1\">";
-            echo $rudweb_theme['cnt']['pic']['suf']['2'];
-            echo $rudweb_theme['cnt']['pic']['sep']['2'];
+            echo $rudweb_skin['cnt']['pic']['suf']['2'];
+            echo $rudweb_skin['cnt']['pic']['sep']['2'];
           }
         }
         // NEW PIC
-        echo $rudweb_theme['cnt']['pic']['pre']['2'];
+        echo $rudweb_skin['cnt']['pic']['pre']['2'];
         echo "<BR><BR>";
         echo $rudweb_ln['adm']['new_pic'];
         echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscntnew[2]\" SIZE=\"1\">";
-        echo $rudweb_theme['cnt']['pic']['suf']['2'];
-        echo $rudweb_theme['cnt']['pic']['ftr']['2'];
+        echo $rudweb_skin['cnt']['pic']['suf']['2'];
+        echo $rudweb_skin['cnt']['pic']['ftr']['2'];
       }
       
       // SUBTITLE
 ?>
-      <?php echo $rudweb_theme['cnt']['tt2']['pre'];?>
+      <?php echo $rudweb_skin['cnt']['tt2']['pre'];?>
       <INPUT CLASS="subtitleadm" TYPE="text" NAME="cnt_stt" MAXLENGTH="60" VALUE="<?php echo $cnt_stt;?>">
-      <?php echo $rudweb_theme['cnt']['tt2']['suf'];?>
+      <?php echo $rudweb_skin['cnt']['tt2']['suf'];?>
 <?php
       // PICTURES 3
       if (_RUDWEB_CFG_PICS_3 === "1") {
-        echo $rudweb_theme['cnt']['pic']['hdr']['3'];
+        echo $rudweb_skin['cnt']['pic']['hdr']['3'];
         $query_pic3 = "SELECT * FROM `"._RUDWEB_PRE."ws_pic` WHERE `cnt_id` = '".$this_content_id."' AND (`pic_loc` = '3' AND `pic_dis` = '0') ORDER BY `pic_ord` ASC";
         $rst_query_pic3 = mysql_query($query_pic3) or require _RUDWEB_LIB_DIR . 'myerr.php';
         $total_pic3 = mysql_num_rows($rst_query_pic3);
@@ -134,11 +140,12 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
             $pictureFile3[$pic3i]    = _RUDWEB_PIC_DIR . $row_rst_pic3['pic_fn'];
             $pictureFile3url[$pic3i] = _RUDWEB_PIC_URL . $row_rst_pic3['pic_fn'];
             $pictureFile3TT[$pic3i] = $row_rst_pic3['pic_tt'];
-            $pic3_imgsrc[$pic3i] = "<IMG SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $pictureFile3[$pic3i] . "&amp;max_size=".$rudweb_theme['cnt']['pic']['max']['3']."\" ALT=\"".$pictureFile3TT[$pic3i]."\">";
-            echo $rudweb_theme['cnt']['pic']['pre']['3'];
+            $pic3_imgsrcT[$pic3i] = "<IMG CLASS=\"op\" SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $pictureFile3[$pic3i] . "&amp;max_size=".$rudweb_skin['cnt']['pic']['max']['3']."\" TITLE=\"".$pictureFile3TT[$pic3i]."\" ALT=\"".$pictureFile3TT[$pic3i]."\" onMouseOver=\"bevisible(this,0)\" onMouseOut=\"bevisible(this,1)\">";
+            $pic3_imgsrc[$pic3i] = "<IMG SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $pictureFile3[$pic3i] . "&amp;max_size=".$rudweb_skin['cnt']['pic']['max']['3']."\" TITLE=\"".$pictureFile3TT[$pic3i]."\" ALT=\"".$pictureFile3TT[$pic3i]."\">";
+            echo $rudweb_skin['cnt']['pic']['pre']['3'];
             if ($row_rst_pic3['pic_tmb'] === '1') {
               echo "<A CLASS=\"default\" rel=\"lightbox[".$row_rst_pic3['pic_loc']."]\" HREF=\"" . $pictureFile3url[$pic3i] . "\" TITLE=\"".$pictureFile3TT[$pic3i]."\">";
-              echo $pic3_imgsrc[$pic3i];
+              echo $pic3_imgsrcT[$pic3i];
               echo "</A>";
             }
             else {
@@ -148,40 +155,40 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
             echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"delpic[".$row_rst_pic3['pic_id']."]\">";
             echo "<BR>" . $rudweb_ln['adm']['pic_repl'];
             echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscnt[".$row_rst_pic3['pic_id']."]\" SIZE=\"1\">";
-            echo $rudweb_theme['cnt']['pic']['suf']['3'];
-            echo $rudweb_theme['cnt']['pic']['sep']['3'];
+            echo $rudweb_skin['cnt']['pic']['suf']['3'];
+            echo $rudweb_skin['cnt']['pic']['sep']['3'];
           }
         }
         // NEW PIC
-        echo $rudweb_theme['cnt']['pic']['pre']['3'];
+        echo $rudweb_skin['cnt']['pic']['pre']['3'];
         echo "<BR><BR>";
         echo $rudweb_ln['adm']['new_pic'];
         echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscntnew[3]\" SIZE=\"1\">";
-        echo $rudweb_theme['cnt']['pic']['suf']['3'];
-        echo $rudweb_theme['cnt']['pic']['ftr']['3'];
+        echo $rudweb_skin['cnt']['pic']['suf']['3'];
+        echo $rudweb_skin['cnt']['pic']['ftr']['3'];
       }
 
       // CONTENT TEXT
 ?>
-<?php echo $rudweb_theme['cnt']['txt']['pre'];?>
+<?php echo $rudweb_skin['cnt']['txt']['pre'];?>
 <?php
 $oFCKeditor                                     = new FCKeditor('cnt_txt');
 $oFCKeditor->BasePath                           = _RUDWEB_LIB_URL .'editor/';
 $oFCKeditor->Config['CustomConfigurationsPath'] = _RUDWEB_JS_URL . 'editor.js';
 $oFCKeditor->ToolbarSet                         = "rudweb";
 $oFCKeditor->Config['SkinPath']                 = _RUDWEB_LIB_URL . 'editor/editor/skins/rudweb/';
-$oFCKeditor->Config['EditorAreaCSS']            = _RUDWEB_THEME_URL . $_SESSION[_RUDWEB_PRE.'usr_theme_dir'] . '/styles/editor.css';
+$oFCKeditor->Config['EditorAreaCSS']            = _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'] . '/styles/editor.css';
 $oFCKeditor->Height                             = 500;
 $oFCKeditor->Value                              = $cnt_txt;
 $oFCKeditor->Config['AutoDetectLanguage'] 	    = false;
 $oFCKeditor->Config['DefaultLanguage']          = $_SESSION[_RUDWEB_PRE.'usr_lang_index'];
 $oFCKeditor->Create();
 ?>
-<?php echo $rudweb_theme['cnt']['txt']['suf'];?>
+<?php echo $rudweb_skin['cnt']['txt']['suf'];?>
 <?php      
       // PICTURES 4
       if (_RUDWEB_CFG_PICS_4 === "1") {
-        echo $rudweb_theme['cnt']['pic']['hdr']['4'];
+        echo $rudweb_skin['cnt']['pic']['hdr']['4'];
         $query_pic4 = "SELECT * FROM `"._RUDWEB_PRE."ws_pic` WHERE `cnt_id` = '".$this_content_id."' AND (`pic_loc` = '4' AND `pic_dis` = '0') ORDER BY `pic_ord` ASC";
         $rst_query_pic4 = mysql_query($query_pic4) or require _RUDWEB_LIB_DIR . 'myerr.php';
         $total_pic4 = mysql_num_rows($rst_query_pic4);
@@ -191,11 +198,12 @@ $oFCKeditor->Create();
             $pictureFile4[$pic4i]    = _RUDWEB_PIC_DIR . $row_rst_pic4['pic_fn'];
             $pictureFile4url[$pic4i] = _RUDWEB_PIC_URL . $row_rst_pic4['pic_fn'];
             $pictureFile4TT[$pic4i] = $row_rst_pic4['pic_tt'];
-            $pic4_imgsrc[$pic4i] = "<IMG SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $pictureFile4[$pic4i] . "&amp;max_size=".$rudweb_theme['cnt']['pic']['max']['4']."\" ALT=\"".$pictureFile4TT[$pic4i]."\">";
-            echo $rudweb_theme['cnt']['pic']['pre']['4'];
+            $pic4_imgsrcT[$pic4i] = "<IMG CLASS=\"op\" SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $pictureFile4[$pic4i] . "&amp;max_size=".$rudweb_skin['cnt']['pic']['max']['4']."\" TITLE=\"".$pictureFile4TT[$pic4i]."\" ALT=\"".$pictureFile4TT[$pic4i]."\" onMouseOver=\"bevisible(this,0)\" onMouseOut=\"bevisible(this,1)\">";
+            $pic4_imgsrc[$pic4i] = "<IMG SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $pictureFile4[$pic4i] . "&amp;max_size=".$rudweb_skin['cnt']['pic']['max']['4']."\" TITLE=\"".$pictureFile4TT[$pic4i]."\" ALT=\"".$pictureFile4TT[$pic4i]."\">";
+            echo $rudweb_skin['cnt']['pic']['pre']['4'];
             if ($row_rst_pic4['pic_tmb'] === '1') {
               echo "<A CLASS=\"default\" rel=\"lightbox[".$row_rst_pic4['pic_loc']."]\" HREF=\"" . $pictureFile4url[$pic4i] . "\" TITLE=\"".$pictureFile4TT[$pic4i]."\">";
-              echo $pic4_imgsrc[$pic4i];
+              echo $pic4_imgsrcT[$pic4i];
               echo "</A>";
             }
             else {
@@ -205,17 +213,17 @@ $oFCKeditor->Create();
             echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"delpic[".$row_rst_pic4['pic_id']."]\">";
             echo "<BR>" . $rudweb_ln['adm']['pic_repl'];
             echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscnt[".$row_rst_pic4['pic_id']."]\" SIZE=\"1\">";
-            echo $rudweb_theme['cnt']['pic']['suf']['4'];
-            echo $rudweb_theme['cnt']['pic']['sep']['4'];
+            echo $rudweb_skin['cnt']['pic']['suf']['4'];
+            echo $rudweb_skin['cnt']['pic']['sep']['4'];
           }
         }
         // NEW PIC
-        echo $rudweb_theme['cnt']['pic']['pre']['4'];
+        echo $rudweb_skin['cnt']['pic']['pre']['4'];
         echo "<BR><BR>";
         echo $rudweb_ln['adm']['new_pic'];
         echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscntnew[4]\" SIZE=\"1\">";
-        echo $rudweb_theme['cnt']['pic']['suf']['4'];
-        echo $rudweb_theme['cnt']['pic']['ftr']['4'];
+        echo $rudweb_skin['cnt']['pic']['suf']['4'];
+        echo $rudweb_skin['cnt']['pic']['ftr']['4'];
       }
 ?>
 <DIV STYLE="text-align: center">
@@ -227,8 +235,8 @@ $oFCKeditor->Create();
 </DIV>
 </FORM>
 <?php
-      echo $rudweb_theme['cnt']['suf'];
-      echo $rudweb_theme['cnt']['ftr'];
+      echo $rudweb_skin['cnt']['suf'];
+      echo $rudweb_skin['cnt']['ftr'];
       
       // TAGS
       // XXX

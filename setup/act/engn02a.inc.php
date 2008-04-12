@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/engn02a.inc.php
-15:27 2008-01-14
+12:50 2008-04-05
 */
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -22,4 +22,9 @@ $dirs[2]    = "admin/backup/db/";
 $files[$dirs[2]][0] = array();
 $files[$dirs[2]][1] = array();
 $files[$dirs[2]][1][] = "index.php";
+
+$dirs[3]    = "catalog/";
+$files[$dirs[3]][0] = array();
+$files[$dirs[3]][1] = array();
+$files[$dirs[3]][1][] = "index.php";
 ?>

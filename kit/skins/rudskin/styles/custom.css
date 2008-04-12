@@ -1,0 +1,171 @@
+/*
+./skins/rudskin/styles/custom.css
+12:50 2008-04-05
+*/
+/* ********** ********** ********** CUSTOM ********** ********** ********** */
+DIV.vcentered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 250px;
+  height: 20px;
+  margin-left: -125px; /* half of width */
+  margin-top: -10px;  /* half of height */
+  text-align: center;
+}
+#container {
+  width: 90%;
+  /*height: 100%;*/
+  margin: auto;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
+  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
+  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
+  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
+  font-size: <?php echo $rudweb_skin['FontSize'].$rudweb_skin['Measure']; ?>;
+  line-height: 130%;
+  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
+  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
+  border-top-width: <?php echo $rudweb_skin['BorderTop'].$rudweb_skin['Measure']; ?>;
+  border-bottom-width: <?php echo $rudweb_skin['BorderBottom'].$rudweb_skin['Measure']; ?>;
+  border-left-width: <?php echo $rudweb_skin['BorderLeft'].$rudweb_skin['Measure']; ?>;
+  border-right-width: <?php echo $rudweb_skin['BorderRight'].$rudweb_skin['Measure']; ?>;
+  padding-top: <?php echo $rudweb_skin['PaddingTop'].$rudweb_skin['Measure']; ?>;
+  padding-bottom: <?php echo $rudweb_skin['PaddingBottom'].$rudweb_skin['Measure']; ?>;
+  padding-left: <?php echo $rudweb_skin['PaddingLeft'].$rudweb_skin['Measure']; ?>;
+  padding-right: <?php echo $rudweb_skin['PaddingRight'].$rudweb_skin['Measure']; ?>;
+  cursor: default;
+  /*overflow:hidden;*/
+}
+.header {
+  margin: 2px auto;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
+  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
+  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
+  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
+  font-size: 1em;
+  line-height: 130%;
+  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
+  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
+  border-top-width: <?php echo $rudweb_skin['BorderTop'].$rudweb_skin['Measure']; ?>;
+  border-bottom-width: <?php echo $rudweb_skin['BorderBottom'].$rudweb_skin['Measure']; ?>;
+  border-left-width: <?php echo $rudweb_skin['BorderLeft'].$rudweb_skin['Measure']; ?>;
+  border-right-width: <?php echo $rudweb_skin['BorderRight'].$rudweb_skin['Measure']; ?>;
+  padding-top: <?php echo $rudweb_skin['PaddingTop'].$rudweb_skin['Measure']; ?>;
+  padding-bottom: <?php echo $rudweb_skin['PaddingBottom'].$rudweb_skin['Measure']; ?>;
+  padding-left: <?php echo $rudweb_skin['PaddingLeft'].$rudweb_skin['Measure']; ?>;
+  padding-right: <?php echo $rudweb_skin['PaddingRight'].$rudweb_skin['Measure']; ?>;
+  cursor: default;
+}
+
+#leftnav {
+  float: left;
+  width: 160px;
+  margin: 0px;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
+  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
+  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
+  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
+  font-size: 1em;
+  line-height: 130%;
+  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
+  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
+  border-top-width: <?php echo $rudweb_skin['BorderTop'].$rudweb_skin['Measure']; ?>;
+  border-bottom-width: <?php echo $rudweb_skin['BorderBottom'].$rudweb_skin['Measure']; ?>;
+  border-left-width: <?php echo $rudweb_skin['BorderLeft'].$rudweb_skin['Measure']; ?>;
+  border-right-width: <?php echo $rudweb_skin['BorderRight'].$rudweb_skin['Measure']; ?>;
+  padding-top: <?php echo $rudweb_skin['PaddingTop'].$rudweb_skin['Measure']; ?>;
+  padding-bottom: <?php echo $rudweb_skin['PaddingBottom'].$rudweb_skin['Measure']; ?>;
+  padding-left: <?php echo $rudweb_skin['PaddingLeft'].$rudweb_skin['Measure']; ?>;
+  padding-right: <?php echo $rudweb_skin['PaddingRight'].$rudweb_skin['Measure']; ?>;
+  cursor: default;
+  position:relative;
+}
+#rightnav {
+  float: right;
+  width: 160px;
+  margin: 0px;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
+  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
+  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
+  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
+  font-size: 1em;
+  line-height: 130%;
+  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
+  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
+  border-top-width: <?php echo $rudweb_skin['BorderTop'].$rudweb_skin['Measure']; ?>;
+  border-bottom-width: <?php echo $rudweb_skin['BorderBottom'].$rudweb_skin['Measure']; ?>;
+  border-left-width: <?php echo $rudweb_skin['BorderLeft'].$rudweb_skin['Measure']; ?>;
+  border-right-width: <?php echo $rudweb_skin['BorderRight'].$rudweb_skin['Measure']; ?>;
+  padding-top: <?php echo $rudweb_skin['PaddingTop'].$rudweb_skin['Measure']; ?>;
+  padding-bottom: <?php echo $rudweb_skin['PaddingBottom'].$rudweb_skin['Measure']; ?>;
+  padding-left: <?php echo $rudweb_skin['PaddingLeft'].$rudweb_skin['Measure']; ?>;
+  padding-right: <?php echo $rudweb_skin['PaddingRight'].$rudweb_skin['Measure']; ?>;
+  cursor: default;
+}
+#content {
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-left: 164px;
+  margin-right: 164px;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
+  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
+  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
+  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
+  font-size: 1em;
+  line-height: 130%;
+  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
+  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
+  border-top-width: <?php echo $rudweb_skin['BorderTop'].$rudweb_skin['Measure']; ?>;
+  border-bottom-width: <?php echo $rudweb_skin['BorderBottom'].$rudweb_skin['Measure']; ?>;
+  border-left-width: <?php echo $rudweb_skin['BorderLeft'].$rudweb_skin['Measure']; ?>;
+  border-right-width: <?php echo $rudweb_skin['BorderRight'].$rudweb_skin['Measure']; ?>;
+  padding-top: <?php echo $rudweb_skin['PaddingTop'].$rudweb_skin['Measure']; ?>;
+  padding-bottom: <?php echo $rudweb_skin['PaddingBottom'].$rudweb_skin['Measure']; ?>;
+  padding-left: <?php echo $rudweb_skin['PaddingLeft'].$rudweb_skin['Measure']; ?>;
+  padding-right: <?php echo $rudweb_skin['PaddingRight'].$rudweb_skin['Measure']; ?>;
+  cursor: default;
+}
+#footer {
+  clear: both;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-align: center;
+  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
+  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
+  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
+  font-size: 1em;
+  line-height: 130%;
+  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
+  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
+  border-top-width: <?php echo $rudweb_skin['BorderTop'].$rudweb_skin['Measure']; ?>;
+  border-bottom-width: <?php echo $rudweb_skin['BorderBottom'].$rudweb_skin['Measure']; ?>;
+  border-left-width: <?php echo $rudweb_skin['BorderLeft'].$rudweb_skin['Measure']; ?>;
+  border-right-width: <?php echo $rudweb_skin['BorderRight'].$rudweb_skin['Measure']; ?>;
+  padding-top: <?php echo $rudweb_skin['PaddingTop'].$rudweb_skin['Measure']; ?>;
+  padding-bottom: <?php echo $rudweb_skin['PaddingBottom'].$rudweb_skin['Measure']; ?>;
+  padding-left: <?php echo $rudweb_skin['PaddingLeft'].$rudweb_skin['Measure']; ?>;
+  padding-right: <?php echo $rudweb_skin['PaddingRight'].$rudweb_skin['Measure']; ?>;
+  cursor: default;
+}
+TR.lst_prd_hdr {
+  background-color: <?php echo $rudweb_skin['Color2']; ?>;
+  font-weight: bold;
+}
+TR.lst_prd_prd {
+  background-color: <?php echo $rudweb_skin['Color1']; ?>
+}
+/* ********** ********** ********** //CUSTOM ********** ********** ********** */

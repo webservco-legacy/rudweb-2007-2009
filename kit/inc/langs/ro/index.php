@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/ro/index.php
-09:25 2007-12-18
+12:50 2008-04-05
 */
 
 require_once './../../lib/404.php';

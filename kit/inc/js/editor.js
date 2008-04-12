@@ -1,6 +1,6 @@
 /*
 ./inc/js/editor.js
-20:50 2008-03-12
+12:50 2008-04-05
 */
 
 FCKConfig.ToolbarSets["rudwebold"] = [
@@ -37,7 +37,7 @@ FCKConfig.ToolbarSets["rudweb"] = [
 	['FitWindow','ShowBlocks','-','About']		// No comma for the last row.
 ] ;
 
-FCKConfig.EnterMode = 'br' ;			// p | div | br
+FCKConfig.EnterMode = 'div' ;			// p | div | br
 FCKConfig.ShiftEnterMode = 'p' ;	// p | div | br
 
 FCKConfig.SkinPath = FCKConfig.BasePath + 'skins/rudweb/' ;

@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/removefact.inc.php
-20:26 2008-01-24
+12:50 2008-04-05
 */
 if(is_array($dirs)) {
   for($counti=0; $counti<count($dirs); $counti++){

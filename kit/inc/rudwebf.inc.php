@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudwebf.inc.php
-20:47 2008-03-17
+12:50 2008-04-05
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -23,8 +23,8 @@ function dbclose($rudweb_dbconn) {
 function genHtmlHeader($rudweb_page_title, $rudweb_page_description, $rudweb_page_keywords) {
   echo "\n<META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=" . $_SESSION[_RUDWEB_PRE.'usr_lang_charset'] . "\">";
   echo "\n<META HTTP-EQUIV=\"content-language\" CONTENT=\"".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."\">";
-  echo "\n<LINK REL=\"icon\" TYPE=\"image/ico\" HREF=\"" . _RUDWEB_THEME_URL . $_SESSION[_RUDWEB_PRE.'usr_theme_dir'] . "/favicon.ico\">";
-  echo "\n<LINK REL=\"shortcut icon\" TYPE=\"image/ico\" HREF=\"" . _RUDWEB_THEME_URL . $_SESSION[_RUDWEB_PRE.'usr_theme_dir'] . "/favicon.ico\">";
+  echo "\n<LINK REL=\"icon\" TYPE=\"image/ico\" HREF=\"" . _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'] . "/favicon.ico\">";
+  echo "\n<LINK REL=\"shortcut icon\" TYPE=\"image/ico\" HREF=\"" . _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'] . "/favicon.ico\">";
   echo "\n<TITLE>" . $rudweb_page_title . "</TITLE>";
   echo "\n<META NAME=\"title\" CONTENT=\"" . $rudweb_page_title . "\">";
   echo "\n<META NAME=\"subject\" CONTENT=\"" . $rudweb_page_title . "\">";
@@ -48,10 +48,16 @@ function genHtmlHeader($rudweb_page_title, $rudweb_page_description, $rudweb_pag
 function isEmail($email) { 
   return(preg_match("/^[-_.[:alnum:]]+@((([[:alnum:]]|[[:alnum:]][[:alnum:]-]*[[:alnum:]])\.)+(ad|ae|aero|af|ag|ai|al|am|an|ao|aq|ar|arpa|as|at|au|aw|az|ba|bb|bd|be|bf|bg|bh|bi|biz|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|com|coop|cr|cs|cu|cv|cx|cy|cz|de|dj|dk|dm|do|dz|ec|edu|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gh|gi|gl|gm|gn|gov|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|in|info|int|io|iq|ir|is|it|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|mg|mh|mil|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|museum|mv|mw|mx|my|mz|na|name|nc|ne|net|nf|ng|ni|nl|no|np|nr|nt|nu|nz|om|org|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|pro|ps|pt|pw|py|qa|re|ro|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|st|su|sv|sy|sz|tc|td|tf|tg|th|tj|tk|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|um|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)$|(([0-9][0-9]?|[0-1][0-9][0-9]|[2][0-4][0-9]|[2][5][0-5])\.){3}([0-9][0-9]?|[0-1][0-9][0-9]|[2][0-4][0-9]|[2][5][0-5]))$/i", $email));
 }
+function isValidInt($input) { // an integer between 1 and 999
+  return(preg_match("/^[1-9]$|^[1-9][0-9]$|^[1-9][0-9][0-9]$/", $input));
+}
 function rudweb_filter_input($string) {
   // strip whitespaces
   $parsed_string = trim($string);
-  $parsed_string = stripcslashes(stripcslashes(stripcslashes(stripcslashes(stripcslashes($parsed_string)))));
+  
+  $unwanted = array('\\', '');
+  $parsed_string = str_replace($unwanted, ' ', $parsed_string);
+
   // convert special chars
   //$parsed_string = htmlentities($parsed_string, ENT_NOQUOTES, $_SESSION[_RUDWEB_PRE.'usr_lang_charset']);
   //$parsed_string = eregi_replace('&amp;','&',$parsed_string);
@@ -121,7 +127,6 @@ function rudweb_filter_input($string) {
   $parsed_string = eregi_replace('`','&#96;',$parsed_string);
   $parsed_string = eregi_replace("'",'&#39;',$parsed_string);
   $parsed_string = eregi_replace('"','&#34;',$parsed_string);
-  $parsed_string = stripcslashes($parsed_string);
   //$parsed_string = eregi_replace('/','&#47;',$parsed_string);  /* raw_date bug */
   // word boundary
   $parsed_string = eregi_replace('\\\b','&#92;b',$parsed_string);
@@ -136,7 +141,9 @@ function rudweb_filter_input($string) {
 function rudweb_format_cnt_alias($string) {
   // strip whitespaces
   $parsed_string = trim($string);
-  $parsed_string = stripcslashes(stripcslashes(stripcslashes(stripcslashes(stripcslashes($parsed_string)))));
+  
+  $unwanted = array('\\', '');
+  $parsed_string = str_replace($unwanted, ' ', $parsed_string);
   //delete special chars
   //$parsed_string = htmlentities($parsed_string, ENT_NOQUOTES, $_SESSION[_RUDWEB_PRE.'usr_lang_charset']);
   //$parsed_string = eregi_replace('&amp;','',$parsed_string);
@@ -366,6 +373,21 @@ function rudweb_filter_content($string) {
   $parsed_string = eregi_replace('\\\t','&#92;t',$parsed_string);
   return $parsed_string;
 }
+function parseSearchString($str) {
+  // basic filter
+  $str = rudweb_filter_input($str);
+  // remove common words
+  $str = eregi_replace(' and ',' ',$str);
+  $str = eregi_replace(' or ',' ',$str);
+  $str = eregi_replace(' the ',' ',$str);
+  // make an array out of the string, remove duplicate values, delete short words (1-2 letters but not numbers), cleanup null values and create the MySQL REGEXP string
+  $words = str_word_count($str, 1, "\'1234567890");
+  $words = array_unique($words);
+  $words = preg_replace("/^([a-z]{1,2})$/",'',$words);
+  $words = array_diff($words, array(''));
+  $str = implode('|', $words);
+  return $str;
+}
 /* ********** ********** ********** //FILTER INPUT ********** ********** ********** */
 /* ********** ********** ********** SEARCH ENGINE FRIENDLY URLS ********** ********** ********** */
 // SEARCH ENGINE FRIENDLY URLS
@@ -459,7 +481,7 @@ function restrictedJsLink($link_class, $link_title, $link_script, $current_usr_l
 function createMenu($mnu_cat, $mnu_lev, $showadmin = "0") {
   global $rudweb_mnu_id;
   global $rudweb_ln;
-  global $rudweb_theme;
+  global $rudweb_skin;
   global $rudweb_this_content_level;
   // this is where the magic gets done :-)
   if ($rudweb_this_content_level === "0") {
@@ -504,9 +526,9 @@ function createMenu($mnu_cat, $mnu_lev, $showadmin = "0") {
   $row_rst_menu = array();
   
   for ($mnui=1; $mnui<=$total_menu; $mnui++) {$row_rst_menu[$mnui] = mysql_fetch_assoc($rst_menu); $test_array[$mnui] = $row_rst_menu[$mnui]['mnu_id'];}
-  if($total_menu != "0") {echo $rudweb_theme['mnu'][$mnu_cat]['hdr'][$mnu_lev];}
+  if($total_menu != "0") {echo $rudweb_skin['mnu'][$mnu_cat]['hdr'][$mnu_lev];}
   for ($cmni=1; $cmni<=count($row_rst_menu); $cmni++) {
-    echo $rudweb_theme['mnu'][$mnu_cat]['pre'][$mnu_lev];
+    echo $rudweb_skin['mnu'][$mnu_cat]['pre'][$mnu_lev];
     if ($row_rst_menu[$cmni]['mnu_id'] === $rudweb_mnu_id) {
       echo "<SPAN CLASS=\"".$mnu_cat."-mnu_lnk_".$mnu_lev."\">" . $row_rst_menu[$cmni]['mnu_tt'] . "</SPAN>";
     } // current page, do not make link
@@ -537,44 +559,47 @@ function createMenu($mnu_cat, $mnu_lev, $showadmin = "0") {
         restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], 'index.php/page/'.$row_rst_menu[$cmni]['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
       } // 3 - page
       else if ($row_rst_menu[$cmni]['mnu_typ'] === "4") {
-        restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], 'index.php/rudweb/'.$row_rst_menu[$cmni]['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
-      } // 4 - rudweb
+        restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], 'index.php/admin/'.$row_rst_menu[$cmni]['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
+      } // 4 - admin
+      else if ($row_rst_menu[$cmni]['mnu_typ'] === "5") {
+        restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], 'index.php/catalog/'.$row_rst_menu[$cmni]['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
+      } // 5 - catalog
     } // not current page, make link
-    echo $rudweb_theme['mnu'][$mnu_cat]['suf'][$mnu_lev];
-    if ($cmni < $total_menu) {echo $rudweb_theme['mnu'][$mnu_cat]['sep'][$mnu_lev];}
+    echo $rudweb_skin['mnu'][$mnu_cat]['suf'][$mnu_lev];
+    if ($cmni < $total_menu) {echo $rudweb_skin['mnu'][$mnu_cat]['sep'][$mnu_lev];}
   }
   if ($_SESSION[_RUDWEB_PRE.'usr_level'] >= '3' && $showadmin == "1") {
     //if ($total_menu != '0' && ($mnu_lev == $rudweb_this_content_level && in_array($rudweb_mnu_id ,$test_array))) {
     if ($total_menu != '0' && ($mnu_lev == $rudweb_this_content_level)) {
       // in continuare in nivelul curent
-      echo $rudweb_theme['mnu'][$mnu_cat]['sep'][$mnu_lev];
-      echo $rudweb_theme['mnu'][$mnu_cat]['pre'][$mnu_lev];
-      restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, "[".$rudweb_ln['adm']['cnt_add']."]", 'index.php/rudweb/cntadd/mc/'.$mnu_cat.'/ml/'.$mnu_lev.'/mp/'.$this_mnu_par, $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");
-      echo $rudweb_theme['mnu'][$mnu_cat]['suf'][$mnu_lev];
+      echo $rudweb_skin['mnu'][$mnu_cat]['sep'][$mnu_lev];
+      echo $rudweb_skin['mnu'][$mnu_cat]['pre'][$mnu_lev];
+      restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, "[".$rudweb_ln['adm']['cnt_add']."]", 'index.php/admin/cntadd/mc/'.$mnu_cat.'/ml/'.$mnu_lev.'/mp/'.$this_mnu_par, $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");
+      echo $rudweb_skin['mnu'][$mnu_cat]['suf'][$mnu_lev];
     }
     else if ($total_menu == '0') {
-      echo $rudweb_theme['mnu'][$mnu_cat]['hdr'][$mnu_lev];
+      echo $rudweb_skin['mnu'][$mnu_cat]['hdr'][$mnu_lev];
       if ($mnu_lev != '0') {
         // primul din nivelul curent
         $look_for    = $mnu_lev - 1;
         $query = "SELECT `mnu_id` FROM `"._RUDWEB_PRE."ws_mnu` WHERE mnu_id = '".$rudweb_mnu_id."' AND (mnu_lev = '".$look_for."' AND mnu_cat = '".$mnu_cat."') LIMIT 1";
         $rst_query = mysql_query($query) or require _RUDWEB_LIB_DIR . 'myerr.php';
         if (mysql_num_rows($rst_query) != '0') {
-          echo $rudweb_theme['mnu'][$mnu_cat]['pre'][$mnu_lev];
-          restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, "[".$rudweb_ln['adm']['cnt_add']."]", 'index.php/rudweb/cntadd/mc/'.$mnu_cat.'/ml/'.$mnu_lev.'/mp/'.$rudweb_mnu_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");
-          echo $rudweb_theme['mnu'][$mnu_cat]['suf'][$mnu_lev];
+          echo $rudweb_skin['mnu'][$mnu_cat]['pre'][$mnu_lev];
+          restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, "[".$rudweb_ln['adm']['cnt_add']."]", 'index.php/admin/cntadd/mc/'.$mnu_cat.'/ml/'.$mnu_lev.'/mp/'.$rudweb_mnu_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");
+          echo $rudweb_skin['mnu'][$mnu_cat]['suf'][$mnu_lev];
         }
       }
       else {
         // primul meniu!
-        echo $rudweb_theme['mnu'][$mnu_cat]['pre'][$mnu_lev];
-        restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, "[".$rudweb_ln['adm']['cnt_add']."]", 'index.php/rudweb/cntadd/mc/'.$mnu_cat.'/ml/0/mp/0', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");
-        echo $rudweb_theme['mnu'][$mnu_cat]['suf'][$mnu_lev];
+        echo $rudweb_skin['mnu'][$mnu_cat]['pre'][$mnu_lev];
+        restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, "[".$rudweb_ln['adm']['cnt_add']."]", 'index.php/admin/cntadd/mc/'.$mnu_cat.'/ml/0/mp/0', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");
+        echo $rudweb_skin['mnu'][$mnu_cat]['suf'][$mnu_lev];
       }
-      echo $rudweb_theme['mnu'][$mnu_cat]['ftr'][$mnu_lev];
+      echo $rudweb_skin['mnu'][$mnu_cat]['ftr'][$mnu_lev];
     }
   }
-  if($total_menu != "0") {echo $rudweb_theme['mnu'][$mnu_cat]['ftr'][$mnu_lev];}
+  if($total_menu != "0") {echo $rudweb_skin['mnu'][$mnu_cat]['ftr'][$mnu_lev];}
 }
 function getCntMnuId($cnt_alias) {
   if (isset($_GET['content']))   {$rudweb_mnu_typ = '1';}
@@ -605,7 +630,7 @@ function getCntLev($cnt_alias) {
 /* ********** ********** ********** //SHOW PAGE PICTURE PLACE ********** ********** ********** */
 function showContentPics() {
   global $rudweb_req_page;
-  global $rudweb_theme;
+  global $rudweb_skin;
   if (isset($_GET['content']) || (isset($_GET['page']) || isset($_GET['rudweb']))) {
     $query_content = "SELECT * FROM `"._RUDWEB_PRE."ws_cnt` WHERE `cnt_alias` = '".$rudweb_req_page."' AND (`cnt_dis` = '0' AND `cnt_ln` = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."') LIMIT 1";
     $rst_query_content = mysql_query($query_content) or require _RUDWEB_LIB_DIR . 'myerr.php';
@@ -615,7 +640,7 @@ function showContentPics() {
       
       // PICTURES 0
       if (_RUDWEB_CFG_PICS_0 === "1") {
-        echo $rudweb_theme['cnt']['pic']['hdr']['0'];
+        echo $rudweb_skin['cnt']['pic']['hdr']['0'];
         $query_pic0 = "SELECT * FROM `"._RUDWEB_PRE."ws_pic` WHERE `cnt_id` = '".$this_content_id."' AND (`pic_loc` = '0' AND `pic_dis` = '0') ORDER BY `pic_ord` ASC";
         $rst_query_pic0 = mysql_query($query_pic0) or require _RUDWEB_LIB_DIR . 'myerr.php';
         $total_pic0 = mysql_num_rows($rst_query_pic0);
@@ -627,8 +652,8 @@ function showContentPics() {
             $pictureFile0TT[$pic0i] = $row_rst_pic0['pic_tt'];
             //$fileSize0[$pic0i] = round(filesize($pictureFile0[$pic0i]) / 1024,2);
             //list($pic0_width[$pic0i], $pic0_height[$pic0i], $pic0_type[$pic0i], $pic0_attr[$pic0i]) = getimagesize($pictureFile0[$pic0i]);
-            $pic0_imgsrc[$pic0i] = "<IMG SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $pictureFile0[$pic0i] . "&amp;max_size=".$rudweb_theme['cnt']['pic']['max']['0']."\" ALT=\"".$pictureFile0TT[$pic0i]."\">";
-            echo $rudweb_theme['cnt']['pic']['pre']['0'];
+            $pic0_imgsrc[$pic0i] = "<IMG SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $pictureFile0[$pic0i] . "&amp;max_size=".$rudweb_skin['cnt']['pic']['max']['0']."\" ALT=\"".$pictureFile0TT[$pic0i]."\">";
+            echo $rudweb_skin['cnt']['pic']['pre']['0'];
             if ($row_rst_pic0['pic_tmb'] === "1") {
               echo "<A CLASS=\"default\" rel=\"lightbox[".$row_rst_pic0['pic_loc']."]\" HREF=\"" . $pictureFile0url[$pic0i] . "\" TITLE=\"".$pictureFile0TT[$pic0i]."\">";
               echo $pic0_imgsrc[$pic0i];
@@ -637,22 +662,22 @@ function showContentPics() {
             else {
               echo $pic0_imgsrc[$pic0i];
             }
-            echo $rudweb_theme['cnt']['pic']['suf']['0'];
-            if ($pic0i !== $total_pic0) { echo $rudweb_theme['cnt']['pic']['sep']['0'];}
+            echo $rudweb_skin['cnt']['pic']['suf']['0'];
+            if ($pic0i !== $total_pic0) { echo $rudweb_skin['cnt']['pic']['sep']['0'];}
           }
           
         }
         else {echo "&#160;";}
-        echo $rudweb_theme['cnt']['pic']['ftr']['0'];
+        echo $rudweb_skin['cnt']['pic']['ftr']['0'];
       }
     }
     else {
       if (_RUDWEB_CFG_PICS_0 === "1") {
-        echo $rudweb_theme['cnt']['pic']['hdr']['0'];
-        echo $rudweb_theme['cnt']['pic']['pre']['0'];
+        echo $rudweb_skin['cnt']['pic']['hdr']['0'];
+        echo $rudweb_skin['cnt']['pic']['pre']['0'];
         echo "";
-        echo $rudweb_theme['cnt']['pic']['suf']['0'];
-        echo $rudweb_theme['cnt']['pic']['ftr']['0'];
+        echo $rudweb_skin['cnt']['pic']['suf']['0'];
+        echo $rudweb_skin['cnt']['pic']['ftr']['0'];
       }
     }
   }    
@@ -661,7 +686,7 @@ function showContentPics() {
 /* ********** ********** ********** SHOW PAGE CONTENT ********** ********** ********** */
 function showContent($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $blog_content = "0") {
   global $rudweb_ln;
-  global $rudweb_theme;
+  global $rudweb_skin;
   global $rudweb_dbtype;
   switch($rudweb_cnt_type) {
       case "1": {
@@ -686,45 +711,62 @@ function showContent($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $blog_c
           // LINKS
         }
         else {
-          echo $rudweb_theme['cnt']['hdr'];
-          echo $rudweb_theme['cnt']['pre'];
+          echo $rudweb_skin['cnt']['hdr'];
+          echo $rudweb_skin['cnt']['pre'];
           echo "<DIV CLASS=\"err\">" . $rudweb_ln['err']['0'] . "</DIV>";
-          echo $rudweb_theme['cnt']['suf'];
-          echo $rudweb_theme['cnt']['ftr'];
+          echo $rudweb_skin['cnt']['suf'];
+          echo $rudweb_skin['cnt']['ftr'];
         }
         break;
       }
       case "3": {
         if (is_file(_RUDWEB_PG_DIR . $rudweb_req_page . ".inc.php")) {
-          echo $rudweb_theme['cnt']['hdr'];
-          echo $rudweb_theme['cnt']['pre'];
+          echo $rudweb_skin['cnt']['hdr'];
+          echo $rudweb_skin['cnt']['pre'];
           require _RUDWEB_PG_DIR . $rudweb_req_page . ".inc.php";
-          echo $rudweb_theme['cnt']['suf'];
-          echo $rudweb_theme['cnt']['ftr'];
+          echo $rudweb_skin['cnt']['suf'];
+          echo $rudweb_skin['cnt']['ftr'];
         }
         else {
-          echo $rudweb_theme['cnt']['hdr'];
-          echo $rudweb_theme['cnt']['pre'];
+          echo $rudweb_skin['cnt']['hdr'];
+          echo $rudweb_skin['cnt']['pre'];
           echo "<DIV CLASS=\"err\">" . $rudweb_ln['err']['0'] . "</DIV>";
-          echo $rudweb_theme['cnt']['suf'];
-          echo $rudweb_theme['cnt']['ftr'];
+          echo $rudweb_skin['cnt']['suf'];
+          echo $rudweb_skin['cnt']['ftr'];
         }
         break;
       }
       case "4": {
-        if (is_file(_RUDWEB_RUDWEB_DIR . $rudweb_req_page . ".inc.php")) {
-          echo $rudweb_theme['cnt']['hdr'];
-          echo $rudweb_theme['cnt']['pre'];
-          require _RUDWEB_RUDWEB_DIR . $rudweb_req_page . ".inc.php";
-          echo $rudweb_theme['cnt']['suf'];
-          echo $rudweb_theme['cnt']['ftr'];
+        if (is_file(_RUDWEB_ADMIN_DIR . $rudweb_req_page . ".inc.php")) {
+          echo $rudweb_skin['cnt']['hdr'];
+          echo $rudweb_skin['cnt']['pre'];
+          require _RUDWEB_ADMIN_DIR . $rudweb_req_page . ".inc.php";
+          echo $rudweb_skin['cnt']['suf'];
+          echo $rudweb_skin['cnt']['ftr'];
         }
         else {
-          echo $rudweb_theme['cnt']['hdr'];
-          echo $rudweb_theme['cnt']['pre'];
+          echo $rudweb_skin['cnt']['hdr'];
+          echo $rudweb_skin['cnt']['pre'];
           echo "<DIV CLASS=\"err\">" . $rudweb_ln['err']['0'] . "</DIV>";
-          echo $rudweb_theme['cnt']['suf'];
-          echo $rudweb_theme['cnt']['ftr'];
+          echo $rudweb_skin['cnt']['suf'];
+          echo $rudweb_skin['cnt']['ftr'];
+        }
+        break;
+      }
+      case "5": {
+        if (is_file(_RUDWEB_CAT_DIR . $rudweb_req_page . ".inc.php")) {
+          echo $rudweb_skin['cnt']['hdr'];
+          echo $rudweb_skin['cnt']['pre'];
+          require _RUDWEB_CAT_DIR . $rudweb_req_page . ".inc.php";
+          echo $rudweb_skin['cnt']['suf'];
+          echo $rudweb_skin['cnt']['ftr'];
+        }
+        else {
+          echo $rudweb_skin['cnt']['hdr'];
+          echo $rudweb_skin['cnt']['pre'];
+          echo "<DIV CLASS=\"err\">" . $rudweb_ln['err']['0'] . "</DIV>";
+          echo $rudweb_skin['cnt']['suf'];
+          echo $rudweb_skin['cnt']['ftr'];
         }
         break;
       }
@@ -735,12 +777,12 @@ function showContent($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $blog_c
 /* ********** ********** ********** SHOW PAGE CONTENT BLOGSTYLE ********** ********** ********** */
 function showBlogContent($parent_id) {
   global $rudweb_ln;
-  global $rudweb_theme;
+  global $rudweb_skin;
   $query_blog = "SELECT mnu_id, mnu_cnt_alias, mnu_typ FROM `"._RUDWEB_PRE."ws_mnu` WHERE `mnu_par` = '".$parent_id."' AND (`mnu_ln` = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."' AND `mnu_dis` = '0') ORDER BY mnu_mdd DESC, mnu_mdt DESC, mnu_crd DESC, mnu_crt DESC";
   $rst_query_blog = mysql_query($query_blog) or require _RUDWEB_LIB_DIR . 'myerr.php';
   $total_blog = mysql_num_rows($rst_query_blog);
   if ($total_blog != "0") {
-    echo $rudweb_theme['blg']['hdr'];
+    echo $rudweb_skin['blg']['hdr'];
     for ($blogi=1; $blogi<=$total_blog; $blogi++) {
       $row_rst_blog = mysql_fetch_assoc($rst_query_blog);
       $blog_mnu_id[$blogi]    = $row_rst_blog['mnu_id'];
@@ -755,26 +797,26 @@ function showBlogContent($parent_id) {
         $rstId=mysql_query($query_rstId) or require _RUDWEB_LIB_DIR . 'myerr.php';
         $poster_alias = (mysql_result($rstId, 0));
         
-        echo $rudweb_theme['blg']['pre'];
+        echo $rudweb_skin['blg']['pre'];
         showContent($blog_mnu_id[$blogi], $blog_cnt_alias[$blogi], $blog_mnu_typ[$blogi], 1);
-        echo $rudweb_theme['blg']['suf'];
+        echo $rudweb_skin['blg']['suf'];
         
         if (_RUDWEB_CFG_BLG_POSTED === "1") {
-          echo $rudweb_theme['blg']['posted']['pre'];
+          echo $rudweb_skin['blg']['posted']['pre'];
           echo $rudweb_ln['blg']['postedby'] . $poster_alias . $rudweb_ln['blg']['on'] . MyDate($row_rst_cnt['cnt_crd'], 'dd/mm/yyyy') . " " . $row_rst_cnt['cnt_crt'];
-          echo $rudweb_theme['blg']['posted']['suf'];
+          echo $rudweb_skin['blg']['posted']['suf'];
         }
         /*
         if (_RUDWEB_CFG_BLG_CMNTS === "1") {
-          echo $rudweb_theme['cmnts']['hdr'];
+          echo $rudweb_skin['cmnts']['hdr'];
           echo "0 " . $rudweb_ln['cmnts']['comments'];
-          echo $rudweb_theme['cmnts']['ftr'];
+          echo $rudweb_skin['cmnts']['ftr'];
         }
         */
-        if ($blogi !== $total_blog) {echo $rudweb_theme['blg']['sep'];}
+        if ($blogi !== $total_blog) {echo $rudweb_skin['blg']['sep'];}
       }
     }
-    echo $rudweb_theme['blg']['ftr'];
+    echo $rudweb_skin['blg']['ftr'];
   }
 }
 /* ********** ********** ********** //SHOW PAGE CONTENT BLOGSTYLE ********** ********** ********** */
@@ -866,6 +908,14 @@ function rudweb_affected($db_type, $result) {
     default  : {$affected = NULL; break;}
   }
   return $affected;
+}
+function rudweb_result($db_type, $result, $row) {
+  switch($db_type) {
+    case "my": {$res = mysql_result($result, $row); break;}
+    case "pg": {$res = NULL; break;}
+    default  : {$affected = NULL; break;}
+  }
+  return $res;
 }
 /* ********** ********** ********** //NEW DATABASE FUNCTIONS  ********** ********** ********** */
 ?>

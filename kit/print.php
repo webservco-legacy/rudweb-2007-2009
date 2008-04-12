@@ -1,7 +1,7 @@
 <?php
 /*
 ./print.php
-09:45 2008-03-13
+12:50 2008-04-05
 */
 define("_RUDWEB_PUBFIL", TRUE);
 require_once './inc/config.inc.php';

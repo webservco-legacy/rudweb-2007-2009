@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudweb1.inc.php
-11:28 2008-03-18
+13:12 2008-04-07
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -79,8 +79,8 @@ if (!isset($_SESSION[_RUDWEB_PRE.'token'])) { // if first load of the page
   if (!isset($_SESSION[_RUDWEB_PRE.'usr_lang_index'])) {$_SESSION[_RUDWEB_PRE.'usr_lang_index'] = _RUDWEB_CFG_LANG;}
   //default charset
   if (!isset($_SESSION[_RUDWEB_PRE.'usr_lang_charset'])) {$_SESSION[_RUDWEB_PRE.'usr_lang_charset'] = "UTF-8";}
-  // default theme
-  if (!isset($_SESSION[_RUDWEB_PRE.'usr_theme_dir'])) {$_SESSION[_RUDWEB_PRE.'usr_theme_dir'] = _RUDWEB_CFG_THEME;}
+  // default skin
+  if (!isset($_SESSION[_RUDWEB_PRE.'usr_skin_dir'])) {$_SESSION[_RUDWEB_PRE.'usr_skin_dir'] = _RUDWEB_CFG_SKIN;}
   //reset shopping cart
   if(_RUDWEB_CFG_CART_ON === "1") {$_SESSION[_RUDWEB_PRE.'cart'] = NULL;}
   // user login functonality
@@ -118,6 +118,8 @@ if ($_SESSION[_RUDWEB_PRE.'usr_level'] >=3) {
   require_once _RUDWEB_LIB_DIR . 'editor/fckeditor.php';
 }
 
+// lock stuff
+/*
 if(isset($_GET['do'])) {
   if($_GET['do'] == "lock") {
     // LOCK
@@ -130,4 +132,5 @@ if(isset($_GET['do'])) {
     mysql_query($query_lock) or require _RUDWEB_LIB_DIR . 'myerr.php';
   }
 }
+*/
 ?>

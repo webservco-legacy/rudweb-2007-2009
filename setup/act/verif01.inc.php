@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/verif01.inc.php
-12:42 2008-01-14
+12:50 2008-04-05
 */
 ?>
 <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">

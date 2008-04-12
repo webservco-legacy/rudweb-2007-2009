@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/login.inc.php
-10:34 2008-03-18
+12:50 2008-04-05
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -40,8 +40,8 @@ if (isset($_SESSION[_RUDWEB_PRE.'token']) && (isset($_POST[_RUDWEB_PRE.'token'])
         $_SESSION[_RUDWEB_PRE.'usr_name']  = $row_rst_verif['usr_first_name'] . '&#160;' . $row_rst_verif['usr_last_name'];
         // language
         $_SESSION[_RUDWEB_PRE.'usr_lang_index'] = $row_rst_verif['usr_lang_index'];
-        // theme
-        $_SESSION[_RUDWEB_PRE.'usr_theme_dir'] = $row_rst_verif['usr_theme'];
+        // skin
+        $_SESSION[_RUDWEB_PRE.'usr_skin_dir'] = $row_rst_verif['usr_skin'];
         // get data about previous logins
         $query_last_login_id = "SELECT MAX(login_id) FROM `"._RUDWEB_PRE."var_logins` WHERE `usr_id` = '".$_SESSION[_RUDWEB_PRE.'usr_id']."' LIMIT 1";
         $rst_last_login_id   = mysql_query($query_last_login_id) or require _RUDWEB_LIB_DIR . 'myerr.php';

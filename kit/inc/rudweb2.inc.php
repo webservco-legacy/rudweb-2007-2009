@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudweb2.inc.php
-16:50 2007-12-15
+14:16 2008-04-09
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -16,6 +16,7 @@ $rudweb_page_title         = _RUDWEB_WSTT . " - " . "Index";
 $rudweb_page_description   = _RUDWEB_WSDS;
 $rudweb_page_keywords      = _RUDWEB_WSKW;
 
+
 // content
 if (isset($_GET['content'])) {
   if(rudweb_filter_input($_GET['content']) == 'default') {  
@@ -25,7 +26,7 @@ if (isset($_GET['content'])) {
     $rudweb_mnu_id             = getCntMnuId('index');
     $rudweb_stats_page         = 'index';
     $rudweb_req_page           = 'index';
-    if (is_file(_RUDWEB_RUDWEB_DIR . $rudweb_this_content . ".inc.php")) {
+    if (is_file(_RUDWEB_ADMIN_DIR . $rudweb_this_content . ".inc.php")) {
       $rudweb_this_content_level = getCntLev($rudweb_this_content);
       $rudweb_mnu_id             = getCntMnuId($rudweb_this_content);
       $rudweb_stats_page         = "pg-" . $rudweb_this_content;
@@ -70,27 +71,71 @@ else if (isset($_GET['page'])) {
     $rudweb_mnu_id             = getCntMnuId($rudweb_this_content);
     $rudweb_stats_page         = "pg-" . $rudweb_this_content;
     $rudweb_req_page           = $rudweb_this_content;
-    $rudweb_page_title         = _RUDWEB_WSTT . " - " . $rudweb_this_content;
+    //$rudweb_page_title         = _RUDWEB_WSTT . " - " . $rudweb_this_content;
+    $rudweb_page_title         = _RUDWEB_WSTT;
     $rudweb_page_description   = _RUDWEB_WSDS;
     $rudweb_page_keywords      = _RUDWEB_WSKW;
   }
 }
-// rudweb
-else if (isset($_GET['rudweb'])) {
+// admin
+else if (isset($_GET['admin'])) {
   $rudweb_cnt_type = "4";
-  $rudweb_this_content       = rudweb_filter_input($_GET['rudweb']);
+  $rudweb_this_content       = rudweb_filter_input($_GET['admin']);
   $rudweb_this_content_level = getCntLev('index');
   $rudweb_mnu_id             = getCntMnuId('index');
   $rudweb_stats_page         = 'index';
   $rudweb_req_page           = 'index';
-  if (is_file(_RUDWEB_RUDWEB_DIR . $rudweb_this_content . ".inc.php")) {
+  if (is_file(_RUDWEB_ADMIN_DIR . $rudweb_this_content . ".inc.php")) {
     $rudweb_this_content_level = getCntLev($rudweb_this_content);
     $rudweb_mnu_id             = getCntMnuId($rudweb_this_content);
-    $rudweb_stats_page         = "pg-" . $rudweb_this_content;
+    $rudweb_stats_page         = "adm-" . $rudweb_this_content;
     $rudweb_req_page           = $rudweb_this_content;
-    $rudweb_page_title         = _RUDWEB_WSTT . " - " . $rudweb_this_content;
+    //$rudweb_page_title         = _RUDWEB_WSTT . " - " . $rudweb_this_content;
+    $rudweb_page_title         = _RUDWEB_WSTT . ' - ' . $rudweb_ln['adm']['adm'];
     $rudweb_page_description   = _RUDWEB_WSDS;
     $rudweb_page_keywords      = _RUDWEB_WSKW;
+  }
+}
+// catalog
+else if (isset($_GET['catalog']) && _RUDWEB_CFG_CAT == '1') {
+  $rudweb_cnt_type = "5";
+  $rudweb_this_content       = rudweb_filter_input($_GET['catalog']);
+  $rudweb_this_content_level = getCntLev('index');
+  $rudweb_mnu_id             = getCntMnuId('index');
+  $rudweb_stats_page         = 'index';
+  $rudweb_req_page           = 'index';
+  //if($rudweb_this_content == 'main') {$rudweb_this_content = 'categories';}
+  if (is_file(_RUDWEB_CAT_DIR . $rudweb_this_content . ".inc.php")) {
+    $rudweb_this_content_level = getCntLev($rudweb_this_content);
+    $rudweb_mnu_id             = getCntMnuId($rudweb_this_content);
+    $rudweb_stats_page         = "cat-" . $rudweb_this_content;
+    $rudweb_req_page           = $rudweb_this_content;
+    $rudweb_page_title         = _RUDWEB_WSTT . ' - ' . $rudweb_ln['catalog']['catalog'];
+    $rudweb_page_description   = _RUDWEB_WSDS;
+    $rudweb_page_keywords      = _RUDWEB_WSKW;
+  }
+}
+//else if (substr($_SERVER['REQUEST_URI'], -9) == 'admin.php' && (_RUDWEB_CFG_ADM === "1" && $_SESSION[_RUDWEB_PRE.'usr_level'] > 2)){
+else if (substr($_SERVER['REQUEST_URI'], -9) == 'admin.php' && _RUDWEB_CFG_ADM === "1") {
+  if ($_SESSION[_RUDWEB_PRE.'usr_level'] > 2 && $_SESSION[_RUDWEB_PRE.'usr_level'] <= 5) { //3,4,5
+  $rudweb_cnt_type           = "0";  // NOT REALLY NEEDED
+  $rudweb_this_content       = 'admin';  // NOT REALLY NEEDED   index
+  $rudweb_this_content_level = getCntLev($rudweb_this_content);  // NOT REALLY NEEDED
+  $rudweb_mnu_id             = getCntMnuId('index');  // NOT REALLY NEEDED
+  $rudweb_mnu_id             = "0";  // only for travel-agency
+  $rudweb_stats_page         = 'admin';
+  $rudweb_req_page           = 'admin'; // NOT REALLY NEEDED
+  $rudweb_page_title         = _RUDWEB_WSTT . " - " . "Admin";
+  $rudweb_page_description   = _RUDWEB_WSDS;
+  $rudweb_page_keywords      = _RUDWEB_WSKW;
+  }
+  else if ($_SESSION[_RUDWEB_PRE.'usr_level'] == 0) { // 0
+    $redirect = _RUDWEB_SITE_URL . 'index.php/admin/admin';
+    header("Location: $redirect");
+  }
+  else if ($_SESSION[_RUDWEB_PRE.'usr_level'] >= 1 && $_SESSION[_RUDWEB_PRE.'usr_level'] < 3) { // 1,2
+    $redirect = _RUDWEB_SITE_URL;
+    header("Location: $redirect");
   }
 }
 else { // SHOW DEFAULT PAGE _RUDWEB_CFG_CNT

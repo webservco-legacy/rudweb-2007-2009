@@ -1,17 +1,17 @@
 <?php
 /*
 ./setup/act/removefu03.inc.php
-09:40 2008-01-25
+12:50 2008-04-05
 */
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
-echo "\n<TR><TD CLASS=\"ttt\" WIDTH=\"200\"><B>Themes</B></TD>";
+echo "\n<TR><TD CLASS=\"ttt\" WIDTH=\"200\"><B>Skins</B></TD>";
 echo "</TR></TABLE>";
 
 echo "\n\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
 echo "\n<TR CLASS=\"cnt\"><TD CLASS=\"act\">deleting files</TD><TD CLASS=\"nam\">&#160;</TD>";
 echo "<TD CLASS=\"msg\">";
-$delete_all_files = SureRemoveDir($target.'themes', true);
+$delete_all_files = SureRemoveDir($target.'skins', true);
 if($delete_all_files) {
   echo "ok</TD>";
   echo "<TD CLASS=\"rst_ok\">done</TD></TR>";

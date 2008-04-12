@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/index.inc.php
-10:44 2008-01-10
+12:50 2008-04-05
 */
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
 echo "\n<TR><TD CLASS=\"total\" WIDTH=\"200\"><BR><B>Start:</B><BR></TD>";

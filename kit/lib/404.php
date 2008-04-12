@@ -1,7 +1,7 @@
 <?php
 /*
 404.php
-12:13 29.09.2007
+12:49 2008-04-05
 */
 header('HTTP/1.1 404 Not Found');
 echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">";

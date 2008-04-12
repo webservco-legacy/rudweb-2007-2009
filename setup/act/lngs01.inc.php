@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/lngs01.inc.php
-16:52 2008-01-14
+12:52 2008-04-06
 */
 ?>
 <FORM NAME="lngform" METHOD="POST" STYLE="display: inline; margin: 0px; padding: 0px;" ACTION="./setup.php?pid=<?php echo $pid;?>&amp;set=<?php echo $set;?>&amp;act=lngs&amp;step=2">
@@ -52,6 +52,51 @@ $_SESSION['rudwebset_cfg_ln_cfg'][$langs[$lni]] = 'off';
 <TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">featured content details:</TD>
 <TD CLASS="cnt">
 <INPUT TYPE="text" CLASS="general" NAME="langs_fds[<?php echo $langs[$lni];?>]" SIZE="50" MAXLENGTH="255" VALUE="<?php echo $_SESSION['rudwebset_langs_fds'][$langs[$lni]];?>">
+</TD></TR></TABLE>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">catalog title:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="langs_catalog[<?php echo $langs[$lni];?>]" SIZE="50" MAXLENGTH="255" VALUE="<?php echo $_SESSION['rudwebset_langs_catalog'][$langs[$lni]];?>">
+</TD></TR></TABLE>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">catalog categories:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="langs_cattt[<?php echo $langs[$lni];?>]" SIZE="50" MAXLENGTH="255" VALUE="<?php echo $_SESSION['rudwebset_langs_cattt'][$langs[$lni]];?>">
+</TD></TR></TABLE>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">catalog items:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="langs_itemstt[<?php echo $langs[$lni];?>]" SIZE="50" MAXLENGTH="255" VALUE="<?php echo $_SESSION['rudwebset_langs_itemstt'][$langs[$lni]];?>">
+</TD></TR></TABLE>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">catalog item details:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="langs_itemtt[<?php echo $langs[$lni];?>]" SIZE="50" MAXLENGTH="255" VALUE="<?php echo $_SESSION['rudwebset_langs_itemtt'][$langs[$lni]];?>">
+</TD></TR></TABLE>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">catalog product id:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="langs_cat_pid[<?php echo $langs[$lni];?>]" SIZE="50" MAXLENGTH="255" VALUE="<?php echo $_SESSION['rudwebset_langs_cat_pid'][$langs[$lni]];?>">
+</TD></TR></TABLE>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">catalog product picture:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="langs_cat_ppic[<?php echo $langs[$lni];?>]" SIZE="50" MAXLENGTH="255" VALUE="<?php echo $_SESSION['rudwebset_langs_cat_ppic'][$langs[$lni]];?>">
+</TD></TR></TABLE>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">catalog product name:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="langs_cat_pname[<?php echo $langs[$lni];?>]" SIZE="50" MAXLENGTH="255" VALUE="<?php echo $_SESSION['rudwebset_langs_cat_pname'][$langs[$lni]];?>">
+</TD></TR></TABLE>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">catalog product description:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="langs_cat_prd_dsc[<?php echo $langs[$lni];?>]" SIZE="50" MAXLENGTH="255" VALUE="<?php echo $_SESSION['rudwebset_langs_cat_prd_dsc'][$langs[$lni]];?>">
+</TD></TR></TABLE>
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">catalog product price:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="langs_cat_pprice[<?php echo $langs[$lni];?>]" SIZE="50" MAXLENGTH="255" VALUE="<?php echo $_SESSION['rudwebset_langs_cat_pprice'][$langs[$lni]];?>">
 </TD></TR></TABLE>
 <?php
 }

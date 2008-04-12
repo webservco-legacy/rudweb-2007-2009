@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modstats.inc.php
-12:24 2008-03-12
+12:50 2008-04-05
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -37,7 +37,7 @@ function doStats() {
 function showStats($diff, $stats) {
 // WORK IN PROGRESS
   global $rudweb_ln;
-  global $rudweb_theme;
+  global $rudweb_skin;
   if (_RUDWEB_CFG_STATS_ON === "1") {
     $diff = $diff * 60;
 
@@ -49,37 +49,37 @@ function showStats($diff, $stats) {
     $time_to_sec = (( $timeHH * 60 ) * 60 ) + ( $timeMM * 60 ) + ( $timeSS);
     $time_diff = ( $time_to_sec ) - ( $diff );
     
-    echo $rudweb_theme['sts']['hdr'];
+    echo $rudweb_skin['sts']['hdr'];
   
     switch($stats) {
       case "total": { // TOTAL VISITOS SINCE _RUDWEB_CFG_START
         $query_total  = "SELECT COUNT(`stats_ip`) FROM `"._RUDWEB_PRE."var_stats`";
         $result_total = mysql_query($query_total) or require _RUDWEB_LIB_DIR . 'myerr.php';
         $stats_total  = mysql_result($result_total, 0);
-        echo $rudweb_theme['sts']['pre'];
+        echo $rudweb_skin['sts']['pre'];
         echo $stats_total . " " . $rudweb_ln['visitors'] . " " . $rudweb_ln['since'] . " " . MyDate(_RUDWEB_CFG_START, 'dd/mm/yyyy');
-        echo $rudweb_theme['sts']['suf'];
-        echo $rudweb_theme['sts']['sep'];
+        echo $rudweb_skin['sts']['suf'];
+        echo $rudweb_skin['sts']['sep'];
         break;
       }
       case "unique": { //TOTAL UNIQUE VISITORS
         $query_unique = "SELECT COUNT(DISTINCT `stats_ip`) FROM `"._RUDWEB_PRE."var_stats`";
         $result_unique = mysql_query($query_unique) or require _RUDWEB_LIB_DIR . 'myerr.php';
         $stats_unique = mysql_result($result_unique, 0);
-        echo $rudweb_theme['sts']['pre'];
+        echo $rudweb_skin['sts']['pre'];
         echo $stats_unique . " " . $rudweb_ln['unique_visitors'] . " " . $rudweb_ln['since'] . " " . MyDate(_RUDWEB_CFG_START, 'dd/mm/yyyy');
-        echo $rudweb_theme['sts']['suf'];
-        echo $rudweb_theme['sts']['sep'];
+        echo $rudweb_skin['sts']['suf'];
+        echo $rudweb_skin['sts']['sep'];
         break;
       }
       case "online": { //ONLINE VISITORS - DIFFERENT VISITORS ONLINE IN THE LAST 5 MINUTES
         $query_online  = "SELECT COUNT(DISTINCT `stats_ip`) FROM `"._RUDWEB_PRE."var_stats` WHERE `stats_date` = '$now_date' AND TIME_TO_SEC(`stats_time`) >= '$time_diff'";
         $result_online = mysql_query($query_online) or require _RUDWEB_LIB_DIR . 'myerr.php';
         $stats_online  = mysql_result($result_online, 0);
-        echo $rudweb_theme['sts']['pre'];
+        echo $rudweb_skin['sts']['pre'];
         echo $stats_online . " " . $rudweb_ln['online_visitors'];
-        echo $rudweb_theme['sts']['suf'];
-        echo $rudweb_theme['sts']['sep'];
+        echo $rudweb_skin['sts']['suf'];
+        echo $rudweb_skin['sts']['sep'];
         break;
       }
       case "index": { // TOTAL UNIQUE VISITORS TO THE MAIN PAGE
@@ -91,7 +91,7 @@ function showStats($diff, $stats) {
       default: {break;}
     }
     
-    echo $rudweb_theme['sts']['ftr'];
+    echo $rudweb_skin['sts']['ftr'];
   }
 }
 ?>

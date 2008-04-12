@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/inc/rudweb.inc.php
-15:49 2008-03-12
+12:50 2008-04-05
 */
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
 echo "\n<TR><TD CLASS=\"hdr\" WIDTH=\"150\" STYLE=\"font-size: 11px; font-weight: bold\"><A CLASS=\"rudweb\" HREF=\"./setup.php\">"._RUDWEB_NAME." setup</A></TD><TD CLASS=\"hdr\">&#160;</TD><TD CLASS=\"hdr\">&#160;</TD></TR>";

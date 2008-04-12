@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/verif.inc.php
-16:56 2008-01-09
+12:50 2008-04-05
 */
 $usett_err = '0';
 

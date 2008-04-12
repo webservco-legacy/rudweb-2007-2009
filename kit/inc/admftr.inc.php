@@ -1,15 +1,15 @@
 <?php
 /*
 ./inc/admftr.inc.php
-15:53 2007-12-12
+12:50 2008-04-05
 */
 if($new_onoff !== "") {
   changedbcfg("FTR_ON", $new_onoff, $action_date, $action_time);
-  $redirect = _RUDWEB_SITE_URL . 'index.php/rudweb/ftrmod';
+  $redirect = _RUDWEB_SITE_URL . 'index.php/admin/ftrmod';
 }
 if($ftr_lmt !== "") {
   changedbcfg("FTR_LMT", $ftr_lmt, $action_date, $action_time);
-  $redirect = _RUDWEB_SITE_URL . 'index.php/rudweb/ftrmod';
+  $redirect = _RUDWEB_SITE_URL . 'index.php/admin/ftrmod';
 }
 if(isset($_POST['ftr_new'])) { // add new
   $query_NextId = "SELECT MAX(`ftr_id`) FROM `"._RUDWEB_PRE."ws_ftr`";
@@ -59,7 +59,7 @@ if(isset($_POST['ftr_new'])) { // add new
   mysql_query($insertquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
   $query_unlock = "UNLOCK TABLES";
   mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
-  $redirect = _RUDWEB_SITE_URL . 'index.php/rudweb/ftrmod';
+  $redirect = _RUDWEB_SITE_URL . 'index.php/admin/ftrmod';
   
 }
 else if(isset($_POST['ftr_id'])) { // modify
@@ -161,7 +161,7 @@ else if(isset($_POST['ftr_id'])) { // modify
     }
     $query_unlock = "UNLOCK TABLES";
     mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
-    $redirect = _RUDWEB_SITE_URL . 'index.php/rudweb/ftrmod';
+    $redirect = _RUDWEB_SITE_URL . 'index.php/admin/ftrmod';
   }
 }
 ?>

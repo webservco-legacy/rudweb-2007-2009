@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/engn03a.inc.php
-12:29 2008-03-18
+17:27 2008-04-12
 */
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -19,9 +19,11 @@ $files[$dirs[0]][1][] = "contentadm.inc.php";
 $files[$dirs[0]][1][] = "index.php";
 $files[$dirs[0]][1][] = "login.inc.php";
 $files[$dirs[0]][1][] = "phpft.inc.php";
+$files[$dirs[0]][1][] = "phpfta.inc.php";
 $files[$dirs[0]][1][] = "phpfti.inc.php";
 $files[$dirs[0]][1][] = "phpftp.inc.php";
 $files[$dirs[0]][1][] = "phphd.inc.php";
+$files[$dirs[0]][1][] = "phphda.inc.php";
 $files[$dirs[0]][1][] = "phphdi.inc.php";
 $files[$dirs[0]][1][] = "phphdp.inc.php";
 $files[$dirs[0]][1][] = "rudweb1.inc.php";
@@ -31,51 +33,64 @@ $files[$dirs[0]][1][] = "rudwebc.inc.php";
 $files[$dirs[0]][1][] = "rudwebf.inc.php";
 $files[$dirs[0]][1][] = "rudwebm.inc.php";
 
-$dirs[1] = "inc/js/";
+$dirs[1] = "inc/adm/";
 $files[$dirs[1]][0] = array();
 $files[$dirs[1]][1] = array();
-$files[$dirs[1]][1][] = "accordion.js";
-$files[$dirs[1]][1][] = "CalendarPopup.js";
-$files[$dirs[1]][1][] = "editor.js";
-$files[$dirs[1]][1][] = "effects.js";
-$files[$dirs[1]][1][] = "lightbox.js";
-$files[$dirs[1]][1][] = "moo.fx.js";
-$files[$dirs[1]][1][] = "moo.fx.pack.js";
-$files[$dirs[1]][1][] = "moo.fx.transitions.js";
-$files[$dirs[1]][1][] = "moo.fx.utils.js";
-$files[$dirs[1]][1][] = "prototype.js";
-$files[$dirs[1]][1][] = "scriptaculous.js";
+$files[$dirs[1]][1][] = "actuser.inc.php";
+$files[$dirs[1]][1][] = "admin.inc.php";
+$files[$dirs[1]][1][] = "cntadd.inc.php";
+$files[$dirs[1]][1][] = "default.inc.php";
+$files[$dirs[1]][1][] = "ftrmod.inc.php";
+$files[$dirs[1]][1][] = "ftrmodforms.inc.php";
 $files[$dirs[1]][1][] = "index.php";
-$files[$dirs[1]][1][] = "jsfunc.inc.php";
+$files[$dirs[1]][1][] = "itemadd.inc.php";
+$files[$dirs[1]][1][] = "itemform.inc.php";
+$files[$dirs[1]][1][] = "lostpass.inc.php";
+$files[$dirs[1]][1][] = "newuser.inc.php";
+$files[$dirs[1]][1][] = "newuserform.inc.php";
 
-$dirs[2] = "inc/mod/";
+$dirs[2] = "inc/cat/";
 $files[$dirs[2]][0] = array();
 $files[$dirs[2]][1] = array();
 $files[$dirs[2]][1][] = "index.php";
-$files[$dirs[2]][1][] = "modadm.inc.php";
-$files[$dirs[2]][1][] = "modcart.inc.php";
-$files[$dirs[2]][1][] = "modcpy.inc.php";
-$files[$dirs[2]][1][] = "moddebug.inc.php";
-$files[$dirs[2]][1][] = "modftr.inc.php";
-$files[$dirs[2]][1][] = "modlang.inc.php";
-$files[$dirs[2]][1][] = "modnws.inc.php";
-$files[$dirs[2]][1][] = "modsmap.inc.php";
-$files[$dirs[2]][1][] = "modsrc.inc.php";
-$files[$dirs[2]][1][] = "modstats.inc.php";
-$files[$dirs[2]][1][] = "modtheme.inc.php";
-$files[$dirs[2]][1][] = "modtimer.inc.php";
-$files[$dirs[2]][1][] = "moduser.inc.php";
-$files[$dirs[2]][1][] = "modyah.inc.php";
+$files[$dirs[2]][1][] = "item.inc.php";
+$files[$dirs[2]][1][] = "items.inc.php";
+$files[$dirs[2]][1][] = "main.inc.php";
 
-$dirs[3] = "inc/rudweb/";
+$dirs[3] = "inc/js/";
 $files[$dirs[3]][0] = array();
 $files[$dirs[3]][1] = array();
-$files[$dirs[3]][1][] = "admin.inc.php";
-$files[$dirs[3]][1][] = "cntadd.inc.php";
-$files[$dirs[3]][1][] = "default.inc.php";
-$files[$dirs[3]][1][] = "ftrmod.inc.php";
-$files[$dirs[3]][1][] = "ftrmodforms.inc.php";
-$files[$dirs[3]][1][] = "newuser.inc.php";
-$files[$dirs[3]][1][] = "newuserform.inc.php";
+$files[$dirs[3]][1][] = "accordion.js";
+$files[$dirs[3]][1][] = "CalendarPopup.js";
+$files[$dirs[3]][1][] = "editor.js";
+$files[$dirs[3]][1][] = "effects.js";
+$files[$dirs[3]][1][] = "lightbox.js";
+$files[$dirs[3]][1][] = "moo.fx.js";
+$files[$dirs[3]][1][] = "moo.fx.pack.js";
+$files[$dirs[3]][1][] = "moo.fx.transitions.js";
+$files[$dirs[3]][1][] = "moo.fx.utils.js";
+$files[$dirs[3]][1][] = "prototype.js";
+$files[$dirs[3]][1][] = "scriptaculous.js";
 $files[$dirs[3]][1][] = "index.php";
+$files[$dirs[3]][1][] = "jsfunc.inc.php";
+
+$dirs[4] = "inc/mod/";
+$files[$dirs[4]][0] = array();
+$files[$dirs[4]][1] = array();
+$files[$dirs[4]][1][] = "index.php";
+$files[$dirs[4]][1][] = "modadm.inc.php";
+$files[$dirs[4]][1][] = "modcart.inc.php";
+$files[$dirs[4]][1][] = "modcat.inc.php";
+$files[$dirs[4]][1][] = "modcpy.inc.php";
+$files[$dirs[4]][1][] = "moddebug.inc.php";
+$files[$dirs[4]][1][] = "modftr.inc.php";
+$files[$dirs[4]][1][] = "modlang.inc.php";
+$files[$dirs[4]][1][] = "modnws.inc.php";
+$files[$dirs[4]][1][] = "modsmap.inc.php";
+$files[$dirs[4]][1][] = "modsrc.inc.php";
+$files[$dirs[4]][1][] = "modstats.inc.php";
+$files[$dirs[4]][1][] = "modskin.inc.php";
+$files[$dirs[4]][1][] = "modtimer.inc.php";
+$files[$dirs[4]][1][] = "moduser.inc.php";
+$files[$dirs[4]][1][] = "modyah.inc.php";
 ?>

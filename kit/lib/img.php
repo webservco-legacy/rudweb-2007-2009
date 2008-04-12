@@ -1,7 +1,7 @@
 <?php
 /*
 ./lib/img.php
-16:22 2008-03-12
+12:50 2008-04-05
 */
 error_reporting(E_ALL);
 define("_RUDWEB_PUBFIL", TRUE);
@@ -32,13 +32,13 @@ $txt= "NO PICTURE";
 if(isset($_GET['txt'])) {$txt = $_GET['txt'];}
 
 if(isset($_SESSION[_RUDWEB_PRE.'token'])) {
-  $br  = hexdec('0x' . substr($_SESSION[_RUDWEB_PRE.'usr_theme_bg'], 1, 2));
-  $bg  = hexdec('0x' . substr($_SESSION[_RUDWEB_PRE.'usr_theme_bg'], 3, 2));
-  $bb  = hexdec('0x' . substr($_SESSION[_RUDWEB_PRE.'usr_theme_bg'], 5, 2));
+  $br  = hexdec('0x' . substr($_SESSION[_RUDWEB_PRE.'usr_skin_bg'], 1, 2));
+  $bg  = hexdec('0x' . substr($_SESSION[_RUDWEB_PRE.'usr_skin_bg'], 3, 2));
+  $bb  = hexdec('0x' . substr($_SESSION[_RUDWEB_PRE.'usr_skin_bg'], 5, 2));
 
-  $fr  = hexdec("0x" . substr($_SESSION[_RUDWEB_PRE.'usr_theme_fg'], 1, 2));
-  $fg  = hexdec("0x" . substr($_SESSION[_RUDWEB_PRE.'usr_theme_fg'], 3, 2));
-  $fb  = hexdec("0x" . substr($_SESSION[_RUDWEB_PRE.'usr_theme_fg'], 5, 2));
+  $fr  = hexdec("0x" . substr($_SESSION[_RUDWEB_PRE.'usr_skin_fg'], 1, 2));
+  $fg  = hexdec("0x" . substr($_SESSION[_RUDWEB_PRE.'usr_skin_fg'], 3, 2));
+  $fb  = hexdec("0x" . substr($_SESSION[_RUDWEB_PRE.'usr_skin_fg'], 5, 2));
   
   header("Content-type: image/png");
   header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1

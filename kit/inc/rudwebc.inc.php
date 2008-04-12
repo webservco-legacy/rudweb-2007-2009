@@ -1,12 +1,12 @@
 <?php
 /*
 ./inc/rudwebc.inc.php
-09:26 2008-03-13
+19:05 2008-04-07
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
 // VERSION
-define("_RUDWEB_SITE_VERSION", "0.2.080312");
+define("_RUDWEB_SITE_VERSION", "0.4.080405");
 // AUTHOR
 define("_RUDWEB_SITE_AUTH", "Radu Maier");
 // INCLUDES
@@ -19,9 +19,9 @@ define("_RUDWEB_LIB_DIR",_RUDWEB_SITE_DIR ."lib/");
 define("_RUDWEB_LIB_URL",_RUDWEB_SITE_URL ."lib/");
 // LANGUAGES
 define("_RUDWEB_LANG_DIR",_RUDWEB_INC_DIR ."langs/");
-// THEMES
-define("_RUDWEB_THEME_DIR",_RUDWEB_SITE_DIR ."themes/");
-define("_RUDWEB_THEME_URL",_RUDWEB_SITE_URL ."themes/");
+// skinS
+define("_RUDWEB_SKIN_DIR",_RUDWEB_SITE_DIR ."skins/");
+define("_RUDWEB_SKIN_URL",_RUDWEB_SITE_URL ."skins/");
 // SITE MODULES
 define("_RUDWEB_MOD_DIR",_RUDWEB_INC_DIR ."mod/");
 // JAVASCRIPT
@@ -32,8 +32,14 @@ define("_RUDWEB_TTF_DIR",_RUDWEB_LIB_DIR ."ttf/");
 define("_RUDWEB_TTF_URL",_RUDWEB_LIB_URL ."ttf/js/");
 // USER PAGES
 define("_RUDWEB_PG_DIR",_RUDWEB_VAR_DIR ."pages/");
-// SITE PAGES
-define("_RUDWEB_RUDWEB_DIR",_RUDWEB_INC_DIR ."rudweb/");
+// ADMIN PAGES
+define("_RUDWEB_ADMIN_DIR",_RUDWEB_INC_DIR ."adm/");
+// CATALOG PAGES
+define("_RUDWEB_CAT_DIR",_RUDWEB_INC_DIR ."cat/");
+define("_RUDWEB_CATP_DIR",_RUDWEB_VAR_DIR ."cat/catp/");
+//define("_RUDWEB_SCATP_DIR",_RUDWEB_VAR_DIR ."cat/scatp/");
+define("_RUDWEB_PRDP_DIR",_RUDWEB_VAR_DIR ."cat/prdp/");
+define("_RUDWEB_PRDP_URL",_RUDWEB_VAR_URL ."cat/prdp/");
 // CONTENT PICTURES
 define("_RUDWEB_PIC_DIR",_RUDWEB_VAR_DIR ."pcscnt/");
 define("_RUDWEB_PIC_URL",_RUDWEB_VAR_URL ."pcscnt/");

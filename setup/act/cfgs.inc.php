@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/cfgs.inc.php
-12:40 2008-01-14
+12:50 2008-04-05
 */
 switch($step) {
   case "1" : {

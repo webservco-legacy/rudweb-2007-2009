@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/ro/lang.info.php
-09:24 2007-12-18
+12:50 2008-04-05
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 

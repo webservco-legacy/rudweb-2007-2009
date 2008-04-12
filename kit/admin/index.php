@@ -1,10 +1,11 @@
 <?php
 /*
 ./admin/index.php
-13:37 2007-12-17
+17:04 2008-04-07
 */
 define("_RUDWEB_PUBFIL", TRUE);
 require_once './../inc/config.inc.php';
-$admin_location = _RUDWEB_SITE_URL . "index.php/rudweb/admin";
+//$admin_location = _RUDWEB_SITE_URL . "index.php/admin/admin";
+$admin_location = _RUDWEB_SITE_URL . "admin.php";
 header("Location: $admin_location");
 ?>

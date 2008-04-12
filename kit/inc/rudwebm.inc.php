@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudwebm.inc.php
-10:41 2008-03-18
+17:04 2008-04-07
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -9,20 +9,13 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 if (_RUDWEB_CFG_LANG_ON === "1") {require _RUDWEB_MOD_DIR . 'modlang.inc.php';}
 else {function genLangMod() {}}
 /* ********** ********** ********** //MULTIPLE LANGUAGES ********** ********** ********** */
-/* ********** ********** ********** MULTIPLE THEMES ********** ********** ********** */
-if (_RUDWEB_CFG_THEME_ON === "1") {require _RUDWEB_MOD_DIR . 'modtheme.inc.php';}
-/* ********** ********** ********** //MULTIPLE THEMES ********** ********** ********** */
+/* ********** ********** ********** MULTIPLE SKINS ********** ********** ********** */
+if (_RUDWEB_CFG_SKIN_ON === "1") {require _RUDWEB_MOD_DIR . 'modskin.inc.php';}
+/* ********** ********** ********** //MULTIPLE SKINS ********** ********** ********** */
 /* ********** ********** ********** MULTIPLE USERS ********** ********** ********** */
 if (_RUDWEB_CFG_USR_ON === "1") {require _RUDWEB_MOD_DIR . 'moduser.inc.php';}
 else {function genUserMod() {}}
 /* ********** ********** ********** //MULTIPLE USERS ********** ********** ********** */
-/* ********** ********** ********** SHOPPING CART ********** ********** ********** */
-if (_RUDWEB_CFG_CART_ON === "1") {require _RUDWEB_MOD_DIR . 'modcart.inc.php';}
-else {
-  function showProducts() {}
-  function showCart() {}
-}
-/* ********** ********** ********** //SHOPPING CART ********** ********** ********** */
 /* ********** ********** ********** VISITOR STATISTICS ********** ********** ********** */
 if (_RUDWEB_CFG_STATS_ON === "1") {require _RUDWEB_MOD_DIR . 'modstats.inc.php';}
 else {
@@ -63,8 +56,25 @@ if (_RUDWEB_CFG_SRC === "1") {require _RUDWEB_MOD_DIR . 'modsrc.inc.php';}
 if (_RUDWEB_CFG_CNT_TAGS === "1") {require _RUDWEB_MOD_DIR . 'modtagsc.inc.php';}
 else {function showCntTags() {}}
 /* ********** ********** ********** //CONTENT TAGS ********** ********** ********** */
+/* ********** ********** ********** CATALOG MODULE ********** ********** ********** */
+if (_RUDWEB_CFG_CAT === "1") {require _RUDWEB_MOD_DIR . 'modcat.inc.php';}
+else {
+  function catYah() {}
+  function catalogPageNavigation() {}
+}
+/* ********** ********** ********** //CATALOG MODULE ********** ********** ********** */
+/* ********** ********** ********** SHOPPING CART ********** ********** ********** */
+if (_RUDWEB_CFG_CART_ON === "1") {require _RUDWEB_MOD_DIR . 'modcart.inc.php';}
+else {
+  function showProducts() {}
+  function showCart() {}
+}
+/* ********** ********** ********** //SHOPPING CART ********** ********** ********** */
 /* ********** ********** ********** ADMINISTRATION MODULE ********** ********** ********** */
 if (_RUDWEB_CFG_ADM === "1") {require _RUDWEB_MOD_DIR . 'modadm.inc.php';}
-else {function genAdminMod() {}}
+else {
+  function genAdminMod() {}
+  function adminMenu() {}
+}
 /* ********** ********** ********** //ADMINISTRATION MODULE ********** ********** ********** */
 ?>

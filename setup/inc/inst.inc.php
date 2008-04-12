@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/cfg/inst.inc.php
-11:10 2008-03-18
+12:50 2008-04-05
 */
 echo "<DIV CLASS=\"hdr\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 3px;\"><B>";
 echo "<A HREF=\"./setup.php?pid=".$pid."&amp;set=".$set."&amp;act=index&amp;step=1\" TARGET=\"_self\">Start</A>";
@@ -69,7 +69,7 @@ if($set == 'install' || $set == 'upgrade') {
   echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
   echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";
   if($act == 'engn' && $step == '7') {echo "#aaaaaa";} else {echo "#333333";}
-  echo "\">Themes</SPAN>";
+  echo "\">Skin</SPAN>";
   echo "</B></DIV>";
   
   echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
@@ -93,17 +93,17 @@ if($set == 'install' || $set == 'upgrade') {
   echo "</B></DIV>";
 
   echo "<DIV CLASS=\"hdr\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 3px;\"><B>";
-  echo "<A HREF=\"./setup.php?pid=".$pid."&amp;set=".$set."&amp;act=thms&amp;step=1\" TARGET=\"_self\">Install Themes</A>";
+  echo "<A HREF=\"./setup.php?pid=".$pid."&amp;set=".$set."&amp;act=skins&amp;step=1\" TARGET=\"_self\">Install Skins</A>";
   echo "</B></DIV>";
   echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
   echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";
-  if($act == 'thms' && $step == '1') {echo "#aaaaaa";} else {echo "#333333";}
-  echo "\">Select Themes</SPAN>";
+  if($act == 'skins' && $step == '1') {echo "#aaaaaa";} else {echo "#333333";}
+  echo "\">Select Skins</SPAN>";
   echo "</B></DIV>";
   echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
   echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";
-  if($act == 'thms' && $step == '2') {echo "#aaaaaa";} else {echo "#333333";}
-  echo "\">Install Themes</SPAN>";
+  if($act == 'skins' && $step == '2') {echo "#aaaaaa";} else {echo "#333333";}
+  echo "\">Install Skins</SPAN>";
   echo "</B></DIV>";
 if($set != 'upgrade') {
     echo "<DIV CLASS=\"hdr\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 3px;\"><B>";
@@ -190,7 +190,7 @@ else if ($set == 'remove') {
   echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
   echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";
   if($act == 'removefu' && $step == '3') {echo "#aaaaaa";} else {echo "#333333";}
-  echo "\">Themes</SPAN>";
+  echo "\">Skins</SPAN>";
   echo "</B></DIV>";
   echo "<DIV CLASS=\"cnt\" STYLE=\"padding-top: 3px; padding-bottom: 3px; padding-left: 15px; padding-right: 3px;\"><B>";
   echo "<SPAN CLASS=\"cnt\" STYLE=\"color: ";

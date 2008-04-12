@@ -1,0 +1,15 @@
+0.4 (080405)
+- changed themes to skins
+- some work at the shop module
+- reset date in all files to 12:50 2008-04-05
+0.3 (080325)
+- separated modules for easier administration
+- added user signup module (still needs a lot of work)
+0.2 (080312)
+- integrated fckeditor instead of openwysiwyg
+- changed the name to RudWEB: "Rudimentary Website Engine BETA" or "Rudimentary Website Engine with BUGS" :-)
+0.1
+- initial work
+
+
+

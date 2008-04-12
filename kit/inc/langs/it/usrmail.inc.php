@@ -1,0 +1,73 @@
+<?php
+/*
+./inc/langs/it/usrmail.inc.php
+12:50 2008-04-05
+*/
+if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
+
+$rudweb_ln['usr']['actmailsubj']   = "Account Activation at";
+
+$rudweb_ln['usr']['actmailtxt1a']  = "<DIV>";
+$rudweb_ln['usr']['actmailtxt1a'] .= "Dear <B>";
+$rudweb_ln['usr']['actmailtxt1b']  = "</B>";
+$rudweb_ln['usr']['actmailtxt1b'] .= "<BR><BR>In order to complete your account activation, please click on the following link (available 1 day):";
+$rudweb_ln['usr']['actmailtxt1b'] .= "<BR><BR>";
+
+$rudweb_ln['usr']['actmailtxt2']   = "<BR><BR>If you are having trouble with the link, please copy and paste the following url into your browser:";
+$rudweb_ln['usr']['actmailtxt2']  .= "<BR><BR>";
+
+$rudweb_ln['usr']['actmailtxt3']   = "<BR><BR>Sincerely,";
+$rudweb_ln['usr']['actmailtxt3']  .= "<BR>The " . _RUDWEB_WSTT . " Team";
+$rudweb_ln['usr']['actmailtxt3']  .= "</DIV>";
+
+
+$rudweb_ln['usr']['authmessage']   = "<BR>Thank you for taking the time to register an account with " . _RUDWEB_WSTT . "!";
+$rudweb_ln['usr']['authmessage']  .= "<BR><BR>In order to start using your account you must first activate it.";
+$rudweb_ln['usr']['authmessage']  .= "<BR><BR>An email has been sent to the address you specified, containing activation instructions.";
+$rudweb_ln['usr']['authmessage']  .= "<BR><BR>Please check your email and follow the instructions in order to activate and start using your account.";
+
+$rudweb_ln['usr']['autherror']     = "<BR>Thank you for taking the time to register an account with " . _RUDWEB_WSTT . "!";
+$rudweb_ln['usr']['autherror']    .= "<BR><BR>In order to start using your account you must first activate it.";
+$rudweb_ln['usr']['autherror']    .= "<BR><BR>Unfortunately we weren't able to sent your activation email.";
+$rudweb_ln['usr']['autherror']    .= "<BR><BR>Please contact the website administrator about this problem.";
+
+$rudweb_ln['usr']['authoka']       = "<BR>Thank you!";
+$rudweb_ln['usr']['authoka']      .= "<BR><BR>Account for ";
+$rudweb_ln['usr']['authokb']       = " was succesfully activated!";
+$rudweb_ln['usr']['authokb']      .= "<BR><BR>You can now login using your email address and the password you have chosen!";
+
+$rudweb_ln['usr']['lostpass1']     = "<BR>Here at " . _RUDWEB_WSTT . " we respect your privacy, and therefore we do not know your password.";
+$rudweb_ln['usr']['lostpass1']    .= "<BR><BR>So, if you can not remember your password, it is lost forever.";
+$rudweb_ln['usr']['lostpass1']    .= "<BR><BR>In that case, the only solution is for you to reset your password and choose a new one.";
+$rudweb_ln['usr']['lostpass1']    .= "<BR><BR>Please enter the email address used to register your account at " . _RUDWEB_WSTT . ":";
+
+$rudweb_ln['usr']['lostapsserr']   = "Sorry, no match in our data base.";
+
+$rudweb_ln['usr']['lpmailsubj']    = 'Password recovery at';
+
+$rudweb_ln['usr']['lpmailtxt1a']   = "<DIV>";
+$rudweb_ln['usr']['lpmailtxt1a']  .= "Dear <B>";
+$rudweb_ln['usr']['lpmailtxt1b']   = "</B>";
+$rudweb_ln['usr']['lpmailtxt1b']  .= "<BR><BR>In order to reset your password, please click on the following link (available 1 day):";
+$rudweb_ln['usr']['lpmailtxt1b']  .= "<BR><BR>";
+
+$rudweb_ln['usr']['lpmailtxt2']    = "<BR><BR>If you are having trouble with the link, please copy and paste the following url into your browser:";
+$rudweb_ln['usr']['lpmailtxt2']   .= "<BR><BR>";
+
+$rudweb_ln['usr']['lpmailtxt3']    = "<BR><BR>Sincerely,";
+$rudweb_ln['usr']['lpmailtxt3']   .= "<BR>The " . _RUDWEB_WSTT . " Team";
+$rudweb_ln['usr']['lpmailtxt3']   .= "</DIV>";
+
+$rudweb_ln['usr']['lostpmessage']  = "<BR><BR>An email has been sent to the address you specified, containing password reset instructions.";
+$rudweb_ln['usr']['lostpmessage'] .= "<BR><BR>Please check your email and follow the instructions in order to reset your password at " . _RUDWEB_WSTT . ".";
+
+$rudweb_ln['usr']['lostperror']    = "<BR><BR>Unfortunately we weren't able to sent your password reset email.";
+$rudweb_ln['usr']['lostperror']   .= "<BR><BR>Please contact the website administrator about this problem.";
+
+$rudweb_ln['usr']['lostpass2']     = "<BR><BR>Please chose a new password:";
+
+$rudweb_ln['usr']['lostpassoka']   = "<BR>Thank you!";
+$rudweb_ln['usr']['lostpassoka']  .= "<BR><BR>Your password was ";
+$rudweb_ln['usr']['lostpassokb']   = " succesfully changed!";
+$rudweb_ln['usr']['lostpassokb']  .= "<BR><BR>You can now login using your email address and the password you have chosen!";
+?>

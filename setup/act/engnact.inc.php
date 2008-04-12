@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/engnact.inc.php
-15:09 2008-01-14
+12:50 2008-04-05
 */
 if(is_array($dirs)) {
   for($counti=0; $counti<count($dirs); $counti++){

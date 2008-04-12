@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/dbs04.inc.php
-13:20 2008-02-26
+12:50 2008-04-05
 */
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";

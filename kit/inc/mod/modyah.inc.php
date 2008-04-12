@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modyah.inc.php
-20:16 2008-03-17
+12:50 2008-04-05
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -10,7 +10,7 @@ function youAreHere() {
   global $rudweb_this_content_level;
   global $rudweb_mnu_id;
   global $rudweb_ln;
-  global $rudweb_theme;
+  global $rudweb_skin;
   
   if($rudweb_cnt_type === '1' || $rudweb_cnt_type === '3'){
   
@@ -18,11 +18,11 @@ function youAreHere() {
     for($i=$rudweb_this_content_level-1; $i>=0; $i--) {$id[$i] = getCntParId($id[$i+1]);}
     $id = array_reverse($id);
     
-    $rudweb_theme['yah']['hdr'];
+    $rudweb_skin['yah']['hdr'];
     
-    $rudweb_theme['yah']['pre'];
+    $rudweb_skin['yah']['pre'];
     restrictedLocalLink('default', 'Home', 'index.php', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
-    $rudweb_theme['yah']['suf'];
+    $rudweb_skin['yah']['suf'];
     
     for($j=0; $j<count($id); $j++) {
       $query   = "SELECT mnu_tt, mnu_typ, mnu_cnt_alias, mnu_trg, mnu_lvl FROM "._RUDWEB_PRE."ws_mnu WHERE mnu_id = '".$id[$j]."'";
@@ -32,8 +32,8 @@ function youAreHere() {
       else {
         $row = mysql_fetch_assoc($result);
         
-        $rudweb_theme['yah']['sep'];
-        $rudweb_theme['yah']['pre'];
+        $rudweb_skin['yah']['sep'];
+        $rudweb_skin['yah']['pre'];
         if($id[$j] == $rudweb_mnu_id) {echo $row['mnu_tt'];}
         else {
           if($row['mnu_typ'] === '1')      {restrictedLocalLink('default', $row['mnu_tt'], 'index.php/content/'. $row['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row['mnu_trg']);}
@@ -42,13 +42,13 @@ function youAreHere() {
           else if($row['mnu_typ'] === '4') {restrictedLocalLink('default', $row['mnu_tt'], 'index.php/rsweb/'. $row['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row['mnu_trg']);}
         }
 
-        $rudweb_theme['yah']['suf'];
+        $rudweb_skin['yah']['suf'];
         
       }
     }
   }
   
-  $rudweb_theme['yah']['ftr'];
+  $rudweb_skin['yah']['ftr'];
   
 }
 ?>

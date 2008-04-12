@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/verif02.inc.php
-16:56 2008-01-09
+12:50 2008-04-05
 */
 
 $php_version = phpversion();

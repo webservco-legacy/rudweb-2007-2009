@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modcart.inc.php
-13:20 2008-03-12
+12:50 2008-04-05
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -108,12 +108,12 @@ function showProducts() { // this will become obsolete, or fully changed to take
   echo "</FORM>";
 }
 function showCart() {
-  global $rudweb_theme;
+  global $rudweb_skin;
   global $rudweb_cart;
   
-  echo $rudweb_theme['crt']['hdr'];
+  echo $rudweb_skin['crt']['hdr'];
 
-  echo $rudweb_theme['crt']['pre'];
+  echo $rudweb_skin['crt']['pre'];
   
   echo "<HR>";
   
@@ -160,9 +160,9 @@ function showCart() {
   }
   echo "<HR>";
   
-  echo $rudweb_theme['crt']['suf'];
-  echo $rudweb_theme['crt']['sep'];
+  echo $rudweb_skin['crt']['suf'];
+  echo $rudweb_skin['crt']['sep'];
 
-  echo $rudweb_theme['crt']['ftr'];
+  echo $rudweb_skin['crt']['ftr'];
 }
 ?>

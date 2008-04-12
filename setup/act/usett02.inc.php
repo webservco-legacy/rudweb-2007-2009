@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/act/usett02.inc.php
-10:25 2008-03-18
+12:50 2008-04-05
 */
 ?>
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
@@ -132,13 +132,13 @@
 
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
 <TR>
-<TD CLASS="hdr"><B>Default theme:</B></TD></TR>
+<TD CLASS="hdr"><B>Default skin:</B></TD></TR>
 </TABLE>
 
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
-<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">default theme:</TD>
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">default skin:</TD>
 <TD CLASS="cnt">
-<INPUT TYPE="text" CLASS="general" NAME="cfg_theme" SIZE="10" MAXLENGTH="150" VALUE="<?php echo $_SESSION['rudwebset_cfg_theme'];?>"></TD></TR></TABLE>
+<INPUT TYPE="text" CLASS="general" NAME="cfg_skin" SIZE="10" MAXLENGTH="150" VALUE="<?php echo $_SESSION['rudwebset_cfg_skin'];?>"></TD></TR></TABLE>
 
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
 <TR>
@@ -219,14 +219,22 @@
 </TD></TR></TABLE>
 
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
-<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">multiple themes:</TD>
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">multiple skins:</TD>
 <TD CLASS="cnt">
-<SELECT CLASS="general" NAME="cfg_theme_on">
-  <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_cfg_theme_on'] == "0") {echo " SELECTED";}?>>off</OPTION>
-  <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_cfg_theme_on'] == "1") {echo " SELECTED";}?>>on</OPTION>
+<SELECT CLASS="general" NAME="cfg_skin_on">
+  <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_cfg_skin_on'] == "0") {echo " SELECTED";}?>>off</OPTION>
+  <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_cfg_skin_on'] == "1") {echo " SELECTED";}?>>on</OPTION>
 </SELECT>
 </TD></TR></TABLE>
 
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">shop / catalog:</TD>
+<TD CLASS="cnt">
+<SELECT CLASS="general" NAME="cfg_cat">
+  <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_cfg_cat'] == "0") {echo " SELECTED";}?>>off</OPTION>
+  <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_cfg_cat'] == "1") {echo " SELECTED";}?>>on</OPTION>
+</SELECT>
+</TD></TR></TABLE>
 
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
 <TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">shopping cart:</TD>
@@ -491,6 +499,36 @@
   <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_cfg_adm'] == "0") {echo " SELECTED";}?>>disabled</OPTION>
   <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_cfg_adm'] == "1") {echo " SELECTED";}?>>enabled</OPTION>
 </SELECT>
+</TD></TR></TABLE>
+
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">admin first name:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="cfg_adm_fname" SIZE="30" MAXLENGTH="30" VALUE="<?php echo $_SESSION['rudwebset_cfg_adm_fname'];?>">
+</TD></TR></TABLE>
+
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">admin middle name:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="cfg_adm_mname" SIZE="15" MAXLENGTH="15" VALUE="<?php echo $_SESSION['rudwebset_cfg_adm_mname'];?>">
+</TD></TR></TABLE>
+
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">admin last name:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="cfg_adm_lname" SIZE="30" MAXLENGTH="30" VALUE="<?php echo $_SESSION['rudwebset_cfg_adm_lname'];?>">
+</TD></TR></TABLE>
+
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">admin email:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="cfg_adm_mail" SIZE="30" MAXLENGTH="30" VALUE="<?php echo $_SESSION['rudwebset_cfg_adm_mail'];?>">
+</TD></TR></TABLE>
+
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">admin password:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="cfg_adm_pass" SIZE="30" MAXLENGTH="30" VALUE="<?php echo $_SESSION['rudwebset_cfg_adm_pass'];?>">
 </TD></TR></TABLE>
 
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">

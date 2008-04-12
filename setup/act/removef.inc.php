@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/removef.inc.php
-14:38 2008-01-23
+12:50 2008-04-05
 */
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
 echo "\n<TR><TD CLASS=\"total\" WIDTH=\"200\"><BR><B>Remove Engine Files:</B><BR></TD>";
