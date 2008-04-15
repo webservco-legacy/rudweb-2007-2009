@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/ro/lang.inc.php
-18:38 2008-04-12
+21:01 2008-04-13
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -103,7 +103,7 @@ $rudweb_ln['usr']['retuser']       = "Returning User";
 $rudweb_ln['usr']['newuser']       = "User Nou";
 $rudweb_ln['usr']['signup']        = "&#206;nscriere";
 
-$rudweb_ln['usr']['newuserreg']    = "New User Registration";
+$rudweb_ln['usr']['newuserreg']    = "Inregistrare utilizator nou";
 $rudweb_ln['usr']['usrfirstname']  = "Prenume";
 $rudweb_ln['usr']['usrmiddlename'] = "Initiale";
 $rudweb_ln['usr']['usrlastname']   = "Nume";
@@ -122,20 +122,20 @@ $rudweb_ln['usr']['usragree2']     = "Sunt de acord cu";
 $rudweb_ln['usr']['usragree3']     = "termenii si conditiile";
 $rudweb_ln['usr']['usragree4']     = "website-ului";
 $rudweb_ln['usr']['usrverif']      = "Verificare";
-$rudweb_ln['usr']['regerr1']       = "First Name field is blank!";
-$rudweb_ln['usr']['regerr2']       = "Last Name field is blank!";
-$rudweb_ln['usr']['regerr3']       = "Country field is blank!";
-$rudweb_ln['usr']['regerr4']       = "Email field is blank!";
-$rudweb_ln['usr']['regerr5']       = "Email address is not valid!";
-$rudweb_ln['usr']['regerr6']       = "Email addresses do not match!";
-$rudweb_ln['usr']['regerr7']       = "Password field is empty!";
-$rudweb_ln['usr']['regerr8']       = "Password is to short!";
-$rudweb_ln['usr']['regerr9']       = "Passwords do not match!";
-$rudweb_ln['usr']['regerr10']      = "You have to agree!";
-$rudweb_ln['usr']['regerr11']      = "Image verification failed!";
-$rudweb_ln['usr']['regerr12']      = "Email address is already in our database!";
-$rudweb_ln['usr']['regerr13']      = "You have already applied for an account! Please check your email for details how to activate it!";
-$rudweb_ln['usr']['regerr14']      = "You have already applied for an account but we weren't unable to send you the activation email!";
+$rudweb_ln['usr']['regerr1']       = "Campul cu prenumele este gol!";
+$rudweb_ln['usr']['regerr2']       = "Campul cu numele este gol!";
+$rudweb_ln['usr']['regerr3']       = "Campul cu tara este gol!";
+$rudweb_ln['usr']['regerr4']       = "Campul cu adresa de e-mail este gol!";
+$rudweb_ln['usr']['regerr5']       = "Adresa de email nu este valida!";
+$rudweb_ln['usr']['regerr6']       = "Adresele de email nu corespund!";
+$rudweb_ln['usr']['regerr7']       = "Campul cu parola este gol!";
+$rudweb_ln['usr']['regerr8']       = "Parola este prea scurta!";
+$rudweb_ln['usr']['regerr9']       = "Parolele nu corespund!";
+$rudweb_ln['usr']['regerr10']      = "Trebuie sa fiti de acord cu termenii!";
+$rudweb_ln['usr']['regerr11']      = "Verificarea de imagine a esuat!";
+$rudweb_ln['usr']['regerr12']      = "Adresa de email exista deja in baza noastra de date!";
+$rudweb_ln['usr']['regerr13']      = "Ati aplicat deja pentru un cont! Verificati email-ul pentru instructiuni de activare";
+$rudweb_ln['usr']['regerr14']      = "Ati aplicat deja pentru un cont dar nu am reusit sa trimitem email-ul de activare!";
 
 $rudweb_ln['usr']['accact']        = "Activarea unui cont nou";
 $rudweb_ln['usr']['aaerror1']      = "Cod de autorizare invalid.";
@@ -147,8 +147,14 @@ $rudweb_ln['usr']['lpaerror1']     = "Cod de autorizare invalid.";
 $rudweb_ln['usr']['lpaerror2']     = "Probabil a expirat?";
 
 // CATALOG
-$rudweb_ln['cat']['noitems']       = 'Nu sunt articole';
+$rudweb_ln['cat']['noitems']       = 'Nu sunt produse';
 $rudweb_ln['cat']['quantity']      = 'Cantitate';
+$rudweb_ln['cat']['itemaddok']     = 'Produsul a fost ad&#259;ugat cu succes!';
+$rudweb_ln['cat']['itemmodok']     = 'Produsul a fost modificat cu succes!';
+$rudweb_ln['cat']['itemdelok']     = 'Produsul a fost &#351;ters cu succes!';
+$rudweb_ln['cat']['itemaddnew']    = 'Ad&#259;ugare produs nou';
+$rudweb_ln['cat']['itemmod']       = 'Modificare produs';
+$rudweb_ln['cat']['itemviewcat']   = 'Vizualizare produse din categoria curenta';
 
 // PAGINATION
 $rudweb_ln['pgnav']['first']       = '&#60;&#60;';

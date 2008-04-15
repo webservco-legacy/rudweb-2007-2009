@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/it/lang.inc.php
-18:38 2008-04-12
+20:58 2008-04-13
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -146,6 +146,12 @@ $rudweb_ln['usr']['lpaerror2']     = "Perhaps it has expired?";
 // CATALOG
 $rudweb_ln['cat']['noitems']       = 'No Items';
 $rudweb_ln['cat']['quantity']      = 'Quantity';
+$rudweb_ln['cat']['itemaddok']     = 'Item added sucessfully!';
+$rudweb_ln['cat']['itemmodok']     = 'Item modified sucessfully!';
+$rudweb_ln['cat']['itemdelok']     = 'Item deleted sucessfully!';
+$rudweb_ln['cat']['itemaddnew']    = 'Add new item';
+$rudweb_ln['cat']['itemmod']       = 'Modify item';
+$rudweb_ln['cat']['itemviewcat']   = 'View items in this category';
 
 // PAGINATION
 $rudweb_ln['pgnav']['first']       = '&#60;&#60;';

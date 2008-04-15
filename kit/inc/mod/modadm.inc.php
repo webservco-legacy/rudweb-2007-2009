@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modadm.inc.php
-12:50 2008-04-05
+11:23 2008-04-14
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -48,19 +48,19 @@ function genAdminMod() {
 
       echo $rudweb_skin['usr']['login']['pre'];
       echo "\n<INPUT TYPE=\"hidden\" NAME=\"" . _RUDWEB_PRE . "token\" VALUE=\"" . $_SESSION[_RUDWEB_PRE.'token'] . "\">";
-      echo "\n<INPUT TYPE=\"text\" CLASS=\"logininput\" NAME=\"" . _RUDWEB_PRE . "usr_login\" SIZE=\"10\" MAXLENGTH=\"30\" VALUE=\"user\" onFocus=\"if(this.value=='user')this.value='';\" onBlur=\"if(this.value=='')this.value='user';\">";
+      echo "\n<INPUT TYPE=\"text\" CLASS=\"logininput\" NAME=\"" . _RUDWEB_PRE . "usr_login\" SIZE=\"15\" MAXLENGTH=\"30\" VALUE=\"user\" onFocus=\"if(this.value=='user')this.value='';\" onBlur=\"if(this.value=='')this.value='user';\">";
       echo $rudweb_skin['usr']['login']['suf'];
       
       echo $rudweb_skin['usr']['login']['sep'];
       
       echo $rudweb_skin['usr']['login']['pre'];
-      echo "\n<INPUT TYPE=\"password\" CLASS=\"logininput\" NAME=\"" . _RUDWEB_PRE . "usr_pass\" SIZE=\"10\" MAXLENGTH=\"30\" VALUE=\"pass\" onFocus=\"if(this.value=='pass')this.value='';\" onBlur=\"if(this.value=='')this.value='pass';\">";
+      echo "\n<INPUT TYPE=\"password\" CLASS=\"logininput\" NAME=\"" . _RUDWEB_PRE . "usr_pass\" SIZE=\"15\" MAXLENGTH=\"30\" VALUE=\"pass\" onFocus=\"if(this.value=='pass')this.value='';\" onBlur=\"if(this.value=='')this.value='pass';\">";
       echo $rudweb_skin['usr']['login']['suf'];
 
       echo $rudweb_skin['usr']['login']['sep'];
       
       echo $rudweb_skin['usr']['login']['pre'];
-      echo "<IMG SRC=\""._RUDWEB_LIB_URL."picver.php\" WIDTH=\"70\" HEIGHT=\"20\" ALT=\"verif\" TITLE=\"verif\">";
+      echo "<IMG SRC=\""._RUDWEB_LIB_URL."picver.php\" WIDTH=\"70\" HEIGHT=\"20\" ALT=\"verif\" TITLE=\"verif\" ALIGN=\"center\">";
       echo "=";
       echo "\n<INPUT TYPE=\"text\" CLASS=\"logininput\" NAME=\"" . _RUDWEB_PRE . "usr_verif\" SIZE=\"5\" MAXLENGTH=\"5\" VALUE=\"\">";
       echo $rudweb_skin['usr']['login']['suf'];
@@ -110,18 +110,19 @@ function adminMenu() {
     echo $rudweb_skin['adm']['mnuhd']['suf'];
     
     echo '<DIV ID="l1ctl">';
-    echo $rudweb_skin['adm']['mnutt']['pre'];
-    echo '<A onClick="JavaScript: toggleLayer(\'l2cat\')">';
-    echo $rudweb_ln['catalog']['cattt'];
-    echo '</A>';
-    echo $rudweb_skin['adm']['mnutt']['suf'];
     
-    echo '<DIV ID="l2cat" CLASS="hidden">';
-    echo $rudweb_skin['adm']['mnu']['pre'];
-    restrictedLocalLink('adm-mnu', 'Text here', 'admin.php/admin/texthere', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
-    echo $rudweb_skin['adm']['mnu']['suf'];
-    echo $rudweb_skin['adm']['mnu']['sep'];
-    echo '</DIV>';
+    //echo $rudweb_skin['adm']['mnutt']['pre'];
+    //echo '<A onClick="JavaScript: toggleLayer(\'l2cat\')">';
+    //echo $rudweb_ln['catalog']['cattt'];
+    //echo '</A>';
+    //echo $rudweb_skin['adm']['mnutt']['suf'];
+    
+    //echo '<DIV ID="l2cat" CLASS="hidden">';
+    //echo $rudweb_skin['adm']['mnu']['pre'];
+    //restrictedLocalLink('adm-mnu', 'Text here', 'admin.php/admin/texthere', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+    //echo $rudweb_skin['adm']['mnu']['suf'];
+    //echo $rudweb_skin['adm']['mnu']['sep'];
+    //echo '</DIV>';
     
     echo $rudweb_skin['adm']['mnutt']['pre'];
     echo '<A onClick="JavaScript: toggleLayer(\'l2itm\')">';

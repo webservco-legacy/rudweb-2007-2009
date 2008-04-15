@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/adm/itemadd.inc.php
-19:03 2008-04-12
+10:08 2008-04-14
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
@@ -146,9 +146,19 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
         }
         $quk = "UNLOCK TABLES";
         mysql_query($quk) or require _RUDWEB_LIB_DIR . 'myerr.php';
-        // XXX
-        // DISPLAY ADD SUCCESS MESSAGE
-        echo 'add ok';
+        
+        echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
+        echo $rudweb_ln['cat']['itemaddok'];
+        echo '</DIV>';
+        echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
+        restrictedLocalLink('default', $rudweb_ln['cat']['itemmod'], 'index.php/catalog/item/id/'.$prd_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo '</DIV>';
+        echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
+        restrictedLocalLink('default', $rudweb_ln['cat']['itemaddnew'], 'index.php/admin/itemadd/cat/'.$cat_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo '</DIV>';
+        echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
+        restrictedLocalLink('default', $rudweb_ln['cat']['itemviewcat'], 'index.php/catalog/items/cat/'.$cat_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo '</DIV>';
       }
       else {
         // error mesage

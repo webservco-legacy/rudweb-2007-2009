@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/adm/itemform.inc.php
-19:03 2008-04-12
+12:33 2008-04-14
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
@@ -24,6 +24,7 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
     echo $rudweb_ln['adm']['pic_del'];
     echo '<INPUT CLASS="chk" TYPE="checkbox" NAME="delpic['.$mpic_id.']">';
       
+    echo '<BR>';
     echo $rudweb_ln['adm']['pic_repl'];
     echo '<INPUT CLASS="imgupload" TYPE="file" NAME="itemrepl['.$mpic_id.']" SIZE="1">';
   }

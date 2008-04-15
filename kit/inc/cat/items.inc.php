@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/cat/items.inc.php
-19:03 2008-04-12
+10:18 2008-04-14
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -175,7 +175,7 @@ $totalitems = rudweb_result($rudweb_dbtype, rudweb_qres($rudweb_dbtype, $q3), 0)
 
 echo $rudweb_skin['cat']['hdr'];
 
-if ($total_scat != '0') {
+if ($total_scat != 0) {
   for($i=1;$i<=$total_scat;$i++) {
     $scat_row = rudweb_fetch_assoc($rudweb_dbtype, $result_scat);
     

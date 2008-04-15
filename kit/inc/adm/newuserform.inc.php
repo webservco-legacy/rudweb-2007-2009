@@ -1,14 +1,14 @@
 <?php
 /*
 ./inc/adm/newuserform.inc.php
-12:50 2008-04-05
+11:23 2008-04-14
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
 ?>
 <DIV CLASS="text" STYLE="text-align: center;">
 <BR>
-Intro text (work in progress)
+<!--Intro text (work in progress)-->
 <FORM ENCTYPE="multipart/form-data" CLASS="contaddform" NAME="newuser1" ACTION="" METHOD="post">
 
 <TABLE BORDER="0" CELLPADDING="0" CELLSPACING="5" ALIGN="center">
@@ -19,7 +19,7 @@ Intro text (work in progress)
 </TR>
 
 <TR>
-  <TD STYLE="text-align: right;"><?php if($err_msg != '') {echo '<SPAN STYLE="font-weight: bold; color: #FF0000;">Error:</SPAN>';}?></TD>
+  <TD STYLE="text-align: right;"><?php if($err_msg != '') {echo '<SPAN STYLE="font-weight: bold; color: #FF0000;">'.$rudweb_ln['err']['tt'].'</SPAN>';}?></TD>
   <TD STYLE="text-align: left;"><?php echo $err_msg;?></TD>
 </TR>
 
@@ -135,11 +135,11 @@ for($lni = 1; $lni <= $langst; $lni++) {
   </TD>
 </TR>
 <TR>
-  <TD STYLE="text-align: right;"><?php echo $rudweb_ln['usr']['usrsubscribe1'];?>:</TD>
+  <TD STYLE="text-align: right;"><?php //echo $rudweb_ln['usr']['usrsubscribe1'];?><!--:--></TD>
   <TD STYLE="text-align: left;">
-  <INPUT TYPE="checkbox" CLASS="forminput" NAME="usr_subscribe"<?php if($usr_subscribe == '1') {echo ' CHECKED';};?>>
-  &#160;
-  <?php echo $rudweb_ln['usr']['usrsubscribe2'];?>
+  <!--<INPUT TYPE="checkbox" CLASS="forminput" NAME="usr_subscribe"<?php //if($usr_subscribe == '1') {echo ' CHECKED';};?>>-->
+  <!--&#160;-->
+  <?php //echo $rudweb_ln['usr']['usrsubscribe2'];?>
   </TD>
 </TR>
 <TR>

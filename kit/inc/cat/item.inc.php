@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/cat/item.inc.php
-19:03 2008-04-12
+10:08 2008-04-14
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -237,9 +237,20 @@ if($total_cat == '1') {
             }
             $quk = "UNLOCK TABLES";
             mysql_query($quk) or require _RUDWEB_LIB_DIR . 'myerr.php';
+            
+            echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
+            echo $rudweb_ln['cat']['itemmodok'];
+            echo '</DIV>';
+            echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
+            restrictedLocalLink('default', $rudweb_ln['cat']['itemmod'], 'index.php/catalog/item/id/'.$prd_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+            echo '</DIV>';
+            echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
+            restrictedLocalLink('default', $rudweb_ln['cat']['itemaddnew'], 'index.php/admin/itemadd/cat/'.$current_scat, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+            echo '</DIV>';
+            echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
+            restrictedLocalLink('default', $rudweb_ln['cat']['itemviewcat'], 'index.php/catalog/items/cat/'.$current_scat, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+            echo '</DIV>';
             // XXX
-            // DISPLAY MODIFY SUCCESS MESSAGE
-            echo 'mod ok';
           }
           else {
             catYah(0,$item_id);
@@ -270,7 +281,7 @@ if($total_cat == '1') {
           $tpc = rudweb_qtotal($rudweb_dbtype, $rpc);
           if ($tpc != 0) {
             for($pi=1;$pi<=$tpc;$pi++) {
-              $rwpc = rudweb_fetch_assoc($rudweb_dbtype, $rp);
+              $rwpc = rudweb_fetch_assoc($rudweb_dbtype, $rpc);
               $filepath[$pi] = _RUDWEB_PRDP_DIR . $rwpc['pic_fn'];
               if (is_file($filepath[$pi])) {unlink($filepath[$pi]);}
             }
@@ -285,9 +296,17 @@ if($total_cat == '1') {
           mysql_query($qd3) or require _RUDWEB_LIB_DIR . 'myerr.php';
           $quk = "UNLOCK TABLES";
           mysql_query($quk) or require _RUDWEB_LIB_DIR . 'myerr.php';
+          
+          echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
+          echo $rudweb_ln['cat']['itemdelok'];
+          echo '</DIV>';
+          echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
+          restrictedLocalLink('default', $rudweb_ln['cat']['itemaddnew'], 'index.php/admin/itemadd/cat/'.$current_scat, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+          echo '</DIV>';
+          echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
+          restrictedLocalLink('default', $rudweb_ln['cat']['itemviewcat'], 'index.php/catalog/items/cat/'.$current_scat, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+          echo '</DIV>';
           // XXX
-          // DISPLAY DELETE SUCCESS MESSAGE MESSAGE
-          echo 'del ok';
         }      
       }
       else {

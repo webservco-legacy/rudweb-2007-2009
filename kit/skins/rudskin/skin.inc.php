@@ -1,7 +1,7 @@
 <?php
 /*
 ./skins/rudskin/skin.inc.php
-17:55 2008-04-12
+20:46 2008-04-13
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once '../../lib/404.php';}
 
@@ -18,6 +18,7 @@ else {
   $rudweb_skin['Color3']          = '#CCCCCC';
   $rudweb_skin['FontColor']       = '#000000';
   $rudweb_skin['FontErrColor']    = '#990000';
+  $rudweb_skin['FontOkColor']     = '#009900';
   $rudweb_skin['BgReqColor']      = '#990000';
   $rudweb_skin['MarginTop']       = '0';
   $rudweb_skin['MarginBottom']    = '0';

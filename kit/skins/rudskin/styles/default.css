@@ -1,6 +1,6 @@
 /*
 ./skins/rudskin/styles/default.css
-16:22 2008-04-07
+20:45 2008-04-13
 */
 /* ********** ********** ********** DEFAULT ********** ********** ********** */
 BODY {
@@ -44,6 +44,32 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-right: 0px;
   background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   color: <?php echo $rudweb_skin['FontErrColor']; ?>;
+  text-align: center;
+  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
+  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 100%;
+  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
+  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
+  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  border-bottom-width: <?php echo $rudweb_skin['BorderBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  border-right-width: <?php echo $rudweb_skin['BorderRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  padding-left: <?php echo $rudweb_skin['PaddingLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  padding-right: <?php echo $rudweb_skin['PaddingRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  cursor: text;
+}
+.ok {
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontOkColor']; ?>;
   text-align: center;
   text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
   font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
