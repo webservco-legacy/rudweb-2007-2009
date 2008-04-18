@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modadm.inc.php
-11:23 2008-04-14
+10:20 2008-04-15
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -15,15 +15,10 @@ function genAdminMod() {
     
     if (isset($_SESSION[_RUDWEB_PRE.'usr_logged_in'])) {
       echo $rudweb_skin['usr']['pre'];
-      echo $_SESSION[_RUDWEB_PRE.'usr_alias'];
+      echo '<B>'. $_SESSION[_RUDWEB_PRE.'usr_alias'] . '</B>';
+      echo ' [' . $_SESSION[_RUDWEB_PRE.'usr_name'] . ']';
       echo $rudweb_skin['usr']['suf'];
       
-      echo $rudweb_skin['usr']['sep'];
-      
-      echo $rudweb_skin['usr']['pre'];
-      echo "[" . $_SESSION[_RUDWEB_PRE.'usr_name'] . "]";
-      echo $rudweb_skin['usr']['suf'];
-    
       echo $rudweb_skin['usr']['sep'];
       
       echo $rudweb_skin['usr']['pre'];
@@ -48,7 +43,7 @@ function genAdminMod() {
 
       echo $rudweb_skin['usr']['login']['pre'];
       echo "\n<INPUT TYPE=\"hidden\" NAME=\"" . _RUDWEB_PRE . "token\" VALUE=\"" . $_SESSION[_RUDWEB_PRE.'token'] . "\">";
-      echo "\n<INPUT TYPE=\"text\" CLASS=\"logininput\" NAME=\"" . _RUDWEB_PRE . "usr_login\" SIZE=\"15\" MAXLENGTH=\"30\" VALUE=\"user\" onFocus=\"if(this.value=='user')this.value='';\" onBlur=\"if(this.value=='')this.value='user';\">";
+      echo "\n<INPUT TYPE=\"text\" CLASS=\"logininput\" NAME=\"" . _RUDWEB_PRE . "usr_login\" SIZE=\"15\" MAXLENGTH=\"30\" VALUE=\"email\" onFocus=\"if(this.value=='email')this.value='';\" onBlur=\"if(this.value=='')this.value='email';\">";
       echo $rudweb_skin['usr']['login']['suf'];
       
       echo $rudweb_skin['usr']['login']['sep'];
@@ -68,7 +63,7 @@ function genAdminMod() {
       echo $rudweb_skin['usr']['login']['sep'];
       
       echo $rudweb_skin['usr']['login']['pre'];
-      echo "\n<INPUT TYPE=\"submit\" CLASS=\"loginsubmit\" NAME=\"" . _RUDWEB_PRE . "login\" VALUE=\"login\">";
+      echo "\n<INPUT TYPE=\"submit\" CLASS=\"loginsubmit\" NAME=\"" . _RUDWEB_PRE . "login\" VALUE=\"Login\">";
       echo $rudweb_skin['usr']['login']['suf'];
       
       echo $rudweb_skin['usr']['login']['ftr'];
@@ -79,7 +74,7 @@ function genAdminMod() {
       echo $rudweb_skin['usr']['login']['hdr'];
 
       echo $rudweb_skin['usr']['login']['pre'];
-      restrictedLocalLink('default', $rudweb_ln['logout'], 'logout.php', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('loginsubmit', $rudweb_ln['logout'], 'logout.php', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_skin['usr']['login']['suf'];
       
       echo $rudweb_skin['usr']['login']['ftr'];

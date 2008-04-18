@@ -1,9 +1,8 @@
--- LEVEL 1
-SELECT cat_id, cat_tt FROM mhs_cat_cat WHERE cat_par = '2' ORDER BY cat_ord ASC;
--- LEVEL 2
-SELECT cat_id, cat_tt FROM mhs_cat_cat WHERE cat_par = '3' ORDER BY cat_ord ASC;
-SELECT cat_id, cat_tt FROM mhs_cat_cat WHERE cat_par = '4' ORDER BY cat_ord ASC;
--- LEVEL3
-SELECT cat_id, cat_tt FROM mhs_cat_cat WHERE cat_par = '5' ORDER BY cat_ord ASC;
--- ETC
-SELECT COUNT(prd_id) FROM mhs_cat_prd WHERE cat_id = '4';
+SELECT
+PC.pic_fn AS picture,
+P.prd_tt AS title,
+P.prd_dsc AS description
+FROM mhs_cat_csp AS A
+LEFT JOIN mhs_cat_prd AS P on (P.prd_id = A.prd_id)
+LEFT JOIN mhs_cat_pic AS PC on (PC.prd_id = A.prd_id AND PC.pic_loc = '1')
+WHERE P.prd_tt IS NOT NULL AND ('2008-04-16' BETWEEN A.csp_sdate AND A.csp_edate);

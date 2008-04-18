@@ -1,5 +1,5 @@
 # rudweb table structure
--- 15:59 2008-04-09
+-- 13:15 2008-04-15
 DROP TABLE IF EXISTS rudweb_cat_cat;
 CREATE TABLE rudweb_cat_cat (
   cat_id int(5) unsigned NOT NULL,
@@ -123,12 +123,10 @@ CREATE TABLE rudweb_cat_prd (
   prd_iid varchar(30) NOT NULL,
   prd_tt varchar(150) NOT NULL,
   prd_dsc varchar(255) NOT NULL,
-
   prd_qty int(5) unsigned NOT NULL,
   prd_qlvl tinyint(1) unsigned NOT NULL,
   prd_prc double(9,2) NOT NULL,
   prd_plvl tinyint(1) unsigned NOT NULL,
-
   prd_crd date NOT NULL,
   prd_crt time NOT NULL,
   prd_cru int(5) unsigned NOT NULL,
@@ -153,6 +151,24 @@ CREATE TABLE rudweb_cat_pic (
   pic_mdu int(5) unsigned NOT NULL,
   pic_lvl tinyint(1) unsigned NOT NULL,
   PRIMARY KEY (pic_id)
+) myisam_str;
+
+DROP TABLE IF EXISTS rudweb_cat_csp;
+CREATE TABLE rudweb_cat_csp (
+  csp_id int(5) unsigned NOT NULL,
+  csp_ln char(2) NOT NULL,
+  prd_id int(5) unsigned NOT NULL,
+  csp_sdate date NOT NULL,
+  csp_edate date NOT NULL,
+  csp_sup varchar(255) NOT NULL,
+  csp_ord tinyint(2) unsigned NOT NULL,
+  csp_crd date NOT NULL,
+  csp_crt time NOT NULL,
+  csp_cru int(5) unsigned NOT NULL,
+  csp_mdd date NOT NULL,
+  csp_mdt time NOT NULL,
+  csp_mdu int(5) unsigned NOT NULL,
+  PRIMARY KEY (csp_id)
 ) myisam_str;
 
 DROP TABLE IF EXISTS rudweb_set_cfg;

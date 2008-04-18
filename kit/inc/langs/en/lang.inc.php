@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/en/lang.inc.php
-18:38 2008-04-12
+11:14 2008-04-15
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -18,16 +18,16 @@ $rudweb_ln['online_visitors'] = "visitor(s) online";
 $rudweb_ln['since']           = "since";
 
 //LOGIN STATUS & MESSAGES
-$rudweb_ln['lgnst'][1] = "not submitted";
-$rudweb_ln['lgnst'][2] = "empty strings";
-$rudweb_ln['lgnst'][3] = "invalid login";
-$rudweb_ln['lgnst'][4] = "account disabled";
-$rudweb_ln['lgnst'][5] = "logged in ok";
-$rudweb_ln['lgnst'][6] = "logged in";
-$rudweb_ln['lgnst'][7] = "verification failed";
+$rudweb_ln['lgnst'][1] = "Not submitted";
+$rudweb_ln['lgnst'][2] = "Empty strings";
+$rudweb_ln['lgnst'][3] = "Invalid login";
+$rudweb_ln['lgnst'][4] = "Account disabled";
+$rudweb_ln['lgnst'][5] = "Logged in ok";
+$rudweb_ln['lgnst'][6] = "Logged in";
+$rudweb_ln['lgnst'][7] = "Image verification failed";
 
-$rudweb_ln['level']    = "access level: ";
-$rudweb_ln['logout']   = "logout";
+$rudweb_ln['level']    = "Access level: ";
+$rudweb_ln['logout']   = "Logout";
 
 // ERROR MESSAGES
 $rudweb_ln['err']['tt']           = 'OOPS!';

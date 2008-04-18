@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modcat.inc.php
-19:03 2008-04-12
+20:02 2008-04-16
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -201,4 +201,71 @@ function catalogCategoriesMenu($link) {
   }
 }
 /* ********** ********** ********** //CATALOG CATEGORIES MENU WITH CUSTOM LINKS  ********** ********** ********** */
+/* ********** ********** ********** CATALOG SPECIAL OFFERS  ********** ********** ********** */
+// XXX
+function showCso() {
+  global $rudweb_dbtype;
+  global $rudweb_ln;
+  global $rudweb_skin;
+  // CATALOG SPECIAL OFFERS MODULE
+  if (_RUDWEB_CFG_CSP_ON === "1") {
+    $csp_today = date("Y-m-d");
+    
+    //$qcsp = "SELECT * FROM "._RUDWEB_PRE."cat_csp WHERE csp_ln = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."' AND ('".$csp_today."' BETWEEN csp_sdate AND csp_edate) ORDER BY csp_ord ASC LIMIT "._RUDWEB_CFG_CSP_LMT."";
+    $qcsp = "SELECT "
+    . "PC.pic_fn AS picture, "
+    . "P.prd_id AS id, "
+    . "P.prd_tt AS title, "
+    . "P.prd_dsc AS dsc "
+    . "FROM "._RUDWEB_PRE."cat_csp AS A "
+    . "LEFT JOIN "._RUDWEB_PRE."cat_prd AS P on (P.prd_id = A.prd_id) "
+    . "LEFT JOIN "._RUDWEB_PRE."cat_pic AS PC on (PC.prd_id = A.prd_id AND PC.pic_loc = '1') "
+    . "WHERE csp_ln = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."' AND (P.prd_tt IS NOT NULL AND ('".$csp_today."' BETWEEN A.csp_sdate AND A.csp_edate)) ORDER BY csp_ord ASC LIMIT "._RUDWEB_CFG_CSP_LMT."";
+    
+    $rcsp = rudweb_qres($rudweb_dbtype, $qcsp);
+    $tcsp = rudweb_qtotal($rudweb_dbtype, $rcsp);
+    
+    echo $rudweb_skin['csp']['hdr'];
+    if($tcsp != 0) {
+      for($i=1;$i<=$tcsp;$i++) {
+        $rw = rudweb_fetch_assoc($rudweb_dbtype, $rcsp);
+        
+        echo $rudweb_skin['csp']['pre'];
+        
+        echo $rudweb_skin['csp']['pic']['pre'];
+        if($rw['picture'] != NULL && is_file(_RUDWEB_PRDP_DIR.$rw['picture'])) {
+          $picurl = _RUDWEB_LIB_URL.'pic.php?imgfile='._RUDWEB_PRDP_DIR.$rw['picture'].'&amp;max_size='.$rudweb_skin['prod']['picmax'];
+        }
+        else {
+          $picurl = _RUDWEB_LIB_URL.'img.php?pw='.$rudweb_skin['prod']['picmax'].'&amp;ph='.$rudweb_skin['prod']['picmax'].'&amp;txt='.$rudweb_ln['adm']['nopic'];
+        }
+        echo '<A CLASS="default" HREF="'._RUDWEB_SITE_URL.'index.php/catalog/item/id/'.$rw['id'].'" TITLE="'.$rw['title'].'">';
+        echo '<IMG CLASS="op" SRC="'.$picurl.'" TITLE="'.$rw['title'].'" ALT="'.$rw['title'].'" onMouseOver="bevisible(this,0)" onMouseOut="bevisible(this,1)">';
+        echo '</A>';
+        echo $rudweb_skin['csp']['pic']['suf'];
+        
+        echo $rudweb_skin['csp']['tt']['pre'];
+        if (strlen($rw['title']) <= $rudweb_skin['csp']['chartt']) {$short_title = $rw['title'];}
+        else {$short_title = str_split($rw['title'], $rudweb_skin['csp']['chartt']); $short_title = $short_title['0'] . ' ...';}
+        restrictedLocalLink("csplink", $short_title, "index.php/catalog/item/id/" . $rw['id'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $short_title, $rudweb_ln['WinStatOut'], "_self");
+        echo $rudweb_skin['csp']['tt']['suf'];
+        
+        echo $rudweb_skin['csp']['dsc']['pre'];
+        if (strlen($rw['dsc']) <= $rudweb_skin['csp']['chardesc']) {$short_desc = $rw['dsc'];}
+        else {$short_desc = str_split($rw['dsc'], $rudweb_skin['csp']['chardesc']); $short_desc = $short_desc['0'] . ' ...';}
+        echo $short_desc;
+        echo $rudweb_skin['csp']['dsc']['suf'];
+        
+        echo $rudweb_skin['csp']['suf'];
+        
+        if ($i < $tcsp) {echo $rudweb_skin['csp']['sep'];}
+      }
+    }
+    else {
+      echo $rudweb_ln['cat']['noitems'];
+    }
+    echo $rudweb_skin['csp']['ftr'];
+  }
+}
+/* ********** ********** ********** //CATALOG SPECIAL OFFERS  ********** ********** ********** */
 ?>

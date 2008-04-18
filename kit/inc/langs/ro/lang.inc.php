@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/ro/lang.inc.php
-21:01 2008-04-13
+11:14 2008-04-15
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -18,16 +18,16 @@ $rudweb_ln['online_visitors'] = "vizitator(i) online";
 $rudweb_ln['since']           = "de la";
 
 //LOGIN STATUS & MESSAGES
-$rudweb_ln['lgnst'][1] = "ne&#238;nregistrat";
-$rudweb_ln['lgnst'][2] = "c&#226;mpuri incomplete";
-$rudweb_ln['lgnst'][3] = "date incorecte";
-$rudweb_ln['lgnst'][4] = "cont suspendat";
-$rudweb_ln['lgnst'][5] = "autentificare reu&#351;it&#259;";
-$rudweb_ln['lgnst'][6] = "autentificat";
-$rudweb_ln['lgnst'][7] = "verificarea a e&#351;uat";
+$rudweb_ln['lgnst'][1] = "Ne&#238;nregistrat";
+$rudweb_ln['lgnst'][2] = "C&#226;mpuri incomplete";
+$rudweb_ln['lgnst'][3] = "Date incorecte";
+$rudweb_ln['lgnst'][4] = "Cont suspendat";
+$rudweb_ln['lgnst'][5] = "Autentificare reu&#351;it&#259;";
+$rudweb_ln['lgnst'][6] = "Autentificat";
+$rudweb_ln['lgnst'][7] = "Cod de securitate incorect";
 
-$rudweb_ln['level']    = "nivel de acces: ";
-$rudweb_ln['logout']   = "ie&#351;ire";
+$rudweb_ln['level']    = "Nivel de acces: ";
+$rudweb_ln['logout']   = "Ie&#351;ire";
 
 // ERROR MESSAGES
 $rudweb_ln['err']['tt']           = 'OOPS!';
@@ -99,8 +99,8 @@ $rudweb_ln['adm']['ftrnew']       = "Adaug&#259; Nou";
 
 //USER MODULE
 $rudweb_ln['usr']['alreadyreg']    = 'Ce? Nu-ti e de ajuns un cont?';
-$rudweb_ln['usr']['retuser']       = "Returning User";
-$rudweb_ln['usr']['newuser']       = "User Nou";
+$rudweb_ln['usr']['retuser']       = "Utilizator existent";
+$rudweb_ln['usr']['newuser']       = "Utilizator nou";
 $rudweb_ln['usr']['signup']        = "&#206;nscriere";
 
 $rudweb_ln['usr']['newuserreg']    = "Inregistrare utilizator nou";

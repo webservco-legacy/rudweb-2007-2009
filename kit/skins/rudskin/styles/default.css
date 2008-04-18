@@ -843,3 +843,30 @@ SPAN.adm-mnu {
   font-size: <?php echo $rudweb_skin['adm']['mnu']['Lnk']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   cursor: default;
 }
+A.csplink:link {
+  background-color: <?php echo $rudweb_skin['csp']['LnkL']['BgColor']; ?>;
+  background: transparent;
+  color: <?php echo $rudweb_skin['csp']['LnkL']['FontColor']; ?>;
+  text-decoration: <?php echo $rudweb_skin['csp']['LnkL']['TextDecoration']; ?>;
+  font-family: <?php echo $rudweb_skin['csp']['LnkL']['FontFamily']; ?>;
+  font-weight: <?php echo $rudweb_skin['csp']['LnkL']['FontWeight']; ?>;
+  font-size: <?php echo $rudweb_skin['csp']['LnkL']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+}
+A.csplink:visited {
+  background-color: <?php echo $rudweb_skin['csp']['LnkV']['BgColor']; ?>;
+  background: transparent;
+  color: <?php echo $rudweb_skin['csp']['LnkV']['FontColor']; ?>;
+  text-decoration: <?php echo $rudweb_skin['csp']['LnkV']['TextDecoration']; ?>;
+  font-family: <?php echo $rudweb_skin['csp']['LnkV']['FontFamily']; ?>;
+  font-weight: <?php echo $rudweb_skin['csp']['LnkV']['FontWeight']; ?>;
+  font-size: <?php echo $rudweb_skin['csp']['LnkV']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+}
+A.csplink:hover {
+  background-color: <?php echo $rudweb_skin['csp']['LnkH']['BgColor']; ?>;
+  background: transparent;
+  color: <?php echo $rudweb_skin['csp']['LnkH']['FontColor']; ?>;
+  text-decoration: <?php echo $rudweb_skin['csp']['LnkH']['TextDecoration']; ?>;
+  font-family: <?php echo $rudweb_skin['csp']['LnkH']['FontFamily']; ?>;
+  font-weight: <?php echo $rudweb_skin['csp']['LnkH']['FontWeight']; ?>;
+  font-size: <?php echo $rudweb_skin['csp']['LnkH']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+}

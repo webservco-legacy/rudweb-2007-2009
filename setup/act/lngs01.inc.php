@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/lngs01.inc.php
-12:52 2008-04-06
+16:50 2008-04-16
 */
 ?>
 <FORM NAME="lngform" METHOD="POST" STYLE="display: inline; margin: 0px; padding: 0px;" ACTION="./setup.php?pid=<?php echo $pid;?>&amp;set=<?php echo $set;?>&amp;act=lngs&amp;step=2">
@@ -73,6 +73,13 @@ $_SESSION['rudwebset_cfg_ln_cfg'][$langs[$lni]] = 'off';
 <TD CLASS="cnt">
 <INPUT TYPE="text" CLASS="general" NAME="langs_itemtt[<?php echo $langs[$lni];?>]" SIZE="50" MAXLENGTH="255" VALUE="<?php echo $_SESSION['rudwebset_langs_itemtt'][$langs[$lni]];?>">
 </TD></TR></TABLE>
+
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">catalog special offers:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="langs_csp[<?php echo $langs[$lni];?>]" SIZE="50" MAXLENGTH="255" VALUE="<?php echo $_SESSION['rudwebset_langs_csp'][$langs[$lni]];?>">
+</TD></TR></TABLE>
+
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
 <TR><TD CLASS="cnt" WIDTH="150" STYLE="text-align: right">catalog product id:</TD>
 <TD CLASS="cnt">

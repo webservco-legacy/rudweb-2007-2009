@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/act/usett02.inc.php
-12:50 2008-04-05
+15:52 2008-04-15
 */
 ?>
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
@@ -243,6 +243,21 @@
   <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_cfg_cart_on'] == "0") {echo " SELECTED";}?>>off</OPTION>
   <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_cfg_cart_on'] == "1") {echo " SELECTED";}?>>on</OPTION>
 </SELECT>
+</TD></TR></TABLE>
+
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">catalog special offers:</TD>
+<TD CLASS="cnt">
+<SELECT CLASS="general" NAME="cfg_csp_on">
+  <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_cfg_csp_on'] == "0") {echo " SELECTED";}?>>off</OPTION>
+  <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_cfg_csp_on'] == "1") {echo " SELECTED";}?>>on</OPTION>
+</SELECT>
+</TD></TR></TABLE>
+
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">special offers items:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="cfg_csp_lmt" SIZE="2" MAXLENGTH="150" VALUE="<?php echo $_SESSION['rudwebset_cfg_csp_lmt'];?>">
 </TD></TR></TABLE>
 
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">

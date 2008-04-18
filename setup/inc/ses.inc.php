@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/cfg/ses.inc.php
-19:36 2008-04-07
+16:51 2008-04-16
 */
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -107,9 +107,11 @@ if (isset($_POST['proceed']) && !isset($_SESSION['rudwebset_start'])) {
   $_SESSION['rudwebset_cfg_cnt_shw']             = '0';
   $_SESSION['rudwebset_cfg_lang_on']             = '1';
   $_SESSION['rudwebset_cfg_usr_on']              = '1';
-  $_SESSION['rudwebset_cfg_skin_on']            = '1';
+  $_SESSION['rudwebset_cfg_skin_on']             = '1';
   $_SESSION['rudwebset_cfg_cat']                 = '0';
   $_SESSION['rudwebset_cfg_cart_on']             = '0';
+  $_SESSION['rudwebset_cfg_csp_on']              = '0';
+  $_SESSION['rudwebset_cfg_csp_lmt']             = '3';
   $_SESSION['rudwebset_cfg_stats_on']            = '1';
   $_SESSION['rudwebset_cfg_stats_ip']            = '86.123.192.163, 80.96.77.225';
   $_SESSION['rudwebset_cfg_ftr_on']              = '1';
@@ -225,6 +227,13 @@ if (isset($_POST['proceed']) && !isset($_SESSION['rudwebset_start'])) {
   $_SESSION['rudwebset_langs_itemtt']['it']     = 'Item Details it';
   $_SESSION['rudwebset_langs_itemtt']['ro']     = 'Item Details ro';
   
+  $_SESSION['rudwebset_langs_csp']['en']        = 'Special Offers en';
+  $_SESSION['rudwebset_langs_csp']['de']        = 'Special Offers de';
+  $_SESSION['rudwebset_langs_csp']['es']        = 'Special Offers es';
+  $_SESSION['rudwebset_langs_csp']['fr']        = 'Special Offers fr';
+  $_SESSION['rudwebset_langs_csp']['it']        = 'Special Offers it';
+  $_SESSION['rudwebset_langs_csp']['ro']        = 'Special Offers ro';
+  
   $_SESSION['rudwebset_langs_cat_pid']['en']     = 'No. en';
   $_SESSION['rudwebset_langs_cat_pid']['de']     = 'No. de';
   $_SESSION['rudwebset_langs_cat_pid']['es']     = 'No. es';
@@ -300,7 +309,7 @@ if(isset($_POST['cfg_exp']))                 {$_SESSION['rudwebset_cfg_exp']    
 if(isset($_POST['cfg_cache']))               {$_SESSION['rudwebset_cfg_cache']               = $_POST['cfg_cache'];}
 
 if(isset($_POST['cfg_lang']))                {$_SESSION['rudwebset_cfg_lang']                = $_POST['cfg_lang'];}
-if(isset($_POST['cfg_skin']))               {$_SESSION['rudwebset_cfg_skin']               = $_POST['cfg_skin'];}
+if(isset($_POST['cfg_skin']))                {$_SESSION['rudwebset_cfg_skin']                = $_POST['cfg_skin'];}
 
 if(isset($_POST['cfg_cnt_en']))              {$_SESSION['rudwebset_cfg_cnt_en']              = $_POST['cfg_cnt_en'];}
 if(isset($_POST['cfg_cnt_de']))              {$_SESSION['rudwebset_cfg_cnt_de']              = $_POST['cfg_cnt_de'];}
@@ -312,9 +321,11 @@ if(isset($_POST['cfg_cnt_shw']))             {$_SESSION['rudwebset_cfg_cnt_shw']
 
 if(isset($_POST['cfg_lang_on']))             {$_SESSION['rudwebset_cfg_lang_on']             = $_POST['cfg_lang_on'];}
 if(isset($_POST['cfg_usr_on']))              {$_SESSION['rudwebset_cfg_usr_on']              = $_POST['cfg_usr_on'];}
-if(isset($_POST['cfg_skin_on']))            {$_SESSION['rudwebset_cfg_skin_on']            = $_POST['cfg_skin_on'];}
+if(isset($_POST['cfg_skin_on']))             {$_SESSION['rudwebset_cfg_skin_on']             = $_POST['cfg_skin_on'];}
 if(isset($_POST['cfg_cat']))                 {$_SESSION['rudwebset_cfg_cat']                 = $_POST['cfg_cat'];}
 if(isset($_POST['cfg_cart_on']))             {$_SESSION['rudwebset_cfg_cart_on']             = $_POST['cfg_cart_on'];}
+if(isset($_POST['cfg_csp_on']))              {$_SESSION['rudwebset_cfg_csp_on']              = $_POST['cfg_csp_on'];}
+if(isset($_POST['cfg_csp_lmt']))             {$_SESSION['rudwebset_cfg_csp_lmt']             = $_POST['cfg_csp_lmt'];}
 if(isset($_POST['cfg_stats_on']))            {$_SESSION['rudwebset_cfg_stats_on']            = $_POST['cfg_stats_on'];}
 if(isset($_POST['cfg_stats_ip']))            {$_SESSION['rudwebset_cfg_stats_ip']            = $_POST['cfg_stats_ip'];}
 if(isset($_POST['cfg_ftr_on']))              {$_SESSION['rudwebset_cfg_ftr_on']              = $_POST['cfg_ftr_on'];}
@@ -440,6 +451,13 @@ if(isset($_POST['langs_itemtt']['es']))      {$_SESSION['rudwebset_langs_itemtt'
 if(isset($_POST['langs_itemtt']['fr']))      {$_SESSION['rudwebset_langs_itemtt']['fr']      = $_POST['langs_itemtt']['fr'];}
 if(isset($_POST['langs_itemtt']['it']))      {$_SESSION['rudwebset_langs_itemtt']['it']      = $_POST['langs_itemtt']['it'];}
 if(isset($_POST['langs_itemtt']['ro']))      {$_SESSION['rudwebset_langs_itemtt']['ro']      = $_POST['langs_itemtt']['ro'];}
+
+if(isset($_POST['langs_csp']['en']))         {$_SESSION['rudwebset_langs_csp']['en']         = $_POST['langs_csp']['en'];}
+if(isset($_POST['langs_csp']['de']))         {$_SESSION['rudwebset_langs_csp']['de']         = $_POST['langs_csp']['de'];}
+if(isset($_POST['langs_csp']['es']))         {$_SESSION['rudwebset_langs_csp']['es']         = $_POST['langs_csp']['es'];}
+if(isset($_POST['langs_csp']['fr']))         {$_SESSION['rudwebset_langs_csp']['fr']         = $_POST['langs_csp']['fr'];}
+if(isset($_POST['langs_csp']['it']))         {$_SESSION['rudwebset_langs_csp']['it']         = $_POST['langs_csp']['it'];}
+if(isset($_POST['langs_csp']['ro']))         {$_SESSION['rudwebset_langs_csp']['ro']         = $_POST['langs_csp']['ro'];}
 
 if(isset($_POST['langs_cat_pid']['en']))     {$_SESSION['rudwebset_langs_cat_pid']['en']     = $_POST['langs_cat_pid']['en'];}
 if(isset($_POST['langs_cat_pid']['de']))     {$_SESSION['rudwebset_langs_cat_pid']['de']     = $_POST['langs_cat_pid']['de'];}

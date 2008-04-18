@@ -1,7 +1,7 @@
 <?php
 /*
 ./skins/rudskin/skin.inc.php
-20:46 2008-04-13
+20:02 2008-04-16
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once '../../lib/404.php';}
 
@@ -845,7 +845,7 @@ else {
   // ??
   $rudweb_skin['prod']['com']['hdr']        = '';
   // product list - items.inc
-  $rudweb_skin['prod']['lst']['hdr']        = '<BR><BR><TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0">';
+  $rudweb_skin['prod']['lst']['hdr']        = '<BR CLEAR="all"><TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0">';
   $rudweb_skin['prod']['lst']['hdrhdr']     = '<TR CLASS="lst_prd_hdr">';
   $rudweb_skin['prod']['lst']['ftrhdr']     = '</TR>';
   $rudweb_skin['prod']['lst']['hdrprd']     = '<TR CLASS="lst_prd_prd">';
@@ -887,51 +887,51 @@ else {
   $rudweb_skin['prod']['LnkH']['FontSize']       = $rudweb_skin['FontSize'];
   // product details - item.inc
   $rudweb_skin['prod']['dt']['picmax']           = '80';
-  $rudweb_skin['prod']['dt']['hdr'] = '';
+  $rudweb_skin['prod']['dt']['hdr']              = '<DIV>';
   // main picture
-  $rudweb_skin['prod']['dt']['pict0']['pre'] = '';
-  $rudweb_skin['prod']['dt']['pict0']['suf'] = '';
+  $rudweb_skin['prod']['dt']['pict0']['pre']     = '<DIV>';
+  $rudweb_skin['prod']['dt']['pict0']['suf']     = '</DIV>';
   // product name
-  $rudweb_skin['prod']['dt']['tt_vl']['pre'] = '';
-  $rudweb_skin['prod']['dt']['tt_vl']['suf'] = '';
+  $rudweb_skin['prod']['dt']['tt_vl']['pre']     = '<DIV>';
+  $rudweb_skin['prod']['dt']['tt_vl']['suf']     = '</DIV>';
   // offer id
-  $rudweb_skin['prod']['dt']['pid_tt']['pre'] = '';
-  $rudweb_skin['prod']['dt']['pid_tt']['suf'] = '';
-  $rudweb_skin['prod']['dt']['pid_vl']['pre'] = '';
-  $rudweb_skin['prod']['dt']['pid_vl']['suf'] = '';
+  $rudweb_skin['prod']['dt']['pid_tt']['pre']    = '<DIV>';
+  $rudweb_skin['prod']['dt']['pid_tt']['suf']    = '</DIV>';
+  $rudweb_skin['prod']['dt']['pid_vl']['pre']    = '<DIV>';
+  $rudweb_skin['prod']['dt']['pid_vl']['suf']    = '</DIV>';
   // product description
-  $rudweb_skin['prod']['dt']['dsc_tt']['pre'] = '';
-  $rudweb_skin['prod']['dt']['dsc_tt']['suf'] = '';
-  $rudweb_skin['prod']['dt']['dsc_vl']['pre'] = '';
-  $rudweb_skin['prod']['dt']['dsc_vl']['suf'] = '';
+  $rudweb_skin['prod']['dt']['dsc_tt']['pre']    = '<DIV>';
+  $rudweb_skin['prod']['dt']['dsc_tt']['suf']    = '</DIV>';
+  $rudweb_skin['prod']['dt']['dsc_vl']['pre']    = '<DIV>';
+  $rudweb_skin['prod']['dt']['dsc_vl']['suf']    = '</DIV>';
   // all othe rdetails
-  $rudweb_skin['prod']['dt']['det']['hdr'] = '';
-  $rudweb_skin['prod']['dt']['det_tt']['pre'] = '';
-  $rudweb_skin['prod']['dt']['det_tt']['suf'] = '';
-  $rudweb_skin['prod']['dt']['det_vl']['pre'] = '';
-  $rudweb_skin['prod']['dt']['det_vl']['suf'] = '';
-  $rudweb_skin['prod']['dt']['det']['ftr'] = '';
+  $rudweb_skin['prod']['dt']['det']['hdr']       = '<DIV>';
+  $rudweb_skin['prod']['dt']['det_tt']['pre']    = '<DIV>';
+  $rudweb_skin['prod']['dt']['det_tt']['suf']    = '</DIV>';
+  $rudweb_skin['prod']['dt']['det_vl']['pre']    = '<DIV>';
+  $rudweb_skin['prod']['dt']['det_vl']['suf']    = '</DIV>';
+  $rudweb_skin['prod']['dt']['det']['ftr']       = '</DIV>';
   // quantity
-  $rudweb_skin['prod']['dt']['qty_tt']['pre'] = '';
-  $rudweb_skin['prod']['dt']['qty_tt']['pre'] = '';
-  $rudweb_skin['prod']['dt']['qty_vl']['pre'] = '';
-  $rudweb_skin['prod']['dt']['qty_vl']['suf'] = '';
+  $rudweb_skin['prod']['dt']['qty_tt']['pre']    = '<DIV>';
+  $rudweb_skin['prod']['dt']['qty_tt']['suf']    = '</DIV>';
+  $rudweb_skin['prod']['dt']['qty_vl']['pre']    = '<DIV>';
+  $rudweb_skin['prod']['dt']['qty_vl']['suf']    = '</DIV>';
   // price
-  $rudweb_skin['prod']['dt']['prc_tt']['pre'] = '';
-  $rudweb_skin['prod']['dt']['prc_tt']['suf'] = '';
-  $rudweb_skin['prod']['dt']['prc_vl']['pre'] = '';
-  $rudweb_skin['prod']['dt']['prc_vl']['suf'] = '';
+  $rudweb_skin['prod']['dt']['prc_tt']['pre']    = '<DIV>';
+  $rudweb_skin['prod']['dt']['prc_tt']['suf']    = '</DIV>';
+  $rudweb_skin['prod']['dt']['prc_vl']['pre']    = '<DIV>';
+  $rudweb_skin['prod']['dt']['prc_vl']['suf']    = '</DIV>';
   // product pictures
-  $rudweb_skin['prod']['dt']['pic0']['hdr'] = '';
-  $rudweb_skin['prod']['dt']['pic0']['pre'] = '';
-  $rudweb_skin['prod']['dt']['pic0']['suf'] = '';
-  $rudweb_skin['prod']['dt']['pic0']['sep'] = '';
-  $rudweb_skin['prod']['dt']['pic0']['ftr'] = '';
+  $rudweb_skin['prod']['dt']['pic0']['hdr']      = '<DIV>';
+  $rudweb_skin['prod']['dt']['pic0']['pre']      = '<DIV>';
+  $rudweb_skin['prod']['dt']['pic0']['suf']      = '</DIV>';
+  $rudweb_skin['prod']['dt']['pic0']['sep']      = '';
+  $rudweb_skin['prod']['dt']['pic0']['ftr']      = '</DIV>';
   // product form
-  $rudweb_skin['prod']['dt']['form']['pre'] = '';
-  $rudweb_skin['prod']['dt']['form']['suf'] = '';
+  $rudweb_skin['prod']['dt']['form']['pre']      = '<DIV>';
+  $rudweb_skin['prod']['dt']['form']['suf']      = '</DIV>';
   //details footer
-  $rudweb_skin['prod']['dt']['ftr'] = '';
+  $rudweb_skin['prod']['dt']['ftr']              = '</DIV>';
   
   /* ********** ********** ********** ADMINISTRATION MODULE ********** ********** ********** */
   // ADMIN MODULE
@@ -947,15 +947,15 @@ else {
   $rudweb_skin['adm']['login']['sep'] = '';
   $rudweb_skin['adm']['login']['ftr'] = '</TR></TABLE>';
   
-  $rudweb_skin['adm']['mnu']['hdr']   = '';
-  $rudweb_skin['adm']['mnuhd']['pre'] = '';
-  $rudweb_skin['adm']['mnuhd']['suf'] = '';
-  $rudweb_skin['adm']['mnutt']['pre'] = '';
-  $rudweb_skin['adm']['mnutt']['suf'] = '';
-  $rudweb_skin['adm']['mnu']['pre']   = '';
-  $rudweb_skin['adm']['mnu']['suf']   = '';
+  $rudweb_skin['adm']['mnu']['hdr']   = '<DIV>';
+  $rudweb_skin['adm']['mnuhd']['pre'] = '<DIV>';
+  $rudweb_skin['adm']['mnuhd']['suf'] = '</DIV>';
+  $rudweb_skin['adm']['mnutt']['pre'] = '<DIV>';
+  $rudweb_skin['adm']['mnutt']['suf'] = '</DIV>';
+  $rudweb_skin['adm']['mnu']['pre']   = '<DIV>';
+  $rudweb_skin['adm']['mnu']['suf']   = '</DIV>';
   $rudweb_skin['adm']['mnu']['sep']   = '';
-  $rudweb_skin['adm']['mnu']['ftr']   = '';
+  $rudweb_skin['adm']['mnu']['ftr']   = '</DIV>';
   
   $rudweb_skin['adm']['mnu']['LnkL']['BgColor']        = $rudweb_skin['FontColor'];
   $rudweb_skin['adm']['mnu']['LnkL']['FontColor']      = $rudweb_skin['BgColor'];
@@ -981,5 +981,45 @@ else {
   $rudweb_skin['adm']['mnu']['Lnk']['FontFamily']      = $rudweb_skin['FontFamily'];
   $rudweb_skin['adm']['mnu']['Lnk']['FontWeight']      = 'bold';
   $rudweb_skin['adm']['mnu']['Lnk']['FontSize']        = $rudweb_skin['FontSize'];
+  // CATALOG SPECIAL OFFERS
+  $rudweb_skin['csp']['hdr']                   = "\n<DIV CLASS=\"".$rudweb_skin['cnt']['tt1']['class']."\">&#160;&#160;".$rudweb_ln['catalog']['csp']."</DIV><BR>";
+  $rudweb_skin['csp']['ftr']                   = "\n";
+
+  $rudweb_skin['csp']['pre']                   = "\n";
+  $rudweb_skin['csp']['suf']                   = "\n";
+  $rudweb_skin['csp']['sep']                   = "\n<BR><BR>";
+
+  //$rudweb_skin['csp']['limit']                 = "3"; // how many modules to display
+  $rudweb_skin['csp']['chartt']                = "20"; // how many characters for title
+  $rudweb_skin['csp']['chardesc']              = "20"; // how many characters for description
+
+  $rudweb_skin['csp']['pic']['pre']            = "\n<BR>";
+  $rudweb_skin['csp']['pic']['suf']            = "\n<BR>";
+  $rudweb_skin['csp']['tt']['pre']             = "\n";
+  $rudweb_skin['csp']['tt']['suf']             = "\n";
+  $rudweb_skin['csp']['dsc']['pre']            = "\n";
+  $rudweb_skin['csp']['dsc']['suf']            = "\n";
+
+  // FEATURED LINK
+  $rudweb_skin['csp']['LnkL']['BgColor']        = $rudweb_skin['BgColor'];
+  $rudweb_skin['csp']['LnkL']['FontColor']      = $rudweb_skin['FontColor'];
+  $rudweb_skin['csp']['LnkL']['TextDecoration'] = "underline";
+  $rudweb_skin['csp']['LnkL']['FontFamily']     = $rudweb_skin['FontFamily'];
+  $rudweb_skin['csp']['LnkL']['FontWeight']     = "bold";
+  $rudweb_skin['csp']['LnkL']['FontSize']       = $rudweb_skin['FontSize'];
+  // FEATURED VISITED LINK
+  $rudweb_skin['csp']['LnkV']['BgColor']        = $rudweb_skin['BgColor'];
+  $rudweb_skin['csp']['LnkV']['FontColor']      = $rudweb_skin['FontColor'];
+  $rudweb_skin['csp']['LnkV']['TextDecoration'] = "underline";
+  $rudweb_skin['csp']['LnkV']['FontFamily']     = $rudweb_skin['FontFamily'];
+  $rudweb_skin['csp']['LnkV']['FontWeight']     = "bold";
+  $rudweb_skin['csp']['LnkV']['FontSize']       = $rudweb_skin['FontSize'];
+  // FEATURED HOVER LINK
+  $rudweb_skin['csp']['LnkH']['BgColor']        = $rudweb_skin['BgColor'];
+  $rudweb_skin['csp']['LnkH']['FontColor']      = $rudweb_skin['FontColor'];
+  $rudweb_skin['csp']['LnkH']['TextDecoration'] = "none";
+  $rudweb_skin['csp']['LnkH']['FontFamily']     = $rudweb_skin['FontFamily'];
+  $rudweb_skin['csp']['LnkH']['FontWeight']     = "bold";
+  $rudweb_skin['csp']['LnkH']['FontSize']       = $rudweb_skin['FontSize'];
 }
 ?>

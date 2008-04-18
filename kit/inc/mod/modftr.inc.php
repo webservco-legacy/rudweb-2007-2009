@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modftr.inc.php
-12:50 2008-04-05
+20:02 2008-04-16
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -26,7 +26,7 @@ function showFeatured() {
       if (mysql_num_rows($rst_query_ftr_cnt[$ftri]) != '0') {
         $row_rst_ftr_cnt[$ftri] = mysql_fetch_assoc($rst_query_ftr_cnt[$ftri]);
         
-        if (strlen($row_rst_ftr_cnt[$ftri]['cnt_tt']) <= $rudweb_skin['ftr']['chardesc']) {$short_title = $row_rst_ftr_cnt[$ftri]['cnt_tt'];}
+        if (strlen($row_rst_ftr_cnt[$ftri]['cnt_tt']) <= $rudweb_skin['ftr']['chartt']) {$short_title = $row_rst_ftr_cnt[$ftri]['cnt_tt'];}
         else {$short_title = str_split($row_rst_ftr_cnt[$ftri]['cnt_tt'], $rudweb_skin['ftr']['chartt']); $short_title = $short_title['0'] . ' ...';}
       
         echo $rudweb_skin['ftr']['tt']['pre'];

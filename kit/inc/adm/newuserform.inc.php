@@ -26,7 +26,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 <TR>
   <TD STYLE="text-align: right;"><?php echo $rudweb_ln['usr']['usrfirstname'];?>:</TD>
   <TD STYLE="text-align: left;">
-  <INPUT CLASS="forminput" TYPE="text" NAME="usr_first_name" SIZE="20" MAXLENGTH="30" VALUE="<?php echo $usr_first_name;?>">
+  <INPUT CLASS="forminput" STYLE="background-color: <?php echo $rudweb_skin['BgReqColor'];?>" TYPE="text" NAME="usr_first_name" SIZE="20" MAXLENGTH="30" VALUE="<?php echo $usr_first_name;?>">
   &#160;&#42;
   </TD>
 </TR>
@@ -39,7 +39,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 <TR>
   <TD STYLE="text-align: right;"><?php echo $rudweb_ln['usr']['usrlastname'];?>:</TD>
   <TD STYLE="text-align: left;">
-  <INPUT CLASS="forminput" TYPE="text" NAME="usr_last_name" SIZE="20" MAXLENGTH="30" VALUE="<?php echo $usr_last_name;?>">
+  <INPUT CLASS="forminput" STYLE="background-color: <?php echo $rudweb_skin['BgReqColor'];?>" TYPE="text" NAME="usr_last_name" SIZE="20" MAXLENGTH="30" VALUE="<?php echo $usr_last_name;?>">
   &#160;&#42;
   </TD>
 </TR>
@@ -66,7 +66,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 <TR>
   <TD STYLE="text-align: right;"><?php echo $rudweb_ln['usr']['usrcountry'];?>:</TD>
   <TD STYLE="text-align: left;">
-  <INPUT CLASS="forminput" TYPE="text" NAME="usr_country" SIZE="20" MAXLENGTH="30" VALUE="<?php echo $usr_country;?>">
+  <INPUT CLASS="forminput" STYLE="background-color: <?php echo $rudweb_skin['BgReqColor'];?>" TYPE="text" NAME="usr_country" SIZE="20" MAXLENGTH="30" VALUE="<?php echo $usr_country;?>">
   &#160;&#42;
   </TD>
 </TR>
@@ -79,7 +79,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 <TR>
   <TD STYLE="text-align: right;"><?php echo $rudweb_ln['usr']['usremail1'];?>:</TD>
   <TD STYLE="text-align: left;">
-  <INPUT CLASS="forminput" TYPE="text" NAME="usr_email1" SIZE="20" MAXLENGTH="30" VALUE="<?php echo $usr_email1;?>">
+  <INPUT CLASS="forminput" STYLE="background-color: <?php echo $rudweb_skin['BgReqColor'];?>" TYPE="text" NAME="usr_email1" SIZE="20" MAXLENGTH="30" VALUE="<?php echo $usr_email1;?>">
   &#160;&#42;
   </TD>
 </TR>
@@ -87,7 +87,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 <TR>
   <TD STYLE="text-align: right;"><?php echo $rudweb_ln['usr']['usremail2'];?>:</TD>
   <TD STYLE="text-align: left;">
-  <INPUT CLASS="forminput" TYPE="text" NAME="usr_email2" SIZE="20" MAXLENGTH="30" VALUE="<?php echo $usr_email2;?>">
+  <INPUT CLASS="forminput" STYLE="background-color: <?php echo $rudweb_skin['BgReqColor'];?>" TYPE="text" NAME="usr_email2" SIZE="20" MAXLENGTH="30" VALUE="<?php echo $usr_email2;?>">
   &#160;&#42;
   </TD>
 </TR>
@@ -100,7 +100,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 <TR>
   <TD STYLE="text-align: right;"><?php echo $rudweb_ln['usr']['usrpass1'];?>:</TD>
   <TD STYLE="text-align: left;">
-  <INPUT CLASS="forminput" TYPE="password" NAME="usr_pass1" SIZE="20" MAXLENGTH="30" VALUE="<?php echo $usr_pass1;?>">
+  <INPUT CLASS="forminput" STYLE="background-color: <?php echo $rudweb_skin['BgReqColor'];?>" TYPE="password" NAME="usr_pass1" SIZE="20" MAXLENGTH="30" VALUE="<?php echo $usr_pass1;?>">
   &#160;&#42;
   </TD>
 </TR>
@@ -108,7 +108,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 <TR>
   <TD STYLE="text-align: right;"><?php echo $rudweb_ln['usr']['usrpass2'];?>:</TD>
   <TD STYLE="text-align: left;">
-  <INPUT CLASS="forminput" TYPE="password" NAME="usr_pass2" SIZE="20" MAXLENGTH="30" VALUE="<?php echo $usr_pass2;?>">
+  <INPUT CLASS="forminput" STYLE="background-color: <?php echo $rudweb_skin['BgReqColor'];?>" TYPE="password" NAME="usr_pass2" SIZE="20" MAXLENGTH="30" VALUE="<?php echo $usr_pass2;?>">
   &#160;&#42;
   </TD>
 </TR>
@@ -144,8 +144,8 @@ for($lni = 1; $lni <= $langst; $lni++) {
 </TR>
 <TR>
   <TD STYLE="text-align: right;"><?php echo $rudweb_ln['usr']['usragree1'];?>:</TD>
-  <TD STYLE="text-align: left;">
-  <INPUT TYPE="checkbox" CLASS="forminput" NAME="usr_agree"<?php if($usr_agree == '1') {echo ' CHECKED';};?>>
+  <TD STYLE="text-align: left; background-color: <?php echo $rudweb_skin['BgReqColor'];?>">
+  <INPUT TYPE="checkbox" STYLE="background-color: <?php echo $rudweb_skin['BgReqColor'];?>" CLASS="forminput" NAME="usr_agree"<?php if($usr_agree == '1') {echo ' CHECKED';};?>>
   &#160;
   <?php echo $rudweb_ln['usr']['usragree2'];?>&#160;<?php echo $rudweb_ln['usr']['usragree3'];?>&#160;<?php echo $rudweb_ln['usr']['usragree4'];?></TD>
 </TR>
