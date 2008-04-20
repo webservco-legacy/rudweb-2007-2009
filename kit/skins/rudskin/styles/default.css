@@ -1,91 +1,45 @@
 /*
 ./skins/rudskin/styles/default.css
-20:45 2008-04-13
+11:16 2008-04-18
 */
 /* ********** ********** ********** DEFAULT ********** ********** ********** */
 BODY {
   background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   color: <?php echo $rudweb_skin['FontColor']; ?>;
-  margin-top: <?php echo $rudweb_skin['MarginTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  margin-bottom: <?php echo $rudweb_skin['MarginBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  margin-left: <?php echo $rudweb_skin['MarginLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  margin-right: <?php echo $rudweb_skin['MarginRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
   text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
   font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
   font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-bottom-width: <?php echo $rudweb_skin['BorderBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-right-width: <?php echo $rudweb_skin['BorderRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-left: <?php echo $rudweb_skin['PaddingLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-right: <?php echo $rudweb_skin['PaddingRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
 }
-
 /* get more control */
 FORM {display: inline; margin: 0px; padding: 0px;}
 P {margin: 0 0 0 0; }
 H1 {margin: 0 0 0 0; line-height: 130%; font-size: 1.3em;}
 H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
-/* //get more control */
-.hidden {
+.hidden { /* hidden divs */
   display: none;
 }
-.err {
+.err { /* error messages */ 
   width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontErrColor']; ?>;
   text-align: center;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
   font-weight: bold;
   font-size: 1em;
   line-height: 100%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-bottom-width: <?php echo $rudweb_skin['BorderBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-right-width: <?php echo $rudweb_skin['BorderRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-left: <?php echo $rudweb_skin['PaddingLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-right: <?php echo $rudweb_skin['PaddingRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
   cursor: text;
 }
-.ok {
+.ok { /* ok messages */
   width: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontOkColor']; ?>;
   text-align: center;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
   font-weight: bold;
   font-size: 1em;
   line-height: 100%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-bottom-width: <?php echo $rudweb_skin['BorderBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-right-width: <?php echo $rudweb_skin['BorderRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-left: <?php echo $rudweb_skin['PaddingLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-right: <?php echo $rudweb_skin['PaddingRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
   cursor: text;
 }
 .title {
@@ -95,21 +49,10 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['FontColor']; ?>;
-  color: <?php echo $rudweb_skin['BgColor']; ?>;
-  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
   vertical-align: middle;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
   font-weight: bold;
   font-size: 1.1em;
   line-height: 100%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-bottom-width: <?php echo $rudweb_skin['BorderBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-right-width: <?php echo $rudweb_skin['BorderRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
   padding-top: 5<?php echo $rudweb_skin['Measure']; ?>;
   padding-bottom: 5<?php echo $rudweb_skin['Measure']; ?>;
   padding-left: 5<?php echo $rudweb_skin['Measure']; ?>;
@@ -122,24 +65,9 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['FontColor']; ?>;
-  color: <?php echo $rudweb_skin['BgColor']; ?>;
-  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
   font-weight: bold;
   font-size: 1.1em;
   line-height: 100%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-bottom-width: <?php echo $rudweb_skin['BorderBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-right-width: <?php echo $rudweb_skin['BorderRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-left: <?php echo $rudweb_skin['PaddingLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-right: <?php echo $rudweb_skin['PaddingRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
   cursor: text;
 }
 .subtitle {
@@ -147,24 +75,9 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
   font-weight: bold;
   font-size: 1em;
   line-height: 100%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-bottom-width: <?php echo $rudweb_skin['BorderBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-right-width: <?php echo $rudweb_skin['BorderRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-left: <?php echo $rudweb_skin['PaddingLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-right: <?php echo $rudweb_skin['PaddingRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
   cursor: text;
 }
 .subtitleadm {
@@ -172,24 +85,9 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
   font-weight: bold;
   font-size: 1em;
   line-height: 100%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-bottom-width: <?php echo $rudweb_skin['BorderBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-right-width: <?php echo $rudweb_skin['BorderRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-left: <?php echo $rudweb_skin['PaddingLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-right: <?php echo $rudweb_skin['PaddingRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
   cursor: text;
 }
 .text {
@@ -197,22 +95,7 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   line-height: 130%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-bottom-width: <?php echo $rudweb_skin['BorderBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-right-width: <?php echo $rudweb_skin['BorderRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
   padding-left: 10px;
   padding-right: 10px;
   cursor: text;
@@ -222,24 +105,8 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   line-height: 130%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-bottom-width: <?php echo $rudweb_skin['BorderBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-right-width: <?php echo $rudweb_skin['BorderRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
   padding-left: 10px;
-  padding-right: <?php echo $rudweb_skin['PaddingRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
   cursor: text;
 }
 .imgupload {
@@ -247,24 +114,7 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   line-height: 100%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-bottom-width: <?php echo $rudweb_skin['BorderBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-right-width: <?php echo $rudweb_skin['BorderRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-left: <?php echo $rudweb_skin['PaddingLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-right: <?php echo $rudweb_skin['PaddingRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
   cursor: text;
 }
 .chk {
@@ -272,24 +122,7 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   line-height: 100%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-bottom-width: <?php echo $rudweb_skin['BorderBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-right-width: <?php echo $rudweb_skin['BorderRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-left: <?php echo $rudweb_skin['PaddingLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-right: <?php echo $rudweb_skin['PaddingRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
   cursor: default;
 }
 .usr_td {
@@ -297,23 +130,9 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontColor']; ?>;
   text-align: center;
   vertical-align: middle;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   line-height: 100%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-bottom-width: <?php echo $rudweb_skin['BorderBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-right-width: <?php echo $rudweb_skin['BorderRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
   padding-left: 5px;
   padding-right: 5px;
   cursor: text;
@@ -323,23 +142,9 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;;
-  color: <?php echo $rudweb_skin['FontColor']; ?>;
   text-align: center;
   vertical-align: middle;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   line-height: 100%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-bottom-width: <?php echo $rudweb_skin['BorderBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  border-right-width: <?php echo $rudweb_skin['BorderRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
   padding-left: 5px;
   padding-right: 5px;
   cursor: text;
@@ -349,24 +154,10 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontColor']; ?>;
   text-align: center;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   line-height: 100%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
   border-bottom-width: 1px;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
   border-right-width: 1px;
-  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-left: <?php echo $rudweb_skin['PaddingLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-right: <?php echo $rudweb_skin['PaddingRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
   cursor: text;
 }
 .loginsubmit {
@@ -374,24 +165,10 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontColor']; ?>;
   text-align: center;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   line-height: 100%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
   border-bottom-width: 1px;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
   border-right-width: 1px;
-  padding-top: <?php echo $rudweb_skin['PaddingTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-bottom: <?php echo $rudweb_skin['PaddingBottom']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-left: <?php echo $rudweb_skin['PaddingLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-right: <?php echo $rudweb_skin['PaddingRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
   cursor: pointer;
 }
 .forminput {
@@ -399,24 +176,11 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   line-height: 100%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
-  border-top-width: <?php echo $rudweb_skin['BorderTop']; ?><?php echo $rudweb_skin['Measure']; ?>;
   border-bottom-width: 1px;
-  border-left-width: <?php echo $rudweb_skin['BorderLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
   border-right-width: 1px;
   padding-top: 1px;
   padding-bottom: 1px;
-  padding-left: <?php echo $rudweb_skin['PaddingLeft']; ?><?php echo $rudweb_skin['Measure']; ?>;
-  padding-right: <?php echo $rudweb_skin['PaddingRight']; ?><?php echo $rudweb_skin['Measure']; ?>;
   cursor: default;
 }
 .formsubmit {
@@ -424,16 +188,8 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontColor']; ?>;
   text-align: center;
-  text-decoration: <?php echo $rudweb_skin['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   line-height: 100%;
-  border-color: <?php echo $rudweb_skin['BorderColor']; ?>;
-  border-style: <?php echo $rudweb_skin['BorderStyle']; ?>;
   border-top-width: 1px;
   border-bottom-width: 1px;
   border-left-width: 1px;
@@ -445,125 +201,57 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   cursor: pointer;
 }
 /* ********** ********** ********** //DEFAULT ********** ********** ********** */
-
 /* ********** ********** ********** DEFAULT 2  ********** ********** ********** */
 A.default:link {
-  background-color: <?php echo $rudweb_skin['LnkL']['BgColor']; ?>;
+background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['LnkL']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['LnkL']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['LnkL']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['LnkL']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['LnkL']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.default:visited {
-  background-color: <?php echo $rudweb_skin['LnkV']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['LnkV']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['LnkV']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['LnkV']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['LnkV']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['LnkV']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.default:hover {
-  background-color: <?php echo $rudweb_skin['LnkH']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['LnkH']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['LnkH']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['LnkH']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['LnkH']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['LnkH']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: none;
 }
 SPAN.link_default {
-  background-color: <?php echo $rudweb_skin['LnkL']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['LnkL']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['LnkL']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['LnkL']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['LnkL']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['LnkL']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: none;
 }
 <?php
 for ($cssi=0; $cssi<count($rudweb_skin['mnu']['mm']['LnkL']['BgColor']); $cssi++) {
 ?>
 A.mm-mnu_<?php echo $cssi; ?>:link {
-  background-color: <?php echo $rudweb_skin['mnu']['mm']['LnkL']['BgColor'][$cssi]; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['mnu']['mm']['LnkL']['FontColor'][$cssi]; ?>;
-  text-decoration: <?php echo $rudweb_skin['mnu']['mm']['LnkL']['TextDecoration'][$cssi]; ?>;
-  font-family: <?php echo $rudweb_skin['mnu']['mm']['LnkL']['FontFamily'][$cssi]; ?>;
-  font-weight: <?php echo $rudweb_skin['mnu']['mm']['LnkL']['FontWeight'][$cssi]; ?>;
-  font-size: <?php echo $rudweb_skin['mnu']['mm']['LnkL']['FontSize'][$cssi]; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.mm-mnu_<?php echo $cssi; ?>:visited {
-  background-color: <?php echo $rudweb_skin['mnu']['mm']['LnkV']['BgColor'][$cssi]; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['mnu']['mm']['LnkV']['FontColor'][$cssi]; ?>;
-  text-decoration: <?php echo $rudweb_skin['mnu']['mm']['LnkV']['TextDecoration'][$cssi]; ?>;
-  font-family: <?php echo $rudweb_skin['mnu']['mm']['LnkV']['FontFamily'][$cssi]; ?>;
-  font-weight: <?php echo $rudweb_skin['mnu']['mm']['LnkV']['FontWeight'][$cssi]; ?>;
-  font-size: <?php echo $rudweb_skin['mnu']['mm']['LnkV']['FontSize'][$cssi]; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.mm-mnu_<?php echo $cssi; ?>:hover {
-  background-color: <?php echo $rudweb_skin['mnu']['mm']['LnkH']['BgColor'][$cssi]; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['mnu']['mm']['LnkH']['FontColor'][$cssi]; ?>;
-  text-decoration: <?php echo $rudweb_skin['mnu']['mm']['LnkH']['TextDecoration'][$cssi]; ?>;
-  font-family: <?php echo $rudweb_skin['mnu']['mm']['LnkH']['FontFamily'][$cssi]; ?>;
-  font-weight: <?php echo $rudweb_skin['mnu']['mm']['LnkH']['FontWeight'][$cssi]; ?>;
-  font-size: <?php echo $rudweb_skin['mnu']['mm']['LnkH']['FontSize'][$cssi]; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: none;
 }
 SPAN.mm-mnu_lnk_<?php echo $cssi; ?> {
-  background-color: <?php echo $rudweb_skin['mnu']['mm']['Lnk']['BgColor'][$cssi]; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['mnu']['mm']['Lnk']['FontColor'][$cssi]; ?>;
-  text-decoration: <?php echo $rudweb_skin['mnu']['mm']['Lnk']['TextDecoration'][$cssi]; ?>;
-  font-family: <?php echo $rudweb_skin['mnu']['mm']['Lnk']['FontFamily'][$cssi]; ?>;
-  font-weight: <?php echo $rudweb_skin['mnu']['mm']['Lnk']['FontWeight'][$cssi]; ?>;
-  font-size: <?php echo $rudweb_skin['mnu']['mm']['Lnk']['FontSize'][$cssi]; ?><?php echo $rudweb_skin['Measure']; ?>;
-  cursor: default;
-}
-<?php
-}
-?>
-<?php
-for ($cssj=0; $cssj<count($rudweb_skin['mnu']['adm']['LnkL']['BgColor']); $cssj++) {
-?>
-A.adm-mnu_<?php echo $cssj; ?>:link {
-  background-color: <?php echo $rudweb_skin['mnu']['adm']['LnkL']['BgColor'][$cssj]; ?>;
-  background: transparent;
-  color: <?php echo $rudweb_skin['mnu']['adm']['LnkL']['FontColor'][$cssj]; ?>;
-  text-decoration: <?php echo $rudweb_skin['mnu']['adm']['LnkL']['TextDecoration'][$cssj]; ?>;
-  font-family: <?php echo $rudweb_skin['mnu']['adm']['LnkL']['FontFamily'][$cssj]; ?>;
-  font-weight: <?php echo $rudweb_skin['mnu']['adm']['LnkL']['FontWeight'][$cssj]; ?>;
-  font-size: <?php echo $rudweb_skin['mnu']['adm']['LnkL']['FontSize'][$cssj]; ?><?php echo $rudweb_skin['Measure']; ?>;
-}
-A.adm-mnu_<?php echo $cssj; ?>:visited {
-  background-color: <?php echo $rudweb_skin['mnu']['adm']['LnkV']['BgColor'][$cssj]; ?>;
-  background: transparent;
-  color: <?php echo $rudweb_skin['mnu']['adm']['LnkV']['FontColor'][$cssj]; ?>;
-  text-decoration: <?php echo $rudweb_skin['mnu']['adm']['LnkV']['TextDecoration'][$cssj]; ?>;
-  font-family: <?php echo $rudweb_skin['mnu']['adm']['LnkV']['FontFamily'][$cssj]; ?>;
-  font-weight: <?php echo $rudweb_skin['mnu']['adm']['LnkV']['FontWeight'][$cssj]; ?>;
-  font-size: <?php echo $rudweb_skin['mnu']['adm']['LnkV']['FontSize'][$cssj]; ?><?php echo $rudweb_skin['Measure']; ?>;
-}
-A.adm-mnu_<?php echo $cssj; ?>:hover {
-  background-color: <?php echo $rudweb_skin['mnu']['adm']['LnkH']['BgColor'][$cssj]; ?>;
-  background: transparent;
-  color: <?php echo $rudweb_skin['mnu']['adm']['LnkH']['FontColor'][$cssj]; ?>;
-  text-decoration: <?php echo $rudweb_skin['mnu']['adm']['LnkH']['TextDecoration'][$cssj]; ?>;
-  font-family: <?php echo $rudweb_skin['mnu']['adm']['LnkH']['FontFamily'][$cssj]; ?>;
-  font-weight: <?php echo $rudweb_skin['mnu']['adm']['LnkH']['FontWeight'][$cssj]; ?>;
-  font-size: <?php echo $rudweb_skin['mnu']['adm']['LnkH']['FontSize'][$cssj]; ?><?php echo $rudweb_skin['Measure']; ?>;
-}
-SPAN.adm-mnu_lnk_<?php echo $cssj; ?> {
-  background-color: <?php echo $rudweb_skin['mnu']['adm']['Lnk']['BgColor'][$cssj]; ?>;
-  background: transparent;
-  color: <?php echo $rudweb_skin['mnu']['adm']['Lnk']['FontColor'][$cssj]; ?>;
-  text-decoration: <?php echo $rudweb_skin['mnu']['adm']['Lnk']['TextDecoration'][$cssj]; ?>;
-  font-family: <?php echo $rudweb_skin['mnu']['adm']['Lnk']['FontFamily'][$cssj]; ?>;
-  font-weight: <?php echo $rudweb_skin['mnu']['adm']['Lnk']['FontWeight'][$cssj]; ?>;
-  font-size: <?php echo $rudweb_skin['mnu']['adm']['Lnk']['FontSize'][$cssj]; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: none;
   cursor: default;
 }
 <?php
@@ -573,40 +261,28 @@ SPAN.adm-mnu_lnk_<?php echo $cssj; ?> {
 for ($cssk=0; $cssk<count($rudweb_skin['mnu']['oth']['LnkL']['BgColor']); $cssk++) {
 ?>
 A.oth-mnu_<?php echo $cssk; ?>:link {
-  background-color: <?php echo $rudweb_skin['mnu']['oth']['LnkL']['BgColor'][$cssk]; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['mnu']['oth']['LnkL']['FontColor'][$cssk]; ?>;
-  text-decoration: <?php echo $rudweb_skin['mnu']['oth']['LnkL']['TextDecoration'][$cssk]; ?>;
-  font-family: <?php echo $rudweb_skin['mnu']['oth']['LnkL']['FontFamily'][$cssk]; ?>;
-  font-weight: <?php echo $rudweb_skin['mnu']['oth']['LnkL']['FontWeight'][$cssk]; ?>;
-  font-size: <?php echo $rudweb_skin['mnu']['oth']['LnkL']['FontSize'][$cssk]; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.oth-mnu_<?php echo $cssk; ?>:visited {
-  background-color: <?php echo $rudweb_skin['mnu']['oth']['LnkV']['BgColor'][$cssk]; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['mnu']['oth']['LnkV']['FontColor'][$cssk]; ?>;
-  text-decoration: <?php echo $rudweb_skin['mnu']['oth']['LnkV']['TextDecoration'][$cssk]; ?>;
-  font-family: <?php echo $rudweb_skin['mnu']['oth']['LnkV']['FontFamily'][$cssk]; ?>;
-  font-weight: <?php echo $rudweb_skin['mnu']['oth']['LnkV']['FontWeight'][$cssk]; ?>;
-  font-size: <?php echo $rudweb_skin['mnu']['oth']['LnkV']['FontSize'][$cssk]; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.oth-mnu_<?php echo $cssk; ?>:hover {
-  background-color: <?php echo $rudweb_skin['mnu']['oth']['LnkH']['BgColor'][$cssk]; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['mnu']['oth']['LnkH']['FontColor'][$cssk]; ?>;
-  text-decoration: <?php echo $rudweb_skin['mnu']['oth']['LnkH']['TextDecoration'][$cssk]; ?>;
-  font-family: <?php echo $rudweb_skin['mnu']['oth']['LnkH']['FontFamily'][$cssk]; ?>;
-  font-weight: <?php echo $rudweb_skin['mnu']['oth']['LnkH']['FontWeight'][$cssk]; ?>;
-  font-size: <?php echo $rudweb_skin['mnu']['oth']['LnkH']['FontSize'][$cssk]; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: none;
 }
 SPAN.oth-mnu_lnk_<?php echo $cssk; ?> {
-  background-color: <?php echo $rudweb_skin['mnu']['oth']['Lnk']['BgColor'][$cssk]; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['mnu']['oth']['Lnk']['FontColor'][$cssk]; ?>;
-  text-decoration: <?php echo $rudweb_skin['mnu']['oth']['Lnk']['TextDecoration'][$cssk]; ?>;
-  font-family: <?php echo $rudweb_skin['mnu']['oth']['Lnk']['FontFamily'][$cssk]; ?>;
-  font-weight: <?php echo $rudweb_skin['mnu']['oth']['Lnk']['FontWeight'][$cssk]; ?>;
-  font-size: <?php echo $rudweb_skin['mnu']['oth']['Lnk']['FontSize'][$cssk]; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: none;
   cursor: default;
 }
 <?php
@@ -617,113 +293,80 @@ IMG {
   border: 0px;
 }
 A.copylink:link {
-  background-color: <?php echo $rudweb_skin['cpy']['LnkL']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['cpy']['LnkL']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['cpy']['LnkL']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['cpy']['LnkL']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['cpy']['LnkL']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['cpy']['LnkL']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.copylink:visited {
-  background-color: <?php echo $rudweb_skin['cpy']['LnkV']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['cpy']['LnkV']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['cpy']['LnkV']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['cpy']['LnkV']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['cpy']['LnkV']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['cpy']['LnkV']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.copylink:hover {
-  background-color: <?php echo $rudweb_skin['cpy']['LnkH']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['cpy']['LnkH']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['cpy']['LnkH']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['cpy']['LnkH']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['cpy']['LnkH']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['cpy']['LnkH']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: none;
 }
 A.ftrlink:link {
-  background-color: <?php echo $rudweb_skin['ftr']['LnkL']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['ftr']['LnkL']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['ftr']['LnkL']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['ftr']['LnkL']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['ftr']['LnkL']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['ftr']['LnkL']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.ftrlink:visited {
-  background-color: <?php echo $rudweb_skin['ftr']['LnkV']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['ftr']['LnkV']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['ftr']['LnkV']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['ftr']['LnkV']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['ftr']['LnkV']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['ftr']['LnkV']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.ftrlink:hover {
-  background-color: <?php echo $rudweb_skin['ftr']['LnkH']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['ftr']['LnkH']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['ftr']['LnkH']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['ftr']['LnkH']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['ftr']['LnkH']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['ftr']['LnkH']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: none;
 }
 /* ********** ********** ********** //DEFAULT 2 ********** ********** ********** */
 A.categ:link {
-  background-color: <?php echo $rudweb_skin['cat']['LnkL']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['cat']['LnkL']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['cat']['LnkL']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['cat']['LnkL']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['cat']['LnkL']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['cat']['LnkL']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
+  font-size: <?php echo $rudweb_skin['FontSize']+3; ?><?php echo $rudweb_skin['Measure']; ?>;
 }
 A.categ:visited {
-  background-color: <?php echo $rudweb_skin['cat']['LnkV']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['cat']['LnkV']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['cat']['LnkV']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['cat']['LnkV']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['cat']['LnkV']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['cat']['LnkV']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
+  font-size: <?php echo $rudweb_skin['FontSize']+3; ?><?php echo $rudweb_skin['Measure']; ?>;
 }
 A.categ:hover {
-  background-color: <?php echo $rudweb_skin['cat']['LnkH']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['cat']['LnkH']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['cat']['LnkH']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['cat']['LnkH']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['cat']['LnkH']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['cat']['LnkH']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: none;
+  font-size: <?php echo $rudweb_skin['FontSize']+3; ?><?php echo $rudweb_skin['Measure']; ?>;
 }
 A.prdlnk:link {
-  background-color: <?php echo $rudweb_skin['prod']['LnkL']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['prod']['LnkL']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['prod']['LnkL']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['prod']['LnkL']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['prod']['LnkL']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['prod']['LnkL']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.prdlnk:visited {
-  background-color: <?php echo $rudweb_skin['prod']['LnkV']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['prod']['LnkV']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['prod']['LnkV']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['prod']['LnkV']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['prod']['LnkV']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['prod']['LnkV']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.prdlnk:hover {
-  background-color: <?php echo $rudweb_skin['prod']['LnkH']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['prod']['LnkH']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['prod']['LnkH']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['prod']['LnkH']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['prod']['LnkH']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['prod']['LnkH']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: none;
 }
 /* ********** ********** ********** LIGHTBOX ********** ********** ********** */
 #lightbox{
@@ -807,66 +450,45 @@ A.prdlnk:hover {
 	}
 /* ********** ********** ********** //LIGHTBOX ********** ********** ********** */
 A.adm-mnu:link {
-  background-color: <?php echo $rudweb_skin['adm']['mnu']['LnkL']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['adm']['mnu']['LnkL']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['adm']['mnu']['LnkL']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['adm']['mnu']['LnkL']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['adm']['mnu']['LnkL']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['adm']['mnu']['LnkL']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.adm-mnu:visited {
-  background-color: <?php echo $rudweb_skin['adm']['mnu']['LnkV']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['adm']['mnu']['LnkV']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['adm']['mnu']['LnkV']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['adm']['mnu']['LnkV']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['adm']['mnu']['LnkV']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['adm']['mnu']['LnkV']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.adm-mnu:hover {
-  background-color: <?php echo $rudweb_skin['adm']['mnu']['LnkH']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['adm']['mnu']['LnkH']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['adm']['mnu']['LnkH']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['adm']['mnu']['LnkH']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['adm']['mnu']['LnkH']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['adm']['mnu']['LnkH']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: none;
 }
 SPAN.adm-mnu {
-  background-color: <?php echo $rudweb_skin['adm']['mnu']['Lnk']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['adm']['mnu']['Lnk']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['adm']['mnu']['Lnk']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['adm']['mnu']['Lnk']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['adm']['mnu']['Lnk']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['adm']['mnu']['Lnk']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: none;
   cursor: default;
 }
 A.csplink:link {
-  background-color: <?php echo $rudweb_skin['csp']['LnkL']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['csp']['LnkL']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['csp']['LnkL']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['csp']['LnkL']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['csp']['LnkL']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['csp']['LnkL']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.csplink:visited {
-  background-color: <?php echo $rudweb_skin['csp']['LnkV']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['csp']['LnkV']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['csp']['LnkV']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['csp']['LnkV']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['csp']['LnkV']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['csp']['LnkV']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
 }
 A.csplink:hover {
-  background-color: <?php echo $rudweb_skin['csp']['LnkH']['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
-  color: <?php echo $rudweb_skin['csp']['LnkH']['FontColor']; ?>;
-  text-decoration: <?php echo $rudweb_skin['csp']['LnkH']['TextDecoration']; ?>;
-  font-family: <?php echo $rudweb_skin['csp']['LnkH']['FontFamily']; ?>;
-  font-weight: <?php echo $rudweb_skin['csp']['LnkH']['FontWeight']; ?>;
-  font-size: <?php echo $rudweb_skin['csp']['LnkH']['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: none;
 }
