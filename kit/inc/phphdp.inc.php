@@ -1,7 +1,7 @@
 <?php
 /*
 phphdp.inc.php
-12:50 2008-04-05
+12:02 2008-04-21
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -17,5 +17,7 @@ echo "\n";
 require_once _RUDWEB_JS_DIR . 'jsuser.inc.php';
 echo "\n<SCRIPT TYPE=\"text/javascript\" LANGUAGE=\"JavaScript\" SRC=\""._RUDWEB_JS_URL ."lightbox.js\"></SCRIPT>";
 echo "\n</HEAD>\n<BODY>\n\n";
-require_once _RUDWEB_SKIN_DIR . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'] . '/header.print.inc.php';
+require_once _RUDWEB_SKIN_DIR . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'] . '/layout.print.inc.php';
+rudweb_dbclose($rudweb_dbtype, rudweb_dbopen($rudweb_dbtype, $rudweb_dbhost, $rudweb_dbport, $rudweb_dbuser, $rudweb_dbpass, $rudweb_dbname));
+echo "\n\n</BODY>\n</HTML>";
 ?>

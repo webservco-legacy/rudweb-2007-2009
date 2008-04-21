@@ -1,7 +1,7 @@
 <?php
 /*
 ./intro.php
-14:37 2008-04-07
+09:27 2008-04-21
 */
 define("_RUDWEB_PUBFIL", TRUE);
 require_once './inc/config.inc.php';
@@ -22,8 +22,4 @@ $rudweb_page_keywords      = _RUDWEB_WSKW;
 
 require_once _RUDWEB_INC_DIR . 'rudweb3.inc.php';
 require_once _RUDWEB_INC_DIR . 'phphdi.inc.php';
-?>
-<!--INTRO.PHP-->
-<?php
-require_once _RUDWEB_INC_DIR . 'phpfti.inc.php';
 ?>

@@ -1,7 +1,7 @@
 <?php
 /*
-./skins/rudskin/headeri.inc.php
-12:50 2008-04-05
+./skins/rudskin/layouti.inc.php
+09:34 2008-04-21
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once '../../lib/404.php';}
 ?>

@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/phphd.inc.php
-12:50 2008-04-05
+12:02 2008-04-21
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -41,5 +41,7 @@ echo "\n";
 // DIRTY SOLUTION FOR DEZY DESIGN
 //echo "\n</HEAD>\n<BODY onload=\"StartClock()\" onunload=\"KillClock()\">\n\n";
 echo "\n</HEAD>\n<BODY>\n\n";
-require_once _RUDWEB_SKIN_DIR . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'] . '/header.inc.php';
+require_once _RUDWEB_SKIN_DIR . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'] . '/layout.inc.php';
+rudweb_dbclose($rudweb_dbtype, rudweb_dbopen($rudweb_dbtype, $rudweb_dbhost, $rudweb_dbport, $rudweb_dbuser, $rudweb_dbpass, $rudweb_dbname));
+echo "\n\n</BODY>\n</HTML>";
 ?>

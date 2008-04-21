@@ -1,7 +1,7 @@
 <?php
 /*
-./skins/rudskin/headera.inc.php
-14:38 2008-04-07
+./skins/rudskin/layouta.inc.php
+09:34 2008-04-21
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once '../../lib/404.php';}
 ?>
@@ -60,3 +60,15 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once '../../lib/404.php';}
     <?php showStats(5, "online"); ?>
   </DIV>
 </DIV>
+<?php
+// DEBUG
+debugOutput("SESSION");
+debugOutput("REQUEST");
+debugOutput("GET");
+debugOutput("POST");
+debugOutput("FILES");
+//debugOutput("SERVER");
+//debugOutput("CONSTANTS");
+//debugOutput("PHPINI");
+?>
+<?php pageLoadTime(); ?>

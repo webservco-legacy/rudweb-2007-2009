@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/skins02.inc.php
-12:50 2008-04-05
+09:35 2008-04-21
 */
 
 if(isset($_POST['set_cfg_sk_inst'])) {
@@ -16,14 +16,11 @@ if(isset($_POST['set_cfg_sk_inst'])) {
           $files[$dirs[0]][0] = array();
           $files[$dirs[0]][1] = array();
           $files[$dirs[0]][1][] = 'favicon.ico';
-          $files[$dirs[0]][1][] = 'footer.inc.php';
-          $files[$dirs[0]][1][] = 'footer.print.inc.php';
-          $files[$dirs[0]][1][] = 'footera.inc.php';
-          $files[$dirs[0]][1][] = 'footeri.inc.php';
-          $files[$dirs[0]][1][] = 'header.inc.php';
-          $files[$dirs[0]][1][] = 'header.print.inc.php';
-          $files[$dirs[0]][1][] = 'headera.inc.php';
-          $files[$dirs[0]][1][] = 'headeri.inc.php';
+          $files[$dirs[0]][1][] = 'layout.inc.php';
+          $files[$dirs[0]][1][] = 'layout.print.inc.php';
+          $files[$dirs[0]][1][] = 'layouta.inc.php';
+          $files[$dirs[0]][1][] = 'layouti.inc.php';
+          
           $files[$dirs[0]][1][] = 'index.php';
           $files[$dirs[0]][1][] = 'style.inc.php';
           $files[$dirs[0]][1][] = 'skin.inc.php';

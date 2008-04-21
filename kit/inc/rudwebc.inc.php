@@ -1,12 +1,12 @@
 <?php
 /*
 ./inc/rudwebc.inc.php
-19:05 2008-04-07
+12:03 2008-04-21
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
 // VERSION
-define("_RUDWEB_SITE_VERSION", "0.4.080405");
+define("_RUDWEB_SITE_VERSION", "0.4.080421");
 // AUTHOR
 define("_RUDWEB_SITE_AUTH", "Radu Maier");
 // INCLUDES

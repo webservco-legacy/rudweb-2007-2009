@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/engn03a.inc.php
-17:27 2008-04-12
+09:29 2008-04-21
 */
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -18,10 +18,6 @@ $files[$dirs[0]][1][] = "content.inc.php";
 $files[$dirs[0]][1][] = "contentadm.inc.php";
 $files[$dirs[0]][1][] = "index.php";
 $files[$dirs[0]][1][] = "login.inc.php";
-$files[$dirs[0]][1][] = "phpft.inc.php";
-$files[$dirs[0]][1][] = "phpfta.inc.php";
-$files[$dirs[0]][1][] = "phpfti.inc.php";
-$files[$dirs[0]][1][] = "phpftp.inc.php";
 $files[$dirs[0]][1][] = "phphd.inc.php";
 $files[$dirs[0]][1][] = "phphda.inc.php";
 $files[$dirs[0]][1][] = "phphdi.inc.php";
