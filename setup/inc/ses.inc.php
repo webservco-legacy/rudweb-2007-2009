@@ -185,12 +185,12 @@ if (isset($_POST['proceed']) && !isset($_SESSION['rudwebset_start'])) {
   $_SESSION['rudwebset_langs_wskw']['it']        = 'Website Keywords it';
   $_SESSION['rudwebset_langs_wskw']['ro']        = 'Website Keywords ro';
   
-  $_SESSION['rudwebset_langs_ftt']['en']         = 'Featured en';
-  $_SESSION['rudwebset_langs_ftt']['de']         = 'Featured de';
-  $_SESSION['rudwebset_langs_ftt']['es']         = 'Featured es';
-  $_SESSION['rudwebset_langs_ftt']['fr']         = 'Featured fr';
-  $_SESSION['rudwebset_langs_ftt']['it']         = 'Featured it';
-  $_SESSION['rudwebset_langs_ftt']['ro']         = 'Featured ro';
+  $_SESSION['rudwebset_langs_ftt']['en']         = 'Featured Content en';
+  $_SESSION['rudwebset_langs_ftt']['de']         = 'Featured Content de';
+  $_SESSION['rudwebset_langs_ftt']['es']         = 'Featured Content es';
+  $_SESSION['rudwebset_langs_ftt']['fr']         = 'Featured Content fr';
+  $_SESSION['rudwebset_langs_ftt']['it']         = 'Featured Content it';
+  $_SESSION['rudwebset_langs_ftt']['ro']         = 'Featured Content ro';
 
   $_SESSION['rudwebset_langs_fds']['en']         = 'details ... en';
   $_SESSION['rudwebset_langs_fds']['de']         = 'details ... de';

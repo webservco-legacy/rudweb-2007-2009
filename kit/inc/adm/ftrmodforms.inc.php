@@ -5,7 +5,7 @@
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
-$query_ftr = "SELECT * FROM "._RUDWEB_PRE."ws_ftr WHERE ftr_ln = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."' AND ftr_dis = '0' ORDER BY ftr_id ASC";
+$query_ftr = "SELECT * FROM "._RUDWEB_PRE."ws_ftr WHERE ftr_ln = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."' AND ftr_dis = '0' ORDER BY ftr_ord ASC";
 $rst_query_ftr = mysql_query($query_ftr) or require _RUDWEB_LIB_DIR . 'myerr.php';
 $total_ftr = mysql_num_rows($rst_query_ftr);
 

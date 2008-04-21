@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/en/lang.inc.php
-11:14 2008-04-15
+15:17 2008-04-21
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -175,4 +175,19 @@ $rudweb_ln['adm']['lvl'][2]        = 'VIP Users';
 $rudweb_ln['adm']['lvl'][3]        = 'Administrators';
 $rudweb_ln['adm']['lvl'][4]        = 'Owner';
 $rudweb_ln['adm']['lvl'][5]        = 'Root';
+
+// CATALOG SPECIAL OFFERS
+$rudweb_ln['adm']['cspmodstat0']  = "Special Offers module is disabled.";
+$rudweb_ln['adm']['cspmodstat00'] = "Modify your config file to enable it.";
+$rudweb_ln['adm']['cspmodstat01'] = "Enable.";
+$rudweb_ln['adm']['cspmodstat1']  = "Special Offers module is enabled.";
+$rudweb_ln['adm']['cspmodstat11'] = "Modify your config file to disable it.";
+$rudweb_ln['adm']['cspmodstat12'] = "Modify your config file to change it.";
+$rudweb_ln['adm']['cspmodstat10'] = "Disable.";
+$rudweb_ln['adm']['csplmttxt1']   = "Number of items to display: ";
+$rudweb_ln['csp']['delone']       = "Delete this one: ";
+$rudweb_ln['adm']['csplmt']       = "Save";
+
+// CONTENT
+$rudweb_ln['cnt']['cnt']          = "Content";
 ?>

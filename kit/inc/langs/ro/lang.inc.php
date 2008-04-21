@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/ro/lang.inc.php
-11:14 2008-04-15
+15:16 2008-04-21
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -179,4 +179,19 @@ $rudweb_ln['adm']['lvl'][2]        = 'Utilizatori VIP';
 $rudweb_ln['adm']['lvl'][3]        = 'Administratori';
 $rudweb_ln['adm']['lvl'][4]        = 'Proprietar';
 $rudweb_ln['adm']['lvl'][5]        = 'Root';
+
+// CATALOG SPECIAL OFFERS
+$rudweb_ln['adm']['cspmodstat0']  = "Modulul de oferte speciale este inactiv.";
+$rudweb_ln['adm']['cspmodstat00'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a-l activa.";
+$rudweb_ln['adm']['cspmodstat01'] = "Activare.";
+$rudweb_ln['adm']['cspmodstat1']  = "Modulul de oferte speciale este activ.";
+$rudweb_ln['adm']['cspmodstat11'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a-l dezactiva.";
+$rudweb_ln['adm']['cspmodstat12'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a schimba.";
+$rudweb_ln['adm']['cspmodstat10'] = "Dezactivare.";
+$rudweb_ln['adm']['csplmttxt1']   = "Num&#259;r de articole afi&#351;ate: ";
+$rudweb_ln['csp']['delone']       = "&#350;terge pe aceasta: ";
+$rudweb_ln['adm']['csplmt']       = "Salveaz&#259;";
+
+// CONTENT
+$rudweb_ln['cnt']['cnt']          = "Con&#355;inut";
 ?>

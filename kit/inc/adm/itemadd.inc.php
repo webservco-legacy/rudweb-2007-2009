@@ -6,11 +6,11 @@
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
 
-  echo '<DIV CLASS="title">';
+  echo $rudweb_skin['cnt']['tt1']['pre'];
   echo $rudweb_ln['catalog']['catalog'] . ' - ' . $rudweb_ln['catalog']['itemstt'] . ' : ' .  $rudweb_ln['adm']['add'];
-  echo '</DIV>';
+  echo $rudweb_skin['cnt']['tt1']['suf'];
   
-  echo '<DIV CLASS="text">';
+  echo $rudweb_skin['cnt']['txt']['pre'];
   
   if(isset($_GET['cat'])) {
     $cat_id = rudweb_filter_input($_GET['cat']);
@@ -181,7 +181,7 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
     // show all categories
     catalogCategoriesMenu('itemadd');
   }
-  echo '</DIV>';
+  echo $rudweb_skin['cnt']['txt']['suf'];
 } // if user has the rights
 else {
   echo "<DIV CLASS=\"err\">" . $rudweb_ln['err']['1'] . "</DIV>";

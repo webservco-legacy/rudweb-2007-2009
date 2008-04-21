@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/admin.inc.php
-15:17 2008-04-09
+16:23 2008-04-21
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -123,6 +123,20 @@ if (isset($_POST['ftrmod'])) { // enable, disable featured module
   if(isset($_POST['ftronoff'])) {$new_onoff = rudweb_filter_input($_POST['ftronoff']);}
   if(isset($_POST['ftr_lmt']))  {$ftr_lmt = rudweb_filter_input($_POST['ftr_lmt']);}
   require_once _RUDWEB_INC_DIR . 'admftr.inc.php';
+  header("Location: $redirect");
+}
+if (isset($_POST['cspmod'])) { // enable, disable offers module
+  
+  $new_onoff = "";
+  $csp_lmt   = "";
+  
+  // not ok, use elsewhere
+  $action_date  = date("Y-m-d"); /* mod del */
+  $action_time  = date("H:i:s"); /* mod del */
+  
+  if(isset($_POST['csponoff'])) {$new_onoff = rudweb_filter_input($_POST['csponoff']);}
+  if(isset($_POST['csp_lmt']))  {$csp_lmt = rudweb_filter_input($_POST['csp_lmt']);}
+  require_once _RUDWEB_INC_DIR . 'admcsp.inc.php';
   header("Location: $redirect");
 }
 if (isset($_POST['itemadd'])) {

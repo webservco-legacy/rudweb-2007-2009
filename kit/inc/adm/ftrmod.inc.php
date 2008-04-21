@@ -1,12 +1,18 @@
 <?php
 /*
 ./inc/adm/ftrmod.inc.php
-12:50 2008-04-05
+17:03 2008-04-21
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
 //echo $rudweb_skin['ftr']['hdr'];
 if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
+
+echo $rudweb_skin['cnt']['tt1']['pre'];
+echo $rudweb_ln['featured']['tt'];
+echo $rudweb_skin['cnt']['tt1']['suf'];
+
+echo $rudweb_skin['cnt']['txt']['pre'];
 
 if(_RUDWEB_CFG_FTR_ON == "0") {
   echo "<DIV STYLE=\"text-align: center\">";
@@ -64,6 +70,7 @@ else {
   echo "</DIV>";
   require_once _RUDWEB_ADMIN_DIR . 'ftrmodforms.inc.php';
 } // else if enabled
+echo $rudweb_skin['cnt']['txt']['suf'];
 } // if user has the rights
 else {
   echo "<DIV CLASS=\"err\">" . $rudweb_ln['err']['1'] . "</DIV>";

@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/engn03a.inc.php
-09:29 2008-04-21
+15:22 2008-04-21
 */
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -12,6 +12,7 @@ $dirs[0]    = "inc/";
 $files[$dirs[0]][0] = array();
 $files[$dirs[0]][1] = array();
 $files[$dirs[0]][1][] = "admcnt.inc.php";
+$files[$dirs[0]][1][] = "admcsp.inc.php";
 $files[$dirs[0]][1][] = "admftr.inc.php";
 $files[$dirs[0]][1][] = "admin.inc.php";
 $files[$dirs[0]][1][] = "content.inc.php";
@@ -35,6 +36,8 @@ $files[$dirs[1]][1] = array();
 $files[$dirs[1]][1][] = "actuser.inc.php";
 $files[$dirs[1]][1][] = "admin.inc.php";
 $files[$dirs[1]][1][] = "cntadd.inc.php";
+$files[$dirs[1]][1][] = "cspmod.inc.php";
+$files[$dirs[1]][1][] = "cspmodforms.inc.php";
 $files[$dirs[1]][1][] = "default.inc.php";
 $files[$dirs[1]][1][] = "ftrmod.inc.php";
 $files[$dirs[1]][1][] = "ftrmodforms.inc.php";
