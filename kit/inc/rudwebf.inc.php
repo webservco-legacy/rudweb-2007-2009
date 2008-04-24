@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudwebf.inc.php
-12:50 2008-04-05
+21:09 2008-04-23
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -688,6 +688,7 @@ function showContent($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $blog_c
   global $rudweb_ln;
   global $rudweb_skin;
   global $rudweb_dbtype;
+  global $rudweb_this_content;
   switch($rudweb_cnt_type) {
       case "1": {
         $query_content = "SELECT * FROM `"._RUDWEB_PRE."ws_cnt` WHERE `cnt_alias` = '".$rudweb_req_page."' AND (`cnt_dis` = '0' AND `cnt_ln` = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."') LIMIT 1";
@@ -695,6 +696,23 @@ function showContent($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $blog_c
         if (mysql_num_rows($rst_query_content) != '0') {
           $row_rst_content = mysql_fetch_assoc($rst_query_content);
           $this_content_id = $row_rst_content['cnt_id'];
+          
+          if (_RUDWEB_CFG_CNT_TAGS === "1") {
+            $q_et = "SELECT DISTINCT tag_name AS tag FROM ". _RUDWEB_PRE. "ws_rel AS r LEFT JOIN ". _RUDWEB_PRE. "ws_tags AS t ON (r.tag_id = t.tag_id) WHERE r.cnt_id = '".$row_rst_content['cnt_id']."' ORDER BY t.tag_name ASC";
+            $rs_et = rudweb_qres($rudweb_dbtype, $q_et);
+            $t_et  = rudweb_qtotal($rudweb_dbtype, $rs_et);
+            if($t_et != 0) {
+              for($i=1;$i<=$t_et;$i++) {
+                $r_et = rudweb_fetch_assoc($rudweb_dbtype, $rs_et);
+                $et[$i] = $r_et['tag'];
+              }
+              $cnt_tags = implode(', ', $et);
+              $cnt_tags = $cnt_tags . ', ';
+            }
+            else {$cnt_tags = ''; $et = array();}
+          }
+          else {$et = array();}
+          
           if ($_SESSION[_RUDWEB_PRE.'usr_level'] >=3 && $blog_content === "0") {
             require _RUDWEB_INC_DIR . 'contentadm.inc.php';
           }
@@ -702,10 +720,6 @@ function showContent($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $blog_c
             require _RUDWEB_INC_DIR . 'content.inc.php';
           }
 
-          // TAGS
-          // xyz
-          showCntTags($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, 0);
-      
           // COMMENTS
       
           // LINKS
@@ -776,6 +790,7 @@ function showContent($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $blog_c
 /* ********** ********** ********** //SHOW PAGE CONTENT ********** ********** ********** */
 /* ********** ********** ********** SHOW PAGE CONTENT BLOGSTYLE ********** ********** ********** */
 function showBlogContent($parent_id) {
+  global $rudweb_dbtype;
   global $rudweb_ln;
   global $rudweb_skin;
   $query_blog = "SELECT mnu_id, mnu_cnt_alias, mnu_typ FROM `"._RUDWEB_PRE."ws_mnu` WHERE `mnu_par` = '".$parent_id."' AND (`mnu_ln` = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."' AND `mnu_dis` = '0') ORDER BY mnu_mdd DESC, mnu_mdt DESC, mnu_crd DESC, mnu_crt DESC";
@@ -788,22 +803,29 @@ function showBlogContent($parent_id) {
       $blog_mnu_id[$blogi]    = $row_rst_blog['mnu_id'];
       $blog_cnt_alias[$blogi] = $row_rst_blog['mnu_cnt_alias'];
       $blog_mnu_typ[$blogi]   = $row_rst_blog['mnu_typ'];
-      $query_cnt = "SELECT cnt_crd, cnt_crt, cnt_cru FROM `"._RUDWEB_PRE."ws_cnt` WHERE `cnt_alias` = '".$blog_cnt_alias[$blogi]."' AND (`cnt_ln` = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."' AND `cnt_dis` = '0') LIMIT 1";
+      $query_cnt = "SELECT cnt_crd, cnt_crt, cnt_cru, cnt_mdd, cnt_mdt, cnt_mdu FROM `"._RUDWEB_PRE."ws_cnt` WHERE `cnt_alias` = '".$blog_cnt_alias[$blogi]."' AND (`cnt_ln` = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."' AND `cnt_dis` = '0') LIMIT 1";
       $rst_query_cnt = mysql_query($query_cnt) or require _RUDWEB_LIB_DIR . 'myerr.php';
       $total_cnt = mysql_num_rows($rst_query_cnt);
       if ($total_cnt != "0") {
         $row_rst_cnt = mysql_fetch_assoc($rst_query_cnt);
-        $query_rstId = "SELECT usr_nick_name FROM `"._RUDWEB_PRE."set_usr` WHERE usr_id = '".$row_rst_cnt['cnt_cru']."' LIMIT 1";
-        $rstId=mysql_query($query_rstId) or require _RUDWEB_LIB_DIR . 'myerr.php';
-        $poster_alias = (mysql_result($rstId, 0));
-        
+
         echo $rudweb_skin['blg']['pre'];
         showContent($blog_mnu_id[$blogi], $blog_cnt_alias[$blogi], $blog_mnu_typ[$blogi], 1);
         echo $rudweb_skin['blg']['suf'];
         
         if (_RUDWEB_CFG_BLG_POSTED === "1") {
+          $qp = "SELECT usr_nick_name FROM "._RUDWEB_PRE."set_usr WHERE usr_id = '".$row_rst_cnt['cnt_cru']."' LIMIT 1";
+          $rp = rudweb_qres($rudweb_dbtype, $qp);
+          $poster_alias = rudweb_result($rudweb_dbtype, $rp, 0);
           echo $rudweb_skin['blg']['posted']['pre'];
           echo $rudweb_ln['blg']['postedby'] . $poster_alias . $rudweb_ln['blg']['on'] . MyDate($row_rst_cnt['cnt_crd'], 'dd/mm/yyyy') . " " . $row_rst_cnt['cnt_crt'];
+          if ($row_rst_cnt['cnt_mdd'] != '0000-00-00') {
+            $qm = "SELECT usr_nick_name FROM "._RUDWEB_PRE."set_usr WHERE usr_id = '".$row_rst_cnt['cnt_mdu']."' LIMIT 1";
+            $rm = rudweb_qres($rudweb_dbtype, $qm);
+            $mod_alias  = rudweb_result($rudweb_dbtype, $rm, 0);
+            echo '. ';
+            echo $rudweb_ln['blg']['lastmod'] . $mod_alias . $rudweb_ln['blg']['on'] . MyDate($row_rst_cnt['cnt_mdd'], 'dd/mm/yyyy') . " " . $row_rst_cnt['cnt_mdt'];
+          }
           echo $rudweb_skin['blg']['posted']['suf'];
         }
         /*

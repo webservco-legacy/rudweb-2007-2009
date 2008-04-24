@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/adm/cntadd.inc.php
-12:50 2008-04-05
+20:01 2008-04-22
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3 && (isset($_GET['mc']) && (isset($_GET['ml']) && isset($_GET['mp'])))) {
@@ -61,6 +61,8 @@ $lnk_mdt       = "";
 $lnk_mdu       = "";
 $lnk_dis       = "";
 $lnk_lvl       = "";
+
+$cnt_tags      = '';
 ?>
 <?php
 echo $rudweb_skin['cnt']['hdr'];
@@ -167,6 +169,33 @@ if (_RUDWEB_CFG_PICS_4 === "1") {
   echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscntnew[4]\" SIZE=\"1\">";
   echo $rudweb_skin['cnt']['pic']['suf']['4'];
   echo $rudweb_skin['cnt']['pic']['ftr']['4'];
+}
+?>
+<?php
+      // TAGS
+if (_RUDWEB_CFG_CNT_TAGS === "1") {
+  echo $rudweb_skin['tagsc']['hdr'];
+  echo '<B>'.$rudweb_ln['cnt']['tags'].'</B><BR>';
+  // al tags
+  $q_t = "SELECT DISTINCT tag_name AS tag FROM ". _RUDWEB_PRE. "ws_tags ORDER BY tag_name ASC;";
+  $rs_t = rudweb_qres($rudweb_dbtype, $q_t);
+  $t_t  = rudweb_qtotal($rudweb_dbtype, $rs_t);
+  
+  if($t_t != 0) {
+    echo $rudweb_ln['cnt']['avltags'];
+    for($i=1;$i<=$t_t;$i++) {
+      $r_t = rudweb_fetch_assoc($rudweb_dbtype, $rs_t);
+      echo $rudweb_skin['tagsc']['pre'];
+      echo '<SPAN CLASS="tag" onClick="JavaScript: addTag(\''.$r_t['tag'].'\', document.forms[\'contaddform\'].tags)">';
+      echo $r_t['tag'];
+      echo '</SPAN>';
+      echo $rudweb_skin['tagsc']['suf'];
+      if ($i != $t_t) {echo ',&#160;';}
+    }
+  }
+  
+  echo '<INPUT CLASS="forminput" TYPE="text" NAME="tags" SIZE="50" MAXLENGTH="255" VALUE="'.$cnt_tags.'">';
+  echo $rudweb_skin['tagsc']['ftr'];
 }
 ?>
   <DIV STYLE="text-align: center">

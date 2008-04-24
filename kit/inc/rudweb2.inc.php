@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudweb2.inc.php
-10:36 2008-04-14
+21:09 2008-04-23
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -73,6 +73,24 @@ else if (isset($_GET['page'])) {
     $rudweb_req_page           = $rudweb_this_content;
     //$rudweb_page_title         = _RUDWEB_WSTT . " - " . $rudweb_this_content;
     $rudweb_page_title         = _RUDWEB_WSTT;
+    $rudweb_page_description   = _RUDWEB_WSDS;
+    $rudweb_page_keywords      = _RUDWEB_WSKW;
+  }
+}
+// show all content for a tag
+else if (isset($_GET['tag'])) {
+  $rudweb_cnt_type = "4";
+  $rudweb_this_content       = rudweb_filter_input($_GET['tag']);
+  $rudweb_this_content_level = getCntLev('index');
+  $rudweb_mnu_id             = getCntMnuId('index');
+  $rudweb_stats_page         = 'index';
+  $rudweb_req_page           = 'tags';
+  if (is_file(_RUDWEB_ADMIN_DIR . "tags.inc.php")) {
+    //$rudweb_this_content_level = getCntLev($rudweb_this_content);
+    //$rudweb_mnu_id             = getCntMnuId($rudweb_this_content);
+    $rudweb_stats_page         = "pg-tag-" . $rudweb_this_content;
+    //$rudweb_req_page           = $rudweb_this_content;
+    $rudweb_page_title         = _RUDWEB_WSTT . '- Tag - ' . $rudweb_this_content;
     $rudweb_page_description   = _RUDWEB_WSDS;
     $rudweb_page_keywords      = _RUDWEB_WSKW;
   }

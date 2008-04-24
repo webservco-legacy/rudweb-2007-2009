@@ -1,5 +1,5 @@
 # rudweb table structure
--- 13:15 2008-04-15
+-- 20:06 2008-04-22
 DROP TABLE IF EXISTS rudweb_cat_cat;
 CREATE TABLE rudweb_cat_cat (
   cat_id int(5) unsigned NOT NULL,
@@ -383,4 +383,19 @@ CREATE TABLE rudweb_ws_pic (
   pic_dis tinyint(1) unsigned NOT NULL,
   pic_lvl tinyint(1) unsigned NOT NULL,
   PRIMARY KEY (pic_id)
+) myisam_str;
+
+DROP TABLE IF EXISTS rudweb_ws_rel;
+CREATE TABLE rudweb_ws_rel (
+  rel_id INT(5) UNSIGNED NOT NULL,
+  cnt_id INT(5) UNSIGNED NOT NULL,
+  tag_id INT(5) UNSIGNED NOT NULL,
+  PRIMARY KEY (rel_id)
+) myisam_str;
+
+DROP TABLE IF EXISTS rudweb_ws_tags;
+CREATE TABLE rudweb_ws_tags (
+  tag_id INT(5) UNSIGNED NOT NULL,
+  tag_name VARCHAR(30) NOT NULL,
+PRIMARY KEY (tag_id)
 ) myisam_str;

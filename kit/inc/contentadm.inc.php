@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/contentadm.inc.php
-20:36 2008-04-06
+21:09 2008-04-23
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -226,6 +226,39 @@ $oFCKeditor->Create();
         echo $rudweb_skin['cnt']['pic']['ftr']['4'];
       }
 ?>
+<?php
+      // TAGS
+if (_RUDWEB_CFG_CNT_TAGS === "1") {
+  echo $rudweb_skin['tagsc']['hdr'];
+  echo '<B>'.$rudweb_ln['cnt']['tags'].'</B><BR>';
+  // al tags
+  $q_t = "SELECT DISTINCT tag_name AS tag FROM ". _RUDWEB_PRE. "ws_tags ORDER BY tag_name ASC;";
+  $rs_t = rudweb_qres($rudweb_dbtype, $q_t);
+  $t_t  = rudweb_qtotal($rudweb_dbtype, $rs_t);
+  
+  if($t_t != 0) {
+    echo $rudweb_ln['cnt']['avltags'];
+    for($i=1;$i<=$t_t;$i++) {
+      $r_t = rudweb_fetch_assoc($rudweb_dbtype, $rs_t);
+      echo $rudweb_skin['tagsc']['pre'];
+      echo '<SPAN CLASS="tag" onClick="JavaScript: addTag(\''.$r_t['tag'].'\', document.forms[\'contmodform\'].tags)">';
+      echo $r_t['tag'];
+      echo '</SPAN>';
+      echo $rudweb_skin['tagsc']['suf'];
+      if ($i != $t_t) {echo ',&#160;';}
+    }
+  }
+  
+  echo '<INPUT CLASS="forminput" TYPE="text" NAME="tags" SIZE="50" MAXLENGTH="255" VALUE="'.$cnt_tags.'">';
+  echo $rudweb_skin['tagsc']['ftr'];
+}
+      // FILES
+      // XXX
+
+      // LINKS
+      // XXX
+
+?>
 <DIV STYLE="text-align: center">
 <BR>
 <INPUT CLASS="formsubmit" TYPE="submit" NAME="cntmodcnt" VALUE="<?php echo $rudweb_ln['adm']['cnt_mod'];?>">
@@ -237,15 +270,7 @@ $oFCKeditor->Create();
 <?php
       echo $rudweb_skin['cnt']['suf'];
       echo $rudweb_skin['cnt']['ftr'];
-      
-      // TAGS
-      // XXX
-      
+     
       // COMMENTS
-      // XXX
-      
-      // LINKS
-      // XXX
-      
       // XXX
 ?>

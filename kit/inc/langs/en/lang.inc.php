@@ -48,6 +48,8 @@ $rudweb_ln['cmnts']['comments'] = "comments";
 // BLOG RELATED
 $rudweb_ln['blg']['postedby'] = "Posted by ";
 $rudweb_ln['blg']['on']       = " on ";
+$rudweb_ln['blg']['lastmod']  = "Last modified by ";
+
 
 // ADMIN FORMS
 $rudweb_ln['adm']['mnu_tt']       = "Menu Title:";
@@ -190,4 +192,7 @@ $rudweb_ln['adm']['csplmt']       = "Save";
 
 // CONTENT
 $rudweb_ln['cnt']['cnt']          = "Content";
+// TAGS
+$rudweb_ln['cnt']['tags']         = "Tags";
+$rudweb_ln['cnt']['avltags']      = "Available tags";
 ?>

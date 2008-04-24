@@ -1,8 +1,23 @@
-SELECT
-PC.pic_fn AS picture,
-P.prd_tt AS title,
-P.prd_dsc AS description
-FROM mhs_cat_csp AS A
-LEFT JOIN mhs_cat_prd AS P on (P.prd_id = A.prd_id)
-LEFT JOIN mhs_cat_pic AS PC on (PC.prd_id = A.prd_id AND PC.pic_loc = '1')
-WHERE P.prd_tt IS NOT NULL AND ('2008-04-16' BETWEEN A.csp_sdate AND A.csp_edate);
+SELECT DISTINCT r.cnt_id as cnt_id,
+m.mnu_id AS mnu_id, c.cnt_alias AS cnt_alias, m.mnu_typ AS mnu_typ
+FROM mhs_ws_rel As r 
+LEFT JOIN mhs_ws_tags as t ON (r.tag_id = t.tag_id)
+LEFT JOIN mhs_ws_cnt as c ON (r.cnt_id = c.cnt_id)
+LEFT JOIN mhs_ws_mnu as m ON (c.cnt_alias = m.mnu_cnt_alias)
+WHERE t.tag_name = 'despre' AND c.cnt_ln = 'ro'
+ORDER BY c.cnt_mdd DESC, c.cnt_mdt DESC, c.cnt_crd DESC, c.cnt_crt DESC;
+
+SELECT DISTINCT r.cnt_id as cnt_id,
+m.mnu_id AS mnu_id, c.cnt_alias AS cnt_alias, m.mnu_typ AS mnu_typ,
+c.cnt_crd AS cnt_crd,
+c.cnd_crt AS cnt_crt,
+c.cnt_cru AS cnt_cru,
+c.cnt_mdd AS cnt_mdd,
+c.cnt_mdt AS cnt_mdt,
+c.cnt_mdu AS cnt_mdu
+FROM mhs_ws_rel As r 
+LEFT JOIN mhs_ws_tags as t ON (r.tag_id = t.tag_id)
+LEFT JOIN mhs_ws_cnt as c ON (r.cnt_id = c.cnt_id)
+LEFT JOIN mhs_ws_mnu as m ON (c.cnt_alias = m.mnu_cnt_alias)
+WHERE t.tag_name = 'despre' AND c.cnt_ln = 'ro'
+ORDER BY c.cnt_mdd DESC, c.cnt_mdt DESC, c.cnt_crd DESC, c.cnt_crt DESC;

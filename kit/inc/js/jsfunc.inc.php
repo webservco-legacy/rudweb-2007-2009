@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/js/jsfunc.inc.php
-14:16 2008-04-09
+14:07 2008-04-22
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 ?>
@@ -56,5 +56,8 @@ function limitText(limitField, limitCount, limitNum) {
 	} else {
 		limitCount.value = limitNum - limitField.value.length;
 	}
+}
+function addTag(newvalue,element_to) {
+  element_to.value = element_to.value + newvalue + ', ';
 }
 </SCRIPT>

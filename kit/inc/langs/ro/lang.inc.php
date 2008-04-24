@@ -46,8 +46,9 @@ $rudweb_ln['cpy']['3'] = "Web presence by";
 $rudweb_ln['cmnts']['comments'] = "opinii";
 
 // BLOG RELATED
-$rudweb_ln['blg']['postedby'] = "ad&#259;ugat de ";
+$rudweb_ln['blg']['postedby'] = "Ad&#259;ugat de ";
 $rudweb_ln['blg']['on']       = " la ";
+$rudweb_ln['blg']['lastmod']  = "Modificat de ";
 
 // ADMIN FORMS
 $rudweb_ln['adm']['mnu_tt']       = "Titlu Meniu:";
@@ -194,4 +195,7 @@ $rudweb_ln['adm']['csplmt']       = "Salveaz&#259;";
 
 // CONTENT
 $rudweb_ln['cnt']['cnt']          = "Con&#355;inut";
+// TAGS
+$rudweb_ln['cnt']['tags']         = "Tag-uri";
+$rudweb_ln['cnt']['avltags']      = "Tag-uri disponibile: ";
 ?>

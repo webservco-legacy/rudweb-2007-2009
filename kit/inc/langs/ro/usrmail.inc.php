@@ -36,38 +36,38 @@ $rudweb_ln['usr']['authoka']      .= "<BR><BR>Account for ";
 $rudweb_ln['usr']['authokb']       = " was succesfully activated!";
 $rudweb_ln['usr']['authokb']      .= "<BR><BR>You can now login using your email address and the password you have chosen!";
 
-$rudweb_ln['usr']['lostpass1']     = "<BR>Here at " . _RUDWEB_WSTT . " we respect your privacy, and therefore we do not know your password.";
-$rudweb_ln['usr']['lostpass1']    .= "<BR><BR>So, if you can not remember your password, it is lost forever.";
-$rudweb_ln['usr']['lostpass1']    .= "<BR><BR>In that case, the only solution is for you to reset your password and choose a new one.";
-$rudweb_ln['usr']['lostpass1']    .= "<BR><BR>Please enter the email address used to register your account at " . _RUDWEB_WSTT . ":";
+$rudweb_ln['usr']['lostpass1']     = "<BR>Echipa " . _RUDWEB_WSTT . " va respecta intimitatea, de aceea nu cunoastem parola dvs.";
+$rudweb_ln['usr']['lostpass1']    .= "<BR><BR>Asadar, daca nu mai tineti minte parola aleasa, aceasta este pierduta pentru totdeauna.";
+$rudweb_ln['usr']['lostpass1']    .= "<BR><BR>In acest caz, singura solutie este resetarea parolei de catre dvs. si alegerea unei alte parole.";
+$rudweb_ln['usr']['lostpass1']    .= "<BR><BR>Va rugam introduceti adresa de email folosita pentru a inregistra contul dvs. la " . _RUDWEB_WSTT . ":";
 
-$rudweb_ln['usr']['lostapsserr']   = "Sorry, no match in our data base.";
+$rudweb_ln['usr']['lostapsserr']   = "Ne pare rau, nu am gasit nimic in baza noastra de date.";
 
 $rudweb_ln['usr']['lpmailsubj']    = 'Recuperare parola la';
 
 $rudweb_ln['usr']['lpmailtxt1a']   = "<DIV>";
-$rudweb_ln['usr']['lpmailtxt1a']  .= "Dear <B>";
+$rudweb_ln['usr']['lpmailtxt1a']  .= "Drag&#259; <B>";
 $rudweb_ln['usr']['lpmailtxt1b']   = "</B>";
-$rudweb_ln['usr']['lpmailtxt1b']  .= "<BR><BR>In order to reset your password, please click on the following link (available 1 day):";
+$rudweb_ln['usr']['lpmailtxt1b']  .= "<BR><BR>Pentru resetarea parolei va rugam dati click pe urmatorul link (valabil o zi):";
 $rudweb_ln['usr']['lpmailtxt1b']  .= "<BR><BR>";
 
-$rudweb_ln['usr']['lpmailtxt2']    = "<BR><BR>If you are having trouble with the link, please copy and paste the following url into your browser:";
+$rudweb_ln['usr']['lpmailtxt2']    = "<BR><BR>Daca aveti probleme cu afisarea link-ului, va rugam copiati urmatoarea adresa in browserul dvs:";
 $rudweb_ln['usr']['lpmailtxt2']   .= "<BR><BR>";
 
-$rudweb_ln['usr']['lpmailtxt3']    = "<BR><BR>Sincerely,";
-$rudweb_ln['usr']['lpmailtxt3']   .= "<BR>The " . _RUDWEB_WSTT . " Team";
+$rudweb_ln['usr']['lpmailtxt3']    = "<BR><BR>Cu stim&#259;,";
+$rudweb_ln['usr']['lpmailtxt3']   .= "<BR>Echipa " . _RUDWEB_WSTT . " ";
 $rudweb_ln['usr']['lpmailtxt3']   .= "</DIV>";
 
-$rudweb_ln['usr']['lostpmessage']  = "<BR><BR>An email has been sent to the address you specified, containing password reset instructions.";
-$rudweb_ln['usr']['lostpmessage'] .= "<BR><BR>Please check your email and follow the instructions in order to reset your password at " . _RUDWEB_WSTT . ".";
+$rudweb_ln['usr']['lostpmessage']  = "<BR><BR>La adresa specificata a fost trimis un email continand instructiuni pentru resetarea parolei.";
+$rudweb_ln['usr']['lostpmessage'] .= "<BR><BR>Va rugam sa va verificati email-ul si sa urmati instructiunile pentru resetarea parolei dvs. la " . _RUDWEB_WSTT . ".";
 
-$rudweb_ln['usr']['lostperror']    = "<BR><BR>Unfortunately we weren't able to sent your password reset email.";
-$rudweb_ln['usr']['lostperror']   .= "<BR><BR>Please contact the website administrator about this problem.";
+$rudweb_ln['usr']['lostperror']    = "<BR><BR>Din pacate nu am reusit sa trimitem emailul de resetare a parolei.";
+$rudweb_ln['usr']['lostperror']   .= "<BR><BR>Va rugam contactati administratorul site-ului in legatura cu aceasta problema.";
 
-$rudweb_ln['usr']['lostpass2']     = "<BR><BR>Please chose a new password:";
+$rudweb_ln['usr']['lostpass2']     = "<BR><BR>Va rugam alegeti o noua parola:";
 
-$rudweb_ln['usr']['lostpassoka']   = "<BR>Thank you!";
-$rudweb_ln['usr']['lostpassoka']  .= "<BR><BR>Your password was ";
-$rudweb_ln['usr']['lostpassokb']   = " succesfully changed!";
-$rudweb_ln['usr']['lostpassokb']  .= "<BR><BR>You can now login using your email address and the password you have chosen!";
+$rudweb_ln['usr']['lostpassoka']   = "<BR>Va multumim!";
+$rudweb_ln['usr']['lostpassoka']  .= "<BR><BR>Parola dvs. ";
+$rudweb_ln['usr']['lostpassokb']   = " a fost schimbata cu succes!";
+$rudweb_ln['usr']['lostpassokb']  .= "<BR><BR>De acum va puteti loga folosind adresa de email si parola aleasa!";
 ?>

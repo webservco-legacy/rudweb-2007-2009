@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/content.inc.php
-20:36 2008-04-06
+21:09 2008-04-23
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
       // CONTENT
@@ -41,14 +41,16 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
       }
       
       // TITLE
-      echo $rudweb_skin['cnt']['tt1']['pre'];
+      
       if($blog_content == "1") {
         restrictedLocalLink("title", $row_rst_content['cnt_tt'], "index.php/content/" . $row_rst_content['cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_content['cnt_lvl'], $row_rst_content['cnt_tt'], $rudweb_ln['WinStatOut'], "_self");
       }
       else {
+        echo $rudweb_skin['cnt']['tt1']['pre'];
         echo $row_rst_content['cnt_tt'];
+        echo $rudweb_skin['cnt']['tt1']['suf'];
       }
-      echo $rudweb_skin['cnt']['tt1']['suf'];
+      
       
       // PICTURES 2
       if (_RUDWEB_CFG_PICS_2 === "1") {
@@ -161,7 +163,19 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
         }
         echo $rudweb_skin['cnt']['pic']['ftr']['4'];
       }
-
+      
+      // TAGS
+      showCntTags($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $et);
+      
+      // FILES
+      // XXX
+      
+      // LINKS
+      // XXX
+      
       echo $rudweb_skin['cnt']['suf'];
       echo $rudweb_skin['cnt']['ftr'];
+
+      // COMMENTS
+      // XXX
 ?>

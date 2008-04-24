@@ -105,21 +105,20 @@ function adminMenu() {
     echo $rudweb_skin['adm']['mnuhd']['suf'];
     
     echo '<DIV ID="l1cnt">';
+    if (_RUDWEB_CFG_FTR_ON === "1") {
+      echo $rudweb_skin['adm']['mnutt']['pre'];
+      echo '<A onClick="JavaScript: toggleLayer(\'l2ftr\')">';
+      echo $rudweb_ln['featured']['tt'];
+      echo '</A>';
+      echo $rudweb_skin['adm']['mnutt']['suf'];
     
-    echo $rudweb_skin['adm']['mnutt']['pre'];
-    echo '<A onClick="JavaScript: toggleLayer(\'l2ftr\')">';
-    echo $rudweb_ln['featured']['tt'];
-    echo '</A>';
-    echo $rudweb_skin['adm']['mnutt']['suf'];
-    
-    echo '<DIV ID="l2ftr">';
-    echo $rudweb_skin['adm']['mnu']['pre'];
-    restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], 'admin.php/admin/ftrmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
-    echo $rudweb_skin['adm']['mnu']['suf'];
-    echo $rudweb_skin['adm']['mnu']['sep'];
-    
-    echo '</DIV>';
-    
+      echo '<DIV ID="l2ftr">';
+      echo $rudweb_skin['adm']['mnu']['pre'];
+      restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], 'admin.php/admin/ftrmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      echo $rudweb_skin['adm']['mnu']['suf'];
+      echo $rudweb_skin['adm']['mnu']['sep'];
+      echo '</DIV>';
+    }
     echo '</DIV>';
     // SEPARATOR
     

@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/admin.inc.php
-16:23 2008-04-21
+20:01 2008-04-22
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -62,6 +62,7 @@ if(isset($_POST['mnu_tt'])) { // add, delete, modify content
   //$lnk_mdu       = "";
   //$lnk_dis       = "";
   //$lnk_lvl       = "";
+  $cnt_tags = '';
   
   $page_tt = "";
   
@@ -102,6 +103,8 @@ if(isset($_POST['mnu_tt'])) { // add, delete, modify content
   if(isset($_POST['lnk_url']))        {$lnk_url      = rudweb_filter_input($_POST['lnk_url']); /* add mod  */}
   if(isset($_POST['lnk_trg']))        {$lnk_trg      = rudweb_filter_input($_POST['lnk_trg']); /* add mod */}
   if(isset($_POST['lnk_dsc']))        {$lnk_dsc      = rudweb_filter_input($_POST['lnk_dsc']); /* add mod */}
+  //tags
+  if(isset($_POST['tags']))           {$cnt_tags     = rudweb_filter_input($_POST['tags']); /* add mod */}
   // not ok, use elsewhere
   $action_date  = date("Y-m-d"); /* mod del */
   $action_time  = date("H:i:s"); /* mod del */

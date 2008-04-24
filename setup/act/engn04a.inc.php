@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/engn03a.inc.php
-15:22 2008-04-21
+20:40 2008-04-23
 */
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -47,6 +47,7 @@ $files[$dirs[1]][1][] = "itemform.inc.php";
 $files[$dirs[1]][1][] = "lostpass.inc.php";
 $files[$dirs[1]][1][] = "newuser.inc.php";
 $files[$dirs[1]][1][] = "newuserform.inc.php";
+$files[$dirs[1]][1][] = "tags.inc.php";
 
 $dirs[2] = "inc/cat/";
 $files[$dirs[2]][0] = array();
@@ -88,6 +89,7 @@ $files[$dirs[4]][1][] = "modnws.inc.php";
 $files[$dirs[4]][1][] = "modsmap.inc.php";
 $files[$dirs[4]][1][] = "modsrc.inc.php";
 $files[$dirs[4]][1][] = "modstats.inc.php";
+$files[$dirs[4]][1][] = "modtagsc.inc.php";
 $files[$dirs[4]][1][] = "modskin.inc.php";
 $files[$dirs[4]][1][] = "modtimer.inc.php";
 $files[$dirs[4]][1][] = "moduser.inc.php";

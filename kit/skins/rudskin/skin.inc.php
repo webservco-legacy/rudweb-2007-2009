@@ -211,11 +211,11 @@ else {
   $rudweb_skin['yah']['sep'] = "&#160;/&#160;";
   $rudweb_skin['yah']['ftr'] = "";
   /* ********** ********** ********** CONTENT TAGS ********** ********** ********** */
-  $rudweb_skin['tagsc']['hdr'] = "<BR>";
+  $rudweb_skin['tagsc']['hdr'] = "<DIV>";
   $rudweb_skin['tagsc']['pre'] = "";
   $rudweb_skin['tagsc']['suf'] = "";
-  $rudweb_skin['tagsc']['sep'] = "&#160;/&#160;";
-  $rudweb_skin['tagsc']['ftr'] = "";
+  $rudweb_skin['tagsc']['sep'] = "<BR>"; // NOT ACTUAL SEPARATOR
+  $rudweb_skin['tagsc']['ftr'] = "</DIV>";
   /* ********** ********** ********** CATALOG MODULE ********** ********** ********** */
   $rudweb_skin['catalog']['hdr'] = '';
   $rudweb_skin['catalog']['ftr'] = '';

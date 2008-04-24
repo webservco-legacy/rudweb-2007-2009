@@ -505,3 +505,50 @@ A.csplink:hover {
   color: <?php echo $rudweb_skin['FontColor']; ?>;
   text-decoration: none;
 }
+SPAN.tag {
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  font-weight: bold;
+  cursor: pointer;
+}
+A.title:link {
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  background: transparent;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 1.1em;
+  line-height: 100%;
+  padding-top: 5<?php echo $rudweb_skin['Measure']; ?>;
+  padding-bottom: 5<?php echo $rudweb_skin['Measure']; ?>;
+  padding-left: 5<?php echo $rudweb_skin['Measure']; ?>;
+  padding-right: 5<?php echo $rudweb_skin['Measure']; ?>;
+}
+A.title:visited {
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  background: transparent;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: underline;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 1.1em;
+  line-height: 100%;
+  padding-top: 5<?php echo $rudweb_skin['Measure']; ?>;
+  padding-bottom: 5<?php echo $rudweb_skin['Measure']; ?>;
+  padding-left: 5<?php echo $rudweb_skin['Measure']; ?>;
+  padding-right: 5<?php echo $rudweb_skin['Measure']; ?>;
+}
+A.title:hover {
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  background: transparent;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  text-decoration: none;
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 1.1em;
+  line-height: 100%;
+  padding-top: 5<?php echo $rudweb_skin['Measure']; ?>;
+  padding-bottom: 5<?php echo $rudweb_skin['Measure']; ?>;
+  padding-left: 5<?php echo $rudweb_skin['Measure']; ?>;
+  padding-right: 5<?php echo $rudweb_skin['Measure']; ?>;
+}
