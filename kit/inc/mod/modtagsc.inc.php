@@ -1,16 +1,35 @@
 <?php
-/*
-./inc/mod/modtagsc.inc.php
-12:50 2008-04-05
+/**
+* Tags Module
+*
+* ./inc/mod/modtagsc.inc.php
+* Contains Tag Related Functions For Content
+* 
+* @author Radu Maier <rudisoft@rudisoft.net>
+* @copyright Copyright (c) 2007-2008, Radu Maier
+* @license http://opensource.org/licenses/gpl-2.0.php
+* @version 16:55 2008-04-25
+* @access public
+* @package RudWEb
+* @subpackage Functions
+* @since 15:59 2008-04-25
+* @todo Also include the Blog Tags Settings
+*/
+
+/**
+* authorized access only
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
+/**
+* Shows all tags for a specified content
+*
+* Uses menu id, required page, content type, existing tags, blog content
+*/
 function showCntTags($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $et, $blog_content = "0") {
   global $rudweb_ln;
   global $rudweb_skin;
-  
   $te = count($et);
-  
   if ($te != 0) {
     echo $rudweb_skin['tagsc']['hdr'];
     echo '<B>'.$rudweb_ln['cnt']['tags'].'</B>:&#160;';
@@ -23,6 +42,11 @@ function showCntTags($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $et, $b
     echo $rudweb_skin['tagsc']['ftr'];
   }
 }
+/**
+* Shows all content (blog style) matching a given tag
+*
+* Uses tag name
+*/
 function showTagsContent($tag_name) {
   global $rudweb_dbtype;
   global $rudweb_ln;
@@ -66,17 +90,38 @@ function showTagsContent($tag_name) {
     echo $rudweb_skin['blg']['ftr'];
   }
 }
+/**
+* Shows all used tags
+*
+* Also displays the number of content items using each tag
+*/
 function showAllTags() {
   global $rudweb_dbtype;
   global $rudweb_ln;
   global $rudweb_skin;
   
-  // query all tags
+  // query all used tags
+  $qt  = "SELECT DISTINCT t.tag_id AS tag_id, t.tag_name AS tag_name FROM "._RUDWEB_PRE."ws_rel AS r";
+  $qt .= " LEFT JOIN "._RUDWEB_PRE."ws_tags AS t on (r.tag_id = t.tag_id) ORDER BY t.tag_name ASC";
+  $rst = rudweb_qres($rudweb_dbtype, $qt);
+  $t_t = rudweb_qtotal($rudweb_dbtype, $rst);
   
   // if there are any, show them (with links!)
-  if() {
+  if($t_t != 0) {
     echo $rudweb_skin['tagsc']['hdr'];
-    
+    echo '<B>'.$rudweb_ln['cnt']['tags'].'</B>:&#160;';
+    echo $rudweb_skin['tagsc']['sep'];
+    for($i=1;$i<=$t_t;$i++) {
+      $rt = rudweb_fetch_assoc($rudweb_dbtype, $rst);
+      $qc     = "SELECT COUNT(cnt_id) FROM "._RUDWEB_PRE."ws_rel WHERE tag_id = '".$rt['tag_id']."' LIMIT 1";
+      $rc     = rudweb_qres($rudweb_dbtype, $qc);
+      $tc[$i] = rudweb_result($rudweb_dbtype, $rc, 0);
+      
+      echo $rudweb_skin['tagsc']['pre'];
+      restrictedLocalLink('default', $rt['tag_name']. ' (' . $tc[$i] . ')', 'index.php/tag/'.$rt['tag_name'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      echo $rudweb_skin['tagsc']['suf'];
+      if($i != $t_t) {echo $rudweb_skin['tagsc']['sep'];}
+    }
     echo $rudweb_skin['tagsc']['ftr'];
   }
 }

@@ -25,3 +25,10 @@ SELECT DISTINCT tag_name AS tag FROM mhs_ws_tags ORDER BY tag_name ASC;
 -- all content with a certain tag
 SELECT DISTINCT r.cnt_id as cnt_id FROM mhs_ws_rel As r LEFT JOIN mhs_ws_tags as t ON (r.tag_id = t.tag_id)
 WHERE t.tag_name = 'despre';
+-- all used tags with how many content ids are using them
+SELECT DISTINCT t.tag_id AS tag_id, t.tag_name AS tag_name FROM mhs_ws_rel AS r
+LEFT JOIN mhs_ws_tags AS t on (r.tag_id = t.tag_id) ORDER BY t.tag_name ASC
+;
+SELECT COUNT(cnt_id) AS sum_cnt FROM mhs_ws_rel WHERE tag_id = '1';
+-- unused tags
+SELECT tag_id, tag_name FROM mhs_ws_tags WHERE tag_id NOT IN (SELECT tag_id AS tid FROM mhs_ws_rel);
