@@ -1,5 +1,5 @@
 # rudweb table structure
--- 20:06 2008-04-22
+-- 19:14 2008-04-28
 DROP TABLE IF EXISTS rudweb_cat_cat;
 CREATE TABLE rudweb_cat_cat (
   cat_id int(5) unsigned NOT NULL,
@@ -399,3 +399,33 @@ CREATE TABLE rudweb_ws_tags (
   tag_name VARCHAR(30) NOT NULL,
 PRIMARY KEY (tag_id)
 ) myisam_str;
+
+DROP TABLE IF EXISTS rudweb_ws_cmt;
+CREATE TABLE rudweb_ws_cmt (
+  cmt_id INT(5) UNSIGNED NOT NULL,
+  cmt_ln char(2) NOT NULL,
+  cmt_typ tinyint(1) UNSIGNED NOT NULL,
+  cnt_id INT(5) UNSIGNED NOT NULL,
+  cmt_txt varchar(255) NOT NULL,   
+  cmt_crd date NOT NULL,                                    
+  cmt_crt time NOT NULL,                                    
+  cmt_cru int(5) unsigned NOT NULL,                         
+  cmt_mdd date NOT NULL,                                    
+  cmt_mdt time NOT NULL,                                    
+  cmt_mdu int(5) unsigned NOT NULL,
+  PRIMARY KEY (cmt_id)
+) myisam_str;
+
+--DROP TABLE IF EXISTS rudweb_cat_nts;
+--CREATE TABLE rudweb_cat_nts (
+--  nts_id INT(5) UNSIGNED NOT NULL,
+--  prd_id INT(5) UNSIGNED NOT NULL,
+--  nts_txt varchar(255) NOT NULL,   
+--  nts_crd date NOT NULL,                                    
+--  nts_crt time NOT NULL,                                    
+--  nts_cru int(5) unsigned NOT NULL,                         
+--  nts_mdd date NOT NULL,                                    
+--  nts_mdt time NOT NULL,                                    
+--  nts_mdu int(5) unsigned NOT NULL,
+--  PRIMARY KEY (cmt_id)
+--) myisam_str;

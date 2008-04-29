@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudweb1.inc.php
-13:12 2008-04-07
+11:16 2008-04-29
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -113,7 +113,7 @@ require_once _RUDWEB_LANG_DIR . $_SESSION[_RUDWEB_PRE.'usr_lang_index'] . '/lang
 require_once _RUDWEB_LANG_DIR . $_SESSION[_RUDWEB_PRE.'usr_lang_index'] . '/lang.inc.php';
 
 // admin stuff
-if ($_SESSION[_RUDWEB_PRE.'usr_level'] >=3) {
+if ($_SESSION[_RUDWEB_PRE.'usr_level'] >=1) {
   require_once _RUDWEB_INC_DIR . 'admin.inc.php';
   require_once _RUDWEB_LIB_DIR . 'editor/fckeditor.php';
 }

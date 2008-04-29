@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudwebm.inc.php
-21:09 2008-04-23
+16:57 2008-04-29
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -48,6 +48,11 @@ else {function youAreHere() {}}
 /* ********** ********** ********** //YOUAREHERE ********** ********** ********** */
 /* ********** ********** ********** NEWS ********** ********** ********** */
 if (_RUDWEB_CFG_NWS === "1") {require _RUDWEB_MOD_DIR . 'modnws.inc.php';}
+else {
+  function showNewsTitles();
+  function showNewsAll();
+  function showNewsItem();
+}
 /* ********** ********** ********** //NEWS ********** ********** ********** */
 /* ********** ********** ********** SEARCH ********** ********** ********** */
 if (_RUDWEB_CFG_SRC === "1") {require _RUDWEB_MOD_DIR . 'modsrc.inc.php';}
@@ -81,4 +86,12 @@ else {
   function adminMenu() {}
 }
 /* ********** ********** ********** //ADMINISTRATION MODULE ********** ********** ********** */
+/* ********** ********** ********** CONTENT & CATALOG COMMENTS ********** ********** ********** */
+if (_RUDWEB_CFG_CNT_CMNTS === "1") {require _RUDWEB_MOD_DIR . 'modcmt.inc.php';}
+else {
+  function showComments() {}
+  function showExtComments() {}
+  function genCmtForm() {}
+}
+/* ********** ********** ********** //CONTENT & CATALOG COMMENTS ********** ********** ********** */
 ?>

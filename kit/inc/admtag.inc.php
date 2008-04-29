@@ -1,0 +1,32 @@
+<?php
+/*
+./inc/admtag.inc.php
+13:53 2008-04-29
+*/
+if($new_onoff !== "") {
+  changedbcfg("CNT_TAGS", $new_onoff, $action_date, $action_time);
+  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/tagmod';
+}
+else if(isset($_POST['tag_id'])) {
+  $query_lock = "LOCK TABLES "._RUDWEB_PRE."ws_tags WRITE";
+  mysql_query($query_lock) or require _RUDWEB_LIB_DIR . 'myerr.php';
+  foreach ($_POST['tag_id'] as $tag_id => $dump) {
+    $dtq = "DELETE FROM "._RUDWEB_PRE."ws_tags WHERE tag_id = '".$tag_id."' LIMIT 1";
+    mysql_query($dtq) or require _RUDWEB_LIB_DIR . 'myerr.php';
+  }
+  $query_unlock = "UNLOCK TABLES";
+  mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
+  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/tagmod';
+}
+else if(isset($_POST['delutags'])) {
+  $query_lock = "LOCK TABLES "._RUDWEB_PRE."ws_tags WRITE, "._RUDWEB_PRE."ws_rel WRITE";
+  mysql_query($query_lock) or require _RUDWEB_LIB_DIR . 'myerr.php';
+  
+  $dtq = "DELETE FROM "._RUDWEB_PRE."ws_tags WHERE tag_id NOT IN (SELECT tag_id AS tid FROM "._RUDWEB_PRE."ws_rel)";
+  mysql_query($dtq) or require _RUDWEB_LIB_DIR . 'myerr.php';
+    
+  $query_unlock = "UNLOCK TABLES";
+  mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
+  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/tagmod';
+}
+?>

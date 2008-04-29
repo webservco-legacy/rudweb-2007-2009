@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/admcnt.inc.php
-20:01 2008-04-22
+14:55 2008-04-29
 */
 if(isset($_POST['cntdelcnt'])) { // delete selected content
   // verify
@@ -10,8 +10,11 @@ if(isset($_POST['cntdelcnt'])) { // delete selected content
   
   if (mysql_num_rows($rst_query) == '0') { // do the delete
     // lock
-    $query_lock = "LOCK TABLES "._RUDWEB_PRE."ws_mnu WRITE, "._RUDWEB_PRE."ws_cnt WRITE, "._RUDWEB_PRE."ws_pic WRITE, "._RUDWEB_PRE."ws_tags WRITE, "._RUDWEB_PRE."ws_rel WRITE";
+    $query_lock = "LOCK TABLES "._RUDWEB_PRE."ws_mnu WRITE, "._RUDWEB_PRE."ws_cnt WRITE, "._RUDWEB_PRE."ws_pic WRITE, "._RUDWEB_PRE."ws_tags WRITE, "._RUDWEB_PRE."ws_rel WRITE, "._RUDWEB_PRE."ws_cmt WRITE";
     mysql_query($query_lock) or require _RUDWEB_LIB_DIR . 'myerr.php';
+    //comments
+    $qcm = "DELETE FROM "._RUDWEB_PRE."ws_cmt WHERE cmt_typ = '0' AND cnt_id = '".$cnt_id."'";
+    mysql_query($qcm) or require _RUDWEB_LIB_DIR . 'myerr.php';
     // pictures
     $query_pic = "SELECT * FROM "._RUDWEB_PRE."ws_pic WHERE cnt_id = '".$cnt_id."' AND pic_loc != '0'";
     $rst_query_pic = mysql_query($query_pic) or require _RUDWEB_LIB_DIR . 'myerr.php';

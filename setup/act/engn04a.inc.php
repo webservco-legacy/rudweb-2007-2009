@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/engn03a.inc.php
-20:40 2008-04-23
+16:31 2008-04-29
 */
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -11,10 +11,13 @@ echo "</TR></TABLE>";
 $dirs[0]    = "inc/";
 $files[$dirs[0]][0] = array();
 $files[$dirs[0]][1] = array();
+$files[$dirs[0]][1][] = "admcmt.inc.php";
 $files[$dirs[0]][1][] = "admcnt.inc.php";
 $files[$dirs[0]][1][] = "admcsp.inc.php";
 $files[$dirs[0]][1][] = "admftr.inc.php";
 $files[$dirs[0]][1][] = "admin.inc.php";
+$files[$dirs[0]][1][] = "admnws.inc.php";
+$files[$dirs[0]][1][] = "admtag.inc.php";
 $files[$dirs[0]][1][] = "content.inc.php";
 $files[$dirs[0]][1][] = "contentadm.inc.php";
 $files[$dirs[0]][1][] = "index.php";
@@ -35,6 +38,7 @@ $files[$dirs[1]][0] = array();
 $files[$dirs[1]][1] = array();
 $files[$dirs[1]][1][] = "actuser.inc.php";
 $files[$dirs[1]][1][] = "admin.inc.php";
+$files[$dirs[1]][1][] = "cmtmod.inc.php";
 $files[$dirs[1]][1][] = "cntadd.inc.php";
 $files[$dirs[1]][1][] = "cspmod.inc.php";
 $files[$dirs[1]][1][] = "cspmodforms.inc.php";
@@ -45,8 +49,12 @@ $files[$dirs[1]][1][] = "index.php";
 $files[$dirs[1]][1][] = "itemadd.inc.php";
 $files[$dirs[1]][1][] = "itemform.inc.php";
 $files[$dirs[1]][1][] = "lostpass.inc.php";
+$files[$dirs[1]][1][] = "news.inc.php";
 $files[$dirs[1]][1][] = "newuser.inc.php";
 $files[$dirs[1]][1][] = "newuserform.inc.php";
+$files[$dirs[1]][1][] = "nwsmod.inc.php";
+$files[$dirs[1]][1][] = "tagmod.inc.php";
+$files[$dirs[1]][1][] = "tagmodforms.inc.php";
 $files[$dirs[1]][1][] = "tags.inc.php";
 
 $dirs[2] = "inc/cat/";
@@ -81,6 +89,7 @@ $files[$dirs[4]][1][] = "index.php";
 $files[$dirs[4]][1][] = "modadm.inc.php";
 $files[$dirs[4]][1][] = "modcart.inc.php";
 $files[$dirs[4]][1][] = "modcat.inc.php";
+$files[$dirs[4]][1][] = "modcmt.inc.php";
 $files[$dirs[4]][1][] = "modcpy.inc.php";
 $files[$dirs[4]][1][] = "moddebug.inc.php";
 $files[$dirs[4]][1][] = "modftr.inc.php";

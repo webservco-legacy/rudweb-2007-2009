@@ -7,18 +7,17 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
 ?>
 <?php
-echo '<DIV CLASS="title">';
-echo $rudweb_ln['usr']['accact'];
-echo '</DIV>';
-
-if($_SESSION[_RUDWEB_PRE.'usr_level'] > 0) {
-  echo '<DIV CLASS="text" STYLE="text-align: center;">';
-  echo '<BR>';
-  echo $rudweb_ln['usr']['alreadyreg'];
+if (isset($_GET['auth'])) {
+  echo '<DIV CLASS="title">';
+  echo $rudweb_ln['usr']['accact'];
   echo '</DIV>';
-}
-else {
-  if (isset($_GET['auth'])) {
+  if($_SESSION[_RUDWEB_PRE.'usr_level'] > 0) {
+    echo '<DIV CLASS="text" STYLE="text-align: center;">';
+    echo '<BR>';
+    echo $rudweb_ln['usr']['alreadyreg'];
+    echo '</DIV>';
+  }
+  else {
     $authtoken = rudweb_filter_input($_GET['auth']);
     
     // verif if token exists
@@ -64,4 +63,7 @@ else {
     }
   }
 }
+else {
+  echo "<DIV CLASS=\"err\">" . $rudweb_ln['err']['1'] . "</DIV>";
+} // else if user has no rights
 ?>

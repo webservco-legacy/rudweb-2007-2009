@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/en/lang.inc.php
-15:17 2008-04-21
+14:42 2008-04-29
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -195,4 +195,29 @@ $rudweb_ln['cnt']['cnt']          = "Content";
 // TAGS
 $rudweb_ln['cnt']['tags']         = "Tags";
 $rudweb_ln['cnt']['avltags']      = "Available tags";
+$rudweb_ln['adm']['tagmodstat0']  = "Tags module is disabled.";
+$rudweb_ln['adm']['tagmodstat00'] = "Modify your config file to enable it.";
+$rudweb_ln['adm']['tagmodstat01'] = "Enable.";
+$rudweb_ln['adm']['tagmodstat1']  = "Tags module is enabled.";
+$rudweb_ln['adm']['tagmodstat11'] = "Modify your config file to disable it.";
+$rudweb_ln['adm']['tagmodstat10'] = "Disable.";
+$rudweb_ln['csp']['deltags']      = "Delete selected tags";
+$rudweb_ln['csp']['delutags']     = "Delete unused tags";
+
+// COMMENTS
+$rudweb_ln['cmt']['cmtt']         = "Comments";
+$rudweb_ln['cmt']['cmt']          = "comments";
+$rudweb_ln['cmt']['cmtal']        = "Add new comment";
+$rudweb_ln['cmt']['cmtvl']        = "View all comments";
+
+// MODULE ADMINISTARTION
+$rudweb_ln['adm']['modstat0']  = "Module is disabled.";
+$rudweb_ln['adm']['modstat00'] = "Modify your config file to enable it.";
+$rudweb_ln['adm']['modstat01'] = "Enable.";
+$rudweb_ln['adm']['modstat1']  = "Module is enabled.";
+$rudweb_ln['adm']['modstat11'] = "Modify your config file to disable it.";
+$rudweb_ln['adm']['modstat10'] = "Disable.";
+
+// NEWS
+$rudweb_ln['nws']['tt']  = "News";
 ?>

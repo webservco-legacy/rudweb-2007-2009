@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/en/usrmail.inc.php
-12:50 2008-04-05
+11:13 2008-04-29
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -21,20 +21,20 @@ $rudweb_ln['usr']['actmailtxt3']  .= "<BR>Echipa " . _RUDWEB_WSTT . " ";
 $rudweb_ln['usr']['actmailtxt3']  .= "</DIV>";
 
 
-$rudweb_ln['usr']['authmessage']   = "<BR>Thank you for taking the time to register an account with " . _RUDWEB_WSTT . "!";
-$rudweb_ln['usr']['authmessage']  .= "<BR><BR>In order to start using your account you must first activate it.";
-$rudweb_ln['usr']['authmessage']  .= "<BR><BR>An email has been sent to the address you specified, containing activation instructions.";
-$rudweb_ln['usr']['authmessage']  .= "<BR><BR>Please check your email and follow the instructions in order to activate and start using your account.";
+$rudweb_ln['usr']['authmessage']   = "<BR>Va multumim pentru ca ati ales sa creati un cont la " . _RUDWEB_WSTT . "!";
+$rudweb_ln['usr']['authmessage']  .= "<BR><BR>Pentru a putea folosi contul trebuie mai intai sa il activati.";
+$rudweb_ln['usr']['authmessage']  .= "<BR><BR>Un email a fost trimis la adresa specificata, continand instructiuni pentru activarea contului.";
+$rudweb_ln['usr']['authmessage']  .= "<BR><BR>Va rugam sa va verificati email-ul si sa urmati incstructiunile incluse in mesaj.";
 
-$rudweb_ln['usr']['autherror']     = "<BR>Thank you for taking the time to register an account with " . _RUDWEB_WSTT . "!";
-$rudweb_ln['usr']['autherror']    .= "<BR><BR>In order to start using your account you must first activate it.";
-$rudweb_ln['usr']['autherror']    .= "<BR><BR>Unfortunately we weren't able to sent your activation email.";
-$rudweb_ln['usr']['autherror']    .= "<BR><BR>Please contact the website administrator about this problem.";
+$rudweb_ln['usr']['autherror']     = "<BR>Va multumim pentru ca ati ales sa creati un cont la " . _RUDWEB_WSTT . "!";
+$rudweb_ln['usr']['autherror']    .= "<BR><BR>Pentru a putea folosi contul trebuie mai intai sa il activati.";
+$rudweb_ln['usr']['autherror']    .= "<BR><BR>Din pacate nu am putut trimite email-ul de activare.";
+$rudweb_ln['usr']['autherror']    .= "<BR><BR>Va rugam contactati administratorul site-ului in legatura cu aceasta problema.";
 
-$rudweb_ln['usr']['authoka']       = "<BR>Thank you!";
-$rudweb_ln['usr']['authoka']      .= "<BR><BR>Account for ";
-$rudweb_ln['usr']['authokb']       = " was succesfully activated!";
-$rudweb_ln['usr']['authokb']      .= "<BR><BR>You can now login using your email address and the password you have chosen!";
+$rudweb_ln['usr']['authoka']       = "<BR>Va multumim!";
+$rudweb_ln['usr']['authoka']      .= "<BR><BR>Contul pentru ";
+$rudweb_ln['usr']['authokb']       = " a fost activat cu succes!";
+$rudweb_ln['usr']['authokb']      .= "<BR><BR>De acum va pueti loga folosind adresa de email si parola aleasa!";
 
 $rudweb_ln['usr']['lostpass1']     = "<BR>Echipa " . _RUDWEB_WSTT . " va respecta intimitatea, de aceea nu cunoastem parola dvs.";
 $rudweb_ln['usr']['lostpass1']    .= "<BR><BR>Asadar, daca nu mai tineti minte parola aleasa, aceasta este pierduta pentru totdeauna.";

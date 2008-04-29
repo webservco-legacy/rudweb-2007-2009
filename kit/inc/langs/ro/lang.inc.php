@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/ro/lang.inc.php
-15:16 2008-04-21
+14:42 2008-04-29
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -198,4 +198,29 @@ $rudweb_ln['cnt']['cnt']          = "Con&#355;inut";
 // TAGS
 $rudweb_ln['cnt']['tags']         = "Tag-uri";
 $rudweb_ln['cnt']['avltags']      = "Tag-uri disponibile: ";
+$rudweb_ln['adm']['tagmodstat0']  = "Modulul de tag-uri este inactiv.";
+$rudweb_ln['adm']['tagmodstat00'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a-l activa.";
+$rudweb_ln['adm']['tagmodstat01'] = "Activare.";
+$rudweb_ln['adm']['tagmodstat1']  = "Modulul de tag-uri este activ.";
+$rudweb_ln['adm']['tagmodstat11'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a-l dezactiva.";
+$rudweb_ln['adm']['tagmodstat10'] = "Dezactivare.";
+$rudweb_ln['csp']['deltags']      = "&#350;terge tag-urile selectate";
+$rudweb_ln['csp']['delutags']     = "&#350;terge toate tag-urile nefolosite";
+
+// COMMENTS
+$rudweb_ln['cmt']['cmtt']         = "Opinii";
+$rudweb_ln['cmt']['cmt']          = "opinii";
+$rudweb_ln['cmt']['cmtal']        = "Adaug&#259; opinie";
+$rudweb_ln['cmt']['cmtvl']        = "Vizualizare opinii";
+
+// MODULE ADMINISTARTION
+$rudweb_ln['adm']['modstat0']  = "Modulul este inactiv.";
+$rudweb_ln['adm']['modstat00'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a-l activa.";
+$rudweb_ln['adm']['modstat01'] = "Activare.";
+$rudweb_ln['adm']['modstat1']  = "Modulul este activ.";
+$rudweb_ln['adm']['modstat11'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a-l dezactiva.";
+$rudweb_ln['adm']['modstat10'] = "Dezactivare.";
+
+// NEWS
+$rudweb_ln['nws']['tt']  = "&#350;tiri";
 ?>

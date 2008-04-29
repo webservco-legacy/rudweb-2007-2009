@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/adm/itemform.inc.php
-12:33 2008-04-14
+14:41 2008-04-29
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
@@ -188,4 +188,7 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
   echo '</FORM>';
   echo $rudweb_skin['prod']['dt']['ftr'];
 }
+else {
+  echo "<DIV CLASS=\"err\">" . $rudweb_ln['err']['1'] . "</DIV>";
+} // else if user has no rights
 ?>

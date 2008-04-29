@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/cfg/func.inc.php
-16:51 2008-04-16
+13:21 2008-04-26
 */
 function generate_lncfg_str($eol, $now, $ln) {
   $c  = '<?php'.$eol.'/*'.$eol.'./inc/langs/'.$ln.'/langcfg.inc.php'.$eol.$now.$eol.'*/'.$eol;
@@ -258,7 +258,7 @@ function write_config_str($str, $file) {
 function get_version($location) {
   if(is_readable($location.'inc/rudwebc.inc.php')) {
     $version_raw = file($location.'inc/rudwebc.inc.php');
-    $version_full = eregi_replace('define\("_RUDWEB_SITE_VERSION", "', '', $version_raw['8']);
+    $version_full = eregi_replace('define\("_RUDWEB_SITE_VERSION", "', '', $version_raw['25']);
     $version['0']  = eregi_replace('"\);', '', $version_full);
   }
   else {

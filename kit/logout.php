@@ -36,7 +36,7 @@ session_start();
     /* // cookie removal code by  powerlord at spamless dot vgmusic dot com */
 
     session_destroy();
-    $redirect = _RUDWEB_SITE_URL . "admin";
+    $redirect = _RUDWEB_SITE_URL;
     header("Location: $redirect");
     exit;
 //}

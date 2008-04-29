@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/admin.inc.php
-20:01 2008-04-22
+14:41 2008-04-29
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -145,5 +145,45 @@ if (isset($_POST['cspmod'])) { // enable, disable offers module
 if (isset($_POST['itemadd'])) {
   $action_date  = date("Y-m-d");
   $action_time  = date("H:i:s");
+}
+if (isset($_POST['tagmod'])) { // enable, disable tags module
+  $new_onoff = '';
+  
+  // not ok, use elsewhere
+  $action_date  = date("Y-m-d"); /* mod del */
+  $action_time  = date("H:i:s"); /* mod del */
+  
+  if(isset($_POST['tagonoff'])) {$new_onoff = rudweb_filter_input($_POST['tagonoff']);}
+  require_once _RUDWEB_INC_DIR . 'admtag.inc.php';
+  header("Location: $redirect");
+}
+if (isset($_POST['cmt_id']) || isset($_POST['modcmt'])) {
+  $new_onoff = '';
+  
+  // not ok, use elsewhere
+  $action_date  = date("Y-m-d"); /* mod del */
+  $action_time  = date("H:i:s"); /* mod del */
+  
+  //$cmt_id = rudweb_filter_input($_POST['cmt_id']);
+  if(isset($_POST['cmtonoff'])) {$new_onoff = rudweb_filter_input($_POST['cmtonoff']);}
+  if(isset($_POST['cmt_id']))  {$cmt_id = rudweb_filter_input($_POST['cmt_id']);}
+  if(isset($_POST['cmt_typ'])) {$cmt_typ = rudweb_filter_input($_POST['cmt_typ']);}
+  if(isset($_POST['cnt_id']))  {$cnt_id = rudweb_filter_input($_POST['cnt_id']);}
+  
+  if(isset($_POST['cmt_txt'])) {$cmt_txt = rudweb_filter_input($_POST['cmt_txt']);}
+
+  require_once _RUDWEB_INC_DIR . 'admcmt.inc.php';
+  header("Location: $redirect");
+}
+if (isset($_POST['nwsmod'])) { // enable, disable, admin news module
+  $new_onoff = '';
+  
+  // not ok, use elsewhere
+  $action_date  = date("Y-m-d"); /* mod del */
+  $action_time  = date("H:i:s"); /* mod del */
+  
+  if(isset($_POST['nwsonoff'])) {$new_onoff = rudweb_filter_input($_POST['nwsonoff']);}
+  require_once _RUDWEB_INC_DIR . 'admnws.inc.php';
+  header("Location: $redirect");
 }
 ?>

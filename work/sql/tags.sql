@@ -21,7 +21,7 @@ LEFT JOIN mhs_ws_tags AS t ON (r.tag_id = t.tag_id)
 WHERE r.cnt_id = '1'
 ORDER BY t.tag_name ASC;
 -- all content tags
-SELECT DISTINCT tag_name AS tag FROM mhs_ws_tags ORDER BY tag_name ASC;
+SELECT tag_id, tag_name AS tag FROM mhs_ws_tags ORDER BY tag_name ASC;
 -- all content with a certain tag
 SELECT DISTINCT r.cnt_id as cnt_id FROM mhs_ws_rel As r LEFT JOIN mhs_ws_tags as t ON (r.tag_id = t.tag_id)
 WHERE t.tag_name = 'despre';

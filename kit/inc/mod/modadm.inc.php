@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modadm.inc.php
-10:20 2008-04-15
+14:42 2008-04-29
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -105,7 +105,45 @@ function adminMenu() {
     echo $rudweb_skin['adm']['mnuhd']['suf'];
     
     echo '<DIV ID="l1cnt">';
-    if (_RUDWEB_CFG_FTR_ON === "1") {
+      echo $rudweb_skin['adm']['mnutt']['pre'];
+      echo '<A onClick="JavaScript: toggleLayer(\'l2nws\')">';
+      echo $rudweb_ln['nws']['tt'];
+      echo '</A>';
+      echo $rudweb_skin['adm']['mnutt']['suf'];
+    
+      echo '<DIV ID="l2nws">';
+      echo $rudweb_skin['adm']['mnu']['pre'];
+      restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], 'admin.php/admin/nwsmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      echo $rudweb_skin['adm']['mnu']['suf'];
+      echo $rudweb_skin['adm']['mnu']['sep'];
+      echo '</DIV>';
+      
+      echo $rudweb_skin['adm']['mnutt']['pre'];
+      echo '<A onClick="JavaScript: toggleLayer(\'l2tag\')">';
+      echo $rudweb_ln['cnt']['tags'];
+      echo '</A>';
+      echo $rudweb_skin['adm']['mnutt']['suf'];
+    
+      echo '<DIV ID="l2tag">';
+      echo $rudweb_skin['adm']['mnu']['pre'];
+      restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], 'admin.php/admin/tagmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      echo $rudweb_skin['adm']['mnu']['suf'];
+      echo $rudweb_skin['adm']['mnu']['sep'];
+      echo '</DIV>';
+      
+      echo $rudweb_skin['adm']['mnutt']['pre'];
+      echo '<A onClick="JavaScript: toggleLayer(\'l2cmt\')">';
+      echo $rudweb_ln['cmt']['cmtt'];
+      echo '</A>';
+      echo $rudweb_skin['adm']['mnutt']['suf'];
+    
+      echo '<DIV ID="l2cmt">';
+      echo $rudweb_skin['adm']['mnu']['pre'];
+      restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], 'admin.php/admin/cmtmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      echo $rudweb_skin['adm']['mnu']['suf'];
+      echo $rudweb_skin['adm']['mnu']['sep'];
+      echo '</DIV>';
+
       echo $rudweb_skin['adm']['mnutt']['pre'];
       echo '<A onClick="JavaScript: toggleLayer(\'l2ftr\')">';
       echo $rudweb_ln['featured']['tt'];
@@ -118,7 +156,6 @@ function adminMenu() {
       echo $rudweb_skin['adm']['mnu']['suf'];
       echo $rudweb_skin['adm']['mnu']['sep'];
       echo '</DIV>';
-    }
     echo '</DIV>';
     // SEPARATOR
     

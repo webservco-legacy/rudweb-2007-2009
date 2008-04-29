@@ -164,6 +164,29 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
         echo $rudweb_skin['cnt']['pic']['ftr']['4'];
       }
       
+      //POSTED BY
+                  if (_RUDWEB_CFG_CNT_POSTED == 1) {
+              $query_cnt = "SELECT cnt_crd, cnt_crt, cnt_cru, cnt_mdd, cnt_mdt, cnt_mdu FROM `"._RUDWEB_PRE."ws_cnt` WHERE `cnt_alias` = '".$rudweb_req_page."' AND (`cnt_ln` = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."' AND `cnt_dis` = '0') LIMIT 1";
+              $rst_query_cnt = rudweb_qres($rudweb_dbtype, $query_cnt);
+              $total_cnt = rudweb_qtotal($rudweb_dbtype, $rst_query_cnt);
+              if ($total_cnt != 0) {
+                $row_rst_cnt = rudweb_fetch_assoc($rudweb_dbtype, $rst_query_cnt);
+                $qp = "SELECT usr_nick_name FROM "._RUDWEB_PRE."set_usr WHERE usr_id = '".$row_rst_cnt['cnt_cru']."' LIMIT 1";
+                $rp = rudweb_qres($rudweb_dbtype, $qp);
+                $poster_alias = rudweb_result($rudweb_dbtype, $rp, 0);
+                echo $rudweb_skin['blg']['posted']['pre'];
+                echo $rudweb_ln['blg']['postedby'] . $poster_alias . $rudweb_ln['blg']['on'] . MyDate($row_rst_cnt['cnt_crd'], 'dd/mm/yyyy') . " " . $row_rst_cnt['cnt_crt'];
+                if ($row_rst_cnt['cnt_mdd'] != '0000-00-00') {
+                  $qm = "SELECT usr_nick_name FROM "._RUDWEB_PRE."set_usr WHERE usr_id = '".$row_rst_cnt['cnt_mdu']."' LIMIT 1";
+                  $rm = rudweb_qres($rudweb_dbtype, $qm);
+                  $mod_alias  = rudweb_result($rudweb_dbtype, $rm, 0);
+                  echo '. ';
+                  echo $rudweb_ln['blg']['lastmod'] . $mod_alias . $rudweb_ln['blg']['on'] . MyDate($row_rst_cnt['cnt_mdd'], 'dd/mm/yyyy') . " " . $row_rst_cnt['cnt_mdt'];
+                }
+                echo $rudweb_skin['blg']['posted']['suf'];
+              }
+            }
+            
       // TAGS
       showCntTags($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $et);
       

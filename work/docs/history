@@ -1,3 +1,11 @@
+0.6 (080429)
+- added comments module
+- fixed some security issues in the admin/show part
+0.5 (080426)
+- added tags module (todo: administration)
+- decided to make the code phpDocumentor Friendly (not implemented yet)
+- more work at the shop module (administration part)
+- cleaned up skin structure a bit
 0.4 (080405)
 - changed themes to skins
 - some work at the shop module

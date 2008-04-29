@@ -185,13 +185,13 @@ else {
   $rudweb_skin['lng']['sep'] = "\n&#160;";
   $rudweb_skin['lng']['ftr'] = "\n";
   /* ********** ********** ********** BLOG MODULE ********** ********** ********** */
-  $rudweb_skin['blg']['hdr'] = "\n";
-  $rudweb_skin['blg']['ftr'] = "\n";
-  $rudweb_skin['blg']['pre'] = "\n";
-  $rudweb_skin['blg']['suf'] = "\n";
-  $rudweb_skin['blg']['sep'] = "\n<BR>";
-  $rudweb_skin['blg']['posted']['pre'] = "\n";
-  $rudweb_skin['blg']['posted']['suf'] = "\n";
+  $rudweb_skin['blg']['hdr'] = '';
+  $rudweb_skin['blg']['ftr'] = '';
+  $rudweb_skin['blg']['pre'] = '';
+  $rudweb_skin['blg']['suf'] = '';
+  $rudweb_skin['blg']['sep'] = '<BR>';
+  $rudweb_skin['blg']['posted']['pre'] = '';
+  $rudweb_skin['blg']['posted']['suf'] = '';
   /* ********** ********** ********** COMMENTS MODULE ********** ********** ********** */
   $rudweb_skin['cmnts']['hdr'] = "\n<BR>";
   $rudweb_skin['cmnts']['ftr'] = "\n";
@@ -348,8 +348,8 @@ else {
   $rudweb_skin['csp']['suf']        = "\n";
   $rudweb_skin['csp']['sep']        = "\n<BR><BR>";
 
-  $rudweb_skin['csp']['chartt']     = "20"; // how many characters for title
-  $rudweb_skin['csp']['chardesc']   = "20"; // how many characters for description
+  $rudweb_skin['csp']['chartt']     = "30"; // how many characters for title
+  $rudweb_skin['csp']['chardesc']   = "90"; // how many characters for description
 
   $rudweb_skin['csp']['pic']['pre'] = "\n<BR>";
   $rudweb_skin['csp']['pic']['suf'] = "\n<BR>";
@@ -357,5 +357,16 @@ else {
   $rudweb_skin['csp']['tt']['suf']  = "\n";
   $rudweb_skin['csp']['dsc']['pre'] = "\n";
   $rudweb_skin['csp']['dsc']['suf'] = "\n";
+  /* ********** ********** ********** CONTENT & CATALOG COMMENTS ********** ********** ********** */
+  $rudweb_skin['cmt']['hdr'] = '<DIV>';
+  $rudweb_skin['cmt']['ftr'] = '</DIV>';
+  $rudweb_skin['cmt']['pre'] = '<DIV>';
+  $rudweb_skin['cmt']['suf'] = '</DIV>';
+  $rudweb_skin['cmt']['cmtpre'] = '<DIV>';
+  $rudweb_skin['cmt']['cmtsuf'] = '</DIV>';
+  $rudweb_skin['cmt']['cmtppre'] = '<DIV>';
+  $rudweb_skin['cmt']['cmtpsuf'] = '</DIV>';  
+  $rudweb_skin['cmt']['sep'] = '';
+  
 }
 ?>

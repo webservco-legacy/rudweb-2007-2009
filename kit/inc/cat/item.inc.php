@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/cat/item.inc.php
-10:08 2008-04-14
+14:53 2008-04-29
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -272,9 +272,11 @@ if($total_cat == '1') {
           }
         }
         else if(isset($_POST['itemdel'])) {
-          $qlk = "LOCK TABLES "._RUDWEB_PRE."cat_prd WRITE, "._RUDWEB_PRE."cat_val WRITE, "._RUDWEB_PRE."cat_pic WRITE";
+          $qlk = "LOCK TABLES "._RUDWEB_PRE."cat_prd WRITE, "._RUDWEB_PRE."cat_val WRITE, "._RUDWEB_PRE."cat_pic WRITE, "._RUDWEB_PRE."ws_cmt WRITE";
           mysql_query($qlk) or require _RUDWEB_LIB_DIR . 'myerr.php';
-          
+          //comments
+          $qcm = "DELETE FROM "._RUDWEB_PRE."ws_cmt WHERE cmt_typ = '1' AND cnt_id = '".$prd_id."'";
+          mysql_query($qcm) or require _RUDWEB_LIB_DIR . 'myerr.php';
           //pictures
           $qpc = "SELECT pic_fn FROM "._RUDWEB_PRE."cat_pic WHERE prd_id = '".$prd_id."'";
           $rpc = rudweb_qres($rudweb_dbtype, $qpc);
@@ -342,6 +344,7 @@ if($total_cat == '1') {
         
         catYah(0,$item_id);
         require _RUDWEB_ADMIN_DIR . 'itemform.inc.php';
+        showExtComments(1,$item_id,'');
       }  
     }
   }
@@ -457,11 +460,13 @@ if($total_cat == '1') {
         echo $rudweb_skin['prod']['dt']['pic0']['ftr'];
   
         echo $rudweb_skin['prod']['dt']['ftr'];
+        
+        showExtComments(1,$item_id,'');
       }
   }
 }
 else {
-  echo '<DIV CLASS="err" STYLE="padding-top: 15px;">'.$rudweb_ln['err']['0'].'</DIV>';
+  echo '<DIV CLASS="err" STYLE="padding-top: 15px;">'.$rudweb_ln['err']['1'].'</DIV>';
 }
 echo $rudweb_skin['catalog']['ftr'];
 ?>

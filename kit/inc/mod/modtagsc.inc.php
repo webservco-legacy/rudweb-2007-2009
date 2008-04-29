@@ -2,22 +2,23 @@
 /**
 * Tags Module
 *
-* ./inc/mod/modtagsc.inc.php
-* Contains Tag Related Functions For Content
+* <I>./inc/mod/modtagsc.inc.php</I>
+* <BR>Contains Tag Related Functions For Content
 * 
 * @author Radu Maier <rudisoft@rudisoft.net>
 * @copyright Copyright (c) 2007-2008, Radu Maier
 * @license http://opensource.org/licenses/gpl-2.0.php
-* @version 16:55 2008-04-25
+* @version 13:04 2008-04-26
 * @access public
 * @package RudWEb
-* @subpackage Functions
+* @subpackage Modules
 * @since 15:59 2008-04-25
 * @todo Also include the Blog Tags Settings
+* @todo Administration
 */
 
 /**
-* authorized access only
+* Authorized access only
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -35,7 +36,7 @@ function showCntTags($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $et, $b
     echo '<B>'.$rudweb_ln['cnt']['tags'].'</B>:&#160;';
     for($i=1;$i<=$te;$i++) {
       echo $rudweb_skin['tagsc']['pre'];
-      restrictedLocalLink('default', $et[$i], 'index.php/tag/'.$et[$i], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('default', $et[$i], 'index.php/show/tags/tag/'.$et[$i], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_skin['tagsc']['suf'];
       if ($i != $te) {echo ', ';}
     }
@@ -70,22 +71,7 @@ function showTagsContent($tag_name) {
       echo $rudweb_skin['blg']['pre'];
       showContent($rc['mnu_id'], $rc['cnt_alias'], $rc['mnu_typ'], 1);
       echo $rudweb_skin['blg']['suf'];
-        
-        if (_RUDWEB_CFG_BLG_POSTED === "1") {
-          $qp = "SELECT usr_nick_name FROM "._RUDWEB_PRE."set_usr WHERE usr_id = '".$rc['cnt_cru']."' LIMIT 1";
-          $rp = rudweb_qres($rudweb_dbtype, $qp);
-          $poster_alias = rudweb_result($rudweb_dbtype, $rp, 0);
-          echo $rudweb_skin['blg']['posted']['pre'];
-          echo $rudweb_ln['blg']['postedby'] . $poster_alias . $rudweb_ln['blg']['on'] . MyDate($rc['cnt_crd'], 'dd/mm/yyyy') . " " . $rc['cnt_crt'];
-          if ($rc['cnt_mdd'] != '0000-00-00') {
-            $qm = "SELECT usr_nick_name FROM "._RUDWEB_PRE."set_usr WHERE usr_id = '".$rc['cnt_mdu']."' LIMIT 1";
-            $rm = rudweb_qres($rudweb_dbtype, $qm);
-            $mod_alias  = rudweb_result($rudweb_dbtype, $rm, 0);
-            echo '. ';
-            echo $rudweb_ln['blg']['lastmod'] . $mod_alias . $rudweb_ln['blg']['on'] . MyDate($rc['cnt_mdd'], 'dd/mm/yyyy') . " " . $rc['cnt_mdt'];
-          }
-          echo $rudweb_skin['blg']['posted']['suf'];
-        }
+      if ($i !== $t_c) {echo $rudweb_skin['blg']['sep'];}
     }
     echo $rudweb_skin['blg']['ftr'];
   }
@@ -100,13 +86,11 @@ function showAllTags() {
   global $rudweb_ln;
   global $rudweb_skin;
   
-  // query all used tags
   $qt  = "SELECT DISTINCT t.tag_id AS tag_id, t.tag_name AS tag_name FROM "._RUDWEB_PRE."ws_rel AS r";
   $qt .= " LEFT JOIN "._RUDWEB_PRE."ws_tags AS t on (r.tag_id = t.tag_id) ORDER BY t.tag_name ASC";
   $rst = rudweb_qres($rudweb_dbtype, $qt);
   $t_t = rudweb_qtotal($rudweb_dbtype, $rst);
   
-  // if there are any, show them (with links!)
   if($t_t != 0) {
     echo $rudweb_skin['tagsc']['hdr'];
     echo '<B>'.$rudweb_ln['cnt']['tags'].'</B>:&#160;';
@@ -118,7 +102,7 @@ function showAllTags() {
       $tc[$i] = rudweb_result($rudweb_dbtype, $rc, 0);
       
       echo $rudweb_skin['tagsc']['pre'];
-      restrictedLocalLink('default', $rt['tag_name']. ' (' . $tc[$i] . ')', 'index.php/tag/'.$rt['tag_name'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('default', $rt['tag_name']. ' (' . $tc[$i] . ')', 'index.php/show/tags/tag/'.$rt['tag_name'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_skin['tagsc']['suf'];
       if($i != $t_t) {echo $rudweb_skin['tagsc']['sep'];}
     }
