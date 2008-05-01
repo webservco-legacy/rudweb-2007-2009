@@ -367,6 +367,20 @@ else {
   $rudweb_skin['cmt']['cmtppre'] = '<DIV>';
   $rudweb_skin['cmt']['cmtpsuf'] = '</DIV>';  
   $rudweb_skin['cmt']['sep'] = '';
-  
+  /* ********** ********** ********** NEWS MODULE ********** ********** ********** */
+  $rudweb_skin['nws']['lst']['hdr'] = '<DIV>';
+  $rudweb_skin['nws']['lst']['ftr'] = '</DIV>';
+  $rudweb_skin['nws']['lst']['pre'] = '<DIV>';
+  $rudweb_skin['nws']['lst']['suf'] = '</DIV>';
+  $rudweb_skin['nws']['itm']['hdr'] = '<DIV>';
+  $rudweb_skin['nws']['itm']['ftr'] = '</DIV>';
+  $rudweb_skin['nws']['itm']['ttpre'] = '<DIV>';
+  $rudweb_skin['nws']['itm']['ttsuf'] = '</DIV>';
+  $rudweb_skin['nws']['itm']['dscpre'] = '<DIV>';
+  $rudweb_skin['nws']['itm']['dscsuf'] = '</DIV>';
+  $rudweb_skin['nws']['itm']['txtpre'] = '<DIV>';
+  $rudweb_skin['nws']['itm']['txtsuf'] = '</DIV>';
+  $rudweb_skin['nws']['itm']['dtpre'] = '<DIV>';
+  $rudweb_skin['nws']['itm']['dtsuf'] = '</DIV>';
 }
 ?>

@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modadm.inc.php
-14:42 2008-04-29
+12:25 2008-04-30
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -114,6 +114,10 @@ function adminMenu() {
       echo '<DIV ID="l2nws">';
       echo $rudweb_skin['adm']['mnu']['pre'];
       restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], 'admin.php/admin/nwsmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      echo $rudweb_skin['adm']['mnu']['suf'];
+      echo $rudweb_skin['adm']['mnu']['sep'];
+      echo $rudweb_skin['adm']['mnu']['pre'];
+      restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['add'], 'admin.php/admin/nwsmod/act/add', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_skin['adm']['mnu']['suf'];
       echo $rudweb_skin['adm']['mnu']['sep'];
       echo '</DIV>';

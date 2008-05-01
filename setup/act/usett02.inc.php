@@ -458,51 +458,6 @@
 </TD></TR></TABLE>
 
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
-<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">blog "posted by":</TD>
-<TD CLASS="cnt">
-<SELECT CLASS="general" NAME="cfg_blg_posted">
-  <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_cfg_blg_posted'] == "0") {echo " SELECTED";}?>>disabled</OPTION>
-  <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_cfg_blg_posted'] == "1") {echo " SELECTED";}?>>enabled</OPTION>
-</SELECT>
-</TD></TR></TABLE>
-
-<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
-<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">blog tags:</TD>
-<TD CLASS="cnt">
-<SELECT CLASS="general" NAME="cfg_blg_tags">
-  <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_cfg_blg_tags'] == "0") {echo " SELECTED";}?>>disabled</OPTION>
-  <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_cfg_blg_tags'] == "1") {echo " SELECTED";}?>>enabled</OPTION>
-</SELECT>
-</TD></TR></TABLE>
-
-<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
-<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">blog comments:</TD>
-<TD CLASS="cnt">
-<SELECT CLASS="general" NAME="cfg_blg_cmnts">
-  <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_cfg_blg_cmnts'] == "0") {echo " SELECTED";}?>>disabled</OPTION>
-  <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_cfg_blg_cmnts'] == "1") {echo " SELECTED";}?>>enabled</OPTION>
-</SELECT>
-</TD></TR></TABLE>
-
-<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
-<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">blog links:</TD>
-<TD CLASS="cnt">
-<SELECT CLASS="general" NAME="cfg_blg_lnks">
-  <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_cfg_blg_lnks'] == "0") {echo " SELECTED";}?>>disabled</OPTION>
-  <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_cfg_blg_lnks'] == "1") {echo " SELECTED";}?>>enabled</OPTION>
-</SELECT>
-</TD></TR></TABLE>
-
-<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
-<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">blog downloads:</TD>
-<TD CLASS="cnt">
-<SELECT CLASS="general" NAME="cfg_blg_dlds">
-  <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_cfg_blg_dlds'] == "0") {echo " SELECTED";}?>>disabled</OPTION>
-  <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_cfg_blg_dlds'] == "1") {echo " SELECTED";}?>>enabled</OPTION>
-</SELECT>
-</TD></TR></TABLE>
-
-<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
 <TR>
 <TD CLASS="hdr"><B>Website Administration:</B></TD></TR>
 </TABLE>

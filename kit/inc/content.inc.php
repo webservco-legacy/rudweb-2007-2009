@@ -165,7 +165,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
       }
       
       //POSTED BY
-                  if (_RUDWEB_CFG_CNT_POSTED == 1) {
+            if (_RUDWEB_CFG_CNT_POSTED == 1) {
               $query_cnt = "SELECT cnt_crd, cnt_crt, cnt_cru, cnt_mdd, cnt_mdt, cnt_mdu FROM `"._RUDWEB_PRE."ws_cnt` WHERE `cnt_alias` = '".$rudweb_req_page."' AND (`cnt_ln` = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."' AND `cnt_dis` = '0') LIMIT 1";
               $rst_query_cnt = rudweb_qres($rudweb_dbtype, $query_cnt);
               $total_cnt = rudweb_qtotal($rudweb_dbtype, $rst_query_cnt);

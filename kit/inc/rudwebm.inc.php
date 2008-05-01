@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudwebm.inc.php
-16:57 2008-04-29
+19:48 2008-04-29
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -49,9 +49,11 @@ else {function youAreHere() {}}
 /* ********** ********** ********** NEWS ********** ********** ********** */
 if (_RUDWEB_CFG_NWS === "1") {require _RUDWEB_MOD_DIR . 'modnws.inc.php';}
 else {
-  function showNewsTitles();
-  function showNewsAll();
-  function showNewsItem();
+  function showNewsTitles() {}
+  function showNewsAll() {}
+  function showNewsItem() {}
+  function addNewsItem() {}
+  function showNewsItemForm() {}
 }
 /* ********** ********** ********** //NEWS ********** ********** ********** */
 /* ********** ********** ********** SEARCH ********** ********** ********** */

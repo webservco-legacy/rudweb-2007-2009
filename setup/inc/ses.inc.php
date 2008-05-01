@@ -137,12 +137,6 @@ if (isset($_POST['proceed']) && !isset($_SESSION['rudwebset_start'])) {
   $_SESSION['rudwebset_cfg_cnt_lnks']            = '0';
   $_SESSION['rudwebset_cfg_cnt_dlds']            = '0';
   
-  $_SESSION['rudwebset_cfg_blg_posted']          = '0';
-  $_SESSION['rudwebset_cfg_blg_tags']            = '0';
-  $_SESSION['rudwebset_cfg_blg_cmnts']           = '0';
-  $_SESSION['rudwebset_cfg_blg_lnks']            = '0';
-  $_SESSION['rudwebset_cfg_blg_dlds']            = '0';
-  
   $_SESSION['rudwebset_cfg_adm']                 = '1';
   $_SESSION['rudwebset_cfg_adm_fname']           = '';
   $_SESSION['rudwebset_cfg_adm_mname']           = '';
@@ -351,11 +345,6 @@ if(isset($_POST['cfg_cnt_cmnts']))           {$_SESSION['rudwebset_cfg_cnt_cmnts
 if(isset($_POST['cfg_cnt_lnks']))            {$_SESSION['rudwebset_cfg_cnt_lnks']            = $_POST['cfg_cnt_lnks'];}
 if(isset($_POST['cfg_cnt_dlds']))            {$_SESSION['rudwebset_cfg_cnt_dlds']            = $_POST['cfg_cnt_dlds'];}
   
-if(isset($_POST['cfg_blg_posted']))          {$_SESSION['rudwebset_cfg_blg_posted']          = $_POST['cfg_blg_posted'];}
-if(isset($_POST['cfg_blg_tags']))            {$_SESSION['rudwebset_cfg_blg_tags']            = $_POST['cfg_blg_tags'];}
-if(isset($_POST['cfg_blg_cmnts']))           {$_SESSION['rudwebset_cfg_blg_cmnts']           = $_POST['cfg_blg_cmnts'];}
-if(isset($_POST['cfg_blg_lnks']))            {$_SESSION['rudwebset_cfg_blg_lnks']            = $_POST['cfg_blg_lnks'];}
-if(isset($_POST['cfg_blg_dlds']))            {$_SESSION['rudwebset_cfg_blg_dlds']            = $_POST['cfg_blg_dlds'];}
 if(isset($_POST['cfg_adm']))                 {$_SESSION['rudwebset_cfg_adm']                 = $_POST['cfg_adm'];}
 if(isset($_POST['cfg_adm_fname']))           {$_SESSION['rudwebset_cfg_adm_fname']           = $_POST['cfg_adm_fname'];}
 if(isset($_POST['cfg_adm_mname']))           {$_SESSION['rudwebset_cfg_adm_mname']           = $_POST['cfg_adm_mname'];}

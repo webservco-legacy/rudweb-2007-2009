@@ -121,11 +121,6 @@ function generate_rudwebcfg_str($eol, $now) {
   $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_CMNTS\', \''.$_SESSION['rudwebset_cfg_cnt_cmnts'].'\'); // enable content comments';
   $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_LNKS\', \''.$_SESSION['rudwebset_cfg_cnt_lnks'].'\'); // enable content links';
   $c .= $eol . 'define(\'_RUDWEB_CFG_CNT_DLDS\', \''.$_SESSION['rudwebset_cfg_cnt_dlds'].'\'); // enable content downloads';
-  $c .= $eol . 'define(\'_RUDWEB_CFG_BLG_POSTED\', \''.$_SESSION['rudwebset_cfg_blg_posted'].'\'); // enable blog posted by';
-  $c .= $eol . 'define(\'_RUDWEB_CFG_BLG_TAGS\', \''.$_SESSION['rudwebset_cfg_blg_tags'].'\'); // enable blog tags';
-  $c .= $eol . 'define(\'_RUDWEB_CFG_BLG_CMNTS\', \''.$_SESSION['rudwebset_cfg_blg_cmnts'].'\'); // enable blog comments';
-  $c .= $eol . 'define(\'_RUDWEB_CFG_BLG_LNKS\', \''.$_SESSION['rudwebset_cfg_blg_lnks'].'\'); // enable blog links';
-  $c .= $eol . 'define(\'_RUDWEB_CFG_BLG_DLDS\', \''.$_SESSION['rudwebset_cfg_blg_dlds'].'\'); // enable blog downloads';
   $c .= $eol . '// OPTIONAL CONTENT MODULES';
   $c .= $eol . 'define(\'_RUDWEB_CFG_ADM\', \''.$_SESSION['rudwebset_cfg_adm'].'\'); // 1 = enable admin module';
   $c .= $eol . '?>';
@@ -188,12 +183,7 @@ function generate_dbd_str($eol) {
   $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(50, \'CNT_CMNTS\', \''.$_SESSION['rudwebset_cfg_cnt_cmnts'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
   $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(51, \'CNT_LNKS\', \''.$_SESSION['rudwebset_cfg_cnt_lnks'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
   $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(52, \'CNT_DLDS\', \''.$_SESSION['rudwebset_cfg_cnt_dlds'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(53, \'BLG_POSTED\', \''.$_SESSION['rudwebset_cfg_blg_posted'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(54, \'BLG_TAGS\', \''.$_SESSION['rudwebset_cfg_blg_tags'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(55, \'BLG_CMNTS\', \''.$_SESSION['rudwebset_cfg_blg_cmnts'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(56, \'BLG_LNKS\', \''.$_SESSION['rudwebset_cfg_blg_lnks'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(57, \'BLG_DLDS\', \''.$_SESSION['rudwebset_cfg_blg_dlds'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
-  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(58, \'ADM\', \''.$_SESSION['rudwebset_cfg_adm'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
+  $c .= $eol . 'INSERT INTO rudweb_set_cfg VALUES(53, \'ADM\', \''.$_SESSION['rudwebset_cfg_adm'].'\', \'VAL_CRD\', \'VAL_CRT\', 1, \'0000-00-00\', \'00:00:00\', 0);';
   $newuserpass = md5($_SESSION['rudwebset_cfg_adm_pass']);
   $c .= $eol . 'TRUNCATE TABLE rudweb_set_usr;';
   $c .= $eol . 'INSERT INTO rudweb_set_usr VALUES (1, \''.$_SESSION['rudwebset_cfg_adm_fname'].'\', \''.$_SESSION['rudwebset_cfg_adm_mname'].'\', \''.$_SESSION['rudwebset_cfg_adm_lname'].'\', \''.$_SESSION['rudwebset_cfg_adm_mail'].'\', \'\', \'\', \'\', \'Root\', \''.$_SESSION['rudwebset_cfg_adm_mail'].'\', \''.$newuserpass.'\', \''.$_SESSION['rudwebset_cfg_skin'].'\', \''.$_SESSION['rudwebset_cfg_lang'].'\', 5, 1, 0, \'default admin\', \'VAL_CRD\');';

@@ -1,6 +1,6 @@
 /*
 ./skins/rudskin/styles/default.css
-14:34 2008-04-21
+12:49 2008-04-30
 */
 /* ********** ********** ********** DEFAULT ********** ********** ********** */
 BODY {
@@ -24,6 +24,8 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontErrColor']; ?>;
   text-align: center;
   font-weight: bold;
   font-size: 1em;

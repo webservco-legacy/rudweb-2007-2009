@@ -29,14 +29,6 @@ $rudweb_ln['lgnst'][7] = "Cod de securitate incorect";
 $rudweb_ln['level']    = "Nivel de acces: ";
 $rudweb_ln['logout']   = "Ie&#351;ire";
 
-// ERROR MESSAGES
-$rudweb_ln['err']['tt']           = 'OOPS!';
-$rudweb_ln['err']['0']            = "Oops! Pagina nu a fost gasit&#259;!";
-$rudweb_ln['err']['1']            = "Ne pare r&#259;u! Nu ave&#355;i permisiune s&#259; accesa&#355;i aceast&#259; pagin&#259;!";
-$rudweb_ln['err']['itemadd']['1'] = 'C&#226;mpul ' .$rudweb_ln['prod']['pname'] . ' este gol!';
-$rudweb_ln['err']['itemadd']['2'] = 'V&#259; rug&#259;m selecta&#355;i o valoare din list&#259;!';
-$rudweb_ln['err']['itemadd']['3'] = 'V&#259; rug&#259;m completa&#355;i c&#226;mpurile obligatorii!';
-
 // COPYRIGHT
 $rudweb_ln['cpy']['1'] = "Copyright";
 $rudweb_ln['cpy']['2'] = "Toate drepturile rezervate";
@@ -180,6 +172,17 @@ $rudweb_ln['adm']['lvl'][2]        = 'Utilizatori VIP';
 $rudweb_ln['adm']['lvl'][3]        = 'Administratori';
 $rudweb_ln['adm']['lvl'][4]        = 'Proprietar';
 $rudweb_ln['adm']['lvl'][5]        = 'Root';
+$rudweb_ln['adm']['tt']            = 'Titlu';
+$rudweb_ln['adm']['stt']           = 'Subtitlu';
+$rudweb_ln['adm']['dsc']           = 'Descriere';
+$rudweb_ln['adm']['txt']           = 'Con&#355;inut';
+$rudweb_ln['adm']['noitems']       = 'Nu sunt articole';
+$rudweb_ln['adm']['itemaddok']     = 'Articolul a fost ad&#259;ugat cu succes!';
+$rudweb_ln['adm']['itemmodok']     = 'Articolul a fost modificat cu succes!';
+$rudweb_ln['adm']['itemdelok']     = 'Articolul a fost &#351;ters cu succes!';
+$rudweb_ln['adm']['itemaddnew']    = 'Ad&#259;ugare articol nou';
+$rudweb_ln['adm']['itemmod']       = 'Modificare articol';
+$rudweb_ln['adm']['itemviewcat']   = 'Vizualizare articole din categoria curent&#259;';
 
 // CATALOG SPECIAL OFFERS
 $rudweb_ln['adm']['cspmodstat0']  = "Modulul de oferte speciale este inactiv.";
@@ -223,4 +226,16 @@ $rudweb_ln['adm']['modstat10'] = "Dezactivare.";
 
 // NEWS
 $rudweb_ln['nws']['tt']  = "&#350;tiri";
+
+// ERROR MESSAGES
+$rudweb_ln['err']['tt']           = 'OOPS!';
+$rudweb_ln['err']['0']            = "Oops! Pagina nu a fost gasit&#259;!";
+$rudweb_ln['err']['1']            = "Ne pare r&#259;u! Nu ave&#355;i permisiune s&#259; accesa&#355;i aceast&#259; pagin&#259;!";
+$rudweb_ln['err']['itemadd']['1'] = 'C&#226;mpul ' .$rudweb_ln['prod']['pname'] . ' este gol!';
+$rudweb_ln['err']['itemadd']['2'] = 'V&#259; rug&#259;m selecta&#355;i o valoare din list&#259;!';
+$rudweb_ln['err']['itemadd']['3'] = 'V&#259; rug&#259;m completa&#355;i c&#226;mpurile obligatorii!';
+$rudweb_ln['err']['add']['1']     = 'C&#226;mpul ' .$rudweb_ln['adm']['tt'] . ' este gol!';
+$rudweb_ln['err']['add']['2']     = 'C&#226;mpul ' .$rudweb_ln['adm']['stt'] . ' este gol!';
+$rudweb_ln['err']['add']['3']     = 'C&#226;mpul ' .$rudweb_ln['adm']['dsc'] . ' este gol!';
+$rudweb_ln['err']['add']['4']     = 'C&#226;mpul ' .$rudweb_ln['adm']['txt'] . ' este gol!';
 ?>

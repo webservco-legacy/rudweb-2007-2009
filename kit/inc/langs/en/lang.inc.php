@@ -29,14 +29,6 @@ $rudweb_ln['lgnst'][7] = "Image verification failed";
 $rudweb_ln['level']    = "Access level: ";
 $rudweb_ln['logout']   = "Logout";
 
-// ERROR MESSAGES
-$rudweb_ln['err']['tt']           = 'OOPS!';
-$rudweb_ln['err']['0']            = "Oops! Page not found!";
-$rudweb_ln['err']['1']            = "Sorry! You don't have permission to access this page!";
-$rudweb_ln['err']['itemadd']['1'] = 'Field ' .$rudweb_ln['prod']['pname'] . ' is blank!';
-$rudweb_ln['err']['itemadd']['2'] = 'Please select an item from the list!';
-$rudweb_ln['err']['itemadd']['3'] = 'Please fill out required fields!';
-
 // COPYRIGHT
 $rudweb_ln['cpy']['1'] = "Copyright";
 $rudweb_ln['cpy']['2'] = "All rights reserved";
@@ -177,6 +169,17 @@ $rudweb_ln['adm']['lvl'][2]        = 'VIP Users';
 $rudweb_ln['adm']['lvl'][3]        = 'Administrators';
 $rudweb_ln['adm']['lvl'][4]        = 'Owner';
 $rudweb_ln['adm']['lvl'][5]        = 'Root';
+$rudweb_ln['adm']['tt']            = 'Title';
+$rudweb_ln['adm']['stt']           = 'Subtitle';
+$rudweb_ln['adm']['dsc']           = 'Description';
+$rudweb_ln['adm']['txt']           = 'Content';
+$rudweb_ln['adm']['noitems']       = 'No Items';
+$rudweb_ln['adm']['itemaddok']     = 'Item added sucessfully!';
+$rudweb_ln['adm']['itemmodok']     = 'Item modified sucessfully!';
+$rudweb_ln['adm']['itemdelok']     = 'Item deleted sucessfully!';
+$rudweb_ln['adm']['itemaddnew']    = 'Add new item';
+$rudweb_ln['adm']['itemmod']       = 'Modify item';
+$rudweb_ln['adm']['itemviewcat']   = 'View items in this category';
 
 // CATALOG SPECIAL OFFERS
 $rudweb_ln['adm']['cspmodstat0']  = "Special Offers module is disabled.";
@@ -220,4 +223,16 @@ $rudweb_ln['adm']['modstat10'] = "Disable.";
 
 // NEWS
 $rudweb_ln['nws']['tt']  = "News";
+
+// ERROR MESSAGES
+$rudweb_ln['err']['tt']           = 'OOPS!';
+$rudweb_ln['err']['0']            = "Oops! Page not found!";
+$rudweb_ln['err']['1']            = "Sorry! You don't have permission to access this page!";
+$rudweb_ln['err']['itemadd']['1'] = 'Field ' .$rudweb_ln['prod']['pname'] . ' is blank!';
+$rudweb_ln['err']['itemadd']['2'] = 'Please select an item from the list!';
+$rudweb_ln['err']['itemadd']['3'] = 'Please fill out required fields!';
+$rudweb_ln['err']['add']['1']     = 'Field ' .$rudweb_ln['adm']['tt'] . ' is blank!';
+$rudweb_ln['err']['add']['2']     = 'Field ' .$rudweb_ln['adm']['stt'] . ' is blank!';
+$rudweb_ln['err']['add']['3']     = 'Field ' .$rudweb_ln['adm']['dsc'] . ' is blank!';
+$rudweb_ln['err']['add']['4']     = 'Field ' .$rudweb_ln['adm']['txt'] . ' is blank!';
 ?>
