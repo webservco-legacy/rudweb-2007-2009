@@ -5,10 +5,80 @@
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
-function showNewsTitles() {}
+function showLatestNews() {
+  global $rudweb_ln;
+  global $rudweb_skin;
+  global $rudweb_dbtype;
+  
+  $offset = 0;
+  $itemspg = _RUDWEB_CFG_NWS_LMT1;
+  $qn1 = "SELECT nws_id, nws_crd, nws_tt FROM "._RUDWEB_PRE."ws_nws ORDER BY nws_crd DESC, nws_crt DESC LIMIT ".$offset.", ".$itemspg."";
+  $qn2 = "SELECT FOUND_ROWS() as totalitems";
+  $rn = rudweb_qres($rudweb_dbtype, $qn1);
+  $tn = rudweb_qtotal($rudweb_dbtype, $rn);
+ 
+  if($tn != 0) {
+  echo $rudweb_skin['nws']['sln']['hdr'];
+  restrictedLocalLink('news', $rudweb_ln['nws']['tt'], 'index.php/show/news', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+  for($i=1;$i<=$tn;$i++) {
+    $rw = rudweb_fetch_assoc($rudweb_dbtype, $rn);
+    echo $rudweb_skin['nws']['sln']['pre'];
+    echo $rudweb_skin['nws']['sln']['dtpre'];
+    echo MyDate($rw['nws_crd'], 'dd/mm/yyyy');
+    echo $rudweb_skin['nws']['sln']['dtsuf'];
+    echo $rudweb_skin['nws']['sln']['ttpre'];
+    $lnkurl = 'index.php/show/news/nws/'.$rw['nws_id']; 
+    restrictedLocalLink('news', $rw['nws_tt'], $lnkurl, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+    echo $rudweb_skin['nws']['sln']['ttsuf'];
+    echo $rudweb_skin['nws']['sln']['suf'];
+  }
+  echo $rudweb_skin['nws']['sln']['ftr'];
+  }
+  
+}
 function showNewsAll($adm=0) {
-  //xxx
-  // list: title, description
+  global $rudweb_ln;
+  global $rudweb_skin;
+  global $rudweb_dbtype;
+  
+  // PAGINATION START
+  $pg = 1;
+  if(isset($_GET['pg']) && isValidInt($_GET['pg'])) {$pg = rudweb_filter_input($_GET['pg']);}
+
+  $itemspg = _RUDWEB_CFG_NWS_LMT2;
+  if(isset($_GET['itemspg']) && isValidInt($_GET['itemspg'])) {$itemspg = rudweb_filter_input($_GET['itemspg']);}
+
+  $offset = ($pg - 1) * $itemspg;
+  
+  $qn1 = "SELECT SQL_CALC_FOUND_ROWS * FROM "._RUDWEB_PRE."ws_nws ORDER BY nws_crd DESC, nws_crt DESC LIMIT ".$offset.", ".$itemspg."";
+  $qn2 = "SELECT FOUND_ROWS() as totalitems";
+  $rn = rudweb_qres($rudweb_dbtype, $qn1);
+  $tn = rudweb_qtotal($rudweb_dbtype, $rn);
+  // I M P O R T A N T ! ! !  needs to be the exact first thing after the big query ! ! !
+  $totalitems = rudweb_result($rudweb_dbtype, rudweb_qres($rudweb_dbtype, $qn2), 0);
+  
+  if($tn != 0 ) {
+    echo $rudweb_skin['nws']['lst']['hdr'];
+    for($i=1;$i<=$tn;$i++) {
+      $rw = rudweb_fetch_assoc($rudweb_dbtype, $rn);
+      echo $rudweb_skin['nws']['lst']['pre'];
+      echo $rudweb_skin['nws']['lst']['dtpre'];
+      echo MyDate($rw['nws_crd'], 'dd/mm/yyyy') . '&#160;' . $rw['nws_crt'];
+      echo $rudweb_skin['nws']['lst']['dtsuf'];
+      echo $rudweb_skin['nws']['lst']['ttpre'];
+      if($adm!=0) {$lnkurl = 'admin.php/admin/nwsmod/act/mod/nws/'.$rw['nws_id'];} else {$lnkurl = 'index.php/show/news/nws/'.$rw['nws_id'];}
+      restrictedLocalLink('news', $rw['nws_tt'], $lnkurl, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      echo $rudweb_skin['nws']['lst']['ttsuf'];
+      echo $rudweb_skin['nws']['lst']['dscpre'];
+      echo $rw['nws_dsc'];
+      echo $rudweb_skin['nws']['lst']['dscsuf'];
+      echo $rudweb_skin['nws']['lst']['suf'];
+    }
+    if($adm!=0) {$url = 'admin.php/admin/nwsmod/act/view';} else {$url = 'index.php/show/news';}
+    $urlsofar = _RUDWEB_SITE_URL . $url;
+    catalogPageNavigation($totalitems,$itemspg,$pg,$urlsofar);
+    echo $rudweb_skin['nws']['lst']['ftr'];
+  }
 }
 function showNewsItem($nws_id=0,$adm=0) {
   global $rudweb_ln;
@@ -102,6 +172,9 @@ function showNewsItem($nws_id=0,$adm=0) {
     }
     else {
       echo $rudweb_skin['nws']['itm']['hdr'];
+      echo $rudweb_skin['nws']['itm']['dtpre'];
+      echo MyDate($nws_crd, 'dd/mm/yyyy') . '&#160;' . $nws_crt;
+      echo $rudweb_skin['nws']['itm']['dtsuf'];
       echo $rudweb_skin['nws']['itm']['ttpre'];
       echo $nws_tt;
       echo $rudweb_skin['nws']['itm']['ttsuf'];
@@ -111,9 +184,6 @@ function showNewsItem($nws_id=0,$adm=0) {
       echo $rudweb_skin['nws']['itm']['txtpre'];
       echo $nws_txt;
       echo $rudweb_skin['nws']['itm']['txtsuf'];
-      echo $rudweb_skin['nws']['itm']['dtpre'];
-      echo MyDate($nws_crd, 'dd/mm/yyyy') . '&#160;' . $nws_crt;
-      echo $rudweb_skin['nws']['itm']['dtsuf'];
       echo $rudweb_skin['nws']['itm']['ftr'];
     }
   }

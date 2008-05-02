@@ -49,7 +49,7 @@ else {function youAreHere() {}}
 /* ********** ********** ********** NEWS ********** ********** ********** */
 if (_RUDWEB_CFG_NWS === "1") {require _RUDWEB_MOD_DIR . 'modnws.inc.php';}
 else {
-  function showNewsTitles() {}
+  function showLatestNews() {}
   function showNewsAll() {}
   function showNewsItem() {}
   function addNewsItem() {}
@@ -74,6 +74,12 @@ else {
   function catalogPageNavigation() {}
 }
 /* ********** ********** ********** //CATALOG MODULE ********** ********** ********** */
+/* ********** ********** ********** CATALOG SPECIAL OFFERS ********** ********** ********** */
+/* ********** ********** ********** CATALOG //SPECIAL OFFERS ********** ********** ********** */
+if (_RUDWEB_CFG_CSP_ON == 1) {require _RUDWEB_MOD_DIR . 'modcsp.inc.php';}
+else {
+  function showNewCspForm() {}
+}
 /* ********** ********** ********** SHOPPING CART ********** ********** ********** */
 if (_RUDWEB_CFG_CART_ON === "1") {require _RUDWEB_MOD_DIR . 'modcart.inc.php';}
 else {

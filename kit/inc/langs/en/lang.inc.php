@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/en/lang.inc.php
-14:42 2008-04-29
+14:56 2008-05-02
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -74,20 +74,6 @@ $rudweb_ln['adm']['cal_months']   = "'January','February','March','April','May',
 $rudweb_ln['adm']['cal_days']     = "'S','M','T','W','T','F','S'";
 $rudweb_ln['adm']['cal_today']    = "Today";
 
-$rudweb_ln['adm']['ftrmodstat0']  = "Featured module is disabled.";
-$rudweb_ln['adm']['ftrmodstat00'] = "Modify your config file to enable it.";
-$rudweb_ln['adm']['ftrmodstat01'] = "Enable.";
-$rudweb_ln['adm']['ftrmodstat1']  = "Featured module is enabled.";
-$rudweb_ln['adm']['ftrmodstat11'] = "Modify your config file to disable it.";
-$rudweb_ln['adm']['ftrmodstat12'] = "Modify your config file to change it.";
-$rudweb_ln['adm']['ftrmodstat10'] = "Disable.";
-$rudweb_ln['adm']['ftrlmttxt1']   = "Number of items to display: ";
-$rudweb_ln['adm']['ftrdel']       = "Delete this one: ";
-
-$rudweb_ln['adm']['ftrlmt']       = "Save";
-$rudweb_ln['adm']['ftrmod']       = "Save Changes";
-$rudweb_ln['adm']['ftrnew']       = "Add new";
-
 //USER MODULE
 $rudweb_ln['usr']['alreadyreg']    = 'What? One Account is not enough for you?';
 $rudweb_ln['usr']['retuser']       = "Returning User";
@@ -146,6 +132,7 @@ $rudweb_ln['cat']['itemdelok']     = 'Item deleted sucessfully!';
 $rudweb_ln['cat']['itemaddnew']    = 'Add new item';
 $rudweb_ln['cat']['itemmod']       = 'Modify item';
 $rudweb_ln['cat']['itemviewcat']   = 'View items in this category';
+$rudweb_ln['cat']['ipg']           = 'Items / page';
 // PAGINATION
 $rudweb_ln['pgnav']['first']       = '&#60;&#60;';
 $rudweb_ln['pgnav']['prev']        = '&#60;';
@@ -180,6 +167,8 @@ $rudweb_ln['adm']['itemdelok']     = 'Item deleted sucessfully!';
 $rudweb_ln['adm']['itemaddnew']    = 'Add new item';
 $rudweb_ln['adm']['itemmod']       = 'Modify item';
 $rudweb_ln['adm']['itemviewcat']   = 'View items in this category';
+$rudweb_ln['adm']['settings']      = 'Settings';
+$rudweb_ln['adm']['save']          = 'Save';
 
 // CATALOG SPECIAL OFFERS
 $rudweb_ln['adm']['cspmodstat0']  = "Special Offers module is disabled.";
@@ -191,7 +180,6 @@ $rudweb_ln['adm']['cspmodstat12'] = "Modify your config file to change it.";
 $rudweb_ln['adm']['cspmodstat10'] = "Disable.";
 $rudweb_ln['adm']['csplmttxt1']   = "Number of items to display: ";
 $rudweb_ln['csp']['delone']       = "Delete this one: ";
-$rudweb_ln['adm']['csplmt']       = "Save";
 
 // CONTENT
 $rudweb_ln['cnt']['cnt']          = "Content";
@@ -214,15 +202,20 @@ $rudweb_ln['cmt']['cmtal']        = "Add new comment";
 $rudweb_ln['cmt']['cmtvl']        = "View all comments";
 
 // MODULE ADMINISTARTION
-$rudweb_ln['adm']['modstat0']  = "Module is disabled.";
-$rudweb_ln['adm']['modstat00'] = "Modify your config file to enable it.";
-$rudweb_ln['adm']['modstat01'] = "Enable.";
-$rudweb_ln['adm']['modstat1']  = "Module is enabled.";
-$rudweb_ln['adm']['modstat11'] = "Modify your config file to disable it.";
-$rudweb_ln['adm']['modstat10'] = "Disable.";
+$rudweb_ln['adm']['modstat0']   = "Module is disabled.";
+$rudweb_ln['adm']['modstat00']  = "Modify your config file to enable it.";
+$rudweb_ln['adm']['modstat01']  = "Enable.";
+$rudweb_ln['adm']['modstat1']   = "Module is enabled.";
+$rudweb_ln['adm']['modstat11']  = "Modify your config file to disable it.";
+$rudweb_ln['adm']['modstat12']  = "Modify your config file to change it.";
+$rudweb_ln['adm']['modstat10']  = "Disable.";
+$rudweb_ln['adm']['lmttxt1'] = "Number of items to display: ";
+$rudweb_ln['adm']['new']        = "Add new";
 
 // NEWS
 $rudweb_ln['nws']['tt']  = "News";
+$rudweb_ln['nws']['allnews']  = "All news";
+$rudweb_ln['nws']['ltstnews']  = "Latest news";
 
 // ERROR MESSAGES
 $rudweb_ln['err']['tt']           = 'OOPS!';

@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/act/usett02.inc.php
-15:52 2008-04-15
+15:05 2008-05-02
 */
 ?>
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
@@ -237,6 +237,12 @@
 </TD></TR></TABLE>
 
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">shop / catalog items/page:</TD>
+<TD CLASS="cnt">
+  <INPUT TYPE="text" CLASS="general" NAME="cfg_cat_ipg" SIZE="2" MAXLENGTH="3" VALUE="<?php echo $_SESSION['rudwebset_cfg_cat_ipg'];?>">
+</TD></TR></TABLE>
+
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
 <TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">shopping cart:</TD>
 <TD CLASS="cnt">
 <SELECT CLASS="general" NAME="cfg_cart_on">
@@ -351,6 +357,18 @@
   <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_cfg_nws'] == "0") {echo " SELECTED";}?>>off</OPTION>
   <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_cfg_nws'] == "1") {echo " SELECTED";}?>>on</OPTION>
 </SELECT>
+</TD></TR></TABLE>
+
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">news items latest news:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="cfg_nws_lmt1" SIZE="2" MAXLENGTH="3" VALUE="<?php echo $_SESSION['rudwebset_cfg_nws_lmt1'];?>">
+</TD></TR></TABLE>
+
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">news items / page:</TD>
+<TD CLASS="cnt">
+<INPUT TYPE="text" CLASS="general" NAME="cfg_nws_lmt2" SIZE="2" MAXLENGTH="3" VALUE="<?php echo $_SESSION['rudwebset_cfg_nws_lmt2'];?>">
 </TD></TR></TABLE>
 
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">

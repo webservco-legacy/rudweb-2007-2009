@@ -7,4 +7,12 @@ if($new_onoff !== "") {
   changedbcfg("NWS", $new_onoff, $action_date, $action_time);
   $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/nwsmod';
 }
+if(isValidInt($nws_lmt1)) {
+  changedbcfg("NWS_LMT1", $nws_lmt1, $action_date, $action_time);
+  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/nwsmod';
+}
+if(isValidInt($nws_lmt2)) {
+  changedbcfg("NWS_LMT2", $nws_lmt2, $action_date, $action_time);
+  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/nwsmod';
+}
 ?>

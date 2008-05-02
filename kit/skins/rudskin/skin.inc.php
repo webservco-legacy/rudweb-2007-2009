@@ -340,6 +340,9 @@ else {
   $rudweb_skin['adm']['mnu']['suf']   = '</DIV>';
   $rudweb_skin['adm']['mnu']['sep']   = '';
   $rudweb_skin['adm']['mnu']['ftr']   = '</DIV>';
+  // MODULES
+  $rudweb_skin['adm']['mod']['pre']   = '<DIV CLASS="adm_mod">';
+  $rudweb_skin['adm']['mod']['suf']   = '</DIV>';
   /* ********** ********** ********** CATALOG SPECIAL OFFERS ********** ********** ********** */
   $rudweb_skin['csp']['hdr']        = "\n<DIV CLASS=\"".$rudweb_skin['cnt']['tt1']['class']."\">&#160;&#160;".$rudweb_ln['catalog']['csp']."</DIV><BR>";
   $rudweb_skin['csp']['ftr']        = "\n";
@@ -370,17 +373,34 @@ else {
   /* ********** ********** ********** NEWS MODULE ********** ********** ********** */
   $rudweb_skin['nws']['lst']['hdr'] = '<DIV>';
   $rudweb_skin['nws']['lst']['ftr'] = '</DIV>';
-  $rudweb_skin['nws']['lst']['pre'] = '<DIV>';
+  $rudweb_skin['nws']['lst']['pre'] = '<DIV STYLE="margin: 5px 5px 5px 5px;">';
   $rudweb_skin['nws']['lst']['suf'] = '</DIV>';
+  
+  $rudweb_skin['nws']['lst']['dtpre'] = '<DIV>';
+  $rudweb_skin['nws']['lst']['dtsuf'] = '</DIV>';
+  $rudweb_skin['nws']['lst']['ttpre'] = '<DIV>';
+  $rudweb_skin['nws']['lst']['ttsuf'] = '</DIV>';
+  $rudweb_skin['nws']['lst']['dscpre'] = '<DIV>';
+  $rudweb_skin['nws']['lst']['dscsuf'] = '</DIV>';
+  
   $rudweb_skin['nws']['itm']['hdr'] = '<DIV>';
   $rudweb_skin['nws']['itm']['ftr'] = '</DIV>';
+  $rudweb_skin['nws']['itm']['dtpre'] = '<DIV>';
+  $rudweb_skin['nws']['itm']['dtsuf'] = '</DIV>';
   $rudweb_skin['nws']['itm']['ttpre'] = '<DIV>';
   $rudweb_skin['nws']['itm']['ttsuf'] = '</DIV>';
   $rudweb_skin['nws']['itm']['dscpre'] = '<DIV>';
   $rudweb_skin['nws']['itm']['dscsuf'] = '</DIV>';
   $rudweb_skin['nws']['itm']['txtpre'] = '<DIV>';
   $rudweb_skin['nws']['itm']['txtsuf'] = '</DIV>';
-  $rudweb_skin['nws']['itm']['dtpre'] = '<DIV>';
-  $rudweb_skin['nws']['itm']['dtsuf'] = '</DIV>';
+  
+  $rudweb_skin['nws']['sln']['hdr'] = '<DIV>';
+  $rudweb_skin['nws']['sln']['ftr'] = '</DIV>';
+  $rudweb_skin['nws']['sln']['pre'] = '<DIV STYLE="margin: 5px 0px 5px 0px;">';
+  $rudweb_skin['nws']['sln']['suf'] = '</DIV>';
+  $rudweb_skin['nws']['sln']['dtpre'] = '<DIV>';
+  $rudweb_skin['nws']['sln']['dtsuf'] = '</DIV>';
+  $rudweb_skin['nws']['sln']['ttpre'] = '<DIV>';
+  $rudweb_skin['nws']['sln']['ttsuf'] = '</DIV>';
 }
 ?>

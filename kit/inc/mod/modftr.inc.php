@@ -65,4 +65,47 @@ function showFeatured() {
     echo $rudweb_skin['ftr']['ftr'];
   }
 }
+function showNewFtrForm() {
+  global $rudweb_ln;
+  global $rudweb_skin;
+  global $rudweb_dbtype;
+  
+  $qc = "SELECT cnt_id, cnt_alias, cnt_tt FROM "._RUDWEB_PRE."ws_cnt WHERE cnt_ln = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."' AND cnt_dis = '0' ORDER BY cnt_alias ASC";
+  $rc = rudweb_qres($rudweb_dbtype, $qc);
+  $t_c = rudweb_qtotal($rudweb_dbtype, $rc);
+  $row_rst_cnt = NULL;
+  for ($cnti=1; $cnti<=$t_c; $cnti++) {
+    $row_rst_cnt[$cnti] = rudweb_fetch_assoc($rudweb_dbtype, $rc);
+  }
+  echo $rudweb_skin['adm']['mod']['pre'];
+  echo '<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">document.write(getCalendarStyles());</SCRIPT>';
+  echo '<FORM ENCTYPE="multipart/form-data" CLASS="ftrnewform" NAME="ftrnewform" ACTION="" METHOD="post">';
+  echo '<INPUT TYPE="hidden" NAME="ftr_new" VALUE="1">';
+  echo '<SELECT CLASS="forminput" NAME="cnt_id">';
+  for ($xcntid=1; $xcntid<=count($row_rst_cnt); $xcntid++) {
+    echo '<OPTION VALUE="'.$row_rst_cnt[$xcntid]['cnt_id'].'">'.$row_rst_cnt[$xcntid]['cnt_alias'].'</OPTION>';
+  }
+  echo '</SELECT>';
+  echo '<BR>';
+  echo $rudweb_ln['adm']['new_pic'];
+  echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcsftrnew\" SIZE=\"1\">";
+  echo $rudweb_ln['adm']['ftr_sup'] . "<INPUT CLASS=\"forminput\" TYPE=\"text\" NAME=\"ftr_sup\" MAXLENGTH=\"255\" VALUE=\"\">";
+  echo "<BR><BR>";
+  echo $rudweb_ln['adm']['ftr_valid'];
+  echo '<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">';
+  echo 'var calnew = new CalendarPopup("cal_divnew");';
+  echo 'calnew.setMonthNames('.$rudweb_ln['adm']['cal_months'].');';
+  echo 'calnew.setDayHeaders('.$rudweb_ln['adm']['cal_days'].');';
+  echo 'calnew.setWeekStartDay(1);';
+  echo 'calnew.setTodayText("'.$rudweb_ln['adm']['cal_today'].'");';
+  echo '</SCRIPT>';
+  echo '<INPUT CLASS="forminput" TYPE="text" NAME="ftr_sdate" ID="ftr_sdate" SIZE="10" MAXLENGTH="10" VALUE="" onClick="calnew.select(document.forms[\'ftrnewform\'].ftr_sdate,\'ftr_sdate\',\'yyyy-MM-dd\'); return false;">';
+  echo '&#160;-&#160;';
+  echo '<INPUT CLASS="forminput" TYPE="text" NAME="ftr_edate" ID="ftr_edate" SIZE="10" MAXLENGTH="10" VALUE="" onClick="calnew.select(document.forms[\'ftrnewform\'].ftr_edate,\'ftr_edate\',\'yyyy-MM-dd\'); return false;">';
+  echo '<DIV ID="cal_divnew" STYLE="position:absolute;visibility:hidden;background-color:'.$rudweb_skin['BgColor'].';color:'.$rudweb_skin['FontColor'].';"></DIV>';
+  echo '<BR><BR>';
+  echo '<INPUT CLASS="formsubmit" TYPE="submit" NAME="ftrmod" VALUE="'.$rudweb_ln['adm']['add'].'">';
+  echo '</FORM>';
+  echo $rudweb_skin['adm']['mod']['suf'];
+}
 ?>

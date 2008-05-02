@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/cat/items.inc.php
-15:59 2008-04-29
+09:41 2008-05-02
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -144,7 +144,7 @@ if(isset($_GET['cat'])) {
   $pg = 1;
   if(isset($_GET['pg']) && isValidInt($_GET['pg'])) {$pg = rudweb_filter_input($_GET['pg']);}
 
-  $itemspg = 2;
+  $itemspg = _RUDWEB_CFG_CAT_IPG;
   if(isset($_GET['itemspg']) && isValidInt($_GET['itemspg'])) {$itemspg = rudweb_filter_input($_GET['itemspg']);}
 
   $offset = ($pg - 1) * $itemspg;

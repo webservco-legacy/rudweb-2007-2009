@@ -73,22 +73,22 @@ $rudweb_ln['adm']['cal_months']   = "'Ianuarie','Februarie','Martie','Aprilie','
 $rudweb_ln['adm']['cal_days']     = "'D','L','M','M','J','V','S'";
 $rudweb_ln['adm']['cal_today']    = "Ast&#259;zi";
 
-$rudweb_ln['adm']['ftrmodstat0']  = "Modulul de oferte este inactiv.";
-$rudweb_ln['adm']['ftrmodstat00'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a-l activa.";
-$rudweb_ln['adm']['ftrmodstat01'] = "Activare.";
+//$rudweb_ln['adm']['ftrmodstat0']  = "Modulul de oferte este inactiv.";
+//$rudweb_ln['adm']['ftrmodstat00'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a-l activa.";
+//$rudweb_ln['adm']['ftrmodstat01'] = "Activare.";
 
-$rudweb_ln['adm']['ftrmodstat1']  = "Modulul de oferte este activ.";
-$rudweb_ln['adm']['ftrmodstat11'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a-l dezactiva.";
-$rudweb_ln['adm']['ftrmodstat12'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a schimba.";
-$rudweb_ln['adm']['ftrmodstat10'] = "Dezactivare.";
+//$rudweb_ln['adm']['ftrmodstat1']  = "Modulul de oferte este activ.";
+//$rudweb_ln['adm']['ftrmodstat11'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a-l dezactiva.";
+//$rudweb_ln['adm']['ftrmodstat12'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a schimba.";
+//$rudweb_ln['adm']['ftrmodstat10'] = "Dezactivare.";
 
-$rudweb_ln['adm']['ftrlmttxt1']   = "Num&#259;r de oferte afi&#351;ate: ";
-$rudweb_ln['adm']['ftrdel']       = "&#350;terge pe aceasta: ";
+//$rudweb_ln['adm']['ftrlmttxt1']   = "Num&#259;r de oferte afi&#351;ate: ";
+//$rudweb_ln['adm']['ftrdel']       = "&#350;terge pe aceasta: ";
 
 
-$rudweb_ln['adm']['ftrlmt']       = "Salveaz&#259;";
-$rudweb_ln['adm']['ftrmod']       = "Salveaz&#259; Modific&#259;ri";
-$rudweb_ln['adm']['ftrnew']       = "Adaug&#259; Nou";
+//$rudweb_ln['adm']['ftrlmt']       = "Salveaz&#259;";
+//$rudweb_ln['adm']['ftrmod']       = "Salveaz&#259; Modific&#259;ri";
+//$rudweb_ln['adm']['ftrnew']       = "Adaug&#259; Nou";
 
 //USER MODULE
 $rudweb_ln['usr']['alreadyreg']    = 'Ce? Nu-ti e de ajuns un cont?';
@@ -148,6 +148,7 @@ $rudweb_ln['cat']['itemdelok']     = 'Produsul a fost &#351;ters cu succes!';
 $rudweb_ln['cat']['itemaddnew']    = 'Ad&#259;ugare produs nou';
 $rudweb_ln['cat']['itemmod']       = 'Modificare produs';
 $rudweb_ln['cat']['itemviewcat']   = 'Vizualizare produse din categoria curenta';
+$rudweb_ln['cat']['ipg']           = 'Articole / pagin&#259;';
 
 // PAGINATION
 $rudweb_ln['pgnav']['first']       = '&#60;&#60;';
@@ -183,6 +184,8 @@ $rudweb_ln['adm']['itemdelok']     = 'Articolul a fost &#351;ters cu succes!';
 $rudweb_ln['adm']['itemaddnew']    = 'Ad&#259;ugare articol nou';
 $rudweb_ln['adm']['itemmod']       = 'Modificare articol';
 $rudweb_ln['adm']['itemviewcat']   = 'Vizualizare articole din categoria curent&#259;';
+$rudweb_ln['adm']['settings']      = 'Set&#259;ri';
+$rudweb_ln['adm']['save']          = 'Salveaz&#259;';
 
 // CATALOG SPECIAL OFFERS
 $rudweb_ln['adm']['cspmodstat0']  = "Modulul de oferte speciale este inactiv.";
@@ -194,7 +197,7 @@ $rudweb_ln['adm']['cspmodstat12'] = "Modifica&#355;i fi&#351;ierul de configurar
 $rudweb_ln['adm']['cspmodstat10'] = "Dezactivare.";
 $rudweb_ln['adm']['csplmttxt1']   = "Num&#259;r de articole afi&#351;ate: ";
 $rudweb_ln['csp']['delone']       = "&#350;terge pe aceasta: ";
-$rudweb_ln['adm']['csplmt']       = "Salveaz&#259;";
+//$rudweb_ln['adm']['csplmt']       = "Salveaz&#259;";
 
 // CONTENT
 $rudweb_ln['cnt']['cnt']          = "Con&#355;inut";
@@ -222,10 +225,15 @@ $rudweb_ln['adm']['modstat00'] = "Modifica&#355;i fi&#351;ierul de configurare p
 $rudweb_ln['adm']['modstat01'] = "Activare.";
 $rudweb_ln['adm']['modstat1']  = "Modulul este activ.";
 $rudweb_ln['adm']['modstat11'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a-l dezactiva.";
+$rudweb_ln['adm']['modstat12'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a schimba.";
 $rudweb_ln['adm']['modstat10'] = "Dezactivare.";
+$rudweb_ln['adm']['lmttxt1']   = "Num&#259;r de articole de afi&#351;at";
+$rudweb_ln['adm']['new']       = "Ad&#259;ugare";
 
 // NEWS
 $rudweb_ln['nws']['tt']  = "&#350;tiri";
+$rudweb_ln['nws']['allnews'] = "Toate &#351;tirile";
+$rudweb_ln['nws']['ltstnews'] = "Ultimele &#351;tiri";
 
 // ERROR MESSAGES
 $rudweb_ln['err']['tt']           = 'OOPS!';

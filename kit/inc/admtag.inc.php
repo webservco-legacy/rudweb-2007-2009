@@ -16,7 +16,7 @@ else if(isset($_POST['tag_id'])) {
   }
   $query_unlock = "UNLOCK TABLES";
   mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
-  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/tagmod';
+  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/tagmod/act/adm';
 }
 else if(isset($_POST['delutags'])) {
   $query_lock = "LOCK TABLES "._RUDWEB_PRE."ws_tags WRITE, "._RUDWEB_PRE."ws_rel WRITE";
@@ -27,6 +27,6 @@ else if(isset($_POST['delutags'])) {
     
   $query_unlock = "UNLOCK TABLES";
   mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
-  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/tagmod';
+  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/tagmod/act/adm';
 }
 ?>

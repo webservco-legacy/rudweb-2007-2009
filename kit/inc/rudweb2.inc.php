@@ -104,7 +104,7 @@ else if (isset($_GET['admin'])) {
   $rudweb_mnu_id             = getCntMnuId('index');
   $rudweb_stats_page         = 'index';
   $rudweb_req_page           = 'index';
-  $admin_allowed = array('admin', 'cmtmod', 'cntadd', 'cspmod', 'ftrmod', 'itemadd', 'nwsmod', 'tagmod');
+  $admin_allowed = array('admin', 'catmod', 'cmtmod', 'cntadd', 'cspmod', 'ftrmod', 'itemadd', 'nwsmod', 'tagmod');
   if (is_file(_RUDWEB_ADMIN_DIR . $rudweb_this_content . ".inc.php") && in_array($rudweb_this_content, $admin_allowed)) {
     $rudweb_this_content_level = getCntLev($rudweb_this_content);
     $rudweb_mnu_id             = getCntMnuId($rudweb_this_content);

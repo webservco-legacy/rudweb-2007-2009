@@ -1,10 +1,12 @@
 # rudweb table structure
--- 19:14 2008-04-28
+-- 09:32 2008-05-02
 DROP TABLE IF EXISTS rudweb_cat_cat;
 CREATE TABLE rudweb_cat_cat (
   cat_id int(5) unsigned NOT NULL,
   cat_ln char(2) NOT NULL,
   cat_tt varchar(150) NOT NULL,
+  cat_lev tinyint(1) unsigned NOT NULL,   
+  cat_par int(5) unsigned NOT NULL,   
   cat_ord tinyint(2) unsigned NOT NULL,
   cat_pic varchar(150) NOT NULL,
   cat_dsc varchar(255) NOT NULL,

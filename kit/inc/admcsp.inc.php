@@ -31,7 +31,7 @@ if(isset($_POST['csp_new'])) { // add new
   mysql_query($insertquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
   $query_unlock = "UNLOCK TABLES";
   mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
-  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/cspmod';
+  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/cspmod/act/adm';
   
 }
 else if(isset($_POST['csp_id'])) { // modify
@@ -55,7 +55,7 @@ else if(isset($_POST['csp_id'])) { // modify
     }
     $query_unlock = "UNLOCK TABLES";
     mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
-    $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/cspmod';
+    $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/cspmod/act/adm';
   }
 }
 ?>

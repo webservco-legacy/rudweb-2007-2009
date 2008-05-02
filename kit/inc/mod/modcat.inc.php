@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modcat.inc.php
-20:02 2008-04-16
+09:48 2008-05-02
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -202,7 +202,6 @@ function catalogCategoriesMenu($link) {
 }
 /* ********** ********** ********** //CATALOG CATEGORIES MENU WITH CUSTOM LINKS  ********** ********** ********** */
 /* ********** ********** ********** CATALOG SPECIAL OFFERS  ********** ********** ********** */
-// XXX
 function showCso() {
   global $rudweb_dbtype;
   global $rudweb_ln;
@@ -268,4 +267,24 @@ function showCso() {
   }
 }
 /* ********** ********** ********** //CATALOG SPECIAL OFFERS  ********** ********** ********** */
+function setIpg(){
+  global $rudweb_dbtype;
+  global $rudweb_ln;
+  global $rudweb_skin;
+  echo $rudweb_skin['adm']['mod']['pre'];
+  echo '<FORM ENCTYPE="multipart/form-data" NAME="ipgform" ACTION="" METHOD="post">';
+  echo $rudweb_ln['cat']['ipg'];
+  echo ':&#160;';
+  echo '<SELECT CLASS="forminput" NAME="ipg">';
+  for ($i=1; $i<=50; $i++) {
+    echo '<OPTION VALUE="'.$i.'"';
+    if($i == _RUDWEB_CFG_CAT_IPG) {echo ' SELECTED';}
+    echo '>'.$i.'</OPTION>';
+  }
+  echo '</SELECT>';
+  echo '&#160;';
+  echo '<INPUT CLASS="formsubmit" TYPE="submit" NAME="catmod" VALUE="'.$rudweb_ln['adm']['save'].'">';
+  echo '</FORM>';
+  echo $rudweb_skin['adm']['mod']['suf'];
+}
 ?>

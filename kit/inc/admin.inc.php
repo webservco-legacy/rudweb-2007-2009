@@ -146,6 +146,13 @@ if (isset($_POST['itemadd'])) {
   $action_date  = date("Y-m-d");
   $action_time  = date("H:i:s");
 }
+if (isset($_POST['catmod'])) {
+  $action_date  = date("Y-m-d");
+  $action_time  = date("H:i:s");
+  if(isset($_POST['ipg'])) {$new_ipg = rudweb_filter_input($_POST['ipg']);}
+  require_once _RUDWEB_INC_DIR . 'admcat.inc.php';
+  header("Location: $redirect");
+}
 if (isset($_POST['tagmod'])) { // enable, disable tags module
   $new_onoff = '';
   
@@ -177,12 +184,16 @@ if (isset($_POST['cmt_id']) || isset($_POST['modcmt'])) {
 }
 if (isset($_POST['nwsmod'])) { // enable, disable, admin news module
   $new_onoff = '';
+  $nws_lmt1 = '';
+  $nws_lmt2 = '';
   
   // not ok, use elsewhere
   $action_date  = date("Y-m-d"); /* mod del */
   $action_time  = date("H:i:s"); /* mod del */
   
   if(isset($_POST['nwsonoff'])) {$new_onoff = rudweb_filter_input($_POST['nwsonoff']);}
+  if(isset($_POST['nws_lmt1']))  {$nws_lmt1 = rudweb_filter_input($_POST['nws_lmt1']);}
+  if(isset($_POST['nws_lmt2']))  {$nws_lmt2 = rudweb_filter_input($_POST['nws_lmt2']);}
   require_once _RUDWEB_INC_DIR . 'admnws.inc.php';
   header("Location: $redirect");
 }

@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/cfg/ses.inc.php
-16:51 2008-04-16
+11:01 2008-05-02
 */
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -109,6 +109,7 @@ if (isset($_POST['proceed']) && !isset($_SESSION['rudwebset_start'])) {
   $_SESSION['rudwebset_cfg_usr_on']              = '1';
   $_SESSION['rudwebset_cfg_skin_on']             = '1';
   $_SESSION['rudwebset_cfg_cat']                 = '0';
+  $_SESSION['rudwebset_cfg_cat_ipg']             = '10';
   $_SESSION['rudwebset_cfg_cart_on']             = '0';
   $_SESSION['rudwebset_cfg_csp_on']              = '0';
   $_SESSION['rudwebset_cfg_csp_lmt']             = '3';
@@ -123,6 +124,8 @@ if (isset($_POST['proceed']) && !isset($_SESSION['rudwebset_start'])) {
   $_SESSION['rudwebset_cfg_smap']                = '0';
   $_SESSION['rudwebset_cfg_yah']                 = '0';
   $_SESSION['rudwebset_cfg_nws']                 = '0';
+  $_SESSION['rudwebset_cfg_nws_lmt1']            = '3';
+  $_SESSION['rudwebset_cfg_nws_lmt2']            = '5';
   $_SESSION['rudwebset_cfg_src']                 = '0';
   
   $_SESSION['rudwebset_cfg_pics_0']              = '0';
@@ -317,6 +320,7 @@ if(isset($_POST['cfg_lang_on']))             {$_SESSION['rudwebset_cfg_lang_on']
 if(isset($_POST['cfg_usr_on']))              {$_SESSION['rudwebset_cfg_usr_on']              = $_POST['cfg_usr_on'];}
 if(isset($_POST['cfg_skin_on']))             {$_SESSION['rudwebset_cfg_skin_on']             = $_POST['cfg_skin_on'];}
 if(isset($_POST['cfg_cat']))                 {$_SESSION['rudwebset_cfg_cat']                 = $_POST['cfg_cat'];}
+if(isset($_POST['cfg_cat_ipg']))             {$_SESSION['rudwebset_cfg_cat_ipg']             = $_POST['cfg_cat_ipg'];}
 if(isset($_POST['cfg_cart_on']))             {$_SESSION['rudwebset_cfg_cart_on']             = $_POST['cfg_cart_on'];}
 if(isset($_POST['cfg_csp_on']))              {$_SESSION['rudwebset_cfg_csp_on']              = $_POST['cfg_csp_on'];}
 if(isset($_POST['cfg_csp_lmt']))             {$_SESSION['rudwebset_cfg_csp_lmt']             = $_POST['cfg_csp_lmt'];}
@@ -331,6 +335,8 @@ if(isset($_POST['cfg_cpydev']))              {$_SESSION['rudwebset_cfg_cpydev'] 
 if(isset($_POST['cfg_smap']))                {$_SESSION['rudwebset_cfg_smap']                = $_POST['cfg_smap'];}
 if(isset($_POST['cfg_yah']))                 {$_SESSION['rudwebset_cfg_yah']                 = $_POST['cfg_yah'];}
 if(isset($_POST['cfg_nws']))                 {$_SESSION['rudwebset_cfg_nws']                 = $_POST['cfg_nws'];}
+if(isset($_POST['cfg_nws_lmt1']))            {$_SESSION['rudwebset_cfg_nws_lmt1']            = $_POST['cfg_nws_lmt1'];}
+if(isset($_POST['cfg_nws_lmt2']))            {$_SESSION['rudwebset_cfg_nws_lmt2']            = $_POST['cfg_nws_lmt2'];}
 if(isset($_POST['cfg_src']))                 {$_SESSION['rudwebset_cfg_src']                 = $_POST['cfg_src'];}
 
 if(isset($_POST['cfg_ftr_pics_0']))          {$_SESSION['rudwebset_cfg_pics_0']              = $_POST['cfg_pics_0'];}

@@ -21,51 +21,59 @@
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
 if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
+  echo $rudweb_skin['cnt']['tt1']['pre'];
+  echo $rudweb_ln['cnt']['tags'];
+  echo $rudweb_skin['cnt']['tt1']['suf'];
 
-echo $rudweb_skin['cnt']['tt1']['pre'];
-echo $rudweb_ln['cnt']['tags'];
-echo $rudweb_skin['cnt']['tt1']['suf'];
+  echo $rudweb_skin['cnt']['txt']['pre'];
 
-echo $rudweb_skin['cnt']['txt']['pre'];
+  if(!isset($_GET['act'])) {
+    if(_RUDWEB_CFG_CNT_TAGS == "0") {
+      echo $rudweb_skin['adm']['mod']['pre'];
+      echo $rudweb_ln['adm']['tagmodstat0'];
+      echo "<BR>";
+      if(_RUDWEB_DBCFG == "1") {
+        echo "<FORM ENCTYPE=\"multipart/form-data\" CLASS=\"tagonoffform\" NAME=\"tagonoffform\" ACTION=\"\" METHOD=\"post\">";
+        echo "<INPUT TYPE=\"hidden\" NAME=\"tagonoff\" VALUE=\"1\">";
+        echo "<BR>";
+        echo "<INPUT CLASS=\"formsubmit\" TYPE=\"submit\" NAME=\"tagmod\" VALUE=\"".$rudweb_ln['adm']['tagmodstat01']."\">";
+        echo "</FORM>";
+      }
+      else {
+        echo $rudweb_ln['adm']['tagmodstat00'];
+      }
+      echo $rudweb_skin['adm']['mod']['suf'];
+    } // if disabled
 
-if(_RUDWEB_CFG_CNT_TAGS == "0") {
-  echo "<DIV STYLE=\"text-align: center\">";
-  echo $rudweb_ln['adm']['tagmodstat0'];
-  echo "<BR>";
-  if(_RUDWEB_DBCFG == "1") {
-    echo "<FORM ENCTYPE=\"multipart/form-data\" CLASS=\"tagonoffform\" NAME=\"tagonoffform\" ACTION=\"\" METHOD=\"post\">";
-    echo "<INPUT TYPE=\"hidden\" NAME=\"tagonoff\" VALUE=\"1\">";
-    echo "<BR>";
-    echo "<INPUT CLASS=\"formsubmit\" TYPE=\"submit\" NAME=\"tagmod\" VALUE=\"".$rudweb_ln['adm']['tagmodstat01']."\">";
-    echo "</FORM>";
+    else {
+      echo $rudweb_skin['adm']['mod']['pre'];
+      echo $rudweb_ln['adm']['tagmodstat1'];
+      echo "<BR>";
+      
+      if(_RUDWEB_DBCFG == "1") {
+        echo "<FORM ENCTYPE=\"multipart/form-data\" CLASS=\"tagonoffform\" NAME=\"tagonoffform\" ACTION=\"\" METHOD=\"post\">";
+        echo "<INPUT TYPE=\"hidden\" NAME=\"tagonoff\" VALUE=\"0\">";
+        echo "<BR>";
+        echo "<INPUT CLASS=\"formsubmit\" TYPE=\"submit\" NAME=\"tagmod\" VALUE=\"".$rudweb_ln['adm']['tagmodstat10']."\">";
+        echo "</FORM>";
+      }
+      else {
+        echo $rudweb_ln['adm']['tagmodstat11'];
+      }  
+      echo $rudweb_skin['adm']['mod']['suf'];
+      
+    } // else if enabled
   }
-  else {
-    echo $rudweb_ln['adm']['tagmodstat00'];
+  else if (isset($_GET['act'])) {
+    if(_RUDWEB_CFG_CNT_TAGS == 1) {
+      $act = rudweb_filter_input($_GET['act']);
+      switch($act) {
+        case 'adm' : {require_once _RUDWEB_ADMIN_DIR . 'tagmodforms.inc.php'; break;}
+        default : {break;}
+      }
+    }
   }
-  echo "</DIV>";
-} // if disabled
-
-else {
-  echo "<DIV STYLE=\"text-align: center\">";
-  echo $rudweb_ln['adm']['tagmodstat1'];
-  echo "<BR>";
-  
-  if(_RUDWEB_DBCFG == "1") {
-    echo "<FORM ENCTYPE=\"multipart/form-data\" CLASS=\"tagonoffform\" NAME=\"tagonoffform\" ACTION=\"\" METHOD=\"post\">";
-    echo "<INPUT TYPE=\"hidden\" NAME=\"tagonoff\" VALUE=\"0\">";
-    echo "<BR>";
-    echo "<INPUT CLASS=\"formsubmit\" TYPE=\"submit\" NAME=\"tagmod\" VALUE=\"".$rudweb_ln['adm']['tagmodstat10']."\">";
-    echo "</FORM>";
-  }
-  else {
-    echo $rudweb_ln['adm']['tagmodstat11'];
-  }  
-  echo '<BR><BR>';
-
-  echo "</DIV>";
-  require_once _RUDWEB_ADMIN_DIR . 'tagmodforms.inc.php';
-} // else if enabled
-echo $rudweb_skin['cnt']['txt']['suf'];
+  echo $rudweb_skin['cnt']['txt']['suf'];
 } // if user has the rights
 else {
   echo "<DIV CLASS=\"err\">" . $rudweb_ln['err']['1'] . "</DIV>";

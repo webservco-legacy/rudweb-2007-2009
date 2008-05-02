@@ -21,4 +21,23 @@
 * Authorized access only
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
+
+  echo $rudweb_skin['cnt']['tt1']['pre'];
+  echo $rudweb_ln['nws']['tt'];
+  echo $rudweb_skin['cnt']['tt1']['suf'];
+  
+  echo $rudweb_skin['cnt']['txt']['pre'];
+  if(!isset($_GET['nws'])) {
+    showNewsAll();
+  }
+  else if(isset($_GET['nws'])) {
+    $nws_id = rudweb_filter_input($_GET['nws']);
+    if(isValidInt($nws_id)) {
+      showNewsItem($nws_id,0);
+    }
+    else {
+      showNewsAll();
+    }
+  }
+  echo $rudweb_skin['cnt']['txt']['suf'];
 ?>
