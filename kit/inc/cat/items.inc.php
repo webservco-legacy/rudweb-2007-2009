@@ -62,8 +62,8 @@ if(isset($_GET['cat'])) {
       $sortorder = 'ASC';
       if (isset($_GET['asc'])) {
         $asc = rudweb_filter_input($_GET['asc']);
-        if ($asc == '0') {$sortorder = 'DESC';}
-        else if ($asc == '1') {$sortorder = 'ASC';}
+        if ($asc == 0) {$sortorder = 'DESC';}
+        else if ($asc == 1) {$sortorder = 'ASC';}
       }
       $sorting .= " p" . $sort . " " . $sortorder . ",";
     }
@@ -221,7 +221,10 @@ if(isset($_GET['cat'])) {
     
     // header:
     echo $rudweb_skin['prod']['lst']['hdrhdr'];
-    echo $rudweb_skin['prod']['lst']['pidpre'] . $rudweb_ln['prod']['pid'] . $rudweb_skin['prod']['lst']['pidsuf'];
+    // pid
+    echo $rudweb_skin['prod']['lst']['pidpre'];
+    echo $rudweb_ln['prod']['pid'];
+    echo $rudweb_skin['prod']['lst']['pidsuf'];
     echo $rudweb_skin['prod']['lst']['ppicpre'] . $rudweb_ln['prod']['ppic'] . $rudweb_skin['prod']['lst']['ppicsuf'];
     echo $rudweb_skin['prod']['lst']['pnamepre'] . $rudweb_ln['prod']['pname'] . $rudweb_skin['prod']['lst']['pnamesuf'];
     //echo $rudweb_skin['prod']['lst']['prd_dscpre'] . $rudweb_ln['prod']['prd_dsc'] . $rudweb_skin['prod']['lst']['prd_dscsuf'];
@@ -301,7 +304,7 @@ if(isset($_GET['cat'])) {
 
   echo $rudweb_skin['catalog']['ftr'];
 
-  /*
+ /*
   echo '<BR><BR><SPAN STYLE="font-weight: bold; line-height: 120%; font-size: 16px;">' . $q2 . '</SPAN><BR>';
   echo '<BR><SPAN STYLE="font-weight: bold; font-size: 16px;">' . $q3 . '</SPAN><BR><BR>';
   echo '<BR>';

@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modcat.inc.php
-09:48 2008-05-02
+09:35 2008-05-06
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -286,5 +286,26 @@ function setIpg(){
   echo '<INPUT CLASS="formsubmit" TYPE="submit" NAME="catmod" VALUE="'.$rudweb_ln['adm']['save'].'">';
   echo '</FORM>';
   echo $rudweb_skin['adm']['mod']['suf'];
+}
+/* ********** ********** ********** //CATALOG SORTING LINKS  ********** ********** ********** */
+function catSortLink() {
+  
+  /*
+    $thiscat = null;
+    if(isset($_GET['cat'])) {
+      $thiscat = rudweb_filter_input($_GET['cat']); 
+      if(isValidInt($thiscat)) {
+        if(isset($_GET['sort']) && rudweb_filter_input($_GET['sort'] == 'id')) {
+          if(isset($_GET['asc'])) {
+            $old_asc = $_GET['asc'];
+            if($old_asc == 1 ) {$asc = 0;}
+            else if($old_asc == 0 ) {$asc = 1;}
+          }
+        }
+        restrictedLocalLink('catsort', $rudweb_ln['prod']['pid'], 'index.php/catalog/items/cat/'.$thiscat.'/sort/id/asc/'.$asc, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      }
+      else {echo $rudweb_ln['prod']['pid'];}
+    }
+    */
 }
 ?>

@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudwebm.inc.php
-19:48 2008-04-29
+09:35 2008-05-06
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -72,6 +72,11 @@ if (_RUDWEB_CFG_CAT === "1") {require _RUDWEB_MOD_DIR . 'modcat.inc.php';}
 else {
   function catYah() {}
   function catalogPageNavigation() {}
+  function catalogSubcatsMenu() {}
+  function catalogCategoriesMenu() {}
+  function showCso() {}
+  function setIpg(){}
+  function catSortLink() {}
 }
 /* ********** ********** ********** //CATALOG MODULE ********** ********** ********** */
 /* ********** ********** ********** CATALOG SPECIAL OFFERS ********** ********** ********** */

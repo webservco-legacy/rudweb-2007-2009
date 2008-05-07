@@ -246,7 +246,8 @@ else {
   $rudweb_skin['pgnav']['ftr'] = '</DIV>';
   /* ********** ********** ********** PRODUCTS ********** ********** ********** */
   //product list filters - items.inc
-  $rudweb_skin['prod']['flt']['hdr']         = '';
+  $rudweb_skin['prod']['flt']['hdr']         = '<DIV>';
+  $rudweb_skin['prod']['flt']['ftr']         = '</DIV>';
   // ??
   $rudweb_skin['prod']['com']['hdr']         = '';
   // product list - items.inc
