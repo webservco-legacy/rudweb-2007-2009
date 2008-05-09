@@ -56,6 +56,8 @@ if(isset($_GET['cat'])) {
 
   // SORTING
   $sorting = " ORDER BY";
+  $sort = null;
+  $asc = 1;
   if(isset($_GET['sort'])) {
     $sort = rudweb_filter_input($_GET['sort']);
     if (in_array($sort, $sorta)) {
@@ -212,6 +214,7 @@ if(isset($_GET['cat'])) {
   }
 
   // DISPLAY FILTER BOX
+  // xxx
 
   // DISPLAY COMPARE BOX
 
@@ -223,10 +226,14 @@ if(isset($_GET['cat'])) {
     echo $rudweb_skin['prod']['lst']['hdrhdr'];
     // pid
     echo $rudweb_skin['prod']['lst']['pidpre'];
-    echo $rudweb_ln['prod']['pid'];
+    catSortLink('id', $rudweb_ln['prod']['pid'], $asc);
     echo $rudweb_skin['prod']['lst']['pidsuf'];
+    
     echo $rudweb_skin['prod']['lst']['ppicpre'] . $rudweb_ln['prod']['ppic'] . $rudweb_skin['prod']['lst']['ppicsuf'];
-    echo $rudweb_skin['prod']['lst']['pnamepre'] . $rudweb_ln['prod']['pname'] . $rudweb_skin['prod']['lst']['pnamesuf'];
+    echo $rudweb_skin['prod']['lst']['pnamepre'];
+    //echo $rudweb_ln['prod']['pname'];
+    catSortLink('name', $rudweb_ln['prod']['pname'], $asc);
+    echo $rudweb_skin['prod']['lst']['pnamesuf'];
     //echo $rudweb_skin['prod']['lst']['prd_dscpre'] . $rudweb_ln['prod']['prd_dsc'] . $rudweb_skin['prod']['lst']['prd_dscsuf'];
     
     // other details
@@ -234,11 +241,13 @@ if(isset($_GET['cat'])) {
       //$detid = $di[$l];
       echo $rudweb_skin['prod']['lst']['detpre'];
       //echo $dtt[$detid];
-      echo $dtt[$l];
+      catSortLink('det'.$l, $dtt[$l], $asc);
       echo $rudweb_skin['prod']['lst']['detsuf'];
     }
     
-    echo $rudweb_skin['prod']['lst']['ppricepre'] . $rudweb_ln['prod']['pprice'] . $rudweb_skin['prod']['lst']['ppricesuf'];
+    echo $rudweb_skin['prod']['lst']['ppricepre'];
+    catSortLink('price', $rudweb_ln['prod']['pprice'], $asc);
+    echo $rudweb_skin['prod']['lst']['ppricesuf'];
     
     echo $rudweb_skin['prod']['lst']['ftrhdr'];
     
@@ -304,7 +313,7 @@ if(isset($_GET['cat'])) {
 
   echo $rudweb_skin['catalog']['ftr'];
 
- /*
+// /*
   echo '<BR><BR><SPAN STYLE="font-weight: bold; line-height: 120%; font-size: 16px;">' . $q2 . '</SPAN><BR>';
   echo '<BR><SPAN STYLE="font-weight: bold; font-size: 16px;">' . $q3 . '</SPAN><BR><BR>';
   echo '<BR>';
@@ -312,7 +321,7 @@ if(isset($_GET['cat'])) {
   echo '<BR>';
   echo $totalitems;
   echo '<BR>';
-  */
+//  */
 }
 else {
   echo "<DIV CLASS=\"err\">" . $rudweb_ln['err']['1'] . "</DIV>";

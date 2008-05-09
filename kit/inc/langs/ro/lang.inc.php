@@ -91,7 +91,7 @@ $rudweb_ln['adm']['cal_today']    = "Ast&#259;zi";
 //$rudweb_ln['adm']['ftrnew']       = "Adaug&#259; Nou";
 
 //USER MODULE
-$rudweb_ln['usr']['alreadyreg']    = 'Ce? Nu-ti e de ajuns un cont?';
+$rudweb_ln['usr']['alreadyreg']    = 'Utilizator &#238;nregistrat';
 $rudweb_ln['usr']['retuser']       = "Utilizator existent";
 $rudweb_ln['usr']['newuser']       = "Utilizator nou";
 $rudweb_ln['usr']['signup']        = "&#206;nscriere";

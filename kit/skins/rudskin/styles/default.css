@@ -575,3 +575,24 @@ A.title:hover {
   padding-left: 5<?php echo $rudweb_skin['Measure']; ?>;
   padding-right: 5<?php echo $rudweb_skin['Measure']; ?>;
 }
+A.catsort:link {
+  background-color: <?php echo $rudweb_skin['Color2']; ?>;
+  background: transparent;
+  color: <?php echo $rudweb_skin['BgColor']; ?>;
+  font-weight: bold;
+  text-decoration: underline;
+}
+A.catsort:visited {
+  background-color: <?php echo $rudweb_skin['Color2']; ?>;
+  background: transparent;
+  color: <?php echo $rudweb_skin['BgColor']; ?>;
+  font-weight: bold;
+  text-decoration: underline;
+}
+A.catsort:hover {
+  background-color: <?php echo $rudweb_skin['Color2']; ?>;
+  background: transparent;
+  color: <?php echo $rudweb_skin['BgColor']; ?>;
+  font-weight: bold;
+  text-decoration: none;
+}

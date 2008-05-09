@@ -75,7 +75,7 @@ $rudweb_ln['adm']['cal_days']     = "'S','M','T','W','T','F','S'";
 $rudweb_ln['adm']['cal_today']    = "Today";
 
 //USER MODULE
-$rudweb_ln['usr']['alreadyreg']    = 'What? One Account is not enough for you?';
+$rudweb_ln['usr']['alreadyreg']    = 'Registered User';
 $rudweb_ln['usr']['retuser']       = "Returning User";
 $rudweb_ln['usr']['newuser']       = "New User";
 $rudweb_ln['usr']['signup']        = "Sign Up";

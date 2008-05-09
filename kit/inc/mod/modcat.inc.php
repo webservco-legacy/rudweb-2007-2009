@@ -288,24 +288,19 @@ function setIpg(){
   echo $rudweb_skin['adm']['mod']['suf'];
 }
 /* ********** ********** ********** //CATALOG SORTING LINKS  ********** ********** ********** */
-function catSortLink() {
-  
-  /*
-    $thiscat = null;
-    if(isset($_GET['cat'])) {
-      $thiscat = rudweb_filter_input($_GET['cat']); 
-      if(isValidInt($thiscat)) {
-        if(isset($_GET['sort']) && rudweb_filter_input($_GET['sort'] == 'id')) {
-          if(isset($_GET['asc'])) {
-            $old_asc = $_GET['asc'];
-            if($old_asc == 1 ) {$asc = 0;}
-            else if($old_asc == 0 ) {$asc = 1;}
-          }
-        }
-        restrictedLocalLink('catsort', $rudweb_ln['prod']['pid'], 'index.php/catalog/items/cat/'.$thiscat.'/sort/id/asc/'.$asc, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+function catSortLink($sort, $tt, $old_asc) {
+  global $rudweb_ln;
+  $thiscat = null;
+  if(isset($_GET['cat'])) {
+    $thiscat = rudweb_filter_input($_GET['cat']); 
+    if(isValidInt($thiscat)) {
+      if(isset($_GET['asc'])) {
+        $old_asc = $_GET['asc'];
       }
-      else {echo $rudweb_ln['prod']['pid'];}
+      if($old_asc == 1 ) {$asc = 0;}
+      else if($old_asc == 0 ) {$asc = 1;}
+      restrictedLocalLink('catsort', $tt, 'index.php/catalog/items/cat/'.$thiscat.'/sort/'.$sort.'/asc/'.$asc, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
     }
-    */
+  }
 }
 ?>
