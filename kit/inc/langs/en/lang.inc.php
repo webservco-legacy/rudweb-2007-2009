@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/en/lang.inc.php
-14:56 2008-05-02
+14:55 2008-05-09
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -169,6 +169,8 @@ $rudweb_ln['adm']['itemmod']       = 'Modify item';
 $rudweb_ln['adm']['itemviewcat']   = 'View items in this category';
 $rudweb_ln['adm']['settings']      = 'Settings';
 $rudweb_ln['adm']['save']          = 'Save';
+$rudweb_ln['adm']['filter']        = 'Filter';
+$rudweb_ln['adm']['reset']         = 'Reset';
 
 // CATALOG SPECIAL OFFERS
 $rudweb_ln['adm']['cspmodstat0']  = "Special Offers module is disabled.";

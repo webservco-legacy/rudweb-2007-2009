@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/ro/lang.inc.php
-14:42 2008-04-29
+14:56 2008-05-09
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -186,6 +186,8 @@ $rudweb_ln['adm']['itemmod']       = 'Modificare articol';
 $rudweb_ln['adm']['itemviewcat']   = 'Vizualizare articole din categoria curent&#259;';
 $rudweb_ln['adm']['settings']      = 'Set&#259;ri';
 $rudweb_ln['adm']['save']          = 'Salveaz&#259;';
+$rudweb_ln['adm']['filter']        = 'Filtrare';
+$rudweb_ln['adm']['reset']         = 'Resetare';
 
 // CATALOG SPECIAL OFFERS
 $rudweb_ln['adm']['cspmodstat0']  = "Modulul de oferte speciale este inactiv.";

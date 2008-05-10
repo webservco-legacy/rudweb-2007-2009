@@ -246,8 +246,8 @@ else {
   $rudweb_skin['pgnav']['ftr'] = '</DIV>';
   /* ********** ********** ********** PRODUCTS ********** ********** ********** */
   //product list filters - items.inc
-  $rudweb_skin['prod']['flt']['hdr']         = '<DIV>';
-  $rudweb_skin['prod']['flt']['ftr']         = '</DIV>';
+  $rudweb_skin['prod']['flb']['hdr']         = '<DIV>';
+  $rudweb_skin['prod']['flb']['ftr']         = '</DIV>';
   // ??
   $rudweb_skin['prod']['com']['hdr']         = '';
   // product list - items.inc
@@ -256,9 +256,9 @@ else {
   $rudweb_skin['prod']['lst']['ftrhdr']      = '</TR>';
   $rudweb_skin['prod']['lst']['hdrprd']      = '<TR CLASS="lst_prd_prd">';
   $rudweb_skin['prod']['lst']['pidpre']      = '<TD>';
+  $rudweb_skin['prod']['lst']['pidsuf']      = '</TD>';
   $rudweb_skin['prod']['lst']['ppicsuf']     = '</TD>';
   $rudweb_skin['prod']['lst']['ppicpre']     = '<TD>';
-  $rudweb_skin['prod']['lst']['pidsuf']      = '</TD>';
   $rudweb_skin['prod']['lst']['pnamepre']    = '<TD>';
   $rudweb_skin['prod']['lst']['pnamesuf']    = '</TD>';
   $rudweb_skin['prod']['lst']['prd_dscpre']  = '<TD>';

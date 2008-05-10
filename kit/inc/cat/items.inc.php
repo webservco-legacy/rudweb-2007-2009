@@ -86,14 +86,16 @@ if(isset($_GET['cat'])) {
       $fm[$detid] = "IS NOT NULL";
       $fl[$detid] = "IS NOT NULL";
       if(isset($_POST['opt_id'][$detid])) {
-        $flm = rudweb_filter_content($_POST['opt_idva'][$detid]);
-        if($flm == '') {$fm[$detid] = "IS NOT NULL";}
+        $flm = rudweb_filter_content($_POST['opt_id'][$detid]);
+        if($flm == '' || $flm == 0) {$fm[$detid] = "IS NOT NULL";}
         else{$fm[$detid] = "= '".$flm."'";}
       }
       else if(isset($_POST['val_tt'][$detid])) {
-        $flt = rudweb_filter_content($_POST['val_tt'][$detid]);
+        //$flt = rudweb_filter_content($_POST['val_tt'][$detid]);
+        $flt = parseSearchString($_POST['val_tt'][$detid]);
         if($flt == '') {$fl[$detid] = "IS NOT NULL";}
-        else{$fl[$detid] = "= '".$flt."'";}
+        //else{$fl[$detid] = "= '".$flt."'";}
+        else{$fl[$detid] = "REGEXP '".$flt."'";}
       }
       if($j == '1') {
         if($dettyp == '1') {
@@ -142,6 +144,16 @@ if(isset($_GET['cat'])) {
     $qf5 .= ')';
     }
   }
+  // PID
+  $qf6 = '';
+  if(isset($_POST['id']) && $_POST['id'] != '') {
+    $fpid = parseSearchString($_POST['id']);
+    if($fpid != '') {
+    $qf6 = ' AND (';
+    $qf6 .= "A.prd_iid REGEXP '".$fpid."'";
+    $qf6 .= ')';
+    }
+  }
   // PAGINATION START
   $pg = 1;
   if(isset($_GET['pg']) && isValidInt($_GET['pg'])) {$pg = rudweb_filter_input($_GET['pg']);}
@@ -163,6 +175,7 @@ if(isset($_GET['cat'])) {
   $qf3 .
   $qf4 .
   $qf5 .
+  $qf6 .
   $sorting .
   $limit
   ;
@@ -214,6 +227,7 @@ if(isset($_GET['cat'])) {
   }
 
   // DISPLAY FILTER BOX
+  displayFilterBox($di, $dtyp, $dtt, $dt);
   // xxx
 
   // DISPLAY COMPARE BOX

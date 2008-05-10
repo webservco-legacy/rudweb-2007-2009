@@ -303,4 +303,74 @@ function catSortLink($sort, $tt, $old_asc) {
     }
   }
 }
+/* ********** ********** ********** //CATALOG FILTER BOX  ********** ********** ********** */
+function displayFilterBox($di, $dtyp, $dtt, $dt) {
+  global $rudweb_dbtype;
+  global $rudweb_ln;
+  global $rudweb_skin;
+  
+  $flb_pid = '';
+  if(isset($_POST['id'])) {$flb_pid = rudweb_filter_input($_POST['id']);}
+  
+  $flb_pname = '';
+  if(isset($_POST['kw'])) {$flb_pname = rudweb_filter_input($_POST['kw']);}
+  
+  echo $rudweb_skin['prod']['flb']['hdr'];
+  echo '<FORM ENCTYPE="multipart/form-data" NAME="flb_form" ACTION="" METHOD="post">';
+  
+  echo $rudweb_skin['prod']['flb']['pidpre'];
+  echo $rudweb_ln['prod']['pid'] . ':<BR>';
+  echo '<INPUT CLASS="forminput" TYPE="text" NAME="id" SIZE="10" MAXLENGTH="30" VALUE="'.$flb_pid.'">';
+  echo $rudweb_skin['prod']['flb']['pidsuf'];
+  
+  echo $rudweb_skin['prod']['flb']['pnamepre'];
+  echo $rudweb_ln['prod']['pname'] . ':<BR>';
+  echo '<INPUT CLASS="forminput" TYPE="text" NAME="kw" SIZE="" MAXLENGTH="150" VALUE="'.$flb_pname.'">';
+  echo $rudweb_skin['prod']['flb']['pnamesuf'];
+  
+  for($i=1;$i<=$dt;$i++) {
+    $did = $di[$i];
+    $flb_opt_id[$did] = 0;
+    if(isset($_POST['opt_id'][$did])) {$flb_opt_id[$did] = rudweb_filter_input($_POST['opt_id'][$did]);}
+    $flb_val_tt[$did] = '';
+    if(isset($_POST['val_tt'][$did])) {$flb_val_tt[$did] = rudweb_filter_input($_POST['val_tt'][$did]);}
+    
+    echo $rudweb_skin['prod']['flb']['pdetpre'];
+    echo $dtt[$i] . ':<BR>';
+    if($dtyp[$i] == 1) {
+      $qo = "SELECT opt_id, opt_tt FROM "._RUDWEB_PRE."cat_opt WHERE det_id = '".$di[$i]."' ORDER BY opt_tt ASC";
+      $rq = rudweb_qres($rudweb_dbtype, $qo);
+      $tq = rudweb_qtotal($rudweb_dbtype, $rq);
+      if($tq != 0) {
+        echo '<SELECT CLASS="forminput" NAME="opt_id['.$di[$i].']">';
+        echo '<OPTION VALUE="0">'.$rudweb_ln['adm']['sel'].'</OPTION>'; 
+        for($j=1;$j<=$tq;$j++) {
+          $ro = rudweb_fetch_assoc($rudweb_dbtype, $rq);
+          $of = '';
+          if($flb_opt_id[$did] == $ro['opt_id']) {$of = ' SELECTED';}
+          echo '<OPTION VALUE="'.$ro['opt_id'].'"'.$of.'>'.$ro['opt_tt'].'</OPTION>';
+        }
+        echo '</SELECT>';
+      }
+    }
+    else {
+      echo '<INPUT CLASS="forminput" TYPE="text" NAME="val_tt['.$did.']" VALUE="'.$flb_val_tt[$did].'">';
+    }
+    echo $rudweb_skin['prod']['flb']['pdetsuf'];
+  }
+  
+  echo $rudweb_skin['prod']['flb']['ppricepre'];
+  echo $rudweb_skin['prod']['flb']['ppricesuf'];
+  
+  echo $rudweb_skin['prod']['flb']['applypre'];
+  echo '<INPUT CLASS="formsubmit" TYPE="submit" NAME="filter" VALUE="'.$rudweb_ln['adm']['filter'].'">';
+  echo '</FORM>';
+  echo '<FORM ENCTYPE="multipart/form-data" NAME="flb_form" ACTION="" METHOD="post">';
+  echo '<INPUT CLASS="formsubmit" STYLE="margin-top: 3px;" TYPE="submit" NAME="filter" VALUE="'.$rudweb_ln['adm']['reset'].'">';
+  echo '</FORM>';
+  echo $rudweb_skin['prod']['flb']['applysuf'];
+  
+  echo $rudweb_skin['prod']['flb']['ftr'];
+  
+}
 ?>
