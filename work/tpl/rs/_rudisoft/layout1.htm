@@ -10,8 +10,7 @@ HTML, BODY {
   color: #000000;
   margin: 0;
   padding: 0;
-  /*text-align: center;*/
-  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-family: Georgia, sans-serif;
   font-size: 12px;
   height: 100%;
 }
@@ -24,21 +23,22 @@ HTML, BODY {
   clear: both;
   width: 90%;
   margin: auto;
+  display: table;
 }
 /* ********** ********** ********** HEADER AREA START ********** ********** ********** */
 .logo {
   float: left;
   width: 250px;
   height: 80px;
+  margin: 0px;
 }
+* html .logo { margin-right: -3px;}
 .hdr {
-  margin-left: 250px;
   height: 80px;
   overflow: auto;
-
-  /*background-color: #EEEEEE;*/
+  padding: 0px 0px 0px 0px;
 }
-* html .hdr {margin-bottom: -2px;}
+* html .hdr { margin-bottom: -2px;}
 /* ********** ********** ********** HEADER AREA END ********** ********** ********** */
 /* ********** ********** ********** CONTENT AREA START ********** ********** ********** */
 .cleft {
@@ -48,7 +48,6 @@ HTML, BODY {
   padding: 5px 5px 5px 5px;
   overflow: auto;
 }
-* html .cleft {width: 220px;}
 .cright {
   float: right;
   width: 210px;
@@ -56,7 +55,6 @@ HTML, BODY {
   padding: 5px 5px 5px 5px;
   overflow: auto;
 }
-* html .cright {width: 220px;}
 .ccont {
   margin-left: 220px; 
   margin-right: 220px; 
@@ -66,38 +64,36 @@ HTML, BODY {
 .cnt {
   margin-left: 10px; 
   margin-right: 10px;
-  /*text-align: left;*/
+  padding: 10px 10px 10px 10px;
+  min-height: 400px;
+  overflow: auto;
   border-left: 2px solid #000000;
   border-right: 2px solid #000000;
-  padding: 10px 10px 10px 10px;
-  /*min-height: 450px;*/
-  min-height: 250px;
-  overflow: auto;
 }
-* html .cnt {height: 250px; margin-left: 7px; margin-right: 7px;}
+* html .cnt {height: 400px; margin-left: 7px; margin-right: 7px;}
 .cnt_top {
     width: 50%;
     height: 2px;
     margin-left: 10px;
+    background-color: #000000;
 }
 * html .cnt_top {display: block; margin-left: 7px;}
 .cnt_bottom {
     width: 50%;
     height: 2px;
     margin-right: 10px;
+    background-color: #000000;
 }
-* html .cnt_bottom {display: block; margin-right: 10px;}
+* html .cnt_bottom {display: block;}
 /* ********** ********** ********** CONTENT AREA END ********** ********** ********** */
 /* ********** ********** ********** FOOTER AREA START ********** ********** ********** */
 .footer {
   width: 100%;
   padding: 10px 0px 10px 0px;
   font-size: 0.9em;
-  /*text-align: center;*/
+  text-align: center;
   position: absolute;
   bottom: 0;
-  /*overflow: auto;*/
-  background-color: #EEEEEE;
 }
 /* ********** ********** ********** FOOTER AREA END ********** ********** ********** */
 </STYLE>
@@ -107,7 +103,7 @@ HTML, BODY {
 <DIV CLASS="layout">
   <DIV CLASS="container">
     <DIV CLASS="logo">
-      <IMG SRC="logo.gif" ALT="">
+      <IMG SRC="logo1.gif" ALT="">
     </DIV>
     <DIV CLASS="hdr">
       header
