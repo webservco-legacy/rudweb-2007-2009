@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modcat.inc.php
-09:35 2008-05-06
+12:49 2008-05-13
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -359,8 +359,8 @@ function displayFilterBox($di, $dtyp, $dtt, $dt) {
     echo $rudweb_skin['prod']['flb']['pdetsuf'];
   }
   
-  echo $rudweb_skin['prod']['flb']['ppricepre'];
-  echo $rudweb_skin['prod']['flb']['ppricesuf'];
+  //echo $rudweb_skin['prod']['flb']['ppricepre'];
+  //echo $rudweb_skin['prod']['flb']['ppricesuf'];
   
   echo $rudweb_skin['prod']['flb']['applypre'];
   echo '<INPUT CLASS="formsubmit" TYPE="submit" NAME="filter" VALUE="'.$rudweb_ln['adm']['filter'].'">';

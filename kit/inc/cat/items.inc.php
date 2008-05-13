@@ -227,7 +227,9 @@ if(isset($_GET['cat'])) {
   }
 
   // DISPLAY FILTER BOX
-  displayFilterBox($di, $dtyp, $dtt, $dt);
+  if($t1 != 0 && $pg == 1) {
+    displayFilterBox($di, $dtyp, $dtt, $dt);
+  }
   // xxx
 
   // DISPLAY COMPARE BOX
@@ -327,7 +329,7 @@ if(isset($_GET['cat'])) {
 
   echo $rudweb_skin['catalog']['ftr'];
 
-// /*
+  /*
   echo '<BR><BR><SPAN STYLE="font-weight: bold; line-height: 120%; font-size: 16px;">' . $q2 . '</SPAN><BR>';
   echo '<BR><SPAN STYLE="font-weight: bold; font-size: 16px;">' . $q3 . '</SPAN><BR><BR>';
   echo '<BR>';
@@ -335,7 +337,7 @@ if(isset($_GET['cat'])) {
   echo '<BR>';
   echo $totalitems;
   echo '<BR>';
-//  */
+  */
 }
 else {
   echo "<DIV CLASS=\"err\">" . $rudweb_ln['err']['1'] . "</DIV>";

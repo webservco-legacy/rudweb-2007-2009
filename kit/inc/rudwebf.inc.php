@@ -1,6 +1,6 @@
 <?php
 /*
-./inc/rudwebf.inc.php
+12:29 2008-05-13
 14:41 2008-04-29
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
@@ -380,12 +380,22 @@ function parseSearchString($str) {
   $str = eregi_replace(' and ',' ',$str);
   $str = eregi_replace(' or ',' ',$str);
   $str = eregi_replace(' the ',' ',$str);
-  // make an array out of the string, remove duplicate values, delete short words (1-2 letters but not numbers), cleanup null values and create the MySQL REGEXP string
-  $words = str_word_count($str, 1, "\'1234567890");
+  //remove unwanted unwanted characters
+  $unwanted = array('\\', '', '/' , '"', '*', '&' , '$', '#', '@', '!', '_', ')', '(', '+', '|');
+  $str = str_replace($unwanted, ' ', $str);
+  // put distinct words in an array
+  $words = preg_split("/[\s,]+/", $str);
+  // get rid of duplicates
   $words = array_unique($words);
+  // get rid of short words 1, 2 chars
   $words = preg_replace("/^([a-z]{1,2})$/",'',$words);
+  // remove some unwanted chars
+  $words = preg_replace("/^([.']{1,})$/",'',$words);
+  // get rid of empty words
   $words = array_diff($words, array(''));
+  // create MySQL compatible REGEXP string
   $str = implode('|', $words);
+
   return $str;
 }
 /* ********** ********** ********** //FILTER INPUT ********** ********** ********** */
