@@ -87,7 +87,7 @@ CREATE TABLE rudweb_cat_det (
 ) myisam_str;
 
 DROP TABLE IF EXISTS rudweb_cat_opt;
-CREATE TABLE rudweb_cat_val (
+CREATE TABLE rudweb_cat_opt (
   opt_id int(5) unsigned NOT NULL,
   det_id int(5) unsigned NOT NULL,  
   opt_tt varchar(255) NOT NULL,
@@ -385,6 +385,22 @@ CREATE TABLE rudweb_ws_pic (
   pic_dis tinyint(1) unsigned NOT NULL,
   pic_lvl tinyint(1) unsigned NOT NULL,
   PRIMARY KEY (pic_id)
+) myisam_str;
+
+DROP TABLE IF EXISTS rudweb_ws_nws;
+CREATE TABLE rudweb_ws_nws (                                   
+nws_id INT(5) unsigned NOT NULL,                          
+nws_ln CHAR(2) NOT NULL,          
+nws_tt varchar(150) NOT NULL,     
+nws_dsc varchar(255) NOT NULL,    
+nws_txt mediumtext NOT NULL,      
+nws_crd date NOT NULL,                                    
+nws_crt time NOT NULL,                                    
+nws_cru int(5) unsigned NOT NULL,                         
+nws_mdd date NOT NULL,                                    
+nws_mdt time NOT NULL,                                    
+nws_mdu int(5) unsigned NOT NULL,                         
+PRIMARY KEY  (nws_id)  
 ) myisam_str;
 
 DROP TABLE IF EXISTS rudweb_ws_rel;

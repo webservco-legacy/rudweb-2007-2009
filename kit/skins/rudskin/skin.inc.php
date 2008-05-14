@@ -1,7 +1,7 @@
 <?php
 /*
 ./skins/rudskin/skin.inc.php
-11:16 2008-04-18
+13:56 2008-05-14
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once '../../lib/404.php';}
 
@@ -246,8 +246,19 @@ else {
   $rudweb_skin['pgnav']['ftr'] = '</DIV>';
   /* ********** ********** ********** PRODUCTS ********** ********** ********** */
   //product list filters - items.inc
-  $rudweb_skin['prod']['flb']['hdr']         = '<DIV>';
-  $rudweb_skin['prod']['flb']['ftr']         = '</DIV>';
+  $rudweb_skin['prod']['flb']['hdr']        = '<DIV CLASS="flbox">';
+  $rudweb_skin['prod']['flb']['ftr']        = '</DIV>';
+  $rudweb_skin['prod']['flb']['pidpre']     = '<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="1"><TR><TD STYLE="width: 100px;">';
+  $rudweb_skin['prod']['flb']['pidsuf']     = '</TD>';
+  $rudweb_skin['prod']['flb']['pnamepre']     = '<TD STYLE="width: 100px;">';
+  $rudweb_skin['prod']['flb']['pnamesuf']     = '</TD></TR></TABLE><TABLE BORDER="0" CELLPADDING="3" CELLSPACING="1"><TR>';
+  $rudweb_skin['prod']['flb']['pdetpre']     = '<TD STYLE="width: 100px;">';
+  $rudweb_skin['prod']['flb']['pdetsuf']     = '</TD>';
+  //$rudweb_skin['prod']['flb']['ppricepre']     = '<TD STYLE="width: 100px;">';
+  //$rudweb_skin['prod']['flb']['ppricesuf']     = '</TD>';
+  
+  $rudweb_skin['prod']['flb']['applypre']     = '<TD STYLE="width: 100px;">';
+  $rudweb_skin['prod']['flb']['applysuf']     = '</TD></TR></TABLE>';;
   // ??
   $rudweb_skin['prod']['com']['hdr']         = '';
   // product list - items.inc
@@ -257,8 +268,8 @@ else {
   $rudweb_skin['prod']['lst']['hdrprd']      = '<TR CLASS="lst_prd_prd">';
   $rudweb_skin['prod']['lst']['pidpre']      = '<TD>';
   $rudweb_skin['prod']['lst']['pidsuf']      = '</TD>';
-  $rudweb_skin['prod']['lst']['ppicsuf']     = '</TD>';
   $rudweb_skin['prod']['lst']['ppicpre']     = '<TD>';
+  $rudweb_skin['prod']['lst']['ppicsuf']     = '</TD>';
   $rudweb_skin['prod']['lst']['pnamepre']    = '<TD>';
   $rudweb_skin['prod']['lst']['pnamesuf']    = '</TD>';
   $rudweb_skin['prod']['lst']['prd_dscpre']  = '<TD>';
@@ -345,7 +356,7 @@ else {
   $rudweb_skin['adm']['mod']['pre']   = '<DIV CLASS="adm_mod">';
   $rudweb_skin['adm']['mod']['suf']   = '</DIV>';
   /* ********** ********** ********** CATALOG SPECIAL OFFERS ********** ********** ********** */
-  $rudweb_skin['csp']['hdr']        = "\n<DIV CLASS=\"".$rudweb_skin['cnt']['tt1']['class']."\">&#160;&#160;".$rudweb_ln['catalog']['csp']."</DIV><BR>";
+  $rudweb_skin['csp']['hdr']        = "\n<DIV CLASS=\"title\">&#160;&#160;".$rudweb_ln['catalog']['csp']."</DIV><BR>";
   $rudweb_skin['csp']['ftr']        = "\n";
 
   $rudweb_skin['csp']['pre']        = "\n";

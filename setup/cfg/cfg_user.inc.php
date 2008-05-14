@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/cfg/cfg_user.inc.php
-12:50 2008-04-05
+13:45 2008-05-14
 
 user configration
 modify only this file
@@ -15,28 +15,44 @@ $target_root = "";
 
 //your projects
 // put at least one here, starting from 1 not 0!
-$target_name[1] = "root";
-$target_url[1]  = "http://localhost";
-$target_vars[1] = "d:/home/devel/server/htdocs/";
-$target_name[2] = "test";
-$target_url[2]  = "http://localhost/work/rs/test";
-$target_vars[2] = "d:/home/devel/server/htdocs/work/rs/test/";
-$target_name[3] = "Dezy Design";
-$target_url[3]  = "http://localhost/work/ds/dezy";
-$target_vars[3] = "d:/home/devel/server/htdocs/work/ds/dezy/";
-$target_name[4] = "AFM Valcea";
-$target_url[4]  = "http://localhost/work/ds/afm";
-$target_vars[4] = "d:/home/devel/server/htdocs/work/ds/afm/";
-$target_name[5] = "Jumbo Trans";
-$target_url[5]  = "http://localhost/work/ds/jumbo";
-$target_vars[5] = "d:/home/devel/server/htdocs/work/ds/jumbo/";
-$target_name[6] = "Interact Consult";
-$target_url[6]  = "http://localhost/work/ds/interactconsult";
-$target_vars[6] = "d:/home/devel/server/htdocs/work/ds/interactconsult/";
-$target_name[7] = "MHS Truck & Bus";
-$target_url[7]  = "http://localhost/work/ds/man-romania";
-$target_vars[7] = "d:/home/devel/server/htdocs/work/ds/man-romania/";
-$target_name[8] = "MHS Trucks";
-$target_url[8]  = "http://localhost/work/ds/man-rulate";
-$target_vars[8] = "d:/home/devel/server/htdocs/work/ds/man-rulate/";
+$target_name[1]  = "root";
+$target_url[1]   = "http://localhost";
+$target_vars[1]  = "d:/home/devel/server/htdocs/";
+
+$target_name[2]  = "test";
+$target_url[2]   = "http://localhost/work/rs/test";
+$target_vars[2]  = "d:/home/devel/server/htdocs/work/rs/test/";
+
+$target_name[3]  = "RudiSoft.Net";
+$target_url[3]   = "http://localhost/work/rs/rudisoft";
+$target_vars[3]  = "d:/home/devel/server/htdocs/work/rs/rudisoft/";
+
+$target_name[4]  = "Thomas";
+$target_url[4]   = "http://localhost/work/rs/thomas";
+$target_vars[4]  = "d:/home/devel/server/htdocs/work/rs/thomas/";
+
+
+$target_name[5]  = "DaSoft - Dezy Design";
+$target_url[5]   = "http://localhost/work/ds/dezy";
+$target_vars[5]  = "d:/home/devel/server/htdocs/work/ds/dezy/";
+
+$target_name[6]  = "DaSoft - AFM Valcea";
+$target_url[6]   = "http://localhost/work/ds/afm";
+$target_vars[6]  = "d:/home/devel/server/htdocs/work/ds/afm/";
+
+$target_name[7]  = "DaSoft - Jumbo Trans";
+$target_url[7]   = "http://localhost/work/ds/jumbo";
+$target_vars[7]  = "d:/home/devel/server/htdocs/work/ds/jumbo/";
+
+$target_name[8]  = "DaSoft - Interact Consult";
+$target_url[8]   = "http://localhost/work/ds/interactconsult";
+$target_vars[8]  = "d:/home/devel/server/htdocs/work/ds/interactconsult/";
+
+$target_name[9]  = "DaSoft - MHS Truck & Bus";
+$target_url[9]   = "http://localhost/work/ds/man-romania";
+$target_vars[9]  = "d:/home/devel/server/htdocs/work/ds/man-romania/";
+
+$target_name[10] = "DaSoft - MHS Trucks";
+$target_url[10]  = "http://localhost/work/ds/man-rulate";
+$target_vars[10] = "d:/home/devel/server/htdocs/work/ds/man-rulate/";
 ?>
