@@ -1,0 +1,137 @@
+/*
+./skins/icskin/styles/custom.css
+16:30 2008-05-16
+*/
+/* ********** ********** ********** CUSTOM ********** ********** ********** */
+.layout {
+  min-height:100%;
+  background-image: url(<?php echo _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir']?>/graphics/hdrbg.jpg);
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+* html .layout {height: 100%;}
+.container {
+  clear: both;
+  width: 700px;
+  margin: auto;
+  display: table;
+}
+/* ********** ********** ********** HEADER AREA START ********** ********** ********** */
+.h1{
+  font-size: 1px;
+  height: 5px;
+}
+.h2-1 {
+  float: left;
+  width: 250px;
+  height: 80px;
+  margin: 0px;
+  padding: 0px;
+}
+* html .h2-1 {margin-right: -3px;}
+.h2-2 {
+  height: 80px;
+  margin: 0px;
+  padding: 0px;
+  margin-left: 250px;
+  text-align: right;
+}
+* html .h2-2 {margin-left: 247px;}
+.lang1 {
+  margin: 0px;
+  padding: 0px;
+  height: 64px;
+}
+.lang2 {
+  margin: 0px;
+  padding: 0px;
+  padding-right: 25px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.h3 {
+  height: 15px;
+  background-image: url(<?php echo _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir']?>/graphics/ctop.jpg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+}
+/* ********** ********** ********** HEADER AREA END ********** ********** ********** */
+/* ********** ********** ********** CONTENT AREA START ********** ********** ********** */
+.c1 {
+  background-color: #94cae3;
+  color: #FFFFFF;
+  height: 470px;
+  background-image: url(<?php echo _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir']?>/graphics/c1bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  margin: 0;
+  padding: 0;
+}
+.feat {
+  float: left;
+  width: 220px;
+  height: 180px;
+  margin: 0;
+  padding: 0;
+  margin-left: 15px;
+}
+* html .feat {margin-left: 8px;}
+.m1 {
+  float: right;
+  width: 420px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  margin-right: 20px;
+
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 130%;
+}
+* html .m1 {margin-right: 10px;}
+.cntop {
+  float: right;
+  width: 420px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  margin-right: 20px;
+  font-size: 1px;
+}
+* html .cntop {height: 10px; margin-right: 10px;}
+.cnt {
+  float: right;
+  width: 420px;
+  height: 400px;
+  margin: 0;
+  padding: 0;
+  margin-right: 20px;
+  overflow: auto; /*opera fix*/
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+* html .cnt {margin-right: 10px;}
+/* ********** ********** ********** CONTENT AREA END ********** ********** ********** */
+/* ********** ********** ********** FOOTER AREA START ********** ********** ********** */
+.cbottom {
+  height: 30px;
+  background-image: url(<?php echo _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir']?>/graphics/cbottom.jpg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  margin: 0;
+  padding: 0;
+}
+.ftr {
+  text-align: center;
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 15px;
+}
+/* ********** ********** ********** FOOTER AREA END ********** ********** ********** */
+/* ********** ********** ********** LINKS ********** ********** ********** */
+/* ********** ********** ********** //LINKS ********** ********** ********** */
+/* ********** ********** ********** //CUSTOM ********** ********** ********** */

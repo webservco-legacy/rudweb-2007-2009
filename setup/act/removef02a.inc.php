@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/removef02a.inc.php
-16:31 2008-04-29
+16:18 2008-05-16
 */
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -42,6 +42,8 @@ $files[$dirs[3]][1][] = "admin.inc.php";
 $files[$dirs[3]][1][] = "catmod.inc.php";
 $files[$dirs[3]][1][] = "cmtmod.inc.php";
 $files[$dirs[3]][1][] = "cntadd.inc.php";
+$files[$dirs[3]][1][] = "cspmod.inc.php";
+$files[$dirs[3]][1][] = "cspmodforms.inc.php";
 $files[$dirs[3]][1][] = "ftrmod.inc.php";
 $files[$dirs[3]][1][] = "ftrmodforms.inc.php";
 $files[$dirs[3]][1][] = "default.inc.php";
