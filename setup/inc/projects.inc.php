@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/inc/projects.inc.php
-12:50 2008-04-05
+12:55 2008-05-21
 */
 echo "\n\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
 echo "\n<TR><TD CLASS=\"total\">";
@@ -14,16 +14,16 @@ echo "\n<TR>";
 echo "\n<TD CLASS=\"projht\">";
 echo "\nproject";
 echo "\n</TD>";
-echo "\n<TD CLASS=\"projht\" WIDTH=\"100\">";
+echo "\n<TD CLASS=\"projht\" WIDTH=\"\">";
 echo "\nengine version";
 echo "\n</TD>";
-echo "\n<TD CLASS=\"projht\" WIDTH=\"100\">";
+echo "\n<TD CLASS=\"projht\" WIDTH=\"\">";
 echo "\nurl";
 echo "\n</TD>";
-echo "\n<TD CLASS=\"projht\" WIDTH=\"100\">";
+echo "\n<TD CLASS=\"projht\" WIDTH=\"\">";
 echo "\ndir";
 echo "\n</TD>";
-echo "\n<TD CLASS=\"projht\" WIDTH=\"150\">";
+echo "\n<TD CLASS=\"projht\" WIDTH=\"\">";
 echo "\nactions";
 echo "\n</TD>";
 echo "\n<TD CLASS=\"projht\">";

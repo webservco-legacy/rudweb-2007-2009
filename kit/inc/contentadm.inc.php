@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/contentadm.inc.php
-21:09 2008-04-23
+16:51 2008-05-21
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -178,6 +178,7 @@ $oFCKeditor->Config['CustomConfigurationsPath'] = _RUDWEB_JS_URL . 'editor.js';
 $oFCKeditor->ToolbarSet                         = "rudweb";
 $oFCKeditor->Config['SkinPath']                 = _RUDWEB_LIB_URL . 'editor/editor/skins/rudweb/';
 $oFCKeditor->Config['EditorAreaCSS']            = _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'] . '/styles/editor.css';
+//$oFCKeditor->Width                              = "80%";
 $oFCKeditor->Height                             = 500;
 $oFCKeditor->Value                              = $cnt_txt;
 $oFCKeditor->Config['AutoDetectLanguage'] 	    = false;

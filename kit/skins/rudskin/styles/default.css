@@ -9,6 +9,9 @@ BODY {
   text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
   font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
   font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 /* get more control */
 FORM {display: inline; margin: 0px; padding: 0px;}

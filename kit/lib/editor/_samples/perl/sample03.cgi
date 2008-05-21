@@ -159,6 +159,8 @@ my $dir;
 			$dir  = $ENV{'PATH_INFO'};
 		} elsif($ENV{'FILEPATH_INFO'}) {
 			$dir  = $ENV{'FILEPATH_INFO'};
+		} elsif($ENV{'REQUEST_URI'}) {
+			$dir  = $ENV{'REQUEST_URI'};
 		}
 	}
 	return($dir);

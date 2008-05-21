@@ -1,3 +1,6 @@
+0.7 (080521)
+- upgraded fckeditor to version 2.6 stable
+
 0.6 (080429)
 - added comments module
 - fixed some security issues in the admin/show part
