@@ -135,7 +135,6 @@ else if (isset($_GET['catalog']) && _RUDWEB_CFG_CAT == '1') {
     $rudweb_page_keywords      = _RUDWEB_WSKW;
   }
 }
-//else if (substr($_SERVER['REQUEST_URI'], -9) == 'admin.php' && (_RUDWEB_CFG_ADM === "1" && $_SESSION[_RUDWEB_PRE.'usr_level'] > 2)){
 else if (substr($_SERVER['REQUEST_URI'], -9) == 'admin.php' && _RUDWEB_CFG_ADM === "1") {
   if ($_SESSION[_RUDWEB_PRE.'usr_level'] > 2 && $_SESSION[_RUDWEB_PRE.'usr_level'] <= 5) { //3,4,5
   $rudweb_cnt_type           = "0";  // NOT REALLY NEEDED

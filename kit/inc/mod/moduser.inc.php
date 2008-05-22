@@ -91,13 +91,13 @@ function genUserMod() {
     }
     else {
       // logout link
-      echo $rudweb_skin['usr']['login']['hdr'];
+      //echo $rudweb_skin['usr']['login']['hdr'];
 
-      echo $rudweb_skin['usr']['login']['pre'];
-      restrictedLocalLink('loginsubmit', $rudweb_ln['logout'], 'logout.php', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
-      echo $rudweb_skin['usr']['login']['suf'];
+      //echo $rudweb_skin['usr']['login']['pre'];
+      restrictedLocalLink('logout', $rudweb_ln['logout'], 'logout.php', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      //  echo $rudweb_skin['usr']['login']['suf'];
       
-      echo $rudweb_skin['usr']['login']['ftr'];
+      //echo $rudweb_skin['usr']['login']['ftr'];
     }
     echo $rudweb_skin['usr']['suf'];
     
