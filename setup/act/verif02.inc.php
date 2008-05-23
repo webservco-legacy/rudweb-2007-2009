@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/verif02.inc.php
-12:50 2008-04-05
+20:48 2008-05-23
 */
 
 $php_version = phpversion();
@@ -26,6 +26,7 @@ echo "\n<TR><TD CLASS=\"hdr\"><B>Apache</B></TD></TR>";
 echo "\n</TABLE>";
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
+
 echo "\n<TR><TD CLASS=\"cnt\" WIDTH=\"110\" STYLE=\"text-align: right\">version:</TD>";
 echo "\n<TD CLASS=\"cnt\">";
 
@@ -41,6 +42,21 @@ else {
     $srv_err = '1';
 }
 echo "</TD></TR>";
+
+// rewrite module
+echo "\n<TR><TD CLASS=\"cnt\" WIDTH=\"110\" STYLE=\"text-align: right\">rewrite module:</TD>";
+echo "\n<TD CLASS=\"cnt\">";
+if (in_array('mod_rewrite', apache_get_modules())) {
+  echo "<SPAN CLASS=\"rst_ok\" STYLE=\"border-bottom-width: 0px;\">".'On'."</SPAN>";
+  $_SESSION['rudwebset_set_rewrite'] = 1;
+}
+else {
+  echo "<SPAN CLASS=\"rst\" STYLE=\"border-bottom-width: 0px;\">Off</SPAN>";
+  $_SESSION['rudwebset_set_rewrite'] = 0;
+  //$srv_err = '1';
+}
+echo "</TD></TR>";
+
 echo "\n</TABLE>";
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -120,12 +136,12 @@ echo "\n<TD CLASS=\"cnt\">";
 if($gd_check[0] != '0') {echo "<SPAN CLASS=\"rst_ok\" STYLE=\"border-bottom-width: 0px;\">yes (" . $gd_check[0] . ")</SPAN>";}
 else {echo "<SPAN CLASS=\"rst_err\">no</SPAN>"; $php_err = '1';}
 echo "</TD></TR>";
+
 echo "\n<TR><TD CLASS=\"cnt\" WIDTH=\"110\" STYLE=\"text-align: right\">FreeType:</TD>";
 echo "\n<TD CLASS=\"cnt\">";
 if($gd_check[1] != '0') {echo "<SPAN CLASS=\"rst_ok\" STYLE=\"border-bottom-width: 0px;\">yes</SPAN>";}
 else {echo "<SPAN CLASS=\"rst_err\">no</SPAN>"; $php_err = '1';}
 echo "</TD></TR>";
-echo "\n</TABLE>";
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
 echo "\n<TR><TD CLASS=\"cnt\" WIDTH=\"110\" STYLE=\"text-align: right;\"><B>PHP:</B></TD>";

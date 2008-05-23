@@ -25,7 +25,7 @@ if(_RUDWEB_CFG_CNT_TAGS == 1) {
   ?>
   <TR>
     <TD>
-      <?php restrictedLocalLink('default', $rt['tag']. ' (' . $tc[$tgi] . ')', 'index.php/tag/'.$rt['tag'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self'); ?>
+      <?php restrictedLocalLink('default', $rt['tag']. ' (' . $tc[$tgi] . ')', _RUDWEB_INDEX_PHP . 'tag/'.$rt['tag'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self'); ?>
     </TD>
     <TD>
       <?php if ($tc[$tgi] == 0) {

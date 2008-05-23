@@ -1,5 +1,5 @@
 # rudweb table structure
--- 09:32 2008-05-02
+-- 21:06 2008-05-23
 DROP TABLE IF EXISTS rudweb_cat_cat;
 CREATE TABLE rudweb_cat_cat (
   cat_id int(5) unsigned NOT NULL,
@@ -48,23 +48,23 @@ CREATE TABLE rudweb_cat_crv (
   PRIMARY KEY (crv_id)
 ) myisam_str;
 
--- DROP TABLE IF EXISTS rudweb_cat_scat;
--- CREATE TABLE rudweb_cat_scat (
---  scat_id int(5) unsigned NOT NULL,
---  scat_ln char(2) NOT NULL,
---  cat_id int(5) unsigned NOT NULL,
---  scat_tt varchar(150) NOT NULL,
---  scat_ord tinyint(2) unsigned NOT NULL,
---  scat_pic varchar(150) NOT NULL,
---  scat_dsc varchar(255) NOT NULL,
---  scat_crd date NOT NULL,
---  scat_crt time NOT NULL,
---  scat_cru int(5) unsigned NOT NULL,
---  scat_mdd date NOT NULL,
---  scat_mdt time NOT NULL,
---  scat_mdu int(5) unsigned NOT NULL,
---  PRIMARY KEY (scat_id)
--- ) myisam_str;
+DROP TABLE IF EXISTS rudweb_cat_csp;
+CREATE TABLE rudweb_cat_csp (
+  csp_id int(5) unsigned NOT NULL,
+  csp_ln char(2) NOT NULL,
+  prd_id int(5) unsigned NOT NULL,
+  csp_sdate date NOT NULL,
+  csp_edate date NOT NULL,
+  csp_sup varchar(255) NOT NULL,
+  csp_ord tinyint(2) unsigned NOT NULL,
+  csp_crd date NOT NULL,
+  csp_crt time NOT NULL,
+  csp_cru int(5) unsigned NOT NULL,
+  csp_mdd date NOT NULL,
+  csp_mdt time NOT NULL,
+  csp_mdu int(5) unsigned NOT NULL,
+  PRIMARY KEY (csp_id)
+) myisam_str;
 
 DROP TABLE IF EXISTS rudweb_cat_det;
 CREATE TABLE rudweb_cat_det (
@@ -101,20 +101,21 @@ CREATE TABLE rudweb_cat_opt (
   PRIMARY KEY (opt_id)
 )  myisam_str;
 
-DROP TABLE IF EXISTS rudweb_cat_val;
-CREATE TABLE rudweb_cat_val (
-  val_id int(5) unsigned NOT NULL,
-  det_id int(5) unsigned NOT NULL,  
+DROP TABLE IF EXISTS rudweb_cat_pic;
+CREATE TABLE rudweb_cat_pic (
+  pic_id int(5) unsigned NOT NULL,
   prd_id int(5) unsigned NOT NULL,
-  opt_id int(5) unsigned NOT NULL,
-  val_tt varchar(255) NOT NULL,
-  val_crd date NOT NULL,
-  val_crt time NOT NULL,
-  val_cru int(5) unsigned NOT NULL,
-  val_mdd date NOT NULL,
-  val_mdt time NOT NULL,
-  val_mdu int(5) unsigned NOT NULL,
-  PRIMARY KEY (val_id)
+  pic_fn varchar(150) NOT NULL,
+  pic_loc tinyint(1) unsigned NOT NULL,  
+  pic_ord tinyint(2) unsigned NOT NULL,
+  pic_crd date NOT NULL,
+  pic_crt time NOT NULL,
+  pic_cru int(5) unsigned NOT NULL,
+  pic_mdd date NOT NULL,
+  pic_mdt time NOT NULL,
+  pic_mdu int(5) unsigned NOT NULL,
+  pic_lvl tinyint(1) unsigned NOT NULL,
+  PRIMARY KEY (pic_id)
 ) myisam_str;
 
 DROP TABLE IF EXISTS rudweb_cat_prd;
@@ -138,39 +139,20 @@ CREATE TABLE rudweb_cat_prd (
   PRIMARY KEY (prd_id)
 ) myisam_str;
 
-DROP TABLE IF EXISTS rudweb_cat_pic;
-CREATE TABLE rudweb_cat_pic (
-  pic_id int(5) unsigned NOT NULL,
+DROP TABLE IF EXISTS rudweb_cat_val;
+CREATE TABLE rudweb_cat_val (
+  val_id int(5) unsigned NOT NULL,
+  det_id int(5) unsigned NOT NULL,  
   prd_id int(5) unsigned NOT NULL,
-  pic_fn varchar(150) NOT NULL,
-  pic_loc tinyint(1) unsigned NOT NULL,  
-  pic_ord tinyint(2) unsigned NOT NULL,
-  pic_crd date NOT NULL,
-  pic_crt time NOT NULL,
-  pic_cru int(5) unsigned NOT NULL,
-  pic_mdd date NOT NULL,
-  pic_mdt time NOT NULL,
-  pic_mdu int(5) unsigned NOT NULL,
-  pic_lvl tinyint(1) unsigned NOT NULL,
-  PRIMARY KEY (pic_id)
-) myisam_str;
-
-DROP TABLE IF EXISTS rudweb_cat_csp;
-CREATE TABLE rudweb_cat_csp (
-  csp_id int(5) unsigned NOT NULL,
-  csp_ln char(2) NOT NULL,
-  prd_id int(5) unsigned NOT NULL,
-  csp_sdate date NOT NULL,
-  csp_edate date NOT NULL,
-  csp_sup varchar(255) NOT NULL,
-  csp_ord tinyint(2) unsigned NOT NULL,
-  csp_crd date NOT NULL,
-  csp_crt time NOT NULL,
-  csp_cru int(5) unsigned NOT NULL,
-  csp_mdd date NOT NULL,
-  csp_mdt time NOT NULL,
-  csp_mdu int(5) unsigned NOT NULL,
-  PRIMARY KEY (csp_id)
+  opt_id int(5) unsigned NOT NULL,
+  val_tt varchar(255) NOT NULL,
+  val_crd date NOT NULL,
+  val_crt time NOT NULL,
+  val_cru int(5) unsigned NOT NULL,
+  val_mdd date NOT NULL,
+  val_mdt time NOT NULL,
+  val_mdu int(5) unsigned NOT NULL,
+  PRIMARY KEY (val_id)
 ) myisam_str;
 
 DROP TABLE IF EXISTS rudweb_set_cfg;
@@ -186,21 +168,6 @@ CREATE TABLE rudweb_set_cfg (
   set_mdu int(5) unsigned NOT NULL,
   PRIMARY KEY (set_id)
 ) myisam_str;
-
---DROP TABLE IF EXISTS rudweb_set_thm;
---CREATE TABLE rudweb_set_thm (
---  thm_id int(5) unsigned NOT NULL,
---  thm_tt varchar(30) NOT NULL,
---  thm_set varchar(150) NOT NULL,
---  thm_val varchar(150) NOT NULL,
---  thm_crd date NOT NULL,
---  thm_crt time NOT NULL,
---  thm_cru int(5) unsigned NOT NULL,
---  thm_mdd date NOT NULL,
---  thm_mdt time NOT NULL,
---  thm_mdu int(5) unsigned NOT NULL,
---  PRIMARY KEY (thm_id)
---) myisam_str;
 
 DROP TABLE IF EXISTS rudweb_set_usr;
 CREATE TABLE rudweb_set_usr (
@@ -278,6 +245,22 @@ CREATE TABLE rudweb_var_stats (
   stats_referer varchar(150) NOT NULL,
   stats_requesturi varchar(150) NOT NULL,
   PRIMARY KEY (stats_id)
+) myisam_str;
+
+DROP TABLE IF EXISTS rudweb_ws_cmt;
+CREATE TABLE rudweb_ws_cmt (
+  cmt_id INT(5) UNSIGNED NOT NULL,
+  cmt_ln char(2) NOT NULL,
+  cmt_typ tinyint(1) UNSIGNED NOT NULL,
+  cnt_id INT(5) UNSIGNED NOT NULL,
+  cmt_txt varchar(255) NOT NULL,
+  cmt_crd date NOT NULL,
+  cmt_crt time NOT NULL,
+  cmt_cru int(5) unsigned NOT NULL,
+  cmt_mdd date NOT NULL,
+  cmt_mdt time NOT NULL,
+  cmt_mdu int(5) unsigned NOT NULL,
+  PRIMARY KEY (cmt_id)
 ) myisam_str;
 
 DROP TABLE IF EXISTS rudweb_ws_cnt;
@@ -366,6 +349,22 @@ CREATE TABLE rudweb_ws_mnu (
   PRIMARY KEY (mnu_id)
 ) myisam_str;
 
+DROP TABLE IF EXISTS rudweb_ws_nws;
+CREATE TABLE rudweb_ws_nws (                                   
+nws_id INT(5) unsigned NOT NULL,                          
+nws_ln CHAR(2) NOT NULL,          
+nws_tt varchar(150) NOT NULL,     
+nws_dsc varchar(255) NOT NULL,    
+nws_txt mediumtext NOT NULL,      
+nws_crd date NOT NULL,                                    
+nws_crt time NOT NULL,                                    
+nws_cru int(5) unsigned NOT NULL,                         
+nws_mdd date NOT NULL,                                    
+nws_mdt time NOT NULL,                                    
+nws_mdu int(5) unsigned NOT NULL,                         
+PRIMARY KEY  (nws_id)  
+) myisam_str;
+
 DROP TABLE IF EXISTS rudweb_ws_pic;
 CREATE TABLE rudweb_ws_pic (
   pic_id int(5) unsigned NOT NULL,
@@ -387,22 +386,6 @@ CREATE TABLE rudweb_ws_pic (
   PRIMARY KEY (pic_id)
 ) myisam_str;
 
-DROP TABLE IF EXISTS rudweb_ws_nws;
-CREATE TABLE rudweb_ws_nws (                                   
-nws_id INT(5) unsigned NOT NULL,                          
-nws_ln CHAR(2) NOT NULL,          
-nws_tt varchar(150) NOT NULL,     
-nws_dsc varchar(255) NOT NULL,    
-nws_txt mediumtext NOT NULL,      
-nws_crd date NOT NULL,                                    
-nws_crt time NOT NULL,                                    
-nws_cru int(5) unsigned NOT NULL,                         
-nws_mdd date NOT NULL,                                    
-nws_mdt time NOT NULL,                                    
-nws_mdu int(5) unsigned NOT NULL,                         
-PRIMARY KEY  (nws_id)  
-) myisam_str;
-
 DROP TABLE IF EXISTS rudweb_ws_rel;
 CREATE TABLE rudweb_ws_rel (
   rel_id INT(5) UNSIGNED NOT NULL,
@@ -418,22 +401,7 @@ CREATE TABLE rudweb_ws_tags (
 PRIMARY KEY (tag_id)
 ) myisam_str;
 
-DROP TABLE IF EXISTS rudweb_ws_cmt;
-CREATE TABLE rudweb_ws_cmt (
-  cmt_id INT(5) UNSIGNED NOT NULL,
-  cmt_ln char(2) NOT NULL,
-  cmt_typ tinyint(1) UNSIGNED NOT NULL,
-  cnt_id INT(5) UNSIGNED NOT NULL,
-  cmt_txt varchar(255) NOT NULL,   
-  cmt_crd date NOT NULL,                                    
-  cmt_crt time NOT NULL,                                    
-  cmt_cru int(5) unsigned NOT NULL,                         
-  cmt_mdd date NOT NULL,                                    
-  cmt_mdt time NOT NULL,                                    
-  cmt_mdu int(5) unsigned NOT NULL,
-  PRIMARY KEY (cmt_id)
-) myisam_str;
-
+-- PERSONAL NOTES ON PRODUCTS
 --DROP TABLE IF EXISTS rudweb_cat_nts;
 --CREATE TABLE rudweb_cat_nts (
 --  nts_id INT(5) UNSIGNED NOT NULL,

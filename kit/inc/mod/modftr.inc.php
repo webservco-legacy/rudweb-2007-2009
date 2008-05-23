@@ -30,7 +30,7 @@ function showFeatured() {
         else {$short_title = str_split($row_rst_ftr_cnt[$ftri]['cnt_tt'], $rudweb_skin['ftr']['chartt']); $short_title = $short_title['0'] . ' ...';}
       
         echo $rudweb_skin['ftr']['tt']['pre'];
-        restrictedLocalLink("ftrlink", $short_title, "index.php/content/" . $row_rst_ftr_cnt[$ftri]['cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_ftr[$ftri]['ftr_lvl'], $short_title, $rudweb_ln['WinStatOut'], "_self");
+        restrictedLocalLink("ftrlink", $short_title, _RUDWEB_INDEX_PHP . "content/" . $row_rst_ftr_cnt[$ftri]['cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_ftr[$ftri]['ftr_lvl'], $short_title, $rudweb_ln['WinStatOut'], "_self");
         echo $rudweb_skin['ftr']['tt']['suf'];
         
         echo $rudweb_skin['ftr']['pic']['pre'];
@@ -42,7 +42,7 @@ function showFeatured() {
           $ftr_pic_url[$ftri]    = _RUDWEB_PIC_URL . $row_rst_ftr_pic[$ftri]['pic_fn'];
           $ftr_pic_tt[$ftri]     = $row_rst_ftr_pic[$ftri]['pic_tt'];
           $ftr_pic_imgsrc[$ftri] = "<IMG SRC=\""._RUDWEB_LIB_URL ."pic.php?imgfile=" . $ftr_pic_file[$ftri] . "&amp;max_size=".$rudweb_skin['ftr']['picsize']."\" ALT=\"".$ftr_pic_tt[$ftri]."\">";
-          restrictedLocalLink("ftrlink", $ftr_pic_imgsrc[$ftri], "index.php/content/" . $row_rst_ftr_cnt[$ftri]['cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_ftr[$ftri]['ftr_lvl'], $short_title, $rudweb_ln['WinStatOut'], "_self");
+          restrictedLocalLink("ftrlink", $ftr_pic_imgsrc[$ftri], _RUDWEB_INDEX_PHP . "content/" . $row_rst_ftr_cnt[$ftri]['cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_ftr[$ftri]['ftr_lvl'], $short_title, $rudweb_ln['WinStatOut'], "_self");
         }
         echo $rudweb_skin['ftr']['pic']['suf'];
         
@@ -53,7 +53,7 @@ function showFeatured() {
         }
 
         echo $rudweb_skin['ftr']['desc']['pre'];
-        restrictedLocalLink("ftrlink", $short_desc, "index.php/content/" . $row_rst_ftr_cnt[$ftri]['cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_ftr[$ftri]['ftr_lvl'], $short_title, $rudweb_ln['WinStatOut'], "_self");
+        restrictedLocalLink("ftrlink", $short_desc, _RUDWEB_INDEX_PHP . "content/" . $row_rst_ftr_cnt[$ftri]['cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_ftr[$ftri]['ftr_lvl'], $short_title, $rudweb_ln['WinStatOut'], "_self");
         echo $rudweb_skin['ftr']['desc']['suf'];
       }
   

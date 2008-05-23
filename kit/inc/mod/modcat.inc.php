@@ -14,7 +14,7 @@ function catYah($cat=0,$item=0) {
   echo $rudweb_skin['catyah']['hdr'];
   
   echo $rudweb_skin['catyah']['pre'];
-  restrictedLocalLink('default', $rudweb_ln['catalog']['catalog'], 'index.php/catalog/main', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+  restrictedLocalLink('default', $rudweb_ln['catalog']['catalog'], _RUDWEB_INDEX_PHP . 'catalog/main', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
   echo $rudweb_skin['catyah']['suf'];
   
   
@@ -42,7 +42,7 @@ function catYah($cat=0,$item=0) {
       for($j=0;$j<$cat_lev;$j++) {
         echo $rudweb_skin['catyah']['sep'];
         echo $rudweb_skin['catyah']['pre'];
-        restrictedLocalLink('default', $cats_row['cat_tt'.$j.''], 'index.php/catalog/items/cat/'.$cats_row['cat_id'.$j.''], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        restrictedLocalLink('default', $cats_row['cat_tt'.$j.''], _RUDWEB_INDEX_PHP . 'catalog/items/cat/'.$cats_row['cat_id'.$j.''], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
         echo $rudweb_skin['catyah']['suf'];
       }
       echo $rudweb_skin['catyah']['sep'];
@@ -76,12 +76,12 @@ function catYah($cat=0,$item=0) {
       for($j=0;$j<$cat_lev;$j++) {
         echo $rudweb_skin['catyah']['sep'];
         echo $rudweb_skin['catyah']['pre'];
-        restrictedLocalLink('default', $cats_row['cat_tt'.$j.''], 'index.php/catalog/items/cat/'.$cats_row['cat_id'.$j.''], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        restrictedLocalLink('default', $cats_row['cat_tt'.$j.''], _RUDWEB_INDEX_PHP . 'catalog/items/cat/'.$cats_row['cat_id'.$j.''], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
         echo $rudweb_skin['catyah']['suf'];
       }
       echo $rudweb_skin['catyah']['sep'];
       echo $rudweb_skin['catyah']['pre'];
-      restrictedLocalLink('default', $cat_tt, 'index.php/catalog/items/cat/'.$cat_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('default', $cat_tt, _RUDWEB_INDEX_PHP . 'catalog/items/cat/'.$cat_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_skin['catyah']['suf'];
       
       echo $rudweb_skin['catyah']['sep'];
@@ -238,7 +238,7 @@ function showCso() {
         else {
           $picurl = _RUDWEB_LIB_URL.'img.php?pw='.$rudweb_skin['prod']['picmax'].'&amp;ph='.$rudweb_skin['prod']['picmax'].'&amp;txt='.$rudweb_ln['adm']['nopic'];
         }
-        echo '<A CLASS="default" HREF="'._RUDWEB_SITE_URL.'index.php/catalog/item/id/'.$rw['id'].'" TITLE="'.$rw['title'].'">';
+        echo '<A CLASS="default" HREF="'._RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'catalog/item/id/'.$rw['id'].'" TITLE="'.$rw['title'].'">';
         echo '<IMG CLASS="op" SRC="'.$picurl.'" TITLE="'.$rw['title'].'" ALT="'.$rw['title'].'" onMouseOver="bevisible(this,0)" onMouseOut="bevisible(this,1)">';
         echo '</A>';
         echo $rudweb_skin['csp']['pic']['suf'];
@@ -246,7 +246,7 @@ function showCso() {
         echo $rudweb_skin['csp']['tt']['pre'];
         if (strlen($rw['title']) <= $rudweb_skin['csp']['chartt']) {$short_title = $rw['title'];}
         else {$short_title = str_split($rw['title'], $rudweb_skin['csp']['chartt']); $short_title = $short_title['0'] . ' ...';}
-        restrictedLocalLink("csplink", $short_title, "index.php/catalog/item/id/" . $rw['id'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $short_title, $rudweb_ln['WinStatOut'], "_self");
+        restrictedLocalLink("csplink", $short_title, _RUDWEB_INDEX_PHP . 'catalog/item/id/' . $rw['id'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $short_title, $rudweb_ln['WinStatOut'], "_self");
         echo $rudweb_skin['csp']['tt']['suf'];
         
         echo $rudweb_skin['csp']['dsc']['pre'];
@@ -299,7 +299,7 @@ function catSortLink($sort, $tt, $old_asc) {
       }
       if($old_asc == 1 ) {$asc = 0;}
       else if($old_asc == 0 ) {$asc = 1;}
-      restrictedLocalLink('catsort', $tt, 'index.php/catalog/items/cat/'.$thiscat.'/sort/'.$sort.'/asc/'.$asc, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('catsort', $tt, _RUDWEB_INDEX_PHP . 'catalog/items/cat/'.$thiscat.'/sort/'.$sort.'/asc/'.$asc, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
     }
   }
 }

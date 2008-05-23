@@ -37,7 +37,7 @@ function genLangMod() {
         else if($all_langs[$i] == "it") {$lng_default_content = _RUDWEB_CFG_CNT_IT;}
         
         //echo "<A HREF=\"http://".$_SERVER['HTTP_HOST'] . $this_request_uri . "/ln/" . $all_langs[$i]."\">";
-        echo "<A HREF=\"". _RUDWEB_SITE_URL . "index.php/content/" . $lng_default_content . "/ln/" . $all_langs[$i]."\">";
+        echo "<A HREF=\"". _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . "content/" . $lng_default_content . "/ln/" . $all_langs[$i]."\">";
         echo "<IMG SRC=\""._RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'] . "/graphics/lang/" . $all_langs[$i] . ".png" ."\" ALT=\"" . $all_langs[$i] . "\" BORDER=\"0\">";
         echo "</A>";
 

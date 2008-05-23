@@ -44,11 +44,11 @@ function showComments($cmt_typ, $cnt_id, $cnt_alias) {
   
   echo $t_c . ' ' . $rudweb_ln['cmt']['cmt'];
   echo '&#160;';
-  if($cmt_typ == 0 ) { restrictedLocalLink('default', $rudweb_ln['cmt']['cmtal'], "index.php/content/" . $cnt_alias . '#cmtform', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}
-  else {restrictedLocalLink('default', $rudweb_ln['cmt']['cmtal'], "index.php/catalog/item/id/" . $cnt_id . '#cmtform', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}
+  if($cmt_typ == 0 ) { restrictedLocalLink('default', $rudweb_ln['cmt']['cmtal'], _RUDWEB_INDEX_PHP . 'content/' . $cnt_alias . '#cmtform', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}
+  else {restrictedLocalLink('default', $rudweb_ln['cmt']['cmtal'], _RUDWEB_INDEX_PHP . "catalog/item/id/" . $cnt_id . '#cmtform', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}
   echo '&#160;';
-  if($cmt_typ == 0 ) { restrictedLocalLink('default', $rudweb_ln['cmt']['cmtvl'], "index.php/content/" . $cnt_alias . '#cmtview', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}
-  else {restrictedLocalLink('default', $rudweb_ln['cmt']['cmtvl'], "index.php/catalog/item/id/" . $cnt_id . '#cmtview', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}
+  if($cmt_typ == 0 ) { restrictedLocalLink('default', $rudweb_ln['cmt']['cmtvl'], _RUDWEB_INDEX_PHP . "content/" . $cnt_alias . '#cmtview', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}
+  else {restrictedLocalLink('default', $rudweb_ln['cmt']['cmtvl'], _RUDWEB_INDEX_PHP . "catalog/item/id/" . $cnt_id . '#cmtview', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}
   echo $rudweb_skin['cmt']['ftr'];
 }
 /**
@@ -74,11 +74,11 @@ function showExtComments($cmt_typ, $cnt_id, $cnt_alias) {
   
   echo $t_c . ' ' . $rudweb_ln['cmt']['cmt'];
   echo '&#160;';
-  if($cmt_typ == 0 ) { restrictedLocalLink('default', $rudweb_ln['cmt']['cmtal'], "index.php/content/" . $cnt_alias . '#cmtform', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}
-  else {restrictedLocalLink('default', $rudweb_ln['cmt']['cmtal'], "index.php/catalog/item/id/" . $cnt_id . '#cmtform', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}
+  if($cmt_typ == 0 ) { restrictedLocalLink('default', $rudweb_ln['cmt']['cmtal'], _RUDWEB_INDEX_PHP . "content/" . $cnt_alias . '#cmtform', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}
+  else {restrictedLocalLink('default', $rudweb_ln['cmt']['cmtal'], _RUDWEB_INDEX_PHP . "catalog/item/id/" . $cnt_id . '#cmtform', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}
   echo '&#160;';
-  if($cmt_typ == 0 ) { restrictedLocalLink('default', $rudweb_ln['cmt']['cmtvl'], "index.php/content/" . $cnt_alias . '#cmtview', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}
-  else {restrictedLocalLink('default', $rudweb_ln['cmt']['cmtvl'], "index.php/catalog/item/id/" . $cnt_id . '#cmtview', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}  
+  if($cmt_typ == 0 ) { restrictedLocalLink('default', $rudweb_ln['cmt']['cmtvl'], _RUDWEB_INDEX_PHP . "content/" . $cnt_alias . '#cmtview', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}
+  else {restrictedLocalLink('default', $rudweb_ln['cmt']['cmtvl'], _RUDWEB_INDEX_PHP . "catalog/item/id/" . $cnt_id . '#cmtview', $_SESSION[_RUDWEB_PRE.'usr_level'], 1, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");}  
 
   if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 1) {
     echo $rudweb_skin['cmt']['pre'];

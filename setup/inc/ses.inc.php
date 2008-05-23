@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/cfg/ses.inc.php
-11:01 2008-05-02
+20:48 2008-05-23
 */
 
 /* -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -73,10 +73,13 @@ if (isset($_POST['proceed']) && !isset($_SESSION['rudwebset_start'])) {
   $_SESSION['rudwebset_set_dbpass']              = 'password';
   $_SESSION['rudwebset_set_dbname']              = 'database';
   
+  $_SESSION['rudwebset_set_rewrite']             = null;
+  $_SESSION['rudwebset_set_index']               = null;
+  
   $_SESSION['rudwebset_set_pre']                 = '';
 
   $_SESSION['rudwebset_set_dbcfg']               = '1';
-  $_SESSION['rudwebset_set_dbskin']               = '0';
+  $_SESSION['rudwebset_set_dbskin']              = '0';
   
   $_SESSION['rudwebset_cfg_start']               = $_SESSION['rudwebset_date'];
   
@@ -287,8 +290,9 @@ if(isset($_POST['set_site_url2']))           {$_SESSION['rudwebset_set_site_url2
 if(isset($_POST['set_site_root1']))          {$_SESSION['rudwebset_set_site_root1']          = $_POST['set_site_root1'];}
 if(isset($_POST['set_site_root2']))          {$_SESSION['rudwebset_set_site_root2']          = $_POST['set_site_root2'];}
 if(isset($_POST['set_dbcfg']))               {$_SESSION['rudwebset_set_dbcfg']               = $_POST['set_dbcfg'];}
-if(isset($_POST['set_dbskin']))               {$_SESSION['rudwebset_set_dbskin']               = $_POST['set_dbskin'];}
+if(isset($_POST['set_dbskin']))              {$_SESSION['rudwebset_set_dbskin']              = $_POST['set_dbskin'];}
 if(isset($_POST['set_pre']))                 {$_SESSION['rudwebset_set_pre']                 = $_POST['set_pre'];}
+if(isset($_POST['set_index']))               {$_SESSION['rudwebset_set_index']               = $_POST['set_index'];}
 
 if(isset($_POST['cfg_start']))               {$_SESSION['rudwebset_cfg_start']               = $_POST['cfg_start'];}
 if(isset($_POST['cfg_clcom']))               {$_SESSION['rudwebset_cfg_clcom']               = $_POST['cfg_clcom'];}

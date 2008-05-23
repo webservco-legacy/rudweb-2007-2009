@@ -43,7 +43,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
       // TITLE
       
       if($blog_content == "1") {
-        restrictedLocalLink("title", $row_rst_content['cnt_tt'], "index.php/content/" . $row_rst_content['cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_content['cnt_lvl'], $row_rst_content['cnt_tt'], $rudweb_ln['WinStatOut'], "_self");
+        restrictedLocalLink("title", $row_rst_content['cnt_tt'], _RUDWEB_INDEX_PHP . "content/" . $row_rst_content['cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_content['cnt_lvl'], $row_rst_content['cnt_tt'], $rudweb_ln['WinStatOut'], "_self");
       }
       else {
         echo $rudweb_skin['cnt']['tt1']['pre'];

@@ -78,7 +78,7 @@ if (isset($_SESSION[_RUDWEB_PRE.'token']) && (isset($_POST[_RUDWEB_PRE.'token'])
       
         //set login status
         $rudweb_login_status = 5;
-        //$redirect = _RUDWEB_SITE_URL . "index.php";
+        //$redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP;
         //header("Location: $redirect");
       } // legitimate user
     } // if match

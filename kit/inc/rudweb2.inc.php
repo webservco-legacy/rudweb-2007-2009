@@ -149,7 +149,7 @@ else if (substr($_SERVER['REQUEST_URI'], -9) == 'admin.php' && _RUDWEB_CFG_ADM =
   $rudweb_page_keywords      = _RUDWEB_WSKW;
   }
   else if ($_SESSION[_RUDWEB_PRE.'usr_level'] == 0) { // 0
-    $redirect = _RUDWEB_SITE_URL . 'index.php/admin/admin';
+    $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/admin';
     header("Location: $redirect");
   }
   else if ($_SESSION[_RUDWEB_PRE.'usr_level'] >= 1 && $_SESSION[_RUDWEB_PRE.'usr_level'] < 3) { // 1,2
@@ -162,7 +162,7 @@ else { // SHOW DEFAULT PAGE _RUDWEB_CFG_CNT
     if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == "ro") {$default_content = _RUDWEB_CFG_CNT_RO;}
     else if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == "en") {$default_content = _RUDWEB_CFG_CNT_EN;}
     else if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == "it") {$default_content = _RUDWEB_CFG_CNT_IT;}
-    $redirect = _RUDWEB_SITE_URL . 'index.php/content/' . $default_content;
+    $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'content/' . $default_content;
     header("Location: $redirect");
   }
   else { // SHOW INTRO

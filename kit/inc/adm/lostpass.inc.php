@@ -124,7 +124,7 @@ else {
         $message .= $rudweb_ln['usr']['lpmailtxt1a'];
         $message .= $usr_first_name . " " . $usr_last_name;
         $message .= $rudweb_ln['usr']['lpmailtxt1b'];
-        $act_lnk  = _RUDWEB_SITE_URL . 'index.php/admin/lostpass/auth/' . $usr_auth;
+        $act_lnk  = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/lostpass/auth/' . $usr_auth;
         $message .= '<A HREF="' . $act_lnk . '">' . $act_lnk . '</A>';
         $message .= $rudweb_ln['usr']['lpmailtxt2'];
         $message .= '<B>' . $act_lnk . '</B>';

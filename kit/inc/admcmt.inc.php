@@ -26,8 +26,8 @@ if(isset($_POST['cmtadd']) && $cnt_id != 0) {
     mysql_query($acq) or require _RUDWEB_LIB_DIR . 'myerr.php';
     $query_unlock = "UNLOCK TABLES";
     mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
-    if($cmt_typ == 0) {$redirect = _RUDWEB_SITE_URL . 'index.php/content/' . $cnt_alias . '#cmtview';}
-    else {$redirect = _RUDWEB_SITE_URL . 'index.php/catalog/item/id/' . $cnt_id . '#cmtview';}
+    if($cmt_typ == 0) {$redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'content/' . $cnt_alias . '#cmtview';}
+    else {$redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'catalog/item/id/' . $cnt_id . '#cmtview';}
   }
 }
 else if (isset($_POST['cmtmod']) && $cmt_id != 0) {
@@ -38,8 +38,8 @@ else if (isset($_POST['cmtmod']) && $cmt_id != 0) {
     mysql_query($mcq) or require _RUDWEB_LIB_DIR . 'myerr.php';
     $query_unlock = "UNLOCK TABLES";
     mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
-    if($cmt_typ == 0) {$redirect = _RUDWEB_SITE_URL . 'index.php/content/' . $cnt_alias . '#cmtview';}
-    else {$redirect = _RUDWEB_SITE_URL . 'index.php/catalog/item/id/' . $cnt_id . '#cmtview';}
+    if($cmt_typ == 0) {$redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'content/' . $cnt_alias . '#cmtview';}
+    else {$redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'catalog/item/id/' . $cnt_id . '#cmtview';}
   }
 }
 else if (isset($_POST['cmtdel']) && ($cmt_id != 0 && $cnt_id != 0)) {
@@ -49,7 +49,7 @@ else if (isset($_POST['cmtdel']) && ($cmt_id != 0 && $cnt_id != 0)) {
   mysql_query($dcq) or require _RUDWEB_LIB_DIR . 'myerr.php';
   $query_unlock = "UNLOCK TABLES";
   mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
-  if($cmt_typ == 0) {$redirect = _RUDWEB_SITE_URL . 'index.php/content/' . $cnt_alias . '#cmtview';}
-  else {$redirect = _RUDWEB_SITE_URL . 'index.php/catalog/item/id/' . $cnt_id . '#cmtview';}
+  if($cmt_typ == 0) {$redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'content/' . $cnt_alias . '#cmtview';}
+  else {$redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'catalog/item/id/' . $cnt_id . '#cmtview';}
 }
 ?>

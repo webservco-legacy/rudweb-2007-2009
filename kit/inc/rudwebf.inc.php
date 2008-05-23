@@ -545,10 +545,10 @@ function createMenu($mnu_cat, $mnu_lev, $showadmin = "0") {
     else {
       if ($row_rst_menu[$cmni]['mnu_typ'] === "1") {
         if ($row_rst_menu[$cmni]['mnu_cnt_alias'] === "index") {
-          restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], 'index.php', $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
+          restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], _RUDWEB_INDEX_PHP, $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
         }
         else {
-          restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], 'index.php/content/'.$row_rst_menu[$cmni]['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
+          restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], _RUDWEB_INDEX_PHP . 'content/'.$row_rst_menu[$cmni]['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
         }
       } // 1 - content
       else if ($row_rst_menu[$cmni]['mnu_typ'] === "2") {
@@ -566,13 +566,13 @@ function createMenu($mnu_cat, $mnu_lev, $showadmin = "0") {
         }
       } // 2 - link
       else if ($row_rst_menu[$cmni]['mnu_typ'] === "3") {
-        restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], 'index.php/page/'.$row_rst_menu[$cmni]['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
+        restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], _RUDWEB_INDEX_PHP . 'page/'.$row_rst_menu[$cmni]['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
       } // 3 - page
       else if ($row_rst_menu[$cmni]['mnu_typ'] === "4") {
-        restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], 'index.php/admin/'.$row_rst_menu[$cmni]['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
+        restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], _RUDWEB_INDEX_PHP . 'admin/'.$row_rst_menu[$cmni]['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
       } // 4 - admin
       else if ($row_rst_menu[$cmni]['mnu_typ'] === "5") {
-        restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], 'index.php/catalog/'.$row_rst_menu[$cmni]['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
+        restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], _RUDWEB_INDEX_PHP . 'catalog/'.$row_rst_menu[$cmni]['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
       } // 5 - catalog
     } // not current page, make link
     echo $rudweb_skin['mnu'][$mnu_cat]['suf'][$mnu_lev];
@@ -584,7 +584,7 @@ function createMenu($mnu_cat, $mnu_lev, $showadmin = "0") {
       // in continuare in nivelul curent
       echo $rudweb_skin['mnu'][$mnu_cat]['sep'][$mnu_lev];
       echo $rudweb_skin['mnu'][$mnu_cat]['pre'][$mnu_lev];
-      restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, "[".$rudweb_ln['adm']['cnt_add']."]", 'index.php/admin/cntadd/mc/'.$mnu_cat.'/ml/'.$mnu_lev.'/mp/'.$this_mnu_par, $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");
+      restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, "[".$rudweb_ln['adm']['cnt_add']."]", _RUDWEB_INDEX_PHP . 'admin/cntadd/mc/'.$mnu_cat.'/ml/'.$mnu_lev.'/mp/'.$this_mnu_par, $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");
       echo $rudweb_skin['mnu'][$mnu_cat]['suf'][$mnu_lev];
     }
     else if ($total_menu == '0') {
@@ -596,14 +596,14 @@ function createMenu($mnu_cat, $mnu_lev, $showadmin = "0") {
         $rst_query = mysql_query($query) or require _RUDWEB_LIB_DIR . 'myerr.php';
         if (mysql_num_rows($rst_query) != '0') {
           echo $rudweb_skin['mnu'][$mnu_cat]['pre'][$mnu_lev];
-          restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, "[".$rudweb_ln['adm']['cnt_add']."]", 'index.php/admin/cntadd/mc/'.$mnu_cat.'/ml/'.$mnu_lev.'/mp/'.$rudweb_mnu_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");
+          restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, "[".$rudweb_ln['adm']['cnt_add']."]", _RUDWEB_INDEX_PHP . 'admin/cntadd/mc/'.$mnu_cat.'/ml/'.$mnu_lev.'/mp/'.$rudweb_mnu_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");
           echo $rudweb_skin['mnu'][$mnu_cat]['suf'][$mnu_lev];
         }
       }
       else {
         // primul meniu!
         echo $rudweb_skin['mnu'][$mnu_cat]['pre'][$mnu_lev];
-        restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, "[".$rudweb_ln['adm']['cnt_add']."]", 'index.php/admin/cntadd/mc/'.$mnu_cat.'/ml/0/mp/0', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");
+        restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, "[".$rudweb_ln['adm']['cnt_add']."]", _RUDWEB_INDEX_PHP . 'admin/cntadd/mc/'.$mnu_cat.'/ml/0/mp/0', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], "_self");
         echo $rudweb_skin['mnu'][$mnu_cat]['suf'][$mnu_lev];
       }
       echo $rudweb_skin['mnu'][$mnu_cat]['ftr'][$mnu_lev];

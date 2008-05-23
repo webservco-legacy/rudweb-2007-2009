@@ -41,7 +41,7 @@ function genUserMod() {
       echo $rudweb_ln['lgnst'][$rudweb_login_status];
       if($rudweb_login_status == '3') {
         echo '&#160';
-        restrictedLocalLink('default', $rudweb_ln['usr']['lostpass'], 'index.php/show/lostpass', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        restrictedLocalLink('default', $rudweb_ln['usr']['lostpass'], _RUDWEB_INDEX_PHP . 'show/lostpass', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       }
       echo $rudweb_skin['usr']['suf'];
       
@@ -84,7 +84,7 @@ function genUserMod() {
       
       echo $rudweb_skin['usr']['login']['pre'];
       echo '<B>' . $rudweb_ln['usr']['newuser']. ':</B> ';
-      restrictedLocalLink('default', $rudweb_ln['usr']['signup'] . '!', 'index.php/show/newuser', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('default', $rudweb_ln['usr']['signup'] . '!', _RUDWEB_INDEX_PHP . 'show/newuser', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_skin['usr']['login']['suf'];
       
       echo $rudweb_skin['usr']['login']['ftr'];

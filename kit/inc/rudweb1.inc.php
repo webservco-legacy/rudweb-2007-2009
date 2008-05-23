@@ -13,7 +13,7 @@ error_reporting(E_ALL);
 
 //REDIRECT TO INDEX.PHP
 if ($_SERVER['REQUEST_URI'][strlen($_SERVER['REQUEST_URI'])-1] === "/") {
-    $site_root = _RUDWEB_SITE_URL . 'index.php';
+    $site_root = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP;
     header("Location: $site_root");
     exit;
 }

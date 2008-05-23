@@ -21,7 +21,7 @@ function youAreHere() {
     $rudweb_skin['yah']['hdr'];
     
     $rudweb_skin['yah']['pre'];
-    restrictedLocalLink('default', 'Home', 'index.php', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+    restrictedLocalLink('default', 'Home', _RUDWEB_INDEX_PHP . '', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
     $rudweb_skin['yah']['suf'];
     
     for($j=0; $j<count($id); $j++) {
@@ -36,10 +36,10 @@ function youAreHere() {
         $rudweb_skin['yah']['pre'];
         if($id[$j] == $rudweb_mnu_id) {echo $row['mnu_tt'];}
         else {
-          if($row['mnu_typ'] === '1')      {restrictedLocalLink('default', $row['mnu_tt'], 'index.php/content/'. $row['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row['mnu_trg']);}
+          if($row['mnu_typ'] === '1')      {restrictedLocalLink('default', $row['mnu_tt'], _RUDWEB_INDEX_PHP . 'content/'. $row['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row['mnu_trg']);}
           else if($row['mnu_typ'] === '2') {}
-          else if($row['mnu_typ'] === '3') {restrictedLocalLink('default', $row['mnu_tt'], 'index.php/page/'. $row['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row['mnu_trg']);}
-          else if($row['mnu_typ'] === '4') {restrictedLocalLink('default', $row['mnu_tt'], 'index.php/rsweb/'. $row['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row['mnu_trg']);}
+          else if($row['mnu_typ'] === '3') {restrictedLocalLink('default', $row['mnu_tt'], _RUDWEB_INDEX_PHP . 'page/'. $row['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row['mnu_trg']);}
+          else if($row['mnu_typ'] === '4') {restrictedLocalLink('default', $row['mnu_tt'], _RUDWEB_INDEX_PHP . 'rsweb/'. $row['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row['mnu_trg']);}
         }
 
         $rudweb_skin['yah']['suf'];

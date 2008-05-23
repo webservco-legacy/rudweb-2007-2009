@@ -42,7 +42,7 @@ session_start();
 //}
 //else {
     //session_destroy();
-    //$site_root = _RUDWEB_SITE_URL . 'index.php';
+    //$site_root = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP;
     //header("Location: $site_root");
     //exit;
 //}   

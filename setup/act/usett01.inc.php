@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/act/usett01.inc.php
-12:50 2008-04-05
+20:48 2008-05-23
 */
 if($_SESSION['rudwebset_set_site_url1'] == '') {$_SESSION['rudwebset_set_site_url1'] = $target_url[$_SESSION['rudwebset_pid']];}
 if($_SESSION['rudwebset_set_site_root1'] == '') {$_SESSION['rudwebset_set_site_root1'] = $target_root.$target_vars[$_SESSION['rudwebset_pid']];}
@@ -91,6 +91,7 @@ if($_SESSION['rudwebset_set_pre'] == '') {$_SESSION['rudwebset_set_pre'] = $_SES
   <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_set_dbcfg'] == "1") {echo " SELECTED";}?>>database</OPTION>
 </SELECT>
 </TD></TR>
+
 <TR><TD CLASS="cnt" WIDTH="200" STYLE="text-align: right">skin settings:</TD>
 <TD CLASS="cnt">
 <SELECT CLASS="general" NAME="set_dbskin">
@@ -98,11 +99,33 @@ if($_SESSION['rudwebset_set_pre'] == '') {$_SESSION['rudwebset_set_pre'] = $_SES
   <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_set_dbskin'] == "1") {echo " SELECTED";}?>>database</OPTION>
 </SELECT>
 </TD></TR>
+
 <TR><TD CLASS="cnt" WIDTH="200" STYLE="text-align: right">global prefix:</TD>
 <TD CLASS="cnt">
 <INPUT TYPE="text" CLASS="general" NAME="set_pre" SIZE="15" MAXLENGTH="15" VALUE="<?php echo $_SESSION['rudwebset_set_pre'];?>">
 &#160;(<I>"_" added automatically</I>)
 </TD></TR>
+
+<TR><TD CLASS="cnt" WIDTH="200" STYLE="text-align: right">SEO URLS:</TD>
+<TD CLASS="cnt">
+<?php 
+$ind_s_d = '';
+$ind_s_o = '';
+if($_SESSION['rudwebset_set_rewrite'] == 0) {
+  $ind_s_d = ' DISABLED';
+  $ind_s_o = ' SELECTED';
+}
+if ($_SESSION['rudwebset_set_index'] == 'index.php/') {
+  $ind_s_o = ' SELECTED';
+}
+?>
+<SELECT CLASS="general" NAME="set_index"<?php echo $ind_s_d; ?>>
+  <OPTION VALUE='' <?php if ($_SESSION['rudwebset_set_index'] == '') {echo " SELECTED";}?>>enabled</OPTION>
+  <OPTION VALUE='index.php/'<?php echo $ind_s_o; ?>>disabled</OPTION>
+</SELECT>
+
+</TD></TR>
+
 </TABLE>
 
 <?php if($usett_err == '0') { ?>

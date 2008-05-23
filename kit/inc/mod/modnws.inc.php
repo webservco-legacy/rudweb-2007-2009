@@ -19,7 +19,7 @@ function showLatestNews() {
  
   if($tn != 0) {
   echo $rudweb_skin['nws']['sln']['hdr'];
-  restrictedLocalLink('news', $rudweb_ln['nws']['tt'], 'index.php/show/news', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+  restrictedLocalLink('news', $rudweb_ln['nws']['tt'], _RUDWEB_INDEX_PHP . 'show/news', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
   for($i=1;$i<=$tn;$i++) {
     $rw = rudweb_fetch_assoc($rudweb_dbtype, $rn);
     echo $rudweb_skin['nws']['sln']['pre'];
@@ -27,7 +27,7 @@ function showLatestNews() {
     echo MyDate($rw['nws_crd'], 'dd/mm/yyyy');
     echo $rudweb_skin['nws']['sln']['dtsuf'];
     echo $rudweb_skin['nws']['sln']['ttpre'];
-    $lnkurl = 'index.php/show/news/nws/'.$rw['nws_id']; 
+    $lnkurl = _RUDWEB_INDEX_PHP . 'show/news/nws/'.$rw['nws_id']; 
     restrictedLocalLink('news', $rw['nws_tt'], $lnkurl, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
     echo $rudweb_skin['nws']['sln']['ttsuf'];
     echo $rudweb_skin['nws']['sln']['suf'];
@@ -66,7 +66,7 @@ function showNewsAll($adm=0) {
       echo MyDate($rw['nws_crd'], 'dd/mm/yyyy') . '&#160;' . $rw['nws_crt'];
       echo $rudweb_skin['nws']['lst']['dtsuf'];
       echo $rudweb_skin['nws']['lst']['ttpre'];
-      if($adm!=0) {$lnkurl = 'admin.php/admin/nwsmod/act/mod/nws/'.$rw['nws_id'];} else {$lnkurl = 'index.php/show/news/nws/'.$rw['nws_id'];}
+      if($adm!=0) {$lnkurl = 'admin.php/admin/nwsmod/act/mod/nws/'.$rw['nws_id'];} else {$lnkurl = _RUDWEB_INDEX_PHP . 'show/news/nws/'.$rw['nws_id'];}
       restrictedLocalLink('news', $rw['nws_tt'], $lnkurl, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_skin['nws']['lst']['ttsuf'];
       echo $rudweb_skin['nws']['lst']['dscpre'];
@@ -74,7 +74,7 @@ function showNewsAll($adm=0) {
       echo $rudweb_skin['nws']['lst']['dscsuf'];
       echo $rudweb_skin['nws']['lst']['suf'];
     }
-    if($adm!=0) {$url = 'admin.php/admin/nwsmod/act/view';} else {$url = 'index.php/show/news';}
+    if($adm!=0) {$url = 'admin.php/admin/nwsmod/act/view';} else {$url = _RUDWEB_INDEX_PHP . 'show/news';}
     $urlsofar = _RUDWEB_SITE_URL . $url;
     catalogPageNavigation($totalitems,$itemspg,$pg,$urlsofar);
     echo $rudweb_skin['nws']['lst']['ftr'];

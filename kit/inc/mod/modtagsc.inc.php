@@ -36,7 +36,7 @@ function showCntTags($rudweb_mnu_id, $rudweb_req_page, $rudweb_cnt_type, $et, $b
     echo '<B>'.$rudweb_ln['cnt']['tags'].'</B>:&#160;';
     for($i=1;$i<=$te;$i++) {
       echo $rudweb_skin['tagsc']['pre'];
-      restrictedLocalLink('default', $et[$i], 'index.php/show/tags/tag/'.$et[$i], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('default', $et[$i], _RUDWEB_INDEX_PHP . 'show/tags/tag/'.$et[$i], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_skin['tagsc']['suf'];
       if ($i != $te) {echo ', ';}
     }
@@ -102,7 +102,7 @@ function showAllTags() {
       $tc[$i] = rudweb_result($rudweb_dbtype, $rc, 0);
       
       echo $rudweb_skin['tagsc']['pre'];
-      restrictedLocalLink('default', $rt['tag_name']. ' (' . $tc[$i] . ')', 'index.php/show/tags/tag/'.$rt['tag_name'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('default', $rt['tag_name']. ' (' . $tc[$i] . ')', _RUDWEB_INDEX_PHP . 'show/tags/tag/'.$rt['tag_name'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_skin['tagsc']['suf'];
       if($i != $t_t) {echo $rudweb_skin['tagsc']['sep'];}
     }

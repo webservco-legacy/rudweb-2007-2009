@@ -242,13 +242,13 @@ if($total_cat == '1') {
             echo $rudweb_ln['cat']['itemmodok'];
             echo '</DIV>';
             echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
-            restrictedLocalLink('default', $rudweb_ln['cat']['itemmod'], 'index.php/catalog/item/id/'.$prd_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+            restrictedLocalLink('default', $rudweb_ln['cat']['itemmod'], _RUDWEB_INDEX_PHP . 'catalog/item/id/'.$prd_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
             echo '</DIV>';
             echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
-            restrictedLocalLink('default', $rudweb_ln['cat']['itemaddnew'], 'index.php/admin/itemadd/cat/'.$current_scat, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+            restrictedLocalLink('default', $rudweb_ln['cat']['itemaddnew'], _RUDWEB_INDEX_PHP . 'admin/itemadd/cat/'.$current_scat, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
             echo '</DIV>';
             echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
-            restrictedLocalLink('default', $rudweb_ln['cat']['itemviewcat'], 'index.php/catalog/items/cat/'.$current_scat, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+            restrictedLocalLink('default', $rudweb_ln['cat']['itemviewcat'], _RUDWEB_INDEX_PHP . 'catalog/items/cat/'.$current_scat, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
             echo '</DIV>';
             // XXX
           }
@@ -303,10 +303,10 @@ if($total_cat == '1') {
           echo $rudweb_ln['cat']['itemdelok'];
           echo '</DIV>';
           echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
-          restrictedLocalLink('default', $rudweb_ln['cat']['itemaddnew'], 'index.php/admin/itemadd/cat/'.$current_scat, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+          restrictedLocalLink('default', $rudweb_ln['cat']['itemaddnew'], _RUDWEB_INDEX_PHP . 'admin/itemadd/cat/'.$current_scat, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
           echo '</DIV>';
           echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
-          restrictedLocalLink('default', $rudweb_ln['cat']['itemviewcat'], 'index.php/catalog/items/cat/'.$current_scat, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+          restrictedLocalLink('default', $rudweb_ln['cat']['itemviewcat'], _RUDWEB_INDEX_PHP . 'catalog/items/cat/'.$current_scat, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
           echo '</DIV>';
         }      
       }

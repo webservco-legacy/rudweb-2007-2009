@@ -206,14 +206,14 @@ if(isset($_GET['cat'])) {
         $pic_src = _RUDWEB_LIB_URL.'img.php?pw='.$rudweb_skin['cat']['pic'].'&amp;ph='.$rudweb_skin['cat']['pic'].'&amp;txt='.$rudweb_ln['adm']['nopic'];;
       }
       
-      echo '<A CLASS="default" HREF="'._RUDWEB_SITE_URL.'index.php/catalog/items/cat/'.$scat_row['cat_id'].'" TITLE="'.$scat_row['cat_tt'].'" TARGET="_self">';
+      echo '<A CLASS="default" HREF="'._RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'catalog/items/cat/'.$scat_row['cat_id'].'" TITLE="'.$scat_row['cat_tt'].'" TARGET="_self">';
       echo '<IMG CLASS="op" SRC="'.$pic_src.'" TITLE="'.$scat_row['cat_tt'].'" ALT="'.$scat_row['cat_tt'].'" onMouseOver="bevisible(this,0)" onMouseOut="bevisible(this,1)">';
       echo '</A>';
       
       echo $rudweb_skin['cat']['pc']['suf'];
       
       echo $rudweb_skin['cat']['tt']['pre'];
-      restrictedLocalLink('categ', $scat_row['cat_tt'], 'index.php/catalog/items/cat/'.$scat_row['cat_id'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('categ', $scat_row['cat_tt'], _RUDWEB_INDEX_PHP . 'catalog/items/cat/'.$scat_row['cat_id'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_skin['cat']['tt']['suf'];
       
       echo $rudweb_skin['cat']['dsc']['pre'];
@@ -273,7 +273,7 @@ if(isset($_GET['cat'])) {
       
       // pid
       echo $rudweb_skin['prod']['lst']['pidpre'];
-      restrictedLocalLink('prdlnk', $rw['pid'], 'index.php/catalog/item/id/'.$rw['prd_id'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('prdlnk', $rw['pid'], _RUDWEB_INDEX_PHP .  'catalog/item/id/'.$rw['prd_id'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_skin['prod']['lst']['pidsuf'];
       // picture
       echo $rudweb_skin['prod']['lst']['ppicpre'];
@@ -285,14 +285,14 @@ if(isset($_GET['cat'])) {
         $pic_src = _RUDWEB_LIB_URL.'img.php?pw='.$rudweb_skin['prod']['picmax'].'&amp;ph='.$rudweb_skin['prod']['picmax'].'&amp;txt='.$rudweb_ln['adm']['nopic'];;
       }
 
-      echo '<A CLASS="default" HREF="'._RUDWEB_SITE_URL.'index.php/catalog/item/id/'.$rw['prd_id'].'" TITLE="'.$rw['pname'].'" TARGET="_self">';
+      echo '<A CLASS="default" HREF="'._RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'catalog/item/id/'.$rw['prd_id'].'" TITLE="'.$rw['pname'].'" TARGET="_self">';
       echo '<IMG CLASS="op" SRC="'.$pic_src.'" TITLE="'.$rw['pname'].'" ALT="'.$rw['pname'].'" onMouseOver="bevisible(this,0)" onMouseOut="bevisible(this,1)">';
       echo '</A>';
       
       echo $rudweb_skin['prod']['lst']['ppicsuf'];
       //pname
       echo $rudweb_skin['prod']['lst']['pnamepre'];
-      restrictedLocalLink('prdlnk', $rw['pname'], 'index.php/catalog/item/id/'.$rw['prd_id'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('prdlnk', $rw['pname'], _RUDWEB_INDEX_PHP . 'catalog/item/id/'.$rw['prd_id'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_skin['prod']['lst']['pnamesuf'];
       
       
@@ -323,7 +323,7 @@ if(isset($_GET['cat'])) {
     
     echo $rudweb_skin['prod']['lst']['ftr'];
     
-    $urlsofar = _RUDWEB_SITE_URL . 'index.php/catalog/items/cat/' . $current_cat;
+    $urlsofar = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'catalog/items/cat/' . $current_cat;
     catalogPageNavigation($totalitems,$itemspg,$pg,$urlsofar);
   }
 

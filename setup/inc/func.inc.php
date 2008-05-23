@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/cfg/func.inc.php
-09:40 2008-05-02
+21:07 2008-05-23
 */
 function generate_lncfg_str($eol, $now, $ln) {
   $c  = '<?php'.$eol.'/*'.$eol.'./inc/langs/'.$ln.'/langcfg.inc.php'.$eol.$now.$eol.'*/'.$eol;
@@ -52,6 +52,8 @@ function generate_config_str($eol, $now) {
   $c .= $eol . 'define(\'_RUDWEB_DBSKIN\', \''.$_SESSION['rudwebset_set_dbskin'].'\');';
   $c .= $eol . '// GLOBAL PREFIX, INCLUDING DATABASE TABLES PREFIX';
   $c .= $eol . 'define(\'_RUDWEB_PRE\', \''.$_SESSION['rudwebset_set_pre'].'_\');';
+  $c .= $eol . '// REMOVE \'index.php\' FROM URLS = \'\'. DON\'T REMOVE = \'index.php/\'';
+  $c .= $eol . 'define(\'_RUDWEB_INDEX_PHP\', \''.$_SESSION['rudwebset_set_index'].'\');';
   $c .= $eol . '?>';
   return $c;
 }
@@ -197,39 +199,82 @@ function generate_dbd_str($eol) {
   return $c;
 }
 function generate_removed01($eol) {
-  $c  = $eol . 'TRUNCATE TABLE rudweb_set_cfg;';
-  $c  .= $eol . 'TRUNCATE TABLE rudweb_set_skin;';
+  $c   = $eol . 'TRUNCATE TABLE rudweb_cat_cat;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_cat_crt;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_cat_crv;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_cat_csp;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_cat_det;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_cat_opt;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_cat_pic;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_cat_prd;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_cat_val;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_set_cfg;';
   $c  .= $eol . 'TRUNCATE TABLE rudweb_set_usr;';
   $c  .= $eol . 'TRUNCATE TABLE rudweb_var_logins;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_var_pas;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_var_reg;';
   $c  .= $eol . 'TRUNCATE TABLE rudweb_var_stats;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_ws_cmt;';
   $c  .= $eol . 'TRUNCATE TABLE rudweb_ws_cnt;';
   $c  .= $eol . 'TRUNCATE TABLE rudweb_ws_ftr;';
   $c  .= $eol . 'TRUNCATE TABLE rudweb_ws_lnk;';
   $c  .= $eol . 'TRUNCATE TABLE rudweb_ws_mnu;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_ws_nws;';
   $c  .= $eol . 'TRUNCATE TABLE rudweb_ws_pic;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_ws_rel;';
+  $c  .= $eol . 'TRUNCATE TABLE rudweb_ws_tags;';
+
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_cat_cat;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_cat_crt;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_cat_crv;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_cat_csp;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_cat_det;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_cat_opt;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_cat_pic;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_cat_prd;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_cat_val;';
   $c  .= $eol . 'OPTIMIZE TABLE rudweb_set_cfg;';
-  $c  .= $eol . 'OPTIMIZE TABLE rudweb_set_skin;';
   $c  .= $eol . 'OPTIMIZE TABLE rudweb_set_usr;';
   $c  .= $eol . 'OPTIMIZE TABLE rudweb_var_logins;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_var_pas;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_var_reg;';
   $c  .= $eol . 'OPTIMIZE TABLE rudweb_var_stats;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_ws_cmt;';
   $c  .= $eol . 'OPTIMIZE TABLE rudweb_ws_cnt;';
   $c  .= $eol . 'OPTIMIZE TABLE rudweb_ws_ftr;';
   $c  .= $eol . 'OPTIMIZE TABLE rudweb_ws_lnk;';
   $c  .= $eol . 'OPTIMIZE TABLE rudweb_ws_mnu;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_ws_nws;';
   $c  .= $eol . 'OPTIMIZE TABLE rudweb_ws_pic;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_ws_rel;';
+  $c  .= $eol . 'OPTIMIZE TABLE rudweb_ws_tags;';
   return $c;
 }
 function generate_removed02($eol) {
-  $c  = $eol . 'DROP TABLE IF EXISTS rudweb_set_cfg;';
-  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_set_skin;';
+  $c   = $eol . 'DROP TABLE IF EXISTS rudweb_cat_cat;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_cat_crt;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_cat_crv;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_cat_csp;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_cat_det;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_cat_opt;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_cat_pic;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_cat_prd;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_cat_val;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_set_cfg;';
   $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_set_usr;';
   $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_var_logins;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_var_pas;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_var_reg;';
   $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_var_stats;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_ws_cmt;';
   $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_ws_cnt;';
   $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_ws_ftr;';
   $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_ws_lnk;';
   $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_ws_mnu;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_ws_nws;';
   $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_ws_pic;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_ws_rel;';
+  $c  .= $eol . 'DROP TABLE IF EXISTS rudweb_ws_tags;';
   return $c;
 }
 function check_cfg_file($path, $file) {

@@ -45,7 +45,7 @@ if(isset($_POST['cntdelcnt'])) { // delete selected content
   }
   else { // don't delete
     // redirect
-    $redirect = _RUDWEB_SITE_URL . 'index.php/content/' . rudweb_filter_input($_POST['cnt_alias']);
+    $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'content/' . rudweb_filter_input($_POST['cnt_alias']);
   }
 }
 else if(isset($_POST['cntmodcnt'])) { // modify selected content
@@ -197,11 +197,11 @@ else if(isset($_POST['cntmodcnt'])) { // modify selected content
     $query_unlock = "UNLOCK TABLES";
     mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
     // redirect
-    $redirect = _RUDWEB_SITE_URL . 'index.php/content/' . $cnt_id  . "_" . $cnt_alias;
+    $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'content/' . $cnt_id  . "_" . $cnt_alias;
   }
   else { // don't do the mod
     // redirect
-    $redirect = _RUDWEB_SITE_URL . 'index.php/content/' . rudweb_filter_input($_POST['cnt_alias']);
+    $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'content/' . rudweb_filter_input($_POST['cnt_alias']);
   }
 }
 else if(isset($_POST['cntaddcnt']) || (isset($_POST['cntaddlnk']) || isset($_POST['cntaddpg']))) { // add new content
@@ -340,14 +340,14 @@ else if(isset($_POST['cntaddcnt']) || (isset($_POST['cntaddlnk']) || isset($_POS
     $query_unlock = "UNLOCK TABLES";
     mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
     // redirect
-    if(isset($_POST['cntaddcnt']))      {$redirect = _RUDWEB_SITE_URL . 'index.php/content/' . $new_cnt_id . "_" . $cnt_alias;}
-    else if(isset($_POST['cntaddpg']))  {$redirect = _RUDWEB_SITE_URL . 'index.php/page/' . $cnt_alias;}
+    if(isset($_POST['cntaddcnt']))      {$redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'content/' . $new_cnt_id . "_" . $cnt_alias;}
+    else if(isset($_POST['cntaddpg']))  {$redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'page/' . $cnt_alias;}
     else if(isset($_POST['cntaddlnk'])) {$redirect = _RUDWEB_SITE_URL;}
     
   }
   else { // don't do the mod
     // redirect
-    $redirect = _RUDWEB_SITE_URL . 'index.php/admin/cntadd/mc/' . $mnu_cat . '/ml/' . $mnu_lev . '/mp/' . $mnu_par;
+    $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/cntadd/mc/' . $mnu_cat . '/ml/' . $mnu_lev . '/mp/' . $mnu_par;
   }
   // abc
 }
