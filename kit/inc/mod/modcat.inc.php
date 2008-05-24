@@ -166,7 +166,7 @@ function catalogSubcatsMenu($parent, $rep, $link) {
       echo '<LI>';
       echo '&#187;';
       echo '&#160;';
-      restrictedLocalLink('default', $rw['cat_tt'], 'admin.php/admin/'.$link.'/cat/'.$rw['cat_id'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('default', $rw['cat_tt'], _RUDWEB_INDEX_PHP . 'admin/'.$link.'/cat/'.$rw['cat_id'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       catalogSubcatsMenu($rw['cat_id'], $rep+1, $link);
       echo '</LI>';
     }
@@ -193,7 +193,7 @@ function catalogCategoriesMenu($link) {
       echo '<LI>';
       echo '&#187;';
       echo '&#160;';
-      restrictedLocalLink('default', $rw0['cat_tt'], 'admin.php/admin/'.$link.'/cat/'.$rw0['cat_id'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('default', $rw0['cat_tt'], _RUDWEB_INDEX_PHP . 'admin/'.$link.'/cat/'.$rw0['cat_id'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       catalogSubcatsMenu($rw0['cat_id'], 1, $link);
       echo '</LI>';
     }

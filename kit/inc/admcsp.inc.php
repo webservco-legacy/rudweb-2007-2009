@@ -5,11 +5,11 @@
 */
 if($new_onoff !== "") {
   changedbcfg("CSP_ON", $new_onoff, $action_date, $action_time);
-  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/cspmod';
+  $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/cspmod';
 }
 if($csp_lmt !== "") {
   changedbcfg("CSP_LMT", $csp_lmt, $action_date, $action_time);
-  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/cspmod';
+  $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/cspmod';
 }
 if(isset($_POST['csp_new'])) { // add new
   $query_NextId = "SELECT MAX(csp_id) FROM "._RUDWEB_PRE."cat_csp";
@@ -31,7 +31,7 @@ if(isset($_POST['csp_new'])) { // add new
   mysql_query($insertquery) or require _RUDWEB_LIB_DIR . 'myerr.php';
   $query_unlock = "UNLOCK TABLES";
   mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
-  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/cspmod/act/adm';
+  $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/cspmod/act/adm';
   
 }
 else if(isset($_POST['csp_id'])) { // modify
@@ -55,7 +55,7 @@ else if(isset($_POST['csp_id'])) { // modify
     }
     $query_unlock = "UNLOCK TABLES";
     mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
-    $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/cspmod/act/adm';
+    $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/cspmod/act/adm';
   }
 }
 ?>

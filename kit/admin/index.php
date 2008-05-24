@@ -5,7 +5,7 @@
 */
 define("_RUDWEB_PUBFIL", TRUE);
 require_once './../inc/config.inc.php';
-//$admin_location = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . "admin/admin";
-$admin_location = _RUDWEB_SITE_URL . "admin.php";
+$admin_location = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . "admin/admin";
+//$admin_location = _RUDWEB_SITE_URL . "admin.php";
 header("Location: $admin_location");
 ?>

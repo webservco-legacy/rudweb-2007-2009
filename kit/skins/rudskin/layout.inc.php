@@ -46,6 +46,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once '../../lib/404.php';}
   </DIV>
   
   <DIV CLASS="header">
+  <?php adminMenu(); ?>
   <?php //createMenu('adm', 0, 1); ?>
   <BR>
   <?php //createMenu('adm', 1, 1); ?>

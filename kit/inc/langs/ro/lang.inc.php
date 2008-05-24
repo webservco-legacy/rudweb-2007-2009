@@ -222,6 +222,7 @@ $rudweb_ln['cmt']['cmtal']        = "Adaug&#259; opinie";
 $rudweb_ln['cmt']['cmtvl']        = "Vizualizare opinii";
 
 // MODULE ADMINISTARTION
+$rudweb_ln['adm']['modules']   = "Module";
 $rudweb_ln['adm']['modstat0']  = "Modulul este inactiv.";
 $rudweb_ln['adm']['modstat00'] = "Modifica&#355;i fi&#351;ierul de configurare pentru a-l activa.";
 $rudweb_ln['adm']['modstat01'] = "Activare.";

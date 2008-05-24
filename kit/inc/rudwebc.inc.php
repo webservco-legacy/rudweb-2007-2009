@@ -23,7 +23,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 /**
 * Engine Version
 */
-define("_RUDWEB_SITE_VERSION", "0.6.080523");
+define("_RUDWEB_SITE_VERSION", "0.6.080524");
 /**
 * Engine Author
 */

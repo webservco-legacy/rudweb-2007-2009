@@ -126,7 +126,7 @@ if (isset($_POST['proceed']) && !isset($_SESSION['rudwebset_start'])) {
   $_SESSION['rudwebset_cfg_cpydev']              = '1';
   $_SESSION['rudwebset_cfg_smap']                = '0';
   $_SESSION['rudwebset_cfg_yah']                 = '0';
-  $_SESSION['rudwebset_cfg_nws']                 = '0';
+  $_SESSION['rudwebset_cfg_nws']                 = '1';
   $_SESSION['rudwebset_cfg_nws_lmt1']            = '3';
   $_SESSION['rudwebset_cfg_nws_lmt2']            = '5';
   $_SESSION['rudwebset_cfg_src']                 = '0';

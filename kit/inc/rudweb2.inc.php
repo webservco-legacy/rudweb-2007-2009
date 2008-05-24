@@ -104,7 +104,7 @@ else if (isset($_GET['admin'])) {
   $rudweb_mnu_id             = getCntMnuId('index');
   $rudweb_stats_page         = 'index';
   $rudweb_req_page           = 'index';
-  $admin_allowed = array('admin', 'catmod', 'cmtmod', 'cntadd', 'cspmod', 'ftrmod', 'itemadd', 'nwsmod', 'tagmod');
+  $admin_allowed = array('admin', 'catmod', 'cmtmod', 'cntadd', 'cspmod', 'ftrmod', 'itemadd', 'nwsmod', 'nwsmoda', 'tagmod');
   if (is_file(_RUDWEB_ADMIN_DIR . $rudweb_this_content . ".inc.php") && in_array($rudweb_this_content, $admin_allowed)) {
     $rudweb_this_content_level = getCntLev($rudweb_this_content);
     $rudweb_mnu_id             = getCntMnuId($rudweb_this_content);
@@ -135,6 +135,7 @@ else if (isset($_GET['catalog']) && _RUDWEB_CFG_CAT == '1') {
     $rudweb_page_keywords      = _RUDWEB_WSKW;
   }
 }
+/*
 else if (substr($_SERVER['REQUEST_URI'], -9) == 'admin.php' && _RUDWEB_CFG_ADM === "1") {
   if ($_SESSION[_RUDWEB_PRE.'usr_level'] > 2 && $_SESSION[_RUDWEB_PRE.'usr_level'] <= 5) { //3,4,5
   $rudweb_cnt_type           = "0";  // NOT REALLY NEEDED
@@ -157,6 +158,7 @@ else if (substr($_SERVER['REQUEST_URI'], -9) == 'admin.php' && _RUDWEB_CFG_ADM =
     header("Location: $redirect");
   }
 }
+*/
 else { // SHOW DEFAULT PAGE _RUDWEB_CFG_CNT
   if (_RUDWEB_CFG_CNT_SHW === "1") {
     if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == "ro") {$default_content = _RUDWEB_CFG_CNT_RO;}

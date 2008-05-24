@@ -18,7 +18,7 @@ if(isset($_POST['set_cfg_sk_inst'])) {
           $files[$dirs[0]][1][] = 'favicon.ico';
           $files[$dirs[0]][1][] = 'layout.inc.php';
           $files[$dirs[0]][1][] = 'layout.print.inc.php';
-          $files[$dirs[0]][1][] = 'layouta.inc.php';
+          //$files[$dirs[0]][1][] = 'layouta.inc.php';
           $files[$dirs[0]][1][] = 'layouti.inc.php';
           
           $files[$dirs[0]][1][] = 'index.php';

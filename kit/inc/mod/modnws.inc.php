@@ -66,7 +66,7 @@ function showNewsAll($adm=0) {
       echo MyDate($rw['nws_crd'], 'dd/mm/yyyy') . '&#160;' . $rw['nws_crt'];
       echo $rudweb_skin['nws']['lst']['dtsuf'];
       echo $rudweb_skin['nws']['lst']['ttpre'];
-      if($adm!=0) {$lnkurl = 'admin.php/admin/nwsmod/act/mod/nws/'.$rw['nws_id'];} else {$lnkurl = _RUDWEB_INDEX_PHP . 'show/news/nws/'.$rw['nws_id'];}
+      if($adm!=0) {$lnkurl = _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/mod/nws/'.$rw['nws_id'];} else {$lnkurl = _RUDWEB_INDEX_PHP . 'show/news/nws/'.$rw['nws_id'];}
       restrictedLocalLink('news', $rw['nws_tt'], $lnkurl, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_skin['nws']['lst']['ttsuf'];
       echo $rudweb_skin['nws']['lst']['dscpre'];
@@ -74,7 +74,7 @@ function showNewsAll($adm=0) {
       echo $rudweb_skin['nws']['lst']['dscsuf'];
       echo $rudweb_skin['nws']['lst']['suf'];
     }
-    if($adm!=0) {$url = 'admin.php/admin/nwsmod/act/view';} else {$url = _RUDWEB_INDEX_PHP . 'show/news';}
+    if($adm!=0) {$url = _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/view';} else {$url = _RUDWEB_INDEX_PHP . 'show/news';}
     $urlsofar = _RUDWEB_SITE_URL . $url;
     catalogPageNavigation($totalitems,$itemspg,$pg,$urlsofar);
     echo $rudweb_skin['nws']['lst']['ftr'];
@@ -127,13 +127,13 @@ function showNewsItem($nws_id=0,$adm=0) {
           echo $rudweb_ln['adm']['itemmodok'];
           echo '</DIV>';
           echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
-          restrictedLocalLink('default', $rudweb_ln['adm']['itemmod'], 'admin.php/admin/nwsmod/act/mod/nws/'.$nws_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+          restrictedLocalLink('default', $rudweb_ln['adm']['itemmod'], _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/mod/nws/'.$nws_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
           echo '</DIV>';
           echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
-          restrictedLocalLink('default', $rudweb_ln['adm']['itemaddnew'], 'admin.php/admin/nwsmod/act/add', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+          restrictedLocalLink('default', $rudweb_ln['adm']['itemaddnew'], _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/add', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
           echo '</DIV>';
           echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
-          restrictedLocalLink('default', $rudweb_ln['adm']['itemviewcat'], 'admin.php/admin/nwsmod/act/view', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+          restrictedLocalLink('default', $rudweb_ln['adm']['itemviewcat'], _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/view', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
           echo '</DIV>';
         }
         else {
@@ -160,10 +160,10 @@ function showNewsItem($nws_id=0,$adm=0) {
         echo $rudweb_ln['adm']['itemdelok'];
         echo '</DIV>';
         echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
-        restrictedLocalLink('default', $rudweb_ln['adm']['itemaddnew'], 'admin.php/admin/nwsmod/act/add', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        restrictedLocalLink('default', $rudweb_ln['adm']['itemaddnew'], _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/add', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
         echo '</DIV>';
         echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
-        restrictedLocalLink('default', $rudweb_ln['adm']['itemviewcat'], 'admin.php/admin/nwsmod/act/view', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        restrictedLocalLink('default', $rudweb_ln['adm']['itemviewcat'], _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/view', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
         echo '</DIV>';
       }
       else {
@@ -222,13 +222,13 @@ function addNewsItem() {
       echo $rudweb_ln['adm']['itemaddok'];
       echo '</DIV>';
       echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
-      restrictedLocalLink('default', $rudweb_ln['adm']['itemmod'], 'admin.php/admin/nwsmod/act/mod/nws/'.$nws_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('default', $rudweb_ln['adm']['itemmod'], _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/mod/nws/'.$nws_id, $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo '</DIV>';
       echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
-      restrictedLocalLink('default', $rudweb_ln['adm']['itemaddnew'], 'admin.php/admin/nwsmod/act/add', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('default', $rudweb_ln['adm']['itemaddnew'], _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/add', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo '</DIV>';
       echo '<DIV CLASS="ok" STYLE="padding-top: 10px; padding-bottom: 10px;">';
-      restrictedLocalLink('default', $rudweb_ln['adm']['itemviewcat'], 'admin.php/admin/nwsmod/act/view', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('default', $rudweb_ln['adm']['itemviewcat'], _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/view', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo '</DIV>';
     }
     else {

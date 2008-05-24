@@ -204,6 +204,7 @@ $rudweb_ln['cmt']['cmtal']        = "Add new comment";
 $rudweb_ln['cmt']['cmtvl']        = "View all comments";
 
 // MODULE ADMINISTARTION
+$rudweb_ln['adm']['modules']    = "Modules";
 $rudweb_ln['adm']['modstat0']   = "Module is disabled.";
 $rudweb_ln['adm']['modstat00']  = "Modify your config file to enable it.";
 $rudweb_ln['adm']['modstat01']  = "Enable.";
@@ -211,7 +212,7 @@ $rudweb_ln['adm']['modstat1']   = "Module is enabled.";
 $rudweb_ln['adm']['modstat11']  = "Modify your config file to disable it.";
 $rudweb_ln['adm']['modstat12']  = "Modify your config file to change it.";
 $rudweb_ln['adm']['modstat10']  = "Disable.";
-$rudweb_ln['adm']['lmttxt1'] = "Number of items to display: ";
+$rudweb_ln['adm']['lmttxt1']    = "Number of items to display: ";
 $rudweb_ln['adm']['new']        = "Add new";
 
 // NEWS

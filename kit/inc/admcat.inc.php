@@ -5,6 +5,6 @@
 */
 if(isValidInt($new_ipg)) {
   changedbcfg("CAT_IPG", $new_ipg, $action_date, $action_time);
-  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/catmod/act/ipg';
+  $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/catmod/act/ipg';
 }
 ?>

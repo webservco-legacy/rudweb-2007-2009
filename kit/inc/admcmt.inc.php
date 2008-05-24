@@ -5,7 +5,7 @@
 */
 if($new_onoff !== "") {
   changedbcfg("CNT_CMNTS", $new_onoff, $action_date, $action_time);
-  $redirect = _RUDWEB_SITE_URL . 'admin.php/admin/cmtmod';
+  $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/cmtmod';
 }
 $cmt_alias = '';
 if(isset($_POST['cmt_id'])) {
