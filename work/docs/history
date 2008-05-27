@@ -3,6 +3,7 @@
 - changed engine structure to use only "index.php" for all content ("admin.php" was used for the administration pages)
 - improved SEO URLs to remove 'index.php' if Apache mod_rewrite is enabled
 - added "about" page rudweb.php
+- added option to upload multiple pictures at once to catalog products
 0.6.080429
 - added comments module
 - fixed some security issues in the admin/show part

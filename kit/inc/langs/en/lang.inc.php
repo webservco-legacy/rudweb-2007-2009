@@ -133,6 +133,7 @@ $rudweb_ln['cat']['itemaddnew']    = 'Add new item';
 $rudweb_ln['cat']['itemmod']       = 'Modify item';
 $rudweb_ln['cat']['itemviewcat']   = 'View items in this category';
 $rudweb_ln['cat']['ipg']           = 'Items / page';
+$rudweb_ln['cat']['pcs']           = 'Picture uploads at once';
 // PAGINATION
 $rudweb_ln['pgnav']['first']       = '&#60;&#60;';
 $rudweb_ln['pgnav']['prev']        = '&#60;';

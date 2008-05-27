@@ -132,7 +132,7 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
   echo $rudweb_skin['prod']['dt']['pic0']['hdr'];
   
   if(isset($item_id)) {
-    $qpc = "SELECT pic_id, pic_fn FROM "._RUDWEB_PRE."cat_pic WHERE prd_id = '".$item_id."' AND pic_loc = '2' ORDER BY pic_ord ASC";
+    $qpc = "SELECT pic_id, pic_fn FROM "._RUDWEB_PRE."cat_pic WHERE prd_id = '".$item_id."' AND pic_loc >= '2' ORDER BY pic_ord ASC";
     $rpc = rudweb_qres($rudweb_dbtype, $qpc);
     $tpc = rudweb_qtotal($rudweb_dbtype, $rpc);
     if($tpc != 0) {
@@ -169,7 +169,10 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
   
   echo $rudweb_skin['prod']['dt']['pic0']['pre'];
   echo $rudweb_ln['adm']['new_pic'];
-  echo '<INPUT CLASS="imgupload" TYPE="file" NAME="itempic[2]" SIZE="1">';
+  $iceil = _RUDWEB_CFG_CAT_PCS + 2;
+  for($i=2;$i<$iceil;$i++) {
+    echo '<INPUT CLASS="imgupload" TYPE="file" NAME="itempic['.$i.']" SIZE="1">';
+  }
   echo $rudweb_skin['prod']['dt']['pic0']['suf'];
   
   echo $rudweb_skin['prod']['dt']['pic0']['ftr'];

@@ -285,7 +285,7 @@ function adminMenu() {
         } 
         echo '>';
         echo $rudweb_skin['adm']['mnu']['pre'];
-        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/catmod/act/ipg', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/catmod/act/set', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
         echo $rudweb_skin['adm']['mnu']['suf'];
         echo $rudweb_skin['adm']['mnu']['sep'];
 

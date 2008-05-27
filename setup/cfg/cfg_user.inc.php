@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/cfg/cfg_user.inc.php
-13:45 2008-05-14
+18:28 2008-05-27
 
 user configration
 modify only this file
@@ -48,11 +48,11 @@ $target_name[8]  = "DaSoft - Interact Consult";
 $target_url[8]   = "http://localhost/work/ds/interactconsult";
 $target_vars[8]  = "d:/home/devel/server/htdocs/work/ds/interactconsult/";
 
-$target_name[9]  = "DaSoft - MHS Truck & Bus";
+$target_name[9]  = "DaSoft - MAN Romania";
 $target_url[9]   = "http://localhost/work/ds/man-romania";
 $target_vars[9]  = "d:/home/devel/server/htdocs/work/ds/man-romania/";
 
-$target_name[10] = "DaSoft - MHS Trucks";
+$target_name[10] = "DaSoft - MAN Rulate";
 $target_url[10]  = "http://localhost/work/ds/man-rulate";
 $target_vars[10] = "d:/home/devel/server/htdocs/work/ds/man-rulate/";
 ?>

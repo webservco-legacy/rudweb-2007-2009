@@ -149,6 +149,7 @@ $rudweb_ln['cat']['itemaddnew']    = 'Ad&#259;ugare produs nou';
 $rudweb_ln['cat']['itemmod']       = 'Modificare produs';
 $rudweb_ln['cat']['itemviewcat']   = 'Vizualizare produse din categoria curenta';
 $rudweb_ln['cat']['ipg']           = 'Articole / pagin&#259;';
+$rudweb_ln['cat']['pcs']           = 'Formulare de upload poze';
 
 // PAGINATION
 $rudweb_ln['pgnav']['first']       = '&#60;&#60;';

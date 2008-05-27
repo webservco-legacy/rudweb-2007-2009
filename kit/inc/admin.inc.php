@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/admin.inc.php
-14:41 2008-04-29
+16:58 2008-05-27
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -148,11 +148,14 @@ if (isset($_POST['itemadd'])) {
 }
 if (isset($_POST['catmod'])) {
   $new_onoff = '';
+  $new_ipg   = '';
+  $new_pcs   = '';
   
   $action_date  = date("Y-m-d");
   $action_time  = date("H:i:s");
   if(isset($_POST['catonoff'])) {$new_onoff = rudweb_filter_input($_POST['catonoff']);}
   if(isset($_POST['ipg'])) {$new_ipg = rudweb_filter_input($_POST['ipg']);}
+  if(isset($_POST['pcs'])) {$new_pcs = rudweb_filter_input($_POST['pcs']);}
   require_once _RUDWEB_INC_DIR . 'admcat.inc.php';
   header("Location: $redirect");
 }

@@ -267,7 +267,8 @@ function showCso() {
   }
 }
 /* ********** ********** ********** //CATALOG SPECIAL OFFERS  ********** ********** ********** */
-function setIpg(){
+/* ********** ********** ********** CATALOG DEFAULT ITEMS PER PAGE  ********** ********** ********** */
+function setIpg() {
   global $rudweb_dbtype;
   global $rudweb_ln;
   global $rudweb_skin;
@@ -279,6 +280,27 @@ function setIpg(){
   for ($i=1; $i<=50; $i++) {
     echo '<OPTION VALUE="'.$i.'"';
     if($i == _RUDWEB_CFG_CAT_IPG) {echo ' SELECTED';}
+    echo '>'.$i.'</OPTION>';
+  }
+  echo '</SELECT>';
+  echo '&#160;';
+  echo '<INPUT CLASS="formsubmit" TYPE="submit" NAME="catmod" VALUE="'.$rudweb_ln['adm']['save'].'">';
+  echo '</FORM>';
+  echo $rudweb_skin['adm']['mod']['suf'];
+}
+/* ********** ********** ********** CATALOG NUMBER OF PICTURES TO UPLOAD AT ONCE  ********** ********** ********** */
+function setCatPcs() {
+  global $rudweb_dbtype;
+  global $rudweb_ln;
+  global $rudweb_skin;
+  echo $rudweb_skin['adm']['mod']['pre'];
+  echo '<FORM ENCTYPE="multipart/form-data" NAME="pcsform" ACTION="" METHOD="post">';
+  echo $rudweb_ln['cat']['pcs'];
+  echo ':&#160;';
+  echo '<SELECT CLASS="forminput" NAME="pcs">';
+  for ($i=1; $i<=10; $i++) {
+    echo '<OPTION VALUE="'.$i.'"';
+    if($i == _RUDWEB_CFG_CAT_PCS) {echo ' SELECTED';}
     echo '>'.$i.'</OPTION>';
   }
   echo '</SELECT>';

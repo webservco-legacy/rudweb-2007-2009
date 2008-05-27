@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/adm/catmod.inc.php
-10:45 2008-05-02
+17:00 2008-05-27
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
@@ -16,7 +16,7 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
     if(_RUDWEB_CFG_CAT == 1) {
       $act = rudweb_filter_input($_GET['act']);
       switch($act) {
-        case 'ipg' : {setIpg(); break;}
+        case 'set' : {setIpg(); setCatPcs(); break;}
         default : {break;}
       }
     }

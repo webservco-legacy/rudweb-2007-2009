@@ -433,7 +433,7 @@ if($total_cat == '1') {
         // product pictures
         echo $rudweb_skin['prod']['dt']['pic0']['hdr'];
   
-        $qpc = "SELECT * FROM "._RUDWEB_PRE."cat_pic WHERE prd_id = '".$item_id."' AND pic_loc = '2' ORDER BY pic_ord ASC";
+        $qpc = "SELECT * FROM "._RUDWEB_PRE."cat_pic WHERE prd_id = '".$item_id."' AND pic_loc >= '2' ORDER BY pic_ord ASC";
         $rpc = rudweb_qres($rudweb_dbtype, $qpc);
         $tpc = rudweb_qtotal($rudweb_dbtype, $rpc);
         if($tpc != 0) {
