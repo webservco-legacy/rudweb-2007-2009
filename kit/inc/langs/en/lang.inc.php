@@ -231,4 +231,7 @@ $rudweb_ln['err']['add']['1']     = 'Field ' .$rudweb_ln['adm']['tt'] . ' is bla
 $rudweb_ln['err']['add']['2']     = 'Field ' .$rudweb_ln['adm']['stt'] . ' is blank!';
 $rudweb_ln['err']['add']['3']     = 'Field ' .$rudweb_ln['adm']['dsc'] . ' is blank!';
 $rudweb_ln['err']['add']['4']     = 'Field ' .$rudweb_ln['adm']['txt'] . ' is blank!';
+
+// MSIC STUFF
+$rudweb_ln['about']  = "About";
 ?>

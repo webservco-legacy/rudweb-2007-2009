@@ -147,8 +147,11 @@ if (isset($_POST['itemadd'])) {
   $action_time  = date("H:i:s");
 }
 if (isset($_POST['catmod'])) {
+  $new_onoff = '';
+  
   $action_date  = date("Y-m-d");
   $action_time  = date("H:i:s");
+  if(isset($_POST['catonoff'])) {$new_onoff = rudweb_filter_input($_POST['catonoff']);}
   if(isset($_POST['ipg'])) {$new_ipg = rudweb_filter_input($_POST['ipg']);}
   require_once _RUDWEB_INC_DIR . 'admcat.inc.php';
   header("Location: $redirect");

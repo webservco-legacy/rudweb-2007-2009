@@ -1,0 +1,145 @@
+/*
+./skins/thskin/styles/custom.css
+13:26 2008-05-18
+*/
+/* ********** ********** ********** CUSTOM ********** ********** ********** */
+DIV.vcentered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 250px;
+  height: 20px;
+  margin-left: -125px; /* half of width */
+  margin-top: -10px;  /* half of height */
+  text-align: center;
+}
+.layout {
+  min-height:100%;
+  position:relative;
+}
+* html .layout {height: 100%;}
+.container {
+  clear: both;
+  width: 720px;
+  margin: auto;
+}
+/* ********** ********** ********** HEADER AREA START ********** ********** ********** */
+.logo {
+  font-size: 3em;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-align: center;
+  padding-top: 10px;
+}
+.slogan {
+  /*font-family: Georgia, sans-serif;*/
+  font-size: 0.9em;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.h1 {
+  /*background-color: #ffffcc;*/
+  height: 60px;
+  margin: 0px;
+  padding: 0px;
+  background-image: url(<?php echo _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir']?>/graphics/h1.jpg);
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+.h2 {
+  /*background-color: #ccffff;*/
+  height: 60px;
+  margin: 0px;
+  padding: 0px;
+  background-image: url(<?php echo _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir']?>/graphics/h2.jpg);
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+.h3-1 { /* LOGO */
+  /*background-color: #0000FF;*/
+  float: left;
+  width: 250px;
+  height: 60px;
+  margin: 0px;
+  padding: 0px;
+  background-image: url(<?php echo _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir']?>/graphics/h3-1.jpg);
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+* html .h3-1 {margin-right: -3px;}
+.h3-2 {
+  /*background-color: #00ff00;*/
+  width: 140px;
+  height: 60px;
+  margin: 0px;
+  padding: 0px;
+  margin-left: 250px;
+  margin-right: 330px;
+  background-image: url(<?php echo _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir']?>/graphics/h3-2.jpg);
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+* html .h3-2 {margin-left: 247px; margin-right: 327px;}
+.h3-3 {
+  /* background-color: #ff0000; */
+  float: right;
+  width: 310px;
+  height: 40px;
+  margin: 0px;
+  padding: 20px 20px 0px 0px;
+  background-image: url(<?php echo _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir']?>/graphics/h3-3.jpg);
+  background-repeat: no-repeat;
+  background-position: top left;
+  text-align: right;
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+* html .h3-3 {margin-left: -3px;}
+.h4 {
+  background-color: #333333;
+  color: #FFFFFF;
+  /*height: 30px;*/
+  margin: 0px;
+  padding: 5px 5px 5px 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+/* ********** ********** ********** HEADER AREA END ********** ********** ********** */
+/* ********** ********** ********** CONTENT AREA START ********** ********** ********** */
+.cleft {
+  /* background-color: #0000FF; */
+  float: left;
+  width: 230px;
+  min-height: 280px;
+  margin: 0px;
+  padding: 10px 10px 10px 10px;
+}
+* html .cleft {height: 280px; margin-right: -3px;}
+.cnt {
+  /* background-color: #ff0000; */
+  /*float: left;*/
+  width: 450px;
+  min-height: 280px;
+  margin: 0px;
+  padding: 10px 10px 10px 10px;
+  margin-left: 250px;
+}
+* html .cnt {height: 280px; margin-left: 247px;}
+/* ********** ********** ********** CONTENT AREA END ********** ********** ********** */
+/* ********** ********** ********** FOOTER AREA START ********** ********** ********** */
+.footer {
+  /* background-color: #00ff00;*/
+  width: 100%;
+  height: 20px;
+  padding: 10px 0px 10px 0px;
+  font-size: 0.9em;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+/* ********** ********** ********** FOOTER AREA END ********** ********** ********** */
+/* ********** ********** ********** //CUSTOM ********** ********** ********** */

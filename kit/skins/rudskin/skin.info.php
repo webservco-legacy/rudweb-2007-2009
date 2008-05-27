@@ -9,4 +9,5 @@ $rudweb_skin_name     = 'RudSkin';
 $rudweb_skin_version  = '1.0.080313';
 $rudweb_skin_author   = 'Radu Maier';
 $rudweb_skin_notes    = 'RudWEB Default Skin';
+$rudweb_skin_website  = 'http://www.rudisoft.net';
 ?>

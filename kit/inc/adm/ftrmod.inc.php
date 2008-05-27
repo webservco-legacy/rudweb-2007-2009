@@ -19,36 +19,10 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
       echo $rudweb_skin['adm']['mod']['pre'];
       echo $rudweb_ln['adm']['modstat0'];
       echo "<BR>";
-      if(_RUDWEB_DBCFG == "1") {
-        echo "<FORM ENCTYPE=\"multipart/form-data\" CLASS=\"ftronoffform\" NAME=\"ftronoffform\" ACTION=\"\" METHOD=\"post\">";
-        echo "<INPUT TYPE=\"hidden\" NAME=\"ftronoff\" VALUE=\"1\">";
-        echo "<BR>";
-        echo "<INPUT CLASS=\"formsubmit\" TYPE=\"submit\" NAME=\"ftrmod\" VALUE=\"".$rudweb_ln['adm']['modstat01']."\">";
-        echo "</FORM>";
-      }
-      else {
-        echo $rudweb_ln['adm']['modstat00'];
-      }
       echo $rudweb_skin['adm']['mod']['suf'];
     } // if disabled
 
     else {
-      echo $rudweb_skin['adm']['mod']['pre'];
-      echo $rudweb_ln['adm']['modstat1'];
-      echo "<BR>";
-      
-      if(_RUDWEB_DBCFG == "1") {
-        echo "<FORM ENCTYPE=\"multipart/form-data\" CLASS=\"ftronoffform\" NAME=\"ftronoffform\" ACTION=\"\" METHOD=\"post\">";
-        echo "<INPUT TYPE=\"hidden\" NAME=\"ftronoff\" VALUE=\"0\">";
-        echo "<BR>";
-        echo "<INPUT CLASS=\"formsubmit\" TYPE=\"submit\" NAME=\"ftrmod\" VALUE=\"".$rudweb_ln['adm']['modstat10']."\">";
-        echo "</FORM>";
-      }
-      else {
-        echo $rudweb_ln['adm']['modstat11'];
-      }  
-      echo $rudweb_skin['adm']['mod']['suf'];
-
       if(_RUDWEB_DBCFG == "1") {  
         echo $rudweb_skin['adm']['mod']['pre'];
         echo "<FORM ENCTYPE=\"multipart/form-data\" CLASS=\"ftrlmtform\" NAME=\"ftrlmtform\" ACTION=\"\" METHOD=\"post\">";

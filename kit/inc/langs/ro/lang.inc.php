@@ -249,4 +249,7 @@ $rudweb_ln['err']['add']['1']     = 'C&#226;mpul ' .$rudweb_ln['adm']['tt'] . ' 
 $rudweb_ln['err']['add']['2']     = 'C&#226;mpul ' .$rudweb_ln['adm']['stt'] . ' este gol!';
 $rudweb_ln['err']['add']['3']     = 'C&#226;mpul ' .$rudweb_ln['adm']['dsc'] . ' este gol!';
 $rudweb_ln['err']['add']['4']     = 'C&#226;mpul ' .$rudweb_ln['adm']['txt'] . ' este gol!';
+
+// MSIC STUFF
+$rudweb_ln['about']  = "Despre";
 ?>

@@ -106,26 +106,65 @@ function adminMenu() {
       echo $rudweb_skin['adm']['mnuhd']['suf'];
       
       echo '<DIV ID="l1adm">';
-        // NEWS ADMINISTRATION
+        // CONTENT MODULES ADMIN
         echo $rudweb_skin['adm']['mnutt']['pre'];
-        echo '<A onClick="JavaScript: toggleLayer(\'l2nwsa\')">';
-        echo $rudweb_ln['adm']['modules'];
+        echo '<A onClick="JavaScript: toggleLayer(\'l2modcsa\')">';
+        echo $rudweb_ln['adm']['modules'] . ' - ' . $rudweb_ln['cnt']['cnt'];
         echo '</A>';
         echo $rudweb_skin['adm']['mnutt']['suf'];
       
-        echo '<DIV ID="l2nwsa"';
-        if ($rudweb_this_content != 'nwsmoda') {
-          echo' CLASS="hidden"';
-        } 
+        echo '<DIV ID="l2modcsa"';
+        $l2modcsa = array('nwsmoda', 'tagmoda', 'cmtmoda', 'ftrmoda');
+        if (!in_array($rudweb_this_content, $l2modcsa)) {echo' CLASS="hidden"';} 
         echo '>';
+        
         echo $rudweb_skin['adm']['mnu']['pre'];
-        restrictedLocalLink('adm-mnu', $rudweb_ln['nws']['tt'], _RUDWEB_INDEX_PHP . 'admin/nwsmoda', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        restrictedLocalLink('adm-mnu', $rudweb_ln['nws']['tt'], _RUDWEB_INDEX_PHP . 'admin/nwsmoda', $_SESSION[_RUDWEB_PRE.'usr_level'], 5, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
         echo $rudweb_skin['adm']['mnu']['suf'];
         echo $rudweb_skin['adm']['mnu']['sep'];
+        
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['cnt']['tags'], _RUDWEB_INDEX_PHP . 'admin/tagmoda', $_SESSION[_RUDWEB_PRE.'usr_level'], 5, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+        
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['cmt']['cmtt'], _RUDWEB_INDEX_PHP . 'admin/cmtmoda', $_SESSION[_RUDWEB_PRE.'usr_level'], 5, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+        
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['featured']['tt'], _RUDWEB_INDEX_PHP . 'admin/ftrmoda', $_SESSION[_RUDWEB_PRE.'usr_level'], 5, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+
         echo '</DIV>';
         
-        // TAGS ADMINISTRATION
-        // xxx
+        //xxx
+        
+        // CONTENT MODULES ADMIN
+        echo $rudweb_skin['adm']['mnutt']['pre'];
+        echo '<A onClick="JavaScript: toggleLayer(\'l2modssa\')">';
+        echo $rudweb_ln['adm']['modules'] . ' - ' . $rudweb_ln['catalog']['catalog'];
+        echo '</A>';
+        echo $rudweb_skin['adm']['mnutt']['suf'];
+      
+        echo '<DIV ID="l2modssa"';
+        $l2modssa = array('catmoda', 'cspmoda');
+        if (!in_array($rudweb_this_content, $l2modssa)) {echo' CLASS="hidden"';} 
+        echo '>';
+        
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['catalog']['catalog'], _RUDWEB_INDEX_PHP . 'admin/catmoda', $_SESSION[_RUDWEB_PRE.'usr_level'], 5, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+        
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['catalog']['csp'], _RUDWEB_INDEX_PHP . 'admin/cspmoda', $_SESSION[_RUDWEB_PRE.'usr_level'], 5, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+
+        echo '</DIV>';
         
       echo '</DIV>';
     }
@@ -147,166 +186,156 @@ function adminMenu() {
         echo $rudweb_skin['adm']['mnutt']['suf'];
       
         echo '<DIV ID="l2nws"';
-        if ($rudweb_this_content != 'nwsmod') {
-          echo' CLASS="hidden"';
-        } 
+        if ($rudweb_this_content != 'nwsmod') {echo' CLASS="hidden"';} 
         echo '>';
         echo $rudweb_skin['adm']['mnu']['pre'];
-        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/nwsmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/nwsmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
         echo $rudweb_skin['adm']['mnu']['suf'];
         echo $rudweb_skin['adm']['mnu']['sep'];
         echo $rudweb_skin['adm']['mnu']['pre'];
-        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['add'], _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/add', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['add'], _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/add', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
         echo $rudweb_skin['adm']['mnu']['suf'];
         echo $rudweb_skin['adm']['mnu']['sep'];
         echo $rudweb_skin['adm']['mnu']['pre'];
-        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/view', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/view', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
         echo $rudweb_skin['adm']['mnu']['suf'];
         echo $rudweb_skin['adm']['mnu']['sep'];
         echo '</DIV>';
       }
       // TAGS SETTINGS
-      echo $rudweb_skin['adm']['mnutt']['pre'];
-      echo '<A onClick="JavaScript: toggleLayer(\'l2tag\')">';
-      echo $rudweb_ln['cnt']['tags'];
-      echo '</A>';
-      echo $rudweb_skin['adm']['mnutt']['suf'];
-    
-      echo '<DIV ID="l2tag"';
-      if ($rudweb_this_content != 'tagmod') {
-        echo' CLASS="hidden"';
-      } 
-      echo '>';
-      echo $rudweb_skin['adm']['mnu']['pre'];
-      restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/tagmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
-      echo $rudweb_skin['adm']['mnu']['suf'];
-      echo $rudweb_skin['adm']['mnu']['sep'];
       if(_RUDWEB_CFG_CNT_TAGS == 1) {
-        echo $rudweb_skin['adm']['mnu']['pre'];
-        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], _RUDWEB_INDEX_PHP . 'admin/tagmod/act/adm', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
-        echo $rudweb_skin['adm']['mnu']['suf'];
-        echo $rudweb_skin['adm']['mnu']['sep'];
-      }
-      echo '</DIV>';
+        echo $rudweb_skin['adm']['mnutt']['pre'];
+        echo '<A onClick="JavaScript: toggleLayer(\'l2tag\')">';
+        echo $rudweb_ln['cnt']['tags'];
+        echo '</A>';
+        echo $rudweb_skin['adm']['mnutt']['suf'];
       
-      echo $rudweb_skin['adm']['mnutt']['pre'];
-      echo '<A onClick="JavaScript: toggleLayer(\'l2cmt\')">';
-      echo $rudweb_ln['cmt']['cmtt'];
-      echo '</A>';
-      echo $rudweb_skin['adm']['mnutt']['suf'];
-    
-      echo '<DIV ID="l2cmt"';
-      if ($rudweb_this_content != 'cmtmod') {
-        echo' CLASS="hidden"';
-      } 
-      echo '>';
-      echo $rudweb_skin['adm']['mnu']['pre'];
-      restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/cmtmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
-      echo $rudweb_skin['adm']['mnu']['suf'];
-      echo $rudweb_skin['adm']['mnu']['sep'];
-      echo '</DIV>';
-
-      echo $rudweb_skin['adm']['mnutt']['pre'];
-      echo '<A onClick="JavaScript: toggleLayer(\'l2ftr\')">';
-      echo $rudweb_ln['featured']['tt'];
-      echo '</A>';
-      echo $rudweb_skin['adm']['mnutt']['suf'];
-    
-      echo '<DIV ID="l2ftr"';
-      if ($rudweb_this_content != 'ftrmod') {
-        echo' CLASS="hidden"';
-      } 
-      echo '>';
-      echo $rudweb_skin['adm']['mnu']['pre'];
-      restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/ftrmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
-      echo $rudweb_skin['adm']['mnu']['suf'];
-      echo $rudweb_skin['adm']['mnu']['sep'];
-      if(_RUDWEB_CFG_FTR_ON == 1) {
+        echo '<DIV ID="l2tag"';
+        if ($rudweb_this_content != 'tagmod') {echo' CLASS="hidden"';} 
+        echo '>';
         echo $rudweb_skin['adm']['mnu']['pre'];
-        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['add'], _RUDWEB_INDEX_PHP . 'admin/ftrmod/act/add', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], _RUDWEB_INDEX_PHP . 'admin/tagmod/act/adm', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
         echo $rudweb_skin['adm']['mnu']['suf'];
         echo $rudweb_skin['adm']['mnu']['sep'];
-        echo $rudweb_skin['adm']['mnu']['pre'];
-        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], _RUDWEB_INDEX_PHP . 'admin/ftrmod/act/adm', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
-        echo $rudweb_skin['adm']['mnu']['suf'];
-        echo $rudweb_skin['adm']['mnu']['sep'];
+        echo '</DIV>';
       }
-      echo '</DIV>';
+      
+      if(_RUDWEB_CFG_CNT_CMNTS == 1) {
+        echo $rudweb_skin['adm']['mnutt']['pre'];
+        echo '<A onClick="JavaScript: toggleLayer(\'l2cmt\')">';
+        echo $rudweb_ln['cmt']['cmtt'];
+        echo '</A>';
+        echo $rudweb_skin['adm']['mnutt']['suf'];
+      
+        echo '<DIV ID="l2cmt"';
+        if ($rudweb_this_content != 'cmtmod') {echo' CLASS="hidden"';} 
+        echo '>';
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/cmtmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+        echo '</DIV>';
+      }
+      if(_RUDWEB_CFG_FTR_ON == 1) {
+        echo $rudweb_skin['adm']['mnutt']['pre'];
+        echo '<A onClick="JavaScript: toggleLayer(\'l2ftr\')">';
+        echo $rudweb_ln['featured']['tt'];
+        echo '</A>';
+        echo $rudweb_skin['adm']['mnutt']['suf'];
+      
+        echo '<DIV ID="l2ftr"';
+        if ($rudweb_this_content != 'ftrmod') {echo' CLASS="hidden"';} 
+        echo '>';
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/ftrmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['add'], _RUDWEB_INDEX_PHP . 'admin/ftrmod/act/add', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], _RUDWEB_INDEX_PHP . 'admin/ftrmod/act/adm', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+        echo '</DIV>';
+      }
     echo '</DIV>';
     // SEPARATOR
     
-    echo $rudweb_skin['adm']['mnuhd']['pre'];
-    echo '<A onClick="JavaScript: toggleLayer(\'l1ctl\')">';
-    echo $rudweb_ln['catalog']['catalog'];
-    echo '</A>';
-    echo $rudweb_skin['adm']['mnuhd']['suf'];
     
-    echo '<DIV ID="l1ctl">';
-    
-    echo $rudweb_skin['adm']['mnutt']['pre'];
-    echo '<A onClick="JavaScript: toggleLayer(\'l2cat\')">';
-    echo $rudweb_ln['adm']['settings'];
-    echo '</A>';
-    echo $rudweb_skin['adm']['mnutt']['suf'];
-    
-    echo '<DIV ID="l2cat"';
-      if ($rudweb_this_content != 'catmod') {
-        echo' CLASS="hidden"';
-      } 
-      echo '>';
-      echo $rudweb_skin['adm']['mnu']['pre'];
-      restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/catmod/act/ipg', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
-      echo $rudweb_skin['adm']['mnu']['suf'];
-      echo $rudweb_skin['adm']['mnu']['sep'];
-
-    echo '</DIV>';
     if(_RUDWEB_CFG_CAT == 1) {
+      echo $rudweb_skin['adm']['mnuhd']['pre'];
+      echo '<A onClick="JavaScript: toggleLayer(\'l1ctl\')">';
+      echo $rudweb_ln['catalog']['catalog'];
+      echo '</A>';
+      echo $rudweb_skin['adm']['mnuhd']['suf'];
+      
+      echo '<DIV ID="l1ctl">';
+      
+      echo $rudweb_skin['adm']['mnutt']['pre'];
+      echo '<A onClick="JavaScript: toggleLayer(\'l2cat\')">';
+      echo $rudweb_ln['adm']['settings'];
+      echo '</A>';
+      echo $rudweb_skin['adm']['mnutt']['suf'];
+      
+      echo '<DIV ID="l2cat"';
+        if ($rudweb_this_content != 'catmod') {
+          echo' CLASS="hidden"';
+        } 
+        echo '>';
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/catmod/act/ipg', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+
+      echo '</DIV>';
       echo $rudweb_skin['adm']['mnutt']['pre'];
       echo '<A onClick="JavaScript: toggleLayer(\'l2itm\')">';
       echo $rudweb_ln['catalog']['itemstt'];
       echo '</A>';
       echo $rudweb_skin['adm']['mnutt']['suf'];
-      
+        
       echo '<DIV ID="l2itm"';
-        if ($rudweb_this_content != 'itemadd') {
+      if ($rudweb_this_content != 'itemadd') {
           echo' CLASS="hidden"';
         } 
         echo '>';
       echo $rudweb_skin['adm']['mnu']['pre'];
-      restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['add'], _RUDWEB_INDEX_PHP . 'admin/itemadd', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+      restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['add'], _RUDWEB_INDEX_PHP . 'admin/itemadd', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
       echo $rudweb_skin['adm']['mnu']['suf'];
       echo $rudweb_skin['adm']['mnu']['sep'];
-      
+        
       echo '</DIV>';
       
-      echo $rudweb_skin['adm']['mnutt']['pre'];
-      echo '<A onClick="JavaScript: toggleLayer(\'l2csp\')">';
-      echo $rudweb_ln['catalog']['csp'];
-      echo '</A>';
-      echo $rudweb_skin['adm']['mnutt']['suf'];
-      
-      echo '<DIV ID="l2csp"';
-        if ($rudweb_this_content != 'cspmod') {
-          echo' CLASS="hidden"';
-        } 
+      if(_RUDWEB_CFG_CSP_ON == "1") {
+        echo $rudweb_skin['adm']['mnutt']['pre'];
+        echo '<A onClick="JavaScript: toggleLayer(\'l2csp\')">';
+        echo $rudweb_ln['catalog']['csp'];
+        echo '</A>';
+        echo $rudweb_skin['adm']['mnutt']['suf'];
+        
+        echo '<DIV ID="l2csp"';
+        if ($rudweb_this_content != 'cspmod') {echo' CLASS="hidden"';} 
         echo '>';
-      echo $rudweb_skin['adm']['mnu']['pre'];
-      restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/cspmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
-      echo $rudweb_skin['adm']['mnu']['suf'];
-      echo $rudweb_skin['adm']['mnu']['sep'];
-      echo $rudweb_skin['adm']['mnu']['pre'];
-      restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['add'], _RUDWEB_INDEX_PHP . 'admin/cspmod/act/add', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
-      echo $rudweb_skin['adm']['mnu']['suf'];
-      echo $rudweb_skin['adm']['mnu']['sep'];
-      echo $rudweb_skin['adm']['mnu']['pre'];
-      restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], _RUDWEB_INDEX_PHP . 'admin/cspmod/act/adm', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
-      echo $rudweb_skin['adm']['mnu']['suf'];
-      echo $rudweb_skin['adm']['mnu']['sep'];
-      
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/cspmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['add'], _RUDWEB_INDEX_PHP . 'admin/cspmod/act/add', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], _RUDWEB_INDEX_PHP . 'admin/cspmod/act/adm', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+       
+        echo '</DIV>';
+      }
       echo '</DIV>';
     }
-    echo '</DIV>';
-    
+  
     // SEPARATOR
     
     echo $rudweb_skin['adm']['mnu']['ftr'];

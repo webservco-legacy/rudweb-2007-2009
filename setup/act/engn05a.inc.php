@@ -1,7 +1,7 @@
 <?php
 /*
-./setup/act/engn04a.inc.php
-16:14 2008-05-21
+./setup/act/engn05a.inc.php
+14:49 2008-05-27
 */
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -24,6 +24,7 @@ $dirs[1] = "lib/ttf/";
 $files[$dirs[1]][0] = array();
 $files[$dirs[1]][1] = array();
 $files[$dirs[1]][1][] = "01_Digit.ttf";
+$files[$dirs[1]][1][] = "Dustismo.ttf";
 
 $dirs[2] = "lib/editor/";
 $files[$dirs[2]][0] = array();

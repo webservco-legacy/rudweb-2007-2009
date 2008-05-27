@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/engn01a.inc.php
-20:48 2008-05-23
+14:52 2008-05-27
 */
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
 echo "\n<TR><TD CLASS=\"ttt\" WIDTH=\"200\"><B>Root</B></TD>";
@@ -16,4 +16,5 @@ $files[$dirs[0]][1][] = "index.php";
 $files[$dirs[0]][1][] = "intro.php";
 $files[$dirs[0]][1][] = "logout.php";
 $files[$dirs[0]][1][] = "redirect.php";
+$files[$dirs[0]][1][] = "rudweb.php";
 ?>

@@ -1,11 +1,11 @@
 <?php
 /*
 ./inc/admftr.inc.php
-16:51 2008-04-21
+11:09 2008-05-26
 */
-if($new_onoff !== "") {
+if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 5 && $new_onoff !== "") {
   changedbcfg("FTR_ON", $new_onoff, $action_date, $action_time);
-  $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/ftrmod';
+  $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/ftrmoda';
 }
 if($ftr_lmt !== "") {
   changedbcfg("FTR_LMT", $ftr_lmt, $action_date, $action_time);

@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/adm/cspmod.inc.php
-16:23 2008-04-21
+11:41 2008-05-26
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -17,36 +17,10 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
       echo $rudweb_skin['adm']['mod']['pre'];
       echo $rudweb_ln['adm']['cspmodstat0'];
       echo "<BR>";
-      if(_RUDWEB_DBCFG == "1") {
-        echo "<FORM ENCTYPE=\"multipart/form-data\" CLASS=\"csponoffform\" NAME=\"csponoffform\" ACTION=\"\" METHOD=\"post\">";
-        echo "<INPUT TYPE=\"hidden\" NAME=\"csponoff\" VALUE=\"1\">";
-        echo "<BR>";
-        echo "<INPUT CLASS=\"formsubmit\" TYPE=\"submit\" NAME=\"cspmod\" VALUE=\"".$rudweb_ln['adm']['cspmodstat01']."\">";
-        echo "</FORM>";
-      }
-      else {
-        echo $rudweb_ln['adm']['cspmodstat00'];
-      }
       echo $rudweb_skin['adm']['mod']['suf'];
     } // if disabled
 
     else {
-      echo $rudweb_skin['adm']['mod']['pre'];
-      echo $rudweb_ln['adm']['cspmodstat1'];
-      echo "<BR>";
-      
-      if(_RUDWEB_DBCFG == "1") {
-        echo "<FORM ENCTYPE=\"multipart/form-data\" CLASS=\"csponoffform\" NAME=\"csponoffform\" ACTION=\"\" METHOD=\"post\">";
-        echo "<INPUT TYPE=\"hidden\" NAME=\"csponoff\" VALUE=\"0\">";
-        echo "<BR>";
-        echo "<INPUT CLASS=\"formsubmit\" TYPE=\"submit\" NAME=\"cspmod\" VALUE=\"".$rudweb_ln['adm']['cspmodstat10']."\">";
-        echo "</FORM>";
-      }
-      else {
-        echo $rudweb_ln['adm']['cspmodstat11'];
-      }  
-      echo $rudweb_skin['adm']['mod']['suf'];
-
       if(_RUDWEB_DBCFG == "1") {
         echo $rudweb_skin['adm']['mod']['pre'];
         echo "<FORM ENCTYPE=\"multipart/form-data\" CLASS=\"csplmtform\" NAME=\"csplmtform\" ACTION=\"\" METHOD=\"post\">";

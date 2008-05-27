@@ -2,17 +2,17 @@
 /**
 * News Module Administration
 *
-* <I>./inc/adm/nwsmod.inc.php</I>
-* <BR>Contains News Administration Stuff
+* <I>./inc/adm/nwsmoda.inc.php</I>
+* <BR>Contains News Module Activation/Deactivation Stuff
 * 
 * @author Radu Maier <rudisoft@rudisoft.net>
 * @copyright Copyright (c) 2007-2008, Radu Maier
 * @license http://opensource.org/licenses/gpl-2.0.php
-* @version 16:42 2008-04-29
+* @version 10:37 2008-05-26
 * @access public
 * @package RudWEb
 * @subpackage Modules
-* @since 16:42 2008-04-29
+* @since 10:34 2008-05-26
 */
 
 /**
@@ -20,7 +20,7 @@
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
-if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
+if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 5) {
 
   echo $rudweb_skin['cnt']['tt1']['pre'];
   echo $rudweb_ln['nws']['tt'];

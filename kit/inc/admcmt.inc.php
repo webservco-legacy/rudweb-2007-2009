@@ -1,11 +1,11 @@
 <?php
 /*
 ./inc/admcmt.inc.php
-14:40 2008-04-29
+10:56 2008-05-26
 */
-if($new_onoff !== "") {
+if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 5 && $new_onoff !== "") {
   changedbcfg("CNT_CMNTS", $new_onoff, $action_date, $action_time);
-  $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/cmtmod';
+  $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/cmtmoda';
 }
 $cmt_alias = '';
 if(isset($_POST['cmt_id'])) {
