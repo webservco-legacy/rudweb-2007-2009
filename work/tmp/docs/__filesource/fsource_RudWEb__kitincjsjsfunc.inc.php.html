@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for jsfunc.inc.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file jsfunc.inc.php</h1>
+<p>Documentation is available at <a href="../RudWEb/_kit---inc---js---jsfunc.inc.php.html">jsfunc.inc.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a><span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-comm">./inc/js/jsfunc.inc.php</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-comm">14:07&nbsp;2008-04-22</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-comm">*/</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-key">if</span><span class="src-sym">(</span><span class="src-sym">!</span><a href="http://www.php.net/defined">defined</a><span class="src-sym">(</span><span class="src-str">'_RUDWEB_PUBFIL'</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span><span class="src-inc">require_once&nbsp;</span><span class="src-str">'./../../lib/404.php'</span><span class="src-sym">;</span><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-php">?&gt;</span></div></li>
+<li><div class="src-line"><a name="a8"></a>&lt;SCRIPT&nbsp;TYPE=&quot;text/javascript&quot;&nbsp;LANGUAGE=&quot;JavaScript&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a9"></a>window.defaultStatus&nbsp;=&nbsp;&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$rudweb_ln</span><span class="src-sym">[</span><span class="src-str">'WinStatDef'</span><span class="src-sym">]</span><span class="src-sym">;&nbsp;</span><span class="src-php">?&gt;</span>&quot;;</div></li>
+<li><div class="src-line"><a name="a10"></a>var&nbsp;fileLoadingImage&nbsp;=&nbsp;&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-id"><a href="../RudWEb/Settings/_kit---inc---rudwebc.inc.php.html#define_RUDWEB_SKIN_URL">_RUDWEB_SKIN_URL</a>&nbsp;</span>.&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-id">_RUDWEB_PRE</span>.<span class="src-str">'usr_skin_dir'</span><span class="src-sym">]</span><span class="src-php">?&gt;</span>/graphics/loading.gif&quot;;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a11"></a>var&nbsp;fileBottomNavCloseImage&nbsp;=&nbsp;&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-id"><a href="../RudWEb/Settings/_kit---inc---rudwebc.inc.php.html#define_RUDWEB_SKIN_URL">_RUDWEB_SKIN_URL</a>&nbsp;</span>.&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-id">_RUDWEB_PRE</span>.<span class="src-str">'usr_skin_dir'</span><span class="src-sym">]</span><span class="src-php">?&gt;</span>/graphics/close.gif&quot;;</div></li>
+<li><div class="src-line"><a name="a12"></a>function&nbsp;toggleLayer(&nbsp;whichLayer&nbsp;)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a13"></a>&nbsp;&nbsp;var&nbsp;elem,&nbsp;vis;</div></li>
+<li><div class="src-line"><a name="a14"></a>&nbsp;&nbsp;if(&nbsp;document.getElementById&nbsp;)&nbsp;//&nbsp;this&nbsp;is&nbsp;the&nbsp;way&nbsp;the&nbsp;standards&nbsp;work</div></li>
+<li><div class="src-line"><a name="a15"></a>&nbsp;&nbsp;&nbsp;&nbsp;elem&nbsp;=&nbsp;document.getElementById(&nbsp;whichLayer&nbsp;);</div></li>
+<li><div class="src-line"><a name="a16"></a>&nbsp;&nbsp;else&nbsp;if(&nbsp;document.all&nbsp;)&nbsp;//&nbsp;this&nbsp;is&nbsp;the&nbsp;way&nbsp;old&nbsp;msie&nbsp;versions&nbsp;work</div></li>
+<li><div class="src-line"><a name="a17"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;elem&nbsp;=&nbsp;document.all[whichLayer];</div></li>
+<li><div class="src-line"><a name="a18"></a>&nbsp;&nbsp;else&nbsp;if(&nbsp;document.layers&nbsp;)&nbsp;//&nbsp;this&nbsp;is&nbsp;the&nbsp;way&nbsp;nn4&nbsp;works</div></li>
+<li><div class="src-line"><a name="a19"></a>&nbsp;&nbsp;&nbsp;&nbsp;elem&nbsp;=&nbsp;document.layers[whichLayer];</div></li>
+<li><div class="src-line"><a name="a20"></a>&nbsp;&nbsp;vis&nbsp;=&nbsp;elem.style;</div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;&nbsp;//&nbsp;if&nbsp;the&nbsp;style.display&nbsp;value&nbsp;is&nbsp;blank&nbsp;we&nbsp;try&nbsp;to&nbsp;figure&nbsp;it&nbsp;out&nbsp;here</div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;&nbsp;if(vis.display==''&amp;&amp;elem.offsetWidth!=undefined&amp;&amp;elem.offsetHeight!=undefined)</div></li>
+<li><div class="src-line"><a name="a23"></a>&nbsp;&nbsp;&nbsp;&nbsp;vis.display&nbsp;=&nbsp;(elem.offsetWidth!=0&amp;&amp;elem.offsetHeight!=0)?'block':'none';</div></li>
+<li><div class="src-line"><a name="a24"></a>&nbsp;&nbsp;vis.display&nbsp;=&nbsp;(vis.display==''||vis.display=='block')?'none':'block';</div></li>
+<li><div class="src-line"><a name="a25"></a>}</div></li>
+<li><div class="src-line"><a name="a26"></a>function&nbsp;copyvalue(element_from,element_to)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;&nbsp;element_to.value&nbsp;=&nbsp;element_from.value</div></li>
+<li><div class="src-line"><a name="a28"></a>}</div></li>
+<li><div class="src-line"><a name="a29"></a>/*</div></li>
+<li><div class="src-line"><a name="a30"></a>http://image-opacity.4wsearch.com/</div></li>
+<li><div class="src-line"><a name="a31"></a>the&nbsp;JS&nbsp;code</div></li>
+<li><div class="src-line"><a name="a32"></a>*/</div></li>
+<li><div class="src-line"><a name="a33"></a>function&nbsp;bevisible(cur,which)&nbsp;&nbsp;&nbsp;&nbsp;{</div></li>
+<li><div class="src-line"><a name="a34"></a>&nbsp;&nbsp;&nbsp;&nbsp;if(document.getElementById)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a35"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(which==0)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a36"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(document.all)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a37"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cur.filters.alpha.opacity=100</div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{</div></li>
+<li><div class="src-line"><a name="a40"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cur.style.setProperty(&quot;-moz-opacity&quot;,&nbsp;1,&nbsp;&quot;&quot;);</div></li>
+<li><div class="src-line"><a name="a41"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a42"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{</div></li>
+<li><div class="src-line"><a name="a44"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(document.all)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a45"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cur.filters.alpha.opacity=80</div></li>
+<li><div class="src-line"><a name="a46"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a47"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{</div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cur.style.setProperty(&quot;-moz-opacity&quot;,&nbsp;.8,&nbsp;&quot;&quot;);</div></li>
+<li><div class="src-line"><a name="a49"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a50"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a52"></a>}</div></li>
+<li><div class="src-line"><a name="a53"></a>function&nbsp;limitText(limitField,&nbsp;limitCount,&nbsp;limitNum)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a54"></a>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(limitField.value.length&nbsp;&gt;&nbsp;limitNum)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a55"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;limitField.value&nbsp;=&nbsp;limitField.value.substring(0,&nbsp;limitNum);</div></li>
+<li><div class="src-line"><a name="a56"></a>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{</div></li>
+<li><div class="src-line"><a name="a57"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;limitCount.value&nbsp;=&nbsp;limitNum&nbsp;-&nbsp;limitField.value.length;</div></li>
+<li><div class="src-line"><a name="a58"></a>&nbsp;&nbsp;&nbsp;&nbsp;}</div></li>
+<li><div class="src-line"><a name="a59"></a>}</div></li>
+<li><div class="src-line"><a name="a60"></a>function&nbsp;addTag(newvalue,element_to)&nbsp;{</div></li>
+<li><div class="src-line"><a name="a61"></a>&nbsp;&nbsp;element_to.value&nbsp;=&nbsp;element_to.value&nbsp;+&nbsp;newvalue&nbsp;+&nbsp;',&nbsp;';</div></li>
+<li><div class="src-line"><a name="a62"></a>}</div></li>
+<li><div class="src-line"><a name="a63"></a>&lt;/SCRIPT&gt;</div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed, 28 May 2008 12:27:24 +0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</body>
+</html>

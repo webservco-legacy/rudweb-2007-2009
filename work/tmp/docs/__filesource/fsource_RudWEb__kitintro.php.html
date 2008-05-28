@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for intro.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file intro.php</h1>
+<p>Documentation is available at <a href="../RudWEb/_kit---intro.php.html">intro.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a><span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-comm">./intro.php</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-comm">09:27&nbsp;2008-04-21</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-comm">*/</span></div></li>
+<li><div class="src-line"><a name="a6"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">&quot;_RUDWEB_PUBFIL&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-id">TRUE</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-inc">require_once&nbsp;</span><span class="src-str">'./inc/config.inc.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-inc">require_once&nbsp;</span><span class="src-str">'./inc/rudwebc.inc.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-inc">require_once&nbsp;</span><span class="src-id">_RUDWEB_INC_DIR&nbsp;</span>.&nbsp;<span class="src-str">'rudweb1.inc.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-comm">//require_once&nbsp;_RUDWEB_INC_DIR&nbsp;.&nbsp;'rudweb2.inc.php';</span></div></li>
+<li><div class="src-line"><a name="a11"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-var">$rudweb_cnt_type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-str">&quot;0&quot;</span><span class="src-sym">;&nbsp;&nbsp;</span><span class="src-comm">//&nbsp;NOT&nbsp;REALLY&nbsp;NEEDED</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-var">$rudweb_this_content&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-str">'intro'</span><span class="src-sym">;&nbsp;&nbsp;</span><span class="src-comm">//&nbsp;NOT&nbsp;REALLY&nbsp;NEEDED&nbsp;&nbsp;&nbsp;index</span></div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-var">$rudweb_this_content_level&nbsp;</span>=&nbsp;<a href="../RudWEb/_kit---inc---rudwebf.inc.php.html#functiongetCntLev">getCntLev</a><span class="src-sym">(</span><span class="src-var">$rudweb_this_content</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;&nbsp;</span><span class="src-comm">//&nbsp;NOT&nbsp;REALLY&nbsp;NEEDED</span></div></li>
+<li><div class="src-line"><a name="a15"></a><span class="src-var">$rudweb_mnu_id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<a href="../RudWEb/_kit---inc---rudwebf.inc.php.html#functiongetCntMnuId">getCntMnuId</a><span class="src-sym">(</span><span class="src-str">'index'</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;&nbsp;</span><span class="src-comm">//&nbsp;NOT&nbsp;REALLY&nbsp;NEEDED</span></div></li>
+<li><div class="src-line"><a name="a16"></a><span class="src-var">$rudweb_mnu_id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-str">&quot;0&quot;</span><span class="src-sym">;&nbsp;&nbsp;</span><span class="src-comm">//&nbsp;only&nbsp;for&nbsp;travel-agency</span></div></li>
+<li><div class="src-line"><a name="a17"></a><span class="src-var">$rudweb_stats_page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-str">'intro'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a18"></a><span class="src-var">$rudweb_req_page&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-str">'intro'</span><span class="src-sym">;&nbsp;</span><span class="src-comm">//&nbsp;NOT&nbsp;REALLY&nbsp;NEEDED</span></div></li>
+<li><div class="src-line"><a name="a19"></a><span class="src-var">$rudweb_page_title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-id">_RUDWEB_WSTT&nbsp;</span>.&nbsp;<span class="src-str">&quot;&nbsp;-&nbsp;&quot;&nbsp;</span>.&nbsp;<span class="src-str">&quot;Index&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a20"></a><span class="src-var">$rudweb_page_description&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-id">_RUDWEB_WSDS</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a21"></a><span class="src-var">$rudweb_page_keywords&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-id">_RUDWEB_WSKW</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a22"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a23"></a><span class="src-inc">require_once&nbsp;</span><span class="src-id">_RUDWEB_INC_DIR&nbsp;</span>.&nbsp;<span class="src-str">'rudweb3.inc.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a24"></a><span class="src-inc">require_once&nbsp;</span><span class="src-id">_RUDWEB_INC_DIR&nbsp;</span>.&nbsp;<span class="src-str">'phphdi.inc.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a25"></a><span class="src-php">?&gt;</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed, 28 May 2008 12:27:20 +0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</body>
+</html>
