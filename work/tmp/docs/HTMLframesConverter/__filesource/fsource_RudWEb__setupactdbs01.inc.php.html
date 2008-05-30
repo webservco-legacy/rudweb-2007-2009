@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for dbs01.inc.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file dbs01.inc.php</h1>
+<p>Documentation is available at <a href="../RudWEb/_setup---act---dbs01.inc.php.html">dbs01.inc.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a><span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-comm">./setup/act/dbs01.inc.php</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-comm">12:50&nbsp;2008-04-05</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-comm">*/</span></div></li>
+<li><div class="src-line"><a name="a6"></a>echo&nbsp;<span class="src-str">&quot;\n&lt;TABLE&nbsp;BORDER=\&quot;0\&quot;&nbsp;CELLPADDING=\&quot;3\&quot;&nbsp;CELLSPACING=\&quot;0\&quot;&nbsp;BGCOLOR=\&quot;#000000\&quot;&nbsp;WIDTH=\&quot;100%\&quot;&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a7"></a>echo&nbsp;<span class="src-str">&quot;\n&lt;TR&gt;&lt;TD&nbsp;CLASS=\&quot;ttt\&quot;&nbsp;WIDTH=\&quot;200\&quot;&gt;&lt;B&gt;Database&nbsp;Options&lt;/B&gt;&lt;/TD&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a8"></a>echo&nbsp;<span class="src-str">&quot;&lt;/TR&gt;&lt;/TABLE&gt;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-php">?&gt;</span></div></li>
+<li><div class="src-line"><a name="a10"></a>&lt;FORM&nbsp;NAME=&quot;dbsform&quot;&nbsp;METHOD=&quot;POST&quot;&nbsp;STYLE=&quot;display:&nbsp;inline;&nbsp;margin:&nbsp;0px;&nbsp;padding:&nbsp;0px;&quot;&nbsp;ACTION=&quot;./setup.php?pid=<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$pid</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&amp;amp;set=<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$set</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&amp;amp;act=dbs&amp;amp;step=2&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a11"></a>&lt;INPUT&nbsp;TYPE=&quot;hidden&quot;&nbsp;NAME=&quot;cfg_dbs_00&quot;&nbsp;VALUE=&quot;1&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a12"></a>&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;3&quot;&nbsp;CELLSPACING=&quot;0&quot;&nbsp;BGCOLOR=&quot;#000000&quot;&nbsp;WIDTH=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a13"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;150&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;Insert&nbsp;Default&nbsp;Data&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a14"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a15"></a>&lt;INPUT&nbsp;TYPE=&quot;checkbox&quot;&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_cfg_dbs_01&quot;<span class="src-php">&lt;?php&nbsp;</span><span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_cfg_dbs_01'</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">'on'</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span>echo&nbsp;<span class="src-str">'&nbsp;CHECKED'</span><span class="src-sym">;</span><span class="src-sym">}</span><span class="src-php">?&gt;</span>&gt;</div></li>
+<li><div class="src-line"><a name="a16"></a>&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a17"></a>&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;3&quot;&nbsp;CELLSPACING=&quot;0&quot;&nbsp;BGCOLOR=&quot;#000000&quot;&nbsp;WIDTH=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a18"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;150&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;Insert&nbsp;Example&nbsp;Data&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a19"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a20"></a>&lt;INPUT&nbsp;TYPE=&quot;checkbox&quot;&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_cfg_dbs_02&quot;<span class="src-php">&lt;?php&nbsp;</span><span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_cfg_dbs_02'</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">'on'</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span>echo&nbsp;<span class="src-str">'&nbsp;CHECKED'</span><span class="src-sym">;</span><span class="src-sym">}</span><span class="src-php">?&gt;</span>&gt;</div></li>
+<li><div class="src-line"><a name="a21"></a>&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a22"></a>&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;3&quot;&nbsp;CELLSPACING=&quot;0&quot;&nbsp;BGCOLOR=&quot;#000000&quot;&nbsp;WIDTH=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a23"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;150&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;&amp;#160;&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a24"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a25"></a>&nbsp;&nbsp;&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;0&quot;&nbsp;CELLSPACING=&quot;0&quot;&gt;&lt;TR&gt;</div></li>
+<li><div class="src-line"><a name="a26"></a>&nbsp;&nbsp;&lt;TD&gt;&lt;INPUT&nbsp;TYPE=&quot;submit&quot;&nbsp;CLASS=&quot;button&quot;&nbsp;STYLE=&quot;background-color:&nbsp;#DDDDDD&quot;&nbsp;NAME=&quot;next&quot;&nbsp;VALUE=&quot;next&quot;&gt;&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;&nbsp;&lt;/TR&gt;&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a28"></a>&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a29"></a>&lt;/FORM&gt;</div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a31"></a>&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;3&quot;&nbsp;CELLSPACING=&quot;0&quot;&nbsp;BGCOLOR=&quot;#000000&quot;&nbsp;WIDTH=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a32"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;150&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;&amp;#160;&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a33"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a34"></a>&nbsp;&nbsp;&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;0&quot;&nbsp;CELLSPACING=&quot;0&quot;&gt;&lt;TR&gt;</div></li>
+<li><div class="src-line"><a name="a35"></a>&nbsp;&nbsp;&lt;TD&gt;</div></li>
+<li><div class="src-line"><a name="a36"></a>&nbsp;&nbsp;&lt;FORM&nbsp;NAME=&quot;verifformabort&quot;&nbsp;METHOD=&quot;POST&quot;&nbsp;STYLE=&quot;display:&nbsp;inline;&nbsp;margin:&nbsp;0px;&nbsp;padding:&nbsp;0px;&quot;&nbsp;ACTION=&quot;./setup.php&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a37"></a>&nbsp;&nbsp;&lt;INPUT&nbsp;TYPE=&quot;submit&quot;&nbsp;CLASS=&quot;button&quot;&nbsp;STYLE=&quot;background-color:&nbsp;#BBBBBB&quot;&nbsp;NAME=&quot;abort&quot;&nbsp;VALUE=&quot;abort&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;&nbsp;&lt;/FORM&gt;</div></li>
+<li><div class="src-line"><a name="a39"></a>&nbsp;&nbsp;&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a40"></a>&nbsp;&nbsp;&lt;/TR&gt;&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a41"></a>&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 30 May 2008 16:46:23 +0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</body>
+</html>

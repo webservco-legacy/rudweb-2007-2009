@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs for page modtagsc.inc.php</title>
+			<link rel="stylesheet" href="../../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="file-name">/kit/inc/mod/modtagsc.inc.php</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+									<a href="#sec-includes">Includes</a>
+			|											<a href="#sec-functions">Functions</a>
+			</div>
+	<div class="info-box-body">	
+		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tags Module</p>
+<p class="description"><p><em>./inc/mod/modtagsc.inc.php</em>  <br />Contains Tag Related Functions For Content</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Radu Maier &lt;<a href="mailto:rudisoft@rudisoft.net">rudisoft@rudisoft.net</a>&gt;</li>
+				<li><span class="field">version:</span> 13:04 2008-04-26</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2007-2008, Radu Maier</li>
+				<li><span class="field">todo:</span> Also include the Blog Tags Settings</li>
+				<li><span class="field">todo:</span> Administration</li>
+				<li><span class="field">since:</span> 15:59 2008-04-25</li>
+				<li><span class="field">access:</span> public</li>
+				<li><span class="field">filesource:</span> <a href="../../__filesource/fsource_RudWEb_Modules_kitincmodmodtagsc.inc.php.html">Source Code for this file</a></li>
+				<li><span class="field">license:</span> <a href="http://opensource.org/licenses/gpl-2.0.php">http://opensource.org/licenses/gpl-2.0.php</a></li>
+			</ul>
+		
+			</div>
+</div>
+		
+
+	<a name="sec-includes"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Includes</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Includes</span>
+			|													<a href="#sec-functions">Functions</a>
+					</div>
+		<div class="info-box-body">	
+			<a name="__/__/lib/404_php"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="include-title">
+			<span class="include-type">require_once</span>
+			(<span class="include-name">'./../lib/404.php'</span>)
+			(line <span class="line-number"><a href="../../__filesource/fsource_RudWEb_Modules_kitincmodmodtagsc.inc.php.html#a23">23</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Authorized access only</p>
+	
+</div>
+		</div>
+	</div>
+	
+	
+	
+	<a name="sec-functions"></a>	
+	<div class="info-box">
+		<div class="info-box-title">Functions</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-includes">Includes</a>
+				|												<span class="disabled">Functions</span>
+		</div>
+		<div class="info-box-body">	
+			<a name="functionshowAllTags" id="functionshowAllTags"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">showAllTags</span> (line <span class="line-number"><a href="../../__filesource/fsource_RudWEb_Modules_kitincmodmodtagsc.inc.php.html#a84">84</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Shows all used tags</p>
+<p class="description"><p>Also displays the number of content items using each tag</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			showAllTags
+		</span>
+				()
+			</div>
+
+		
+	
+</div>
+<a name="functionshowCntTags" id="functionshowCntTags"><!-- --></a>
+<div class="oddrow">
+	
+	<div>
+		<span class="method-title">showCntTags</span> (line <span class="line-number"><a href="../../__filesource/fsource_RudWEb_Modules_kitincmodmodtagsc.inc.php.html#a30">30</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Shows all tags for a specified content</p>
+<p class="description"><p>Uses menu id, required page, content type, existing tags, blog content</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			showCntTags
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$rudweb_mnu_id</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$rudweb_req_page</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$rudweb_cnt_type</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$et</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$blog_content</span> = <span class="var-default">&amp;quot;0&amp;quot;</span>])
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$rudweb_mnu_id</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$rudweb_req_page</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$rudweb_cnt_type</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$et</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$blog_content</span>			</li>
+				</ul>
+		
+	
+</div>
+<a name="functionshowTagsContent" id="functionshowTagsContent"><!-- --></a>
+<div class="evenrow">
+	
+	<div>
+		<span class="method-title">showTagsContent</span> (line <span class="line-number"><a href="../../__filesource/fsource_RudWEb_Modules_kitincmodmodtagsc.inc.php.html#a51">51</a></span>)
+	</div> 
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Shows all content (blog style) matching a given tag</p>
+<p class="description"><p>Uses tag name</p></p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			showTagsContent
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$tag_name</span>)
+			</div>
+
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$tag_name</span>			</li>
+				</ul>
+		
+	
+</div>
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 30 May 2008 16:46:53 +0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>

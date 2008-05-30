@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for usett01.inc.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file usett01.inc.php</h1>
+<p>Documentation is available at <a href="../RudWEb/_setup---act---usett01.inc.php.html">usett01.inc.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a><span class="src-comm">/*</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-comm">./inc/act/usett01.inc.php</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-comm">20:48&nbsp;2008-05-23</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-comm">*/</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_site_url1'</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">''</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_site_url1'</span><span class="src-sym">]&nbsp;</span>=&nbsp;<span class="src-var">$target_url</span><span class="src-sym">[</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_pid'</span><span class="src-sym">]]</span><span class="src-sym">;</span><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_site_root1'</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">''</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_site_root1'</span><span class="src-sym">]&nbsp;</span>=&nbsp;<span class="src-var">$target_root</span>.<span class="src-var">$target_vars</span><span class="src-sym">[</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_pid'</span><span class="src-sym">]]</span><span class="src-sym">;</span><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-comm">//if($_SESSION['rudwebset_set_pre']&nbsp;==&nbsp;'')&nbsp;{$_SESSION['rudwebset_set_pre']&nbsp;=&nbsp;$target_name[$_SESSION['rudwebset_pid']];}</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_pre'</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">''</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_pre'</span><span class="src-sym">]&nbsp;</span>=&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_dbname'</span><span class="src-sym">]</span><span class="src-sym">;</span><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-php">?&gt;</span></div></li>
+<li><div class="src-line"><a name="a11"></a>&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;3&quot;&nbsp;CELLSPACING=&quot;0&quot;&nbsp;BGCOLOR=&quot;#000000&quot;&nbsp;WIDTH=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a12"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;total&quot;&nbsp;WIDTH=&quot;200&quot;&gt;&lt;BR&gt;&lt;B&gt;Engine&nbsp;Configuration:&lt;/B&gt;&lt;BR&gt;&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a13"></a>&lt;/TR&gt;&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a14"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a15"></a>&lt;FORM&nbsp;NAME=&quot;usettform1&quot;&nbsp;METHOD=&quot;POST&quot;&nbsp;STYLE=&quot;display:&nbsp;inline;&nbsp;margin:&nbsp;0px;&nbsp;padding:&nbsp;0px;&quot;&nbsp;ACTION=&quot;./setup.php?pid=<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$pid</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&amp;amp;set=<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$set</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&amp;amp;act=usett&amp;amp;step=2&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a16"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a17"></a>&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;3&quot;&nbsp;CELLSPACING=&quot;0&quot;&nbsp;BGCOLOR=&quot;#000000&quot;&nbsp;WIDTH=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a18"></a>&lt;TR&gt;</div></li>
+<li><div class="src-line"><a name="a19"></a>&lt;TD&nbsp;CLASS=&quot;hdr&quot;&gt;&lt;B&gt;Database:&lt;/B&gt;&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a20"></a>&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a22"></a>&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;3&quot;&nbsp;CELLSPACING=&quot;0&quot;&nbsp;BGCOLOR=&quot;#000000&quot;&nbsp;WIDTH=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a23"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;database&nbsp;type:&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a24"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a25"></a>&lt;INPUT&nbsp;TYPE=&quot;hidden&quot;&nbsp;NAME=&quot;set_dtype&quot;&nbsp;VALUE=&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_dbtype'</span><span class="src-sym">]</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a26"></a>&lt;INPUT&nbsp;TYPE=&quot;hidden&quot;&nbsp;NAME=&quot;set_dbmy&quot;&nbsp;VALUE=&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_dbmy'</span><span class="src-sym">]</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a27"></a>&lt;SELECT&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;dump&quot;&nbsp;DISABLED&gt;</div></li>
+<li><div class="src-line"><a name="a28"></a>&nbsp;&nbsp;&lt;OPTION&nbsp;VALUE=&quot;my&quot;&nbsp;<span class="src-php">&lt;?php&nbsp;</span><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_dbtype'</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">&quot;my&quot;</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span>echo&nbsp;<span class="src-str">&quot;&nbsp;SELECTED&quot;</span><span class="src-sym">;</span><span class="src-sym">}</span><span class="src-php">?&gt;</span>&gt;MySQL&lt;/OPTION&gt;</div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;&nbsp;&lt;OPTION&nbsp;VALUE=&quot;pg&quot;&nbsp;<span class="src-php">&lt;?php&nbsp;</span><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_dbtype'</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">&quot;pg&quot;</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span>echo&nbsp;<span class="src-str">&quot;&nbsp;SELECTED&quot;</span><span class="src-sym">;</span><span class="src-sym">}</span><span class="src-php">?&gt;</span>&gt;PostgreSQL&lt;/OPTION&gt;</div></li>
+<li><div class="src-line"><a name="a30"></a>&lt;/SELECT&gt;</div></li>
+<li><div class="src-line"><a name="a31"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a32"></a>&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a33"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a34"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;host:&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a35"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a36"></a>&lt;INPUT&nbsp;TYPE=&quot;text&quot;&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_dbhost&quot;&nbsp;SIZE=&quot;10&quot;&nbsp;MAXLENGTH=&quot;20&quot;&nbsp;VALUE=&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_dbhost'</span><span class="src-sym">]</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&quot;&nbsp;READONLY&gt;</div></li>
+<li><div class="src-line"><a name="a37"></a>&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a38"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a39"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;port:&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a40"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a41"></a>&lt;INPUT&nbsp;TYPE=&quot;text&quot;&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_dbport&quot;&nbsp;SIZE=&quot;10&quot;&nbsp;MAXLENGTH=&quot;20&quot;&nbsp;VALUE=&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_dbport'</span><span class="src-sym">]</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&quot;&nbsp;READONLY&gt;</div></li>
+<li><div class="src-line"><a name="a42"></a>&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a43"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a44"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;user:&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a45"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a46"></a>&lt;INPUT&nbsp;TYPE=&quot;text&quot;&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_dbuser&quot;&nbsp;SIZE=&quot;10&quot;&nbsp;MAXLENGTH=&quot;20&quot;&nbsp;VALUE=&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_dbuser'</span><span class="src-sym">]</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&quot;&nbsp;READONLY&gt;</div></li>
+<li><div class="src-line"><a name="a47"></a>&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a48"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a49"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;pasword:&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a50"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a51"></a>&lt;INPUT&nbsp;TYPE=&quot;text&quot;&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_dbpass&quot;&nbsp;SIZE=&quot;10&quot;&nbsp;MAXLENGTH=&quot;20&quot;&nbsp;VALUE=&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_dbpass'</span><span class="src-sym">]</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&quot;&nbsp;READONLY&gt;</div></li>
+<li><div class="src-line"><a name="a52"></a>&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a54"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;database&nbsp;name:&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a55"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a56"></a>&lt;INPUT&nbsp;TYPE=&quot;text&quot;&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_dbname&quot;&nbsp;SIZE=&quot;10&quot;&nbsp;MAXLENGTH=&quot;20&quot;&nbsp;VALUE=&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_dbname'</span><span class="src-sym">]</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&quot;&nbsp;READONLY&gt;</div></li>
+<li><div class="src-line"><a name="a57"></a>&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a58"></a>&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a59"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a60"></a>&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;3&quot;&nbsp;CELLSPACING=&quot;0&quot;&nbsp;BGCOLOR=&quot;#000000&quot;&nbsp;WIDTH=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a61"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;hdr&quot;&gt;&lt;B&gt;Website:&lt;/B&gt;&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a62"></a>&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a63"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a64"></a>&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;3&quot;&nbsp;CELLSPACING=&quot;0&quot;&nbsp;BGCOLOR=&quot;#000000&quot;&nbsp;WIDTH=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a65"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;local&nbsp;URL:&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a66"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a67"></a>&lt;INPUT&nbsp;TYPE=&quot;text&quot;&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_site_url1&quot;&nbsp;SIZE=&quot;50&quot;&nbsp;MAXLENGTH=&quot;150&quot;&nbsp;VALUE=&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_site_url1'</span><span class="src-sym">]</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&quot;&nbsp;READONLY&gt;</div></li>
+<li><div class="src-line"><a name="a68"></a>&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a69"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;server&nbsp;URL:&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a70"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a71"></a>&lt;INPUT&nbsp;TYPE=&quot;text&quot;&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_site_url2&quot;&nbsp;SIZE=&quot;50&quot;&nbsp;MAXLENGTH=&quot;150&quot;&nbsp;VALUE=&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_site_url2'</span><span class="src-sym">]</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a72"></a>&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a73"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;local&nbsp;doc&nbsp;root:&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a74"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a75"></a>&lt;INPUT&nbsp;TYPE=&quot;text&quot;&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_site_root1&quot;&nbsp;SIZE=&quot;50&quot;&nbsp;MAXLENGTH=&quot;150&quot;&nbsp;VALUE=&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_site_root1'</span><span class="src-sym">]</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&quot;&nbsp;READONLY&gt;</div></li>
+<li><div class="src-line"><a name="a76"></a>&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a77"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;server&nbsp;doc&nbsp;root:&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a78"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a79"></a>&lt;INPUT&nbsp;TYPE=&quot;text&quot;&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_site_root2&quot;&nbsp;SIZE=&quot;50&quot;&nbsp;MAXLENGTH=&quot;150&quot;&nbsp;VALUE=&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_site_root2'</span><span class="src-sym">]</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a80"></a>&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a81"></a>&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a83"></a>&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;3&quot;&nbsp;CELLSPACING=&quot;0&quot;&nbsp;BGCOLOR=&quot;#000000&quot;&nbsp;WIDTH=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a84"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;hdr&quot;&gt;&lt;B&gt;Configuration:&lt;/B&gt;&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a85"></a>&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a86"></a>&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;3&quot;&nbsp;CELLSPACING=&quot;0&quot;&nbsp;BGCOLOR=&quot;#000000&quot;&nbsp;WIDTH=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a87"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;site&nbsp;settings:&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a88"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a89"></a>&lt;SELECT&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_dbcfg&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a90"></a>&nbsp;&nbsp;&lt;OPTION&nbsp;VALUE=&quot;0&quot;&nbsp;<span class="src-php">&lt;?php&nbsp;</span><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_dbcfg'</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">&quot;0&quot;</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span>echo&nbsp;<span class="src-str">&quot;&nbsp;SELECTED&quot;</span><span class="src-sym">;</span><span class="src-sym">}</span><span class="src-php">?&gt;</span>&gt;file&lt;/OPTION&gt;</div></li>
+<li><div class="src-line"><a name="a91"></a>&nbsp;&nbsp;&lt;OPTION&nbsp;VALUE=&quot;1&quot;&nbsp;<span class="src-php">&lt;?php&nbsp;</span><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_dbcfg'</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">&quot;1&quot;</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span>echo&nbsp;<span class="src-str">&quot;&nbsp;SELECTED&quot;</span><span class="src-sym">;</span><span class="src-sym">}</span><span class="src-php">?&gt;</span>&gt;database&lt;/OPTION&gt;</div></li>
+<li><div class="src-line"><a name="a92"></a>&lt;/SELECT&gt;</div></li>
+<li><div class="src-line"><a name="a93"></a>&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a94"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a95"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;skin&nbsp;settings:&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a96"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a97"></a>&lt;SELECT&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_dbskin&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a98"></a>&nbsp;&nbsp;&lt;OPTION&nbsp;VALUE=&quot;0&quot;&nbsp;<span class="src-php">&lt;?php&nbsp;</span><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_dbskin'</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">&quot;0&quot;</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span>echo&nbsp;<span class="src-str">&quot;&nbsp;SELECTED&quot;</span><span class="src-sym">;</span><span class="src-sym">}</span><span class="src-php">?&gt;</span>&gt;file&lt;/OPTION&gt;</div></li>
+<li><div class="src-line"><a name="a99"></a>&nbsp;&nbsp;&lt;OPTION&nbsp;VALUE=&quot;1&quot;&nbsp;<span class="src-php">&lt;?php&nbsp;</span><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_dbskin'</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">&quot;1&quot;</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span>echo&nbsp;<span class="src-str">&quot;&nbsp;SELECTED&quot;</span><span class="src-sym">;</span><span class="src-sym">}</span><span class="src-php">?&gt;</span>&gt;database&lt;/OPTION&gt;</div></li>
+<li><div class="src-line"><a name="a100"></a>&lt;/SELECT&gt;</div></li>
+<li><div class="src-line"><a name="a101"></a>&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a102"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a103"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;global&nbsp;prefix:&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a104"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a105"></a>&lt;INPUT&nbsp;TYPE=&quot;text&quot;&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_pre&quot;&nbsp;SIZE=&quot;15&quot;&nbsp;MAXLENGTH=&quot;15&quot;&nbsp;VALUE=&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_pre'</span><span class="src-sym">]</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a106"></a>&amp;#160;(&lt;I&gt;&quot;_&quot;&nbsp;added&nbsp;automatically&lt;/I&gt;)</div></li>
+<li><div class="src-line"><a name="a107"></a>&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a108"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a109"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;SEO&nbsp;URLS:&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a110"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a111"></a><span class="src-php">&lt;?php&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a112"></a><span class="src-var">$ind_s_d&nbsp;</span>=&nbsp;<span class="src-str">''</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a113"></a><span class="src-var">$ind_s_o&nbsp;</span>=&nbsp;<span class="src-str">''</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a114"></a><span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_rewrite'</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-num">0</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a115"></a>&nbsp;&nbsp;<span class="src-var">$ind_s_d&nbsp;</span>=&nbsp;<span class="src-str">'&nbsp;DISABLED'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a116"></a>&nbsp;&nbsp;<span class="src-var">$ind_s_o&nbsp;</span>=&nbsp;<span class="src-str">'&nbsp;SELECTED'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a117"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a118"></a><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_index'</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">'index.php/'</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a119"></a>&nbsp;&nbsp;<span class="src-var">$ind_s_o&nbsp;</span>=&nbsp;<span class="src-str">'&nbsp;SELECTED'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a120"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a121"></a><span class="src-php">?&gt;</span></div></li>
+<li><div class="src-line"><a name="a122"></a>&lt;SELECT&nbsp;CLASS=&quot;general&quot;&nbsp;NAME=&quot;set_index&quot;<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$ind_s_d</span><span class="src-sym">;&nbsp;</span><span class="src-php">?&gt;</span>&gt;</div></li>
+<li><div class="src-line"><a name="a123"></a>&nbsp;&nbsp;&lt;OPTION&nbsp;VALUE=''&nbsp;<span class="src-php">&lt;?php&nbsp;</span><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'rudwebset_set_index'</span><span class="src-sym">]&nbsp;</span>==&nbsp;<span class="src-str">''</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span>echo&nbsp;<span class="src-str">&quot;&nbsp;SELECTED&quot;</span><span class="src-sym">;</span><span class="src-sym">}</span><span class="src-php">?&gt;</span>&gt;enabled&lt;/OPTION&gt;</div></li>
+<li><div class="src-line"><a name="a124"></a>&nbsp;&nbsp;&lt;OPTION&nbsp;VALUE='index.php/'<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$ind_s_o</span><span class="src-sym">;&nbsp;</span><span class="src-php">?&gt;</span>&gt;disabled&lt;/OPTION&gt;</div></li>
+<li><div class="src-line"><a name="a125"></a>&lt;/SELECT&gt;</div></li>
+<li><div class="src-line"><a name="a126"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a127"></a>&lt;/TD&gt;&lt;/TR&gt;</div></li>
+<li><div class="src-line"><a name="a128"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a129"></a>&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a130"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a131"></a><span class="src-php">&lt;?php&nbsp;</span><span class="src-key">if</span><span class="src-sym">(</span><span class="src-var">$usett_err&nbsp;</span>==&nbsp;<span class="src-str">'0'</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{&nbsp;</span><span class="src-php">?&gt;</span></div></li>
+<li><div class="src-line"><a name="a132"></a>&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;3&quot;&nbsp;CELLSPACING=&quot;0&quot;&nbsp;BGCOLOR=&quot;#000000&quot;&nbsp;WIDTH=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a133"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;&amp;#160;&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a134"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a135"></a>&nbsp;&nbsp;&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;0&quot;&nbsp;CELLSPACING=&quot;0&quot;&gt;&lt;TR&gt;</div></li>
+<li><div class="src-line"><a name="a136"></a>&nbsp;&nbsp;&lt;TD&gt;&lt;INPUT&nbsp;TYPE=&quot;submit&quot;&nbsp;CLASS=&quot;button&quot;&nbsp;STYLE=&quot;background-color:&nbsp;#DDDDDD&quot;&nbsp;NAME=&quot;next&quot;&nbsp;VALUE=&quot;next&quot;&gt;&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a137"></a>&nbsp;&nbsp;&lt;/TR&gt;&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a138"></a>&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a139"></a><span class="src-php">&lt;?php&nbsp;</span><span class="src-sym">}&nbsp;</span><span class="src-php">?&gt;</span></div></li>
+<li><div class="src-line"><a name="a140"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a141"></a>&lt;/FORM&gt;</div></li>
+<li><div class="src-line"><a name="a142"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a143"></a>&lt;!--</div></li>
+<li><div class="src-line"><a name="a144"></a>&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;3&quot;&nbsp;CELLSPACING=&quot;0&quot;&nbsp;BGCOLOR=&quot;#000000&quot;&nbsp;WIDTH=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a145"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;&amp;#160;&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a146"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a147"></a>&nbsp;&nbsp;&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;0&quot;&nbsp;CELLSPACING=&quot;0&quot;&gt;&lt;TR&gt;</div></li>
+<li><div class="src-line"><a name="a148"></a>&nbsp;&nbsp;&lt;TD&gt;</div></li>
+<li><div class="src-line"><a name="a149"></a>&nbsp;&nbsp;&lt;FORM&nbsp;NAME=&quot;verifformback&quot;&nbsp;METHOD=&quot;POST&quot;&nbsp;STYLE=&quot;display:&nbsp;inline;&nbsp;margin:&nbsp;0px;&nbsp;padding:&nbsp;0px;&quot;&nbsp;ACTION=&quot;./setup.php?pid=<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$pid</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&amp;amp;set=<span class="src-php">&lt;?php&nbsp;</span>echo&nbsp;<span class="src-var">$set</span><span class="src-sym">;</span><span class="src-php">?&gt;</span>&amp;amp;act=skins&amp;amp;step=2&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a150"></a>&nbsp;&nbsp;&lt;INPUT&nbsp;TYPE=&quot;submit&quot;&nbsp;CLASS=&quot;button&quot;&nbsp;STYLE=&quot;background-color:&nbsp;#CCCCCC&quot;&nbsp;NAME=&quot;back&quot;&nbsp;VALUE=&quot;back&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a151"></a>&nbsp;&nbsp;&lt;/FORM&gt;</div></li>
+<li><div class="src-line"><a name="a152"></a>&nbsp;&nbsp;&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a153"></a>&nbsp;&nbsp;&lt;/TR&gt;&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a154"></a>&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a155"></a>--&gt;</div></li>
+<li><div class="src-line"><a name="a156"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a157"></a>&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;3&quot;&nbsp;CELLSPACING=&quot;0&quot;&nbsp;BGCOLOR=&quot;#000000&quot;&nbsp;WIDTH=&quot;100%&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a158"></a>&lt;TR&gt;&lt;TD&nbsp;CLASS=&quot;cnt&quot;&nbsp;WIDTH=&quot;200&quot;&nbsp;STYLE=&quot;text-align:&nbsp;right&quot;&gt;&amp;#160;&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a159"></a>&lt;TD&nbsp;CLASS=&quot;cnt&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a160"></a>&nbsp;&nbsp;&lt;TABLE&nbsp;BORDER=&quot;0&quot;&nbsp;CELLPADDING=&quot;0&quot;&nbsp;CELLSPACING=&quot;0&quot;&gt;&lt;TR&gt;</div></li>
+<li><div class="src-line"><a name="a161"></a>&nbsp;&nbsp;&lt;TD&gt;</div></li>
+<li><div class="src-line"><a name="a162"></a>&nbsp;&nbsp;&lt;FORM&nbsp;NAME=&quot;verifformabort&quot;&nbsp;METHOD=&quot;POST&quot;&nbsp;STYLE=&quot;display:&nbsp;inline;&nbsp;margin:&nbsp;0px;&nbsp;padding:&nbsp;0px;&quot;&nbsp;ACTION=&quot;./setup.php&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a163"></a>&nbsp;&nbsp;&lt;INPUT&nbsp;TYPE=&quot;submit&quot;&nbsp;CLASS=&quot;button&quot;&nbsp;STYLE=&quot;background-color:&nbsp;#BBBBBB&quot;&nbsp;NAME=&quot;abort&quot;&nbsp;VALUE=&quot;abort&quot;&gt;</div></li>
+<li><div class="src-line"><a name="a164"></a>&nbsp;&nbsp;&lt;/FORM&gt;</div></li>
+<li><div class="src-line"><a name="a165"></a>&nbsp;&nbsp;&lt;/TD&gt;</div></li>
+<li><div class="src-line"><a name="a166"></a>&nbsp;&nbsp;&lt;/TR&gt;&lt;/TABLE&gt;</div></li>
+<li><div class="src-line"><a name="a167"></a>&lt;/TD&gt;&lt;/TR&gt;&lt;/TABLE&gt;</div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 30 May 2008 16:47:15 +0300 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</body>
+</html>
