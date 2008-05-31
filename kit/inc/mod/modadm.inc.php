@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modadm.inc.php
-10:54 2008-05-02
+19:27 2008-05-31
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -114,7 +114,7 @@ function adminMenu() {
         echo $rudweb_skin['adm']['mnutt']['suf'];
       
         echo '<DIV ID="l2modcsa"';
-        $l2modcsa = array('nwsmoda', 'tagmoda', 'cmtmoda', 'ftrmoda');
+        $l2modcsa = array('nwsmoda', 'tagmoda', 'cmtmoda', 'conmoda', 'ftrmoda');
         if (!in_array($rudweb_this_content, $l2modcsa)) {echo' CLASS="hidden"';} 
         echo '>';
         
@@ -137,12 +137,17 @@ function adminMenu() {
         restrictedLocalLink('adm-mnu', $rudweb_ln['featured']['tt'], _RUDWEB_INDEX_PHP . 'admin/ftrmoda', $_SESSION[_RUDWEB_PRE.'usr_level'], 5, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
         echo $rudweb_skin['adm']['mnu']['suf'];
         echo $rudweb_skin['adm']['mnu']['sep'];
+        
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['con']['tt'], _RUDWEB_INDEX_PHP . 'admin/conmoda', $_SESSION[_RUDWEB_PRE.'usr_level'], 5, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
 
         echo '</DIV>';
         
         //xxx
         
-        // CONTENT MODULES ADMIN
+        // CATALOG MODULES ADMIN
         echo $rudweb_skin['adm']['mnutt']['pre'];
         echo '<A onClick="JavaScript: toggleLayer(\'l2modssa\')">';
         echo $rudweb_ln['adm']['modules'] . ' - ' . $rudweb_ln['catalog']['catalog'];
@@ -219,7 +224,7 @@ function adminMenu() {
         echo $rudweb_skin['adm']['mnu']['sep'];
         echo '</DIV>';
       }
-      
+      // COMMENTS SETTINGS
       if(_RUDWEB_CFG_CNT_CMNTS == 1) {
         echo $rudweb_skin['adm']['mnutt']['pre'];
         echo '<A onClick="JavaScript: toggleLayer(\'l2cmt\')">';
@@ -236,6 +241,7 @@ function adminMenu() {
         echo $rudweb_skin['adm']['mnu']['sep'];
         echo '</DIV>';
       }
+      // FEATURED MODULE SETTINGS
       if(_RUDWEB_CFG_FTR_ON == 1) {
         echo $rudweb_skin['adm']['mnutt']['pre'];
         echo '<A onClick="JavaScript: toggleLayer(\'l2ftr\')">';
@@ -258,6 +264,25 @@ function adminMenu() {
         restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['adm'], _RUDWEB_INDEX_PHP . 'admin/ftrmod/act/adm', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
         echo $rudweb_skin['adm']['mnu']['suf'];
         echo $rudweb_skin['adm']['mnu']['sep'];
+        echo '</DIV>';
+      }
+      // CONTACT SETTINGS xxx
+      if(_RUDWEB_CFG_CON == 1) {
+        echo $rudweb_skin['adm']['mnutt']['pre'];
+        echo '<A onClick="JavaScript: toggleLayer(\'l2con\')">';
+        echo $rudweb_ln['con']['tt'];
+        echo '</A>';
+        echo $rudweb_skin['adm']['mnutt']['suf'];
+      
+        echo '<DIV ID="l2con"';
+        if ($rudweb_this_content != 'conmod') {echo' CLASS="hidden"';} 
+        echo '>';
+        
+        echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/conmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+        
         echo '</DIV>';
       }
     echo '</DIV>';

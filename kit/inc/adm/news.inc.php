@@ -13,8 +13,6 @@
 * @package RudWEb
 * @subpackage Modules
 * @since 16:28 2008-04-29
-* @todo Everything
-* @todo Including pagination
 */
 
 /**

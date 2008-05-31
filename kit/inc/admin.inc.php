@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/admin.inc.php
-16:58 2008-05-27
+18:43 2008-05-31
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -201,6 +201,18 @@ if (isset($_POST['nwsmod'])) { // enable, disable, admin news module
   if(isset($_POST['nws_lmt1']))  {$nws_lmt1 = rudweb_filter_input($_POST['nws_lmt1']);}
   if(isset($_POST['nws_lmt2']))  {$nws_lmt2 = rudweb_filter_input($_POST['nws_lmt2']);}
   require_once _RUDWEB_INC_DIR . 'admnws.inc.php';
+  header("Location: $redirect");
+}
+if (isset($_POST['conadd']) || isset($_POST['conmod'])) {
+  $new_onoff = '';
+  
+  // not ok, use elsewhere
+  $action_date  = date("Y-m-d"); /* mod del */
+  $action_time  = date("H:i:s"); /* mod del */
+  
+  if(isset($_POST['cononoff'])) {$new_onoff = rudweb_filter_input($_POST['cononoff']);}
+  
+  require_once _RUDWEB_INC_DIR . 'admcon.inc.php';
   header("Location: $redirect");
 }
 ?>

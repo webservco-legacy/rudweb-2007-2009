@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/act/usett02.inc.php
-15:05 2008-05-02
+17:50 2008-05-31
 */
 ?>
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
@@ -383,6 +383,15 @@
 <SELECT CLASS="general" NAME="cfg_src">
   <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_cfg_src'] == "0") {echo " SELECTED";}?>>off</OPTION>
   <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_cfg_src'] == "1") {echo " SELECTED";}?>>on</OPTION>
+</SELECT>
+</TD></TR></TABLE>
+
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">contact:</TD>
+<TD CLASS="cnt">
+<SELECT CLASS="general" NAME="cfg_con">
+  <OPTION VALUE="0" <?php if ($_SESSION['rudwebset_cfg_con'] == "0") {echo " SELECTED";}?>>off</OPTION>
+  <OPTION VALUE="1" <?php if ($_SESSION['rudwebset_cfg_con'] == "1") {echo " SELECTED";}?>>on</OPTION>
 </SELECT>
 </TD></TR></TABLE>
 

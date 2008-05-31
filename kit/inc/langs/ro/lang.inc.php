@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/ro/lang.inc.php
-14:56 2008-05-09
+17:59 2008-05-31
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -253,4 +253,7 @@ $rudweb_ln['err']['add']['4']     = 'C&#226;mpul ' .$rudweb_ln['adm']['txt'] . '
 
 // MSIC STUFF
 $rudweb_ln['about']  = "Despre";
+
+// CONTACT
+$rudweb_ln['con']['tt']  = "Contact";
 ?>

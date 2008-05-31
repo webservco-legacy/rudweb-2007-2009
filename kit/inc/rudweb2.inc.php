@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudweb2.inc.php
-10:44 2008-05-26
+19:25 2008-05-31
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -85,7 +85,7 @@ else if (isset($_GET['show'])) {
   $rudweb_mnu_id             = getCntMnuId('index');
   $rudweb_stats_page         = 'index';
   $rudweb_req_page           = 'index';
-  $show_allowed = array('about', 'actuser', 'lostpass', 'news', 'newuser', 'tags');
+  $show_allowed = array('about', 'actuser', 'contact', 'lostpass', 'news', 'newuser', 'tags');
   if (is_file(_RUDWEB_ADMIN_DIR . $rudweb_this_content . ".inc.php") && in_array($rudweb_this_content, $show_allowed)) {
     //$rudweb_this_content_level = getCntLev($rudweb_this_content);
     //$rudweb_mnu_id             = getCntMnuId($rudweb_this_content);
@@ -104,7 +104,7 @@ else if (isset($_GET['admin'])) {
   $rudweb_mnu_id             = getCntMnuId('index');
   $rudweb_stats_page         = 'index';
   $rudweb_req_page           = 'index';
-  $admin_allowed = array('admin', 'catmod', 'catmoda', 'cmtmod', 'cmtmoda', 'cntadd', 'cspmod', 'cspmoda', 'ftrmod', 'ftrmoda', 'itemadd', 'nwsmod', 'nwsmoda', 'tagmod', 'tagmoda');
+  $admin_allowed = array('admin', 'catmod', 'catmoda', 'cmtmod', 'cmtmoda', 'cntadd', 'conmod', 'conmoda', 'cspmod', 'cspmoda', 'ftrmod', 'ftrmoda', 'itemadd', 'nwsmod', 'nwsmoda', 'tagmod', 'tagmoda');
   if (is_file(_RUDWEB_ADMIN_DIR . $rudweb_this_content . ".inc.php") && in_array($rudweb_this_content, $admin_allowed)) {
     $rudweb_this_content_level = getCntLev($rudweb_this_content);
     $rudweb_mnu_id             = getCntMnuId($rudweb_this_content);

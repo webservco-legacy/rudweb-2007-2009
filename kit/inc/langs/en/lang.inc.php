@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/en/lang.inc.php
-14:55 2008-05-09
+18:00 2008-05-31
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -235,4 +235,7 @@ $rudweb_ln['err']['add']['4']     = 'Field ' .$rudweb_ln['adm']['txt'] . ' is bl
 
 // MSIC STUFF
 $rudweb_ln['about']  = "About";
+
+// CONTACT
+$rudweb_ln['con']['tt']  = "Contact";
 ?>

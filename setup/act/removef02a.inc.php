@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/removef02a.inc.php
-16:18 2008-05-16
+19:04 2008-05-31
 */
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -14,6 +14,7 @@ $files[$dirs[4]][1] = array();
 $files[$dirs[4]][1][] = "admcat.inc.php";
 $files[$dirs[4]][1][] = "admcmt.inc.php";
 $files[$dirs[4]][1][] = "admcnt.inc.php";
+$files[$dirs[4]][1][] = "admcon.inc.php";
 $files[$dirs[4]][1][] = "admcsp.inc.php";
 $files[$dirs[4]][1][] = "admftr.inc.php";
 $files[$dirs[4]][1][] = "admin.inc.php";
@@ -45,6 +46,8 @@ $files[$dirs[3]][1][] = "catmoda.inc.php";
 $files[$dirs[3]][1][] = "cmtmod.inc.php";
 $files[$dirs[3]][1][] = "cmtmoda.inc.php";
 $files[$dirs[3]][1][] = "cntadd.inc.php";
+$files[$dirs[3]][1][] = "conmod.inc.php";
+$files[$dirs[3]][1][] = "conmoda.inc.php";
 $files[$dirs[3]][1][] = "cspmod.inc.php";
 $files[$dirs[3]][1][] = "cspmoda.inc.php";
 $files[$dirs[3]][1][] = "cspmodforms.inc.php";
@@ -99,6 +102,7 @@ $files[$dirs[0]][1][] = "modadm.inc.php";
 $files[$dirs[0]][1][] = "modcart.inc.php";
 $files[$dirs[0]][1][] = "modcat.inc.php";
 $files[$dirs[0]][1][] = "modcmt.inc.php";
+$files[$dirs[0]][1][] = "modcon.inc.php";
 $files[$dirs[0]][1][] = "modcpy.inc.php";
 $files[$dirs[0]][1][] = "modcsp.inc.php";
 $files[$dirs[0]][1][] = "moddebug.inc.php";

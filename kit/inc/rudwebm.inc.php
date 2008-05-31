@@ -107,4 +107,10 @@ else {
   function genCmtForm() {}
 }
 /* ********** ********** ********** //CONTENT & CATALOG COMMENTS ********** ********** ********** */
+/* ********** ********** ********** CONTACT ********** ********** ********** */
+if (_RUDWEB_CFG_CON === "1") {require _RUDWEB_MOD_DIR . 'modcon.inc.php';}
+else {
+  function showContactForm() {}
+}
+/* ********** ********** ********** //CONTACT ********** ********** ********** */
 ?>
