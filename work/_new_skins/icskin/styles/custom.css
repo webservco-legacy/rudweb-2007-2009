@@ -11,6 +11,7 @@
 }
 * html .layout {height: 100%;}
 .container {
+  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
   clear: both;
   width: 700px;
   margin: auto;

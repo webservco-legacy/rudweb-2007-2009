@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/contentadm.inc.php
-16:51 2008-05-21
+19:17 2008-06-01
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -79,7 +79,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
       // TITLE
 ?>      
       <?php echo $rudweb_skin['cnt']['tt1']['pre'];?>
-      <INPUT CLASS="titleadm" TYPE="text" NAME="cnt_tt" SIZE="50" MAXLENGTH="150" VALUE="<?php echo $cnt_tt;?>">
+      <INPUT CLASS="titleadm" TYPE="text" NAME="cnt_tt" SIZE="30" MAXLENGTH="150" VALUE="<?php echo $cnt_tt;?>">
       <?php echo $rudweb_skin['cnt']['tt1']['suf'];?>
 <?php
       // PICTURES 2

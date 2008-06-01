@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/moduser.inc.php
-15:51 2008-04-29
+19:50 2008-06-01
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -51,8 +51,8 @@ function genUserMod() {
     echo $rudweb_skin['usr']['pre'];
     if (!isset($_SESSION[_RUDWEB_PRE.'usr_logged_in'])) {
       // FORM
-      echo "\n<FORM ENCTYPE=\"multipart/form-data\" NAME=\"" . _RUDWEB_PRE . "login_form\" ACTION=\"\" METHOD=\"post\" STYLE=\"display: inline; margin: 0px; padding: 0px;\">";
       echo $rudweb_skin['usr']['login']['hdr'];
+      echo '<FORM ENCTYPE="multipart/form-data" NAME="' . _RUDWEB_PRE . 'login_form" ACTION="" METHOD="post">';
 
       echo $rudweb_skin['usr']['login']['pre'];
       echo "\n<INPUT TYPE=\"hidden\" NAME=\"" . _RUDWEB_PRE . "token\" VALUE=\"" . $_SESSION[_RUDWEB_PRE.'token'] . "\">";

@@ -1,16 +1,15 @@
 /*
-./skins/icskin/styles/default.css
-16:29 2008-05-16
+./skins/thskin/styles/default.css
+19:03 2008-06-01
 */
 /* ********** ********** ********** DEFAULT ********** ********** ********** */
-BODY {
+HTML, BODY {
   background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
-  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   margin: 0;
   padding: 0;
+  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
+  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   height: 100%;
 }
 /* get more control */

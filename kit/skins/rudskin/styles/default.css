@@ -1,16 +1,15 @@
 /*
-./skins/rudskin/styles/default.css
-12:49 2008-04-30
+./skins/thskin/styles/default.css
+19:03 2008-06-01
 */
 /* ********** ********** ********** DEFAULT ********** ********** ********** */
-BODY {
+HTML, BODY {
   background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-align: <?php echo $rudweb_skin['TextAlign']; ?>;
-  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
-  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   margin: 0;
   padding: 0;
+  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
+  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   height: 100%;
 }
 /* get more control */
@@ -65,6 +64,8 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   cursor: text;
 }
 .titleadm {
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
   /*width: 100%;*/
   margin-top: 0px;
   margin-bottom: 0px;
@@ -73,6 +74,10 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   font-weight: bold;
   font-size: 1.1em;
   line-height: 100%;
+  border-top: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-right: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-bottom: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-left: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
   cursor: text;
 }
 .subtitle {
@@ -86,6 +91,8 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   cursor: text;
 }
 .subtitleadm {
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
@@ -93,6 +100,10 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   font-weight: bold;
   font-size: 1em;
   line-height: 100%;
+  border-top: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-right: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-bottom: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-left: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
   cursor: text;
 }
 .text {
@@ -103,7 +114,7 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   line-height: 130%;
   padding-left: 10px;
   padding-right: 10px;
-  cursor: text;
+  cursor: default;
 }
 .textadm {
   margin-top: 0px;
@@ -136,11 +147,9 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-left: 0px;
   margin-right: 0px;
   text-align: center;
-  vertical-align: middle;
   line-height: 100%;
-  padding-left: 5px;
-  padding-right: 5px;
-  cursor: text;
+  padding: 5px 0px 0px 0px;
+  cursor: default;
 }
 .usr_login {
   margin-top: 0px;
@@ -150,55 +159,71 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   text-align: center;
   vertical-align: middle;
   line-height: 100%;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 5px 5px 5px 5px;
   cursor: text;
 }
 .logininput {
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
   text-align: center;
+  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
+  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   line-height: 100%;
-  border-bottom-width: 1px;
-  border-right-width: 1px;
+  border-top: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-right: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-bottom: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-left: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
   cursor: text;
 }
 .loginsubmit {
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
   text-align: center;
+  font-family: <?php echo $rudweb_skin['FontFamily']; ?>;
+  font-size: <?php echo $rudweb_skin['FontSize']; ?><?php echo $rudweb_skin['Measure']; ?>;
   line-height: 100%;
-  border-bottom-width: 1px;
-  border-right-width: 1px;
+  border-top: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-right: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-bottom: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-left: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
   cursor: pointer;
 }
 .forminput {
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
   line-height: 100%;
-  border-bottom-width: 1px;
-  border-right-width: 1px;
-  padding-top: 1px;
+  border-top: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-right: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-bottom: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-left: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
   padding-bottom: 1px;
   cursor: default;
 }
 .formsubmit {
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
   margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
   text-align: center;
   line-height: 100%;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
-  border-left-width: 1px;
-  border-right-width: 1px;
+  border-top: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-right: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-bottom: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
+  border-left: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 1px;
@@ -208,22 +233,22 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
 /* ********** ********** ********** //DEFAULT ********** ********** ********** */
 /* ********** ********** ********** DEFAULT 2  ********** ********** ********** */
 A.default:link {
-background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
   color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-decoration: underline;
+  text-decoration: none;
 }
 A.default:visited {
   background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
   color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-decoration: underline;
+  text-decoration: none;
 }
 A.default:hover {
   background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
   color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-decoration: none;
+  text-decoration: underline;
 }
 SPAN.link_default {
   background-color: <?php echo $rudweb_skin['BgColor']; ?>;
@@ -492,19 +517,19 @@ A.adm-mnu:link {
   background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
   color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-decoration: underline;
+  text-decoration: none;
 }
 A.adm-mnu:visited {
   background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
   color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-decoration: underline;
+  text-decoration: none;
 }
 A.adm-mnu:hover {
   background-color: <?php echo $rudweb_skin['BgColor']; ?>;
   background: transparent;
   color: <?php echo $rudweb_skin['FontColor']; ?>;
-  text-decoration: none;
+  text-decoration: underline;
 }
 SPAN.adm-mnu {
   background-color: <?php echo $rudweb_skin['BgColor']; ?>;
@@ -598,4 +623,28 @@ A.catsort:hover {
   color: <?php echo $rudweb_skin['BgColor']; ?>;
   font-weight: bold;
   text-decoration: none;
+}
+IMG {
+  margin: 0px;
+}
+A.logout:link {
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  background: transparent;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  font-weight: bold;
+  text-decoration: none;
+}
+A.logout:visited {
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  background: transparent;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  font-weight: bold;
+  text-decoration: none;
+}
+A.logout:hover {
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  background: transparent;
+  color: <?php echo $rudweb_skin['FontColor']; ?>;
+  font-weight: bold;
+  text-decoration: underline;
 }
