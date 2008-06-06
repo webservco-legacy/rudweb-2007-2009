@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modcart.inc.php
-12:50 2008-04-05
+09:48 2008-06-04
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -70,7 +70,7 @@ if(isset($_POST[_RUDWEB_PRE.'cart_act'])) { // needs further validation
   }
 }
 
-$rudweb_cart = $_SESSION[_RUDWEB_PRE.'cart'];
+//$rudweb_cart = $_SESSION[_RUDWEB_PRE.'cart'];
 
 function showProducts() { // this will become obsolete, or fully changed to take form db or something
   echo "<HR>";

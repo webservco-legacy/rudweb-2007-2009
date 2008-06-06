@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/cat/items.inc.php
-09:41 2008-05-02
+10:31 2008-06-05
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -29,8 +29,6 @@ if(isset($_GET['cat'])) {
   echo $rudweb_skin['cnt']['tt1']['suf'];
 
   catYah($current_cat,0);
-
-
 
   // ITEMS
   $q1 = "SELECT det_id, det_typ, det_tt FROM ". _RUDWEB_PRE. "cat_det WHERE cat_id = '".$current_cat."' AND (det_front = '1' AND det_lvl <= '".$_SESSION[_RUDWEB_PRE.'usr_level']."') ORDER BY det_ord ASC";
@@ -203,7 +201,8 @@ if(isset($_GET['cat'])) {
         $pic_src = _RUDWEB_LIB_URL.'pic.php?imgfile='._RUDWEB_CATP_DIR.$scat_row['cat_pic'].'&amp;max_size='.$rudweb_skin['cat']['pic'];
       }
       else {
-        $pic_src = _RUDWEB_LIB_URL.'img.php?pw='.$rudweb_skin['cat']['pic'].'&amp;ph='.$rudweb_skin['cat']['pic'].'&amp;txt='.$rudweb_ln['adm']['nopic'];;
+        $pic_src = _RUDWEB_LIB_URL.'pic.php?imgfile='._RUDWEB_SKIN_DIR . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'].'/graphics/nopic.png'.'&amp;max_size='.$rudweb_skin['cat']['pic'];
+        //$pic_src = _RUDWEB_LIB_URL.'img.php?pw='.$rudweb_skin['cat']['pic'].'&amp;ph='.$rudweb_skin['cat']['pic'].'&amp;txt='.$rudweb_ln['adm']['nopic'];;
       }
       
       echo '<A CLASS="default" HREF="'._RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'catalog/items/cat/'.$scat_row['cat_id'].'" TITLE="'.$scat_row['cat_tt'].'" TARGET="_self">';
@@ -282,7 +281,7 @@ if(isset($_GET['cat'])) {
         $pic_src = _RUDWEB_LIB_URL.'pic.php?imgfile='._RUDWEB_PRDP_DIR.$rw['pic_fn'].'&amp;max_size='.$rudweb_skin['prod']['picmax'];
       }
       else {
-        $pic_src = _RUDWEB_LIB_URL.'img.php?pw='.$rudweb_skin['prod']['picmax'].'&amp;ph='.$rudweb_skin['prod']['picmax'].'&amp;txt='.$rudweb_ln['adm']['nopic'];;
+        $pic_src = _RUDWEB_LIB_URL.'pic.php?imgfile='._RUDWEB_SKIN_DIR . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'].'/graphics/nopic.png'.'&amp;max_size='.$rudweb_skin['prod']['picmax'];
       }
 
       echo '<A CLASS="default" HREF="'._RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'catalog/item/id/'.$rw['prd_id'].'" TITLE="'.$rw['pname'].'" TARGET="_self">';

@@ -409,6 +409,7 @@ CREATE TABLE rudweb_con_cat (
   con_cat_notif3 tinyint(1) unsigned NOT NULL,
   con_cat_notif4 tinyint(1) unsigned NOT NULL,
   con_cat_notify varchar(255) NOT NULL,
+  con_cat_send varchar(255) NOT NULL,
   con_cat_crd date NOT NULL,
   con_cat_crt time NOT NULL,
   con_cat_cru int(5) unsigned NOT NULL,

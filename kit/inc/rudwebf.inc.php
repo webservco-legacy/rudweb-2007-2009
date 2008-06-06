@@ -1,7 +1,7 @@
 <?php
 /*
-12:29 2008-05-13
-14:41 2008-04-29
+./inc/rudwebf.inc.php
+12:00 2008-06-06
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -926,4 +926,18 @@ function rudweb_result($db_type, $result, $row) {
   return $res;
 }
 /* ********** ********** ********** //NEW DATABASE FUNCTIONS  ********** ********** ********** */
+/* ********** ********** ********** FIND OUT NEXT AVAILABLE ID IN A TABLE  ********** ********** ********** */
+function getNextId($table_name, $table_cell) {
+  global $rudweb_dbtype;
+  $next_id_query = "SELECT MAX(".$table_cell.") FROM "._RUDWEB_PRE."".$table_name."";
+  $next_id_result = rudweb_qres($rudweb_dbtype, $next_id_query);
+  $next_id = rudweb_result($rudweb_dbtype, $next_id_result, 0) + 1;
+  return $next_id;
+}
+/* ********** ********** ********** //FIND OUT NEXT AVAILABLE ID IN A TABLE  ********** ********** ********** */
+/* ********** ********** ********** SHOW A MESSAGE  ********** ********** ********** */
+function showMsg($type, $msg) { // type= err/ok
+  echo '<DIV CLASS="'.$type.'">' . $msg . '</DIV>';
+}
+/* ********** ********** ********** //SHOW A MESSAGE  ********** ********** ********** */
 ?>

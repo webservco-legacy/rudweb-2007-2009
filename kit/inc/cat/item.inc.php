@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/cat/item.inc.php
-14:53 2008-04-29
+10:31 2008-06-05
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -370,8 +370,8 @@ if($total_cat == '1') {
           
         }
         else {
-          $pic0url = _RUDWEB_LIB_URL.'img.php?pw='.$rudweb_skin['prod']['dt']['picmax'].'&amp;ph='.$rudweb_skin['prod']['dt']['picmax'].'&amp;txt='.$rudweb_ln['adm']['nopic'];
-          $pic0fileurl = $pic0url;
+          $pic0url     = _RUDWEB_LIB_URL.'pic.php?imgfile='._RUDWEB_SKIN_DIR . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'].'/graphics/nopic.png'.'&amp;max_size='.$rudweb_skin['prod']['dt']['picmax'];
+          $pic0fileurl = _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'].'/graphics/nopic.png';
         }
         echo '<A CLASS="default" rel="lightbox[1]" HREF="'.$pic0fileurl.'" TITLE="'.$rwp['pname'].'">';
         echo '<IMG CLASS="op" SRC="'.$pic0url.'" TITLE="'.$rwp['pname'].'" ALT="'.$rwp['pname'].'" onMouseOver="bevisible(this,0)" onMouseOut="bevisible(this,1)">';

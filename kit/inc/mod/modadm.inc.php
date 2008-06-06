@@ -266,7 +266,7 @@ function adminMenu() {
         echo $rudweb_skin['adm']['mnu']['sep'];
         echo '</DIV>';
       }
-      // CONTACT SETTINGS xxx
+      // CONTACT SETTINGS
       if(_RUDWEB_CFG_CON == 1) {
         echo $rudweb_skin['adm']['mnutt']['pre'];
         echo '<A onClick="JavaScript: toggleLayer(\'l2con\')">';
@@ -282,6 +282,23 @@ function adminMenu() {
         restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/conmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
         echo $rudweb_skin['adm']['mnu']['suf'];
         echo $rudweb_skin['adm']['mnu']['sep'];
+        
+        if ($_SESSION[_RUDWEB_PRE.'usr_level'] >= 5) {
+          echo $rudweb_skin['adm']['mnu']['pre'];
+          restrictedLocalLink('adm-mnu', $rudweb_ln['categs'], _RUDWEB_INDEX_PHP . 'admin/conmod/act/cat', $_SESSION[_RUDWEB_PRE.'usr_level'], 5, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+          echo $rudweb_skin['adm']['mnu']['suf'];
+          echo $rudweb_skin['adm']['mnu']['sep'];
+          
+          echo $rudweb_skin['adm']['mnu']['pre'];
+          restrictedLocalLink('adm-mnu', $rudweb_ln['dets'], _RUDWEB_INDEX_PHP . 'admin/conmod/act/det', $_SESSION[_RUDWEB_PRE.'usr_level'], 5, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+          echo $rudweb_skin['adm']['mnu']['suf'];
+          echo $rudweb_skin['adm']['mnu']['sep'];
+          
+          echo $rudweb_skin['adm']['mnu']['pre'];
+          restrictedLocalLink('adm-mnu', $rudweb_ln['opts'], _RUDWEB_INDEX_PHP . 'admin/conmod/act/opt', $_SESSION[_RUDWEB_PRE.'usr_level'], 5, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+          echo $rudweb_skin['adm']['mnu']['suf'];
+          echo $rudweb_skin['adm']['mnu']['sep'];
+        }
         
         echo '</DIV>';
       }

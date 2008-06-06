@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudweb1.inc.php
-11:16 2008-04-29
+09:49 2008-06-04
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 

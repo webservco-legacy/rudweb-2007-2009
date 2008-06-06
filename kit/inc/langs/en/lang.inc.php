@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/en/lang.inc.php
-18:00 2008-05-31
+12:00 2008-06-06
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -170,6 +170,7 @@ $rudweb_ln['adm']['itemmod']       = 'Modify item';
 $rudweb_ln['adm']['itemviewcat']   = 'View items in this category';
 $rudweb_ln['adm']['settings']      = 'Settings';
 $rudweb_ln['adm']['save']          = 'Save';
+$rudweb_ln['adm']['savemod']       = 'Save changes';
 $rudweb_ln['adm']['filter']        = 'Filter';
 $rudweb_ln['adm']['reset']         = 'Reset';
 
@@ -225,6 +226,7 @@ $rudweb_ln['nws']['ltstnews']  = "Latest news";
 $rudweb_ln['err']['tt']           = 'OOPS!';
 $rudweb_ln['err']['0']            = "Oops! Page not found!";
 $rudweb_ln['err']['1']            = "Sorry! You don't have permission to access this page!";
+$rudweb_ln['err']['3']            = "Sorry! Request not valid!";
 $rudweb_ln['err']['itemadd']['1'] = 'Field ' .$rudweb_ln['prod']['pname'] . ' is blank!';
 $rudweb_ln['err']['itemadd']['2'] = 'Please select an item from the list!';
 $rudweb_ln['err']['itemadd']['3'] = 'Please fill out required fields!';
@@ -235,7 +237,23 @@ $rudweb_ln['err']['add']['4']     = 'Field ' .$rudweb_ln['adm']['txt'] . ' is bl
 
 // MSIC STUFF
 $rudweb_ln['about']  = "About";
+$rudweb_ln['name']   = "Name";
+$rudweb_ln['yes']    = "Yes";
+$rudweb_ln['no']     = "No";
+$rudweb_ln['categs'] = "Categories";
+$rudweb_ln['dets']   = "Details";
+$rudweb_ln['opts']   = "Options";
+$rudweb_ln['type']   = "Type";
+$rudweb_ln['order']  = "Order";
+$rudweb_ln['req']    = "Required";
+$rudweb_ln['text']   = "Text";
+$rudweb_ln['select'] = "Select";
 
 // CONTACT
 $rudweb_ln['con']['tt']  = "Contact";
+$rudweb_ln['con']['not3']  = "Notify Level 3";
+$rudweb_ln['con']['not4']  = "Notify Level 4";
+$rudweb_ln['con']['notE']  = "Notify email";
+$rudweb_ln['con']['sendE']  = "Send email";
+
 ?>

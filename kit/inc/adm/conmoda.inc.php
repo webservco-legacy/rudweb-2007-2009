@@ -8,7 +8,7 @@
 * @author Radu Maier <rudisoft@rudisoft.net>
 * @copyright Copyright (c) 2007-2008, Radu Maier
 * @license http://opensource.org/licenses/gpl-2.0.php
-* @version 19:32 2008-05-31
+* @version 12:02 2008-06-06
 * @access public
 * @package RudWEb
 * @subpackage Modules
@@ -63,17 +63,6 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 5) {
 
       echo $rudweb_skin['adm']['mod']['suf'];
     } // else if enabled
-  }
-  else if (isset($_GET['act'])) {
-    if(_RUDWEB_CFG_CAT == 1) {
-      $act = rudweb_filter_input($_GET['act']);
-      $con_id = 0;
-      if(isset($_GET['contact'])) {$con_id = rudweb_filter_input($_GET['contact']);}
-      switch($act) {
-        case 'del'  : {delConItem(); break;}
-        default : {break;}
-      }
-    }
   }
   echo $rudweb_skin['cnt']['txt']['suf'];
 } // if user has the rights

@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/ro/lang.inc.php
-17:59 2008-05-31
+12:00 2008-06-06
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -187,6 +187,7 @@ $rudweb_ln['adm']['itemmod']       = 'Modificare articol';
 $rudweb_ln['adm']['itemviewcat']   = 'Vizualizare articole din categoria curent&#259;';
 $rudweb_ln['adm']['settings']      = 'Set&#259;ri';
 $rudweb_ln['adm']['save']          = 'Salveaz&#259;';
+$rudweb_ln['adm']['savemod']       = 'Salveaz&#259; modific&#259;ri';
 $rudweb_ln['adm']['filter']        = 'Filtrare';
 $rudweb_ln['adm']['reset']         = 'Resetare';
 
@@ -243,6 +244,7 @@ $rudweb_ln['nws']['ltstnews'] = "Ultimele &#351;tiri";
 $rudweb_ln['err']['tt']           = 'OOPS!';
 $rudweb_ln['err']['0']            = "Oops! Pagina nu a fost gasit&#259;!";
 $rudweb_ln['err']['1']            = "Ne pare r&#259;u! Nu ave&#355;i permisiune s&#259; accesa&#355;i aceast&#259; pagin&#259;!";
+$rudweb_ln['err']['3']            = "Ne pare r&#259;u! Cererea nu este valid&#259;!";
 $rudweb_ln['err']['itemadd']['1'] = 'C&#226;mpul ' .$rudweb_ln['prod']['pname'] . ' este gol!';
 $rudweb_ln['err']['itemadd']['2'] = 'V&#259; rug&#259;m selecta&#355;i o valoare din list&#259;!';
 $rudweb_ln['err']['itemadd']['3'] = 'V&#259; rug&#259;m completa&#355;i c&#226;mpurile obligatorii!';
@@ -253,7 +255,22 @@ $rudweb_ln['err']['add']['4']     = 'C&#226;mpul ' .$rudweb_ln['adm']['txt'] . '
 
 // MSIC STUFF
 $rudweb_ln['about']  = "Despre";
+$rudweb_ln['name']   = "Denumire";
+$rudweb_ln['yes']    = "Da";
+$rudweb_ln['no']     = "Nu";
+$rudweb_ln['categs'] = "Categorii";
+$rudweb_ln['dets']   = "Detalii";
+$rudweb_ln['opts']   = "Op&#355;iuni";
+$rudweb_ln['type']   = "Tip";
+$rudweb_ln['order']  = "Ordine";
+$rudweb_ln['req']    = "Obligatoriu";
+$rudweb_ln['text']   = "Text";
+$rudweb_ln['select'] = "Selec&#355;ie";
 
 // CONTACT
 $rudweb_ln['con']['tt']  = "Contact";
+$rudweb_ln['con']['not3']  = "Notificare Nivel 3";
+$rudweb_ln['con']['not4']  = "Notificare Nivel 4";
+$rudweb_ln['con']['notE']  = "Notificare email";
+$rudweb_ln['con']['sendE']  = "Trimitere email";
 ?>

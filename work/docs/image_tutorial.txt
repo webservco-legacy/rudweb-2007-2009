@@ -1,0 +1,24 @@
+Adaugare imagine cu preview prin intermediul editorului integrat
+exemplu la : http://www.man-romania.ro/show/news/nws/7
+
+In meniul editorului:
+-> Butonul "Insert Image"
+1)
+--> tabul "Informatii despre imagine"
+-> Butonul "Rasfoieste server"
+- se alege imaginea
+-  optiuni:
+  latime: ex: 150 (este de ajuns pentru un thumbnail)
+  margine: 0 (altfel apare bordura albastra daca imaginea are link)
+  hspace: ex: 5 (spatiul suplimentar orizontal in jurul imaginii)
+  vspace: ex: 5 ex: 5 (spatiul suplimentar vertical in jurul imaginii)
+2)
+--> tabul "link (legatura web)"
+-> "tinta (target)" se selecteaza "fereastra noua (_blank)
+-> Butonul "Rasfoieste server"
+- in partea din stanga sus la "Resource type" se selecteaza "image" (implicit este file)
+- se selecteaza din lista aceeasi imagine ca mai inainte
+-> Butonul "Bine"
+
+Nota: cazul ideal este sa existe 2 imagini diferite, una micsorata pentru preview (pasul 1) si cealalta in marime normala (pasul 2), 
+pentru a nu solicita inutil resursele serverului.

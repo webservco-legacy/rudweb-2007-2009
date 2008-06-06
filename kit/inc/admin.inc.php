@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/admin.inc.php
-18:43 2008-05-31
+12:01 2008-06-06
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -203,7 +203,7 @@ if (isset($_POST['nwsmod'])) { // enable, disable, admin news module
   require_once _RUDWEB_INC_DIR . 'admnws.inc.php';
   header("Location: $redirect");
 }
-if (isset($_POST['conadd']) || isset($_POST['conmod'])) {
+if (isset($_POST['admcon']) || isset($_POST['conmod'])) {
   $new_onoff = '';
   
   // not ok, use elsewhere

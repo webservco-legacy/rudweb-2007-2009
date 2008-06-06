@@ -7,3 +7,11 @@ editor/editor/dialog/common/fck_dialog_common.js (css cursor)
 editor/editor/dialog/fck_smiley.html (css cursor)
 editor/editor/dialog/fck_colorselector.html (css cursor)
 editor/editor/dialog/fck_specialchar.html (css cursor)
+
+Homepage Link
+mnu_typ = 1
+mnu_cnt_alias = index
+
+Catalog Link
+mnu_typ = 5
+mnu_cnt_alias = items/cat/CAT_ID

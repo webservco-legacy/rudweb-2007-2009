@@ -28,7 +28,15 @@ if ($total_cat != '0') {
     
     echo $rudweb_skin['cat']['pc']['pre'];
     echo '<A CLASS="default" HREF="'._RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'catalog/items/cat/'.$cat_row['cat_id'].'" TITLE="'.$cat_row['cat_tt'].'" TARGET="_self">';
-    echo '<IMG CLASS="op" SRC="'._RUDWEB_LIB_URL.'pic.php?imgfile='._RUDWEB_CATP_DIR.$cat_row['cat_pic'].'&amp;max_size='.$rudweb_skin['cat']['pic'].'" TITLE="'.$cat_row['cat_tt'].'" ALT="'.$cat_row['cat_tt'].'" onMouseOver="bevisible(this,0)" onMouseOut="bevisible(this,1)">';
+    
+    if(is_file(_RUDWEB_CATP_DIR.$cat_row['cat_pic'])) {
+      $pic_src = _RUDWEB_LIB_URL.'pic.php?imgfile='._RUDWEB_CATP_DIR.$cat_row['cat_pic'].'&amp;max_size='.$rudweb_skin['cat']['pic'].'&amp;max_size='.$rudweb_skin['cat']['pic'];
+    }
+    else {
+      $pic_src = _RUDWEB_LIB_URL.'pic.php?imgfile='._RUDWEB_SKIN_DIR . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'].'/graphics/nopic.png'.'&amp;max_size='.$rudweb_skin['cat']['pic'];
+    }
+    
+    echo '<IMG CLASS="op" SRC="'.$pic_src.'" TITLE="'.$cat_row['cat_tt'].'" ALT="'.$cat_row['cat_tt'].'" onMouseOver="bevisible(this,0)" onMouseOut="bevisible(this,1)">';
     echo '</A>';
     echo $rudweb_skin['cat']['pc']['suf'];
     
