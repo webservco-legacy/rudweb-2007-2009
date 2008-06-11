@@ -27,32 +27,35 @@ $target_name[3]  = "RudiSoft.Net";
 $target_url[3]   = "http://localhost/work/rs/rudisoft";
 $target_vars[3]  = "d:/home/devel/server/htdocs/work/rs/rudisoft/";
 
-$target_name[4]  = "Thomas";
-$target_url[4]   = "http://localhost/work/rs/thomas";
-$target_vars[4]  = "d:/home/devel/server/htdocs/work/rs/thomas/";
+$target_name[4]  = "RudiSoft.Net Hosting";
+$target_url[4]   = "http://localhost/work/rs/rudihost";
+$target_vars[4]  = "d:/home/devel/server/htdocs/work/rs/rudihost/";
 
+$target_name[5]  = "Thomas";
+$target_url[5]   = "http://localhost/work/rs/thomas";
+$target_vars[5]  = "d:/home/devel/server/htdocs/work/rs/thomas/";
 
-$target_name[5]  = "DaSoft - Dezy Design";
-$target_url[5]   = "http://localhost/work/ds/dezy";
-$target_vars[5]  = "d:/home/devel/server/htdocs/work/ds/dezy/";
+$target_name[6]  = "DaSoft - Dezy Design";
+$target_url[6]   = "http://localhost/work/ds/dezy";
+$target_vars[6]  = "d:/home/devel/server/htdocs/work/ds/dezy/";
 
-$target_name[6]  = "DaSoft - AFM Valcea";
-$target_url[6]   = "http://localhost/work/ds/afm";
-$target_vars[6]  = "d:/home/devel/server/htdocs/work/ds/afm/";
+$target_name[7]  = "DaSoft - AFM Valcea";
+$target_url[7]   = "http://localhost/work/ds/afm";
+$target_vars[7]  = "d:/home/devel/server/htdocs/work/ds/afm/";
 
-$target_name[7]  = "DaSoft - Jumbo Trans";
-$target_url[7]   = "http://localhost/work/ds/jumbo";
-$target_vars[7]  = "d:/home/devel/server/htdocs/work/ds/jumbo/";
+$target_name[8]  = "DaSoft - Jumbo Trans";
+$target_url[8]   = "http://localhost/work/ds/jumbo";
+$target_vars[8]  = "d:/home/devel/server/htdocs/work/ds/jumbo/";
 
-$target_name[8]  = "DaSoft - Interact Consult";
-$target_url[8]   = "http://localhost/work/ds/interactconsult";
-$target_vars[8]  = "d:/home/devel/server/htdocs/work/ds/interactconsult/";
+$target_name[9]  = "DaSoft - Interact Consult";
+$target_url[9]   = "http://localhost/work/ds/interactconsult";
+$target_vars[9]  = "d:/home/devel/server/htdocs/work/ds/interactconsult/";
 
-$target_name[9]  = "DaSoft - MAN Romania";
-$target_url[9]   = "http://localhost/work/ds/man-romania";
-$target_vars[9]  = "d:/home/devel/server/htdocs/work/ds/man-romania/";
+$target_name[10]  = "DaSoft - MAN Romania";
+$target_url[10]   = "http://localhost/work/ds/man-romania";
+$target_vars[10]  = "d:/home/devel/server/htdocs/work/ds/man-romania/";
 
-$target_name[10] = "DaSoft - MAN Rulate";
-$target_url[10]  = "http://localhost/work/ds/man-rulate";
-$target_vars[10] = "d:/home/devel/server/htdocs/work/ds/man-rulate/";
+$target_name[11] = "DaSoft - MAN Rulate";
+$target_url[11]  = "http://localhost/work/ds/man-rulate";
+$target_vars[11] = "d:/home/devel/server/htdocs/work/ds/man-rulate/";
 ?>

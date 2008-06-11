@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudwebf.inc.php
-12:00 2008-06-06
+10:16 2008-06-08
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -574,6 +574,9 @@ function createMenu($mnu_cat, $mnu_lev, $showadmin = "0") {
       else if ($row_rst_menu[$cmni]['mnu_typ'] === "5") {
         restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], _RUDWEB_INDEX_PHP . 'catalog/'.$row_rst_menu[$cmni]['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
       } // 5 - catalog
+      else if ($row_rst_menu[$cmni]['mnu_typ'] === "6") {
+        restrictedLocalLink($mnu_cat.'-mnu_'.$mnu_lev, $row_rst_menu[$cmni]['mnu_tt'], _RUDWEB_INDEX_PHP . 'show/'.$row_rst_menu[$cmni]['mnu_cnt_alias'], $_SESSION[_RUDWEB_PRE.'usr_level'], $row_rst_menu[$cmni]['mnu_lvl'], $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], $row_rst_menu[$cmni]['mnu_trg']);
+      } // 6 - show
     } // not current page, make link
     echo $rudweb_skin['mnu'][$mnu_cat]['suf'][$mnu_lev];
     if ($cmni < $total_menu) {echo $rudweb_skin['mnu'][$mnu_cat]['sep'][$mnu_lev];}

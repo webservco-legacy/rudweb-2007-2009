@@ -29,7 +29,7 @@ body
 {
 	padding: 1px;
 	margin: 0;
-	background-color: #ffffff;
+	/*background-color: #ffffff;*/
 }
 
 #xEditingArea
@@ -307,7 +307,7 @@ body
 {
     border: #8f8f73 1px solid;
     padding: 2px;
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
 }
 
 .FCK_Panel, .FCK_Panel TD

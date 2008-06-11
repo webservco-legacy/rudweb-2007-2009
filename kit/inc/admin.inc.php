@@ -172,7 +172,8 @@ if (isset($_POST['tagmod'])) { // enable, disable tags module
 }
 if (isset($_POST['cmt_id']) || isset($_POST['modcmt'])) {
   $new_onoff = '';
-  
+  $cmt_typ = 0;
+  $cnt_id = 0;
   // not ok, use elsewhere
   $action_date  = date("Y-m-d"); /* mod del */
   $action_time  = date("H:i:s"); /* mod del */
@@ -184,7 +185,8 @@ if (isset($_POST['cmt_id']) || isset($_POST['modcmt'])) {
   if(isset($_POST['cnt_id']))  {$cnt_id = rudweb_filter_input($_POST['cnt_id']);}
   
   if(isset($_POST['cmt_txt'])) {$cmt_txt = rudweb_filter_input($_POST['cmt_txt']);}
-
+  if($cmt_typ == 0) {$redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'content/' . $cnt_alias . '#cmtview';}
+  else {$redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'catalog/item/id/' . $cnt_id . '#cmtview';}
   require_once _RUDWEB_INC_DIR . 'admcmt.inc.php';
   header("Location: $redirect");
 }

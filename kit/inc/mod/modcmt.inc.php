@@ -131,7 +131,7 @@ function genCmtForm($cmt_id,$cmt_typ,$cnt_id,$cmt_txt) {
   echo '<INPUT TYPE="hidden" NAME="cmt_id" VALUE="'.$cmt_id.'">';
   echo '<INPUT TYPE="hidden" NAME="cmt_typ" VALUE="'.$cmt_typ.'">';
   echo '<INPUT TYPE="hidden" NAME="cnt_id" VALUE="'.$cnt_id.'">';
-  echo '<TEXTAREA CLASS="forminput" NAME="cmt_txt" COLS="50" ROWS="3" onKeyDown="limitText(this.form.cmt_txt,this.form.cmt_txt_cnt,255);" onKeyUp="limitText(this.form.cmt_txt,this.form.cmt_txt_cnt,255);" onChange="limitText(this.form.cmt_txt,this.form.cmt_txt_cnt,255);">';
+  echo '<TEXTAREA CLASS="forminput" NAME="cmt_txt" COLS="40" ROWS="3" onKeyDown="limitText(this.form.cmt_txt,this.form.cmt_txt_cnt,255);" onKeyUp="limitText(this.form.cmt_txt,this.form.cmt_txt_cnt,255);" onChange="limitText(this.form.cmt_txt,this.form.cmt_txt_cnt,255);">';
   echo $cmt_txt;
   echo '</TEXTAREA>';
   echo '<BR>';
