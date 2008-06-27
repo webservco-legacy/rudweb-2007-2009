@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/adm/itemadd.inc.php
-10:08 2008-04-14
+16:13 2008-06-20
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
@@ -45,7 +45,7 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
     $prd_qty = '1';
     $prd_qlvl = '3';
     $prd_prc = '0.00';
-    $prd_plvl = '1';
+    $prd_plvl = '0';
     $mpic_id = NULL;
     $mpic_fn = NULL;
     if(isset($_POST['itemadd'])) {

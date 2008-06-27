@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/en/usrmail.inc.php
-11:13 2008-04-29
+15:14 2008-06-26
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -70,4 +70,18 @@ $rudweb_ln['usr']['lostpassoka']   = "<BR>Va multumim!";
 $rudweb_ln['usr']['lostpassoka']  .= "<BR><BR>Parola dvs. ";
 $rudweb_ln['usr']['lostpassokb']   = " a fost schimbata cu succes!";
 $rudweb_ln['usr']['lostpassokb']  .= "<BR><BR>De acum va puteti loga folosind adresa de email si parola aleasa!";
+
+$rudweb_ln['conm']['notify_subject'] = 'Mesaj contact nou pe site-ul ' . _RUDWEB_WSTT;
+$rudweb_ln['conm']['notify_txt1']    = 'Aveti un mesaj de contact nou pe site-ul <B>' . _RUDWEB_WSTT . '</B>';
+$rudweb_ln['conm']['notify_txt2']    = '<BR><BR>Data: ';
+$rudweb_ln['conm']['notify_txt3']    = '<BR><BR>Pentru a putea vizualiza mesajul v&#259; rug&#259;m s&#259; v&#259; autentifica&#355;i la adresa:';
+$rudweb_ln['conm']['notify_txt4']    = '<BR>' . _RUDWEB_SITE_URL . 'admin';
+
+$rudweb_ln['conm']['send_subject'] = 'Mesaj contact nou pe site-ul ' . _RUDWEB_WSTT;
+$rudweb_ln['conm']['send_txt1']    = 'Aveti un mesaj de contact nou pe site-ul <B>' . _RUDWEB_WSTT . '</B>';
+$rudweb_ln['conm']['send_txt2']    = '<BR><BR>Data: ';
+$rudweb_ln['conm']['send_txt3']    = '<BR><BR>Con&#355;inut:';
+$rudweb_ln['conm']['send_txt4']    = '<BR>';
+
+$rudweb_ln['conm']['ok_mesage']    = '<BR>Mesajul Dumneavoastr&#259; a fost &#238;nregistrat!<BR>V&#259; mul&#355;umim!';
 ?>

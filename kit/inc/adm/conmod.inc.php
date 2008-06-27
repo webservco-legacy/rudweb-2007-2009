@@ -8,7 +8,7 @@
 * @author Radu Maier <rudisoft@rudisoft.net>
 * @copyright Copyright (c) 2007-2008, Radu Maier
 * @license http://opensource.org/licenses/gpl-2.0.php
-* @version 12:00 2008-06-06
+* @version 14:28 2008-06-27
 * @access public
 * @package RudWEb
 * @subpackage Modules
@@ -29,8 +29,8 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
   if (isset($_GET['act']) && $_SESSION[_RUDWEB_PRE.'usr_level'] >= 5) {
     if(_RUDWEB_CFG_CON == 1) {
       $act = rudweb_filter_input($_GET['act']);
-      $con_id = 0;
-      if(isset($_GET['contact'])) {$con_id = rudweb_filter_input($_GET['contact']);}
+      //$con_id = 0;
+      //if(isset($_GET['contact'])) {$con_id = rudweb_filter_input($_GET['contact']);}
       switch($act) {
         case 'cat'  : {
           echo $rudweb_skin['cnt']['tt2']['pre'];
@@ -50,6 +50,22 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
           break;
         }
         //case 'del'  : {delConItem(); break;}
+        default : {break;}
+      }
+    }
+  }
+  else if (isset($_GET['view']) && $_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
+    if(_RUDWEB_CFG_CON == 1) {
+      $con_view = rudweb_filter_input($_GET['view']);
+      switch($con_view) {
+        case 'msgs' : {
+          adminConMsgsMenu();
+          break;
+        }
+        case 'msg' : {
+          adminConMsg();
+          break;
+        }
         default : {break;}
       }
     }

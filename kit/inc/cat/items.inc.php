@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/cat/items.inc.php
-10:31 2008-06-05
+20:01 2008-06-25
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -224,10 +224,13 @@ if(isset($_GET['cat'])) {
       if($i != $total_scat) {echo $rudweb_skin['cat']['sep'];}
     }
   }
+  echo $rudweb_skin['cat']['ftr'];
 
   // DISPLAY FILTER BOX
-  if($t1 != 0 && $pg == 1) {
-    displayFilterBox($di, $dtyp, $dtt, $dt);
+  if(_RUDWEB_CFG_CAT_FLT == 1) {
+    if($t1 != 0 && $pg == 1) {
+      displayFilterBox($di, $dtyp, $dtt, $dt);
+    }
   }
   // xxx
 

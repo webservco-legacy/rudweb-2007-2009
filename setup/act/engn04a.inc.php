@@ -1,7 +1,7 @@
 <?php
 /*
 ./setup/act/engn03a.inc.php
-19:04 2008-05-31
+14:28 2008-06-27
 */
 
 echo "\n<TABLE BORDER=\"0\" CELLPADDING=\"3\" CELLSPACING=\"0\" BGCOLOR=\"#000000\" WIDTH=\"100%\">";
@@ -48,6 +48,7 @@ $files[$dirs[1]][1][] = "cmtmoda.inc.php";
 $files[$dirs[1]][1][] = "cntadd.inc.php";
 $files[$dirs[1]][1][] = "conmod.inc.php";
 $files[$dirs[1]][1][] = "conmoda.inc.php";
+$files[$dirs[1]][1][] = "contact.inc.php";
 $files[$dirs[1]][1][] = "cspmod.inc.php";
 $files[$dirs[1]][1][] = "cspmoda.inc.php";
 $files[$dirs[1]][1][] = "cspmodforms.inc.php";

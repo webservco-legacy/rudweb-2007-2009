@@ -456,15 +456,18 @@ CREATE TABLE rudweb_con_con (
   con_id int(5) unsigned NOT NULL,
   con_ln char(2) NOT NULL,
   con_cat_id int(5) unsigned NOT NULL,    
-  con_name varchar(255) NOT NULL,
+  con_first_name varchar(255) NOT NULL,
+  con_last_name varchar(255) NOT NULL,
   con_email varchar(255) NOT NULL,
-  con_subject varchar(255) NOT NULL,
-  con_message varchar(255) NOT NULL,
+  con_message mediumtext NOT NULL,
   con_crd date NOT NULL,
   con_crt time NOT NULL,
   con_rd date NOT NULL,
   con_rt time NOT NULL,
   con_ru int(5) unsigned NOT NULL,
+  con_sd date NOT NULL,
+  con_st time NOT NULL,
+  con_su int(5) unsigned NOT NULL,
   PRIMARY KEY (con_id)
 ) myisam_str;
 

@@ -8,7 +8,7 @@
 * @author Radu Maier <rudisoft@rudisoft.net>
 * @copyright Copyright (c) 2007-2008, Radu Maier
 * @license http://opensource.org/licenses/gpl-2.0.php
-* @version 12:15 2008-06-06
+* @version 14:33 2008-06-27
 * @access public
 * @package RudWEb
 * @subpackage Settings
@@ -23,7 +23,7 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 /**
 * Engine Version
 */
-define("_RUDWEB_SITE_VERSION", "0.7.080606");
+define("_RUDWEB_SITE_VERSION", "0.8.080627");
 /**
 * Engine Author
 */

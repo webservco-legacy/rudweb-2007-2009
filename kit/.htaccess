@@ -4,9 +4,7 @@ Options +FollowSymlinks
 RewriteEngine On
 
 # Put your installation directory here:
-# If your URL is www.example.com/kohana/, use /kohana/
-# If your URL is www.example.com/, use /
-#RewriteBase /work/rs/test/
+#RewriteBase /
 
 # Do not enable rewriting for files that exist
 RewriteCond %{REQUEST_FILENAME} !-f

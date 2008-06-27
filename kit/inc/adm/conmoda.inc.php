@@ -8,7 +8,7 @@
 * @author Radu Maier <rudisoft@rudisoft.net>
 * @copyright Copyright (c) 2007-2008, Radu Maier
 * @license http://opensource.org/licenses/gpl-2.0.php
-* @version 12:02 2008-06-06
+* @version 14:28 2008-06-27
 * @access public
 * @package RudWEb
 * @subpackage Modules

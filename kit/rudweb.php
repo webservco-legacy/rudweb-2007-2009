@@ -1,7 +1,7 @@
 <?php
 /*
 ./rudweb.php
-14:00 2008-06-05
+11:26 2008-06-27
 */
 error_reporting(E_ALL);
 define("_RUDWEB_PUBFIL", TRUE);
@@ -52,13 +52,13 @@ if(!isset($_GET['version'])) {
   header("Content-type: image/png");
   header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
   header("Expires: Mon, 26 Jul 1997 05:00:00 GMT"); // Date in the past
-  $img = imagecreatetruecolor(450, 390);
+  $img = imagecreatetruecolor(390, 390);
 
   $bgc = imagecolorallocate($img, hexdec('0xDD'), hexdec('0xDD'), hexdec('0xDD'));
   $fgc = imagecolorallocate($img, hexdec('0x00'), hexdec('0x00'), hexdec('0x00'));
   $fgc2 = imagecolorallocate($img, hexdec('0xFF'), hexdec('0xFF'), hexdec('0xFF'));
 
-  $font = _RUDWEB_TTF_DIR . "Dustismo.ttf";
+  $font = _RUDWEB_TTF_DIR . "VeraMono.ttf";
 
 
   imagefill($img, 0, 0, $bgc);
@@ -67,51 +67,51 @@ if(!isset($_GET['version'])) {
   imagefilledrectangle($img, 170, 0, 450, 390, hexdec('0xCCCCCC'));
   
   //                                img        sz               ang       x          y      color           font                 text
-  imagettftext($img, 126, -38, -10, 74, hexdec('0xEEEEEE'), $font, 'RudWEb');
+  imagettftext($img, 108, -42, -18, 66, hexdec('0xEEEEEE'), $font, 'RudWEb');
 
-  imagettftext($img, 11, 0, 88,  18, $fgc, $font, 'Website Title');
-  imagettftext($img, 11, 0, 175,  18, $fgc, $font, _RUDWEB_WSTT);
-  imagettftext($img, 11, 0, 52,  36, $fgc, $font, 'Website Start Date');
-  imagettftext($img, 11, 0, 175,  36, $fgc, $font, _RUDWEB_CFG_START);
-  imagettftext($img, 11, 0, 93,  54, $fgc, $font, 'Website URL');
-  imagettftext($img, 11, 0, 175,  54, $fgc, $font, _RUDWEB_SITE_URL);
+  imagettftext($img, 9, 0, 76,  18, $fgc, $font, 'Website Title');
+  imagettftext($img, 9, 0, 173,  18, $fgc, $font, _RUDWEB_WSTT);
+  imagettftext($img, 9, 0, 41,  36, $fgc, $font, 'Website Start Date');
+  imagettftext($img, 9, 0, 173,  36, $fgc, $font, _RUDWEB_CFG_START);
+  imagettftext($img, 9, 0, 92,  54, $fgc, $font, 'Website URL');
+  imagettftext($img, 9, 0, 173,  54, $fgc, $font, _RUDWEB_SITE_URL);
   
-  imagettftext($img, 11, 0, 72,  80, $fgc, $font, 'Client Company');
-  imagettftext($img, 11, 0, 175,  80, $fgc, $font, _RUDWEB_CFG_CLCOM);
-  imagettftext($img, 11, 0, 34,  98, $fgc, $font, 'Client Contact Person');
-  imagettftext($img, 11, 0, 175,  98, $fgc, $font, _RUDWEB_CFG_CLNAM);
+  imagettftext($img, 9, 0, 70,  80, $fgc, $font, 'Client Company');
+  imagettftext($img, 9, 0, 173,  80, $fgc, $font, _RUDWEB_CFG_CLCOM);
+  imagettftext($img, 9, 0, 21,  98, $fgc, $font, 'Client Contact Person');
+  imagettftext($img, 9, 0, 173,  98, $fgc, $font, _RUDWEB_CFG_CLNAM);
   
-  imagettftext($img, 11, 0, 42, 124, $fgc, $font, 'Developer Company');
-  imagettftext($img, 11, 0, 175, 124, $fgc, $font, _RUDWEB_CFG_DVCOM);
-  imagettftext($img, 11, 0, 4, 142, $fgc, $font, 'Developer Contact Person');
-  imagettftext($img, 11, 0, 175, 142, $fgc, $font, _RUDWEB_CFG_DVNAM);
-  imagettftext($img, 11, 0, 52, 160, $fgc, $font, 'Developer Website');
-  imagettftext($img, 11, 0, 175, 160, $fgc, $font, _RUDWEB_CFG_DVURL);
+  imagettftext($img, 9, 0, 49, 124, $fgc, $font, 'Developer Company');
+  imagettftext($img, 9, 0, 173, 124, $fgc, $font, _RUDWEB_CFG_DVCOM);
+  imagettftext($img, 9, 0, 1, 142, $fgc, $font, 'Developer Contact Person');
+  imagettftext($img, 9, 0, 173, 142, $fgc, $font, _RUDWEB_CFG_DVNAM);
+  imagettftext($img, 9, 0, 49, 160, $fgc, $font, 'Developer Website');
+  imagettftext($img, 9, 0, 173, 160, $fgc, $font, _RUDWEB_CFG_DVURL);
   
-  imagettftext($img, 11, 0, 92, 186, $fgc, $font, 'Powered By');
-  imagettftext($img, 11, 0, 175, 186, $fgc, $font, 'RudWEb');
-  imagettftext($img, 11, 0, 73, 204, $fgc, $font, 'Engine Version');
-  imagettftext($img, 11, 0, 175, 204, $fgc, $font, _RUDWEB_SITE_VERSION);
-  imagettftext($img, 11, 0, 82, 222, $fgc, $font, 'Engine Author');
-  imagettftext($img, 11, 0, 175, 222, $fgc, $font, _RUDWEB_SITE_AUTH);
-  imagettftext($img, 11, 0, 73, 240, $fgc, $font, 'Engine Website');
-  imagettftext($img, 11, 0, 175, 240, $fgc, $font, 'http://www.rudisoft.net');
+  imagettftext($img, 9, 0, 98, 186, $fgc, $font, 'Powered By');
+  imagettftext($img, 9, 0, 173, 186, $fgc, $font, 'RudWEb');
+  imagettftext($img, 9, 0, 70, 204, $fgc, $font, 'Engine Version');
+  imagettftext($img, 9, 0, 173, 204, $fgc, $font, _RUDWEB_SITE_VERSION);
+  imagettftext($img, 9, 0, 78, 222, $fgc, $font, 'Engine Author');
+  imagettftext($img, 9, 0, 173, 222, $fgc, $font, _RUDWEB_SITE_AUTH);
+  imagettftext($img, 9, 0, 70, 240, $fgc, $font, 'Engine Website');
+  imagettftext($img, 9, 0, 173, 240, $fgc, $font, 'http://www.rudisoft.net');
   
-  imagettftext($img, 11, 0, 104, 266, $fgc, $font, 'Skin Name');
-  imagettftext($img, 11, 0, 175, 266, $fgc, $font, $rudweb_skin_name);
-  imagettftext($img, 11, 0, 90, 284, $fgc, $font, 'Skin Version');
-  imagettftext($img, 11, 0, 175, 284, $fgc, $font, $rudweb_skin_version);
-  imagettftext($img, 11, 0, 98, 302, $fgc, $font, 'Skin Author');
-  imagettftext($img, 11, 0, 175, 302, $fgc, $font, $rudweb_skin_author);
-  imagettftext($img, 11, 0, 90, 320, $fgc, $font, 'Skin Website');
-  imagettftext($img, 11, 0, 175, 320, $fgc, $font, $rudweb_skin_website);
+  imagettftext($img, 9, 0, 104, 266, $fgc, $font, 'Skin Name');
+  imagettftext($img, 9, 0, 173, 266, $fgc, $font, $rudweb_skin_name);
+  imagettftext($img, 9, 0, 84, 284, $fgc, $font, 'Skin Version');
+  imagettftext($img, 9, 0, 173, 284, $fgc, $font, $rudweb_skin_version);
+  imagettftext($img, 9, 0, 91, 302, $fgc, $font, 'Skin Author');
+  imagettftext($img, 9, 0, 173, 302, $fgc, $font, $rudweb_skin_author);
+  imagettftext($img, 9, 0, 84, 320, $fgc, $font, 'Skin Website');
+  imagettftext($img, 9, 0, 173, 320, $fgc, $font, $rudweb_skin_website);
   
-  imagettftext($img, 11, 0, 30, 346, $fgc, $font, 'Language Local Name');
-  imagettftext($img, 11, 0, 175, 346, $fgc, $font, $rudweb_lang_local_name);
-  imagettftext($img, 11, 0, 36, 364, $fgc, $font, 'Language Translator');
-  imagettftext($img, 11, 0, 175, 364, $fgc, $font, $rudweb_lang_translator);
-  imagettftext($img, 11, 0, 52, 382, $fgc, $font, 'Language Charset');
-  imagettftext($img, 11, 0, 175, 382, $fgc, $font, $rudweb_lang_charset);
+  imagettftext($img, 9, 0, 34, 346, $fgc, $font, 'Language Local Name');
+  imagettftext($img, 9, 0, 173, 346, $fgc, $font, $rudweb_lang_local_name);
+  imagettftext($img, 9, 0, 35, 364, $fgc, $font, 'Language Translator');
+  imagettftext($img, 9, 0, 173, 364, $fgc, $font, $rudweb_lang_translator);
+  imagettftext($img, 9, 0, 56, 382, $fgc, $font, 'Language Charset');
+  imagettftext($img, 9, 0, 173, 382, $fgc, $font, $rudweb_lang_charset);
 
   imagepng($img); 
   imagedestroy($img);

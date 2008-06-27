@@ -40,6 +40,8 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   margin-bottom: 0px;
   margin-left: 0px;
   margin-right: 0px;
+  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
+  color: <?php echo $rudweb_skin['FontOkColor']; ?>;
   text-align: center;
   font-weight: bold;
   font-size: 1em;

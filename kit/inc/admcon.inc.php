@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/admcon.inc.php
-12:01 2008-06-06
+14:27 2008-06-27
 */
 if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 5 && $new_onoff !== "") {
   changedbcfg("CON", $new_onoff, $action_date, $action_time);
@@ -211,5 +211,47 @@ else if (isset($_POST['con_opt_mod'])) {
     mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
   }
   $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/conmod/act/opt/det/' . $con_det_id;
+}
+else if (isset($_POST['con_msg_solve'])) {
+  $con_id = 0;
+  if(isset($_POST['con_id']) && isValidInt($_POST['con_id'])) {
+    $con_id = rudweb_filter_input($_POST['con_id']);
+    
+    $query_lock = "LOCK TABLES "._RUDWEB_PRE."con_con WRITE";
+    mysql_query($query_lock) or require _RUDWEB_LIB_DIR . 'myerr.php';
+    
+    $q = "UPDATE "._RUDWEB_PRE."con_con SET con_sd = '".$action_date."', con_st = '".$action_time."', con_su = '".$_SESSION[_RUDWEB_PRE.'usr_id']."' WHERE con_id = '".$con_id."';";
+    mysql_query($q) or require _RUDWEB_LIB_DIR . 'myerr.php';
+    
+    $q2 = "OPTIMIZE TABLE "._RUDWEB_PRE."con_con";
+    mysql_query($q2) or require _RUDWEB_LIB_DIR . 'myerr.php';
+        
+    $query_unlock = "UNLOCK TABLES";
+    mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
+  }
+  $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/conmod/view/msg/con/' . $con_id;
+}
+else if (isset($_POST['con_msg_del'])) {
+  $con_id = 0;
+  $con_cat_id = 0;
+  if (isset($_POST['con_id']) && isset($_POST['con_cat_id'])) {
+    if (isValidInt($_POST['con_id']) && isValidInt($_POST['con_cat_id'])) {
+      $con_id = rudweb_filter_input($_POST['con_id']);
+      $con_cat_id = rudweb_filter_input($_POST['con_cat_id']);
+      
+      $query_lock = "LOCK TABLES "._RUDWEB_PRE."con_con WRITE";
+      mysql_query($query_lock) or require _RUDWEB_LIB_DIR . 'myerr.php';
+      
+      $q = "DELETE FROM "._RUDWEB_PRE."con_con WHERE con_id = '".$con_id."';";
+      mysql_query($q) or require _RUDWEB_LIB_DIR . 'myerr.php';
+    
+      $q2 = "OPTIMIZE TABLE "._RUDWEB_PRE."con_con";
+      mysql_query($q2) or require _RUDWEB_LIB_DIR . 'myerr.php';
+        
+      $query_unlock = "UNLOCK TABLES";
+      mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';
+    }
+  }
+  $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/conmod/view/msgs/cat/' . $con_cat_id;
 }
 ?>

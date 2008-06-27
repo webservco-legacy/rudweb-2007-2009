@@ -1,7 +1,7 @@
 <?php
 /*
 ./lib/picver.php
-12:50 2008-04-05
+11:27 2008-06-27
 */
 error_reporting(E_ALL);
 define("_RUDWEB_PUBFIL", TRUE);
@@ -35,7 +35,7 @@ if(isset($_SESSION[_RUDWEB_PRE.'token'])) {
   $bgc = imagecolorallocate($img, $br, $bg, $bb);
   $fgc = imagecolorallocate($img, $fr, $fg, $fb);
 
-  $font = _RUDWEB_TTF_DIR . "01_Digit.ttf";
+  $font = _RUDWEB_TTF_DIR . "VeraMono.ttf";
 
   imagefill($img, 0, 0, $bgc);
 

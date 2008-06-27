@@ -21,7 +21,6 @@ else {
   $rudweb_skin['FontOkColor']     = '#009900';
   $rudweb_skin['BgReqColor']      = '#990000';
   $rudweb_skin['TextAlign']       = 'left';
-  //$rudweb_skin['FontFamily']      = 'verdana, arial, helvetica, sans-serif';
   $rudweb_skin['FontFamily']      = 'Georgia, sans-serif';
   $rudweb_skin['FontSize']        = '12';
   $rudweb_skin['Measure']         = 'px';
@@ -247,7 +246,6 @@ else {
   $rudweb_skin['pgnav']['sep'] = '&#160;';
   $rudweb_skin['pgnav']['ftr'] = '</DIV>';
   /* ********** ********** ********** PRODUCTS ********** ********** ********** */
-  //product list filters - items.inc
   $rudweb_skin['prod']['flb']['hdr']        = '<DIV CLASS="flbox">';
   $rudweb_skin['prod']['flb']['ftr']        = '</DIV>';
   $rudweb_skin['prod']['flb']['pidpre']     = '<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="1"><TR><TD STYLE="width: 100px;">';
@@ -256,82 +254,93 @@ else {
   $rudweb_skin['prod']['flb']['pnamesuf']     = '</TD></TR></TABLE><TABLE BORDER="0" CELLPADDING="3" CELLSPACING="1"><TR>';
   $rudweb_skin['prod']['flb']['pdetpre']     = '<TD STYLE="width: 100px;">';
   $rudweb_skin['prod']['flb']['pdetsuf']     = '</TD>';
+
   //$rudweb_skin['prod']['flb']['ppricepre']     = '<TD STYLE="width: 100px;">';
   //$rudweb_skin['prod']['flb']['ppricesuf']     = '</TD>';
   
   $rudweb_skin['prod']['flb']['applypre']     = '<TD STYLE="width: 100px;">';
   $rudweb_skin['prod']['flb']['applysuf']     = '</TD></TR></TABLE>';;
-  // ??
-  $rudweb_skin['prod']['com']['hdr']         = '';
+  
+  // xxx
+  // compare box
+  $rudweb_skin['prod']['com']['hdr']        = '';
+
   // product list - items.inc
-  $rudweb_skin['prod']['lst']['hdr']         = '<BR CLEAR="all"><TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0">';
-  $rudweb_skin['prod']['lst']['hdrhdr']      = '<TR CLASS="lst_prd_hdr">';
-  $rudweb_skin['prod']['lst']['ftrhdr']      = '</TR>';
-  $rudweb_skin['prod']['lst']['hdrprd']      = '<TR CLASS="lst_prd_prd">';
-  $rudweb_skin['prod']['lst']['pidpre']      = '<TD>';
-  $rudweb_skin['prod']['lst']['pidsuf']      = '</TD>';
-  $rudweb_skin['prod']['lst']['ppicpre']     = '<TD>';
-  $rudweb_skin['prod']['lst']['ppicsuf']     = '</TD>';
-  $rudweb_skin['prod']['lst']['pnamepre']    = '<TD>';
-  $rudweb_skin['prod']['lst']['pnamesuf']    = '</TD>';
-  $rudweb_skin['prod']['lst']['prd_dscpre']  = '<TD>';
-  $rudweb_skin['prod']['lst']['prd_dscsuf']  = '</TD>';
-  $rudweb_skin['prod']['lst']['ppricepre']   = '<TD>';
-  $rudweb_skin['prod']['lst']['ppricesuf']   = '</TD>';
-  $rudweb_skin['prod']['lst']['detpre']      = '<TD>';
-  $rudweb_skin['prod']['lst']['detsuf']      = '</TD>';
-  $rudweb_skin['prod']['lst']['ftrprd']      = '</TR>';
-  $rudweb_skin['prod']['lst']['ftr']         = '</TABLE>';
+  $rudweb_skin['prod']['lst']['hdr']        = '<BR CLEAR=\"all\"><DIV STYLE="padding-left: 20px; padding-top: 10px;"><TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">';
+  $rudweb_skin['prod']['lst']['hdrhdr']     = '<TR CLASS="lst_prd_hdr">';
+  $rudweb_skin['prod']['lst']['ftrhdr']     = '</TR>';
+  $rudweb_skin['prod']['lst']['hdrprd']     = '<TR CLASS="lst_prd_prd">';
+  
+  $rudweb_skin['prod']['lst']['pidpre']     = '<TD CLASS="lst_prd_prd" STYLE="border-left: 1px solid #ACB1B6;">';
+  $rudweb_skin['prod']['lst']['pidsuf']     = '</TD>';
+  
+  $rudweb_skin['prod']['lst']['ppicpre']    = '<TD CLASS="lst_prd_prd">';
+  $rudweb_skin['prod']['lst']['ppicsuf']    = '</TD>';
+  
+  $rudweb_skin['prod']['lst']['pnamepre']   = '<TD CLASS="lst_prd_prd" STYLE="width: 100px;">';
+  $rudweb_skin['prod']['lst']['pnamesuf']   = '</TD>';
+  
+  $rudweb_skin['prod']['lst']['prd_dscpre'] = '<TD CLASS="lst_prd_prd">';
+  $rudweb_skin['prod']['lst']['prd_dscsuf'] = '</TD>';
+  
+  $rudweb_skin['prod']['lst']['ppricepre']  = '<TD CLASS="lst_prd_prd">';
+  $rudweb_skin['prod']['lst']['ppricesuf']  = '</TD>';
+  
+  $rudweb_skin['prod']['lst']['detpre']     = '<TD CLASS="lst_prd_prd" STYLE="width: 100px;">';
+  $rudweb_skin['prod']['lst']['detsuf']     = '</TD>';
+  
+  $rudweb_skin['prod']['lst']['ftrprd']     = '</TR>';
+  $rudweb_skin['prod']['lst']['ftr']        = '</TABLE></DIV>';
   // settings
-  $rudweb_skin['prod']['picmax']              = '100';
-  $rudweb_skin['prod']['chardesc']            = '30';
+  $rudweb_skin['prod']['picmax']            = '80';
+  $rudweb_skin['prod']['chardesc']          = '30';
   // product details - item.inc
-  $rudweb_skin['prod']['dt']['picmax']        = '80';
-  $rudweb_skin['prod']['dt']['hdr']           = '<DIV>';
+  $rudweb_skin['prod']['dt']['picmax']       = '135';
+  $rudweb_skin['prod']['dt']['hdr']          = '<DIV STYLE="padding-left: 20px;"><TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">';
   // main picture
-  $rudweb_skin['prod']['dt']['pict0']['pre']  = '<DIV>';
-  $rudweb_skin['prod']['dt']['pict0']['suf']  = '</DIV>';
+  $rudweb_skin['prod']['dt']['pict0']['pre'] = '<TR><TD ROWSPAN="3" CLASS="prd_det_pic" ALIGN="center" VALIGN="middle">';
+  $rudweb_skin['prod']['dt']['pict0']['suf'] = '</TD>';
   // product name
-  $rudweb_skin['prod']['dt']['tt_vl']['pre']  = '<DIV>';
-  $rudweb_skin['prod']['dt']['tt_vl']['suf']  = '</DIV>';
+  $rudweb_skin['prod']['dt']['tt_vl']['pre']     = '<TD CLASS="prd_det_tt">';
+  $rudweb_skin['prod']['dt']['tt_vl']['suf']     = '</TD></TR>';
   // offer id
-  $rudweb_skin['prod']['dt']['pid_tt']['pre'] = '<DIV>';
-  $rudweb_skin['prod']['dt']['pid_tt']['suf'] = '</DIV>';
-  $rudweb_skin['prod']['dt']['pid_vl']['pre'] = '<DIV>';
-  $rudweb_skin['prod']['dt']['pid_vl']['suf'] = '</DIV>';
+  $rudweb_skin['prod']['dt']['pid_tt']['pre'] = '<TR><TD CLASS="prd_det_det"><B>';
+  $rudweb_skin['prod']['dt']['pid_tt']['suf'] = ' : </B>';
+  $rudweb_skin['prod']['dt']['pid_vl']['pre'] = '';
+  $rudweb_skin['prod']['dt']['pid_vl']['suf'] = '</TD></TR>';
   // product description
-  $rudweb_skin['prod']['dt']['dsc_tt']['pre'] = '<DIV>';
-  $rudweb_skin['prod']['dt']['dsc_tt']['suf'] = '</DIV>';
-  $rudweb_skin['prod']['dt']['dsc_vl']['pre'] = '<DIV>';
-  $rudweb_skin['prod']['dt']['dsc_vl']['suf'] = '</DIV>';
+  $rudweb_skin['prod']['dt']['dsc_tt']['pre'] = '<TR><TD CLASS="prd_det_det"><B>';
+  $rudweb_skin['prod']['dt']['dsc_tt']['suf'] = ' :</B><BR>';
+  $rudweb_skin['prod']['dt']['dsc_vl']['pre'] = '';
+  $rudweb_skin['prod']['dt']['dsc_vl']['suf'] = '</TD></TR>';
   // all othe rdetails
-  $rudweb_skin['prod']['dt']['det']['hdr']    = '<DIV>';
-  $rudweb_skin['prod']['dt']['det_tt']['pre'] = '<DIV>';
-  $rudweb_skin['prod']['dt']['det_tt']['suf'] = '</DIV>';
-  $rudweb_skin['prod']['dt']['det_vl']['pre'] = '<DIV>';
-  $rudweb_skin['prod']['dt']['det_vl']['suf'] = '</DIV>';
-  $rudweb_skin['prod']['dt']['det']['ftr']    = '</DIV>';
+  $rudweb_skin['prod']['dt']['det']['hdr']    = '';
+  $rudweb_skin['prod']['dt']['det_tt']['pre'] = '<TR><TD CLASS="prd_det_det_tt">';
+  $rudweb_skin['prod']['dt']['det_tt']['suf'] = '</TD>';
+  $rudweb_skin['prod']['dt']['det_vl']['pre'] = '<TD CLASS="prd_det_det_vl">';
+  $rudweb_skin['prod']['dt']['det_vl']['suf'] = '</TD></TR>';
+  $rudweb_skin['prod']['dt']['det']['ftr']    = '';
   // quantity
-  $rudweb_skin['prod']['dt']['qty_tt']['pre'] = '<DIV>';
-  $rudweb_skin['prod']['dt']['qty_tt']['suf'] = '</DIV>';
-  $rudweb_skin['prod']['dt']['qty_vl']['pre'] = '<DIV>';
-  $rudweb_skin['prod']['dt']['qty_vl']['suf'] = '</DIV>';
+  $rudweb_skin['prod']['dt']['qty_tt']['pre'] = '<TR><TD CLASS="prd_det_det_tt">';
+  $rudweb_skin['prod']['dt']['qty_tt']['suf'] = '</TD>';
+  $rudweb_skin['prod']['dt']['qty_vl']['pre'] = '<TD CLASS="prd_det_det_vl">';
+  $rudweb_skin['prod']['dt']['qty_vl']['suf'] = '</TD></TR>';
   // price
-  $rudweb_skin['prod']['dt']['prc_tt']['pre'] = '<DIV>';
-  $rudweb_skin['prod']['dt']['prc_tt']['suf'] = '</DIV>';
-  $rudweb_skin['prod']['dt']['prc_vl']['pre'] = '<DIV>';
-  $rudweb_skin['prod']['dt']['prc_vl']['suf'] = '</DIV>';
+  $rudweb_skin['prod']['dt']['prc_tt']['pre'] = '<TR><TD CLASS="prd_det_det_tt">';
+  $rudweb_skin['prod']['dt']['prc_tt']['suf'] = '</TD>';
+  $rudweb_skin['prod']['dt']['prc_vl']['pre'] = '<TD CLASS="prd_det_det_vl">';
+  $rudweb_skin['prod']['dt']['prc_vl']['suf'] = '</TD></TR>';
   // product pictures
-  $rudweb_skin['prod']['dt']['pic0']['hdr']   = '<DIV>';
-  $rudweb_skin['prod']['dt']['pic0']['pre']   = '<DIV>';
-  $rudweb_skin['prod']['dt']['pic0']['suf']   = '</DIV>';
-  $rudweb_skin['prod']['dt']['pic0']['sep']   = '';
-  $rudweb_skin['prod']['dt']['pic0']['ftr']   = '</DIV>';
+  $rudweb_skin['prod']['dt']['pic0']['hdr'] = '<TR><TD COLSPAN="2" CLASS="prd_det_pics">';
+  $rudweb_skin['prod']['dt']['pic0']['pre'] = '<DIV CLASS="pic_div"><TABLE BORDER="0" HEIGHT="100%" CELLPADDING="0" CELLSPACING="0"><TR><TD VALIGN="middle">';
+  $rudweb_skin['prod']['dt']['pic0']['suf'] = '</TD></TR></TABLE></DIV>';
+  $rudweb_skin['prod']['dt']['pic0']['sep'] = '';
+  $rudweb_skin['prod']['dt']['pic0']['ftr'] = '<BR CLEAR="all"></TD></TR>';
   // product form
-  $rudweb_skin['prod']['dt']['form']['pre']   = '<DIV>';
-  $rudweb_skin['prod']['dt']['form']['suf']   = '</DIV>';
+  $rudweb_skin['prod']['dt']['form']['pre'] = '<TR><TD COLSPAN="2" CLASS="prd_det_form">';
+  $rudweb_skin['prod']['dt']['form']['suf'] = '</TD></TR>';
   //details footer
-  $rudweb_skin['prod']['dt']['ftr']           = '</DIV>';
+  $rudweb_skin['prod']['dt']['ftr']         = '</TABLE></DIV>';
   /* ********** ********** ********** ADMINISTRATION MODULE ********** ********** ********** */
   $rudweb_skin['adm']['hdr']          = '<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0"><TR>';
   $rudweb_skin['adm']['pre']          = '<TD CLASS="">';
@@ -416,5 +425,15 @@ else {
   $rudweb_skin['nws']['sln']['dtsuf'] = '</DIV>';
   $rudweb_skin['nws']['sln']['ttpre'] = '<DIV>';
   $rudweb_skin['nws']['sln']['ttsuf'] = '</DIV>';
+  
+  /* ********** ********** ********** CONTACT MODULE  ********** ********** ********** */
+  $rudweb_skin['con']['hdr']  = '<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0">';
+  $rudweb_skin['con']['lpre'] = '<TR><TD STYLE="text-align: right;">';
+  $rudweb_skin['con']['lsuf'] = '</TD>';
+  $rudweb_skin['con']['fpre'] = '<TD>';
+  $rudweb_skin['con']['fsuf'] = '</TD></TR>';
+  $rudweb_skin['con']['bpre'] = '<TR><TD COLSPAN="2" STYLE="text-align: center;">';
+  $rudweb_skin['con']['bsuf'] = '</TD></TR>';
+  $rudweb_skin['con']['ftr']  = '</TABLE>';
 }
 ?>

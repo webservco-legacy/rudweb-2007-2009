@@ -91,7 +91,7 @@ else {
     else if (strlen($usr_pass1) < 6)                 {$err = '1'; $err_msg = $rudweb_ln['usr']['regerr8'];}
     else if ($usr_pass1 !== $usr_pass2)              {$err = '1'; $err_msg = $rudweb_ln['usr']['regerr9'];}
     else if ($usr_agree !== '1')                     {$err = '1'; $err_msg = $rudweb_ln['usr']['regerr10'];}
-    else if ($usr_verif != $usr_img_verif)           {$err = '1'; $err_msg = $rudweb_ln['usr']['regerr11'];$usr_verif = '';}
+    else if ($usr_verif != $usr_img_verif)           {$err = '1'; $err_msg = $rudweb_ln['usr']['regerr11']; $usr_verif = '';}
   
     if($err == '0') { // do the thing
       $usr_pass1    = md5($usr_pass1);
@@ -123,7 +123,7 @@ else {
       $headers  = 'MIME-Version: 1.0' . "\r\n";
       $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
       $headers .= 'To: ' . $usr_email1 . "\r\n";
-      $headers .= 'From: '.$admin_first_name . ' ' . $admin_last_name . ' <' . $admin_email_address . '>' . "\r\n";
+      $headers .= 'From: '. _RUDWEB_WSTT . ' <' . $admin_email_address . '>' . "\r\n";
   
       if (@mail($to, $subject, $message, $headers, '-r '.$admin_email_address)) {
         $auth_mail_sent = '1';

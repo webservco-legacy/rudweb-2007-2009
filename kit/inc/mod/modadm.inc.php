@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modadm.inc.php
-19:27 2008-05-31
+14:28 2008-06-27
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -55,7 +55,7 @@ function genAdminMod() {
       echo $rudweb_skin['usr']['login']['sep'];
       
       echo $rudweb_skin['usr']['login']['pre'];
-      echo "<IMG SRC=\""._RUDWEB_LIB_URL."picver.php\" WIDTH=\"70\" HEIGHT=\"20\" ALT=\"verif\" TITLE=\"verif\" ALIGN=\"center\">";
+      echo "<IMG SRC=\""._RUDWEB_LIB_URL."picver.php\" WIDTH=\"70\" HEIGHT=\"20\" ALT=\"verif\" TITLE=\"verif\" ALIGN=\"middle\">";
       echo "=";
       echo "\n<INPUT TYPE=\"text\" CLASS=\"logininput\" NAME=\"" . _RUDWEB_PRE . "usr_verif\" SIZE=\"5\" MAXLENGTH=\"5\" VALUE=\"\">";
       echo $rudweb_skin['usr']['login']['suf'];
@@ -279,9 +279,16 @@ function adminMenu() {
         echo '>';
         
         echo $rudweb_skin['adm']['mnu']['pre'];
+        restrictedLocalLink('adm-mnu', $rudweb_ln['con']['msgs'], _RUDWEB_INDEX_PHP . 'admin/conmod/view/msgs', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+        echo $rudweb_skin['adm']['mnu']['suf'];
+        echo $rudweb_skin['adm']['mnu']['sep'];
+        
+        /*
+        echo $rudweb_skin['adm']['mnu']['pre'];
         restrictedLocalLink('adm-mnu', $rudweb_ln['adm']['settings'], _RUDWEB_INDEX_PHP . 'admin/conmod', $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
         echo $rudweb_skin['adm']['mnu']['suf'];
         echo $rudweb_skin['adm']['mnu']['sep'];
+        */
         
         if ($_SESSION[_RUDWEB_PRE.'usr_level'] >= 5) {
           echo $rudweb_skin['adm']['mnu']['pre'];

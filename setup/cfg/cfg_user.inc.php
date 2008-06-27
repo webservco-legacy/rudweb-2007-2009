@@ -52,8 +52,8 @@ $target_url[9]   = "http://localhost/work/ds/interactconsult";
 $target_vars[9]  = "d:/home/devel/server/htdocs/work/ds/interactconsult/";
 
 $target_name[10]  = "DaSoft - MAN Romania";
-$target_url[10]   = "http://localhost/work/ds/man-romania";
-$target_vars[10]  = "d:/home/devel/server/htdocs/work/ds/man-romania/";
+$target_url[10]   = "http://localhost/work/ds/man";
+$target_vars[10]  = "d:/home/devel/server/htdocs/work/ds/man/";
 
 $target_name[11] = "DaSoft - MAN Rulate";
 $target_url[11]  = "http://localhost/work/ds/man-rulate";

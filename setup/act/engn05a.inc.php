@@ -23,8 +23,7 @@ $files[$dirs[0]][1][] = "ubthumb.php";
 $dirs[1] = "lib/ttf/";
 $files[$dirs[1]][0] = array();
 $files[$dirs[1]][1] = array();
-$files[$dirs[1]][1][] = "01_Digit.ttf";
-$files[$dirs[1]][1][] = "Dustismo.ttf";
+$files[$dirs[1]][1][] = "VeraMono.ttf";
 
 $dirs[2] = "lib/editor/";
 $files[$dirs[2]][0] = array();

@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/moduser.inc.php
-19:50 2008-06-01
+19:04 2008-06-11
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -68,7 +68,7 @@ function genUserMod() {
       echo $rudweb_skin['usr']['login']['sep'];
       
       echo $rudweb_skin['usr']['login']['pre'];
-      echo "<IMG SRC=\""._RUDWEB_LIB_URL."picver.php\" WIDTH=\"70\" HEIGHT=\"20\" ALT=\"verif\" TITLE=\"verif\" ALIGN=\"center\">";
+      echo "<IMG SRC=\""._RUDWEB_LIB_URL."picver.php\" WIDTH=\"70\" HEIGHT=\"20\" ALT=\"verif\" TITLE=\"verif\" ALIGN=\"middle\">";
       echo "=";
       echo "\n<INPUT TYPE=\"text\" CLASS=\"logininput\" NAME=\"" . _RUDWEB_PRE . "usr_verif\" SIZE=\"5\" MAXLENGTH=\"5\" VALUE=\"\">";
       echo $rudweb_skin['usr']['login']['suf'];

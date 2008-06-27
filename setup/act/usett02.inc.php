@@ -249,6 +249,12 @@
 </TD></TR></TABLE>
 
 <TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
+<TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">shop / catalog items filter box:</TD>
+<TD CLASS="cnt">
+  <INPUT TYPE="text" CLASS="general" NAME="cfg_cat_flt" SIZE="2" MAXLENGTH="3" VALUE="<?php echo $_SESSION['rudwebset_cfg_cat_flt'];?>">
+</TD></TR></TABLE>
+
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" BGCOLOR="#000000" WIDTH="100%">
 <TR><TD CLASS="cnt" WIDTH="250" STYLE="text-align: right">shopping cart:</TD>
 <TD CLASS="cnt">
 <SELECT CLASS="general" NAME="cfg_cart_on">
