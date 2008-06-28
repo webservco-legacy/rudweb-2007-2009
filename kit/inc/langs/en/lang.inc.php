@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/en/lang.inc.php
-14:28 2008-06-27
+16:32 2008-06-27
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -261,18 +261,19 @@ $rudweb_ln['read']   = "Read";
 $rudweb_ln['solved'] = "Solved";
 
 // CONTACT
-$rudweb_ln['con']['tt']    = "Contact";
-$rudweb_ln['con']['not3']  = "Notify Level 3";
-$rudweb_ln['con']['not4']  = "Notify Level 4";
-$rudweb_ln['con']['notE']  = "Notify email";
-$rudweb_ln['con']['sendE'] = "Send email";
-$rudweb_ln['con']['name']  = "Name";
-$rudweb_ln['con']['email'] = "Email";
-$rudweb_ln['con']['msg']   = "Message";
-$rudweb_ln['con']['msgs']  = "Messages";
-$rudweb_ln['con']['amsg']  = "All Messages";
-$rudweb_ln['con']['frby']  = "First read by ";
-$rudweb_ln['con']['sby']   = "Solved by ";
-$rudweb_ln['con']['sets']  = "Set Solved";
+$rudweb_ln['con']['tt']      = "Contact";
+$rudweb_ln['con']['not3']    = "Notify Level 3";
+$rudweb_ln['con']['not4']    = "Notify Level 4";
+$rudweb_ln['con']['notE']    = "Notify email";
+$rudweb_ln['con']['sendE']   = "Send email";
+$rudweb_ln['con']['name']    = "Name";
+$rudweb_ln['con']['email']   = "Email";
+$rudweb_ln['con']['msg']     = "Message";
+$rudweb_ln['con']['msgs']    = "Messages";
+$rudweb_ln['con']['amsg']    = "All Messages";
+$rudweb_ln['con']['frby']    = "First read by ";
+$rudweb_ln['con']['sby']     = "Solved by ";
+$rudweb_ln['con']['sets']    = "Set Solved";
+$rudweb_ln['con']['general'] = "General";
 
 ?>

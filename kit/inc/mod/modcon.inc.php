@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modcon.inc.php
-14:27 2008-06-27
+20:14 2008-06-27
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -171,8 +171,27 @@ function conCatMenu2($link) {
   $r = rudweb_qres($rudweb_dbtype, $q);
   $t = rudweb_qtotal($rudweb_dbtype, $r);
   
+  $q0 = "SELECT con_id FROM ". _RUDWEB_PRE. "con_con WHERE con_cat_id = '0' AND con_rd = '0000-00-00'";
+  $r0 = rudweb_qres($rudweb_dbtype, $q0);
+  $t0 = rudweb_qtotal($rudweb_dbtype, $r0);
+  
+  $q0a = "SELECT con_id FROM ". _RUDWEB_PRE. "con_con WHERE con_cat_id = '0'";
+  $r0a = rudweb_qres($rudweb_dbtype, $q0a);
+  $t0a = rudweb_qtotal($rudweb_dbtype, $r0a);
+  
+  if ($t0a != 0 || $t != 0) {
+    echo '<UL STYLE="text-align: left; list-style-type: none; padding-left: 1.5em; text-indent: -1.5em; line-height: 160%;">';
+  }
+  
+  if($t0a != 0) {
+    echo '<LI>';
+    echo '&#187;';
+    echo '&#160;';
+    restrictedLocalLink('default', $rudweb_ln['con']['general'], _RUDWEB_INDEX_PHP . 'admin/'.$link.'/cat/'.'0', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+    echo ':&#160;' . $t0a . '&#160' . $rudweb_ln['con']['msgs'] . ' (<B>' . $t0 . '</B>&#160;' . $rudweb_ln['new2']. ')';
+    echo '</LI>';
+  }
   if($t != 0) {
-    echo '<UL STYLE="list-style-type: none; padding-left: 1.5em; text-indent: -1.5em;">';
     for ($i=0;$i<$t;$i++) {
       $rw = rudweb_fetch_assoc($rudweb_dbtype, $r);
       $q2 = "SELECT con_id FROM ". _RUDWEB_PRE. "con_con WHERE con_cat_id = '".$rw['con_cat_id']."' AND con_rd = '0000-00-00'";
@@ -185,12 +204,14 @@ function conCatMenu2($link) {
       echo '&#187;';
       echo '&#160;';
       restrictedLocalLink('default', $rw['con_cat_tt'], _RUDWEB_INDEX_PHP . 'admin/'.$link.'/cat/'.$rw['con_cat_id'], $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
-      echo ':&#160;' . $t3[$i] . '&#160' . $rudweb_ln['con']['msgs'] . ' (<B>' . $t2[$i] . '&#160;' . $rudweb_ln['new2']. '</B>)';
+      echo ':&#160;' . $t3[$i] . '&#160' . $rudweb_ln['con']['msgs'] . ' (<B>' . $t2[$i] . '</B>&#160;' . $rudweb_ln['new2']. ')';
       echo '</LI>';
     }
+  }
+  if ($t0a != 0 || $t != 0) {
     echo '</UL>';
   }
-  else {showMsg('err', $rudweb_ln['adm']['noitems']);}
+  if ($t0a == 0 && $t == 0) {showMsg('err', $rudweb_ln['adm']['noitems']);}
 }
 
 function admConDet($con_cat_id) {
@@ -658,7 +679,7 @@ function showContactForm($con_cat_id) {
     echo $rudweb_ln['usr']['usrfirstname'];
     echo $rudweb_skin['con']['lsuf'];
     echo $rudweb_skin['con']['fpre'];
-    echo '<INPUT CLASS="forminput" STYLE="background-color: '.$rudweb_skin['BgReqColor'].'" TYPE="text" NAME="con_first_name" SIZE="50" MAXLENGTH="255" VALUE="'.$con_first_name.'">';
+    echo '<INPUT CLASS="forminput" STYLE="background-color: '.$rudweb_skin['BgReqColor'].'" TYPE="text" NAME="con_first_name" SIZE="30" MAXLENGTH="255" VALUE="'.$con_first_name.'">';
     echo '&#160;&#42;';
     echo $rudweb_skin['con']['fsuf'];
     
@@ -667,7 +688,7 @@ function showContactForm($con_cat_id) {
     echo $rudweb_ln['usr']['usrlastname'];
     echo $rudweb_skin['con']['lsuf'];
     echo $rudweb_skin['con']['fpre'];
-    echo '<INPUT CLASS="forminput" STYLE="background-color: '.$rudweb_skin['BgReqColor'].'" TYPE="text" NAME="con_last_name" SIZE="50" MAXLENGTH="255" VALUE="'.$con_last_name.'">';
+    echo '<INPUT CLASS="forminput" STYLE="background-color: '.$rudweb_skin['BgReqColor'].'" TYPE="text" NAME="con_last_name" SIZE="30" MAXLENGTH="255" VALUE="'.$con_last_name.'">';
     echo '&#160;&#42;';
     echo $rudweb_skin['con']['fsuf'];
     
@@ -676,7 +697,7 @@ function showContactForm($con_cat_id) {
     echo $rudweb_ln['con']['email'];
     echo $rudweb_skin['con']['lsuf'];
     echo $rudweb_skin['con']['fpre'];
-    echo '<INPUT CLASS="forminput" STYLE="background-color: '.$rudweb_skin['BgReqColor'].'" TYPE="text" NAME="con_email" SIZE="50" MAXLENGTH="255" VALUE="'.$con_email.'">';
+    echo '<INPUT CLASS="forminput" STYLE="background-color: '.$rudweb_skin['BgReqColor'].'" TYPE="text" NAME="con_email" SIZE="30" MAXLENGTH="255" VALUE="'.$con_email.'">';
     echo '&#160;&#42;';
     echo $rudweb_skin['con']['fsuf'];
     
@@ -698,7 +719,7 @@ function showContactForm($con_cat_id) {
         
         $det_req1 = '';$det_req2 = '';
         if($con_det_req == 1) {$det_req1 = ' STYLE="background-color: '.$rudweb_skin['BgReqColor'].'"'; $det_req2 = '&#160;&#42;';}
-        if($con_det_typ == 0) {echo '<INPUT CLASS="forminput"'.$det_req1.' TYPE="text" NAME="det'.$con_det_id.'" SIZE="50" MAXLENGTH="255" VALUE="'.$con_det_val[$con_det_id].'">' . $det_req2;}
+        if($con_det_typ == 0) {echo '<INPUT CLASS="forminput"'.$det_req1.' TYPE="text" NAME="det'.$con_det_id.'" SIZE="30" MAXLENGTH="255" VALUE="'.$con_det_val[$con_det_id].'">' . $det_req2;}
         else if ($con_det_typ == 1) {
         
           $qo = "SELECT con_opt_id, con_opt_tt FROM ". _RUDWEB_PRE. "con_opt WHERE con_det_id = '".$con_det_id."' ORDER BY con_opt_ord ASC";
@@ -727,7 +748,7 @@ function showContactForm($con_cat_id) {
     echo $rudweb_skin['con']['lsuf'];
     echo $rudweb_skin['con']['fpre'];
     
-    echo '<TEXTAREA CLASS="forminput" NAME="con_message" COLS="50" ROWS="3" onKeyDown="limitText(this.form.con_message,this.form.con_message_cnt,255);" onKeyUp="limitText(this.form.con_message,this.form.con_message_cnt,255);" onChange="limitText(this.form.con_message,this.form.con_message_cnt,255);">';
+    echo '<TEXTAREA CLASS="forminput" NAME="con_message" COLS="30" ROWS="3" onKeyDown="limitText(this.form.con_message,this.form.con_message_cnt,255);" onKeyUp="limitText(this.form.con_message,this.form.con_message_cnt,255);" onChange="limitText(this.form.con_message,this.form.con_message_cnt,255);">';
     echo $con_message;
     echo '</TEXTAREA>';
     echo '&#160;';
@@ -759,27 +780,44 @@ function adminConMsgsMenu() {
   if(isset($_GET['cat'])) {
     $con_cat_id = rudweb_filter_input($_GET['cat']);
     $con_cat_tt = null;
-    $q = "SELECT con_cat_tt FROM ". _RUDWEB_PRE. "con_cat WHERE con_cat_id = '".$con_cat_id."' LIMIT 1";
-    $r = rudweb_qres($rudweb_dbtype, $q);
-    $t = rudweb_qtotal($rudweb_dbtype, $r);
-    if($t != 0){
-      $con_cat_tt = rudweb_result($rudweb_dbtype, $r, 0);
+    if($con_cat_id == 0) {
+      $con_cat_tt = $rudweb_ln['con']['general'];
       echo ' - ' . $con_cat_tt;
       echo $rudweb_skin['cnt']['tt2']['suf'];
       echo $rudweb_skin['cnt']['txt']['pre'];
       adminConMsgsShow($con_cat_id);
+      echo $rudweb_skin['adm']['mod']['pre'];
+      echo '<A CLASS="con_msgs_lnk" HREF="' . _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/conmod/view/msgs' . '">' . $rudweb_ln['con']['amsg'] . '</A>';
+      echo $rudweb_skin['adm']['mod']['suf'];
     }
     else {
-      echo $rudweb_skin['cnt']['tt2']['suf'];
-      echo $rudweb_skin['cnt']['txt']['pre'];
-      showMsg('err', $rudweb_ln['err']['3']);
+      $q = "SELECT con_cat_tt FROM ". _RUDWEB_PRE. "con_cat WHERE con_cat_id = '".$con_cat_id."' LIMIT 1";
+      $r = rudweb_qres($rudweb_dbtype, $q);
+      $t = rudweb_qtotal($rudweb_dbtype, $r);
+      if($t != 0){
+        $con_cat_tt = rudweb_result($rudweb_dbtype, $r, 0);
+        echo ' - ' . $con_cat_tt;
+        echo $rudweb_skin['cnt']['tt2']['suf'];
+        echo $rudweb_skin['cnt']['txt']['pre'];
+        adminConMsgsShow($con_cat_id);
+        echo $rudweb_skin['adm']['mod']['pre'];
+        echo '<A CLASS="con_msgs_lnk" HREF="' . _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/conmod/view/msgs' . '">' . $rudweb_ln['con']['amsg'] . '</A>';
+        echo $rudweb_skin['adm']['mod']['suf'];
+      }
+      else {
+        echo $rudweb_skin['cnt']['tt2']['suf'];
+        echo $rudweb_skin['cnt']['txt']['pre'];
+        showMsg('err', $rudweb_ln['err']['3']);
+      }
     }
   }
   else {
     // show all categories
     echo $rudweb_skin['cnt']['tt2']['suf'];
     echo $rudweb_skin['cnt']['txt']['pre'];
+    echo $rudweb_skin['adm']['mod']['pre'];
     conCatMenu2('conmod/view/msgs');
+    echo $rudweb_skin['adm']['mod']['suf'];
   }
   echo $rudweb_skin['cnt']['txt']['suf'];
 }
@@ -936,7 +974,6 @@ function adminConMsg() {
         $solved_alias = $rws['usr_first_name'] . ' ' . $rws['usr_last_name'];
         echo $rudweb_ln['con']['sby'];
         echo $solved_alias . $rudweb_ln['blg']['on'] . MyDate($rw['con_sd'], 'dd/mm/yyyy') . ' ' . $rw['con_st'];
-      
       }
       else {
       echo '<FORM ENCTYPE="multipart/form-data" NAME="conmsgform1" ACTION="" METHOD="post">';

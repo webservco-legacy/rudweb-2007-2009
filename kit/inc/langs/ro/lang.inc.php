@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/ro/lang.inc.php
-14:28 2008-06-27
+16:32 2008-06-27
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -279,17 +279,18 @@ $rudweb_ln['read']   = "Citit";
 $rudweb_ln['solved'] = "Rezolvat";
 
 // CONTACT
-$rudweb_ln['con']['tt']  = "Contact";
-$rudweb_ln['con']['not3']  = "Notificare Nivel 3";
-$rudweb_ln['con']['not4']  = "Notificare Nivel 4";
-$rudweb_ln['con']['notE']  = "Notificare email";
-$rudweb_ln['con']['sendE']  = "Trimitere email";
-$rudweb_ln['con']['name']  = "Nume";
-$rudweb_ln['con']['email'] = "Email";
-$rudweb_ln['con']['msg']   = "Mesaj";
-$rudweb_ln['con']['msgs']  = "Mesaje";
-$rudweb_ln['con']['amsg']  = "Toate Mesajele";
-$rudweb_ln['con']['frby']  = "Citit prima data de ";
-$rudweb_ln['con']['sby']   = "Rezolvat de ";
-$rudweb_ln['con']['sets']  = "Setare Rezolvat";
+$rudweb_ln['con']['tt']      = "Contact";
+$rudweb_ln['con']['not3']    = "Notificare Nivel 3";
+$rudweb_ln['con']['not4']    = "Notificare Nivel 4";
+$rudweb_ln['con']['notE']    = "Notificare email";
+$rudweb_ln['con']['sendE']   = "Trimitere email";
+$rudweb_ln['con']['name']    = "Nume";
+$rudweb_ln['con']['email']   = "Email";
+$rudweb_ln['con']['msg']     = "Mesaj";
+$rudweb_ln['con']['msgs']    = "Mesaje";
+$rudweb_ln['con']['amsg']    = "Toate Mesajele";
+$rudweb_ln['con']['frby']    = "Citit prima data de ";
+$rudweb_ln['con']['sby']     = "Rezolvat de ";
+$rudweb_ln['con']['sets']    = "Setare Rezolvat";
+$rudweb_ln['con']['general'] = "General";
 ?>

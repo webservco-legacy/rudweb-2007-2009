@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/admcon.inc.php
-14:27 2008-06-27
+16:59 2008-06-27
 */
 if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 5 && $new_onoff !== "") {
   changedbcfg("CON", $new_onoff, $action_date, $action_time);
@@ -235,7 +235,7 @@ else if (isset($_POST['con_msg_del'])) {
   $con_id = 0;
   $con_cat_id = 0;
   if (isset($_POST['con_id']) && isset($_POST['con_cat_id'])) {
-    if (isValidInt($_POST['con_id']) && isValidInt($_POST['con_cat_id'])) {
+    if (isValidInt($_POST['con_id']) && (isValidInt($_POST['con_cat_id']) || $_POST['con_cat_id'] == 0)) {
       $con_id = rudweb_filter_input($_POST['con_id']);
       $con_cat_id = rudweb_filter_input($_POST['con_cat_id']);
       
