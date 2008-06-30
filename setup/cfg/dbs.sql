@@ -1,5 +1,5 @@
 # rudweb table structure
--- 19:30 2008-05-31
+-- 16:02 2008-06-30
 DROP TABLE IF EXISTS rudweb_cat_cat;
 CREATE TABLE rudweb_cat_cat (
   cat_id int(5) unsigned NOT NULL,
@@ -456,8 +456,9 @@ CREATE TABLE rudweb_con_con (
   con_id int(5) unsigned NOT NULL,
   con_ln char(2) NOT NULL,
   con_cat_id int(5) unsigned NOT NULL,    
-  con_first_name varchar(255) NOT NULL,
-  con_last_name varchar(255) NOT NULL,
+-- 0806301555
+--  con_first_name varchar(255) NOT NULL,
+--  con_last_name varchar(255) NOT NULL,
   con_email varchar(255) NOT NULL,
   con_message mediumtext NOT NULL,
   con_crd date NOT NULL,

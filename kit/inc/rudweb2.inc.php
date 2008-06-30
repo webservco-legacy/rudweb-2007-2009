@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudweb2.inc.php
-20:17 2008-06-27
+14:24 2008-06-30
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -161,12 +161,12 @@ else if (substr($_SERVER['REQUEST_URI'], -9) == 'admin.php' && _RUDWEB_CFG_ADM =
 */
 else { // SHOW DEFAULT PAGE _RUDWEB_CFG_CNT
   if (_RUDWEB_CFG_CNT_SHW === "1") {
-    if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == "en")      {$default_content = _RUDWEB_CFG_CNT_EN;}
-    else if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == "de") {$default_content = _RUDWEB_CFG_CNT_DE;}
-    else if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == "es") {$default_content = _RUDWEB_CFG_CNT_ES;}
-    else if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == "fr") {$default_content = _RUDWEB_CFG_CNT_FR;}
-    else if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == "it") {$default_content = _RUDWEB_CFG_CNT_IT;}
-    else if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == "ro") {$default_content = _RUDWEB_CFG_CNT_RO;}
+    if($_SESSION[_RUDWEB_PRE.'usr_lang_index']      == 'en') {$default_content = _RUDWEB_CFG_CNT_EN;}
+    else if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == 'de') {$default_content = _RUDWEB_CFG_CNT_DE;}
+    else if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == 'es') {$default_content = _RUDWEB_CFG_CNT_ES;}
+    else if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == 'fr') {$default_content = _RUDWEB_CFG_CNT_FR;}
+    else if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == 'it') {$default_content = _RUDWEB_CFG_CNT_IT;}
+    else if($_SESSION[_RUDWEB_PRE.'usr_lang_index'] == 'ro') {$default_content = _RUDWEB_CFG_CNT_RO;}
     $redirect = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'content/' . $default_content;
     header("Location: $redirect");
   }

@@ -1,7 +1,9 @@
-0.8.080627
+0.8.080630
 - replaced 01_Digit font with Vera Mono for captchas
 - also used Vera Mono for the "about" page
 - added contact module
+- fixed multiple languages error (only en/ro/it worked)
+- dropped first name/ last name as default contact fields
 0.7.080527
 - upgraded fckeditor to version 2.6 stable
 - changed engine structure to use only "index.php" for all content ("admin.php" was used for the administration pages)

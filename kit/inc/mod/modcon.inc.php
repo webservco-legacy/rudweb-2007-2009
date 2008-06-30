@@ -1,7 +1,14 @@
 <?php
 /*
 ./inc/mod/modcon.inc.php
-20:14 2008-06-27
+16:02 2008-06-30
+*/
+
+
+/*
+15:55 2008-06-30
+dropped first_name/last_name as default required field
+id: 0806301555
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -456,22 +463,28 @@ function showContactForm($con_cat_id) {
   global $rudweb_ln;
   global $rudweb_dbtype;
   
+  /* 0806301555
   $con_first_name    = '';
   $con_last_name    = '';
+  */
   $con_email   = '';
   $con_message = '';
   
   $err = 0;
   $err_msg = null;
   if(isset($_POST['con_send'])) {
+    /* 0806301555
     if(isset($_POST['con_first_name'])) {$con_first_name = rudweb_filter_input($_POST['con_first_name']);}
     if(isset($_POST['con_last_name']))  {$con_last_name  = rudweb_filter_input($_POST['con_last_name']);}
+    */
     if(isset($_POST['con_email']))      {$con_email      = rudweb_filter_input($_POST['con_email']);}
     if(isset($_POST['con_message']))    {$con_message    = rudweb_filter_input($_POST['con_message']);}
   
     // validate part 1
+    /* 0806301555
     if($con_first_name == '')     {$err = 1; $err_msg = $rudweb_ln['usr']['regerr1'];}
     else if($con_last_name == '') {$err = 1; $err_msg = $rudweb_ln['usr']['regerr2'];}
+    */
     else if($con_email == '')     {$err = 1; $err_msg = $rudweb_ln['usr']['regerr4'];}
     else if(!isEmail($con_email)) {$err = 1; $err_msg = $rudweb_ln['usr']['regerr5'];}
   }
@@ -513,7 +526,10 @@ function showContactForm($con_cat_id) {
     mysql_query($query_lock) or require _RUDWEB_LIB_DIR . 'myerr.php';
     // --- get next id + insert CON_CON
     $con_id = getNextId('con_con', 'con_id');
+    /* 0806301555
     $q1 = "INSERT INTO "._RUDWEB_PRE."con_con (con_id, con_ln, con_cat_id, con_first_name, con_last_name, con_email, con_message, con_crd, con_crt, con_rd, con_rt, con_ru, con_sd, con_st, con_su) VALUES ('".$con_id."', '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."', '".$con_cat_id."', '".$con_first_name."', '".$con_last_name."', '".$con_email."', '".$con_message."', '".$action_date."', '".$action_time."', '0000-00-00', '00:00:00', '0', '0000-00-00', '00:00:00', '0')";
+    */
+    $q1 = "INSERT INTO "._RUDWEB_PRE."con_con (con_id, con_ln, con_cat_id, con_email, con_message, con_crd, con_crt, con_rd, con_rt, con_ru, con_sd, con_st, con_su) VALUES ('".$con_id."', '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."', '".$con_cat_id."', '".$con_email."', '".$con_message."', '".$action_date."', '".$action_time."', '0000-00-00', '00:00:00', '0', '0000-00-00', '00:00:00', '0')";
     mysql_query($q1) or require _RUDWEB_LIB_DIR . 'myerr.php';
     if($con_cat_id != 0) {
       if($t != 0) {
@@ -621,10 +637,12 @@ function showContactForm($con_cat_id) {
       $send_message .= $rudweb_ln['conm']['send_txt2'];
       $send_message .= $action_date . ' ' . $action_time;
       $send_message .= $rudweb_ln['conm']['send_txt3'];
+      /* 0806301555
       $send_message .= '<BR>' . $rudweb_ln['usr']['usrfirstname'];
       $send_message .= ': ' . $con_first_name;
       $send_message .= '<BR>' . $rudweb_ln['usr']['usrlastname'];
       $send_message .= ': ' . $con_last_name;
+      */
       $send_message .= '<BR>' . $rudweb_ln['con']['email'] ;
       $send_message .= ': ' . $con_email;
       // custom details
@@ -674,6 +692,7 @@ function showContactForm($con_cat_id) {
     echo $rudweb_skin['con']['hdr'];
     echo '<FORM ENCTYPE="multipart/form-data" NAME="contactform" ACTION="" METHOD="post">';
     
+    /* 0806301555
     // first name
     echo $rudweb_skin['con']['lpre'];
     echo $rudweb_ln['usr']['usrfirstname'];
@@ -691,6 +710,7 @@ function showContactForm($con_cat_id) {
     echo '<INPUT CLASS="forminput" STYLE="background-color: '.$rudweb_skin['BgReqColor'].'" TYPE="text" NAME="con_last_name" SIZE="30" MAXLENGTH="255" VALUE="'.$con_last_name.'">';
     echo '&#160;&#42;';
     echo $rudweb_skin['con']['fsuf'];
+    */
     
     // email
     echo $rudweb_skin['con']['lpre'];
@@ -829,7 +849,10 @@ function adminConMsgsShow($con_cat_id) {
   echo $rudweb_skin['adm']['mod']['pre'];
   
   // display all
+  /* 0806301555
   $q = "SELECT con_id, con_first_name, con_last_name, con_email, con_message, con_crd, con_crt, con_rd, con_rt, con_ru, con_sd, con_st, con_su FROM "._RUDWEB_PRE."con_con WHERE con_cat_id = '".$con_cat_id."' ORDER BY con_crd DESC, con_crt DESC";
+  */
+  $q = "SELECT con_id, con_email, con_message, con_crd, con_crt, con_rd, con_rt, con_ru, con_sd, con_st, con_su FROM "._RUDWEB_PRE."con_con WHERE con_cat_id = '".$con_cat_id."' ORDER BY con_crd DESC, con_crt DESC";
   $r = rudweb_qres($rudweb_dbtype, $q);
   $t = rudweb_qtotal($rudweb_dbtype, $r);
   if($t != 0) {
@@ -855,7 +878,9 @@ function adminConMsgsShow($con_cat_id) {
       echo '<TR>';
       echo '<TD CLASS="'.$tr_style.'">' . $i . '</TD>';
       echo '<TD CLASS="'.$tr_style.'">' . '<A CLASS="con_msgs_lnk" HREF="'. _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'admin/conmod/view/msg/con/' . $rw['con_id'] .'">' . $rw['con_crd'] . ' ' .$rw['con_crt'] . '</A>' . '</TD>';
+      /* 0806301555
       echo '<TD CLASS="'.$tr_style.'">' . $rw['con_first_name'] . ' ' . $rw['con_last_name'] . '</TD>';
+      */
       echo '<TD CLASS="'.$tr_style.'">' . $rw['con_email'] . '</TD>';
       echo '<TD CLASS="'.$tr_style.'">' . $con_rd[$i] . '</TD>';
       echo '<TD CLASS="'.$tr_style.'">' . $con_sd[$i] . '</TD>';
@@ -914,11 +939,13 @@ function adminConMsg() {
       
       echo '<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" ALIGN="center">';
       
+      /* 0806301555
       echo '<TR><TD>';
       echo $rudweb_ln['con']['name'];
       echo '</TD><TD>';
       echo $rw['con_first_name'] . ' ' . $rw['con_last_name'];
       echo '</TD></TR>';
+      */
       
       echo '<TR><TD>';
       echo $rudweb_ln['email'];

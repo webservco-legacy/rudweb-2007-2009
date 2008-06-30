@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modlang.inc.php
-12:50 2008-04-05
+14:25 2008-06-30
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -32,9 +32,12 @@ function genLangMod() {
       if (is_file(_RUDWEB_SKIN_DIR . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'] . "/graphics/lang/" . $all_langs[$i] . ".png")) {
         echo $rudweb_skin['lng']['pre'];
         
-        if($all_langs[$i] == "ro") {$lng_default_content = _RUDWEB_CFG_CNT_RO;}
-        else if($all_langs[$i] == "en") {$lng_default_content = _RUDWEB_CFG_CNT_EN;}
-        else if($all_langs[$i] == "it") {$lng_default_content = _RUDWEB_CFG_CNT_IT;}
+        if($all_langs[$i]      == 'en') {$lng_default_content = _RUDWEB_CFG_CNT_EN;}
+        else if($all_langs[$i] == 'de') {$lng_default_content = _RUDWEB_CFG_CNT_DE;}
+        else if($all_langs[$i] == 'es') {$lng_default_content = _RUDWEB_CFG_CNT_ES;}
+        else if($all_langs[$i] == 'fr') {$lng_default_content = _RUDWEB_CFG_CNT_FR;}
+        else if($all_langs[$i] == 'it') {$lng_default_content = _RUDWEB_CFG_CNT_IT;}
+        else if($all_langs[$i] == 'ro') {$lng_default_content = _RUDWEB_CFG_CNT_RO;}
         
         //echo "<A HREF=\"http://".$_SERVER['HTTP_HOST'] . $this_request_uri . "/ln/" . $all_langs[$i]."\">";
         echo "<A HREF=\"". _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . "content/" . $lng_default_content . "/ln/" . $all_langs[$i]."\">";
