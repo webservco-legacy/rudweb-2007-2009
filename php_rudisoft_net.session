@@ -1,0 +1,13 @@
+<NotepadPlus>
+    <Session activeView="0">
+        <mainView activeIndex="5">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1600" startPos="218" endPos="218" selMode="0" lang="PHP" filename="D:\home\devel\server\htdocs\work\rs\thomas\skins\phpskin\layout.inc.php" />
+            <File firstVisibleLine="130" xOffset="0" scrollWidth="1553" startPos="3122" endPos="3122" selMode="0" lang="CSS" filename="D:\home\devel\server\htdocs\work\rs\thomas\skins\phpskin\styles\custom.css" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="728" startPos="488" endPos="488" selMode="0" lang="CSS" filename="D:\home\devel\server\htdocs\work\rs\thomas\skins\phpskin\styles\default.css" />
+            <File firstVisibleLine="21" xOffset="0" scrollWidth="1937" startPos="1278" endPos="1278" selMode="0" lang="PHP" filename="D:\home\devel\server\htdocs\work\rs\thomas\skins\phpskin\skin.inc.php" />
+            <File firstVisibleLine="145" xOffset="0" scrollWidth="816" startPos="2586" endPos="2591" selMode="0" lang="HTML" filename="D:\home\devel\server\htdocs\work\rs\thomas\skins\phpskin\_htm\layout.htm" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="1" startPos="0" endPos="0" selMode="0" lang="Normal Text" filename="D:\home\devel\server\logs\php_error.log" />
+        </mainView>
+        <subView activeIndex="0" />
+    </Session>
+</NotepadPlus>

@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modnws.inc.php
-16:57 2008-04-29
+15:58 2008-09-27
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -19,7 +19,8 @@ function showLatestNews() {
  
   if($tn != 0) {
   echo $rudweb_skin['nws']['sln']['hdr'];
-  restrictedLocalLink('news', $rudweb_ln['nws']['tt'], _RUDWEB_INDEX_PHP . 'show/news', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
+  echo '<span style="font-weight: bold; font-size: 12px;">Ultimele &#351;tiri</span>';
+  //restrictedLocalLink('news', $rudweb_ln['nws']['tt'], _RUDWEB_INDEX_PHP . 'show/news', $_SESSION[_RUDWEB_PRE.'usr_level'], 0, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut'], '_self');
   for($i=1;$i<=$tn;$i++) {
     $rw = rudweb_fetch_assoc($rudweb_dbtype, $rn);
     echo $rudweb_skin['nws']['sln']['pre'];
@@ -76,7 +77,7 @@ function showNewsAll($adm=0) {
     }
     if($adm!=0) {$url = _RUDWEB_INDEX_PHP . 'admin/nwsmod/act/view';} else {$url = _RUDWEB_INDEX_PHP . 'show/news';}
     $urlsofar = _RUDWEB_SITE_URL . $url;
-    catalogPageNavigation($totalitems,$itemspg,$pg,$urlsofar);
+    newsPageNavigation($totalitems,$itemspg,$pg,$urlsofar);
     echo $rudweb_skin['nws']['lst']['ftr'];
   }
 }
@@ -291,5 +292,57 @@ function showNewsItemForm($nws_id=0,$nws_tt='',$nws_dsc='',$nws_txt='') {
   echo '</FORM>';
   echo $rudweb_skin['nws']['itm']['ftr'];
 }
+/* ********** ********** ********** NEWS PAGINATION  ********** ********** ********** */
+function newsPageNavigation($totalitems,$itemspg,$pg,$urlsofar) {
+  global $rudweb_ln;
+  global $rudweb_skin;
+  
+  $maxpage = ceil($totalitems/$itemspg);
+  
+  // FIRST+PREVIOUS
+  $prevpage = $pg - 1;
+  $first = $rudweb_ln['pgnav']['first'];
+  $prev = $rudweb_ln['pgnav']['prev'];
+  if ($pg > 1) {
+    $first = '<A CLASS="default" HREF="'.$urlsofar.'/pg/1/itemspg/'.$itemspg.'">'.$first.'</A>';
+    $prev  = '<A CLASS="default" HREF="'.$urlsofar.'/pg/'.$prevpage.'/itemspg/'.$itemspg.'">'.$prev.'</A>';;
+  }
+  //NEXT+LAST
+  $nextpage = $pg + 1;
+  $next = $rudweb_ln['pgnav']['next'];
+  $last = $rudweb_ln['pgnav']['last'];
+  if ($pg < $maxpage) {
+    $next = '<A CLASS="default" HREF="'.$urlsofar.'/pg/'.$nextpage.'/itemspg/'.$itemspg.'">'.$next.'</A>';
+    $last = '<A CLASS="default" HREF="'.$urlsofar.'/pg/'.$maxpage.'/itemspg/'.$itemspg.'">'.$last.'</A>';
+  }
 
+  echo $rudweb_skin['pgnav']['hdr'];
+  
+  echo $rudweb_skin['pgnav']['pre'];
+  echo $first;
+  echo $rudweb_skin['pgnav']['suf'];
+  echo $rudweb_skin['pgnav']['sep'];
+  
+  echo $rudweb_skin['pgnav']['pre'];
+  echo $prev;
+  echo $rudweb_skin['pgnav']['suf'];
+  echo $rudweb_skin['pgnav']['sep'];
+  
+  echo $rudweb_skin['pgnav']['pre'];
+  echo $rudweb_ln['pgnav']['page'] . $pg . $rudweb_ln['pgnav']['of'] . $maxpage;
+  echo $rudweb_skin['pgnav']['suf'];
+  echo $rudweb_skin['pgnav']['sep'];
+  
+  echo $rudweb_skin['pgnav']['pre'];
+  echo $next;
+  echo $rudweb_skin['pgnav']['suf'];
+  echo $rudweb_skin['pgnav']['sep'];
+  
+  echo $rudweb_skin['pgnav']['pre'];
+  echo $last;
+  echo $rudweb_skin['pgnav']['suf'];
+  
+  echo $rudweb_skin['pgnav']['ftr'];
+}
+/* ********** ********** ********** //NEWS PAGINATION  ********** ********** ********** */
 ?>

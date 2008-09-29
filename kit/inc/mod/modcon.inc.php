@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/mod/modcon.inc.php
-16:02 2008-06-30
+13:05 2008-07-28
 */
 
 
@@ -860,7 +860,10 @@ function adminConMsgsShow($con_cat_id) {
     echo '<TR>';
     echo '<TD CLASS="con_msgs_hdr">' . $rudweb_ln['number'] . '</TD>';
     echo '<TD CLASS="con_msgs_hdr">' . $rudweb_ln['date'] . '</TD>';
-    echo '<TD CLASS="con_msgs_hdr">' . $rudweb_ln['con']['name'] . '</TD>';
+    
+  /* 0806301555
+    //echo '<TD CLASS="con_msgs_hdr">' . $rudweb_ln['con']['name'] . '</TD>';
+    */
     echo '<TD CLASS="con_msgs_hdr">' . $rudweb_ln['email'] . '</TD>';
     echo '<TD CLASS="con_msgs_hdr">' . $rudweb_ln['read'] . '</TD>';
     echo '<TD CLASS="con_msgs_hdr">' . $rudweb_ln['solved'] . '</TD>';

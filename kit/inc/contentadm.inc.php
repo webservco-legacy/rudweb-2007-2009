@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/contentadm.inc.php
-19:17 2008-06-01
+16:24 2008-07-01
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -21,16 +21,33 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
       $cnt_txt   = $row_rst_content['cnt_txt'];
 ?>
 <FORM ENCTYPE="multipart/form-data" CLASS="contmodform" NAME="contmodform" ACTION="" METHOD="post">
-<BR>
-<DIV STYLE="text-align:center">
-<INPUT TYPE="hidden" NAME="mnu_id" VALUE="<?php echo $rudweb_mnu_id;?>">
-<?php echo $rudweb_ln['adm']['mnu_tt'];?>
-<INPUT CLASS="forminput" TYPE="text" NAME="mnu_tt" MAXLENGTH="150" VALUE="<?php echo $mnu_tt;?>">
-<?php echo $rudweb_ln['adm']['mnu_trg'];?>&#160;
-<INPUT CLASS="forminput" TYPE="text" NAME="mnu_trg" MAXLENGTH="8" VALUE="<?php echo $mnu_trg;?>">
-<INPUT TYPE="hidden" NAME="cnt_id" VALUE="<?php echo $this_content_id;?>">
-<INPUT TYPE="hidden" NAME="cnt_alias" VALUE="<?php echo $cnt_alias;?>">
+
+<DIV CLASS="adm_mod">
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR>
+  <TD CLASS="cnt_adm_txt1">
+    <?php echo $rudweb_ln['adm']['mnu_tt'];?>
+  </TD>
+  <TD CLASS="cnt_adm_txt2">
+    <INPUT TYPE="hidden" NAME="mnu_id" VALUE="<?php echo $rudweb_mnu_id;?>">
+    <INPUT CLASS="forminput" TYPE="text" NAME="mnu_tt" MAXLENGTH="150" VALUE="<?php echo $mnu_tt;?>">
+  </TD>
+</TR>
+<TR>
+  <TD CLASS="cnt_adm_txt1">
+    <?php echo $rudweb_ln['adm']['mnu_trg'];?>
+  </TD>
+  <TD CLASS="cnt_adm_txt2">
+    <INPUT CLASS="forminput" TYPE="text" NAME="mnu_trg" MAXLENGTH="8" VALUE="<?php echo $mnu_trg;?>">
+    <INPUT TYPE="hidden" NAME="cnt_id" VALUE="<?php echo $this_content_id;?>">
+    <INPUT TYPE="hidden" NAME="cnt_alias" VALUE="<?php echo $cnt_alias;?>">
+  </TD>
+</TR>
+</TABLE>
 </DIV>
+
+<DIV CLASS="adm_mod">
+<DIV STYLE="text-align: left; padding: 0px 0px 10px 0px;"><?php echo $rudweb_ln['adm']['pic1']; ?></DIV>
 <?php      
       // PICTURES 1
       if (_RUDWEB_CFG_PICS_1 === "1") {
@@ -77,10 +94,24 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
       }
 
       // TITLE
-?>      
-      <?php echo $rudweb_skin['cnt']['tt1']['pre'];?>
-      <INPUT CLASS="titleadm" TYPE="text" NAME="cnt_tt" SIZE="30" MAXLENGTH="150" VALUE="<?php echo $cnt_tt;?>">
-      <?php echo $rudweb_skin['cnt']['tt1']['suf'];?>
+?>
+</DIV>
+
+<DIV CLASS="adm_mod">
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR>
+  <TD CLASS="cnt_adm_txt1">
+    <?php echo $rudweb_ln['adm']['cnt_tt']; ?>
+  </TD>
+  <TD CLASS="cnt_adm_txt2">
+    <INPUT CLASS="forminput" TYPE="text" NAME="cnt_tt" SIZE="30" MAXLENGTH="150" VALUE="<?php echo $cnt_tt;?>">
+  </TD>
+</TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="adm_mod">
+<DIV STYLE="text-align: left; padding: 0px 0px 10px 0px;"><?php echo $rudweb_ln['adm']['pic2']; ?></DIV>
 <?php
       // PICTURES 2
       if (_RUDWEB_CFG_PICS_2 === "1") {
@@ -109,6 +140,8 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
             echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"delpic[".$row_rst_pic2['pic_id']."]\">";
             echo "<BR>" . $rudweb_ln['adm']['pic_repl'];
             echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscnt[".$row_rst_pic2['pic_id']."]\" SIZE=\"1\">";
+            echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"pcscnttmb[2]\" SIZE=\"1\">";
+            echo '&#160;' . $rudweb_ln['adm']['pic_tmb'];
             echo $rudweb_skin['cnt']['pic']['suf']['2'];
             echo $rudweb_skin['cnt']['pic']['sep']['2'];
           }
@@ -118,15 +151,31 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
         echo "<BR><BR>";
         echo $rudweb_ln['adm']['new_pic'];
         echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscntnew[2]\" SIZE=\"1\">";
+        echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"pcscnttmb[2]\" SIZE=\"1\">";
+        echo '&#160;' . $rudweb_ln['adm']['pic_tmb'];
         echo $rudweb_skin['cnt']['pic']['suf']['2'];
         echo $rudweb_skin['cnt']['pic']['ftr']['2'];
       }
       
       // SUBTITLE
 ?>
-      <?php echo $rudweb_skin['cnt']['tt2']['pre'];?>
-      <INPUT CLASS="subtitleadm" TYPE="text" NAME="cnt_stt" MAXLENGTH="60" VALUE="<?php echo $cnt_stt;?>">
-      <?php echo $rudweb_skin['cnt']['tt2']['suf'];?>
+</DIV>
+
+<DIV CLASS="adm_mod">
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR>
+  <TD CLASS="cnt_adm_txt1">
+    <?php echo $rudweb_ln['adm']['cnt_stt']; ?>
+  </TD>
+  <TD CLASS="cnt_adm_txt2">
+    <INPUT CLASS="forminput" TYPE="text" NAME="cnt_stt" SIZE="30" MAXLENGTH="60" VALUE="<?php echo $cnt_stt;?>">
+  </TD>
+</TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="adm_mod">
+<DIV STYLE="text-align: left; padding: 0px 0px 10px 0px;"><?php echo $rudweb_ln['adm']['pic3']; ?></DIV>
 <?php
       // PICTURES 3
       if (_RUDWEB_CFG_PICS_3 === "1") {
@@ -155,6 +204,8 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
             echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"delpic[".$row_rst_pic3['pic_id']."]\">";
             echo "<BR>" . $rudweb_ln['adm']['pic_repl'];
             echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscnt[".$row_rst_pic3['pic_id']."]\" SIZE=\"1\">";
+            echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"pcscnttmb[".$row_rst_pic3['pic_id']."]\" SIZE=\"1\">";
+            echo '&#160;' . $rudweb_ln['adm']['pic_tmb'];
             echo $rudweb_skin['cnt']['pic']['suf']['3'];
             echo $rudweb_skin['cnt']['pic']['sep']['3'];
           }
@@ -164,13 +215,18 @@ if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
         echo "<BR><BR>";
         echo $rudweb_ln['adm']['new_pic'];
         echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscntnew[3]\" SIZE=\"1\">";
+        echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"pcscnttmb[3]\" SIZE=\"1\">";
+        echo '&#160;' . $rudweb_ln['adm']['pic_tmb'];
         echo $rudweb_skin['cnt']['pic']['suf']['3'];
         echo $rudweb_skin['cnt']['pic']['ftr']['3'];
       }
 
       // CONTENT TEXT
 ?>
-<?php echo $rudweb_skin['cnt']['txt']['pre'];?>
+</DIV>
+
+<DIV CLASS="adm_mod">
+<DIV STYLE="text-align: left; padding: 0px 0px 10px 0px;"><?php echo $rudweb_ln['adm']['cnt_txt']; ?></DIV>
 <?php
 $oFCKeditor                                     = new FCKeditor('cnt_txt');
 $oFCKeditor->BasePath                           = _RUDWEB_LIB_URL .'editor/';
@@ -185,7 +241,10 @@ $oFCKeditor->Config['AutoDetectLanguage'] 	    = false;
 $oFCKeditor->Config['DefaultLanguage']          = $_SESSION[_RUDWEB_PRE.'usr_lang_index'];
 $oFCKeditor->Create();
 ?>
-<?php echo $rudweb_skin['cnt']['txt']['suf'];?>
+</DIV>
+
+<DIV CLASS="adm_mod">
+<DIV STYLE="text-align: left; padding: 0px 0px 10px 0px;"><?php echo $rudweb_ln['adm']['pic4']; ?></DIV>
 <?php      
       // PICTURES 4
       if (_RUDWEB_CFG_PICS_4 === "1") {
@@ -214,6 +273,8 @@ $oFCKeditor->Create();
             echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"delpic[".$row_rst_pic4['pic_id']."]\">";
             echo "<BR>" . $rudweb_ln['adm']['pic_repl'];
             echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscnt[".$row_rst_pic4['pic_id']."]\" SIZE=\"1\">";
+            echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"pcscnttmb[4]\" SIZE=\"1\">";
+            echo '&#160;' . $rudweb_ln['adm']['pic_tmb'];
             echo $rudweb_skin['cnt']['pic']['suf']['4'];
             echo $rudweb_skin['cnt']['pic']['sep']['4'];
           }
@@ -223,10 +284,15 @@ $oFCKeditor->Create();
         echo "<BR><BR>";
         echo $rudweb_ln['adm']['new_pic'];
         echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscntnew[4]\" SIZE=\"1\">";
+        echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"pcscnttmb[4]\" SIZE=\"1\">";
+        echo '&#160;' . $rudweb_ln['adm']['pic_tmb'];
         echo $rudweb_skin['cnt']['pic']['suf']['4'];
         echo $rudweb_skin['cnt']['pic']['ftr']['4'];
       }
 ?>
+</DIV>
+
+<DIV CLASS="adm_mod">
 <?php
       // TAGS
 if (_RUDWEB_CFG_CNT_TAGS === "1") {
@@ -260,12 +326,12 @@ if (_RUDWEB_CFG_CNT_TAGS === "1") {
       // XXX
 
 ?>
-<DIV STYLE="text-align: center">
-<BR>
+</DIV>
+
+<DIV CLASS="adm_mod">
 <INPUT CLASS="formsubmit" TYPE="submit" NAME="cntmodcnt" VALUE="<?php echo $rudweb_ln['adm']['cnt_mod'];?>">
 &#160;
 <INPUT CLASS="formsubmit" TYPE="submit" NAME="cntdelcnt" VALUE="<?php echo $rudweb_ln['adm']['cnt_del'];?>">
-<BR><BR>
 </DIV>
 </FORM>
 <?php

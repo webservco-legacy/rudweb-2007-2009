@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/cat/item.inc.php
-10:31 2008-06-05
+13:24 2008-07-18
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -29,12 +29,12 @@ $query_cat  = "SELECT A.cat_tt, D.crt_sm AS currency FROM ". _RUDWEB_PRE. "cat_c
 $result_cat = rudweb_qres($rudweb_dbtype, $query_cat);
 $total_cat  = rudweb_qtotal($rudweb_dbtype, $result_cat);
 
-echo $rudweb_skin['catalog']['hdr'];
+//echo $rudweb_skin['catalog']['hdr'];
 
 if($total_cat == '1') {
   $cat_row = rudweb_fetch_assoc($rudweb_dbtype, $result_cat);
   $current_cat_tt = $cat_row['cat_tt'];
-  $current_scat_tt = $cat_row['cat_tt'];
+  //$current_scat_tt = $cat_row['cat_tt'];
   $currency = $cat_row['currency'];
   
   // CONDITIONS
@@ -85,11 +85,16 @@ if($total_cat == '1') {
   $qf1 . " FROM ". _RUDWEB_PRE. "cat_prd as A left join ". _RUDWEB_PRE. "cat_pic as PIC on (A.prd_id = PIC.prd_id AND PIC.pic_loc = '1')" . 
   $qf2 . " WHERE A.prd_id = '".$item_id."'" . $qf3 . $qf4 . $limit;
   
-  echo $rudweb_skin['cnt']['tt1']['pre'];
-  echo $current_cat_tt . ' / ' . $current_scat_tt . ' - ' . $rudweb_ln['catalog']['itemtt'];
-  echo $rudweb_skin['cnt']['tt1']['suf'];
+ 
   
   if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
+    echo $rudweb_skin['catalog']['hdr'];
+    
+    echo $rudweb_skin['cnt']['tt1']['pre'];
+    //echo $current_cat_tt . ' / ' . $current_scat_tt . ' - ' . $rudweb_ln['catalog']['itemtt'];
+    echo $current_cat_tt . ' - ' . $rudweb_ln['catalog']['itemtt'];
+    echo $rudweb_skin['cnt']['tt1']['suf'];
+  
     if(isset($_POST['itemmod']) || isset($_POST['itemdel'])) {
       // GRAB VALUES
       if(isset($_POST['prd_id']))  {$prd_id = rudweb_filter_input($_POST['prd_id']);}
@@ -346,11 +351,133 @@ if($total_cat == '1') {
         showExtComments(1,$item_id,'');
       }  
     }
+    echo $rudweb_skin['catalog']['ftr'];
   }
+  else if (isset($_GET['print']) && $_GET['print'] == 'true') {
+    // PRINT
+   
+    $rp = rudweb_qres($rudweb_dbtype, $qp);
+    $tp = rudweb_qtotal($rudweb_dbtype, $rp);
+      
+      if($tp == '1') {
+        $rwp = rudweb_fetch_assoc($rudweb_dbtype, $rp);
+        
+       
+        echo $rudweb_skin['prod']['dt']['hdr'];
+        // main picture
+        echo $rudweb_skin['prod']['dt']['pict0']['pre'];
+  
+        if($rwp['pic_id'] != 0 && $rwp['pic_fn'] != NULL) {
+          if(is_file(_RUDWEB_PRDP_DIR.$rwp['pic_fn'])) {
+            $pic0url = _RUDWEB_LIB_URL.'pic.php?imgfile='._RUDWEB_PRDP_DIR.$rwp['pic_fn'].'&amp;max_size='.$rudweb_skin['prod']['dt']['picmax'];
+            $pic0fileurl = _RUDWEB_PRDP_URL.$rwp['pic_fn'];
+          }
+          
+        }
+        else {
+          $pic0url     = _RUDWEB_LIB_URL.'pic.php?imgfile='._RUDWEB_SKIN_DIR . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'].'/graphics/nopic.png'.'&amp;max_size='.$rudweb_skin['prod']['dt']['picmax'];
+          $pic0fileurl = _RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'].'/graphics/nopic.png';
+        }
+        echo '<A CLASS="default" rel="lightbox[1]" HREF="'.$pic0fileurl.'" TITLE="'.$rwp['pname'].'">';
+        echo '<IMG CLASS="op" SRC="'.$pic0url.'" TITLE="'.$rwp['pname'].'" ALT="'.$rwp['pname'].'" onMouseOver="bevisible(this,0)" onMouseOut="bevisible(this,1)">';
+        echo '</A>';
+  
+        echo $rudweb_skin['prod']['dt']['pict0']['suf'];
+        // product name
+        echo $rudweb_skin['prod']['dt']['tt_vl']['pre'];
+        echo $rwp['pname'];
+        echo $rudweb_skin['prod']['dt']['tt_vl']['suf'];
+        // offer id
+        echo $rudweb_skin['prod']['dt']['pid_tt']['pre'];
+        echo $rudweb_ln['prod']['pid'];
+        echo $rudweb_skin['prod']['dt']['pid_tt']['suf'];
+        echo $rudweb_skin['prod']['dt']['pid_vl']['pre'];
+        echo $rwp['pid'];
+        echo $rudweb_skin['prod']['dt']['pid_vl']['suf'];
+  
+        // product description
+        echo $rudweb_skin['prod']['dt']['dsc_tt']['pre'];
+        echo $rudweb_ln['prod']['prd_dsc'];
+        echo $rudweb_skin['prod']['dt']['dsc_tt']['suf'];
+        echo $rudweb_skin['prod']['dt']['dsc_vl']['pre'];
+        echo $rwp['prd_dsc'];
+        echo $rudweb_skin['prod']['dt']['dsc_vl']['suf'];
+  
+  
+        // all other details
+        for($m=1;$m<=$dt;$m++) {
+          echo $rudweb_skin['prod']['dt']['det']['hdr'];
+          echo $rudweb_skin['prod']['dt']['det_tt']['pre'];
+          echo $dtt[$m];
+          echo $rudweb_skin['prod']['dt']['det_tt']['suf'];
+          echo $rudweb_skin['prod']['dt']['det_vl']['pre'];
+          echo $rwp['pdet'.$m];
+          echo $rudweb_skin['prod']['dt']['det_vl']['suf'];
+          echo $rudweb_skin['prod']['dt']['det']['ftr'];
+        }
+  
+        // quantity
+        if ($rwp['prd_qlvl'] <= $_SESSION[_RUDWEB_PRE.'usr_level']) {
+          echo $rudweb_skin['prod']['dt']['qty_tt']['pre'];
+          echo $rudweb_ln['cat']['quantity'];
+          echo $rudweb_skin['prod']['dt']['qty_tt']['suf'];
+          echo $rudweb_skin['prod']['dt']['qty_vl']['pre'];
+          echo $rwp['prd_qty'];
+          echo $rudweb_skin['prod']['dt']['qty_vl']['suf'];
+        }
+  
+        // price
+        echo $rudweb_skin['prod']['dt']['prc_tt']['pre'];
+        echo $rudweb_ln['prod']['pprice'];
+        echo $rudweb_skin['prod']['dt']['prc_tt']['suf'];
+        echo $rudweb_skin['prod']['dt']['prc_vl']['pre'];
+        if($rwp['prd_plvl'] > $_SESSION[_RUDWEB_PRE.'usr_level'] || $rwp['pprice'] == '0.00') {echo '---';}
+        else {echo $rwp['pprice'] . '&#160;' . $currency;}
+        echo $rudweb_skin['prod']['dt']['prc_vl']['suf'];
+  
+        // product pictures
+        echo $rudweb_skin['prod']['dt']['pic0']['hdr'];
+  
+        $qpc = "SELECT * FROM "._RUDWEB_PRE."cat_pic WHERE prd_id = '".$item_id."' AND pic_loc >= '2' ORDER BY pic_ord ASC";
+        $rpc = rudweb_qres($rudweb_dbtype, $qpc);
+        $tpc = rudweb_qtotal($rudweb_dbtype, $rpc);
+        if($tpc != 0) {
+          for($ip=1;$ip<=$tpc;$ip++) {
+            $rowp = rudweb_fetch_assoc($rudweb_dbtype, $rpc); 
+            if(is_file(_RUDWEB_PRDP_DIR.$rowp['pic_fn'])) {
+              $picpath[$ip] = _RUDWEB_PRDP_DIR . $rowp['pic_fn']; 
+              $picurl[$ip]  = _RUDWEB_PRDP_URL . $rowp['pic_fn'];
+              $picsrc[$ip]  = '<IMG CLASS="op" SRC="'._RUDWEB_LIB_URL.'pic.php?imgfile='.$picpath[$ip].'&amp;max_size='.$rudweb_skin['prod']['dt']['picmax'].'" TITLE="'.$rwp['pname'].'" ALT="'.$rwp['pname'].'" onMouseOver="bevisible(this,0)" onMouseOut="bevisible(this,1)">';
+            }
+            else {
+              $picurl[$ip]  = _RUDWEB_LIB_URL.'img.php?pw='.$rudweb_skin['prod']['dt']['picmax'].'&amp;ph='.$rudweb_skin['prod']['dt']['picmax'].'&amp;txt='.$rudweb_ln['adm']['nopic'];
+              $picsrc[$ip]  = $picurl[$ip];
+            }
+            echo $rudweb_skin['prod']['dt']['pic0']['pre'];
+            echo '<A CLASS="default" REL="lightbox['.$ip.']" HREF="'.$picurl[$ip].'" TITLE="'.$rwp['pname'].'">';
+            echo $picsrc[$ip];
+            echo '</A>';
+            echo $rudweb_skin['prod']['dt']['pic0']['suf'];
+            if($ip != $tpc) {echo $rudweb_skin['prod']['dt']['pic0']['sep'];}
+          }
+        }
+        echo $rudweb_skin['prod']['dt']['pic0']['ftr'];
+  
+        echo $rudweb_skin['prod']['dt']['ftr'];
+        
+      }
+  } // PRINT
   else {
     // NORMAL USER
+    echo $rudweb_skin['catalog']['hdr'];
+    
+    echo $rudweb_skin['cnt']['tt1']['pre'];
+    //echo $current_cat_tt . ' / ' . $current_scat_tt . ' - ' . $rudweb_ln['catalog']['itemtt'];
+    echo $current_cat_tt . ' - ' . $rudweb_ln['catalog']['itemtt'];
+    echo $rudweb_skin['cnt']['tt1']['suf'];
+    
     $rp = rudweb_qres($rudweb_dbtype, $qp);
-      $tp = rudweb_qtotal($rudweb_dbtype, $rp);
+    $tp = rudweb_qtotal($rudweb_dbtype, $rp);
       
       if($tp == '1') {
         $rwp = rudweb_fetch_assoc($rudweb_dbtype, $rp);
@@ -361,7 +488,6 @@ if($total_cat == '1') {
         // main picture
         echo $rudweb_skin['prod']['dt']['pict0']['pre'];
   
-        
         if($rwp['pic_id'] != 0 && $rwp['pic_fn'] != NULL) {
           if(is_file(_RUDWEB_PRDP_DIR.$rwp['pic_fn'])) {
             $pic0url = _RUDWEB_LIB_URL.'pic.php?imgfile='._RUDWEB_PRDP_DIR.$rwp['pic_fn'].'&amp;max_size='.$rudweb_skin['prod']['dt']['picmax'];
@@ -462,10 +588,23 @@ if($total_cat == '1') {
         
         showExtComments(1,$item_id,'');
       }
-  }
+      
+      // PRINT THIS PAGE
+      echo $rudweb_skin['print']['pre'];
+      echo '<A CLASS="default" HREF="JavaScript:void(0);" onClick="JavaScript:window.open(\''._RUDWEB_SITE_URL.'print.php/catalog/item/id/'.$item_id.'/print/true\', \'printer\', \'status=0, toolbar=0, location=0, menubar=0, directories=0, resizable=yes, scrollbars=yes, height=500, width=800\')" onMouseOver="JavaScript:window.status=\'' . $rudweb_ln['print']['page'] . '\'; return true;" onMouseOut="JavaScript:window.status=\'' . $rudweb_ln['print']['page'] . '\'; return true;">';
+      echo '<IMG SRC="'._RUDWEB_SKIN_URL . $_SESSION[_RUDWEB_PRE.'usr_skin_dir'].'/graphics/printer.png" WIDTH="16" HEIGHT="16" ALT="'.$rudweb_ln['print']['page'].'" TITLE="'.$rudweb_ln['print']['page'].'" STYLE="vertical-align: middle;">';
+      echo '</A>';
+      echo '&#160;&#160;&#160;';
+      echo '<A CLASS="default" HREF="JavaScript:void(0);" onClick="JavaScript:window.open(\''._RUDWEB_SITE_URL.'print.php/catalog/item/id/'.$item_id.'/print/true\', \'printer\', \'status=0, toolbar=0, location=0, menubar=0, directories=0, resizable=yes, scrollbars=yes, height=500, width=800\')" onMouseOver="JavaScript:window.status=\'' . $rudweb_ln['print']['page'] . '\'; return true;" onMouseOut="JavaScript:window.status=\'' . $rudweb_ln['print']['page'] . '\'; return true;">';
+      echo $rudweb_ln['print']['page'];
+      echo '</A>';
+      echo $rudweb_skin['print']['suf'];
+      
+      echo $rudweb_skin['catalog']['ftr'];
+  } // NORMAL USER
 }
 else {
   echo '<DIV CLASS="err" STYLE="padding-top: 15px;">'.$rudweb_ln['err']['1'].'</DIV>';
 }
-echo $rudweb_skin['catalog']['ftr'];
+//echo $rudweb_skin['catalog']['ftr'];
 ?>

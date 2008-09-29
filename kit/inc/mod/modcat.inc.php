@@ -326,7 +326,7 @@ function catSortLink($sort, $tt, $old_asc) {
   }
 }
 /* ********** ********** ********** //CATALOG FILTER BOX  ********** ********** ********** */
-function displayFilterBox($di, $dtyp, $dtt, $dt) {
+function displayFilterBox($di, $dtyp, $dtt, $dt, $urlsofar) {
   global $rudweb_dbtype;
   global $rudweb_ln;
   global $rudweb_skin;
@@ -338,7 +338,7 @@ function displayFilterBox($di, $dtyp, $dtt, $dt) {
   if(isset($_POST['kw'])) {$flb_pname = rudweb_filter_input($_POST['kw']);}
   
   echo $rudweb_skin['prod']['flb']['hdr'];
-  echo '<FORM ENCTYPE="multipart/form-data" NAME="flb_form" ACTION="" METHOD="post">';
+  echo '<FORM ENCTYPE="multipart/form-data" NAME="flb_form" ACTION="'.$urlsofar.'" METHOD="post">';
   
   echo $rudweb_skin['prod']['flb']['pidpre'];
   echo $rudweb_ln['prod']['pid'] . ':<BR>';
@@ -387,7 +387,7 @@ function displayFilterBox($di, $dtyp, $dtt, $dt) {
   echo $rudweb_skin['prod']['flb']['applypre'];
   echo '<INPUT CLASS="formsubmit" TYPE="submit" NAME="filter" VALUE="'.$rudweb_ln['adm']['filter'].'">';
   echo '</FORM>';
-  echo '<FORM ENCTYPE="multipart/form-data" NAME="flb_form" ACTION="" METHOD="post">';
+  echo '<FORM ENCTYPE="multipart/form-data" NAME="flb_form" ACTION="'.$urlsofar.'" METHOD="post">';
   echo '<INPUT CLASS="formsubmit" STYLE="margin-top: 3px;" TYPE="submit" NAME="filter" VALUE="'.$rudweb_ln['adm']['reset'].'">';
   echo '</FORM>';
   echo $rudweb_skin['prod']['flb']['applysuf'];

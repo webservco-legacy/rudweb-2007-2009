@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/ro/lang.inc.php
-16:32 2008-06-27
+14:28 2008-08-06
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -45,6 +45,11 @@ $rudweb_ln['blg']['lastmod']  = "Modificat de ";
 // ADMIN FORMS
 $rudweb_ln['adm']['mnu_tt']       = "Titlu Meniu:";
 $rudweb_ln['adm']['mnu_trg']      = "Target:";
+$rudweb_ln['adm']['pic0']         = "Poze [0]:";
+$rudweb_ln['adm']['pic1']         = "Poze [1]:";
+$rudweb_ln['adm']['pic2']         = "Poze [2]:";
+$rudweb_ln['adm']['pic3']         = "Poze [3]:";
+$rudweb_ln['adm']['pic4']         = "Poze [4]:";
 $rudweb_ln['adm']['nopic']        = "FARA POZA"; // NO SPECIAL CHARS HERE!
 $rudweb_ln['adm']['new_pic']      = "Poz&#259; nou&#259;:";
 $rudweb_ln['adm']['pic_tmb']      = "thumbnail";
@@ -55,6 +60,7 @@ $rudweb_ln['adm']['cnt_tt']       = "Titlu Con&#355;inut:";
 $rudweb_ln['adm']['cnt_stt']      = "Subtitlu con&#355;inut:";
 $rudweb_ln['adm']['cnt_kw']       = "Cuvinte cheie:";
 $rudweb_ln['adm']['cnt_dsc']      = "Descriere:";
+$rudweb_ln['adm']['cnt_txt']      = "Text:";
 $rudweb_ln['adm']['cnt_mod']      = "Modific&#259; Con&#355;inut";
 $rudweb_ln['adm']['cnt_del']      = "&#350;terge Con&#355;inut";
 $rudweb_ln['adm']['cnt_add']      = "Adaug&#259; Con&#355;inut";
@@ -162,6 +168,7 @@ $rudweb_ln['pgnav']['of']          = ' din ';
 //ADMINISTRATION
 $rudweb_ln['adm']['adm']           = 'Administrare';
 $rudweb_ln['adm']['add']           = 'Ad&#259;ugare';
+$rudweb_ln['adm']['mov']           = 'Mutare';
 $rudweb_ln['adm']['mod']           = 'Modificare';
 $rudweb_ln['adm']['del']           = '&#350;tergere';
 $rudweb_ln['adm']['sel']           = 'Selecta&#355;i';
@@ -293,4 +300,7 @@ $rudweb_ln['con']['frby']    = "Citit prima data de ";
 $rudweb_ln['con']['sby']     = "Rezolvat de ";
 $rudweb_ln['con']['sets']    = "Setare Rezolvat";
 $rudweb_ln['con']['general'] = "General";
+
+// PRINT
+$rudweb_ln['print']['page'] = "Imprim&#259; aceast&#259; pagin&#259;";
 ?>

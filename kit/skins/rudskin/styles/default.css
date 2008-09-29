@@ -63,23 +63,6 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   padding-right: 5<?php echo $rudweb_skin['Measure']; ?>;
   cursor: text;
 }
-.titleadm {
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontColor']; ?>;
-  /*width: 100%;*/
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  font-weight: bold;
-  font-size: 1.1em;
-  line-height: 100%;
-  border-top: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
-  border-right: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
-  border-bottom: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
-  border-left: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
-  cursor: text;
-}
 .subtitle {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -88,22 +71,6 @@ H2 {margin: 0 0 0 0; line-height: 130%; font-size: 1.2em;}
   font-weight: bold;
   font-size: 1em;
   line-height: 100%;
-  cursor: text;
-}
-.subtitleadm {
-  background-color: <?php echo $rudweb_skin['BgColor']; ?>;
-  color: <?php echo $rudweb_skin['FontColor']; ?>;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
-  margin-right: 0px;
-  font-weight: bold;
-  font-size: 1em;
-  line-height: 100%;
-  border-top: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
-  border-right: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
-  border-bottom: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
-  border-left: 1px solid <?php echo $rudweb_skin['FontColor']; ?>;
   cursor: text;
 }
 .text {
@@ -647,4 +614,12 @@ A.logout:hover {
   color: <?php echo $rudweb_skin['FontColor']; ?>;
   font-weight: bold;
   text-decoration: underline;
+}
+.cnt_adm_txt1 {
+  width: 25%;
+  text-align: right;
+}
+.cnt_adm_txt2 {
+  width: 75%;
+  text-align: left;
 }

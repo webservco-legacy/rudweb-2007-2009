@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/content.inc.php
-21:09 2008-04-23
+11:09 2008-07-01
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
       // CONTENT

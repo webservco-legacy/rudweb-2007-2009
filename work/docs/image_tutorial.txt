@@ -11,7 +11,7 @@ In meniul editorului:
   latime: ex: 150 (este de ajuns pentru un thumbnail)
   margine: 0 (altfel apare bordura albastra daca imaginea are link)
   hspace: ex: 5 (spatiul suplimentar orizontal in jurul imaginii)
-  vspace: ex: 5 ex: 5 (spatiul suplimentar vertical in jurul imaginii)
+  vspace: ex: 5 (spatiul suplimentar vertical in jurul imaginii)
 2)
 --> tabul "link (legatura web)"
 -> "tinta (target)" se selecteaza "fereastra noua (_blank)

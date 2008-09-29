@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudwebf.inc.php
-10:16 2008-06-08
+15:43 2008-07-01
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -618,6 +618,7 @@ function getCntMnuId($cnt_alias) {
   if (isset($_GET['content']))   {$rudweb_mnu_typ = '1';}
   else if (isset($_GET['page'])) {$rudweb_mnu_typ = '3';}
   else if (isset($_GET['rudweb'])) {$rudweb_mnu_typ = '4';}
+  else if (isset($_GET['catalog'])) {$rudweb_mnu_typ = '5';}
   else {$rudweb_mnu_typ = '1';} // 2 is external link, no need for that
   $query = "SELECT `mnu_id` FROM `"._RUDWEB_PRE."ws_mnu` WHERE `mnu_cnt_alias` = '".$cnt_alias."' AND (`mnu_dis` = '0' AND (`mnu_ln` = '".$_SESSION[_RUDWEB_PRE.'usr_lang_index']."' AND `mnu_typ` = '".$rudweb_mnu_typ."')) ORDER BY `mnu_cat` ASC, `mnu_lev` DESC, `mnu_id` DESC LIMIT 1";
   $rst_query = mysql_query($query) or require _RUDWEB_LIB_DIR . 'myerr.php';

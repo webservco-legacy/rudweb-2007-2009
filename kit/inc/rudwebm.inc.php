@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/rudwebm.inc.php
-09:35 2008-05-06
+15:58 2008-09-27
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../lib/404.php';}
 
@@ -54,6 +54,7 @@ else {
   function showNewsItem() {}
   function addNewsItem() {}
   function showNewsItemForm() {}
+  function newsPageNavigation() {}
 }
 /* ********** ********** ********** //NEWS ********** ********** ********** */
 /* ********** ********** ********** SEARCH ********** ********** ********** */

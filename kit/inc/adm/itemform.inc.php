@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/adm/itemform.inc.php
-14:41 2008-04-29
+13:04 2008-07-22
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
@@ -38,7 +38,7 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
   echo $rudweb_skin['prod']['dt']['tt_vl']['pre'];
   echo '<INPUT TYPE="hidden" NAME="prd_id" VALUE="'.$prd_id.'">';
   echo $rudweb_ln['prod']['pname'] . '&#160;:&#160;';
-  echo '<INPUT CLASS="forminput" STYLE="background-color: '.$rudweb_skin['BgReqColor'].'" TYPE="text" NAME="prd_tt" SIZE="50" MAXLENGTH="150" VALUE="'.$prd_tt.'">';
+  echo '<INPUT CLASS="forminput" STYLE="background-color: '.$rudweb_skin['BgReqColor'].'" TYPE="text" NAME="prd_tt" MAXLENGTH="150" VALUE="'.$prd_tt.'">';
   echo $rudweb_skin['prod']['dt']['tt_vl']['suf'];
   
   echo $rudweb_skin['prod']['dt']['pid_tt']['pre'];
@@ -52,7 +52,7 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
   echo $rudweb_ln['prod']['prd_dsc'];
   echo $rudweb_skin['prod']['dt']['dsc_tt']['suf'];
   echo $rudweb_skin['prod']['dt']['dsc_vl']['pre'];
-  echo '<TEXTAREA CLASS="forminput" NAME="prd_dsc" COLS="50" ROWS="3" onKeyDown="limitText(this.form.prd_dsc,this.form.prd_dsc_cnt,255);" onKeyUp="limitText(this.form.prd_dsc,this.form.prd_dsc_cnt,255);" onChange="limitText(this.form.prd_dsc,this.form.prd_dsc_cnt,255);">';
+  echo '<TEXTAREA CLASS="forminput" NAME="prd_dsc" ROWS="3" onKeyDown="limitText(this.form.prd_dsc,this.form.prd_dsc_cnt,255);" onKeyUp="limitText(this.form.prd_dsc,this.form.prd_dsc_cnt,255);" onChange="limitText(this.form.prd_dsc,this.form.prd_dsc_cnt,255);">';
   echo $prd_dsc;
   echo '</TEXTAREA>';
   echo '&#160;';
@@ -71,7 +71,7 @@ if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
     if($dtyp[$fi] == '0') {
       $rf1 = '';
       if($dr[$fi] == '1') {$rf1 = ' STYLE="background-color: '.$rudweb_skin['BgReqColor'].';"';}
-      echo '<INPUT CLASS="forminput"'.$rf1.' TYPE="text" NAME="val_tt['.$did.']" SIZE="50" MAXLENGTH="255" VALUE="'.$val_tt[$did].'">';
+      echo '<INPUT CLASS="forminput"'.$rf1.' TYPE="text" NAME="val_tt['.$did.']" MAXLENGTH="255" VALUE="'.$val_tt[$did].'">';
     }
     else {
       $qo = "SELECT opt_id, opt_tt FROM ". _RUDWEB_PRE. "cat_opt WHERE det_id = '".$di[$fi]."' ORDER BY opt_ord ASC";

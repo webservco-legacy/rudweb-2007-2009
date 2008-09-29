@@ -30,6 +30,7 @@ if (isset($_GET['form']) && isValidInt(rudweb_filter_input($_GET['form']))) {
   $cat_row    = rudweb_fetch_assoc($rudweb_dbtype, $result_cat);
   $con_cat_tt = $cat_row['con_cat_tt'];
   
+  echo $rudweb_skin['con']['pre'];
   echo $rudweb_skin['cnt']['tt1']['pre'];
   echo $rudweb_ln['con']['tt'] . ' - ' . $con_cat_tt;
   echo $rudweb_skin['cnt']['tt1']['suf'];
@@ -37,8 +38,10 @@ if (isset($_GET['form']) && isValidInt(rudweb_filter_input($_GET['form']))) {
   echo $rudweb_skin['cnt']['txt']['pre'];
   showContactForm($con_cat_id);
   echo $rudweb_skin['cnt']['txt']['suf'];
+  echo $rudweb_skin['con']['suf'];
 }
 else {
+  echo $rudweb_skin['con']['pre'];
   echo $rudweb_skin['cnt']['tt1']['pre'];
   echo $rudweb_ln['con']['tt'];
   echo $rudweb_skin['cnt']['tt1']['suf'];
@@ -46,5 +49,6 @@ else {
   echo $rudweb_skin['cnt']['txt']['pre'];
   showContactForm(0);
   echo $rudweb_skin['cnt']['txt']['suf'];
+  echo $rudweb_skin['con']['suf'];
 }
 ?>

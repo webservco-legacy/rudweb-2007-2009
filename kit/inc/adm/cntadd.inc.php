@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/adm/cntadd.inc.php
-19:17 2008-06-01
+16:24 2008-07-01
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3 && (isset($_GET['mc']) && (isset($_GET['ml']) && isset($_GET['mp'])))) {
@@ -69,28 +69,42 @@ echo $rudweb_skin['cnt']['hdr'];
 echo $rudweb_skin['cnt']['pre'];
 ?>
 <FORM ENCTYPE="multipart/form-data" CLASS="contaddform" NAME="contaddform" ACTION="" METHOD="post">
-<DIV STYLE="text-align:center">
-<BR>
-<INPUT TYPE="hidden" NAME="mnu_cat" VALUE="<?php echo $mnu_cat;?>">
-<INPUT TYPE="hidden" NAME="mnu_lev" VALUE="<?php echo $mnu_lev;?>">
-<INPUT TYPE="hidden" NAME="mnu_par" VALUE="<?php echo $mnu_par;?>">
-<?php echo $rudweb_ln['adm']['mnu_tt'];?>
-<?php $dostuff = "JavaScript:copyvalue(document.forms['contaddform'].mnu_tt, document.forms['contaddform'].cnt_tt);JavaScript:copyvalue(document.forms['contaddform'].mnu_tt, document.forms['contaddform'].lnk_tt);"; ?>
-<INPUT CLASS="forminput" TYPE="text" NAME="mnu_tt" MAXLENGTH="150" VALUE="<?php echo $mnu_tt;?>" onKeyDown="<?php echo $dostuff; ?>" onKeyUp="<?php echo $dostuff; ?>" onChange="<?php echo $dostuff; ?>">
-<?php echo $rudweb_ln['adm']['mnu_trg'];?>
-<INPUT CLASS="forminput" TYPE="text" NAME="mnu_trg" MAXLENGTH="8" VALUE="<?php echo $mnu_trg;?>">
+<DIV CLASS="adm_mod">
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR>
+  <TD CLASS="cnt_adm_txt1">
+    <?php echo $rudweb_ln['adm']['mnu_tt'];?>
+  </TD>
+  <TD CLASS="cnt_adm_txt2">
+    <INPUT TYPE="hidden" NAME="mnu_cat" VALUE="<?php echo $mnu_cat;?>">
+    <INPUT TYPE="hidden" NAME="mnu_lev" VALUE="<?php echo $mnu_lev;?>">
+    <INPUT TYPE="hidden" NAME="mnu_par" VALUE="<?php echo $mnu_par;?>">
+    <?php $dostuff = "JavaScript:copyvalue(document.forms['contaddform'].mnu_tt, document.forms['contaddform'].cnt_tt);JavaScript:copyvalue(document.forms['contaddform'].mnu_tt, document.forms['contaddform'].lnk_tt);"; ?>
+    <INPUT CLASS="forminput" TYPE="text" NAME="mnu_tt" MAXLENGTH="150" VALUE="<?php echo $mnu_tt;?>" onKeyDown="<?php echo $dostuff; ?>" onKeyUp="<?php echo $dostuff; ?>" onChange="<?php echo $dostuff; ?>">
+  </TD>
+</TR>
+<TR>
+  <TD CLASS="cnt_adm_txt1">
+    <?php echo $rudweb_ln['adm']['mnu_trg'];?>
+  </TD>
+  <TD CLASS="cnt_adm_txt2">
+    <INPUT CLASS="forminput" TYPE="text" NAME="mnu_trg" MAXLENGTH="8" VALUE="<?php echo $mnu_trg;?>">
+  </TD>
+</TR>
+</TABLE>
 </DIV>
-<BR>
+
 <DIV ID="cntaddcntoff" CLASS="hidden">
 <DIV STYLE="margin-left: 20px;">
-<?php restrictedJsLink("default", "[+]".$rudweb_ln['adm']['new_content'], "JavaScript:toggleLayer('cntaddcnton');toggleLayer('cntaddcntoff');", $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut']); ?>
+<?php restrictedJsLink("adm-mnu", "[+] ".$rudweb_ln['adm']['new_content'], "JavaScript:toggleLayer('cntaddcnton');toggleLayer('cntaddcntoff');", $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut']); ?>
 </DIV>
 </DIV>
 <DIV ID="cntaddcnton">
 <DIV STYLE="margin-left: 20px;">
-<?php restrictedJsLink("default", "[-]".$rudweb_ln['adm']['new_content'], "JavaScript:toggleLayer('cntaddcntoff');toggleLayer('cntaddcnton');", $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut']); ?>
+<?php restrictedJsLink("adm-mnu", "[-] ".$rudweb_ln['adm']['new_content'], "JavaScript:toggleLayer('cntaddcntoff');toggleLayer('cntaddcnton');", $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut']); ?>
 </DIV>
-<BR>
+<DIV CLASS="adm_mod">
+<DIV STYLE="text-align: left; padding: 0px 0px 10px 0px;"><?php echo $rudweb_ln['adm']['pic1']; ?></DIV>
 <!-- pics 1 -->
 <?php
 if (_RUDWEB_CFG_PICS_1 === "1") {
@@ -99,22 +113,50 @@ if (_RUDWEB_CFG_PICS_1 === "1") {
   echo $rudweb_skin['cnt']['pic']['pre']['1'];
   echo $rudweb_ln['adm']['new_pic'];
   echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscntnew[1]\" SIZE=\"1\">";
+  echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"pcscnttmb[1]\" SIZE=\"1\">";
+  echo '&#160;' . $rudweb_ln['adm']['pic_tmb'];
   echo $rudweb_skin['cnt']['pic']['suf']['1'];
   echo $rudweb_skin['cnt']['pic']['ftr']['1'];
 }
 ?>
-<?php echo $rudweb_skin['cnt']['tt1']['pre'];?>
-<INPUT CLASS="titleadm" TYPE="text" NAME="cnt_tt" SIZE="30" MAXLENGTH="150" VALUE="<?php echo $cnt_tt;?>">
-<?php echo $rudweb_skin['cnt']['tt1']['suf'];?>
-<BR>
-<!-- keywords /  description -->
-<DIV STYLE="text-align:center">
-<?php echo $rudweb_ln['adm']['cnt_kw'];?>
-<INPUT CLASS="forminput" TYPE="text" NAME="cnt_kw" MAXLENGTH="255" VALUE="<?php echo $cnt_kw;?>">
-<?php echo $rudweb_ln['adm']['cnt_dsc'];?>
-<INPUT CLASS="forminput" TYPE="text" NAME="cnt_dsc" MAXLENGTH="255" VALUE="<?php echo $cnt_dsc;?>">
 </DIV>
-<BR>
+<DIV CLASS="adm_mod">
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR>
+  <TD CLASS="cnt_adm_txt1">
+    <?php echo $rudweb_ln['adm']['cnt_tt']; ?>
+  </TD>
+  <TD CLASS="cnt_adm_txt2">
+    <INPUT CLASS="forminput" TYPE="text" NAME="cnt_tt" SIZE="30" MAXLENGTH="150" VALUE="<?php echo $cnt_tt;?>">
+  </TD>
+</TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="adm_mod">
+<!-- keywords /  description -->
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR>
+  <TD CLASS="cnt_adm_txt1">
+    <?php echo $rudweb_ln['adm']['cnt_kw'];?>
+  </TD>
+  <TD CLASS="cnt_adm_txt2">
+    <INPUT CLASS="forminput" TYPE="text" NAME="cnt_kw" MAXLENGTH="255" VALUE="<?php echo $cnt_kw;?>">
+  </TD>
+</TR>
+<TR>
+  <TD CLASS="cnt_adm_txt1">
+    <?php echo $rudweb_ln['adm']['cnt_dsc'];?>
+  </TD>
+  <TD CLASS="cnt_adm_txt2">
+    <INPUT CLASS="forminput" TYPE="text" NAME="cnt_dsc" MAXLENGTH="255" VALUE="<?php echo $cnt_dsc;?>">
+  </TD>
+</TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="adm_mod">
+<DIV STYLE="text-align: left; padding: 0px 0px 10px 0px;"><?php echo $rudweb_ln['adm']['pic2']; ?></DIV>
 <!-- pics 2 -->
 <?php
 if (_RUDWEB_CFG_PICS_2 === "1") {
@@ -123,15 +165,29 @@ if (_RUDWEB_CFG_PICS_2 === "1") {
   echo $rudweb_skin['cnt']['pic']['pre']['2'];
   echo $rudweb_ln['adm']['new_pic'];
   echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscntnew[2]\" SIZE=\"1\">";
+  echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"pcscnttmb[2]\" SIZE=\"1\">";
+  echo '&#160;' . $rudweb_ln['adm']['pic_tmb'];
   echo $rudweb_skin['cnt']['pic']['suf']['2'];
   echo $rudweb_skin['cnt']['pic']['ftr']['2'];
 }
 ?>
-<?php echo $rudweb_skin['cnt']['tt2']['pre'];?>
-<?php echo $rudweb_ln['adm']['cnt_stt'];?>
-<INPUT CLASS="subtitleadm" TYPE="text" NAME="cnt_stt" MAXLENGTH="60" VALUE="<?php echo $cnt_stt;?>">
-<?php echo $rudweb_skin['cnt']['tt2']['suf'];?>
-<BR>
+</DIV>
+
+<DIV CLASS="adm_mod">
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR>
+  <TD CLASS="cnt_adm_txt1">
+    <?php echo $rudweb_ln['adm']['cnt_stt']; ?>
+  </TD>
+  <TD CLASS="cnt_adm_txt2">
+    <INPUT CLASS="forminput" TYPE="text" NAME="cnt_stt" SIZE="30" MAXLENGTH="60" VALUE="<?php echo $cnt_stt;?>">
+  </TD>
+</TR>
+</TABLE>
+</DIV>
+
+<DIV CLASS="adm_mod">
+<DIV STYLE="text-align: left; padding: 0px 0px 10px 0px;"><?php echo $rudweb_ln['adm']['pic3']; ?></DIV>
 <!-- pics 3 -->
 <?php
 if (_RUDWEB_CFG_PICS_3 === "1") {
@@ -140,11 +196,16 @@ if (_RUDWEB_CFG_PICS_3 === "1") {
   echo $rudweb_skin['cnt']['pic']['pre']['3'];
   echo $rudweb_ln['adm']['new_pic'];
   echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscntnew[3]\" SIZE=\"1\">";
+  echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"pcscnttmb[3]\" SIZE=\"1\">";
+  echo '&#160;' . $rudweb_ln['adm']['pic_tmb'];
   echo $rudweb_skin['cnt']['pic']['suf']['3'];
   echo $rudweb_skin['cnt']['pic']['ftr']['3'];
 }
 ?>
-<?php echo $rudweb_skin['cnt']['txt']['pre'];?>
+</DIV>
+
+<DIV CLASS="adm_mod">
+<DIV STYLE="text-align: left; padding: 0px 0px 10px 0px;"><?php echo $rudweb_ln['adm']['cnt_txt']; ?></DIV>
 <?php
 $oFCKeditor                                     = new FCKeditor('cnt_txt');
 $oFCKeditor->BasePath                           = _RUDWEB_LIB_URL .'editor/';
@@ -158,7 +219,10 @@ $oFCKeditor->Config['AutoDetectLanguage'] 	    = false;
 $oFCKeditor->Config['DefaultLanguage']          = $_SESSION[_RUDWEB_PRE.'usr_lang_index'];
 $oFCKeditor->Create();
 ?>
-<?php echo $rudweb_skin['cnt']['txt']['suf'];?>
+</DIV>
+
+<DIV CLASS="adm_mod">
+<DIV STYLE="text-align: left; padding: 0px 0px 10px 0px;"><?php echo $rudweb_ln['adm']['pic4']; ?></DIV>
 <!-- pics 4 -->
 <?php
 if (_RUDWEB_CFG_PICS_4 === "1") {
@@ -167,10 +231,15 @@ if (_RUDWEB_CFG_PICS_4 === "1") {
   echo $rudweb_skin['cnt']['pic']['pre']['4'];
   echo $rudweb_ln['adm']['new_pic'];
   echo "<INPUT CLASS=\"imgupload\" TYPE=\"file\" NAME=\"pcscntnew[4]\" SIZE=\"1\">";
+  echo "<INPUT CLASS=\"chk\" TYPE=\"checkbox\" NAME=\"pcscnttmb[4]\" SIZE=\"1\">";
+  echo '&#160;' . $rudweb_ln['adm']['pic_tmb'];
   echo $rudweb_skin['cnt']['pic']['suf']['4'];
   echo $rudweb_skin['cnt']['pic']['ftr']['4'];
 }
 ?>
+</DIV>
+
+<DIV CLASS="adm_mod">
 <?php
       // TAGS
 if (_RUDWEB_CFG_CNT_TAGS === "1") {
@@ -198,36 +267,61 @@ if (_RUDWEB_CFG_CNT_TAGS === "1") {
   echo $rudweb_skin['tagsc']['ftr'];
 }
 ?>
-  <DIV STYLE="text-align: center">
-  <BR>
+</DIV>
+
+  <DIV CLASS="adm_mod">
   <INPUT CLASS="formsubmit" TYPE="submit" NAME="cntaddcnt" VALUE="<?php echo $rudweb_ln['adm']['cnt_add'];?>">
   </DIV>
 </DIV>
 
 <DIV ID="cntaddlnkoff">
 <DIV STYLE="margin-left: 20px;">
-<?php restrictedJsLink("default", "[+]".$rudweb_ln['adm']['new_link'], "JavaScript:toggleLayer('cntaddlnkon');toggleLayer('cntaddlnkoff');", $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut']); ?>
+<?php restrictedJsLink("adm-mnu", "[+] ".$rudweb_ln['adm']['new_link'], "JavaScript:toggleLayer('cntaddlnkon');toggleLayer('cntaddlnkoff');", $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut']); ?>
 </DIV>
 </DIV>
 <DIV ID="cntaddlnkon" CLASS="hidden">
 <DIV STYLE="margin-left: 20px;">
-<?php restrictedJsLink("default", "[-]".$rudweb_ln['adm']['new_link'], "JavaScript:toggleLayer('cntaddlnkoff');toggleLayer('cntaddlnkon');", $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut']); ?>
-<BR>
-<?php echo $rudweb_ln['adm']['lnk_tt']; ?>
-<INPUT TYPE="hidden" NAME="lnk_cat" VALUE="1">
-<INPUT CLASS="forminput" TYPE="text" NAME="lnk_tt" MAXLENGTH="150" VALUE="<?php echo $lnk_tt;?>">
-<BR><BR>
-<?php echo $rudweb_ln['adm']['lnk_url']; ?>
-<INPUT CLASS="forminput" TYPE="text" NAME="lnk_url" MAXLENGTH="150" VALUE="<?php echo $lnk_url;?>">
-<BR><BR>
-<?php echo $rudweb_ln['adm']['lnk_trg']; ?>
-<INPUT CLASS="forminput" TYPE="text" NAME="lnk_trg" MAXLENGTH="8" VALUE="<?php echo $lnk_trg;?>">
-<BR><BR>
-<?php echo $rudweb_ln['adm']['lnk_dsc']; ?>
-<INPUT CLASS="forminput" TYPE="text" NAME="lnk_dsc" MAXLENGTH="255" VALUE="<?php echo $lnk_dsc;?>">
+<?php restrictedJsLink("adm-mnu", "[-] ".$rudweb_ln['adm']['new_link'], "JavaScript:toggleLayer('cntaddlnkoff');toggleLayer('cntaddlnkon');", $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut']); ?>
 
-  <DIV STYLE="text-align: center">
-  <BR>
+<DIV CLASS="adm_mod">
+<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR>
+  <TD CLASS="cnt_adm_txt1">
+    <?php echo $rudweb_ln['adm']['lnk_tt']; ?>
+  </TD>
+  <TD CLASS="cnt_adm_txt2">
+    <INPUT TYPE="hidden" NAME="lnk_cat" VALUE="1">
+    <INPUT CLASS="forminput" TYPE="text" NAME="lnk_tt" MAXLENGTH="150" VALUE="<?php echo $lnk_tt;?>">    
+  </TD>
+</TR>
+<TR>
+  <TD CLASS="cnt_adm_txt1">
+    <?php echo $rudweb_ln['adm']['lnk_url']; ?>
+  </TD>
+  <TD CLASS="cnt_adm_txt2">
+    <INPUT CLASS="forminput" TYPE="text" NAME="lnk_url" MAXLENGTH="150" VALUE="<?php echo $lnk_url;?>">
+  </TD>
+</TR>
+<TR>
+  <TD CLASS="cnt_adm_txt1">
+    <?php echo $rudweb_ln['adm']['lnk_trg']; ?>
+  </TD>
+  <TD CLASS="cnt_adm_txt2">
+    <INPUT CLASS="forminput" TYPE="text" NAME="lnk_trg" MAXLENGTH="8" VALUE="<?php echo $lnk_trg;?>">
+  </TD>
+</TR>
+<TR>
+  <TD CLASS="cnt_adm_txt1">
+    <?php echo $rudweb_ln['adm']['lnk_dsc']; ?>
+  </TD>
+  <TD CLASS="cnt_adm_txt2">
+    <INPUT CLASS="forminput" TYPE="text" NAME="lnk_dsc" MAXLENGTH="255" VALUE="<?php echo $lnk_dsc;?>">
+  </TD>
+</TR>
+</TABLE>
+</DIV>
+
+  <DIV CLASS="adm_mod">
   <INPUT CLASS="formsubmit" TYPE="submit" NAME="cntaddlnk" VALUE="<?php echo $rudweb_ln['adm']['cnt_add_lnk'];?>">
   </DIV>
 </DIV>
@@ -235,26 +329,37 @@ if (_RUDWEB_CFG_CNT_TAGS === "1") {
 
 <DIV ID="cntaddpgoff">
 <DIV STYLE="margin-left: 20px;">
-<?php restrictedJsLink("default", "[+]".$rudweb_ln['adm']['new_page'], "JavaScript:toggleLayer('cntaddpgon');toggleLayer('cntaddpgoff');", $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut']); ?>
+<?php restrictedJsLink("adm-mnu", "[+] ".$rudweb_ln['adm']['new_page'], "JavaScript:toggleLayer('cntaddpgon');toggleLayer('cntaddpgoff');", $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut']); ?>
 </DIV>
 </DIV>
 <DIV ID="cntaddpgon" CLASS="hidden">
 <DIV STYLE="margin-left: 20px;">
-<?php restrictedJsLink("default", "[-]".$rudweb_ln['adm']['new_page'], "JavaScript:toggleLayer('cntaddpgoff');toggleLayer('cntaddpgon');", $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut']); ?>
-<BR>
-<?php echo $rudweb_ln['adm']['pg_name']; ?>
+<?php restrictedJsLink("adm-mnu", "[-] ".$rudweb_ln['adm']['new_page'], "JavaScript:toggleLayer('cntaddpgoff');toggleLayer('cntaddpgon');", $_SESSION[_RUDWEB_PRE.'usr_level'], 3, $rudweb_ln['WinStatOver'], $rudweb_ln['WinStatOut']); ?>
+
+<DIV CLASS="adm_mod">
 <?php
 $page_list = lsfiles(_RUDWEB_PG_DIR, ".inc.php");
 if(is_array($page_list)) {
+  echo '<TABLE BORDER="0" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">';
+  echo '<TR>';
+  echo '<TD CLASS="cnt_adm_txt1">';
+  echo $rudweb_ln['adm']['pg_name'];
+  echo '</TD>';
+  echo '<TD CLASS="cnt_adm_txt2">';
   echo "<SELECT CLASS=\"forminput\" NAME=\"page_tt\">";
   for ($page_i=1; $page_i<=count($page_list); $page_i++) {
     echo "<OPTION VALUE=\"".$page_list[$page_i]."\">".$page_list[$page_i]."</OPTION>";
   }
   echo "</SELECT>";
+  echo '</TD>';
+  echo '</TR>';
+  echo '</TABLE>';
 }
+else {echo $rudweb_ln['adm']['noitems'];}
 ?>
-  <DIV STYLE="text-align: center">
-  <BR>
+</DIV>
+
+  <DIV CLASS="adm_mod">
   <INPUT CLASS="formsubmit" TYPE="submit" NAME="cntaddpg" VALUE="<?php echo $rudweb_ln['adm']['cnt_add_pg'];?>">
   </DIV>
 </DIV>

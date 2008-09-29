@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/langs/fr/lang.inc.php
-16:32 2008-06-27
+14:27 2008-08-06
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -46,6 +46,11 @@ $rudweb_ln['blg']['lastmod']  = "Last modified by ";
 // ADMIN FORMS
 $rudweb_ln['adm']['mnu_tt']       = "Menu Title:";
 $rudweb_ln['adm']['mnu_trg']      = "Target:";
+$rudweb_ln['adm']['pic0']         = "Pictures [0]:";
+$rudweb_ln['adm']['pic1']         = "Pictures [1]:";
+$rudweb_ln['adm']['pic2']         = "Pictures [2]:";
+$rudweb_ln['adm']['pic3']         = "Pictures [3]:";
+$rudweb_ln['adm']['pic4']         = "Pictures [4]:";
 $rudweb_ln['adm']['nopic']        = "NO PICTURE"; // NO SPECIAL CHARS HERE !
 $rudweb_ln['adm']['new_pic']      = "New Picture:";
 $rudweb_ln['adm']['pic_tmb']      = "thumbnail";
@@ -56,6 +61,7 @@ $rudweb_ln['adm']['cnt_tt']       = "Content Title:";
 $rudweb_ln['adm']['cnt_stt']      = "Content Subtitle:";
 $rudweb_ln['adm']['cnt_kw']       = "Content Keywords:";
 $rudweb_ln['adm']['cnt_dsc']      = "Content Description:";
+$rudweb_ln['adm']['cnt_txt']      = "Content Text:";
 $rudweb_ln['adm']['cnt_mod']      = "Modify content";
 $rudweb_ln['adm']['cnt_del']      = "Delete content";
 $rudweb_ln['adm']['cnt_add']      = "Add content";
@@ -145,6 +151,7 @@ $rudweb_ln['pgnav']['of']          = ' of ';
 //ADMINISTRATION
 $rudweb_ln['adm']['adm']           = 'Administration';
 $rudweb_ln['adm']['add']           = 'Add';
+$rudweb_ln['adm']['mov']           = 'Move';
 $rudweb_ln['adm']['mod']           = 'Modify';
 $rudweb_ln['adm']['del']           = 'Delete';
 $rudweb_ln['adm']['sel']           = 'Select';
@@ -275,4 +282,7 @@ $rudweb_ln['con']['frby']    = "First read by ";
 $rudweb_ln['con']['sby']     = "Solved by ";
 $rudweb_ln['con']['sets']    = "Set Solved";
 $rudweb_ln['con']['general'] = "General";
+
+// PRINT
+$rudweb_ln['print']['page'] = "Print this page";
 ?>

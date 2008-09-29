@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/cat/items.inc.php
-20:01 2008-06-25
+13:24 2008-07-18
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -83,11 +83,16 @@ if(isset($_GET['cat'])) {
       $dettyp = $dtyp[$j];
       $fm[$detid] = "IS NOT NULL";
       $fl[$detid] = "IS NOT NULL";
+
+      if(isset($_GET['det_id']) && ($_GET['det_id'] == $detid && isset($_GET['opt_id']))) {
+        $_POST['opt_id'][$detid] = rudweb_filter_content($_GET['opt_id']);
+      }
       if(isset($_POST['opt_id'][$detid])) {
         $flm = rudweb_filter_content($_POST['opt_id'][$detid]);
         if($flm == '' || $flm == 0) {$fm[$detid] = "IS NOT NULL";}
         else{$fm[$detid] = "= '".$flm."'";}
       }
+     
       else if(isset($_POST['val_tt'][$detid])) {
         //$flt = rudweb_filter_content($_POST['val_tt'][$detid]);
         $flt = parseSearchString($_POST['val_tt'][$detid]);
@@ -227,9 +232,11 @@ if(isset($_GET['cat'])) {
   echo $rudweb_skin['cat']['ftr'];
 
   // DISPLAY FILTER BOX
+  $urlsofar1 = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'catalog/items/cat/' . $current_cat;
+  $urlsofar = 'http'.((!empty($_SERVER['HTTPS'])) ? 's' : '').'://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
   if(_RUDWEB_CFG_CAT_FLT == 1) {
     if($t1 != 0 && $pg == 1) {
-      displayFilterBox($di, $dtyp, $dtt, $dt);
+      displayFilterBox($di, $dtyp, $dtt, $dt, $urlsofar1);
     }
   }
   // xxx
@@ -310,7 +317,13 @@ if(isset($_GET['cat'])) {
       for($m=1;$m<=$dt;$m++) {
         //$detid = $di[$m];
         echo $rudweb_skin['prod']['lst']['detpre'];
-        echo $rw['pdet'.$m];
+        if($rw['pdet'.$m] == $rudweb_ln['yes']) {
+          echo '<IMG SRC="'._RUDWEB_SKIN_URL.$_SESSION[_RUDWEB_PRE.'usr_skin_dir'].'/graphics/yes.gif" WIDTH="16" HEIGHT="16" ALT="'.$rudweb_ln['yes'].'" TITLE="'.$rudweb_ln['yes'].'">';
+        }
+        else if($rw['pdet'.$m] == $rudweb_ln['no']) {
+          echo '<IMG SRC="'._RUDWEB_SKIN_URL.$_SESSION[_RUDWEB_PRE.'usr_skin_dir'].'/graphics/no.gif" WIDTH="16" HEIGHT="16" ALT="'.$rudweb_ln['no'].'" TITLE="'.$rudweb_ln['no'].'">';
+        }
+        else {echo $rw['pdet'.$m];}
         echo $rudweb_skin['prod']['lst']['detsuf'];
       }
       
@@ -325,7 +338,8 @@ if(isset($_GET['cat'])) {
     
     echo $rudweb_skin['prod']['lst']['ftr'];
     
-    $urlsofar = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'catalog/items/cat/' . $current_cat;
+    //$urlsofar = _RUDWEB_SITE_URL . _RUDWEB_INDEX_PHP . 'catalog/items/cat/' . $current_cat;
+    //$urlsofar = 'http'.((!empty($_SERVER['HTTPS'])) ? 's' : '').'://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
     catalogPageNavigation($totalitems,$itemspg,$pg,$urlsofar);
   }
 
