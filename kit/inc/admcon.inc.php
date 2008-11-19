@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/admcon.inc.php
-16:59 2008-06-27
+19:03 2008-11-19
 */
 if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 5 && $new_onoff !== "") {
   changedbcfg("CON", $new_onoff, $action_date, $action_time);
@@ -239,14 +239,20 @@ else if (isset($_POST['con_msg_del'])) {
       $con_id = rudweb_filter_input($_POST['con_id']);
       $con_cat_id = rudweb_filter_input($_POST['con_cat_id']);
       
-      $query_lock = "LOCK TABLES "._RUDWEB_PRE."con_con WRITE";
+      $query_lock = "LOCK TABLES "._RUDWEB_PRE."con_con WRITE, "._RUDWEB_PRE."con_val WRITE";
       mysql_query($query_lock) or require _RUDWEB_LIB_DIR . 'myerr.php';
       
       $q = "DELETE FROM "._RUDWEB_PRE."con_con WHERE con_id = '".$con_id."';";
       mysql_query($q) or require _RUDWEB_LIB_DIR . 'myerr.php';
+      
+      $q1 = "DELETE FROM "._RUDWEB_PRE."con_val WHERE con_id = '".$con_id."';";
+      mysql_query($q1) or require _RUDWEB_LIB_DIR . 'myerr.php';
     
       $q2 = "OPTIMIZE TABLE "._RUDWEB_PRE."con_con";
       mysql_query($q2) or require _RUDWEB_LIB_DIR . 'myerr.php';
+      
+      $q3 = "OPTIMIZE TABLE "._RUDWEB_PRE."con_val";
+      mysql_query($q3) or require _RUDWEB_LIB_DIR . 'myerr.php';
         
       $query_unlock = "UNLOCK TABLES";
       mysql_query($query_unlock) or require _RUDWEB_LIB_DIR . 'myerr.php';

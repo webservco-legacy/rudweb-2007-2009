@@ -1,7 +1,7 @@
 <?php
 /*
 ./inc/cat/item.inc.php
-13:24 2008-07-18
+16:08 2008-11-18
 */
 if(!defined('_RUDWEB_PUBFIL')) {require_once './../../lib/404.php';}
 
@@ -37,6 +37,9 @@ if($total_cat == '1') {
   //$current_scat_tt = $cat_row['cat_tt'];
   $currency = $cat_row['currency'];
   
+  
+  /* SLOW REMOVE */
+  /*
   // CONDITIONS
   $qf1   = '';
   $qf2   = '';
@@ -75,16 +78,29 @@ if($total_cat == '1') {
     }
   }
   $qf3 .= ")";
+  */
+  /* SLOW REMOVE */
 
   $limit = ' LIMIT 1';
   // // CONDITIONS
   
   // DA MEAN QUERY
+  /* SLOW REMOVE */
+  /*
   $qp =
   "SELECT A.prd_id, A.cat_id, A.prd_iid AS pid, A.prd_tt AS pname, A.prd_dsc, A.prd_qty, A.prd_qlvl, A.prd_prc AS pprice, A.prd_plvl, PIC.pic_id AS pic_id, PIC.pic_fn as pic_fn" .
   $qf1 . " FROM ". _RUDWEB_PRE. "cat_prd as A left join ". _RUDWEB_PRE. "cat_pic as PIC on (A.prd_id = PIC.prd_id AND PIC.pic_loc = '1')" . 
   $qf2 . " WHERE A.prd_id = '".$item_id."'" . $qf3 . $qf4 . $limit;
+  */
+  /* SLOW REMOVE */
   
+  /* SLOW INSERT*/
+  $qp_a = "SELECT A.prd_id, A.cat_id, A.prd_iid AS pid, A.prd_tt AS pname, A.prd_dsc, A.prd_qty, A.prd_qlvl, A.prd_prc AS pprice, A.prd_plvl, PIC.pic_id AS pic_id, PIC.pic_fn as pic_fn"
+  ." FROM ". _RUDWEB_PRE. "cat_prd as A left join ". _RUDWEB_PRE. "cat_pic as PIC on (A.prd_id = PIC.prd_id AND PIC.pic_loc = '1')"
+  ." WHERE A.prd_id = '".$item_id."'"
+  .$limit;
+  $qp_b = '';
+  /* SLOW INSERT*/
  
   
   if($_SESSION[_RUDWEB_PRE.'usr_level'] >= 3) {
@@ -260,7 +276,12 @@ if($total_cat == '1') {
           else {
             catYah(0,$item_id);
             // DISPLAY ERRORS
-            $rp = rudweb_qres($rudweb_dbtype, $qp);
+            /* SLOW REMOVE */
+            //$rp = rudweb_qres($rudweb_dbtype, $qp);
+            /* SLOW REMOVE */
+            /* SLOW INSERT*/
+            $rp = rudweb_qres($rudweb_dbtype, $qp_a);
+            /* SLOW INSERT*/
             $tp = rudweb_qtotal($rudweb_dbtype, $rp);
             if($tp == '1') {
               $rwp = rudweb_fetch_assoc($rudweb_dbtype, $rp);
@@ -320,7 +341,13 @@ if($total_cat == '1') {
       }
     }
     else {
-      $rp = rudweb_qres($rudweb_dbtype, $qp);
+      /* SLOW REMOVE */
+      // $rp = rudweb_qres($rudweb_dbtype, $qp);
+      /* SLOW REMOVE */
+      /* SLOW INSERT*/
+      $rp = rudweb_qres($rudweb_dbtype, $qp_a);
+      /* SLOW INSERT*/
+
       $tp = rudweb_qtotal($rudweb_dbtype, $rp);
       
       if($tp == '1') {
@@ -331,12 +358,43 @@ if($total_cat == '1') {
         $prd_iid = $rwp['pid'];
         $prd_dsc = $rwp['prd_dsc'];
         
+        /* SLOW REMOVE */
+        /*
         for($ii=1;$ii<=$dt;$ii++) {
           $diiid = $di[$ii];
           $val_id[$diiid] = $rwp['vid'.$ii];
           if($dtyp[$ii] == '0') {$val_tt[$diiid] = $rwp['pdet'.$ii];}
           else {$opt_id[$diiid] = $rwp['oid'.$ii];}
         }
+        */
+        /* SLOW REMOVE */
+        
+        /* SLOW INSERT*/
+for($ii=1;$ii<=$dt;$ii++) {
+ $detid = $di[$ii];
+ $dettyp = $dtyp[$ii];
+ if($dettyp == '1') { // option
+  $q = "SELECT F.val_id AS vid, F.opt_id, G.opt_tt AS pdet FROM "._RUDWEB_PRE. "cat_val AS F LEFT JOIN "._RUDWEB_PRE. "cat_opt AS G ON (G.opt_id = F.opt_id) WHERE F.prd_id = '".$item_id."' AND F.det_id = '".$detid."' LIMIT 1";
+  $r = rudweb_qres($rudweb_dbtype, $q);
+  $t = rudweb_qtotal($rudweb_dbtype, $r);
+  if($t == '1') {
+    $rw = rudweb_fetch_assoc($rudweb_dbtype, $r);
+    $val_id[$detid] = $rw['vid'];
+    $opt_id[$detid] = $rw['opt_id'];
+  }
+ }
+ else { // value
+  $q = "SELECT val_id AS vid, val_tt AS pdet FROM "._RUDWEB_PRE. "cat_val WHERE prd_id = '".$item_id."' AND det_id = '".$detid."' LIMIT 1";
+  $r = rudweb_qres($rudweb_dbtype, $q);
+  $t = rudweb_qtotal($rudweb_dbtype, $r);
+  if($t == '1') {
+    $rw = rudweb_fetch_assoc($rudweb_dbtype, $r);
+    $val_id[$detid] = $rw['vid'];
+    $val_tt[$detid] = $rw['pdet'];
+  }
+ }
+}
+        /* SLOW INSERT*/
         
         $prd_qty  = $rwp['prd_qty'];
         $prd_qlvl = $rwp['prd_qlvl'];
@@ -356,7 +414,12 @@ if($total_cat == '1') {
   else if (isset($_GET['print']) && $_GET['print'] == 'true') {
     // PRINT
    
-    $rp = rudweb_qres($rudweb_dbtype, $qp);
+    /* SLOW REMOVE */
+    //$rp = rudweb_qres($rudweb_dbtype, $qp);
+    /* SLOW REMOVE */
+    /* SLOW INSERT*/
+    $rp = rudweb_qres($rudweb_dbtype, $qp_a);
+    /* SLOW INSERT*/
     $tp = rudweb_qtotal($rudweb_dbtype, $rp);
       
       if($tp == '1') {
@@ -396,34 +459,72 @@ if($total_cat == '1') {
         echo $rudweb_skin['prod']['dt']['pid_vl']['suf'];
   
         // product description
-        echo $rudweb_skin['prod']['dt']['dsc_tt']['pre'];
-        echo $rudweb_ln['prod']['prd_dsc'];
-        echo $rudweb_skin['prod']['dt']['dsc_tt']['suf'];
-        echo $rudweb_skin['prod']['dt']['dsc_vl']['pre'];
-        echo $rwp['prd_dsc'];
-        echo $rudweb_skin['prod']['dt']['dsc_vl']['suf'];
+        if ($rwp['prd_dsc'] != '') {
+          echo $rudweb_skin['prod']['dt']['dsc_tt']['pre'];
+          echo $rudweb_ln['prod']['prd_dsc'];
+          echo $rudweb_skin['prod']['dt']['dsc_tt']['suf'];
+          echo $rudweb_skin['prod']['dt']['dsc_vl']['pre'];
+          echo $rwp['prd_dsc'];
+          echo $rudweb_skin['prod']['dt']['dsc_vl']['suf'];
+        }
   
   
         // all other details
         for($m=1;$m<=$dt;$m++) {
-          echo $rudweb_skin['prod']['dt']['det']['hdr'];
-          echo $rudweb_skin['prod']['dt']['det_tt']['pre'];
-          echo $dtt[$m];
-          echo $rudweb_skin['prod']['dt']['det_tt']['suf'];
-          echo $rudweb_skin['prod']['dt']['det_vl']['pre'];
-          echo $rwp['pdet'.$m];
-          echo $rudweb_skin['prod']['dt']['det_vl']['suf'];
-          echo $rudweb_skin['prod']['dt']['det']['ftr'];
+          /* SLOW REMOVE */
+          /*
+          if ($rwp['pdet'.$m] != '') {
+            echo $rudweb_skin['prod']['dt']['det']['hdr'];
+            echo $rudweb_skin['prod']['dt']['det_tt']['pre'];
+            echo $dtt[$m];
+            echo $rudweb_skin['prod']['dt']['det_tt']['suf'];
+            echo $rudweb_skin['prod']['dt']['det_vl']['pre'];
+            echo $rwp['pdet'.$m];
+            echo $rudweb_skin['prod']['dt']['det_vl']['suf'];
+            echo $rudweb_skin['prod']['dt']['det']['ftr'];
+          }
+          */
+          /* SLOW REMOVE */
+          /* SLOW INSERT*/
+  $detid = $di[$m];
+  $dettyp = $dtyp[$m];
+  if($dettyp == '1') { // option
+    $q = "SELECT F.val_id AS vid, F.opt_id, G.opt_tt AS pdet FROM "._RUDWEB_PRE. "cat_val AS F LEFT JOIN "._RUDWEB_PRE. "cat_opt AS G ON (G.opt_id = F.opt_id) WHERE F.prd_id = '".$item_id."' AND F.det_id = '".$detid."' LIMIT 1";
+  }
+  else {
+    $q = "SELECT val_id AS vid, val_tt AS pdet FROM "._RUDWEB_PRE. "cat_val WHERE prd_id = '".$item_id."' AND det_id = '".$detid."' LIMIT 1";
+  }
+  $r = rudweb_qres($rudweb_dbtype, $q);
+  $t = rudweb_qtotal($rudweb_dbtype, $r);
+  if($t == '1') {
+    $rw = rudweb_fetch_assoc($rudweb_dbtype, $r);
+    $pdet[$m] = $rw['pdet'];
+  }
+  else {$pdet[$m] = '';}          
+          
+          if ($pdet[$m] != '') {
+            echo $rudweb_skin['prod']['dt']['det']['hdr'];
+            echo $rudweb_skin['prod']['dt']['det_tt']['pre'];
+            echo $dtt[$m];
+            echo $rudweb_skin['prod']['dt']['det_tt']['suf'];
+            echo $rudweb_skin['prod']['dt']['det_vl']['pre'];
+            echo $pdet[$m];
+            echo $rudweb_skin['prod']['dt']['det_vl']['suf'];
+            echo $rudweb_skin['prod']['dt']['det']['ftr'];
+          }
+          /* SLOW INSERT*/
         }
   
         // quantity
         if ($rwp['prd_qlvl'] <= $_SESSION[_RUDWEB_PRE.'usr_level']) {
-          echo $rudweb_skin['prod']['dt']['qty_tt']['pre'];
-          echo $rudweb_ln['cat']['quantity'];
-          echo $rudweb_skin['prod']['dt']['qty_tt']['suf'];
-          echo $rudweb_skin['prod']['dt']['qty_vl']['pre'];
-          echo $rwp['prd_qty'];
-          echo $rudweb_skin['prod']['dt']['qty_vl']['suf'];
+          if ($rwp['prd_qty'] != '') {
+            echo $rudweb_skin['prod']['dt']['qty_tt']['pre'];
+            echo $rudweb_ln['cat']['quantity'];
+            echo $rudweb_skin['prod']['dt']['qty_tt']['suf'];
+            echo $rudweb_skin['prod']['dt']['qty_vl']['pre'];
+            echo $rwp['prd_qty'];
+            echo $rudweb_skin['prod']['dt']['qty_vl']['suf'];
+          }
         }
   
         // price
@@ -476,7 +577,12 @@ if($total_cat == '1') {
     echo $current_cat_tt . ' - ' . $rudweb_ln['catalog']['itemtt'];
     echo $rudweb_skin['cnt']['tt1']['suf'];
     
-    $rp = rudweb_qres($rudweb_dbtype, $qp);
+    /* SLOW REMOVE */
+    //$rp = rudweb_qres($rudweb_dbtype, $qp);
+    /* SLOW REMOVE */
+    /* SLOW INSERT*/
+    $rp = rudweb_qres($rudweb_dbtype, $qp_a);
+    /* SLOW INSERT*/
     $tp = rudweb_qtotal($rudweb_dbtype, $rp);
       
       if($tp == '1') {
@@ -517,34 +623,72 @@ if($total_cat == '1') {
         echo $rudweb_skin['prod']['dt']['pid_vl']['suf'];
   
         // product description
-        echo $rudweb_skin['prod']['dt']['dsc_tt']['pre'];
-        echo $rudweb_ln['prod']['prd_dsc'];
-        echo $rudweb_skin['prod']['dt']['dsc_tt']['suf'];
-        echo $rudweb_skin['prod']['dt']['dsc_vl']['pre'];
-        echo $rwp['prd_dsc'];
-        echo $rudweb_skin['prod']['dt']['dsc_vl']['suf'];
+        if ($rwp['prd_dsc'] != '') {
+          echo $rudweb_skin['prod']['dt']['dsc_tt']['pre'];
+          echo $rudweb_ln['prod']['prd_dsc'];
+          echo $rudweb_skin['prod']['dt']['dsc_tt']['suf'];
+          echo $rudweb_skin['prod']['dt']['dsc_vl']['pre'];
+          echo $rwp['prd_dsc'];
+          echo $rudweb_skin['prod']['dt']['dsc_vl']['suf'];
+        }
   
   
         // all other details
         for($m=1;$m<=$dt;$m++) {
-          echo $rudweb_skin['prod']['dt']['det']['hdr'];
-          echo $rudweb_skin['prod']['dt']['det_tt']['pre'];
-          echo $dtt[$m];
-          echo $rudweb_skin['prod']['dt']['det_tt']['suf'];
-          echo $rudweb_skin['prod']['dt']['det_vl']['pre'];
-          echo $rwp['pdet'.$m];
-          echo $rudweb_skin['prod']['dt']['det_vl']['suf'];
-          echo $rudweb_skin['prod']['dt']['det']['ftr'];
+          /* SLOW REMOVE */
+          /*
+          if ($rwp['pdet'.$m] != '') {
+            echo $rudweb_skin['prod']['dt']['det']['hdr'];
+            echo $rudweb_skin['prod']['dt']['det_tt']['pre'];
+            echo $dtt[$m];
+            echo $rudweb_skin['prod']['dt']['det_tt']['suf'];
+            echo $rudweb_skin['prod']['dt']['det_vl']['pre'];
+            echo $rwp['pdet'.$m];
+            echo $rudweb_skin['prod']['dt']['det_vl']['suf'];
+            echo $rudweb_skin['prod']['dt']['det']['ftr'];
+          }
+          */
+          /* SLOW REMOVE */
+          /* SLOW INSERT*/
+  $detid = $di[$m];
+  $dettyp = $dtyp[$m];
+  if($dettyp == '1') { // option
+    $q = "SELECT F.val_id AS vid, F.opt_id, G.opt_tt AS pdet FROM "._RUDWEB_PRE. "cat_val AS F LEFT JOIN "._RUDWEB_PRE. "cat_opt AS G ON (G.opt_id = F.opt_id) WHERE F.prd_id = '".$item_id."' AND F.det_id = '".$detid."' LIMIT 1";
+  }
+  else {
+    $q = "SELECT val_id AS vid, val_tt AS pdet FROM "._RUDWEB_PRE. "cat_val WHERE prd_id = '".$item_id."' AND det_id = '".$detid."' LIMIT 1";
+  }
+  $r = rudweb_qres($rudweb_dbtype, $q);
+  $t = rudweb_qtotal($rudweb_dbtype, $r);
+  if($t == '1') {
+    $rw = rudweb_fetch_assoc($rudweb_dbtype, $r);
+    $pdet[$m] = $rw['pdet'];
+  }
+  else {$pdet[$m] = '';}          
+          
+          if ($pdet[$m] != '') {
+            echo $rudweb_skin['prod']['dt']['det']['hdr'];
+            echo $rudweb_skin['prod']['dt']['det_tt']['pre'];
+            echo $dtt[$m];
+            echo $rudweb_skin['prod']['dt']['det_tt']['suf'];
+            echo $rudweb_skin['prod']['dt']['det_vl']['pre'];
+            echo $pdet[$m];
+            echo $rudweb_skin['prod']['dt']['det_vl']['suf'];
+            echo $rudweb_skin['prod']['dt']['det']['ftr'];
+          }
+          /* SLOW INSERT*/
         }
   
         // quantity
         if ($rwp['prd_qlvl'] <= $_SESSION[_RUDWEB_PRE.'usr_level']) {
+          if ($rwp['prd_qty'] != '') {
           echo $rudweb_skin['prod']['dt']['qty_tt']['pre'];
           echo $rudweb_ln['cat']['quantity'];
           echo $rudweb_skin['prod']['dt']['qty_tt']['suf'];
           echo $rudweb_skin['prod']['dt']['qty_vl']['pre'];
           echo $rwp['prd_qty'];
           echo $rudweb_skin['prod']['dt']['qty_vl']['suf'];
+          }
         }
   
         // price
