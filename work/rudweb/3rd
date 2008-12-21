@@ -1,0 +1,17 @@
+database:
+http://www.rubyrobot.org/article/mysql-abstraction-class-for-php
+
+error handler:
+http://snippets.dzone.com/posts/show/1617
+
+skin:
+
+
+
+
+
+
+
+$rs = $db->dbQuery("SELECT cod, descriere FROM tmp_asesoft_prod WHERE producator = 'TOSHIBA'");
+list($cod, $descriere) = $rs->dbFetchRow();
+
