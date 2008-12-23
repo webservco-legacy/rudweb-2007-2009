@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    21:48 2008-12-21
+* @version    10:34 2008-12-22
 * @since      10:29 2008-12-11
 * @access     public
 * @package    RudWEb
@@ -67,7 +67,7 @@ class rw_Core
     }
     catch (Exception $e)
     {
-      $this->rwErr($e);
+      echo $this->rwErr($e);
       exit;
     }
     /**
@@ -154,12 +154,32 @@ class rw_Core
       }
     }
   }
+  /**
+  * Main error display
+  */
   public function rwErr($e)
   {
-    echo '<b>msg:</b> ' . $e->getMessage() . '<br />';
-    echo '<b>code:</b> ' . $e->getCode() . '<br />';
-    echo '<b>file:</b> ' . $e->getFile() . '<br />';
-    echo '<b>line:</b> ' . $e->getLine() . '<br />';
+    $err = _APP_ERR ? $this->rwErrDev($e) : $this->rwErrUsr($e);
+    return $err;
+  }
+  /**
+  * Developer error display
+  */
+  public function rwErrDev($e)
+  {
+    $err  = '<b>msg:</b> ' .  $e->getMessage() . '<br />';
+    $err .= '<b>code:</b> ' . $e->getCode() . '<br />';
+    $err .= '<b>file:</b> ' . $e->getFile() . '<br />';
+    $err .= '<b>line:</b> ' . $e->getLine() . '<br />';
+    return $err;
+  }
+  /**
+  * User error display
+  */
+  public function rwErrUsr($e)
+  {
+    $err = 'Oops!';
+    return $err;
   }
   /**
   * New database type switcher
