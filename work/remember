@@ -1,1 +1,10 @@
 [] template files including smarty will have to have .tpl.php extension
+[] content:
+from file: get page
+from db: get content
+from module (catalog/news/etc): module/name/action/add
+[] modules:
+app_admin ?
+page_admin ?
+content_admin
+catalog_admin
