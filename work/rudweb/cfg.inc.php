@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    12:15 2008-12-22
+* @version    15:42 2008-12-29
 * @since      10:50 2008-12-10
 * @access     public
 * @package    RudWEb
@@ -49,4 +49,15 @@ define('_RW_DIR_LIB', _RW_DIR . 'rwlib/');
 * Engine internationalization directory
 */
 define('_RW_DIR_LANG', _RW_DIR . 'intl/');
+/**
+* Default skin url
+*/
+if(_APP_TPL == 'smarty')
+{
+  define('_APP_SKIN_URL', _APP_WWW . 'skins/' . _APP_SKIN . '/smarty_tpl/');
+}
+else{
+  define('_APP_SKIN_URL', _APP_WWW . 'skins/' . _APP_SKIN . '/');
+}
+
 ?>
