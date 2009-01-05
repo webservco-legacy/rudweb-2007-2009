@@ -1,6 +1,6 @@
 <?php
 /**
-* db
+* rw
 *
 * <I> ./rwlib/rw.inc.php</I>
 * <BR>Main class
@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    10:34 2008-12-22
+* @version    13:04 2009-01-05
 * @since      10:29 2008-12-11
 * @access     public
 * @package    RudWEb
@@ -37,7 +37,7 @@ class rw_Core
     /**
     * Error reporting
     */
-    _APP_ERR ? error_reporting(E_ALL | E_STRICT) : error_reporting(0);
+    _APP_CFG_ERRORS ? error_reporting(E_ALL | E_STRICT) : error_reporting(0);
     /**
     * Load error handler
     */
@@ -45,10 +45,10 @@ class rw_Core
     /**
     * Load database file
     */
-    //if(_APP_DB)
-    //{
+    if(_APP_CFG_DATABASE)
+    {
       require_once(_RW_DIR_LIB.'db.inc.php');
-    //}
+    }
     /**
     * SEO URLS
     */
@@ -66,7 +66,7 @@ class rw_Core
     */
     try
     {
-      $usr_status = _APP_SESSION ? $this->rwSession() : 1;
+      $usr_status = _APP_CFG_SESSIONS ? $this->rwSession() : 1;
     }
     catch (Exception $e)
     {
@@ -76,7 +76,7 @@ class rw_Core
     /**
     * Load language file
     */
-    $ln = _APP_SESSION ? $_SESSION[_APP_PRE.'_usr_lang'] : _APP_LANG;
+    $ln = _APP_CFG_SESSIONS ? $_SESSION[_APP_PRE.'_usr_lang'] : _APP_LANG;
     require_once(_RW_DIR_LANG.$ln.'/lang.inc.php');
     require_once(_APP_DIR_LANG.$ln.'/lang.inc.php');
     
@@ -162,7 +162,7 @@ class rw_Core
   */
   public function rwErr($e)
   {
-    $err = _APP_ERR ? $this->rwErrDev($e) : $this->rwErrUsr($e);
+    $err = _APP_CFG_ERRORS ? $this->rwErrDev($e) : $this->rwErrUsr($e);
     return $err;
   }
   /**
@@ -186,6 +186,8 @@ class rw_Core
   }
   /**
   * New database type switcher
+  *
+  * Requires: DATABASE
   */
   public function rwDbConnect()
   {
@@ -207,6 +209,8 @@ class rw_Core
   }
   /**
   * Start session
+  *
+  * Requires: SESSIONS
   */
   public function rwSession()
   {
@@ -276,7 +280,7 @@ class rw_Core
         /**
         * user status based on login result
         */
-        $usr_status = _APP_USR ? $this->rwLoginUser() : 1;
+        $usr_status = _APP_CFG_USERS ? $this->rwLoginUser() : 1;
       }
       else if(isset($_SESSION[_APP_PRE.'_auth']) && $_SESSION[_APP_PRE.'_auth'] == 'ok')
       {
@@ -291,7 +295,7 @@ class rw_Core
   /**
   * Login functionality
   *
-  * USERS, DATABASE, SESSIONS must be enabled
+  * Requires: USERS, DATABASE, SESSIONS
   */
   public function rwLoginUser()
   {
@@ -301,7 +305,14 @@ class rw_Core
       {
         if($_POST[_APP_PRE.'_token'] === $_SESSION[_APP_PRE.'_token'])
         {
-          $udb = $this->rwDbConnect();
+          if(_APP_CFG_DATABASE && _APP_CFG_SESSIONS)
+          {
+            $udb = $this->rwDbConnect();
+          }
+          else
+          {
+            trigger_error('User functionality requires session and database functionality. Please check your configuration file!', E_USER_ERROR);
+          }
           $login = $this->rwFilterInput($_POST[_APP_PRE.'_login'],$udb);
           $pass = md5($_POST[_APP_PRE.'_pass']);
           $captcha = strtoupper($this->rwFilterInput($_POST[_APP_PRE.'_captcha'],$udb));
@@ -493,10 +504,12 @@ class rw_Core
   }
   /**
   * Logout functionality
+  *
+  * Requires: USERS, SESSIONS
   */
   public function rwLogoutUser()
   {
-    if(_APP_SESSION === TRUE)
+    if(_APP_CFG_SESSIONS === TRUE)
     {
       $_SESSION = array();
       session_destroy();
