@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    11:23 2008-12-22
+* @version    10:12 2009-01-05
 * @since      16:25 2008-12-09
 * @access     public
 * @package    RudWEb
@@ -44,10 +44,10 @@ class rw_Skin_smarty extends Smarty implements rw_iSkin
   */
   public function skindir($skindir)
   {
-    $this->template_dir = $skindir . '/smarty_tpl';
-    $this->compile_dir = $skindir . '/smarty_cpl';
-    $this->cache_dir = $skindir . '/smarty_cache';
-    $this->config_dir = $skindir . '/smarty_cfg';
+    $this->template_dir = $skindir;
+    $this->compile_dir = _APP_DIR_TMP;
+    $this->cache_dir = _APP_DIR_TMP;
+    $this->config_dir = _APP_DIR_TMP;
   }
   /**
   * Method for setting variables

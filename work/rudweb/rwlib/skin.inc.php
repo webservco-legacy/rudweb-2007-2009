@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    21:52 2008-12-21
+* @version    09:27 2009-01-05
 * @since      16:08 2008-12-09
 * @access     public
 * @package    RudWEb
@@ -88,7 +88,7 @@ class rw_Skin
     /**
     * Allowed template engine types
     */
-    $tplEngines = array('smarty');
+    $tplEngines = array('Smarty');
     if(in_array($tplEngine, $tplEngines))
     {
       /**

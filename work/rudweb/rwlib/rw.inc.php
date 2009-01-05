@@ -45,7 +45,10 @@ class rw_Core
     /**
     * Load database file
     */
-    require_once(_RW_DIR_LIB.'db.inc.php');
+    //if(_APP_DB)
+    //{
+      require_once(_RW_DIR_LIB.'db.inc.php');
+    //}
     /**
     * SEO URLS
     */
@@ -273,7 +276,7 @@ class rw_Core
         /**
         * user status based on login result
         */
-        $usr_status = $this->rwLoginUser();
+        $usr_status = _APP_USR ? $this->rwLoginUser() : 1;
       }
       else if(isset($_SESSION[_APP_PRE.'_auth']) && $_SESSION[_APP_PRE.'_auth'] == 'ok')
       {
@@ -287,6 +290,8 @@ class rw_Core
   }
   /**
   * Login functionality
+  *
+  * USERS, DATABASE, SESSIONS must be enabled
   */
   public function rwLoginUser()
   {
