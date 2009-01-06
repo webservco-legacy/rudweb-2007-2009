@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    09:37 2008-12-16
+* @version    16:57 2009-01-05
 * @since      10:58 2008-12-08
 * @access     public
 * @package    RudWEb
@@ -95,7 +95,19 @@ abstract class rw_Error_handler
   */
   public static function handleError($code, $message, $file, $line, $context)
   {
-    throw new rw_Error($message, $code, $file, $line, $context);
+    if(error_reporting() == 0)
+    {
+      /**
+      * 16:57 2009-01-05 If the suppression flag is used do nothing
+      */
+      return NULL;
+    }
+    else {
+      /**
+      * Handle the error
+      */
+      throw new rw_Error($message, $code, $file, $line, $context);
+    }
   }
 }
 ?>
