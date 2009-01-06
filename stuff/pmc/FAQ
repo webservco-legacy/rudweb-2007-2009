@@ -1,7 +1,0 @@
-Q: Rewrite engine doesn't work even though it is enabled on the server
-
-A: Edit .htaccess file. Uncomment the line
-#RewriteBase /pmc
-and change "/pmc" to reflect your instalation directory.
-If you installed on the server root then the line would be
-RewriteBase /
