@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    13:04 2009-01-05
+* @version    15:43 2009-01-12
 * @since      10:29 2008-12-11
 * @access     public
 * @package    RudWEb
@@ -55,7 +55,6 @@ class rw_Core
     */
     try
     {
-      // xxx
       /**
       * Load extensions
       */
@@ -550,15 +549,15 @@ class rw_Core
     {
       $extName = trim($exts[$i]);
       $extClass = 'rw_Ext_'.$extName;
-      if(is_file(_APP_EXT_GLOBAL_DIR.$extName.'.ext.php'))
-      {
-        require_once(_APP_EXT_GLOBAL_DIR.$extName.'.ext.php');
-        $ext[$extName]['global'] = 1;
-      }
-      else if(is_file(_APP_EXT_LOCAL_DIR.$extName.'.ext.php'))
+      if(is_file(_APP_EXT_LOCAL_DIR.$extName.'.ext.php'))
       {
         require_once(_APP_EXT_LOCAL_DIR.$extName.'.ext.php');
         $ext[$extName]['global'] = 0;
+      }
+      else if(is_file(_APP_EXT_GLOBAL_DIR.$extName.'.ext.php'))
+      {
+        require_once(_APP_EXT_GLOBAL_DIR.$extName.'.ext.php');
+        $ext[$extName]['global'] = 1;
       }
       else
       {

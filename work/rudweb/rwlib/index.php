@@ -10,11 +10,11 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-2.0.php
-* @version    12:19 2008-12-13
+* @version    16:26 2009-01-12
 * @since      12:19 2008-12-13
 * @access     public
 * @package    RudWEb
-* @subpackage Core
+* @subpackage Security
 * @todo       stuff
 */
 
