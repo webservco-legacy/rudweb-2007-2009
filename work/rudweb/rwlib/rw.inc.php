@@ -32,7 +32,7 @@ if(!defined('_RW_VALID')) {require_once('./index.php'); exit;}
 */
 class rw_Core
 {
-  public function rwInit()
+  public function rwInit($exts)
   {
     /**
     * Error reporting
@@ -42,17 +42,6 @@ class rw_Core
     * Load error handler
     */
     require_once(_RW_DIR_LIB.'err.inc.php');
-    /**
-    * Load database file
-    */
-    if(_APP_CFG_DATABASE)
-    {
-      require_once(_RW_DIR_LIB.'db.inc.php');
-    }
-    /**
-    * SEO URLS
-    */
-    $this->rwSeoURLs();
     /**
     * Initialize custom error handler
     */
@@ -66,6 +55,25 @@ class rw_Core
     */
     try
     {
+      // xxx
+      /**
+      * Load extensions
+      */
+      $ext = $this->rwLoadExt($exts);
+      
+      /**
+      * Load database file
+      */
+      if(_APP_CFG_DATABASE)
+      {
+        require_once(_RW_DIR_LIB.'db.inc.php');
+      }
+      /**
+      * SEO URLS
+      */
+      $SeoURLs = $this->rwActivateExt($ext, 'SeoURLs');
+      $SeoURLs->extDo();
+    
       $usr_status = _APP_CFG_SESSIONS ? $this->rwSession() : 1;
     }
     catch (Exception $e)
@@ -80,82 +88,7 @@ class rw_Core
     require_once(_RW_DIR_LANG.$ln.'/lang.inc.php');
     require_once(_APP_DIR_LANG.$ln.'/lang.inc.php');
     
-    return array($usr_status, $lang);
-  }
-  /**
-  * Soft-create SEO urls.
-  *
-  * Mod_rewrite helps for 100% functionality but is not necessary.
-  * Insired by snippets from the PHP manual.
-  * before: index.php?id=2&page=3.
-  * after: index.php/id/2/page/3.
-  * Doesn't work with https
-  */
-  public function rwSeoURLs()
-  {
-    /**
-    * We didn't do our stuff yet, so if a request exists it means it's normal style and will be ignored
-    */
-    if(!empty($_GET)) {$_GET = array();}
-    /**
-    * If the request is new style, put it in the GET array
-    */
-    if(isset($_SERVER['PATH_INFO']))
-    {
-      /**
-      * Split request by "/"
-      */
-      $raw_data = explode('/',$_SERVER['PATH_INFO']);
-      /**
-      * Get rid of empty values
-      */
-      $raw_data = array_diff($raw_data, array(''));
-      /**
-      * Count total values
-      */
-      $total = count($raw_data);
-      $test = ($total)/2;
-      /**
-      * If total number of values divides by two, we have a valid request so we can do our suff
-      */
-      if(is_int($test))
-      {
-        /**
-        * Populate the GET array
-        */
-        for($i=1;$i<=$total;$i+=2)
-        {
-          $_GET[$raw_data[$i]] = $raw_data[$i+1];
-        }
-        /**
-        * Soft-rewrite the request
-        */
-        if(isset($_SERVER['REDIRECT_QUERY_STRING']))
-        {
-          $qs = trim($_SERVER['REDIRECT_QUERY_STRING']);
-          $qs = str_replace('&', '/', $qs);
-          $qs = str_replace('=', '/', $qs);
-          $req_uri = str_replace('?'.$_SERVER['REDIRECT_QUERY_STRING'], '/'.$qs, $_SERVER['REQUEST_URI']);
-          if(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] != '')
-          {
-            $server = $_SERVER['HTTP_HOST'];
-          }
-          else if(isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME'] != '')
-          {
-            $server = $_SERVER['SERVER_NAME'];
-          }
-          $location = 'http://'.$server.$req_uri;
-          header("Location: ".$location);
-        }
-      }
-      else
-      {
-        /**
-        * Invalid request. Redirect to index
-        */
-        header("Location: "._APP_WWW);
-      }
-    }
+    return array($ext, $usr_status, $lang);
   }
   /**
   * Main error display
@@ -603,6 +536,53 @@ class rw_Core
   public function rwCheckEmail($email)
   {
     return(preg_match("/^[-_.[:alnum:]]+@((([[:alnum:]]|[[:alnum:]][[:alnum:]-]*[[:alnum:]])\.)+(ad|ae|aero|af|ag|ai|al|am|an|ao|aq|ar|arpa|as|at|au|aw|az|ba|bb|bd|be|bf|bg|bh|bi|biz|bj|bm|bn|bo|br|bs|bt|bv|bw|by|bz|ca|cc|cd|cf|cg|ch|ci|ck|cl|cm|cn|co|com|coop|cr|cs|cu|cv|cx|cy|cz|de|dj|dk|dm|do|dz|ec|edu|ee|eg|eh|er|es|et|eu|fi|fj|fk|fm|fo|fr|ga|gb|gd|ge|gf|gh|gi|gl|gm|gn|gov|gp|gq|gr|gs|gt|gu|gw|gy|hk|hm|hn|hr|ht|hu|id|ie|il|in|info|int|io|iq|ir|is|it|jm|jo|jp|ke|kg|kh|ki|km|kn|kp|kr|kw|ky|kz|la|lb|lc|li|lk|lr|ls|lt|lu|lv|ly|ma|mc|md|mg|mh|mil|mk|ml|mm|mn|mo|mp|mq|mr|ms|mt|mu|museum|mv|mw|mx|my|mz|na|name|nc|ne|net|nf|ng|ni|nl|no|np|nr|nt|nu|nz|om|org|pa|pe|pf|pg|ph|pk|pl|pm|pn|pr|pro|ps|pt|pw|py|qa|re|ro|ru|rw|sa|sb|sc|sd|se|sg|sh|si|sj|sk|sl|sm|sn|so|sr|st|su|sv|sy|sz|tc|td|tf|tg|th|tj|tk|tm|tn|to|tp|tr|tt|tv|tw|tz|ua|ug|uk|um|us|uy|uz|va|vc|ve|vg|vi|vn|vu|wf|ws|ye|yt|yu|za|zm|zw)$|(([0-9][0-9]?|[0-1][0-9][0-9]|[2][0-4][0-9]|[2][5][0-5])\.){3}([0-9][0-9]?|[0-1][0-9][0-9]|[2][0-4][0-9]|[2][5][0-5]))$/i", $email));
+  }
+  /**
+  * Load extensions.
+  *
+  * @return mixed loaded extensions
+  */
+  public function rwLoadExt($exts)
+  {
+    require_once(_RW_DIR_LIB.'ext.inc.php');
+    $texts = count($exts);
+    for($i=0;$i<$texts;$i++)
+    {
+      $extName = trim($exts[$i]);
+      $extClass = 'rw_Ext_'.$extName;
+      if(is_file(_APP_EXT_GLOBAL_DIR.$extName.'.ext.php'))
+      {
+        require_once(_APP_EXT_GLOBAL_DIR.$extName.'.ext.php');
+        $ext[$extName]['global'] = 1;
+      }
+      else if(is_file(_APP_EXT_LOCAL_DIR.$extName.'.ext.php'))
+      {
+        require_once(_APP_EXT_LOCAL_DIR.$extName.'.ext.php');
+        $ext[$extName]['global'] = 0;
+      }
+      else
+      {
+        trigger_error('Extension '.$extName . ' is missing.', E_USER_ERROR);
+      }
+    }
+    return $ext;
+  }
+  /**
+  * Activate extension
+  *
+  * @return mixed result
+  */
+  public function rwActivateExt($extList, $extName)
+  {
+    if(is_array($extList[$extName]))
+    {
+      $class = 'rw_Ext_'.$extName;
+      return new $class();
+    }
+    else
+    {
+      trigger_error('Extension '.$extName.' is not loaded.', E_USER_ERROR);
+    }
   }
 }
 ?>

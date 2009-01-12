@@ -12,7 +12,7 @@
 * @since      10:50 2008-12-10
 * @access     public
 * @package    RudWEb
-* @subpackage Sandbox
+* @subpackage Settings
 * @todo       stuff
 */
 
@@ -61,4 +61,9 @@ define('_RW_DIR_LANG', _RW_DIR . 'intl/');
 * Default skin url
 */
 define('_APP_SKIN_URL', _APP_WWW . 'skins/' . _APP_SKIN . '/');
+/**
+* Extensions directory
+*/
+define('_APP_EXT_GLOBAL_DIR',_RW_DIR . 'ext/');
+define('_APP_EXT_LOCAL_DIR',_APP_DIR . 'ext/');
 ?>

@@ -1,0 +1,120 @@
+<?php
+/**
+* SeoURLs
+*
+* <I> ./ext/SeoURLs.ext.php</I>
+* <BR>Soft-create SEO urls.
+* <BR>Mod_rewrite helps for 100% functionality but is not necessary.
+* <BR>Insired by snippets from the PHP manual.
+* <BR>before: index.php?id=2&page=3.
+* <BR>after: index.php/id/2/page/3.
+* <BR>Doesn't work with https.
+*
+* @author     Radu Maier <radu@rudisoft.net>
+* @copyright  Copyright (c) 2008, Radu Maier
+* @license    http://opensource.org/licenses/gpl-3.0.html
+* @version    14:20 2009-01-06
+* @since      14:20 2009-01-06
+* @access     public
+* @package    RudWEb
+* @subpackage Extensions
+* @todo       stuff
+*/
+
+/**
+* Prevent direct file access
+*/
+if(!defined('_RW_VALID')) {require_once('./index.php'); exit;}
+
+class rw_Ext_SeoURLs extends rw_Ext_global implements rw_iExt
+{
+  /**
+  * Constructor
+  * Set extension information and call parent constructor
+  *
+  */
+  function __construct()
+  {
+   $extAbout['name']    = 'SeoURLs';
+   $extAbout['version'] = '09:19 2009-01-12';
+   $extAbout['author']  = 'Radu Maier';
+   $extAbout['website'] = 'http://www.rudisoft.net';
+   $extAbout['email']   = 'rudisoft@rudisoft.net';
+   $extAbout['deps']    = array();
+   $extAbout['deps'][]  = 'dep1';
+   $extAbout['deps'][]  = 'dep2';
+   parent::__construct($extAbout);
+  }
+  /**
+  * Main extension functionality
+  * 
+  * @return mixed result
+  */
+  function extDo()
+  {
+    /**
+    * We didn't do our stuff yet, so if a request exists it means it's normal style and will be ignored
+    */
+    if(!empty($_GET)) {$_GET = array();}
+    /**
+    * If the request is new style, put it in the GET array
+    */
+    if(isset($_SERVER['PATH_INFO']))
+    {
+      /**
+      * Split request by "/"
+      */
+      $raw_data = explode('/',$_SERVER['PATH_INFO']);
+      /**
+      * Get rid of empty values
+      */
+      $raw_data = array_diff($raw_data, array(''));
+      /**
+      * Count total values
+      */
+      $total = count($raw_data);
+      $test = ($total)/2;
+      /**
+      * If total number of values divides by two, we have a valid request so we can do our suff
+      */
+      if(is_int($test))
+      {
+        /**
+        * Populate the GET array
+        */
+        for($i=1;$i<=$total;$i+=2)
+        {
+          $_GET[$raw_data[$i]] = $raw_data[$i+1];
+        }
+        /**
+        * Soft-rewrite the request
+        */
+        if(isset($_SERVER['REDIRECT_QUERY_STRING']))
+        {
+          $qs = trim($_SERVER['REDIRECT_QUERY_STRING']);
+          $qs = str_replace('&', '/', $qs);
+          $qs = str_replace('=', '/', $qs);
+          $req_uri = str_replace('?'.$_SERVER['REDIRECT_QUERY_STRING'], '/'.$qs, $_SERVER['REQUEST_URI']);
+          if(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] != '')
+          {
+            $server = $_SERVER['HTTP_HOST'];
+          }
+          else if(isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME'] != '')
+          {
+            $server = $_SERVER['SERVER_NAME'];
+          }
+          $location = 'http://'.$server.$req_uri;
+          header("Location: ".$location);
+        }
+      }
+      else
+      {
+        /**
+        * Invalid request. Redirect to index
+        */
+        header("Location: "._APP_WWW);
+      }
+    }
+  }
+}
+?>

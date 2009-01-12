@@ -1,10 +1,13 @@
-[][] in /cnt/{MODULE}.inc.php: appLoadModule({SUB_MODULE_NAME})
-{ex: one page has menu, other does not}
 ------------------------------------------------------------------------------------------------------
-plugin/extension:
+
+------------------------------------------------------------------------------------------------------
+plugin/extension/module:
 a simple class
 plugin: add_action(where, what)
 core: must have add_stuff()
+------------------------------------------------------------------------------------------------------
+[][] in /cnt/{MODULE}.inc.php: appLoadModule({SUB_MODULE_NAME})
+{ex: one page has menu, other does not}
 ------------------------------------------------------------------------------------------------------
 database:
 http://www.rubyrobot.org/article/mysql-abstraction-class-for-php
