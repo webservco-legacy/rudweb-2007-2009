@@ -1,15 +1,15 @@
 <?php
 /**
-* cfg.inc
+* rw.inc
 *
-* <I> ./cfg.inc.php</I>
+* <I> ./rw.inc.php</I>
 * <BR>Engine configuration file
 *
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    10:53 2009-01-05
-* @since      10:50 2008-12-10
+* @version    10:40 2009-01-14
+* @since      10:40 2009-01-14
 * @access     public
 * @package    RudWEb
 * @subpackage Settings
@@ -33,6 +33,10 @@ define('_APP_DIR_INC', _APP_DIR . 'inc/');
 * Application var directory
 */
 define('_APP_DIR_VAR', _APP_DIR . 'var/');
+/**
+* Application var url
+*/
+define('_APP_URL_VAR', _APP_WWW . 'var/');
 /**
 * Application temp directory
 */
