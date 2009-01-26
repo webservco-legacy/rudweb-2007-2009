@@ -38,12 +38,6 @@ interface rw_iExt
   * @return mixed information about the extension
   */
   function extAbout();
-  /**
-  * Main extension functionality
-  * 
-  * @return mixed result
-  */
-  function extDo();
 }
 /**
 * rw_Ext_global

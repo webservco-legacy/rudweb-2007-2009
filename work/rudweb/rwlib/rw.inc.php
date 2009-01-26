@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    15:43 2009-01-12
+* @version    14:57 2009-01-24
 * @since      10:29 2008-12-11
 * @access     public
 * @package    RudWEb
@@ -71,7 +71,7 @@ class rw_Core
       * SEO URLS
       */
       $SeoURLs = $this->rwActivateExt($ext, 'SeoURLs');
-      $SeoURLs->extDo();
+      $SeoURLs->seoURLs();
     
       $usr_status = _APP_CFG_SESSIONS ? $this->rwSession() : 1;
     }

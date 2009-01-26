@@ -1,14 +1,14 @@
 <?php
 /**
-* rw.inc
+* rwc.inc
 *
-* <I> ./rw.inc.php</I>
+* <I> ./rwc.inc.php</I>
 * <BR>Engine configuration file
 *
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    10:40 2009-01-14
+* @version    15:26 2009-01-19
 * @since      10:40 2009-01-14
 * @access     public
 * @package    RudWEb
@@ -41,6 +41,10 @@ define('_APP_URL_VAR', _APP_WWW . 'var/');
 * Application temp directory
 */
 define('_APP_DIR_TMP', _APP_DIR_VAR . 'tmp/');
+/**
+* Application temp url
+*/
+define('_APP_URL_TMP', _APP_URL_VAR . 'tmp/');
 /**
 * Application content directory
 */
