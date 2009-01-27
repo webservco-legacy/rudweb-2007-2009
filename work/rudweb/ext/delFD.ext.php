@@ -15,7 +15,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    09:19 2009-01-26
+* @version    15:24 2009-01-27
 * @since      16:58 2009-01-23
 * @access     public
 * @package    RudWEb
@@ -32,7 +32,7 @@ error_reporting(E_ALL);
 
 class rw_Ext_delFD extends rw_Ext_global implements rw_iExt
 {
-  /*
+  /**
   * Declare statistics
   */
   public $stats = array();
@@ -41,21 +41,34 @@ class rw_Ext_delFD extends rw_Ext_global implements rw_iExt
   *
   * Initialize statistics.
   * Set extension information and call parent constructor.
+  *
+  * @return null
   */
   function __construct()
   {
-   $this->stats['dirs']  = 0;
-   $this->stats['files'] = 0;
-   $this->stats['size']  = 0;
-
-   $about['name'] = 'delFD';
-   $about['desc'] = 'Delete files and directories.';
-   $about['ver']  = '14:58 2009-01-24';
-   $about['auth'] = 'Radu Maier';
-   $about['web']  = 'http://www.rudisoft.net';
-   $about['mail'] = 'rudisoft@rudisoft.net';
-   $about['deps'] = array();
-   parent::__construct($about);
+    /**
+    * Total directories processed
+    */
+    $this->stats['dirs']  = 0;
+    /**
+    * Total files processed
+    */
+    $this->stats['files'] = 0;
+    /**
+    * Total size processed
+    */
+    $this->stats['size']  = 0;
+    /**
+    * Extension info
+    */
+    $about['name'] = 'delFD';
+    $about['desc'] = 'Delete files and directories.';
+    $about['ver']  = '15:24 2009-01-27';
+    $about['auth'] = 'Radu Maier';
+    $about['web']  = 'http://www.rudisoft.net';
+    $about['mail'] = 'rudisoft@rudisoft.net';
+    $about['deps'] = array();
+    parent::__construct($about);
   }
   /**
   * Main extension functionality

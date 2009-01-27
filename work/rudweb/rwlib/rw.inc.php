@@ -32,6 +32,12 @@ if(!defined('_RW_VALID')) {require_once('./index.php'); exit;}
 */
 class rw_Core
 {
+  /**
+  * Initialize application
+  *
+  * @param mixed $exts extension list
+  * @return mixed result
+  */
   public function rwInit($exts)
   {
     /**
@@ -51,7 +57,7 @@ class rw_Core
     */
     date_default_timezone_set(_APP_TIMEZONE);
     /**
-    * Initialize session and user login
+    * Extensions, session, user authentication
     */
     try
     {
@@ -59,9 +65,8 @@ class rw_Core
       * Load extensions
       */
       $ext = $this->rwLoadExt($exts);
-      
       /**
-      * Load database file
+      * Load database file, if database functionality is enabled
       */
       if(_APP_CFG_DATABASE)
       {
@@ -72,7 +77,9 @@ class rw_Core
       */
       $SeoURLs = $this->rwActivateExt($ext, 'SeoURLs');
       $SeoURLs->seoURLs();
-    
+      /**
+      * Initialize session and user authentication
+      */
       $usr_status = _APP_CFG_SESSIONS ? $this->rwSession() : 1;
     }
     catch (Exception $e)
@@ -86,22 +93,36 @@ class rw_Core
     $ln = _APP_CFG_SESSIONS ? $_SESSION[_APP_PRE.'_usr_lang'] : _APP_LANG;
     require_once(_RW_DIR_LANG.$ln.'/lang.inc.php');
     require_once(_APP_DIR_LANG.$ln.'/lang.inc.php');
-    
+    /**
+    * Return loaded extensions, user status, and language translations
+    */
     return array($ext, $usr_status, $lang);
   }
   /**
   * Main error display
+  *
+  * @param mixed $e error object
+  * @return mixed result
   */
   public function rwErr($e)
   {
+    /**
+    * Check error reporting level and return the proper error display function.
+    */
     $err = _APP_CFG_ERRORS ? $this->rwErrDev($e) : $this->rwErrUsr($e);
     return $err;
   }
   /**
   * Developer error display
+  *
+  * @param mixed $e error object
+  * @return mixed result
   */
   public function rwErrDev($e)
   {
+    /**
+    * Display detailed error information
+    */
     $err  = '<b>msg:</b> ' .  $e->getMessage() . '<br />';
     $err .= '<b>code:</b> ' . $e->getCode() . '<br />';
     $err .= '<b>file:</b> ' . $e->getFile() . '<br />';
@@ -110,9 +131,15 @@ class rw_Core
   }
   /**
   * User error display
+  *
+  * @param mixed $e error object
+  * @return mixed result
   */
   public function rwErrUsr($e)
   {
+    /**
+    * Diplay only little error information
+    */
     $err = 'Oops!';
     return $err;
   }
@@ -120,6 +147,8 @@ class rw_Core
   * New database type switcher
   *
   * Requires: DATABASE
+  *
+  * @return mixed result
   */
   public function rwDbConnect()
   {
@@ -146,6 +175,9 @@ class rw_Core
   */
   public function rwSession()
   {
+    /**
+    * Headers and stuff
+    */
     session_cache_limiter('public, must-revalidate');
     session_cache_expire(600); //minutes (10hrs)
     ini_set("session.gc_maxlifetime","36000"); //seconds (1 hours)
@@ -228,6 +260,8 @@ class rw_Core
   * Login functionality
   *
   * Requires: USERS, DATABASE, SESSIONS
+  *
+  * @return mixed result
   */
   public function rwLoginUser()
   {

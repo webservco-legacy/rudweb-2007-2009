@@ -13,7 +13,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    14:53 2009-01-24
+* @version    15:27 2009-01-27
 * @since      14:20 2009-01-06
 * @access     public
 * @package    RudWEb
@@ -35,21 +35,24 @@ class rw_Ext_SeoURLs extends rw_Ext_global implements rw_iExt
   */
   function __construct()
   {
-   $about['name'] = 'SeoURSs';
-   $about['desc'] = 'Soft-create SEO urls.';
-   $about['ver']  = '14:53 2009-01-24';
-   $about['auth'] = 'Radu Maier';
-   $about['web']  = 'http://www.rudisoft.net';
-   $about['mail'] = 'rudisoft@rudisoft.net';
-   $about['deps'] = array();
-   $about['deps'][]  = 'dep1';
-   $about['deps'][]  = 'dep2';
-   parent::__construct($about);
+    /**
+    * Extension info
+    */
+    $about['name'] = 'SeoURSs';
+    $about['desc'] = 'Soft-create SEO urls.';
+    $about['ver']  = '15:27 2009-01-27';
+    $about['auth'] = 'Radu Maier';
+    $about['web']  = 'http://www.rudisoft.net';
+    $about['mail'] = 'rudisoft@rudisoft.net';
+    $about['deps'] = array();
+    $about['deps'][]  = 'dep1';
+    $about['deps'][]  = 'dep2';
+    parent::__construct($about);
   }
   /**
   * Main extension functionality
   * 
-  * @return mixed result
+  * @return null
   */
   function seoURLs()
   {

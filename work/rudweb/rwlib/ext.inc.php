@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    17:04 2009-01-08
+* @version    15:47 2009-01-27
 * @since      14:11 2009-01-06
 * @access     public
 * @package    RudWEb
@@ -50,6 +50,9 @@ interface rw_iExt
 */
 class rw_Ext_global
 {
+  /**
+  * Set extension info
+  */
   public $extAbout = array();
   /**
   * Load the extension and set it to global or local
