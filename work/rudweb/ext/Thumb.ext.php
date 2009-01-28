@@ -10,13 +10,13 @@
 * <BR>it doesn't create it again.
 * <BR>Returns thumbnail name.
 * <BR>This class doesn't output the actual thumbnail.
-* <BR>Input formats: gif, jpeg, png.
-* <BR>Output format: jpeg.
+* <BR>Input formats: png, jpeg, gif.
+* <BR>Output formats: png, jpeg, gif.
 *
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    15:45 2009-01-27
+* @version    13:25 2009-01-28
 * @since      14:06 2009-01-19
 * @access     public
 * @package    RudWEb
@@ -31,8 +31,22 @@ if(!defined('_RW_VALID')) {require_once('./index.php'); exit;}
 
 class rw_Ext_Thumb extends rw_Ext_global implements rw_iExt
 {
+  /**
+  * Cache directory for thumbnails
+  */
   public $cacheDir;
+  /**
+  * Maximum thumbnail size (width or height)
+  */
   public $maxSize = '80';
+  /**
+  * Thumbnail image format
+  *
+  * 0 - png
+  * 1 - jpg
+  * 2 - gif
+  */
+  public $thumbFormat = 0;
   /**
   * Constructor
   * Set extension information and call parent constructor
@@ -45,7 +59,7 @@ class rw_Ext_Thumb extends rw_Ext_global implements rw_iExt
     */
     $about['name'] = 'Thumb';
     $about['desc'] = 'Create image thumbnails.';
-    $about['ver']  = '15:45 2009-01-27';
+    $about['ver']  = '13:25 2009-01-28';
     $about['auth'] = 'Radu Maier';
     $about['web']  = 'http://www.rudisoft.net';
     $about['mail'] = 'rudisoft@rudisoft.net';
@@ -136,7 +150,37 @@ class rw_Ext_Thumb extends rw_Ext_global implements rw_iExt
       * If you want to output it, remove the buffer lines and put this on the next line:
       * header("Content-type: image/jpeg");
       */
-      imagejpeg($newsizeimage);
+      switch($this->thumbFormat)
+      {
+        case 0  : 
+        {
+          /**
+          * Create PNG image with best compression
+          */
+          imagepng($newsizeimage, NULL, 9); break;
+        }
+        case 1  : 
+        {
+          /**
+          * Create JPEG image with best quality
+          */
+          imagejpeg($newsizeimage, NULL, 100); break;
+        }
+        case 2  : 
+        {
+          /**
+          * Create GIF
+          */
+          imagegif($newsizeimage); break;
+        }
+        default : 
+        {
+          /**
+          * Create PNG image with best compression
+          */
+          imagepng($newsizeimage, NULL, 9); break;
+        }
+      }
       /**
       * Capture output to string
       */
@@ -167,6 +211,7 @@ class rw_Ext_Thumb extends rw_Ext_global implements rw_iExt
   /**
   * Set cache directory
   * 
+  * @param string $cacheDir directory path
   * @return mixed result
   */
   public function set_cacheDir($cacheDir)
@@ -176,11 +221,22 @@ class rw_Ext_Thumb extends rw_Ext_global implements rw_iExt
   /**
   * Set max thumbnail size
   * 
+  * @param integer $maxSize maximum image size
   * @return mixed result
   */
   public function set_maxSize($maxSize)
   {
     $this->maxSize = $maxSize;
+  }
+  /**
+  * Set output file type
+  *
+  * @param integer $thumbFormat image format
+  * @return mixed result
+  */
+  public function set_thumbFormat($thumbFormat)
+  {
+    $this->thumbFormat = $thumbFormat;
   }
 }
 ?>
