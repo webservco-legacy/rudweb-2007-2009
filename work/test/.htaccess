@@ -1,0 +1,27 @@
+<IfModule mod_rewrite.c>
+Options +FollowSymlinks
+# Turn on URL rewriting
+RewriteEngine On
+# Put your installation directory here:
+#RewriteBase /dir_name_here
+# Do not enable rewriting for files that exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Rewrite to index.php/URL
+RewriteRule ^(.*)$ index.php/$1 [PT,L]
+</IfModule>
+
+# Prevent direct file access to some files
+# tpl     - template files
+# tpl.php - parsed template files (smarty)
+# tmp     - temporary files
+<FilesMatch "\.(tpl|tpl.php|tmp)$">
+  Order allow,deny
+  Deny from all
+  Satisfy All
+</FilesMatch>
+
+# PHP security - disable register_globals
+php_value register_globals 0
+# PHP security - disable magic_quotes
+php_value magic_quotes_gpc 0

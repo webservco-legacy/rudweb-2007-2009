@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    20:07 2009-01-22
+* @version    12:20 2009-02-01
 * @since      20:07 2009-01-22
 * @access     public
 * @package    RudWEb
@@ -34,7 +34,7 @@ class app_Viewer
 {
   static function _display($vars, $atpl=array())
   {
-    if(is_readable(_RW_DIR_LIB.'skin.inc.php')) {require_once(_RW_DIR_LIB.'skin.inc.php');} else {require_once('./index.php'); exit;}
+    if(is_readable(_RW_DIR_LIB_SKIN.'skin.inc.php')) {require_once(_RW_DIR_LIB_SKIN.'skin.inc.php');} else {require_once('./index.php'); exit;}
     $skinObj = rw_Skin::_load(_APP_TPL);
     $skin_dir = _APP_CFG_SESSIONS ? $_SESSION[_APP_PRE.'_skin_dir'] : _APP_DIR_SKINS._APP_SKIN;
     $skinObj->skindir($skin_dir);

@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    10:25 2009-02-01
+* @version    12:19 2009-02-01
 * @since      10:29 2008-12-11
 * @access     public
 * @package    RudWEb
@@ -47,7 +47,7 @@ class rw_Core
     /**
     * Load error handler
     */
-    require_once(_RW_DIR_LIB.'err.inc.php');
+    require_once(_RW_DIR_LIB_ERR.'err.inc.php');
     /**
     * Initialize custom error handler
     */
@@ -70,7 +70,7 @@ class rw_Core
       */
       if(_APP_CFG_DATABASE)
       {
-        require_once(_RW_DIR_LIB.'db.inc.php');
+        require_once(_RW_DIR_LIB_DB.'db.inc.php');
       }
       /**
       * SEO URLS
@@ -172,7 +172,7 @@ class rw_Core
       /**
       * Include database class
       */
-      require_once(_RW_DIR_LIB.'db.'._APP_DB_TYPE.'.inc.php');
+      require_once(_RW_DIR_LIB_DB.'db.'._APP_DB_TYPE.'.inc.php');
       return new $dbClass(_APP_DB_HOST, _APP_DB_PORT, _APP_DB_USER, _APP_DB_PASS, _APP_DB_NAME);
     }
   }
@@ -256,7 +256,7 @@ class rw_Core
   */
   public function rwLoadExt($exts)
   {
-    require_once(_RW_DIR_LIB.'ext.inc.php');
+    require_once(_RW_DIR_LIB_EXT.'ext.inc.php');
     $texts = count($exts);
     for($i=0;$i<$texts;$i++)
     {

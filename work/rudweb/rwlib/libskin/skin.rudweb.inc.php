@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    21:51 2008-12-21
+* @version    12:18 2009-02-01
 * @since      19:28 2008-12-09
 * @access     public
 * @package    RudWEb

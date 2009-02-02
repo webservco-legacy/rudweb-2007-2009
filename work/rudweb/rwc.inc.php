@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    15:26 2009-01-19
+* @version    13:26 2009-02-01
 * @since      10:40 2009-01-14
 * @access     public
 * @package    RudWEb
@@ -54,13 +54,33 @@ define('_APP_DIR_CNT', _APP_DIR_INC . 'cnt/');
 */
 define('_APP_DIR_LANG', _APP_DIR . 'intl/');
 /**
+* Application modules directory
+*/
+define('_APP_DIR_MOD', _APP_DIR . 'mod/');
+/**
 * Application skins directory
 */
 define('_APP_DIR_SKINS', _APP_DIR . 'skins/');
 /**
-* Engine library directory
+* Engine main library directory
 */
 define('_RW_DIR_LIB', _RW_DIR . 'rwlib/');
+/**
+* Engine database library directory
+*/
+define('_RW_DIR_LIB_DB', _RW_DIR_LIB . 'libdb/');
+/**
+* Engine error library directory
+*/
+define('_RW_DIR_LIB_ERR', _RW_DIR_LIB . 'liberr/');
+/**
+* Engine extension library directory
+*/
+define('_RW_DIR_LIB_EXT', _RW_DIR_LIB . 'libext/');
+/**
+* Engine skin library directory
+*/
+define('_RW_DIR_LIB_SKIN', _RW_DIR_LIB . 'libskin/');
 /**
 * Engine internationalization directory
 */

@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    09:38 2008-12-16
+* @version    12:16 2009-02-01
 * @since      18:31 2008-12-03
 * @access     public
 * @package    RudWEb
@@ -257,7 +257,7 @@ class rw_DB
       /**
       * Include database class
       */
-      require_once(_RW_DIR_LIB.'db.'._APP_DB_TYPE.'.inc.php');
+      require_once(_RW_DIR_LIB_DB.'db.'._APP_DB_TYPE.'.inc.php');
       return new $dbClass(_APP_DB_HOST, _APP_DB_PORT, _APP_DB_USER, _APP_DB_PASS, _APP_DB_NAME);
     }
   }

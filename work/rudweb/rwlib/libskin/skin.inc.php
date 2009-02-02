@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    15:43 2009-01-12
+* @version    12:18 2009-02-01
 * @since      16:08 2008-12-09
 * @access     public
 * @package    RudWEb
@@ -111,7 +111,7 @@ class rw_Skin
         trigger_error('Template engine '.$tplEngine . ' is missing.', E_USER_ERROR);
       }
       
-      require_once(_RW_DIR_LIB.'skin.'.$tplEngine.'.inc.php');
+      require_once(_RW_DIR_LIB_SKIN.'skin.'.$tplEngine.'.inc.php');
     }
     else {
       /**
@@ -121,7 +121,7 @@ class rw_Skin
       /**
       * Include skin class
       */
-      require_once(_RW_DIR_LIB.'skin.rudweb.inc.php');
+      require_once(_RW_DIR_LIB_SKIN.'skin.rudweb.inc.php');
     }
     /**
     * Include skin class
