@@ -1,0 +1,65 @@
+#!/bin/bash
+
+# ubwsbackup
+# start: 080220
+# 0.1.080220
+
+datestuff=$(date +"%y%m%d-%H%M%S")
+function exit_error
+{
+  clear
+  echo "$1" 1>&2
+  exit 1
+}
+
+function exit_ok
+{
+  clear
+  exit 0
+}
+
+function backup_ubws
+{
+echo "backup in progress..."
+tar -czf /home/radumaier/work/ub/ubws/ubws[$datestuff][ds].tar.gz /var/www/web5/web/ubws/
+echo "done!"
+}
+
+function the_menu
+{
+  selection=
+  clear
+  until [ "$selection" = "0" ]; do
+    echo "1 = backup ubws";
+    echo "2 = undefined";
+    echo "x = exit";
+    echo -e "\a make a selection and press ENTER";
+    read selection
+    case $selection in
+      x ) exit_ok;;
+      1 ) backup_ubws;;
+      2 ) backup_ubws;;
+      * ) invalid_selection
+    esac
+  done
+}
+
+
+if [ "$1" != "" ]; then
+    while [ "$1" != "" ]; do
+        case $1 in
+            -1 | --ubws )    backup_ubws
+                            exit_ok
+                            ;;
+            -2 | --bubws )   backup_ubws
+                            exit_ok
+                            ;;
+            -x | --ubws )    exit_ok
+                            exit_ok
+                            ;;
+            * )             the_menu
+        esac
+    done
+else
+    the_menu
+fi
