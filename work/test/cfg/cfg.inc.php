@@ -2,14 +2,14 @@
 /**
 * cfg.inc
 *
-* <I> ./config/cfg.inc.php</I>
+* <I> ./cfg/cfg.inc.php</I>
 * <BR>Configuration file
 *
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    15:29 2009-01-19
-* @since      15:29 2009-01-19
+* @version    11:35 2009-02-05
+* @since      11:35 2009-02-05
 * @access     public
 * @package    RudWEb
 * @subpackage Settings
