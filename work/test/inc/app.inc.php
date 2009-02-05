@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    11:37 2009-02-05
+* @version    14:11 2009-02-05
 * @since      09:29 2008-12-16
 * @access     public
 * @package    RudWEb
@@ -20,14 +20,10 @@
 * Prevent direct file access
 */
 if(!defined('_RW_VALID')) {require_once('./index.php'); exit;}
-
-
 /**
 * Load parent class
 */
 if(is_readable(_RW_DIR_LIB.'rw.inc.php')) {require_once(_RW_DIR_LIB.'rw.inc.php');} else {require_once('./index.php'); exit;}
-
-
 /**
 * app_Core
 *
@@ -62,21 +58,23 @@ class app_Core extends rw_Core
       */
       $cnt = array();
       /**
-      * Load requested page
+      * Request security check
       */
       $page = $db ? $this->rwFilterInput($_GET['page'], $db) : $this->rwFilterInput($_GET['page']);
-      
+      /**
+      * Check if requested page exists
+      */
       if($page != '' && is_file(_APP_DIR_CNT.$page.'.inc.php'))
       {
         /**
-        * Content from file
+        * Load page.
         */
         require_once(_APP_DIR_CNT.$page.'.inc.php');
       }
       else
       {
         /**
-        * Go to 404 page
+        * Page doesn't exist, go to 404 page
         */
         require_once(_APP_DIR_CNT.'404.inc.php');
       }
@@ -85,7 +83,9 @@ class app_Core extends rw_Core
     else if(isset($_GET['content']))
     {
       /**
-      * content from database (shortcut to a module)
+      * Content from database (shortcut to a module /content/ID_AND_NAME = /module/dbContent/action/display/content/ID_AND_NAME)
+      * Usual module checks, then translate request and pass it on.
+      * Not implemented yet.
       */
       trigger_error('content functionality not implemented', E_USER_ERROR);
     }
@@ -96,18 +96,30 @@ class app_Core extends rw_Core
       */
       $cnt = array();
       /**
-      * Load requested module
+      * Request security check
       */
       $module = $db ? $this->rwFilterInput($_GET['module'], $db) : $this->rwFilterInput($_GET['module']);
+      /**
+      * Check if requested module exists
+      */
       if($module != '' && is_file(_APP_DIR_MOD.$module.'/'.$module.'.inc.php'))
       {
+        /**
+        * Load module file
+        */
         require_once(_APP_DIR_MOD.$module.'/'.$module.'.inc.php');
         /**
-        * Module internationalization
+        * Get current language
         */
         $ln = _APP_CFG_SESSIONS ? $_SESSION[_APP_PRE.'_usr_lang'] : _APP_LANG;
+        /**
+        * Check if module has it's own internationalization file corresponding to the current language.
+        */
         if(is_file(_APP_DIR_MOD.$module.'/intl/'.$ln.'/lang.inc.php'))
         {
+          /**
+          * Add module internationalization to the current one.
+          */
           require_once(_APP_DIR_MOD.$module.'/intl/'.$ln.'/lang.inc.php');
         }
         /**
@@ -140,7 +152,7 @@ class app_Core extends rw_Core
             else
             {
               /**
-              * Go to 404 page
+              * Action doesn't exist or is restricted, go to 404 page
               */
               require_once(_APP_DIR_CNT.'404.inc.php');
             }
@@ -148,7 +160,7 @@ class app_Core extends rw_Core
           else
           {
             /**
-            * Go to 404 page
+            * Action is a special one, go to 404 page
             */
             require_once(_APP_DIR_CNT.'404.inc.php');
           }
@@ -156,7 +168,7 @@ class app_Core extends rw_Core
         else
         {
           /**
-          * Default action
+          * No action requested, load default action
           */
           $cnt = $modObject->defaultAction();
         }
@@ -164,7 +176,7 @@ class app_Core extends rw_Core
       else
       {
         /**
-        * Go to 404 page
+        * Requested module doesn't exist, go to 404 page
         */
         require_once(_APP_DIR_CNT.'404.inc.php');
       }
