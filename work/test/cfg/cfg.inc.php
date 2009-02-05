@@ -44,19 +44,19 @@ define('_APP_CFG_USERS',TRUE);
 *
 * Must end with a slash (/)
 */
-define('_APP_DIR', 'e:/home/devel/server/www/mvc/work/test/');
+define('_APP_DIR', 'd:/home/devel/server/htdocs/work/test/');
 /**
 * Engine path
 *
 * Must end with a slash (/)
 */
-define('_RW_DIR', 'e:/home/devel/server/www/mvc/work/rudweb/');
+define('_RW_DIR', 'd:/home/devel/server/htdocs/work/rudweb/');
 /**
 * Application url
 *
 * Must end with a slash (/)
 */
-define('_APP_WWW','http://localhost/mvc/work/test/');
+define('_APP_WWW','http://localhost/work/test/');
 /* ********** ********** ********** ********** ********** SEO ********** ********** ********** ********** ********** */
 /**
 * Application index
@@ -97,7 +97,7 @@ define('_APP_TPL','Smarty');
 /**
 * Default skin (skin directory name)
 */
-define('_APP_SKIN','mdc_v2');
+define('_APP_SKIN','ds_winter_s');
 /* ********** ********** ********** ********** ********** MISC ********** ********** ********** ********** ********** */
 /**
 * Default timezone (http://www.php.net/timezones)
