@@ -33,11 +33,11 @@ define('_APP_CFG_DATABASE',TRUE);
 /**
 * Use sessions and users? (TRUE/FALSE)
 */
-define('_APP_CFG_SESSIONS',TRUE);
+define('_APP_CFG_SESSIONS',FALSE);
 /**
 * Use user authentication? (TRUE/FALSE)
 */
-define('_APP_CFG_USERS',TRUE);
+define('_APP_CFG_USERS',FALSE);
 /* ********** ********** ********** ********** ********** PATHS ********** ********** ********** ********** ********** */
 /**
 * Application path
@@ -74,8 +74,8 @@ define('_APP_INDEX','');
 define('_APP_DB_TYPE','mysql');
 define('_APP_DB_HOST','localhost');
 define('_APP_DB_PORT','3306');
-define('_APP_DB_USER','root');
-define('_APP_DB_PASS','');
+define('_APP_DB_USER','test');
+define('_APP_DB_PASS','REDACTED');
 define('_APP_DB_NAME','test');
 /* ********** ********** ********** ********** ********** APPLICATION ********** ********** ********** ********** ********** */
 /**

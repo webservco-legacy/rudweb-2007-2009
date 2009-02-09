@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    11:46 2009-02-01
+* @version    15:38 2009-02-09
 * @since      16:42 2009-01-12
 * @access     public
 * @package    RudWEb
@@ -44,7 +44,7 @@ if(!defined('_RW_VALID')) {require_once('./index.php'); exit;}
   */
   /*
   $cnt['skin']['menu'] = 'MENU_REPLACEMENT_VARS';
-  $cnt['skin']['content'] = 'CONTENT_REPLCEMENT_VARS';
+  $cnt['skin']['content'] = 'CONTENT_REPLACEMENT_VARS';
   $cnt['skin']['footer'] = 'FOOTER_REPLACEMENT_VARS';
   */
   /*
@@ -53,10 +53,31 @@ if(!defined('_RW_VALID')) {require_once('./index.php'); exit;}
   * (same sintax as in ctrl.inc)
   */
   /*
-  $cnt['atpl'] = array();
   $cnt['atpl']['menu'] = array();
-  $cnt['atpl']['menu']['dir'] = 'TEMPLATE_SUBDIRECTORY';
-  $cnt['atpl']['menu']['tpl'] = 'TEMPLATE_FILE';
+  $cnt['atpl']['menu']['dir'] = '';
+  $cnt['atpl']['menu']['tpl'] = 'menu';
   $cnt['atpl']['menu']['vars'] = array();
+
+  $cnt['atpl']['content'] = array();
+  
+  $cnt['atpl']['content'][0] = array();
+  $cnt['atpl']['content'][0]['dir'] = 'content/';
+  $cnt['atpl']['content'][0]['tpl'] = $cnt['cnt']['tpl'];
+  $cnt['atpl']['content'][0]['vars']['cnt'] = $cnt['cnt']['content'];
+  $cnt['atpl']['content'][0]['vars']['lang'] = $lang;
+  $cnt['atpl']['content'][0]['vars']['usr_status'] = $usr_status;
+  
+  $cnt['atpl']['content'][1] = array();
+  $cnt['atpl']['content'][1]['dir'] = 'content/';
+  $cnt['atpl']['content'][1]['tpl'] = 'contact';
+  $cnt['atpl']['content'][1]['vars']['cnt'] = $cnt['cnt']['content'];
+  $cnt['atpl']['content'][1]['vars']['lang'] = $lang;
+  $cnt['atpl']['content'][1]['vars']['usr_status'] = $usr_status;
+  $cnt['atpl']['content'][1]['vars']['stuff1'] = 'stuff for the second subtemplate';
+
+  $cnt['atpl']['footer'] = array();
+  $cnt['atpl']['footer']['dir'] = '';
+  $cnt['atpl']['footer']['tpl'] = 'footer';
+  $cnt['atpl']['footer']['vars'] = array();
   */
 ?>

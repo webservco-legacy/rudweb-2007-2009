@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    14:11 2009-02-05
+* @version    16:07 2009-02-09
 * @since      09:29 2008-12-16
 * @access     public
 * @package    RudWEb
@@ -44,6 +44,10 @@ class app_Core extends rw_Core
   */
   public function appProcess($lang, $db=NULL)
   {
+    /**
+    * Temporary solution for user status
+    */
+    global $usr_status;
     if(_APP_CFG_USERS && (isset($_GET['logout']) && $_GET['logout'] = 'true'))
     {
       /**
@@ -102,12 +106,13 @@ class app_Core extends rw_Core
       /**
       * Check if requested module exists
       */
-      if($module != '' && is_file(_APP_DIR_MOD.$module.'/'.$module.'.inc.php'))
+      if($module != '' && is_file(_APP_DIR_MOD.$module.'/'.$module.'.mod.php'))
       {
         /**
         * Load module file
         */
-        require_once(_APP_DIR_MOD.$module.'/'.$module.'.inc.php');
+        require_once(_RW_DIR_LIB_MOD.'mod.inc.php');
+        require_once(_APP_DIR_MOD.$module.'/'.$module.'.mod.php');
         /**
         * Get current language
         */
@@ -141,7 +146,7 @@ class app_Core extends rw_Core
             /**
             * Action must exist and be public
             */
-            if(method_exists($modObject, $action) && is_callable($array($modObject, $action)))
+            if(method_exists($modObject, $action) && is_callable(array($modObject, $action)))
             {
               /**
               * Call the action

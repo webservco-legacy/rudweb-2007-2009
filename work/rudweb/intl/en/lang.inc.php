@@ -2,13 +2,13 @@
 /**
 * lang.inc
 *
-* <I> ./langs/en/lang.inc.php</I>
+* <I> ./intl/en/lang.inc.php</I>
 * <BR>English language file (core)
 *
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    12:35 2009-02-01
+* @version    16:14 2009-02-09
 * @since      14:27 2008-12-12
 * @access     public
 * @package    RudWEb

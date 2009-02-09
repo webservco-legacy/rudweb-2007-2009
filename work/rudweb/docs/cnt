@@ -1,0 +1,5 @@
+$cnt['skin']['tpl']
+$cnt['skin']['title']
+
+$cnt['cnt']['tpl']
+$cnt['cnt']['content']

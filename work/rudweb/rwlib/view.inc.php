@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    12:20 2009-02-01
+* @version    13:40 2009-02-09
 * @since      20:07 2009-01-22
 * @access     public
 * @package    RudWEb
@@ -42,21 +42,40 @@ class app_Viewer
     $totalAtpl = count($atpl);
     if($totalAtpl > 0)
     {
+      $atplObj = rw_Skin::_load(_APP_TPL);
+      $atplObj->skindir($skin_dir);
       foreach($atpl as $atplTitle=>$atplVars)
       {
-        $atplObj = rw_Skin::_load(_APP_TPL);
-        $atplObj->skindir($skin_dir);
-        
-        $totalAtplVars = count($atplVars['vars']);
-        if($totalAtplVars > 0)
+        if(array_key_exists(0, $atplVars))
         {
-          foreach($atplVars['vars'] as $name=>$value)
+          $tc = count($atplVars);
+          $mainContent = '';
+          for($i=0;$i<$tc;$i++)
           {
-            $atplObj->set($name, $value);
+            $totalAtplVars = count($atplVars[$i]['vars']);
+            if($totalAtplVars > 0)
+            {
+              foreach($atplVars[$i]['vars'] as $name=>$value)
+              {
+                $atplObj->set($name, $value);
+              }
+            }
+            $mainContent .= $atplObj->parse($atplVars[$i]['dir'].$atplVars[$i]['tpl'].'.tpl');
+            $skinObj->set($atplTitle, $mainContent);
           }
         }
-        if(is_array($atpl))
-        $skinObj->set($atplTitle, $atplObj->parse($atplVars['dir'].$atplVars['tpl'].'.tpl'));
+        else
+        {
+          $totalAtplVars = count($atplVars['vars']);
+          if($totalAtplVars > 0)
+          {
+            foreach($atplVars['vars'] as $name=>$value)
+            {
+              $atplObj->set($name, $value);
+            }
+          }
+          $skinObj->set($atplTitle, $atplObj->parse($atplVars['dir'].$atplVars['tpl'].'.tpl'));
+        }
       }
     }
     $varsNew = array_diff_key($vars, array('tpl'=>''));

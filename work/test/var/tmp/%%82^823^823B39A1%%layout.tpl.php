@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.21, created on 2009-02-05 13:56:26
+<?php /* Smarty version 2.6.21, created on 2009-02-09 18:27:29
          compiled from layout.tpl */ ?>
 <?php if (@_APP_CFG_SESSIONS): ?>
 <?php $this->assign('app_pre', @_APP_PRE); ?>
@@ -8,7 +8,6 @@
 <?php $this->assign('app_skin_suf', '_skin_url'); ?>
 <?php $this->assign('app_skin_ses', ($this->_tpl_vars['app_pre']).($this->_tpl_vars['app_skin_suf'])); ?>
 <?php $this->assign('app_skin_url', $_SESSION[$this->_tpl_vars['app_skin_ses']]); ?>
-<?php $this->assign('app_tpl', @_APP_TPL); ?>
 <?php else: ?>
 <?php $this->assign('app_skin_url', @_APP_SKIN_URL); ?>
 <?php $this->assign('usr_lang', @_APP_LANG); ?>

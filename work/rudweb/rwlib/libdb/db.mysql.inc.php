@@ -119,7 +119,7 @@ class rw_DB_mysql extends rw_DB_global implements rw_iDB
   */
   function dbFetchArray($result)
   {
-    return mysql_fetch_array($result);
+    return mysql_fetch_array($result, MYSQL_ASSOC);
   }
   /**
   * Testing

@@ -46,7 +46,7 @@ interface rw_iExt
 *
 * @author     Radu Maier <radu@rudisoft.net>
 * @package    RudWEb
-* @subpackage Core
+* @subpackage Extensions
 */
 class rw_Ext_global
 {
@@ -57,7 +57,7 @@ class rw_Ext_global
   /**
   * Load the extension and set it to global or local
   *
-  * @param bool $global whether the extension is loaded globally
+  * @param aray $extAbout extension information
   * @return mixed result of loading
   */
   function __construct($extAbout)

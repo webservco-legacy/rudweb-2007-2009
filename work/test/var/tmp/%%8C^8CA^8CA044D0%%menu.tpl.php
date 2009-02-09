@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.21, created on 2009-02-05 13:56:26
+<?php /* Smarty version 2.6.21, created on 2009-02-09 18:27:28
          compiled from menu.tpl */ ?>
 <div id="menu">
   &#160;

@@ -8,7 +8,7 @@
 * @author     Radu Maier <radu@rudisoft.net>
 * @copyright  Copyright (c) 2008, Radu Maier
 * @license    http://opensource.org/licenses/gpl-3.0.html
-* @version    13:26 2009-02-01
+* @version    15:41 2009-02-09
 * @since      10:40 2009-01-14
 * @access     public
 * @package    RudWEb
@@ -81,6 +81,10 @@ define('_RW_DIR_LIB_EXT', _RW_DIR_LIB . 'libext/');
 * Engine skin library directory
 */
 define('_RW_DIR_LIB_SKIN', _RW_DIR_LIB . 'libskin/');
+/**
+* Engine module library directory
+*/
+define('_RW_DIR_LIB_MOD', _RW_DIR_LIB . 'libmod/');
 /**
 * Engine internationalization directory
 */
