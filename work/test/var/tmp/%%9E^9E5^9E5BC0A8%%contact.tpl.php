@@ -45,7 +45,7 @@
 <div class="contact_2">dasoft@dasoft.ro</div>
 <div class="contact_3">&#160;</div>
 <p>&#160;</p>
- 	
+    
 <h2>Locatie</h2>
 <h4>Magazin IT&amp;C / Copy Center / Internet Cafe / Punct Service:</h4>
 <a href="<?php echo $this->_tpl_vars['app_skin_url']; ?>
