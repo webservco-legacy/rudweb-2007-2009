@@ -1,0 +1,31 @@
+# Line endings: LF in the repository and in working copies
+* text eol=lf
+
+# Binary files: no line-ending conversion
+*.bmp binary
+*.btr binary
+*.chm binary
+*.exe binary
+*.gif binary
+*.gz binary
+*.ico binary
+*.jpg binary
+*.lib binary
+*.otf binary
+*.pdf binary
+*.pfb binary
+*.pfm binary
+*.pfx binary
+*.png binary
+*.psd binary
+*.rar binary
+*.swf binary
+*.tgz binary
+*.ttf binary
+*.zip binary
+/work/test/var/tmp/27a72ab4a40df0c50f0c3c63b5cc4fa6 binary
+/work/test/var/tmp/68800c10fd6fda9b0462a4f8bda66bfe binary
+/work/test/var/tmp/7a3a351415cbba63be1486520f7f96f1 binary
+/work/test/var/tmp/829d20a2e43fc362340e3ba317c40ec0 binary
+/work/test/var/tmp/d4dea81533eb65c1b25dc5d05913aeae binary
+/work/test/var/tmp/f90767af4d458650ab494dc922a68465 binary
