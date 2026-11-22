@@ -52,6 +52,7 @@ From the dated tar snapshots I kept of the engine and its work folder, and the c
 rewrite, turned into commits in 2026 (48 on `main`), with the dates of the snapshots kept. Archives that held
 credentials were expanded in place and redacted. The last commits before this README set LF line endings and indent
 with spaces.
+The earlier commits have LF line endings too: 480 files had CRLF line endings in the originals.
 
 ## Third-party code
 
